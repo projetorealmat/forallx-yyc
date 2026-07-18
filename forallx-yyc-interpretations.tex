@@ -199,8 +199,6 @@ This diagram could be used to describe an interpretation whose domain is the fir
 Equally we might offer this diagram:
 
 \begin{center}
-\begin{arialabel}{The numbers 1, 3, and 4 are connected by arrows.
-There are arrows from 1 to 3 and to itself, and from 3 to 1, 4 and itself. The number 2 is included but has no arrows coming in or going out.}
 \begin{tikzpicture}
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
@@ -211,7 +209,8 @@ There are arrows from 1 to 3 and to itself, and from 3 to 1, 4 and itself. The n
 \draw[->, thick] (atom3)+(0.15,-0.15) arc (-150:150:.3); 
 \draw[<->, thick] (atom1) -- (atom3);
 \end{tikzpicture}
-\end{arialabel}
+\bmlDescription{The numbers 1, 3, and 4 are connected by arrows.
+There are arrows from 1 to 3 and to itself, and from 3 to 1, 4 and itself. The number 2 is included but has no arrows coming in or going out.}
 \end{center}
 
 The interpretation specified by this diagram can also be given by listing what's in the domain and in the extension of~`$\atom{R}{x,y}$':
@@ -500,7 +499,6 @@ Determine whether each of the following sentences is true or false in that inter
 \label{pr.TorF3}
 Following the diagram conventions introduced at the end of \cref{s:Interpretations}, consider the following interpretation:	
 \begin{center}
-\begin{arialabel}{The numbers 1, 2, 3, 4, and 5 are connected by arrows. There are arrows from 1 to 2, 3, 4, 5, and to itself, from 2 to 5, from 5 to itself, and from 4 to 1. There is no arrow leaving 3.}
 \begin{tikzpicture}
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
@@ -515,7 +513,7 @@ Following the diagram conventions introduced at the end of \cref{s:Interpretatio
 \draw[->, thick] (atom1) -- (atom6);
 \draw[->, thick] (atom2) -- (atom6);
 \end{tikzpicture}
-\end{arialabel}
+\bmlDescription{The numbers 1, 2, 3, 4, and 5 are connected by arrows. There are arrows from 1 to 2, 3, 4, 5, and to itself, from 2 to 5, from 5 to itself, and from 4 to 1. There is no arrow leaving 3.}
 \end{center}
 Determine whether each of the following sentences is true or false in that interpretation:
 \begin{compactlist}
@@ -782,7 +780,6 @@ The premise is clearly true on this interpretation. Anyone in the domain is a Ca
 
 For our third example, we'll mix things up a bit. In \cref{s:Interpretations}, we described how we can present some interpretations using diagrams. For example:
 \begin{center}
-	\begin{arialabel}{The numbers 1, 2, and 3 are connected by arrows. There are arrows from 1 to 2, 3, and to itself, and from 2 to 3. There is no arrow leaving 3.}
 	\begin{tikzpicture}
 	\node (atom1) at (0,2) {1};
 	\node (atom2) at (2,2) {2};
@@ -792,7 +789,7 @@ For our third example, we'll mix things up a bit. In \cref{s:Interpretations}, w
 	\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
 	\draw[->, thick] (atom2) -- (atom3);
 \end{tikzpicture}
-\end{arialabel}
+\bmlDescription{The numbers 1, 2, and 3 are connected by arrows. There are arrows from 1 to 2, 3, and to itself, and from 2 to 3. There is no arrow leaving 3.}
 \end{center}
 Using the conventions employed in \cref{s:Interpretations}, the domain of this interpretation is the first three positive whole numbers, and `$\atom{R}{x,y}$' is true of x and y just in case there is an arrow from x to y in our diagram. Here are some sentences that the interpretation makes true:
 \begin{itemize}

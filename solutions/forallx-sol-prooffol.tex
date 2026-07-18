@@ -22,6 +22,9 @@ Explain why these two `proofs' are incorrect. Also, provide interpretations whic
 \draw[->, thick] (atom4)+(-0.15,0.15) arc (-330:-30:.3); 
 \draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3); 
 \end{tikzpicture}
+\bmlDescription{The number 1 is connected to itself by an arrow. The
+number 2 is also connected to itself by an arrow. 1 and 2 are not
+otherwise connected.}
 \end{center}}
 \columnbreak
 	\begin{fitchproof}[arrayenv=tabular]
@@ -41,6 +44,7 @@ Explain why these two `proofs' are incorrect. Also, provide interpretations whic
 \node (atom5) at (2,0) {2};
 \draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
+\bmlDescription{The numbers 1 and 2 are connected by arrows in both directions.}
 \end{center}}
 \end{multicols}
 
@@ -491,9 +495,10 @@ For each of the following pairs of sentences: If they are interderivable, give p
 \node (atom5) at (2,0) {2};
 \draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
+\bmlDescription{The numbers 1 and 2 are connected by arrows in both directions.}
 \end{center}}
 \item $\forall x (\atom{R}{c,a} \eiff \atom{R}{x,a}), \atom{R}{c,a} \eiff \forall x\,\atom{R}{x,a}$ \hfill \myanswer{Not logically equivalent}
-\\\myanswer{Counter-interpretation, consider the following diagram, allowing `$a$' to name 1 and `$c$' to name 2:
+\\\myanswer{Counter-interpretation: consider the following diagram, allowing `$a$' to name 1 and `$c$' to name 2:
 \begin{center}
 \begin{tikzpicture}
 \node (atom4) at (0,0) {1};
@@ -502,6 +507,8 @@ For each of the following pairs of sentences: If they are interderivable, give p
 %\draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3); 
 %\draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
+\bmlDescription{The number 1 is connected to itself by an arrow. The
+number 2 is not connected by any arrows.}
 \end{center}}
 \end{compactlist}
 
@@ -574,6 +581,8 @@ Counter-interpretation: consider the following diagram, allowing `$j$' to name $
 %\draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3); 
 %\draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
+\bmlDescription{The number 1 is connected to itself by an arrow. The
+number 2 is not connected by any arrows.}
 \end{center}}
 \item $\forall x\,\atom{P}{x} \eif \forall x\,\atom{Q}{x}, \exists x \enot \atom{P}{x} \therefore \exists x \enot \atom{Q}{x}$ \hfill \myanswer{Invalid\\
 Counter-interpretation: let the domain be the number $1$. Let `$\atom{P}{x}$' be true of nothing. Let `$\atom{Q}{x}$' be true of everything.}

@@ -1893,10 +1893,12 @@ Valid argument		&	An argument whose truth table has no lines where there are all
 \end{table}
 \else
 \begin{sidewaystable}\small
-\tabulinesep=1ex
-\begin{tabu}{X[.5,c,m] ||X[1,l,m] |X[1,l,m]}
+%\tabulinesep=1ex
+%\begin{tabu}{X[.5,c,m] ||X[1,l,m] |X[1,l,m]}
+\begin{tabularx}{\textwidth}{>{\hsize=.4\hsize\raggedright\arraybackslash}X||>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X@{}}
 \tmptable
-\end{tabu}
+\end{tabularx}
+%\end{tabu}
 \caption{Two ways to define logical concepts.}
 \label{table:truth_tables_or_derivations}
 \end{sidewaystable}
@@ -1972,10 +1974,12 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 \end{table}
 \else
 \begin{table}\small
-\tabulinesep=1ex
-\begin{tabu}{X[.7,c,m] ||X[1,l,m] |X[1,l,m]}
+%\tabulinesep=1ex
+%\begin{tabu}{X[.7,c,m] ||X[1,l,m] |X[1,l,m]}
+\begin{tabularx}{\textwidth}{>{\hsize=.7\hsize\raggedright\arraybackslash}X||X|X}
 \tmptable
-\end{tabu}
+\end{tabularx}
+%\end{tabu}
 \caption{When to provide a truth table and when to provide a proof.}
 \label{table.ProofOrModel}
 \end{table}

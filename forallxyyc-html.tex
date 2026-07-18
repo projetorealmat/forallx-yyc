@@ -18,6 +18,7 @@
 \usepackage{gitinfo2}
 
 \usepackage{fitchml}% patch fitch for HTML
+\usepackage{longtable}
 
 \HTMLtargettrue
 
@@ -32,6 +33,7 @@ Richard Zach}
 
 \bmlAltFormat{forallxyyc.pdf}{PDF}
 \bmlAltFormat{forallxyyc-accessible.pdf}{PDF (accessible)}
+\bmlAltFormat{\jobname.pdf}{}
 
 \begin{document}
 
@@ -61,4 +63,21 @@ Richard Zach}
 
 \input{forallx-yyc-content}
 
+\setkeys{fitch}{arrayenv=longtable}
+\setlength{\LTleft}{0pt}
+\setlength\LTright\fill
+
+\part*{Solutions to selected exercices}
+\makeatletter\renewcommand{\appendixname}{Solutions to Chapter}\makeatother
+\setcounter{chapter}{0}
+\def\thechapter{\arabic{chapter}}
+\input{solutions/forallx-sol-what}
+\input{solutions/forallx-sol-tfl}
+\input{solutions/forallx-sol-truthtables}
+\input{solutions/forallx-sol-prooftfl}
+\input{solutions/forallx-sol-fol}
+\input{solutions/forallx-sol-interpretations}
+\input{solutions/forallx-sol-prooffol}
+\input{solutions/forallx-sol-ml}
+\input{solutions/forallx-sol-metatheory}
 \end{document}
