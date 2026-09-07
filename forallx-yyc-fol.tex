@@ -1104,7 +1104,7 @@ But we do not have any way for dealing with the italicized words yet. The soluti
 
 The symbol `$=$' will be a two-place predicate. Since it will have a special meaning, we shall write it a bit differently: we put it \emph{between} two terms, rather than out front. (This should also be familiar; consider a mathematical equation like $\frac{1}{2} = 0.5$.) And the special meaning for `$=$' is given by the fact that we \emph{always} adopt the following symbolization key: 
 	\begin{ekey}
-		\item[x=y] \gap{x} is identical to \gap{y}
+		\item[{x=y}] \gap{x} is identical to \gap{y}
 	\end{ekey}
 This does not mean \emph{merely} that the terms to the left and right
 of `$=$' refer to objects that are indistinguishable, or that all of
@@ -1344,12 +1344,12 @@ So, here are some terms:
 	$$a, b, x, x_1, x_2, y, y_{254}, z$$
 Next we need to define atomic formulas.
 	\factoidbox{
-		\begin{compactlist}[labelindent=0pt,leftmargin=*]
+		\begin{factoidnumber}
 		\item Any sentence letter is an atomic formula.
 		\item If $\metav{R}$ is an $n$-place predicate and $\metav{t}_1, \metav{t}_2, \ldots, \metav{t}_n$ are terms, then $\atom{\metav{R}}{\metav{t}_1, \metav{t}_2, \ldots, \metav{t}_n}$ is an atomic formula.
 		\item If $\metav{t}_1$ and $\metav{t}_2$ are terms, then $\metav{t}_1 = \metav{t}_2$ is an atomic formula.
 		\item Nothing else is an atomic formula.
-		\end{compactlist}
+		\end{factoidnumber}
 	}
 Note that we consider sentence letters also formulas of FOL, so every
 sentence of TFL is also a formula of FOL. In \cref{ch.NDFOL}, we will
@@ -1377,7 +1377,7 @@ The use of script letters here follows the conventions laid down in \cref{s:UseM
 \end{center}
 Once we know what atomic formulas are, we can offer recursion clauses to define arbitrary formulas. The first few clauses are exactly analogous to those in the definition of `sentence of TFL'.
 	\factoidbox{
-	\begin{compactlist}[labelindent=0pt,leftmargin=*]
+	\begin{factoidnumber}
 		\item Every atomic formula is a formula.
 		\item If \metav{A} is a formula, then $\enot\metav{A}$ is a formula.
 		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eand\metav{B})$ is a formula.
@@ -1391,7 +1391,7 @@ Once we know what atomic formulas are, we can offer recursion clauses to define 
 		%\metav{A} contains at least one occurrence of \metav{x}, and \metav{A} contains neither $\forall \metav{x}$ nor $\exists \metav{x}$, 
 		then $\exists\metav{x}\,\metav{A}$ is a formula.
 		\item Nothing else is a formula.
-	\end {compactlist}
+	\end{factoidnumber}
 	}
 So, assuming again that `$F$' is a one-place predicate, `$G$' is a three-place predicate and `$S$' is a six place-predicate, here are some formulas you can build this way:
 	\begin{align*}

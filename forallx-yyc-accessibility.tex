@@ -152,7 +152,9 @@ tables such as the ones containing proofs or truth tables at all.
 The text also contains a few diagrams. In the HTML version, these are
 provided with image descriptions, e.g.,
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[alt={There are three shapes: the first shape is a grey
+circle labelled A, some empty space, the second shape is a white
+circle labelled C, and the fourth a white square labelled D.}]
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, diamond, phantom_shape] (cat2)  { } ;
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C} ;

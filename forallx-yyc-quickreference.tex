@@ -37,8 +37,7 @@ Both $P$ and $Q$ & $(P \eand Q)$\\
 If $P$ then $Q$ & $(P \eif Q)$\\
 $P$ only if $Q$ & $(P \eif Q)$\\
 $P$ if and only if $Q$ & $(P \eiff Q)$\\
-$P$ unless $Q$ & $(\enot Q \eif P)$ or $(P \eor Q)$\\
-\\
+$P$ unless $Q$ & $(\enot Q \eif P)$ or $(P \eor Q)$\\[12pt]
 \multicolumn{2}{c}{\label{SymbolizingPredicates}\textsc{Predicates}}\\ \\
 All $F$s are $G$s & $\forall x(\atom{F}{x} \eif \atom{G}{x})$\\
 Some $F$s are $G$s & $\exists x(\atom{F}{x} \eand \atom{G}{x})$\\
@@ -47,8 +46,7 @@ Not all $F$s are $G$s & $\enot\forall x(\atom{F}{x} \eif \atom{G}{x})$\ or\\
 No $F$s are $G$s & $\forall x(\atom{F}{x} \eif\enot \atom{G}{x})$\ or\\
 & $\enot\exists x(\atom{F}{x} \eand \atom{G}{x})$\\
 Only $F$s are $G$s & $\forall x(\atom{G}{x} \eif \atom{F}{x})$\\
-& $\enot\exists x(\enot\atom{F}{x} \eand \atom{G}{x})$\\
-\\
+& $\enot\exists x(\enot\atom{F}{x} \eand \atom{G}{x})$\\[12pt]
 \multicolumn{2}{c}{\textsc{Identity}}\\ \\
 Only $c$ is $G$ & $\forall x(\atom{G}{x} \eiff x=c)$\\
 Everything other &\\ than $c$ 
@@ -175,11 +173,14 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 % If compiling to PDF, make all the rules small(er) and avoid left margin
 \ifHTMLtarget\else
-\renewenvironment{fitchproof}
-	{\noindent\par\noindent\small$\begin{nd}}
-	{\end{nd}$\noindent\normalsize\ignorespacesafterend}
+% \renewenvironment{fitchproof}
+% 	{\noindent\par\noindent\small$\begin{nd}}
+% 	{\end{nd}$\noindent\normalsize\ignorespacesafterend}
+% 
+\renewenvironment{fitchproof}[1][]
+  {\begin{flushleft}\small\begin{nd}[#1]}
+  {\end{nd}\end{flushleft}}
 \fi
-
 %{\LARGE \textbf{Basic Rules of Proof}}
 \begin{multicols}{2}
 \subsection*{Reiteration}

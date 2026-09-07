@@ -28,7 +28,7 @@ The language of ML is an extension of TFL. We could have started with FOL, which
 
 Just like TFL, ML starts with an infinite stock of \emph{atoms}. These are written as capital letters, with or without numerical subscripts: $A$, $B$, \dots  $A_1$, $B_1$, \dots  We then take all of the rules about how to make sentences from TFL, and add two more for $\ebox$ and~$\ediamond$:
 \factoidbox{
-\begin{compactlist}[labelindent=0pt,leftmargin=*]
+\begin{factoidnumber}
 	\item Every atom of ML is a sentence of ML.
 	\item If $\metav{A}$ is a sentence of ML, then $\enot\metav{A}$ is a sentence of ML.
 	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eand\metav{B})$ is a sentence of ML.
@@ -38,7 +38,7 @@ Just like TFL, ML starts with an infinite stock of \emph{atoms}. These are writt
 	\item If $\metav{A}$ is a sentence of ML, then $\ebox\metav{A}$ is a sentence of ML.
 	\item If $\metav{A}$ is a sentence of ML, then $\ediamond\metav{A}$ is a sentence of ML.
 	\item Nothing else is a sentence of ML.
-\end{compactlist}}
+\end{factoidnumber}}
 Here are some examples of ML sentences:
 \begin{align*}
 	& A\\
@@ -438,7 +438,7 @@ So, there we have it. An interpretation for ML consists of three things: a colle
 
 Let's look at an example. It is often helpful to present interpretations of ML as diagrams, like this:
 \begin{center}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[alt={The numbers 1 and 2 are connected by arrows. There are arrows from 1 to itself, and from 2 to 1. Node 1 is labelled by A and not-B. Node 2 is labelled by not-A and B.}]
 		\node (atom1) at (0,1) {1};
 		\node (atom2) at (3,1) {2};
 		\node (atom3) at (-0.25,0) {$A$};
@@ -495,7 +495,8 @@ Let's get more of a feel for this semantics by presenting some counter-interpret
 \[\enot A\entails_\mlK \enot \ediamond A\]
 In order to present a counter-interpretation to this claim, we need to cook up an interpretation which makes $\enot A$ true at some world $w$, and $\enot\ediamond A$ false at $w$. Here is one such interpretation, presented diagrammatically:
 \begin{center}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[alt={The numbers 1 and 2 are connected by an arrow from 1
+to 2. Node 1 is labelled not-A and node 2 is labelled A.}]
 		\node (atom1) at (0,1) {1};
 		\node (atom2) at (3,1) {2};
 		\node (atom3) at (-0.25,0) {$\enot A$};

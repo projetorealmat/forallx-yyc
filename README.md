@@ -40,7 +40,7 @@ The HTML conversion is experimental. If you find issues in it,
 especially issues that affect screen readers, please report it by
 [filing an issue](https://github.com/rzach/forallx-yyc/issues) or send
 an email to [Richard Zach](mailto:rzach@ucalgary.ca). Note that
-solutions are not yet included in the HTML version.
+solutions are included in the HTML version after the appendices.
 
 ## Download
 

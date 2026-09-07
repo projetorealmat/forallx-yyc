@@ -153,7 +153,7 @@ name=connective,
 description={A logical operator in TFL used to combine \glspl{sentence letter} into larger sentences}
 }
 	\begin{table}[h]
-	\center
+	\centering
 	\begin{tabular}{l l l}
 	
 	\textbf{symbol}&\textbf{what it is called}&\textbf{rough meaning}\\
@@ -169,7 +169,6 @@ description={A logical operator in TFL used to combine \glspl{sentence letter} i
 
 These are not the only connectives of English of interest. Others are, e.g., `unless', `neither \dots{} nor \dots', and `because'. We will see that the first two can be expressed by the connectives we will discuss, while the last cannot. `Because', in contrast to the others, is not \emph{truth functional}.
 
-        
 \section{Negation}
 
 Consider how we might symbolize these sentences:
@@ -619,11 +618,9 @@ We have seen that there are three kinds of symbols in TFL:
 \begin{center}
 \begin{tabular}{l l}
 Atomic sentences & $A,B,C,\ldots,Z,\ldots$\\
-with subscripts, as needed & $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\
-\\
-Connectives & $\enot,\eand,\eor,\eif,\eiff$\\
-\\
-Brackets &( , )\\
+with subscripts, as needed & $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\[12pt]
+Connectives & $\enot,\eand,\eor,\eif,\eiff$\\[12pt]
+Brackets &( , )
 \end{tabular}
 \end{center}
 Define an \define{expression of TFL} as any string of symbols of TFL.
@@ -641,7 +638,7 @@ Instead, we will describe the process by which sentences can be \emph{constructe
 
 We can say similar things for each of the other connectives. For instance, if \metav{A} and \metav{B} are sentences of TFL, then $(\metav{A}\eand\metav{B})$ is a sentence of TFL. Providing clauses like this for all of the connectives, we arrive at the following formal definition for a \define{sentence of TFL}:
 	\factoidbox{\label{TFLsentences}
-	\begin{numberlist}[labelindent=0pt,leftmargin=*]
+	\begin{factoidnumber}
 		\item Every sentence letter is a sentence.
 		\item If \metav{A} is a sentence, then $\enot\metav{A}$ is a sentence.
 		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eand\metav{B})$ is a sentence.
@@ -649,7 +646,7 @@ We can say similar things for each of the other connectives. For instance, if \m
 		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eif\metav{B})$ is a sentence.
 		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eiff\metav{B})$ is a sentence.
 		\item Nothing else is a sentence.
-	\end{numberlist}
+	\end{factoidnumber}
 	}
 \newglossaryentry{sentence of TFL}
 {
@@ -881,11 +878,11 @@ These are sentences of the object language (TFL). They are not sentences of Engl
 	\end{itemize}
 Obviously, we are trying to come out with an English sentence that says something about the object language (TFL), but `$D$' is a sentence of TFL, and not part of English. So the preceding is gibberish, just like:
 	\begin{itemize}
-		\item \foreignlanguage{german}{Schnee ist weiß} is a German sentence.
+		\item \foreignlanguage{german}{Schnee ist wei\ss} is a German sentence.
 	\end{itemize}
 What we surely meant to say, in this case, is:
 	\begin{itemize}
-		\item `\foreignlanguage{german}{Schnee ist weiß}' is a German sentence.
+		\item `\foreignlanguage{german}{Schnee ist wei\ss}' is a German sentence.
 	\end{itemize}
 Equally, what we meant to say above is just:
 	\begin{itemize}

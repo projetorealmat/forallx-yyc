@@ -64,7 +64,6 @@ Rather than reasoning directly about all valuations (in the case of TFL), we wil
 The modern development of natural deduction dates from simultaneous and unrelated papers by Gerhard Gentzen and Stanis\l{}aw Ja\'{s}kowski (1934). However, the natural deduction system that we will consider is based largely around work by Frederic Fitch (first published in 1952).
 
 
-
 \chapter{Basic rules for TFL}\label{s:BasicTFL}
 We will develop a \define{natural deduction} system. For each connective, there will be \define{introduction} rules, that allow us to prove a sentence that has that connective as the main logical operator, and \define{elimination} rules, that allow us to prove something given a sentence that has that connective as the main logical operator.
 
@@ -722,7 +721,7 @@ The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \hypo{abc}{(\enot L \eand A) \eor L}\PR
 \open
 \hypo{nla}{\enot L \eand A}\AS
-\have{nl}{\enot L}\ae{nl}
+\have{nl}{\enot L}\ae{nla}
 	\have{a}{A}\ae{abc}
 \close
 \open

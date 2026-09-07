@@ -173,7 +173,9 @@ can represent it just by drawing an arrow between two objects, and
 stipulate that `$\atom{R}{x,y}$' is to hold of x and y \ifeff{} there is an arrow running from x to y in our diagram. As an
 example, we might offer:
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[alt={The numbers 1, 2, 3, and 4 are connected
+by arrows. There are arrows from 1 to 2 and 3, from 2 to 3, from 3 to
+4, and from 4 to 1.}]
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
 \node (atom3) at (2,0) {$3$};
@@ -199,7 +201,8 @@ This diagram could be used to describe an interpretation whose domain is the fir
 Equally we might offer this diagram:
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[alt={The numbers 1, 3, and 4 are connected by arrows.
+There are arrows from 1 to 3 and to itself, and from 3 to 1, 4 and itself. The number 2 is included but has no arrows coming in or going out.}]
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
 \node (atom3) at (2,0) {$3$};
@@ -499,7 +502,7 @@ Determine whether each of the following sentences is true or false in that inter
 \label{pr.TorF3}
 Following the diagram conventions introduced at the end of \cref{s:Interpretations}, consider the following interpretation:	
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[alt={The numbers 1, 2, 3, 4, and 5 are connected by arrows. There are arrows from 1 to 2, 3, 4, 5, and to itself, from 2 to 5, from 5 to itself, and from 4 to 1. There is no arrow leaving 3.}]
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
 \node (atom4) at (0,0) {$3$};
@@ -780,7 +783,7 @@ The premise is clearly true on this interpretation. Anyone in the domain is a Ca
 
 For our third example, we'll mix things up a bit. In \cref{s:Interpretations}, we described how we can present some interpretations using diagrams. For example:
 \begin{center}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[alt={The numbers 1, 2, and 3 are connected by arrows. There are arrows from 1 to 2, 3, and to itself, and from 2 to 3. There is no arrow leaving 3.}]
 	\node (atom1) at (0,2) {1};
 	\node (atom2) at (2,2) {2};
 	\node (atom3) at (2,0) {3};

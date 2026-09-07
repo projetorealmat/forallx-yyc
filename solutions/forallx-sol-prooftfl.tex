@@ -18,12 +18,12 @@ The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \hypo{abc}{(\enot L \land A) \eor L}
 \open
 \hypo{nla}{\enot L \eand A}
-\have{nl}{\enot L}\ae{nl}
+\have{nl}{\enot L}\ae{nla}
         \have{a}{A}\ae{abc}
 \close
 \open
         \hypo{l}{L}
-        \have{red}{\ered}\ri{l, nl}
+        \have{red}{\ered}\ri{nl,l}
         \have{a2}{A}\re{red}
 \close
 \have{con}{A}\oe{abc, nla-a, l-a2}
