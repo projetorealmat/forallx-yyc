@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it."
+title: "forall x: Calgary: An Introduction to Formal Logic"
+version: "0.0.0"
+authors:
+  - family-names: Magnus
+    given-names: P. D.
+  - family-names: Button
+    given-names: Tim
+  - family-names: Thomas-Bolduc
+    given-names: Aaron
+  - family-names: Zach
+    given-names: Richard
+  - family-names: Loftis
+    given-names: J. Robert
+repository-code: "https://github.com/projetorealmat/forallx-yyc"
+license: "CC-BY-4.0"
