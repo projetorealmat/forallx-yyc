@@ -172,3 +172,10 @@ International License](https://creativecommons.org/licenses/by/4.0/).
 The LaTeX source code for this work is available on GitHub at
 [github.com/rzach/forallx-yyc](https://github.com/rzach/forallx-yyc).
 
+## REALMat integration
+
+This repository is integrated into REALMat as the original English source. The integration adds release metadata and automated PDF publication without changing the book's mathematical content.
+
+<!-- realmat-release:start -->
+No REALMat release has been published yet.
+<!-- realmat-release:end -->
