@@ -1,0 +1,14 @@
+{
+  "id": "forallx-yyc",
+  "title": "forall x: Calgary — An Introduction to Formal Logic",
+  "short_title": "forall x: Calgary",
+  "subject": "Formal logic",
+  "base_branch": "master",
+  "build_system": "latex",
+  "latex_entrypoint": "forallxyyc.tex",
+  "latex_engine": "pdflatex",
+  "pdf_name": "forallxyyc.pdf",
+  "citation_file": "CITATION.cff",
+  "readme_file": "README.md",
+  "portal_repository": "projetorealmat/projetorealmat.github.io"
+}
