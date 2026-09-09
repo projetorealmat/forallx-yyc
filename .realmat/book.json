@@ -10,5 +10,7 @@
   "pdf_name": "forallxyyc.pdf",
   "citation_file": "CITATION.cff",
   "readme_file": "README.md",
+  "source_url": "https://github.com/rzach/forallx-yyc",
+  "source_license": "CC BY 4.0",
   "portal_repository": "projetorealmat/projetorealmat.github.io"
 }
