@@ -174,7 +174,7 @@ The LaTeX source code for this work is available on GitHub at
 
 ## REALMat integration
 
-This repository is integrated into REALMat as the original English source. The integration adds release metadata and automated PDF publication without changing the book's mathematical content.
+This repository is the REALMat edition in preparation, based on the English source repository. Translation and adaptation will take place here; the upstream repository is retained only for provenance, credits, and license information.
 
 <!-- realmat-release:start -->
 No REALMat release has been published yet.
