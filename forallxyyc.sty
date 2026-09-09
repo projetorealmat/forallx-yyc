@@ -326,9 +326,9 @@
 \usetikzlibrary{arrows,positioning,shapes} 
 % `alt` is consumed by the accessible BookML/LaTeXML output.  The PDF
 % backend does not define the key, so ignore it when compiling with TeX.
-iflatexmlelse
-  	ikzset{alt/.code={}}
-i
+\iflatexmlelse
+  \tikzset{alt/.code={}}
+\fi
 
 \tikzset{phantom_shape/.style={thick, fill=none, minimum width=30pt, minimum height=30pt}, % TB: renders the shape invisible
 		grey_shape/.style={thick, fill=black!20, draw, minimum width=30pt, minimum height=30pt}, % TB: renders a light grey shape with a black outline
