@@ -326,7 +326,8 @@
 \usetikzlibrary{arrows,positioning,shapes} 
 % `alt` is consumed by the accessible BookML/LaTeXML output.  The PDF
 % backend does not define the key, so ignore it when compiling with TeX.
-\iflatexmlelse
+\iflatexml
+\else
   \tikzset{alt/.code={}}
 \fi
 
