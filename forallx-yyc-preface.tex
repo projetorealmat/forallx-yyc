@@ -1,65 +1,69 @@
-\chapter{Preface}\label{preface}
+\chapter{Prefácio}\label{preface}
 
-\paragraph{About this book}
+\paragraph{Sobre este livro}
 
-As the title indicates, this is a textbook on formal logic.  Formal logic concerns the study of a certain kind of language which, like any language, can serve to express states of affairs.  It is a formal language, i.e., its expressions (such as sentences) are defined formally.  This makes it a very useful language for being very precise about the states of affairs its sentences describe. In particular, in formal logic it is impossible to be ambiguous. The study of these languages centres on the relationship of entailment between sentences, i.e., which sentences follow from which other sentences.  Entailment is central because by understanding it better we can tell when some states of affairs must obtain provided some other states of affairs obtain.  But entailment is not the only important notion. We will also consider the relationship of being satisfiable, i.e., of not being mutually contradictory.  These notions can be defined semantically, using precise definitions of entailment based on interpretations of the language---or proof-theoretically, using formal systems of deduction.
+Como o título indica, este é um livro-texto sobre lógica formal. A lógica formal trata do estudo de um certo tipo de linguagem que, como qualquer linguagem, pode servir para expressar estados de coisas. É uma linguagem formal, isto é, suas expressões (como sentenças) são definidas formalmente. Isso a torna uma linguagem muito útil para tratar com precisão os estados de coisas que suas sentenças descrevem. Em particular, na lógica formal é impossível haver ambiguidade. O estudo dessas linguagens concentra-se na relação de consequência lógica entre sentenças, isto é, em quais sentenças decorrem de quais outras sentenças. A consequência lógica é central porque, ao compreendê-la melhor, podemos determinar quando certos estados de coisas devem ocorrer, desde que ocorram outros estados de coisas. Mas a consequência lógica não é a única noção importante. Também consideraremos a relação de satisfatibilidade, isto é, de não serem mutuamente contraditórias. Essas noções podem ser definidas semanticamente, usando definições precisas de consequência lógica baseadas em interpretações da linguagem — ou do ponto de vista da teoria da prova, usando sistemas formais de dedução.
 
-Formal logic is of course a central sub-discipline of philosophy, where the logical relationship of assumptions to conclusions reached from them is important.  Philosophers investigate the consequences of definitions and assumptions and evaluate these definitions and assumptions on the basis of their consequences. It is also important in mathematics and computer science. In mathematics, formal languages are used to describe not ``everyday'' states of affairs, but mathematical states of affairs. Mathematicians are also interested in the consequences of definitions and assumptions, and for them it is equally important to establish these consequences (which they call ``theorems'') using completely precise and rigorous methods. Formal logic provides such methods.  In computer science, formal logic is applied to describe the state and behaviours of computational systems, e.g., circuits, programs, databases, etc.  Methods of formal logic can likewise be used to establish consequences of such descriptions, such as whether a circuit is error-free, whether a program does what it's intended to do, whether a database is consistent or if something is true of the data in it.
+A lógica formal é, naturalmente, uma subdisciplina central da filosofia, na qual é importante a relação lógica entre pressupostos e conclusões deles obtidas. Filósofos investigam as consequências de definições e pressupostos e avaliam essas definições e pressupostos com base em suas consequências. A lógica formal também é importante na matemática e na ciência da computação. Na matemática, as linguagens formais são usadas para descrever não estados de coisas da \textquotedblleft vida cotidiana\textquotedblright, mas estados de coisas matemáticos. Os matemáticos também se interessam pelas consequências de definições e pressupostos e, para eles, é igualmente importante estabelecer essas consequências (que chamam de \textquotedblleft teoremas\textquotedblright) por meio de métodos completamente precisos e rigorosos. A lógica formal fornece tais métodos. Na ciência da computação, a lógica formal é aplicada para descrever o estado e os comportamentos de sistemas computacionais, como circuitos, programas, bancos de dados etc. Métodos de lógica formal também podem ser usados para estabelecer consequências dessas descrições, como verificar se um circuito não contém erros, se um programa faz aquilo que deve fazer, se um banco de dados é consistente ou se algo é verdadeiro a respeito dos dados nele contidos.
 
-The book is divided into nine parts. \Cref{ch.intro} introduces the topic and notions of logic in an informal way, without introducing a formal language yet.  \Crefrange{ch.TFL}{ch.NDTFL} concern truth-functional languages. In it, sentences are formed from basic sentences using a number of connectives (`or', `and', `not', `if \dots then') which just combine sentences into more complicated ones.  We discuss logical notions such as entailment in two ways: semantically, using the method of truth tables (in \cref{ch.TruthTables}) and proof-theoretically, using a system of formal derivations (in \cref{ch.NDTFL}). \Crefrange{ch.FOL}{ch.NDFOL} deal with a more complicated language, that of first-order logic. It includes, in addition to the connectives of truth-functional logic, also names, predicates, identity, and the so-called quantifiers. These additional elements of the language make it much more expressive than the truth-functional language, and we'll spend a fair amount of time investigating just how much one can express in it.  Again, logical notions for the language of first-order logic are defined semantically, using interpretations, and proof-theoretically, using a more complex version of the formal derivation system introduced in \cref{ch.NDTFL}.  \Cref{ch.ML} discusses the extension of TFL by non-truth-functional operators for possibility and necessity: modal logic. \Cref{ch.normalform} covers two advanced topics: that of conjunctive and disjunctive normal forms and the functional completeness of the truth-functional connectives, and the soundness of natural deduction for TFL.
+O livro está dividido em nove partes. \Cref{ch.intro} introduz o tema e as noções de lógica de maneira informal, sem ainda introduzir uma linguagem formal. \Crefrange{ch.TFL}{ch.NDTFL} tratam de linguagens verofuncionais. Nelas, as sentenças são formadas a partir de sentenças básicas usando diversos conectivos (\textquotedblleft ou\textquotedblright, \textquotedblleft e\textquotedblright, \textquotedblleft não\textquotedblright, \textquotedblleft se \dots então\textquotedblright) que simplesmente combinam sentenças em outras mais complexas. Discutimos noções lógicas como a consequência lógica de duas maneiras: semanticamente, usando o método das tabelas-verdade (em \cref{ch.TruthTables}), e do ponto de vista da teoria da prova, usando um sistema de derivações formais (em \cref{ch.NDTFL}). \Crefrange{ch.FOL}{ch.NDFOL} tratam de uma linguagem mais complexa: a lógica de primeira ordem. Além dos conectivos da lógica verofuncional, ela inclui também nomes, predicados, identidade e os chamados quantificadores. Esses elementos adicionais tornam essa linguagem muito mais expressiva que a linguagem verofuncional, e passaremos um bom tempo investigando precisamente quanto é possível expressar nela. Novamente, as noções lógicas da linguagem de primeira ordem são definidas semanticamente, usando interpretações, e do ponto de vista da teoria da prova, usando uma versão mais complexa do sistema de derivações formais introduzido em \cref{ch.NDTFL}. \Cref{ch.ML} discute a extensão da LVF por operadores não verofuncionais de possibilidade e necessidade: a lógica modal. \Cref{ch.normalform} aborda dois tópicos avançados: formas normais conjuntivas e disjuntivas e a completude funcional dos conectivos verofuncionais, além da correção da dedução natural para a LVF.
 
-In the appendices you'll find a discussion of alternative notations for the languages we discuss in this text, of alternative derivation systems, and a quick reference listing most of the important rules and definitions. The central terms are listed in a glossary at the very end.
+Nos apêndices, você encontrará uma discussão sobre notações alternativas para as linguagens tratadas neste texto, sistemas alternativos de derivação e uma referência rápida que lista a maioria das regras e definições importantes. Os termos centrais estão listados em um glossário ao final do livro.
 
-\paragraph{Credits} This book is based on a text originally written by
-P.~D. Magnus in the version revised and expanded by Tim Button. It
-also includes some material (mainly exercises) by J.~Robert Loftis.
-The material in \cref{ch.ML} is based on notes by Robert Trueman (but
-rewritten to use Fitch's original natural deduction rules for modal
-logic), and the material in
-\cref{c:NormalForms,c:FunctionalCompleteness,ch:Soundness} on two
-chapters from Tim Button's open text \textit{Metatheory}. Aaron
-Thomas-Bolduc and Richard Zach have combined elements of these texts
-into the present version, changed some of the terminology and
-examples, rewritten some sections, and added material of their own. In
-particular, Richard Zach rewrote \cref{s:Arguments,s:Valid}, and added
+\paragraph{Créditos} Este livro é baseado em um texto originalmente escrito por
+P.~D. Magnus, na versão revisada e ampliada por Tim Button. Ele
+também inclui algum material (principalmente exercícios) de J.~Robert Loftis.
+O material em \cref{ch.ML} baseia-se em notas de Robert Trueman (mas foi
+reescrito para usar as regras originais de dedução natural de Fitch para a
+lógica modal), e o material em
+\cref{c:NormalForms,c:FunctionalCompleteness,ch:Soundness} baseia-se em dois
+capítulos do texto aberto \textit{Metatheory}, de Tim Button. Aaron
+Thomas-Bolduc e Richard Zach combinaram elementos desses textos
+na presente versão, alteraram parte da terminologia e dos
+exemplos, reescreveram algumas seções e acrescentaram material próprio. Em
+particular, Richard Zach reescreveu \cref{s:Arguments,s:Valid} e acrescentou
 \cref{s:AmbiguityTFL,s:stratTFL,s:ambiguityFOL,ch:PropRelations,ch:equivalences}.
-As of the Fall 2019 edition, the part on FOL uses the syntax more
-common in advanced texts (such as those based on the
-\href{https://openlogicproject.org/}{Open Logic Project}) where
-arguments to predicate symbols are enclosed in parentheses (i.e.,
-`$R(a,b)$' instead of `$Rab$'). This version of \forallx{} also uses
-the standard definition of syntax for FOL which allows vacuous
-quantification, and Gentzen's original introduction and elimination
-rules for natural deduction (i.e., double negation elimination and
-excluded middle rules are derived rules, and indirect proof is the
-only classical rule). The resulting text is licensed under a Creative
-Commons Attribution 4.0 license. There are
-\href{https://github.com/OpenLogicProject/OpenLogic/wiki/Other-Logic-Textbooks}{several
-other} ``remixes'' of \forallx, including translations of this
-version.
+A partir da edição do outono de 2019, a parte sobre LPO usa a sintaxe mais
+comum em textos avançados (como os baseados no
+\href{https://openlogicproject.org/}{Open Logic Project}), nos quais os
+argumentos dos símbolos de predicado são colocados entre parênteses (isto é,
+\textquotedblleft $R(a,b)$\textquotedblright{} em vez de \textquotedblleft $Rab$\textquotedblright{}). Esta versão de \forallx{} também usa a
+definição padrão de sintaxe para LPO, que permite a quantificação vazia, e as
+regras originais de introdução e eliminação da dedução natural de Gentzen (isto
+é, as regras de eliminação da dupla negação e do terceiro excluído são regras
+derivadas, e a prova indireta é a única regra clássica). O texto resultante é
+licenciado sob uma licença Creative Commons Atribuição 4.0. Existem
+\href{https://github.com/OpenLogicProject/OpenLogic/wiki/Other-Logic-Textbooks}{vários
+outros} \textquotedblleft remixes\textquotedblright{} de \forallx, incluindo traduções desta versão.
 
-\paragraph{Notes for instructors} The material in this book is suitable for a semester-long introduction to formal logic. I cover \crefrange{ch.intro}{ch.NDFOL} plus \cref{c:NormalForms,c:FunctionalCompleteness,ch:equivalences} in 12 weeks, although I leave out partial truth tables and derived inference rules.
+\paragraph{Notas para docentes} O material deste livro é adequado para uma introdução à lógica formal ao longo de um semestre. Eu cubro \crefrange{ch.intro}{ch.NDFOL}, além de \cref{c:NormalForms,c:FunctionalCompleteness,ch:equivalences}, em 12 semanas, embora deixe de fora as tabelas-verdade parciais e as regras de inferência derivadas.
 
-The most recent version of this book is available in PDF at
+A versão mais recente deste livro está disponível em PDF em
 \href{https://forallx.openlogicproject.org}{forallx.openlogicproject.org},
-but changes frequently.  The CC BY license gives you the right to
-download and distribute the book yourself. In order to ensure that all
-your students have the same version of the book throughout the term
-you're using it, you should do so: upload the PDF you decide to use to
-your LMS rather than merely give your students the link. The book is
-also available in an
-\href{https://forallx.openlogicproject.org/html/}{HTML version}. This
-version has been prepared with
-\href{https://forallx.openlogicproject.org/html/A4.html}{special
-attention to accessibility issues} and should be more suitable for
-users who rely on screen readers, e.g., students with low vision or
-complete loss of vision. You can download a SCORM bundle including the
-HTML and PDF versions for upload to your LMS. You are also free to
-have the PDFs printed by your bookstore, but some bookstores may be
-able to purchase and stock the softcover books available on Amazon.
+mas muda com frequência. A licença CC BY dá a você o direito de
+baixar e distribuir o livro por conta própria. Para garantir que todos os
+seus estudantes tenham a mesma versão do livro durante o período em que você
+o estiver utilizando, faça isso: envie o PDF escolhido para o seu AVA, em vez
+de simplesmente fornecer aos estudantes o link. O livro também está disponível em
+uma
+\href{https://forallx.openlogicproject.org/html/}{versão HTML}. Essa
+versão foi preparada com
+\href{https://forallx.openlogicproject.org/html/A4.html}{atenção especial às
+questões de acessibilidade} e deve ser mais adequada para pessoas que dependem
+de leitores de tela, por exemplo, estudantes com baixa visão ou perda total da
+visão. Você pode baixar um pacote SCORM que inclui as versões HTML e PDF para
+enviá-las ao seu AVA. Você também pode pedir que os PDFs sejam impressos por sua
+livraria, mas algumas livrarias talvez consigam comprar e manter em estoque os
+livros de capa flexível disponíveis na Amazon.
 
-Note that solutions to many exercises in the book are available at the
-above site as well (to everyone, including your students). The
-solutions are also part of the HTML version and the SCORM bundle.
+Observe que as soluções de muitos exercícios do livro também estão disponíveis
+no site acima (para todos, inclusive seus estudantes). As soluções também
+fazem parte da versão HTML e do pacote SCORM.
 
-The syntax and proof systems (except those for modal logic) are supported by Graham Leach-Krouse's free, online logic teaching software application \textit{Carnap} (\href{https://carnap.io}{carnap.io}). This allows for submission and automated marking of exercises such as symbolization, truth tables, and natural deduction proofs.  Instructors on carnap.io will be able to find \href{https://carnap.io/shared/rzach@ucalgary.ca/forall%20x:%20Calgary.md}{samples of additional exercises} they may wish to adapt or assign as-is.
+A sintaxe e os sistemas de prova (exceto os de lógica modal) são apoiados pelo
+aplicativo gratuito de ensino de lógica on-line \textit{Carnap}, de Graham
+Leach-Krouse (\href{https://carnap.io}{carnap.io}). Ele permite o envio e a
+correção automática de exercícios de simbolização, tabelas-verdade e provas de
+dedução natural. Docentes em carnap.io poderão encontrar
+\href{https://carnap.io/shared/rzach@ucalgary.ca/forall%20x:%20Calgary.md}{amostras de exercícios adicionais}
+que talvez queiram adaptar ou atribuir tal como estão.

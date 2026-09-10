@@ -1,7 +1,7 @@
 %!TEX root = forallxyyc.tex
 
 \ifHTMLtarget\else
-% Bastard Title
+% Título de rosto
 
 \pagestyle{empty}
 
@@ -16,14 +16,14 @@
 
 \medskip\fontsize{18pt}{20pt}\selectfont
 
-\textbf{An Introduction to\\ Formal Logic}
+\textbf{Uma introdução à\\ lógica formal}
 
 \vfill
-\fontsize{12pt}{16pt}\selectfont \textit{By } \textbf{P.~D. Magnus}\\
+\fontsize{12pt}{16pt}\selectfont \textit{Por } \textbf{P.~D. Magnus}\\
 \textbf{Tim Button}\\
 \textbf{Robert Trueman}\\
 \textbf{Richard Zach}\\
-\textit{with contributions by}\\
+\textit{com contribuições de}\\
 \textbf{J.~Robert Loftis}\\
 \textbf{Aaron Thomas-Bolduc}\\ 
 
@@ -35,28 +35,28 @@
 
 \noindent\small%
 \fi
-This book is based on
+Este livro é baseado em
 \href{https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html}{\forallx:
-\textit{Cambridge}}, by 
-\href{https://www.homepages.ucl.ac.uk/~uctytbu/}{Tim Button} (University College London), 
-used under a \href{https://creativecommons.org/licenses/by/4.0/}{CC BY
-4.0} license, which is based in turn
-on \href{https://www.fecundity.com/logic/}{\forallx}, by
-\href{https://www.fecundity.com/job/}{P.D.\ Magnus} 
+\textit{Cambridge}}, de
+\href{https://www.homepages.ucl.ac.uk/~uctytbu/}{Tim Button} (University College London),
+utilizado sob uma licença \href{https://creativecommons.org/licenses/by/4.0/}{CC BY
+4.0}, que por sua vez se baseia
+em \href{https://www.fecundity.com/logic/}{\forallx}, de
+\href{https://www.fecundity.com/job/}{P.D.\ Magnus}
 (University at Albany, State University of New York),
-used under a \href{https://creativecommons.org/licenses/by/4.0/}{CC BY
-4.0} license, 
-and was remixed, revised, \& expanded by Aaron
-Thomas-Bolduc \& \href{https://richardzach.org/}{Richard Zach}
+utilizado sob uma licença \href{https://creativecommons.org/licenses/by/4.0/}{CC BY
+4.0},
+e foi remixado, revisado e ampliado por Aaron
+Thomas-Bolduc e \href{https://richardzach.org/}{Richard Zach}
 (University of Calgary).
-It includes additional material from \forallx{} by P.~D. Magnus and
-\href{https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html}{\textit{Metatheory}} by Tim Button, 
-used under a \href{https://creativecommons.org/licenses/by/4.0/}{CC BY
-4.0} license, 
-from \href{https://github.com/rob-helpy-chalk/openintroduction}{\forallx: \textit{Lorain
+Ele inclui material adicional de \forallx{} por P.~D. Magnus e
+\href{https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html}{\textit{Metatheory}}, de Tim Button,
+utilizado sob uma licença \href{https://creativecommons.org/licenses/by/4.0/}{CC BY
+4.0},
+de \href{https://github.com/rob-helpy-chalk/openintroduction}{\forallx: \textit{Lorain
 County Remix}},
-by \href{https://sites.google.com/site/cathalwoods/}{Cathal Woods} and
-J. Robert Loftis, and from \href{http://www.rtrueman.com/uploads/7/0/3/2/70324387/modal_logic_primer.pdf}{\textit{A Modal Logic Primer}} by \href{http://www.rtrueman.com/}{Robert Trueman}, used with permission.
+de \href{https://sites.google.com/site/cathalwoods/}{Cathal Woods} e
+J. Robert Loftis, e de \href{http://www.rtrueman.com/uploads/7/0/3/2/70324387/modal_logic_primer.pdf}{\textit{A Modal Logic Primer}}, de \href{http://www.rtrueman.com/}{Robert Trueman}, utilizado com permissão.
 
 
 \ifHTMLtarget\else
@@ -64,32 +64,32 @@ J. Robert Loftis, and from \href{http://www.rtrueman.com/uploads/7/0/3/2/7032438
 
   \noindent\footnotesize
 \fi
-This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0} license.
-You are free to copy and redistribute the material in any medium or format, and  remix, transform, and build upon the material for any purpose, even commercially, under the following terms:
+Esta obra está licenciada sob uma licença \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Atribuição 4.0}.
+Você pode copiar e redistribuir o material em qualquer meio ou formato, bem como remixá-lo, transformá-lo e criar obras derivadas para qualquer finalidade, inclusive comercialmente, nos termos seguintes:
 \begin{itemize}
-\item You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-\item You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+\item Você deve atribuir o devido crédito, fornecer um link para a licença e indicar se foram feitas alterações. Isso pode ser feito de qualquer maneira razoável, mas não de modo que sugira que o licenciador apoia você ou o uso que você faz da obra.
+\item Você não pode aplicar termos jurídicos nem medidas tecnológicas que restrinjam legalmente outras pessoas de fazer qualquer coisa que a licença permita.
 \end{itemize}
 
 \ifHTMLtarget\else
 \vfil\normalsize\noindent
 \fi
-The \LaTeX{} source for this book is available on Github at
-\href{https://github.com/rzach/forallx-yyc/}{github.com/rzach/forallx-yyc/} and in PDF and
-HTML format at
+O código-fonte \LaTeX{} deste livro está disponível no GitHub em
+\href{https://github.com/rzach/forallx-yyc/}{github.com/rzach/forallx-yyc/} e nos formatos PDF e
+HTML em
 \href{https://forallx.openlogicproject.org}{forallx.openlogicproject.org}.
-This version is revision \gitAbbrevHash{}
+Esta versão é a revisão \gitAbbrevHash{}
 (\gitCommitterDate).
 
 \bigskip
 \noindent
-The preparation of this textbook was made possible by a grant from the \href{https://taylorinstitute.ucalgary.ca/}{Taylor Institute for Teaching and Learning}.
+A preparação deste livro-texto foi possível graças a uma bolsa do \href{https://taylorinstitute.ucalgary.ca/}{Taylor Institute for Teaching and Learning}.
 
 \bigskip
 \noindent
 \href{https://taylorinstitute.ucalgary.ca/}{%
 %  \iflatexml
-    \includegraphics[alt={Logo of the Taylor Institute for Teaching and Learning}]
+    \includegraphics[alt={Logotipo do Taylor Institute for Teaching and Learning}]
       {assets/ti-color}
   % \else
   %   \includegraphics[width=8cm]{assets/ti-color}
@@ -97,13 +97,13 @@ The preparation of this textbook was made possible by a grant from the \href{htt
   }
 
 \ifHTMLtarget
-The HTML format is produced using
-\href{https://vlmantova.github.io/bookml/}{BookML} by
-\href{https://eps.leeds.ac.uk/maths/staff/4058/dr-vincenzo-l-mantova}{Vincenzo Mantova}
-and \href{https://dlmf.nist.gov/LaTeXML/}{\LaTeX{}ML} by
-\href{https://www.nist.gov/people/bruce-r-miller}{Bruce Miller} and
-\href{https://prodg.org/}{Deyan Ginev}. 
+O formato HTML é produzido com
+\href{https://vlmantova.github.io/bookml/}{BookML}, de
+\href{https://eps.leeds.ac.uk/maths/staff/4058/dr-vincenzo-l-mantova}{Vincenzo Mantova},
+e \href{https://dlmf.nist.gov/LaTeXML/}{\LaTeX{}ML}, de
+\href{https://www.nist.gov/people/bruce-r-miller}{Bruce Miller} e
+\href{https://prodg.org/}{Deyan Ginev}.
 \else
 \bigskip
-\noindent Cover design by Mark Lyall.
+\noindent Projeto da capa: Mark Lyall.
 \fi
