@@ -122,289 +122,228 @@ Eis o primeiro exercício. Destaque a expressão que exprime a conclusão de cad
 \end{compactlist}
 
 
-\chapter{The scope of logic}
+\chapter{O escopo da lógica}
 \label{s:Valid}
 
-\section{Consequence and validity}
+\section{Consequência e validade}
 
-In \cref{s:Arguments}, we talked about arguments, i.e., collections of sentences (the premises), followed by a single sentence (the conclusion). We said that some words, such as `therefore', indicate which sentence is supposed to be the conclusion. `Therefore', of course, suggests that there is a connection between the premises and the conclusion, namely that the conclusion \emph{follows from}, or \emph{is a consequence of}, the premises.
+Em \cref{s:Arguments}, falamos de argumentos, isto é, de conjuntos de sentenças (as premissas), seguidas por uma única sentença (a conclusão). Dissemos que algumas palavras, como \textquotedblleft portanto\textquotedblright{}, indicam qual sentença deve ser a conclusão. \textquotedblleft Portanto\textquotedblright{}, é claro, sugere que há uma conexão entre as premissas e a conclusão, a saber, que a conclusão \emph{decorre das} premissas ou \emph{é uma consequência das} premissas.
 
-This notion of consequence is one of the primary things logic is concerned with. One might even say that logic is the science of what follows from what.  Logic develops theories and tools that tell us when a sentence follows from some others.
+Essa noção de consequência é uma das principais preocupações da lógica. Poderíamos até dizer que a lógica é a ciência do que decorre de quê. A lógica desenvolve teorias e ferramentas que nos dizem quando uma sentença decorre de outras.
 
-What about the main argument discussed in \cref{s:Arguments}? 
+E quanto ao argumento principal discutido em \cref{s:Arguments}? 
 \begin{earg}
-	\item[] Either the butler or the gardener did it.
-	\item[] The butler didn't do it.
-	\item[\texttherefore] The gardener did it.
+	\item[] Ou foi o mordomo ou foi o jardineiro.
+	\item[] O mordomo não fez isso.
+	\item[\texttherefore] O jardineiro fez isso.
 \end{earg}
-We don't have any context for what the sentences in this argument refer to. Perhaps you suspect that ``did it'' here means ``was the perpetrator'' of some unspecified crime. You might imagine that the argument occurs in a mystery novel or TV show, perhaps spoken by a detective working through the evidence. But even without having any of this information, you probably agree that the argument is a good one in the sense that whatever the premises refer to, if they are both true, the conclusion cannot but be true as well. If the first premise is true, i.e., it's true that ``the butler did it or the gardener did it'', then at least one of them ``did it'', whatever that means. And if the second premise is true, then the butler did not ``do it.'' That leaves only one option: ``the gardener did it'' must be true. Here, the conclusion follows from the premises. We call arguments that have this property \define{valid}.
+Não temos nenhum contexto que nos diga a que se referem as sentenças desse argumento. Talvez você suspeite que \textquotedblleft fez isso\textquotedblright{} signifique aqui \textquotedblleft foi o autor\textquotedblright{} de algum crime não especificado. Você pode imaginar que o argumento ocorre em um romance policial ou em um programa de televisão, talvez dito por um detetive que examina as evidências. Mas, mesmo sem nenhuma dessas informações, você provavelmente concorda que o argumento é bom no sentido de que, seja lá ao que as premissas se refiram, se ambas forem verdadeiras, a conclusão também não poderá deixar de ser verdadeira. Se a primeira premissa for verdadeira, isto é, se for verdade que \textquotedblleft o mordomo fez isso ou o jardineiro fez isso\textquotedblright{}, então pelo menos um deles \textquotedblleft fez isso\textquotedblright{}, seja lá o que isso signifique. E, se a segunda premissa for verdadeira, então o mordomo não \textquotedblleft fez isso\textquotedblright{}. Resta apenas uma opção: \textquotedblleft o jardineiro fez isso\textquotedblright{} deve ser verdadeiro. Aqui, a conclusão decorre das premissas. Chamamos de \define{válidos} os argumentos que têm essa propriedade.
 
-By way of contrast, consider the following argument:
+Em contraste, considere o seguinte argumento:
 \begin{earg}\label{argMaidDriver}
-	\item[] If the driver did it, the maid didn't do it.
-	\item[] The maid didn't do it.
-	\item[\texttherefore] The driver did it.
+	\item[] Se o motorista fez isso, a criada não fez isso.
+	\item[] A criada não fez isso.
+	\item[\texttherefore] O motorista fez isso.
 \end{earg}
-We still have no idea what is being talked about here. But, again, you probably agree that this argument is different from the previous one in an important respect. If the premises are true, it is \emph{not} guaranteed that the conclusion is also true. The premises of this argument do not rule out, by themselves, that someone other than the maid or the driver ``did it.'' So there is a case where both premises are true, and yet the driver didn't do it, i.e., the conclusion is not true. In this second argument, the conclusion does not follow from the premises. If, like in this argument, the conclusion does not follow from the premises, we say it is \define{invalid}.
+Ainda não temos ideia do que está sendo discutido aqui. Mas, novamente, você provavelmente concorda que esse argumento é diferente do anterior em um aspecto importante. Se as premissas forem verdadeiras, não é garantido que a conclusão também seja verdadeira. As premissas desse argumento não excluem, por si sós, que alguém que não seja a criada nem o motorista tenha feito isso. Portanto, há um caso em que ambas as premissas são verdadeiras e, ainda assim, o motorista não fez isso, isto é, a conclusão não é verdadeira. Nesse segundo argumento, a conclusão não decorre das premissas. Se, como nesse argumento, a conclusão não decorre das premissas, dizemos que ele é \define{inválido}.
 
-\section{Cases and types of validity}
+\section{Casos e tipos de validade}
 
-How did we determine that the second argument is invalid? We pointed to a case in which the premises are true and in which the conclusion is not.  This was the scenario where neither the driver nor the maid did it, but some third person did.  Let's call such a case a \define{counterexample} to the argument. If there is a counterexample to an argument, the conclusion cannot be a consequence of the premises. For the conclusion to be a consequence of the premises, the truth of the premises must guarantee the truth of the conclusion. If there is a counterexample, the truth of the premises does not guarantee the truth of the conclusion.
+Como determinamos que o segundo argumento é inválido? Apontamos para um caso em que as premissas são verdadeiras e a conclusão não é. Esse era o cenário em que nem o motorista nem a criada fizeram isso, mas uma terceira pessoa fez. Chamemos esse caso de \define{contraexemplo} do argumento. Se há um contraexemplo para um argumento, a conclusão não pode ser uma consequência das premissas. Para que a conclusão seja uma consequência das premissas, a verdade das premissas deve garantir a verdade da conclusão. Se há um contraexemplo, a verdade das premissas não garante a verdade da conclusão.
 
-As logicians, we want to be able to determine when the conclusion of an argument follows from the premises. And the conclusion is a consequence of the premises if there is no counterexample---no case where the premises are all true but the conclusion is not. This motivates a definition:
+Como lógicos, queremos ser capazes de determinar quando a conclusão de um argumento decorre das premissas. E a conclusão é uma consequência das premissas se não há contraexemplo — nenhum caso em que todas as premissas sejam verdadeiras, mas a conclusão não seja. Isso motiva uma definição:
 
 	\factoidbox{
-		A sentence $A$ is a \define{consequence} of sentences $B_1$, \dots, $B_n$ if and only if there is no case where $B_1$, \dots, $B_n$ are all true and $A$ is not true. (We then also say that $A$ \define{follows from} $B_1$, \dots, $B_n$ or that $B_1$, \dots, $B_n$ \define{entail}~$A$.)
+		Uma sentença $A$ é uma \define{consequência} das sentenças $B_1$, \dots, $B_n$ se, e somente se, não há caso em que $B_1$, \dots, $B_n$ sejam todas verdadeiras e $A$ não seja verdadeira. (Também dizemos que $A$ \define{decorre de} $B_1$, \dots, $B_n$ ou que $B_1$, \dots, $B_n$ \define{implicam}~$A$.)
 	}
 
-This ``definition'' is incomplete: it does not tell us what a ``case'' is or what it means to be ``true in a case.''  So far we've only seen an example: a hypothetical scenario involving three people. Of the three people in the scenario---a driver, a maid, and some third person---the driver and maid didn't do it, but the third person did. In this scenario, as described, the driver didn't do it, and so it is a case in which the sentence ``the driver did it'' is not true. The premises of our second argument are true, but the conclusion is not true: the scenario is a counterexample.
+Essa \textquotedblleft definição\textquotedblright{} é incompleta: ela não nos diz o que é um \textquotedblleft caso\textquotedblright{} nem o que significa ser \textquotedblleft verdadeiro em um caso\textquotedblright{}. Até agora, vimos apenas um exemplo: um cenário hipotético envolvendo três pessoas. Das três pessoas no cenário — um motorista, uma criada e uma terceira pessoa qualquer —, o motorista e a criada não fizeram isso, mas a terceira pessoa fez. Nesse cenário, tal como descrito, o motorista não fez isso e, portanto, é um caso em que a sentença \textquotedblleft o motorista fez isso\textquotedblright{} não é verdadeira. As premissas do nosso segundo argumento são verdadeiras, mas a conclusão não é verdadeira: o cenário é um contraexemplo.
 
-We said that arguments where the conclusion is a consequence of the premises are called valid, and those where the conclusion isn't a consequence of the premises are invalid. Since we now have at least a first stab at a definition of ``consequence'', we'll record this: 
+Dissemos que os argumentos em que a conclusão é uma consequência das premissas são chamados de válidos, e aqueles em que a conclusão não é uma consequência das premissas são inválidos. Como agora temos pelo menos uma primeira tentativa de definição de \textquotedblleft consequência\textquotedblright{}, vamos registrar isto:
 
 	\factoidbox{
 		\begin{factoiditems}
-			\item An argument is \define{valid} if and only if the
-			conclusion is a consequence of the premises.
-			\item An argument is \define{invalid} if and only if it is not
-			valid, i.e., it has a counterexample.
+			\item Um argumento é \define{válido} se, e somente se, a conclusão é uma consequência das premissas.
+			\item Um argumento é \define{inválido} se, e somente se, não é válido, isto é, tem um contraexemplo.
 		\end{factoiditems}}
 
 \newglossaryentry{valid}
 {
-name=valid,
-description={A property of arguments where there conclusion is a consequence of the premises}
+name=válido,
+description={Uma propriedade de argumentos cuja conclusão é uma consequência das premissas}
 }
 
 \newglossaryentry{invalid}
 {
-name=invalid,
-description={A property of arguments that holds when the conclusion is not a consequence of the premises; the opposite of \gls{valid}}
+name=inválido,
+description={Uma propriedade de argumentos que ocorre quando a conclusão não é uma consequência das premissas; o oposto de \gls{valid}}
 }
 
-Logicians are in the business of making the notion of ``case'' more precise, and investigating which arguments are valid when ``case'' is made precise in one way or another. If we take ``case'' to mean ``hypothetical scenario'' like the counterexample to the second argument, it's clear that the first argument counts as valid. If we imagine a scenario in which either the butler or the gardener did it, and also the butler didn't do it, we are automatically imagining a scenario in which the gardener did it. So any hypothetical scenario in which the premises of our first argument are true automatically makes the conclusion of our first argument true. This makes the first argument valid.
+O trabalho dos lógicos é tornar mais precisa a noção de \textquotedblleft caso\textquotedblright{} e investigar quais argumentos são válidos quando \textquotedblleft caso\textquotedblright{} é precisado de uma maneira ou de outra. Se tomarmos \textquotedblleft caso\textquotedblright{} como significando \textquotedblleft cenário hipotético\textquotedblright{}, como no contraexemplo ao segundo argumento, fica claro que o primeiro argumento conta como válido. Se imaginarmos um cenário em que ou o mordomo ou o jardineiro fez isso e em que o mordomo também não fez isso, estaremos automaticamente imaginando um cenário em que o jardineiro fez isso. Assim, qualquer cenário hipotético em que as premissas do nosso primeiro argumento sejam verdadeiras automaticamente torna verdadeira a conclusão do nosso primeiro argumento. Isso torna o primeiro argumento válido.
 
-Making ``case'' more specific by interpreting it as ``hypothetical scenario'' is an advance. But it is not the end of the story.  The first problem is that we don't know what to count as a hypothetical scenario. Are they limited by the laws of physics? By what is conceivable, in a very general sense?  What answers we give to these questions determine which arguments we count as valid.
+Tornar \textquotedblleft caso\textquotedblright{} mais específico, interpretando-o como \textquotedblleft cenário hipotético\textquotedblright{}, é um avanço. Mas não é o fim da história. O primeiro problema é que não sabemos o que deve ser considerado um cenário hipotético. Eles são limitados pelas leis da física? Pelo que é concebível, em um sentido muito geral? As respostas que dermos a essas perguntas determinam quais argumentos consideramos válidos.
 
-Suppose the answer to the first question is ``yes.'' Consider the following argument:
+Suponha que a resposta à primeira pergunta seja \textquotedblleft sim\textquotedblright{}. Considere o seguinte argumento:
 	\begin{earg}
-		\item[] The spaceship \textit{Rocinante} took six hours to reach Jupiter from Tycho space station.
-		\item[\texttherefore] The distance between Tycho space station and Jupiter is less than 14~billion kilometers.
+		\item[] A espaçonave \textit{Rocinante} levou seis horas para chegar a Júpiter a partir da estação espacial Tycho.
+		\item[\texttherefore] A distância entre a estação espacial Tycho e Júpiter é inferior a 14~bilhões de quilômetros.
 	\end{earg}
-A counterexample to this argument would be a scenario in which the \textit{Rocinante} makes a trip of over 14 billion kilometers in 6 hours, exceeding the speed of light. Since such a scenario is incompatible with the laws of physics, there is no such scenario if hypothetical scenarios have to conform to the laws of physics.  If hypothetical scenarios are not limited by the laws of physics, however, there is a counterexample: a scenario where the \textit{Rocinante} travels faster than the speed of light.
+Um contraexemplo a esse argumento seria um cenário em que a \textit{Rocinante} percorresse mais de 14 bilhões de quilômetros em 6 horas, ultrapassando a velocidade da luz. Como tal cenário é incompatível com as leis da física, não há um cenário assim se os cenários hipotéticos tiverem de obedecer às leis da física. Se os cenários hipotéticos não forem limitados pelas leis da física, contudo, há um contraexemplo: um cenário em que a \textit{Rocinante} viaja mais rápido que a luz.
 
-Suppose the answer to the second question is ``yes'', and consider another argument:
+Suponha que a resposta à segunda pergunta seja \textquotedblleft sim\textquotedblright{} e considere outro argumento:
 	\begin{earg}
-		\item[] Priya is an ophthalmologist.
-		\item[\texttherefore] Priya is an eye doctor.
+		\item[] Priya é uma oftalmologista.
+		\item[\texttherefore] Priya é uma médica dos olhos.
 	\end{earg}
-If we're allowing only conceivable scenarios, this is also a valid argument. If you imagine Priya being an ophthalmologist, you thereby imagine Priya being an eye doctor. That's just what ``ophthalmologist'' and ``eye doctor'' mean.  A scenario where Priya is an ophthalmologist but not an eye doctor is ruled out by the conceptual connection between these words.
+Se permitirmos apenas cenários concebíveis, este também é um argumento válido. Ao imaginar Priya sendo uma oftalmologista, você imagina, com isso, Priya sendo uma médica dos olhos. É isso que \textquotedblleft oftalmologista\textquotedblright{} e \textquotedblleft médica dos olhos\textquotedblright{} significam. Um cenário em que Priya é uma oftalmologista, mas não uma médica dos olhos, é excluído pela conexão conceitual entre essas palavras.
 
-Depending on what kinds of cases we consider as potential
-counterexamples we arrive at different notions of consequence and
-validity. Validity is characterized by the absence of counterexamples.
-But what counts as a counterexample may be different for different
-notions. For instance, we might exclude counterexamples that violate
-the laws of nature, or counterexamples that violate conceptual
-connections between words like ``eye doctor'' and ``ophthalmologist''.
-So, we might call an argument \define{nomologically valid} if there
-are no counterexamples that respect the laws of nature, and an
-argument \define{conceptually valid} if there are no counterexamples
-that respect conceptual connections between words. For both of these
-notions of validity, aspects of the world (e.g., what the laws of
-nature are) and aspects of the meaning of the sentences in the
-argument (e.g., that ``ophthalmologist'' just means a kind of eye
-doctor) figure into whether an argument counts as valid.
+Dependendo dos tipos de casos que consideramos contraexemplos potenciais, chegamos a diferentes noções de consequência e validade. A validade é caracterizada pela ausência de contraexemplos. Mas o que conta como contraexemplo pode ser diferente para diferentes noções. Por exemplo, podemos excluir contraexemplos que violam as leis da natureza ou contraexemplos que violam conexões conceituais entre palavras como \textquotedblleft médica dos olhos\textquotedblright{} e \textquotedblleft oftalmologista\textquotedblright{}. Assim, podemos chamar um argumento de \define{nomologicamente válido} se não há contraexemplos que respeitem as leis da natureza, e de \define{conceitualmente válido} se não há contraexemplos que respeitem as conexões conceituais entre palavras. Para ambas essas noções de validade, aspectos do mundo (por exemplo, quais são as leis da natureza) e aspectos do significado das sentenças no argumento (por exemplo, que \textquotedblleft oftalmologista\textquotedblright{} significa simplesmente um tipo de médica dos olhos) contribuem para determinar se um argumento conta como válido.
 
-\section{Formal validity}\label{s:FormalValidity}
+\section{Validade formal}\label{s:FormalValidity}
 
-One distinguishing feature of \emph{logical} consequence, however, is
-that it should not depend on the content of the premises and
-conclusion, but only on their logical form. In other words, as
-logicians we want to develop a theory that captures yet another way in
-which arguments can be valid. For instance,
-both
+Uma característica que distingue a \emph{consequência lógica}, contudo, é que ela não deve depender do conteúdo das premissas e da conclusão, mas apenas de sua forma lógica. Em outras palavras, como lógicos, queremos desenvolver uma teoria que capte outra maneira pela qual os argumentos podem ser válidos. Por exemplo, tanto
 \begin{earg}
-	\item[] Priya is either an ophthalmologist or a dentist.
-	\item[] Priya isn't a dentist.
-	\item[\texttherefore] Priya is an eye doctor.
+	\item[] Priya é uma oftalmologista ou uma dentista.
+	\item[] Priya não é uma dentista.
+	\item[\texttherefore] Priya é uma médica dos olhos.
 \end{earg}
-and
+quanto
 \begin{earg}
-	\item[] Priya is either an ophthalmologist or a dentist.
-	\item[] Priya isn't a dentist.
-	\item[\texttherefore] Priya is an ophthalmologist.
+	\item[] Priya é uma oftalmologista ou uma dentista.
+	\item[] Priya não é uma dentista.
+	\item[\texttherefore] Priya é uma oftalmologista.
 \end{earg}
-are valid arguments. But while the validity of the first depends on the content (i.e., the meaning of ``ophthalmologist'' and ``eye doctor''), the second does not. The second argument is \define{formally valid}. We can describe the ``form'' of this argument as a pattern, something like this:
+são argumentos válidos. Mas, embora a validade do primeiro dependa do conteúdo (isto é, do significado de \textquotedblleft oftalmologista\textquotedblright{} e \textquotedblleft médica dos olhos\textquotedblright{}), a do segundo não depende. O segundo argumento é \define{formalmente válido}. Podemos descrever a \textquotedblleft forma\textquotedblright{} desse argumento como um padrão, algo como:
 \begin{earg}
-	\item[] $A$ is either an $X$ or a $Y$.
-	\item[] $A$ isn't a $Y$.
-	\item[\texttherefore] $A$ is an $X$.
+	\item[] $A$ é uma $X$ ou uma $Y$.
+	\item[] $A$ não é uma $Y$.
+	\item[\texttherefore] $A$ é uma $X$.
 \end{earg}
-Here, $A$, $X$, and $Y$ are placeholders for appropriate expressions that, when substituted for $A$, $X$, and $Y$, turn the pattern into an argument consisting of sentences. For instance,
+Aqui, $A$, $X$ e $Y$ são marcadores de posição para expressões apropriadas que, quando substituídas por $A$, $X$ e $Y$, transformam o padrão em um argumento constituído por sentenças. Por exemplo,
 \begin{earg}
-	\item[] Mei is either a mathematician or a botanist.
-	\item[] Mei isn't a botanist.
-	\item[\texttherefore] Mei is a mathematician.
+	\item[] Mei é uma matemática ou uma botânica.
+	\item[] Mei não é uma botânica.
+	\item[\texttherefore] Mei é uma matemática.
 \end{earg}
-is an argument of the same form, but the first argument above is not: we would have to replace $Y$ by different expressions (once by ``ophthalmologist'' and once by ``eye doctor'') to obtain it from the pattern.
+é um argumento da mesma forma, mas o primeiro argumento acima não é: teríamos de substituir $Y$ por expressões diferentes (uma vez por \textquotedblleft oftalmologista\textquotedblright{} e outra vez por \textquotedblleft médica dos olhos\textquotedblright{}) para obtê-lo a partir do padrão.
 
-Moreover, the first argument is not formally valid. \emph{Its} form is this:
+Além disso, o primeiro argumento não é formalmente válido. \emph{Sua} forma é:
 \begin{earg}
-	\item[] $A$ is either an $X$ or a $Y$.
-	\item[] $A$ isn't a $Y$.
-	\item[\texttherefore] $A$ is a $Z$.
+	\item[] $A$ é uma $X$ ou uma $Y$.
+	\item[] $A$ não é uma $Y$.
+	\item[\texttherefore] $A$ é uma $Z$.
 \end{earg}
-In this pattern we can replace $X$ by ``ophthalmologist'' and $Z$ by ``eye doctor'' to obtain the original argument.  But here is another argument of the same form:
+Nesse padrão, podemos substituir $X$ por \textquotedblleft oftalmologista\textquotedblright{} e $Z$ por \textquotedblleft médica dos olhos\textquotedblright{} para obter o argumento original. Mas eis outro argumento da mesma forma:
 \begin{earg}
-	\item[] Mei is either a mathematician or a botanist.
-	\item[] Mei isn't a botanist.
-	\item[\texttherefore] Mei is an acrobat.
+	\item[] Mei é uma matemática ou uma botânica.
+	\item[] Mei não é uma botânica.
+	\item[\texttherefore] Mei é uma acrobata.
 \end{earg}
-This argument is clearly not valid, since we can imagine a mathematician named Mei who is not an acrobat.
+Esse argumento claramente não é válido, pois podemos imaginar uma matemática chamada Mei que não seja uma acrobata.
 
-Our strategy as logicians will be to come up with a notion of ``case''
-on which an argument turns out to be valid only if it is formally
-valid. Clearly such a notion of ``case'' will have to violate not just
-some laws of nature but some laws of English. Since the first argument
-is invalid in this sense, we must allow as counterexample a case where
-Priya is an ophthalmologist but not an eye doctor.  That case is not a
-conceivable situation: it is ruled out by the meanings of
-``ophthalmologist'' and ``eye doctor.''
+Nossa estratégia como lógicos será propor uma noção de \textquotedblleft caso\textquotedblright{} segundo a qual um argumento só será válido se for formalmente válido. É claro que tal noção de \textquotedblleft caso\textquotedblright{} terá de violar não apenas algumas leis da natureza, mas também algumas leis do português. Como o primeiro argumento é inválido nesse sentido, devemos permitir como contraexemplo um caso em que Priya seja uma oftalmologista, mas não uma médica dos olhos. Essa situação não é concebível: ela é excluída pelos significados de \textquotedblleft oftalmologista\textquotedblright{} e \textquotedblleft médica dos olhos\textquotedblright{}.
 
-When we consider cases of various kinds in order to evaluate the
-validity of an argument, we will make one important assumption. We
-assume that every case makes every sentence under consideration true
-or not true. That means first of all that any imagined scenario which
-leaves it undetermined if a sentence in our argument is true will not
-be considered as a potential counterexample. For instance, a scenario
-where Priya is a dentist but not an ophthalmologist will count as a
-case to be considered in the first few arguments in this section, but
-not as a case to be considered in the last two: it doesn't tell us if
-Mei is a mathematician, a botanist, or an acrobat. If a case doesn't
-make a sentence true, we say it makes it \define{false}. We'll thus
-assume that cases make sentences true or false but never
-both.\footnote{The assumption that sentences are true or false and not
-both is called ``bivalence.'' Even if this assumption seems
-common-sensical to you, it is controversial among philosophers of
-logic. First of all, there are logicians who want to consider cases
-where sentences are neither true nor false, but have some kind of
-intermediate level of truth. More controversially, some philosophers
-think we should allow for the possibility of sentences to be both true
-and false at the same time. There are systems of logic in which
-sentences can be neither true nor false, or both, but we will not
-discuss them in this book.}
+Quando considerarmos casos de vários tipos para avaliar a validade de um argumento, faremos uma suposição importante. Supomos que todo caso torna toda sentença sob consideração verdadeira ou não verdadeira. Isso significa, antes de tudo, que qualquer cenário imaginado que deixe indeterminado se uma sentença do nosso argumento é verdadeira não será considerado um contraexemplo potencial. Por exemplo, um cenário em que Priya é uma dentista, mas não uma oftalmologista, contará como um caso a ser considerado nos primeiros argumentos desta seção, mas não como um caso a ser considerado nos dois últimos: ele não nos diz se Mei é uma matemática, uma botânica ou uma acrobata. Se um caso não torna uma sentença verdadeira, dizemos que ele a torna \define{falsa}. Assim, suporemos que os casos tornam as sentenças verdadeiras ou falsas, mas nunca ambas.\footnote{A suposição de que as sentenças são verdadeiras ou falsas, e não ambas, é chamada de \textquotedblleft bivalência\textquotedblright{}. Mesmo que essa suposição pareça fazer sentido comum, ela é controversa entre filósofos da lógica. Primeiro, há lógicos que querem considerar casos em que as sentenças não são nem verdadeiras nem falsas, mas têm algum tipo de nível intermediário de verdade. De maneira ainda mais controversa, alguns filósofos pensam que deveríamos permitir a possibilidade de as sentenças serem verdadeiras e falsas ao mesmo tempo. Há sistemas de lógica nos quais as sentenças podem não ser nem verdadeiras nem falsas, ou podem ser ambas, mas não discutiremos esses sistemas neste livro.}
 
-\section{Sound arguments}
+\section{Argumentos corretos}
 
-Before we go on and execute this strategy, a few clarifications. We
-have defined arguments as collections of sentences in which one (the
-conclusion) is supposed to follow from the others (the premises).
-Arguments in this sense are used all the time in everyday and
-scientific discourse. When they are, arguments are given to support or
-even prove their conclusions. Now, if an argument is valid, it will
-support its conclusion, but \emph{only if} its premises are all true.
-Validity rules out the possibility that the premises are true and the
-conclusion is not true at the same time. It does not, by itself, rule
-out the possibility that the conclusion is not true, period. In other
-words, it is perfectly possibly for a valid argument to have a
-conclusion that isn't true!
+Antes de prosseguirmos e executarmos essa estratégia, são necessárias algumas explicações. Definimos argumentos como conjuntos de sentenças em que uma delas (a conclusão) deve decorrer das outras (as premissas). Argumentos nesse sentido são usados o tempo todo no discurso cotidiano e científico. Quando são usados, os argumentos são apresentados para sustentar ou até provar suas conclusões. Ora, se um argumento é válido, ele sustentará sua conclusão, mas \emph{somente se} todas as suas premissas forem verdadeiras. A validade exclui a possibilidade de que as premissas sejam verdadeiras e a conclusão não seja verdadeira ao mesmo tempo. Ela não exclui, por si só, a possibilidade de que a conclusão não seja verdadeira, ponto final. Em outras palavras, é perfeitamente possível que um argumento válido tenha uma conclusão que não seja verdadeira!
 
-Consider this example:
+Considere este exemplo:
 	\begin{earg}
-		\item[] Oranges are either fruit or musical instruments.
-		\item[] Oranges are not fruit.
-		\item[\texttherefore] Oranges are musical instruments.
+		\item[] Laranjas são frutas ou instrumentos musicais.
+		\item[] Laranjas não são frutas.
+		\item[\texttherefore] Laranjas são instrumentos musicais.
 	\end{earg}
-The conclusion of this argument is ridiculous. Nevertheless, it follows from the premises. \emph{If} both premises are true, \emph{then} the conclusion just has to be true. So the argument is valid.
+A conclusão desse argumento é ridícula. No entanto, ela decorre das premissas. \emph{Se} ambas as premissas forem verdadeiras, \emph{então} a conclusão terá necessariamente de ser verdadeira. Portanto, o argumento é válido.
 
-Conversely, having true premises and a true conclusion is not enough to make an argument valid. Consider this example:
+Por outro lado, ter premissas verdadeiras e uma conclusão verdadeira não é suficiente para tornar um argumento válido. Considere este exemplo:
 	\begin{earg}
-		\item[] London is in England.
-		\item[] Beijing is in China.
-		\item[\texttherefore] Paris is in France.
+		\item[] Londres fica na Inglaterra.
+		\item[] Pequim fica na China.
+		\item[\texttherefore] Paris fica na França.
 	\end{earg}
-The premises and conclusion of this argument are, as a matter of fact, all true, but the argument is invalid. If Paris were to declare independence from the rest of France, then the conclusion would no longer be true, even though both of the premises would remain true. Thus, there is a case where the premises of this argument are true without the conclusion being true. So the argument is invalid.
+As premissas e a conclusão desse argumento são, de fato, todas verdadeiras, mas o argumento é inválido. Se Paris declarasse independência do restante da França, a conclusão deixaria de ser verdadeira, embora as duas premissas continuassem verdadeiras. Assim, há um caso em que as premissas desse argumento são verdadeiras sem que a conclusão seja verdadeira. Portanto, o argumento é inválido.
 
-The important thing to remember is that validity is not about the \emph{actual} truth or falsity of the sentences in the argument. It is about whether it is \emph{possible} for all the premises to be true and the conclusion to be not true at the same time (in some hypothetical case). What is \emph{in fact} the case has no special role to play; and what the facts are does not determine whether an argument is valid or not.\footnote{Well, there is one case where it does: if the premises are in fact true and the conclusion is in fact not true, then we live in a counterexample; so the argument is invalid.} Nothing about the way things are can by itself determine if an argument is valid. It is often said that logic doesn't care about feelings. Actually, it doesn't care about facts, either.
+O importante é lembrar que a validade não diz respeito à verdade ou falsidade \emph{real} das sentenças no argumento. Diz respeito a saber se é \emph{possível} que todas as premissas sejam verdadeiras e a conclusão não seja verdadeira ao mesmo tempo (em algum caso hipotético). O que \emph{de fato} ocorre não tem nenhum papel especial; e quais sejam os fatos não determina se um argumento é válido ou não.\footnote{Bem, há um caso em que determina: se as premissas forem de fato verdadeiras e a conclusão for de fato não verdadeira, então vivemos em um contraexemplo; logo, o argumento é inválido.} Nada sobre o modo como as coisas são pode, por si só, determinar se um argumento é válido. Costuma-se dizer que a lógica não se importa com sentimentos. Na verdade, ela também não se importa com fatos.
 
-When we use an argument to prove that its conclusion \emph{is true}, then, we need two things. First, we need the argument to be valid; i.e., we need the conclusion to follow from the premises. But we also need the premises to be true. We will say that an argument is \define{sound} if and only if it is both valid and all of its premises are true.
+Quando usamos um argumento para provar que sua conclusão \emph{é verdadeira}, precisamos, então, de duas coisas. Primeiro, precisamos que o argumento seja válido; isto é, precisamos que a conclusão decorra das premissas. Mas também precisamos que as premissas sejam verdadeiras. Diremos que um argumento é \define{correto} se, e somente se, é válido e todas as suas premissas são verdadeiras.
 
 \newglossaryentry{sound}
 {
-name=sound,
-description={A property of arguments that holds if the argument is valid and has all true premises}
+name=correto,
+description={Uma propriedade de argumentos que ocorre quando o argumento é válido e tem todas as premissas verdadeiras}
 }
 
-The flip side of this is that when you want to rebut an argument, you have two options: you can show that (one or more of) the premises are not true, or you can show that the argument is not valid.  Logic, however, will only help you with the latter!  
+O outro lado da questão é que, quando você quer refutar um argumento, tem duas opções: pode mostrar que uma ou mais premissas não são verdadeiras ou pode mostrar que o argumento não é válido. A lógica, contudo, só ajudará você com a segunda opção!
 
-\section{Inductive arguments}
+\section{Argumentos indutivos}
 
-Many good arguments are invalid. Consider this one:
+Muitos bons argumentos são inválidos. Considere este:
 	\begin{earg}
-		\item[] Every winter so far, it has snowed in Calgary.
-	\item[\texttherefore] It will snow in Calgary this coming winter.
+		\item[] Em todos os invernos até agora, nevou em Calgary.
+	\item[\texttherefore] Nevará em Calgary no próximo inverno.
 \end{earg}
-This argument generalises from observations about many (past) cases to a conclusion about all (future) cases. Such arguments are called \define{inductive} arguments. Nevertheless, the argument is invalid. Even if it has snowed in Calgary every winter thus far, it remains \emph{possible} that Calgary will stay dry all through the coming winter. In fact, even if it will henceforth snow every winter in Calgary, we could still \emph{imagine} a case in which this year is the first year it doesn't snow all winter. And that hypothetical scenario is a case where the premises of the argument are true but the conclusion is not, making the argument invalid.
+Esse argumento generaliza observações sobre muitos casos (passados) para uma conclusão sobre todos os casos (futuros). Esses argumentos são chamados de argumentos \define{indutivos}. Ainda assim, o argumento é inválido. Mesmo que tenha nevado em Calgary em todos os invernos até agora, continua \emph{possível} que Calgary permaneça seca durante todo o próximo inverno. Na verdade, mesmo que daqui em diante neve todo inverno em Calgary, ainda poderíamos \emph{imaginar} um caso em que este ano seja o primeiro ano em que não neve durante todo o inverno. E esse cenário hipotético é um caso em que as premissas do argumento são verdadeiras, mas a conclusão não é, tornando o argumento inválido.
 
-The point of all this is that inductive arguments---even good inductive arguments---are not (deductively) valid. They are not \emph{watertight}. Unlikely though it might be, it is \emph{possible} for their conclusion to be false, even when all of their premises are true. In this book, we will set aside (entirely) the question of what makes for a good inductive argument. Our interest is simply in sorting the (deductively) valid arguments from the invalid ones.  
+O ponto de tudo isso é que argumentos indutivos — mesmo bons argumentos indutivos — não são válidos (dedutivamente). Eles não são \emph{à prova de falhas}. Por improvável que seja, é \emph{possível} que sua conclusão seja falsa, mesmo quando todas as suas premissas são verdadeiras. Neste livro, deixaremos de lado (inteiramente) a questão do que torna bom um argumento indutivo. Nosso interesse é simplesmente separar os argumentos (dedutivamente) válidos dos inválidos.
 
-So: we are interested in whether or not a conclusion \emph{follows from} some premises. Don't, though, say that the premises \emph{infer} the conclusion. Entailment is a relation between premises and conclusions; inference is something we do. So if you want to mention inference when the conclusion follows from the premises, you could say that \emph{one may infer} the conclusion from the premises.
+Assim, estamos interessados em saber se uma conclusão \emph{decorre de} algumas premissas ou não. Não diga, contudo, que as premissas \emph{inferem} a conclusão. A consequência lógica é uma relação entre premissas e conclusões; a inferência é algo que fazemos. Portanto, se quiser mencionar a inferência quando a conclusão decorre das premissas, você pode dizer que \emph{se pode inferir} a conclusão das premissas.
 
 
 \practiceproblems
 \problempart
-Which of the following arguments are valid? Which are invalid?
+Quais dos seguintes argumentos são válidos? Quais são inválidos?
 \begin{compactlist}
 \item
 \begin{earg}
-\item Socrates is a man.
-\item All men are carrots.
-\item[\texttherefore] Socrates is a carrot.
+\item Sócrates é um homem.
+\item Todos os homens são cenouras.
+\item[\texttherefore] Sócrates é uma cenoura.
 \end{earg}
 \item
 \begin{earg}
-\item Either Abe Lincoln was born in Illinois or he was once president.
-\item Abe Lincoln was never president.
-\item[\texttherefore] Abe Lincoln was born in Illinois.
+\item Abe Lincoln nasceu em Illinois ou alguma vez foi presidente.
+\item Abe Lincoln nunca foi presidente.
+\item[\texttherefore] Abe Lincoln nasceu em Illinois.
 \end{earg}
 \item
 \begin{earg}
-\item If I pull the trigger, Abe Lincoln will die.
-\item I do not pull the trigger.
-\item[\texttherefore] Abe Lincoln will not die.
+\item Se eu puxar o gatilho, Abe Lincoln morrerá.
+\item Eu não puxo o gatilho.
+\item[\texttherefore] Abe Lincoln não morrerá.
 \end{earg}
 \item
 \begin{earg}
-\item Abe Lincoln was either from France or from Luxembourg.
-\item Abe Lincoln was not from Luxembourg.
-\item[\texttherefore] Abe Lincoln was from France.
+\item Abe Lincoln era da França ou de Luxemburgo.
+\item Abe Lincoln não era de Luxemburgo.
+\item[\texttherefore] Abe Lincoln era da França.
 \end{earg}
 \item
 \begin{earg}
-\item If the world ends today, then I will not need to get up tomorrow morning.
-\item I will need to get up tomorrow morning.
-\item[\texttherefore] The world will not end today.
+\item Se o mundo acabar hoje, não precisarei me levantar amanhã de manhã.
+\item Precisarei me levantar amanhã de manhã.
+\item[\texttherefore] O mundo não acabará hoje.
 \end{earg}
 \item
 \begin{earg}
-\item Joe is now 19 years old.
-\item Joe is now 87 years old.
-\item[\texttherefore] Bob is now 20 years old.
+\item Joe tem agora 19 anos.
+\item Joe tem agora 87 anos.
+\item[\texttherefore] Bob tem agora 20 anos.
 \end{earg}
 \end{compactlist}
 
 \problempart
 \label{pr.EnglishCombinations}
-Could there be:
+Poderia existir:
 	\begin{compactlist}
-		\item A valid argument that has one false premise and one true premise?
-		\item A valid argument that has only false premises?
-		\item A valid argument with only false premises and a false conclusion?
-		\item An invalid argument that can be made valid by the addition of a new premise?
-		\item A valid argument that can be made invalid by the addition of a new premise?
+		\item Um argumento válido que tenha uma premissa falsa e uma premissa verdadeira?
+		\item Um argumento válido que tenha apenas premissas falsas?
+		\item Um argumento válido com apenas premissas falsas e uma conclusão falsa?
+		\item Um argumento inválido que possa se tornar válido com a adição de uma nova premissa?
+		\item Um argumento válido que possa se tornar inválido com a adição de uma nova premissa?
 	\end{compactlist}
-In each case: if so, give an example; if not, explain why not.
-
+Em cada caso: se sim, dê um exemplo; se não, explique por quê.
 
 \chapter{Other logical notions}\label{s:BasicNotions}
 
