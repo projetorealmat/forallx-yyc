@@ -1,181 +1,110 @@
-# forall x: Calgary
+# forall x: Calgary — Introdução à lógica formal
 
-[![Book Cover](https://forallx.openlogicproject.org/forallxyyc.png)](https://forallx.openlogicproject.org/forallxyyc.pdf)
+[![REALMat — verificar livro](https://github.com/projetorealmat/forallx-yyc/actions/workflows/book-ci.yml/badge.svg)](https://github.com/projetorealmat/forallx-yyc/actions/workflows/book-ci.yml)
 
-## Description
+Este repositório contém a tradução e adaptação brasileira, em preparação, de *forall x: Calgary: An Introduction to Formal Logic*. A edição REALMat parte da [edição original em inglês](https://github.com/rzach/forallx-yyc) e preserva a atribuição, os créditos e a licença da obra-fonte.
 
-_forall x: Calgary_ is a full-featured textbook on formal logic. It
-covers key notions of logic such as consequence and validity of
-arguments, the syntax of truth-functional propositional logic TFL and
-truth-table semantics, the syntax of first-order (predicate) logic FOL
-with identity (first-order interpretations), symbolizing English in
-TFL and FOL, and Fitch-style natural deduction proof systems for both
-TFL and FOL. It also deals with some advanced topics such as modal
-logic, soundness, and functional completeness. Exercises with
-solutions are available. It is provided in PDF (for screen reading,
-printing, and a special version for dyslexics), HTML (with additional
-[accessibility
-features](https://forallx.openlogicproject.org/html/A4.html)), and in
-LaTeX source code.
+**Tradutor e responsável pela edição REALMat:** Carlos André Duarte Costa.
 
-Instructors wishing to adopt it should consider the open-source
-[Carnap](https://carnap.io/) system, which supports the notation and
-proof systems of _forall x: Calgary_. Check out the [sample
-exercises](https://carnap.io/shared/rzach@ucalgary.ca/forall%20x:%20Calgary.md)
-for the book on carnap.io. (There is also an outdated and unsupported
-proof editor/checker for the proof system used available at
-[proofs.openlogicproject.org](https://proofs.openlogicproject.org/).)
+A tradução está em desenvolvimento e revisão editorial. O trabalho é organizado em lotes; sugestões e correções são bem-vindas por meio das [issues](https://github.com/projetorealmat/forallx-yyc/issues) e dos *pull requests*.
 
-The book has been translated into German ([forall _x_:
-Dortmund](https://github.com/sbwimmer/forallx-do)) and Portuguese
-([Para Tod*x*s:
-Natal](https://github.com/Grupo-de-Estudos-em-Logica-da-UFRN/Para-Todxs-Natal)).
+## Sobre o livro
 
-## Read online
+*forall x: Calgary* é um manual abrangente de lógica formal. Ele apresenta noções fundamentais como consequência e validade de argumentos; a sintaxe da lógica proposicional verofuncional (LVF) e sua semântica por tabelas-verdade; a sintaxe da lógica de predicados de primeira ordem (LPO) com identidade e as interpretações de primeira ordem; a simbolização de argumentos em linguagem natural em LVF e LPO; e sistemas de dedução natural no estilo Fitch para LVF e LPO.
 
-The book is available in HTML [to read
-online](https://forallx.openlogicproject.org/html/).
+O livro também aborda tópicos avançados, como lógica modal, correção (*soundness*) e completude funcional. Há exercícios com soluções, mantidos nos arquivos correspondentes da edição REALMat.
 
-The HTML conversion is experimental. If you find issues in it,
-especially issues that affect screen readers, please report it by
-[filing an issue](https://github.com/rzach/forallx-yyc/issues) or send
-an email to [Richard Zach](mailto:rzach@ucalgary.ca). Note that
-solutions are included in the HTML version after the appendices.
+## Arquivos principais
 
-## Download
-
-You can download PDFs of the **most current version under development** here:
-
-  - [`forallxyyc.pdf`](https://forallx.openlogicproject.org/forallxyyc.pdf)
-    (in color, for screen reading)
-  - [`forallxyyc-accessible.pdf`](https://forallx.openlogicproject.org/forallxyyc-accessible.pdf)
-    (an accessible version for dyslexics)
-  - [`forallxyyc-print.pdf`](https://forallx.openlogicproject.org/forallxyyc-print.pdf)
-    (b/w, for printing on Quarto stock)
-  - [`forallxyyc-letter.pdf`](https://forallx.openlogicproject.org/forallxyyc-letter.pdf)
-    (b/w, for printing on regular letter-size paper)
-  - [`forallxyyc-solutions.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions.pdf)
-    (solutions booklet)
-
-The a [SCORM](https://adlnet.gov/past-projects/scorm/) ZIP package of
-HTML bundled with plain and accessible versions of the PDF is
-available here:
-
-  - [SCORM.forallxyyc.zip](https://forallx.openlogicproject.org/SCORM.forallxyyc.zip)
-
-You can use this file to easily provide the entire text inside your
-LMS (Canvas, Moodle, D2L/Brightspace).
-
-**Note that these files change whenever the source files change.** So
-if you use the text in a course, it is best to download the PDFs or
-the SCORM package and make them available to students directly rather
-than to link here, to avoid mismatches between versions.
-
-Major changes between editions are listed in the [changelog](https://github.com/rzach/forallx-yyc/blob/master/CHANGELOG.md).
-
-PDFs of the **Fall 2021** edition are archived here:
-
-  - [`forallxyyc-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-f21.pdf)
-  - [`forallxyyc-accessible-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-accessible-f21.pdf)
-  - [`forallxyyc-print-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-print-f21.pdf)
-  - [`forallxyyc-letter-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-letter-f21.pdf)
-  - [`forallxyyc-solutions-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions-f21.pdf)
-
-PDFs of the **Fall 2020** edition are archived here:
-
-  - [`forallxyyc-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-f20.pdf)
-  - [`forallxyyc-accessible-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-accessible-f20.pdf)
-  - [`forallxyyc-print-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-print-f20.pdf)
-  - [`forallxyyc-letter-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-letter-f20.pdf)
-  - [`forallxyyc-solutions-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions-f20.pdf)
-
-## Buy a Printed Copy
-
-If you'd like to purchase a nice paperback copy of the Fall 2023
-edition, you can do so on Amazon
-([US](https://www.amazon.com/dp/B0CH2B1ZFG) |
-[CA](https://www.amazon.ca/dp/B0CH2B1ZFG) |
-[UK](https://www.amazon.co.uk/dp/B0CH2B1ZFG) |
-[DE](https://www.amazon.de/dp/B0CH2B1ZFG) |
-[AU](https://www.amazon.com.au/dp/B0CH2B1ZFG)), or use search in your
-local Amazon store. Be sure to get the latest version that's available
-in print (Fall 2023). The version on Amazon usually is not as current
-as the PDF. Changes are recorded in the
-[Changelog](https://github.com/rzach/forallx-yyc/blob/master/CHANGELOG.md).
-
-(The process for getting the book printed is described
-[here](https://openlogicproject.org/2015/11/22/getting-your-book-to-print/)
-and
-[here](https://openlogicproject.org/2017/05/19/forall-x-yyc-is-now-on-amazon-and-how-it-got-there/).)
-
-## Make PDFs Yourself
-
-Clone the [GitHub repository](https://github.com/rzach/forallx-yyc) locally or download the ZIP file and run [LaTeX](https://www.latex-project.org/) on one of
-
-  - `forallxyyc.tex` (in color, for screen reading)
-  - `forallxyyc-accessible.tex` (accessible version)
-  - `forallxyyc-print.tex` (b/w, for printing on Quarto stock)
-  - `forallxyyc-letter.tex` (b/w, for printing on regular letter-size paper)
-
-You'll have to run `makeglossaries` to produce the glossary as well,
-or use `latexmk`.
-
-To make changes to the definitions in the preamble and `forallyyc.sty`
-file, put them in a file named `forallxyyc-local.sty`. For instance,
-to get the connectives to be ∼, &, ⊃, ≡ instead of ¬, ∧, →, ↔, and
-atomic formulas _Lab_ instead of _L(a,b)_, copy
-`forallxyyc-local-sample.sty` to that file.
-
-## Convert to HTML
-
-To convert the book to HTML:
-
-- Install [LaTeXML](https://math.nist.gov/~BMiller/LaTeXML/).
-- Install [BookML](https://vlmantova.github.io/bookml/) and its
-  dependencies. If your source files live in, say, `~/forallx-yyc` you
-  should have a subdirectory `~/forallx-yyc/bookml`.
-- run `make -f Bookml.mk` from inside `~/forallx-yyc`.
-
-If this works, your HTML files can be found in
-`~/forallx-yyc/auxdir/html/forallxyyc-html/` and the SCORM package in
-`~/forallx-yyc/SCORM.forallxyyc-html.zip`.
-
-## Credits and License
-
-_forall x: Calgary_ is based on [_forall x:
-Cambridge_](https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html), by
-[Tim Button](https://www.homepages.ucl.ac.uk/~uctytbu/index.html) used
-under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-license, which is based in turn on [_forall
-x_](https://www.fecundity.com/logic/), by
-[P. D. Magnus](https://www.fecundity.com/job/) used under a [CC BY
-4.0](https://creativecommons.org/licenses/by/3.0/) license, and was
-remixed, revised, & expanded by [Aaron
-Thomas-Bolduc](https://phil.ucalgary.ca/profiles/aaron-thomas-bolduc)
-& [Richard Zach](https://richardzach.org/).  It includes additional
-material from _forall x_ by P.~D. Magnus and
-[_Metatheory_](https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html) by
-Tim Button, both used under a [CC BY
-4.0](https://creativecommons.org/licenses/by/4.0/) license, from
-[_forall x: Lorain County
-Remix_](https://github.com/rob-helpy-chalk/openintroduction), by
-[Cathal Woods](https://sites.google.com/site/cathalwoods/) and J.
-Robert Loftis, used with permission, and [_A Modal Logic
-Primer_](http://www.rtrueman.com/uploads/7/0/3/2/70324387/modal_logic_primer.pdf)
-by [Robert Trueman](http://www.rtrueman.com/), used with permission.
-
-[![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
-
-This work is licensed under a [Creative Commons Attribution 4.0
-International License](https://creativecommons.org/licenses/by/4.0/).
-
-The LaTeX source code for this work is available on GitHub at
-[github.com/rzach/forallx-yyc](https://github.com/rzach/forallx-yyc).
-
-## REALMat integration
-
-This repository is the REALMat edition in preparation, based on the English source repository. Translation and adaptation will take place here; the upstream repository is retained only for provenance, credits, and license information.
+- [Fonte principal em LaTeX](forallxyyc.tex)
+- [Conteúdo do livro](forallx-yyc-content.tex)
+- Variantes para [acessibilidade](forallxyyc-accessible.tex), [impressão](forallxyyc-print.tex) e [papel carta](forallxyyc-letter.tex)
+- [Soluções dos exercícios](solutions/forallxyyc-solutions.tex)
+- [Configuração do livro no REALMat](.realmat/book.json)
+- [Metadados de citação](CITATION.cff)
+- [Licença](LICENSE.md)
+- [Histórico de alterações](CHANGELOG.md)
+- [Releases e versões anteriores](https://github.com/projetorealmat/forallx-yyc/releases)
+- [Execuções dos workflows](https://github.com/projetorealmat/forallx-yyc/actions)
 
 <!-- realmat-release:start -->
-No REALMat release has been published yet.
+- Nenhuma versão REALMat publicada ainda.
 <!-- realmat-release:end -->
+
+O PDF oficial de cada versão é compilado e publicado automaticamente depois do merge da respectiva **Release PR**. O arquivo `forallxyyc.pdf` não é mantido como arquivo versionado na raiz do repositório. Enquanto não houver uma release REALMat, não há PDF ou HTML traduzido publicado para download.
+
+## Versão em desenvolvimento, releases e arquivos-fonte
+
+A versão atualmente recomendada é a versão em desenvolvimento da branch `master`; ainda não há uma release REALMat publicada.
+
+O versionamento segue estas regras:
+
+- `v0.x.y`: tradução em revisão;
+- `v1.0.0`: primeira tradução aprovada;
+- `v1.0.1`: correção técnica ou editorial pequena;
+- `v1.1.0`: adaptação ou acréscimo compatível com a mesma edição;
+- `v2.0.0`: nova edição, com mudança estrutural ou editorial ampla.
+
+Cada release preserva:
+
+- o PDF correspondente à versão;
+- os arquivos-fonte automáticos da tag;
+- o pacote-fonte reproduzível;
+- os metadados usados na compilação;
+- o arquivo `SHA256SUMS`.
+
+Para consultar uma versão anterior, abra [Releases](https://github.com/projetorealmat/forallx-yyc/releases), escolha a versão desejada e baixe o PDF ou os arquivos-fonte. Os commits e as tags preservam também estados intermediários do projeto.
+
+## Compilação local
+
+Com uma instalação do TeX Live que inclua pdfLaTeX e **latexmk**, execute na raiz do repositório:
+
+~~~sh
+latexmk -pdf -interaction=nonstopmode -halt-on-error forallxyyc.tex
+~~~
+
+O comando gera `forallxyyc.pdf` e os arquivos auxiliares da compilação. Para compilar outra variante, substitua `forallxyyc.tex` por `forallxyyc-accessible.tex`, `forallxyyc-print.tex` ou `forallxyyc-letter.tex`. O `latexmk` executa as passagens necessárias, inclusive a geração do glossário.
+
+Para limpar os arquivos auxiliares, use:
+
+~~~sh
+latexmk -C forallxyyc.tex
+~~~
+
+## Conversão para HTML
+
+Para converter o livro para HTML:
+
+- instale o [LaTeXML](https://github.com/brucemiller/LaTeXML);
+- instale o [BookML](https://vlmantova.github.io/bookml/) e suas dependências;
+- execute `make -f Bookml.mk` na raiz do repositório.
+
+Os arquivos HTML serão gerados em `auxdir/html/forallxyyc-html/`, e o pacote SCORM em `SCORM.forallxyyc-html.zip`.
+
+## Edição original em inglês
+
+Os links desta seção apontam deliberadamente para a edição original em inglês; eles não são downloads da tradução REALMat:
+
+- [Repositório original](https://github.com/rzach/forallx-yyc)
+- [README da edição original](https://github.com/rzach/forallx-yyc/blob/master/README.md)
+- [HTML da edição original](https://forallx.openlogicproject.org/html/)
+- [PDF principal da edição original](https://forallx.openlogicproject.org/forallxyyc.pdf)
+- [Sistema Carnap](https://carnap.io/) e [exercícios de exemplo](https://carnap.io/shared/rzach@ucalgary.ca/forall%20x:%20Calgary.md)
+
+Para o histórico de edições e as informações sobre cópias impressas da edição original, consulte o [README em inglês](https://github.com/rzach/forallx-yyc/blob/master/README.md).
+
+## Créditos e licença
+
+*forall x: Calgary* baseia-se em [*forall x: Cambridge*](https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html), de [Tim Button](https://www.homepages.ucl.ac.uk/~uctytbu/index.html), utilizada sob a licença [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Essa obra baseia-se, por sua vez, em [*forall x*](https://www.fecundity.com/logic/), de [P. D. Magnus](https://www.fecundity.com/job/), e foi remixada, revisada e ampliada por [Aaron Thomas-Bolduc](https://phil.ucalgary.ca/profiles/aaron-thomas-bolduc) e [Richard Zach](https://richardzach.org/).
+
+A edição original também inclui material adicional de *forall x*, de P. D. Magnus, e de [*Metatheory*](https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html), de Tim Button, ambos utilizados sob a licença [CC BY 4.0](https://creativecommons.org/licenses/by/4.0.); de [*forall x: Lorain County Remix*](https://github.com/rob-helpy-chalk/openintroduction), de [Cathal Woods](https://sites.google.com/site/cathalwoods/) e J. Robert Loftis, utilizado com permissão; e de [*A Modal Logic Primer*](http://www.rtrueman.com/uploads/7/0/3/2/70324387/modal_logic_primer.pdf), de [Robert Trueman](http://www.rtrueman.com/), utilizado com permissão.
+
+[![Licença Creative Commons](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
+
+Esta tradução e adaptação brasileira é uma obra derivada distribuída sob a [Licença Creative Commons Atribuição 4.0 Internacional](https://creativecommons.org/licenses/by/4.0/). Ela não é uma publicação oficial da University of Calgary nem do Open Logic Project.
+
+O código-fonte desta edição está disponível no [repositório REALMat](https://github.com/projetorealmat/forallx-yyc). A atribuição completa da obra-fonte deve ser preservada.
+
+## Integração com o REALMat
+
+Este repositório integra o projeto [REALMat](https://projetorealmat.github.io/). A tradução e a adaptação são desenvolvidas aqui; as versões publicadas podem ser consultadas nas [releases deste repositório](https://github.com/projetorealmat/forallx-yyc/releases) e catalogadas no [portal REALMat](https://projetorealmat.github.io/).
