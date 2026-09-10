@@ -7,7 +7,7 @@
 \def\forallxshortversion{F25}
 
 \RequirePackage{amssymb,amsmath,pifont,rotating}
-\usepackage[german,english]{babel}
+\usepackage[german,brazilian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{latexml}
 \RequirePackage{hyperref,ifthen,graphicx,xcolor}
@@ -16,7 +16,14 @@
 % References using cleveref
 
 \RequirePackage[nameinlink]{cleveref}
-\crefname{enumi}{sentence}{sentences}
+\crefname{chapter}{capítulo}{capítulos}
+\Crefname{chapter}{Capítulo}{Capítulos}
+\crefname{section}{seção}{seções}
+\Crefname{section}{Seção}{Seções}
+\crefname{part}{parte}{partes}
+\Crefname{part}{Parte}{Partes}
+\crefname{enumi}{sentença}{sentenças}
+\Crefname{enumi}{Sentença}{Sentenças}
 
 % \ifHTMLtarget -- for conditional code depending on whether we're
 % compiling to HTML or to PDF. To be used for anything that would also
@@ -344,9 +351,9 @@
 \renewcommand{\theHProbPart}{\thechapter.\theProbPart}
 % This inserts a heading and resets the counter:
 \newcommand*{\practiceproblems}{
-	\setcounter{ProbPart}{0}\section*{Practice exercises}%
-  \sectionmark{Practice exercises}%
-	\addcontentsline{toc}{section}{Practice exercises}
+	\setcounter{ProbPart}{0}\section*{Exercícios de prática}%
+  \sectionmark{Exercícios de prática}%
+	\addcontentsline{toc}{section}{Exercícios de prática}
 }
 % This starts a new section which is automatically numbered:
 \newcommand*{\problempart}{\par\noindent\refstepcounter{ProbPart}\textbf{\Alph{ProbPart}. }}
@@ -360,8 +367,8 @@
 % This is used at the beginning of a section in the solutions
 % appendix.
 \newcommand*{\solutionsection}[2]{%
-	\textbf{\textsc{Chapter {\ref{#1}} Part {\ref{#2}}}}%
-	\markright{solutions for ch.~\ref{#1}}%
+	\textbf{\textsc{Capítulo {\ref{#1}} Parte {\ref{#2}}}}%
+	\markright{soluções do cap.~\ref{#1}}%
 	\setcounter{countSeq}{0}
 }
 
