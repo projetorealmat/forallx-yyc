@@ -761,14 +761,14 @@ Esse princípio está correto? Explique sua resposta.
 
 \stepcounter{chapter} % Limitations of TFL
 
-\chapter{Truth table shortcuts}\setcounter{ProbPart}{0}
+\chapter{Atalhos de tabelas-verdade}\setcounter{ProbPart}{0}
 \problempart
 \label{pr.TT.TTorC2}
-Using shortcuts, determine whether each sentence is a tautology, a contradiction, or neither.
+Usando atalhos, determine se cada sentença é uma tautologia, uma contradição ou nenhuma das duas.
 \begin{compactlist}
 
 \item $\enot B \eand B$ %contra
-\myanswer{ \hfill Contradiction\begin{center}
+\myanswer{ \hfill Contradição\begin{center}
 \begin{tabular}{c | d e e f }
 $B$ & $\enot$&$B$&$\eand$&$B$\\
 \hline
@@ -777,7 +777,7 @@ F & & & \TTbf{F} &
 \end{tabular}
 \end{center}}
 \item $\enot D \eor D$ %taut
-\myanswer{\hfill Tautology
+\myanswer{\hfill Tautologia
 \begin{center}
 \begin{tabular}{c | d e e f }
 $D$ & $\enot$&$D$&$\eor$&$D$\\
@@ -787,7 +787,7 @@ F & T & & \TTbf{T}
 \end{tabular}
 \end{center}}
 \item $(A\eand B) \eor (B\eand A)$ %contingent
-\myanswer{\hfill Neither
+\myanswer{\hfill Nenhuma das duas
 \begin{center}
 \begin{tabular}{c c | d e e e e e f }
 $A$ & $B$ & $(A$&$\eand$&$B)$&$\eor$&$(B$&$\eand$&$A)$\\
@@ -799,7 +799,7 @@ F & F & & F & & \TTbf{F} & & F
 \end{tabular}
 \end{center}}
 \item $\enot[A \eif (B \eif A)]$ %contra
-\myanswer{\hfill Contradiction
+\myanswer{\hfill Contradição
 \begin{center}
 \begin{tabular}{c c | d e e e e f }
 $A$ & $B$ & $\enot[$&$A$&$\eif$&$(B$&$\eif$&$A)]$\\
@@ -811,7 +811,7 @@ F & F & \TTbf{F} &  & T & &
 \end{tabular}
 \end{center}}
 \item $A \eiff [A \eif (B \eand \enot B)]$ %contra
-\myanswer{\hfill Contradiction
+\myanswer{\hfill Contradição
 \begin{center}
 \begin{tabular}{c c | d e e e e e e f }
 $A$ & $B$ & $A$&$\eiff$&$[A$&$\eif$&$(B$&$\eand$&$\enot$&$B)]$\\
@@ -823,7 +823,7 @@ F & F & & \TTbf{F} &  & T & &
 \end{tabular}
 \end{center}}
 \item $\enot(A\eand B) \eiff A$ %contingent
-\myanswer{\hfill Neither
+\myanswer{\hfill Nenhuma das duas
 \begin{center}
 \begin{tabular}{c c | d e e e e f }
 $A$ & $B$ & $\enot$&$(A$&$\eand$&$B)$&$\eiff$&$A$\\
@@ -835,7 +835,7 @@ F & F & T & & F & & \TTbf{F} \\
 \end{tabular}
 \end{center}}
 \item $A\eif(B\eor C)$ %contingent
-\myanswer{\hfill Neither
+\myanswer{\hfill Nenhuma das duas
 \begin{center}
 \begin{tabular}{c c c | d e e e f }
 $A$ & $B$ & $C$ & $A$&$\eif$&$(B$&$\eor$&$C)$\\
@@ -851,7 +851,7 @@ F & F & F & & \TTbf{T} & &
 \end{tabular}
 \end{center}}
 \item $(A \eand\enot A) \eif (B \eor C)$ %tautology
-\myanswer{\hfill Tautology
+\myanswer{\hfill Tautologia
 \begin{center}
 \begin{tabular}{c c c | d e e e e e e f }
 $A$ & $B$ & $C$ & $(A$&$\eand$&$\enot$&$A)$&$\eif$&$(B$&$\eor$&$C)$\\
@@ -867,7 +867,7 @@ F & F & F & & \TTbf{F} & &  & T \\
 \end{tabular}
 \end{center}}
 \item $(B\eand D) \eiff [A \eiff(A \eor C)]$%contingent
-\myanswer{\hfill Neither
+\myanswer{\hfill Nenhuma das duas
 \begin{center}
 \begin{tabular}{c c c c | d e e e e e e e f }
 $A$ & $B$ & $C$ & $D$ & $(B$&$\eand$&$D)$&$\eiff $&$[A$&$\eiff$&$(A$&$\eor$&$C)]$\\
@@ -893,13 +893,13 @@ F & F & F & F & & F & & \TTbf{F} &  & T & &  F
 \end{compactlist}
 
 
-\chapter{Partial truth tables}\setcounter{ProbPart}{0}
+\chapter{Tabelas-verdade parciais}\setcounter{ProbPart}{0}
 \problempart
 \label{pr.TT.equiv3}
-Use complete or partial truth tables (as appropriate) to determine whether these pairs of sentences are logically equivalent:
+Use tabelas-verdade completas ou parciais (conforme apropriado) para determinar se estes pares de sentenças são logicamente equivalentes:
 \begin{compactlist}
 \item $A$, $\enot A$
-\myanswer{\hfill Not logically equivalent
+\myanswer{\hfill Não são logicamente equivalentes
 \begin{center}
 \begin{tabular}{c | c | c}
 $A$ &$A$&$\enot A$\\
@@ -908,7 +908,7 @@ $A$ &$A$&$\enot A$\\
  \end{tabular}
 \end{center}}
 \item $A$, $A \eor A$
-\myanswer{\hfill Logically equivalent
+\myanswer{\hfill São logicamente equivalentes
 \begin{center}
 \begin{tabular}{c | c | c}
 $A$ &$A$&$A \eor A$\\
@@ -918,7 +918,7 @@ $A$ &$A$&$A \eor A$\\
  \end{tabular}
 \end{center}}
 \item $A\eif A$, $A \eiff A$ %Yes
-\myanswer{\hfill Logically equivalent
+\myanswer{\hfill São logicamente equivalentes
 \begin{center}
 \begin{tabular}{c | c | c}
 $A$ &$A \eif A$&$A \eiff A$\\
@@ -928,7 +928,7 @@ F & T & T
 \end{tabular}
 \end{center}}
 \item $A \eor \enot B$, $A\eif B$ %No
-\myanswer{\hfill Not logically equivalent
+\myanswer{\hfill Não são logicamente equivalentes
 \begin{center}
 \begin{tabular}{c c | c | c}
 $A$ & $B$ &$A\eor \enot B$&$A \eif B$\\
@@ -937,7 +937,7 @@ T & F & {T} & F
 \end{tabular}
 \end{center}}
 \item $A \eand \enot A$, $\enot B \eiff B$ %Yes
-\myanswer{\hfill Logically equivalent
+\myanswer{\hfill São logicamente equivalentes
 \begin{center}
 \begin{tabular}{c c | d e e f | d e e f}
 $A$ & $B$ &$A$&$\eand$&$\enot$&$A$&$\enot$&$B$&$\eiff$&$B$\\
@@ -950,7 +950,7 @@ F & F & & \TTbf{F} &  & &  T & & \TTbf{F} & \\
 \end{center}}
 
 \item $\enot(A \eand B)$, $\enot A \eor \enot B$ %Yes
-\myanswer{\hfill Logically equivalent
+\myanswer{\hfill São logicamente equivalentes
 \begin{center}
 \begin{tabular}{c c | d e e f | d e e e f}
 $A$ & $B$ &$\enot$&$(A$&$\eand$&$B)$&$\enot$&$A$&$\eor$&$\enot$&$B$\\
@@ -962,7 +962,7 @@ F & F & \TTbf{T} & & F & &  T& & \TTbf{T} & T\\
 \end{tabular}
 \end{center}}
 \item $\enot(A \eif B)$, $\enot A \eif \enot B$ %No
-\myanswer{\hfill Not logically equivalent
+\myanswer{\hfill Não são logicamente equivalentes
 \begin{center}
 \begin{tabular}{c c | d e e f | d e e e f}
 $A$ & $B$ &$\enot$&$(A$&$\eif$&$B)$&$\enot$&$A$&$\eif$&$\enot$&$B$\\
@@ -971,7 +971,7 @@ T & T &\TTbf{F}& & T & & F & & \TTbf{T} & F\\
 \end{tabular}
 \end{center}}
 \item $(A \eif B)$, $(\enot B \eif \enot A)$ %Yes
-\myanswer{\hfill Logically equivalent
+\myanswer{\hfill São logicamente equivalentes
 \begin{center}
 \begin{tabular}{c c | c | d e e e f}
 $A$ & $B$ &$(A \eif B)$&$(\enot$&$B$&$\eif$&$\enot$&$A)$\\
@@ -987,10 +987,10 @@ F & F &T& T & & \TTbf{T} & T
 \solutions
 \problempart
 \label{pr.TT.satisfiable4}
-Use complete or partial truth tables (as appropriate) to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
+Use tabelas-verdade completas ou parciais (conforme apropriado) para determinar se estas sentenças são conjuntamente satisfatíveis ou conjuntamente insatisfatíveis:
 \begin{compactlist}
 \item $A \eand B$, $C\eif \enot B$, $C$ %unsatisfiable
-\myanswer{\hfill Jointly unsatisfiable
+\myanswer{\hfill Conjuntamente insatisfatíveis
 \begin{center}
 \begin{tabular}{c c c | c | d e f | c c c c  }
 $A$ & $B$ & $C$ & $A \eand B$ & $C$&$\eif$&$\enot B$&$C$\\
@@ -1006,7 +1006,7 @@ F & F & F & F & & \TTbf{T} & &  F \\
 \end{tabular}
 \end{center}}
 \item $A\eif B$, $B\eif C$, $A$, $\enot C$ %unsatisfiable
-\myanswer{\hfill Jointly unsatisfiable
+\myanswer{\hfill Conjuntamente insatisfatíveis
 \begin{center}
 \begin{tabular}{c c c | c | c | c | c }
 $A$ & $B$ & $C$ & $A \eif B$ & $B \eif C$ & $A$ & $\enot C$\\
@@ -1022,7 +1022,7 @@ F & F & F & T & T & F & T
 \end{tabular}
 \end{center}}
 \item $A \eor B$, $B\eor C$, $C\eif \enot A$ %satisfiable
-\myanswer{\hfill Jointly satisfiable
+\myanswer{\hfill Conjuntamente satisfatíveis
 \begin{center}
 \begin{tabular}{c c c | c | c | d e f }
 $A$ & $B$ & $C$ & $A \eor B$ & $B \eor C$ & $C$&$\eif$& $\enot A$\\
@@ -1031,7 +1031,7 @@ F & T & T & T & T & & \TTbf{T} & T\\
 \end{tabular}
 \end{center}}
 \item $A$, $B$, $C$, $\enot D$, $\enot E$, $F$ %satisfiable
-\myanswer{\hfill Jointly satisfiable
+\myanswer{\hfill Conjuntamente satisfatíveis
 \begin{center}
 \begin{tabular}{c c c c c c| c | c | c | c |c | c }
 $A$ & $B$ & $C$ & $D$ & $E$ & $F$ & $A$ & $B$ & $C$ & $\enot D$ & $\enot E$ & $F$\\
@@ -1045,10 +1045,10 @@ T & T & T & F & F & T & T & T& T& T& T& T
 \solutions
 \problempart
 \label{pr.TT.valid4}
-Use complete or partial truth tables (as appropriate) to determine whether each argument is valid or invalid:
+Use tabelas-verdade completas ou parciais (conforme apropriado) para determinar se cada argumento é válido ou inválido:
 \begin{compactlist}
 \item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore A$ %invalid
-\myanswer{\hfill Invalid
+\myanswer{\hfill Inválido
 \begin{center}
 \begin{tabular}{c |  d e e e e e f | c}
 $A$ & $A$&$\eor$&$\bigl[A$&$\eif$&$(A$&$\eiff$&$A)\bigr]$ & $A$\\
@@ -1057,7 +1057,7 @@ F & & \TTbf{T} & & T & & & & F
 \end{tabular}
 \end{center}}
 \item $A\eiff\enot(B\eiff A) \therefore A$ %invalid
-\myanswer{\hfill Invalid
+\myanswer{\hfill Inválido
 \begin{center}
 \begin{tabular}{c c | d e e f | c}
 $A$&$B$ & $A$&$\eiff$&$\enot$&$(B\eiff A)$ & $A$\\
@@ -1067,7 +1067,7 @@ F & F & & \TTbf{T} & F & T & F
 \end{center}}
 
 \item $A\eif B, B \therefore A$ %invalid
-\myanswer{\hfill Invalid
+\myanswer{\hfill Inválido
 \begin{center}
 \begin{tabular}{c c | c | c | c}
 $A$&$B$ & $A \eif B$ & $B$ & $A$\\
@@ -1077,7 +1077,7 @@ F & T & T & T & F
 \end{center}}
 
 \item $A\eor B, B\eor C, \enot B \therefore A \eand C$ %valid
-\myanswer{\hfill Valid
+\myanswer{\hfill Válido
 \begin{center}
 \begin{tabular}{c c c | c | c | c | c }
 $A$ & $B$ & $C$ & $A \eor B$ & $B \eor C$ & $\enot B$ & $A \eand C$\\
@@ -1094,7 +1094,7 @@ F & F & F & F &  & T & F
 \end{center}}
 
 \item $A\eiff B, B\eiff C \therefore A\eiff C$ %valid
-\myanswer{\hfill Valid
+\myanswer{\hfill Válido
 \begin{center}
 \begin{tabular}{c c c | c | c | c }
 $A$ & $B$ & $C$ & $A \eiff B$ & $B \eiff C$ & $A \eiff C$\\
@@ -1113,13 +1113,13 @@ F & F & F &  &  & T
 
 \problempart
 \label{pr.TT.TTorC3}
-Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table as appropriate.
+Determine se cada sentença é uma tautologia, uma contradição ou uma sentença contingente. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 
 % truth tables in LaTeX generated by http://www.curtisbright.com/logic/. Be sure to give him a shout out.
 
 \begin{compactlist}
 \item  $A \eif \enot A$ 
-\myanswer{\hfill Contingent
+\myanswer{\hfill Contingente
  \[
  \begin{array}{c|cccc}
  A&A&\eif&\enot&A\\\hline
@@ -1130,7 +1130,7 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 }
 %	T letter, 2 connectives
 \item $A \eif (A \eand (A \eor B))$ 
-\myanswer{ \hfill Tautology
+\myanswer{ \hfill Tautologia
 \[
 \begin{array}{cc|ccc@{}ccc@{}ccc@{}c@{}c}
 A&B&A&\eif&(&A&\eand&(&A&\eor&B&)&)\\\hline
@@ -1145,7 +1145,7 @@ F&F&F&\mathbf{T}&&F&F&&F&F&F&&
 %			2 letters, 3 connectives
 
 \item $(A \eif B) \eiff (B \eif A)$
-\myanswer{ \hfill Contingent
+\myanswer{ \hfill Contingente
 \[
 \begin{array}{cc|c@{}ccc@{}ccc@{}ccc@{}c}
 A&B&(&A&\rightarrow&B&)&\leftrightarrow&(&B&\rightarrow&A&)\\\hline
@@ -1158,7 +1158,7 @@ F&F&&F&T&F&&\mathbf{T}&&F&T&F&
 %		2 letters, 3 connectives
 
 \item $A \eif \enot(A \eand (A \eor B)) $
-\myanswer{ \hfill Contingent
+\myanswer{ \hfill Contingente
 \[
 \begin{array}{cc|cccc@{}ccc@{}ccc@{}c@{}c}
 A&B&A&\rightarrow&\enot&(&A&\eand&(&A&\eor&B&)&)\\\hline
@@ -1173,7 +1173,7 @@ F&F&F&\mathbf{T}&T&&F&F&&F&F&F&&
 % 2 letters, 4 connectives
 
 \item $\enot B \eif [(\enot A \eand A) \eor B]$
-\myanswer{ \hfill Contingent
+\myanswer{ \hfill Contingente
 \[
 \begin{array}{cc|cccc@{}c@{}cccc@{}ccc@{}c}
 A&B&\enot&B&\rightarrow&(&(&\enot&A&\eand&A&)&\eor&B&)\\\hline
@@ -1186,7 +1186,7 @@ F&F&T&F&\mathbf{F}&&&T&F&F&F&&F&F&
 %	2 letters, 5 connectives
 
 \item $\enot(A \eor B) \eiff (\enot A \eand \enot B)$
-\myanswer{ \hfill Tautology
+\myanswer{ \hfill Tautologia
 \[
 \begin{array}{cc|cc@{}ccc@{}ccc@{}ccccc@{}c}
 A&B&\enot&(&A&\eor&B&)&\leftrightarrow&(&\enot&A&\eand&\enot&B&)\\\hline
@@ -1199,7 +1199,7 @@ F&F&T&&F&F&F&&\mathbf{T}&&T&F&T&T&F&
 %2 letters, 6 connectives
 
 \item $[(A \eand B) \eand C] \eif B$
-\myanswer{ \hfill Tautology
+\myanswer{ \hfill Tautologia
 \[
 \begin{array}{ccc|c@{}c@{}ccc@{}ccc@{}ccc}
 A&B&C&(&(&A&\eand&B&)&\eand&C&)&\rightarrow&B\\\hline
@@ -1217,7 +1217,7 @@ F&F&F&&&F&F&F&&F&F&&\mathbf{T}&F
 %3 letters, 3 connectives
 
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$
-\myanswer{ \hfill Contingent
+\myanswer{ \hfill Contingente
 \[
 \begin{array}{ccc|cc@{}c@{}ccc@{}ccc@{}c}
 A&B&C&\enot&(&(&C&\eor&A&)&\eor&B&)\\\hline
@@ -1234,7 +1234,7 @@ F&F&F&\mathbf{T}&&&F&F&F&&F&F&
 %	 	3 letters, 3 connectives
 
 \item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$
-\myanswer{ \hfill Contradiction
+\myanswer{ \hfill Contradição
 \[
 \begin{array}{ccc|c@{}c@{}ccc@{}cccc@{}ccc@{}c@{}ccc}
 A&B&C&(&(&A&\eand&B&)&\eand&\enot&(&A&\eand&B&)&)&\eand&C\\\hline
@@ -1252,7 +1252,7 @@ F&F&F&&&F&F&F&&F&T&&F&F&F&&&\mathbf{F}&F
 % 	3 letters, 5 connectives
 
 \item $(A \eand B) \eif[(A \eand C) \eor (B \eand D)]$
-\myanswer{ \hfill Contingent
+\myanswer{ \hfill Contingente
 \[
 \begin{array}{cccc|c@{}c@{}ccc@{}c@{}ccc@{}c@{}ccc@{}ccc@{}ccc@{}c@{}c}
 A&B&C&D&&(&A&\eand&B&&)&\eif&(&(&A&\eand&C&)&\eor&(&B&\eand&D&)&)\\\hline
@@ -1266,76 +1266,75 @@ T&T&F&F&&&T&T&T&&&\mathbf{F}&&&T&F&F&&F&&T&F&F&&\\
 
 \noindent\problempart
 \label{pr.TT.TTorC4}
-Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table as appropriate.
+Determine se cada sentença é uma tautologia, uma contradição ou uma sentença contingente. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \begin{compactlist}
-\item  $\enot (A \eor A)$\vspace{.5ex}		\hfill			\myanswer{		Contingent}	%	1 letter, 2 connectives
-\item $(A \eif B) \eor (B \eif A)$\vspace{.5ex}	\hfill		\myanswer{			Tautology	}	%	2 letters, 2 connectives
-\item $[(A \eif B) \eif A] \eif A$\vspace{.5ex}	\hfill			\myanswer{	  	Tautology		 }   %2 letters, 3 connectives
-\item $\enot[( A \eif B) \eor (B \eif A)]$\vspace{.5ex}	\hfill		\myanswer{		Contradiction}	%	2 letters, 4 connectives
-\item $(A \eand B) \eor (A \eor B)$\vspace{.5ex} 	\hfill			\myanswer{		Contingent	}	%2 letters, 5 connectives
-\item $\enot(A\eand B) \eiff A$\vspace{.5ex} 		\hfill			\myanswer{	Contingent		}	%2 letters, 3 connectives
-\item $A\eif(B\eor C)$\vspace{.5ex} 				\hfill			\myanswer{	Contingent		}	%3 letters, 2 connectives
-\item $(A \eand\enot A) \eif (B \eor C)$\vspace{.5ex} 	\hfill		\myanswer{	Tautology		}	%3 letters, 4 connectives 
-\item $(B\eand D) \eiff [A \eiff(A \eor C)]$\vspace{.5ex}\hfill		\myanswer{		Contingent	}	%	4 letters, 4 connectives
-\item $\enot[(A \eif B) \eor (C \eif D)]$\vspace{.5ex} 	\hfill		\myanswer{	 Contingent 	}	%4 letters, 4 connectives
+\item  $\enot (A \eor A)$\vspace{.5ex}		\hfill			\myanswer{		Contingente}	%	1 letter, 2 connectives
+\item $(A \eif B) \eor (B \eif A)$\vspace{.5ex}	\hfill		\myanswer{			Tautologia	}	%	2 letters, 2 connectives
+\item $[(A \eif B) \eif A] \eif A$\vspace{.5ex}	\hfill			\myanswer{	  	Tautologia		 }   %2 letters, 3 connectives
+\item $\enot[( A \eif B) \eor (B \eif A)]$\vspace{.5ex}	\hfill		\myanswer{		Contradição}	%	2 letters, 4 connectives
+\item $(A \eand B) \eor (A \eor B)$\vspace{.5ex} 	\hfill			\myanswer{		Contingente	}	%2 letters, 5 connectives
+\item $\enot(A\eand B) \eiff A$\vspace{.5ex} 		\hfill			\myanswer{	Contingente		}	%2 letters, 3 connectives
+\item $A\eif(B\eor C)$\vspace{.5ex} 				\hfill			\myanswer{	Contingente		}	%3 letters, 2 connectives
+\item $(A \eand\enot A) \eif (B \eor C)$\vspace{.5ex} 	\hfill		\myanswer{	Tautologia		}	%3 letters, 4 connectives
+\item $(B\eand D) \eiff [A \eiff(A \eor C)]$\vspace{.5ex}\hfill		\myanswer{		Contingente	}	%	4 letters, 4 connectives
+\item $\enot[(A \eif B) \eor (C \eif D)]$\vspace{.5ex} 	\hfill		\myanswer{	 Contingente 	}	%4 letters, 4 connectives
 \end{compactlist}
 
 
 
 \noindent\problempart
-Determine whether each of the following pairs of sentences are logically equivalent using truth tables. Justify your answer with a complete or partial truth table as appropriate.
+Determine se cada um dos seguintes pares de sentenças é logicamente equivalente usando tabelas-verdade. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \begin{compactlist}
-\item $A$ and $A \eor A$
-\item $A$ and $A \eand A$
-\item $A \eor \enot B$ and $A\eif B$
-\item $(A \eif B)$ and $(\enot B \eif \enot A)$
-\item $\enot(A \eand B)$ and $\enot A \eor \enot B$
-\item $ ((U \eif (X \eor X)) \eor U)$ and $\enot (X \eand (X \eand U))$
-\item $ ((C \eand (N \eiff C)) \eiff C)$ and $(\enot \enot \enot N \eif C)$
-\item $[(A \eor B) \eand C]$ and $[A \eor (B \eand C)]$
-\item $((L \eand C) \eand I)$ and $L \eor C$
+\item $A$ e $A \eor A$
+\item $A$ e $A \eand A$
+\item $A \eor \enot B$ e $A\eif B$
+\item $(A \eif B)$ e $(\enot B \eif \enot A)$
+\item $\enot(A \eand B)$ e $\enot A \eor \enot B$
+\item $ ((U \eif (X \eor X)) \eor U)$ e $\enot (X \eand (X \eand U))$
+\item $ ((C \eand (N \eiff C)) \eiff C)$ e $(\enot \enot \enot N \eif C)$
+\item $[(A \eor B) \eand C]$ e $[A \eor (B \eand C)]$
+\item $((L \eand C) \eand I)$ e $L \eor C$
 \end{compactlist}
 
 
 \noindent\problempart
 \label{pr.TT.satisfiable5}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable. Justify your answer with a complete or partial truth table as appropriate.
+Determine se cada coleção de sentenças é conjuntamente satisfatível ou conjuntamente insatisfatível. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \begin{compactlist}
-\item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ \vspace{.5ex} \hfill \myanswer{Consistent}
-\item $A \eif \enot A$, $\enot A \eif A$\vspace{.5ex} \hfill \myanswer{Insatisfiable }
-\item $A\eor B$, $A\eif C$, $B\eif C$\vspace{.5ex} \hfill \myanswer{Consistent}
-\item $A \eor B$, $A \eif C$, $B \eif C$, $\enot C$\vspace{.5ex} \hfill \myanswer{	Insatisfiable}
-\item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$\vspace{.5ex}  \hfill \myanswer{Insatisfiable}
-\item $(A \eiff B) \eif B$,  $B \eif \enot (A \eiff B)$, $A \eor B$ \vspace{.5ex} \hfill \myanswer{Consistent}
-\item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$\vspace{.5ex} \hfill \myanswer{Consistent}
-\item  $A \eiff B$,  $\enot B \eor \enot A$,  $A \eif  B$ \vspace{.5ex} \hfill \myanswer{ Consistent}
-\item $A \eiff B$, $A \eif C$, $B \eif D$, $\enot(C \eor D)$\vspace{.5ex} \hfill \myanswer{Consistent}
-\item $\enot (A \eand \enot B)$,  $B \eif \enot A$, $\enot B$  \vspace{.5ex} \hfill \myanswer{Consistent}
+\item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ \vspace{.5ex} \hfill \myanswer{Consistente}
+\item $A \eif \enot A$, $\enot A \eif A$\vspace{.5ex} \hfill \myanswer{Insatisfatível }
+\item $A\eor B$, $A\eif C$, $B\eif C$\vspace{.5ex} \hfill \myanswer{Consistente}
+\item $A \eor B$, $A \eif C$, $B \eif C$, $\enot C$\vspace{.5ex} \hfill \myanswer{	Insatisfatível}
+\item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$\vspace{.5ex}  \hfill \myanswer{Insatisfatível}
+\item $(A \eiff B) \eif B$,  $B \eif \enot (A \eiff B)$, $A \eor B$ \vspace{.5ex} \hfill \myanswer{Consistente}
+\item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$\vspace{.5ex} \hfill \myanswer{Consistente}
+\item  $A \eiff B$,  $\enot B \eor \enot A$,  $A \eif  B$ \vspace{.5ex} \hfill \myanswer{ Consistente}
+\item $A \eiff B$, $A \eif C$, $B \eif D$, $\enot(C \eor D)$\vspace{.5ex} \hfill \myanswer{Consistente}
+\item $\enot (A \eand \enot B)$,  $B \eif \enot A$, $\enot B$  \vspace{.5ex} \hfill \myanswer{Consistente}
 \end{compactlist}
 
-\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
+\noindent\problempart Determine se cada argumento é válido ou inválido. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \label{pr.TT.valid5} 
 \begin{compactlist}
-\item $A\eif(A\eand\enot A)\therefore \enot A$ \hfill \myanswer{ Valid}
-\item $A \eor B$, $A \eif B$, $B \eif A \therefore  A \eiff B$  \hfill \myanswer{ Valid}
-\item $A\eor(B\eif A)\therefore \enot A \eif \enot B$ \hfill \myanswer{Valid}
-\item $A \eor B$, $A \eif B$, $ B \eif A \therefore  A \eand B$ \hfill \myanswer{Valid}
-\item $(B\eand A)\eif C$, $(C\eand A)\eif B\therefore (C\eand B)\eif A$ \hfill \myanswer{Invalid}
-\item $\enot (\enot A \eor \enot B)$, $A \eif \enot C \therefore  A \eif (B \eif C)$ \hfill \myanswer{ Invalid}
-\item $A \eand (B \eif C)$, $\enot C \eand (\enot B \eif \enot A)\therefore C \eand \enot C$ \hfill \myanswer{ Valid}
-\item $A \eand B$, $\enot A \eif \enot C$, $B \eif \enot D \therefore  A \eor B$ \hfill \myanswer{ Valid}
-\item $A \eif B\therefore (A \eand B) \eor (\enot A \eand \enot B)$ \hfill \myanswer{ Invalid}
-\item $\enot A \eif B$,$ \enot B \eif C $,$ \enot C \eif A \therefore  \enot A \eif (\enot B \eor \enot C)$ \hfill \myanswer{Invalid}
+\item $A\eif(A\eand\enot A)\therefore \enot A$ \hfill \myanswer{ Válido}
+\item $A \eor B$, $A \eif B$, $B \eif A \therefore  A \eiff B$  \hfill \myanswer{ Válido}
+\item $A\eor(B\eif A)\therefore \enot A \eif \enot B$ \hfill \myanswer{Válido}
+\item $A \eor B$, $A \eif B$, $ B \eif A \therefore  A \eand B$ \hfill \myanswer{Válido}
+\item $(B\eand A)\eif C$, $(C\eand A)\eif B\therefore (C\eand B)\eif A$ \hfill \myanswer{Inválido}
+\item $\enot (\enot A \eor \enot B)$, $A \eif \enot C \therefore  A \eif (B \eif C)$ \hfill \myanswer{ Inválido}
+\item $A \eand (B \eif C)$, $\enot C \eand (\enot B \eif \enot A)\therefore C \eand \enot C$ \hfill \myanswer{ Válido}
+\item $A \eand B$, $\enot A \eif \enot C$, $B \eif \enot D \therefore  A \eor B$ \hfill \myanswer{ Válido}
+\item $A \eif B\therefore (A \eand B) \eor (\enot A \eand \enot B)$ \hfill \myanswer{ Inválido}
+\item $\enot A \eif B$,$ \enot B \eif C $,$ \enot C \eif A \therefore  \enot A \eif (\enot B \eor \enot C)$ \hfill \myanswer{Inválido}
 
 \end{compactlist}
 
-\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
+\noindent\problempart Determine se cada argumento é válido ou inválido. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \label{pr.TT.valid6} 
 \begin{compactlist}
-\item $A\eiff\enot(B\eiff A)\therefore A$ \hfill \myanswer{ Invalid}
-\item $A\eor B$, $B\eor C$, $\enot A\therefore B \eand C$ \hfill \myanswer{ Invalid}
-\item $A \eif C$, $E \eif (D \eor B)$, $B \eif \enot D\therefore (A \eor C) \eor (B \eif (E \eand D))$ \hfill \myanswer{ Invalid}
-\item $A \eor B$, $C \eif A$, $C \eif B\therefore A \eif (B \eif C)$ \hfill \myanswer{ Invalid}
-\item $A \eif B$, $\enot B \eor A\therefore A \eiff B$ \hfill \myanswer{ Valid}
+\item $A\eiff\enot(B\eiff A)\therefore A$ \hfill \myanswer{ Inválido}
+\item $A\eor B$, $B\eor C$, $\enot A\therefore B \eand C$ \hfill \myanswer{ Inválido}
+\item $A \eif C$, $E \eif (D \eor B)$, $B \eif \enot D\therefore (A \eor C) \eor (B \eif (E \eand D))$ \hfill \myanswer{ Inválido}
+\item $A \eor B$, $C \eif A$, $C \eif B\therefore A \eif (B \eif C)$ \hfill \myanswer{ Inválido}
+\item $A \eif B$, $\enot B \eor A\therefore A \eiff B$ \hfill \myanswer{ Válido}
 \end{compactlist}
-
