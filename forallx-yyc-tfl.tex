@@ -816,117 +816,225 @@ Para cada argumento, escreva uma chave de simbolização e simbolize o argumento
 \problempart
 Simbolizamos um \emph{ou exclusivo} usando \eor, \eand e \enot. Como você poderia simbolizar um \emph{ou exclusivo} usando apenas dois conectivos? Há alguma maneira de simbolizar um \emph{ou exclusivo} usando apenas um conectivo?
 
-\chapter{Sentences of TFL}\label{s:TFLSentences}
-The sentence `either apples are red, or berries are blue' is a sentence of English, and the sentence `$(A\eor B)$' is a sentence of TFL. Although we can identify sentences of English when we encounter them, we do not have a formal definition of `sentence of English'. But in this chapter, we will \emph{define} exactly what will count as a sentence of TFL. This is one respect in which a formal language like TFL is more precise than a natural language like English.
+\chapter{Sentenças da LVF}\label{s:TFLSentences}
+A sentença \emph{ou maçãs são vermelhas, ou bagas são azuis} é uma
+sentença em português, e a sentença $(A\eor B)$ é uma sentença da LVF.
+Embora possamos identificar sentenças em português quando nos deparamos
+com elas, não temos uma definição formal de \emph{sentença em português}.
+Neste capítulo, porém, definiremos exatamente o que contará como uma
+sentença da LVF. Este é um dos aspectos em que uma linguagem formal como
+a LVF é mais precisa que uma linguagem natural como o português.
 
 
-\section{Expressions}
+\section{Expressões}
 
-We have seen that there are three kinds of symbols in TFL:
+Vimos que há três tipos de símbolos na LVF:
 \begin{center}
 \begin{tabular}{l l}
-Atomic sentences & $A,B,C,\ldots,Z,\ldots$\\
-with subscripts, as needed & $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\[12pt]
-Connectives & $\enot,\eand,\eor,\eif,\eiff$\\[12pt]
-Brackets &( , )
+Sentenças atômicas & $A,B,C,\ldots,Z,\ldots$\\
+com subscritos, conforme necessário & $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\[12pt]
+Conectivos & $\enot,\eand,\eor,\eif,\eiff$\\[12pt]
+Parênteses &( , )
 \end{tabular}
 \end{center}
-Define an \define{expression of TFL} as any string of symbols of TFL.
-So: write down any sequence of symbols of TFL, in any order, and you
-have an expression of TFL.\footnote{In \cref{sec:contradiction}, we
-will introduce the symbol~`$\ered$', which will also count as an
-atomic sentence.}
+Defina uma \define{express\~ao da LVF} como qualquer cadeia de símbolos
+da LVF.
+Assim: escreva qualquer sequência de símbolos da LVF, em qualquer ordem,
+e você terá uma expressão da LVF.\footnote{Em \cref{sec:contradiction},
+introduziremos o símbolo~$\ered$, que também contará como uma sentença
+atômica.}
 
-\section{Sentences}\label{s:Sentences}
-Given what we just said, `$(A \eand B)$' is an expression of TFL, and so is `$\lnot)(\eor()\eand(\enot\enot())((B$'. But the former is a \emph{sentence}, and the latter is \emph{gibberish}. We want some rules to tell us which TFL expressions are sentences.
+\section{Sentenças}\label{s:Sentences}
+Dado o que acabamos de dizer, $(A \eand B)$ é uma expressão da LVF, e
+também o é $\lnot)(\eor()\eand(\enot\enot())((B$. Mas a primeira é uma
+\emph{sentença}, e a segunda é um \emph{amontoado de símbolos sem
+sentido}. Queremos algumas regras que nos digam quais expressões da LVF
+são sentenças.
 
-Obviously, individual sentence letters like `$A$' and `$G_{13}$' should count as sentences. (We'll also call them \define{atomic} sentences.) We can form further sentences out of these by using the various connectives. Using negation, we can get `$\enot A$' and `$\enot G_{13}$'. Using conjunction, we can get `$(A \eand G_{13})$', `$(G_{13} \eand A)$', `$(A \eand A)$', and `$(G_{13} \eand G_{13})$'. We could also apply negation repeatedly to get sentences like `$\enot \enot A$' or apply negation along with conjunction to get sentences like `$\enot(A \eand G_{13})$' and `$\enot(G_{13} \eand \enot G_{13})$'. The possible combinations are endless, even starting with just these two sentence letters, and there are infinitely many sentence letters. So there is no point in trying to list all the sentences one by one.
+Obviamente, letras sentenciais individuais como $A$ e $G_{13}$ devem
+contar como sentenças. (Também as chamaremos de sentenças
+\define{at\^omicas}.) Podemos formar outras sentenças a partir delas
+usando os vários conectivos. Usando a negação, podemos obter $\enot A$ e
+$\enot G_{13}$. Usando a conjunção, podemos obter $(A \eand G_{13})$,
+$(G_{13} \eand A)$, $(A \eand A)$ e $(G_{13} \eand G_{13})$. Também
+poderíamos aplicar a negação repetidamente para obter sentenças como
+$\enot \enot A$ ou aplicar a negação junto com a conjunção para obter
+sentenças como $\enot(A \eand G_{13})$ e
+$\enot(G_{13} \eand \enot G_{13})$. As combinações possíveis são
+infinitas, mesmo começando apenas com essas duas letras sentenciais, e
+há infinitas letras sentenciais. Portanto, não faz sentido tentar listar
+todas as sentenças uma a uma.
 
-Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: Given any sentence \metav{A} of TFL, $\enot\metav{A}$ is a sentence of TFL. (Why the funny fonts? We return to this in \cref{s:Metavariables}.)
+Em vez disso, descreveremos o processo pelo qual as sentenças podem ser
+\emph{construídas}. Considere a negação: dada qualquer sentença
+\metav{A} da LVF, $\enot\metav{A}$ é uma sentença da LVF. (Por que as
+fontes tipográficas estranhas? Voltaremos a isso em
+\cref{s:Metavariables}.)
 
-We can say similar things for each of the other connectives. For instance, if \metav{A} and \metav{B} are sentences of TFL, then $(\metav{A}\eand\metav{B})$ is a sentence of TFL. Providing clauses like this for all of the connectives, we arrive at the following formal definition for a \define{sentence of TFL}:
+Podemos dizer coisas semelhantes para cada um dos outros conectivos. Por
+exemplo, se \metav{A} e \metav{B} são sentenças da LVF, então
+$(\metav{A}\eand\metav{B})$ é uma sentença da LVF. Ao fornecer cláusulas
+como essa para todos os conectivos, chegamos à seguinte definição formal
+de uma \define{senten\c{c}a da LVF}:
 	\factoidbox{\label{TFLsentences}
 	\begin{factoidnumber}
-		\item Every sentence letter is a sentence.
-		\item If \metav{A} is a sentence, then $\enot\metav{A}$ is a sentence.
-		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eand\metav{B})$ is a sentence.
-		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eor\metav{B})$ is a sentence.
-		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eif\metav{B})$ is a sentence.
-		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eiff\metav{B})$ is a sentence.
-		\item Nothing else is a sentence.
+		\item Toda letra sentencial é uma sentença.
+		\item Se \metav{A} é uma sentença, então $\enot\metav{A}$ é uma sentença.
+		\item Se \metav{A} e \metav{B} são sentenças, então $(\metav{A}\eand\metav{B})$ é uma sentença.
+		\item Se \metav{A} e \metav{B} são sentenças, então $(\metav{A}\eor\metav{B})$ é uma sentença.
+		\item Se \metav{A} e \metav{B} são sentenças, então $(\metav{A}\eif\metav{B})$ é uma sentença.
+		\item Se \metav{A} e \metav{B} são sentenças, então $(\metav{A}\eiff\metav{B})$ é uma sentença.
+		\item Nada mais é uma sentença.
 	\end{factoidnumber}
 	}
 \newglossaryentry{sentence of TFL}
 {
-name=sentence (of TFL),
-text = sentence of TFL,
-plural = sentences of TFL,
-description={A string of symbols in TFL that can be built up according to the inductive rules given \ifHTMLtarget in \cref{s:Sentences}\else on p.~\pageref{TFLsentences}\fi}
+name=sentença (da LVF),
+text = sentença da LVF,
+plural = sentenças da LVF,
+description={Uma cadeia de símbolos na LVF que pode ser construída de acordo com as regras indutivas dadas \ifHTMLtarget em \cref{s:Sentences}\else na p.~\pageref{TFLsentences}\fi}
 }
 
-Definitions like this are called \define{inductive}. Inductive definitions begin with some specifiable base elements, and then present ways to generate indefinitely many more elements by compounding together previously established ones. To give you a better idea of what an inductive definition is, we can give an inductive definition of the idea of \emph{an ancestor of mine}. We specify a base clause:
+Definições como essa são chamadas de \define{indutivas}. Definições
+indutivas começam com alguns elementos básicos especificáveis e, então,
+apresentam maneiras de gerar indefinidamente muitos outros elementos,
+combinando elementos previamente estabelecidos. Para dar uma ideia
+melhor do que é uma definição indutiva, podemos fornecer uma definição
+indutiva da ideia de \emph{um ancestral meu}. Especificamos uma cláusula
+básica:
 	\begin{itemize}
-		\item My parents are ancestors of mine.
+		\item Meus pais são meus ancestrais.
 	\end{itemize}
-and then offer further clauses like:
+e então oferecemos cláusulas adicionais como:
 	\begin{itemize}
-		\item If $x$ is an ancestor of mine, then $x$'s parents are ancestors of mine.
+		\item Se $x$ é um ancestral meu, então os pais de $x$ são meus ancestrais.
 	\end{itemize}
-Finally, we stipulate that \emph{only} what the base and inductive
-clauses say are ancestors of mine will count as such.
+Por fim, estipulamos que \emph{somente} aquilo que as cláusulas básica e
+indutiva dizem ser ancestral meu contará como tal.
 	\begin{itemize}
-		\item Nothing else is an ancestor of mine.
+		\item Nada mais é um ancestral meu.
 	\end{itemize}
-Using this definition, we can easily check to see whether someone is my ancestor: just check whether she is the parent of the parent of\ldots one of my parents. And the same is true for our inductive definition of sentences of TFL. Just as the inductive definition allows complex sentences to be built up from simpler parts, the definition allows us to decompose sentences into their simpler parts. Once we get down to sentence letters, then we know we are ok.
+Usando essa definição, podemos verificar facilmente se alguém é meu
+ancestral: basta verificar se essa pessoa é mãe ou pai de um dos meus pais,
+ou de um dos pais de um dos meus pais, e assim por diante. O mesmo vale para nossa
+definição indutiva de sentenças da LVF. Assim como a definição indutiva
+permite construir sentenças complexas a partir de partes mais simples, a
+definição permite decompor sentenças em suas partes mais simples. Quando
+chegamos às letras sentenciais, sabemos que está tudo certo.
 
-Let's consider some examples.
+Consideremos alguns exemplos.
 
-Suppose we want to know whether or not `$\enot \enot \enot D$' is a sentence of TFL. Looking at the second clause of the definition, we know that `$\enot \enot \enot D$' is a sentence \emph{if} `$\enot \enot D$' is a sentence. So now we need to ask whether or not `$\enot \enot D$' is a sentence. Again looking at the second clause of the definition, `$\enot \enot D$' is a sentence \emph{if} `$\enot D$' is. So, `$\enot D$' is a sentence \emph{if} `$D$' is a sentence. Now `$D$' is a sentence letter of TFL, so we know that `$D$' is a sentence by the first clause of the definition. So for a compound sentence like `$\enot \enot \enot D$', we must apply the definition repeatedly. Eventually we arrive at the sentence letters from which the sentence is built up.
+Suponha que queiramos saber se $\enot \enot \enot D$ é ou não uma
+sentença da LVF. Olhando para a segunda cláusula da definição, sabemos
+que $\enot \enot \enot D$ é uma sentença \emph{se} $\enot \enot D$ é uma
+sentença. Portanto, agora precisamos perguntar se $\enot \enot D$ é uma
+sentença. Novamente, olhando para a segunda cláusula da definição,
+$\enot \enot D$ é uma sentença \emph{se} $\enot D$ for. Assim,
+$\enot D$ é uma sentença \emph{se} $D$ for uma sentença. Ora, $D$ é uma
+letra sentencial da LVF, portanto sabemos, pela primeira cláusula da
+definição, que $D$ é uma sentença. Assim, para uma sentença composta como
+$\enot \enot \enot D$, precisamos aplicar a definição repetidamente.
+Por fim, chegamos às letras sentenciais a partir das quais a sentença foi
+construída.
 
-Next, consider the example `$\enot (P \eand \enot (\enot Q \eor R))$'. Looking at the second clause of the definition, this is a sentence if `$(P \eand \enot (\enot Q \eor R))$' is, and this is a sentence if \emph{both} `$P$' \emph{and} `$\enot (\enot Q \eor R)$' are sentences. The former is a sentence letter, and the latter is a sentence if `$(\enot Q \eor R)$' is a sentence. It is. Looking at the fourth clause of the definition, this is a sentence if both `$\enot Q$' and `$R$' are sentences, and both are!
+Considere agora o exemplo $\enot (P \eand \enot (\enot Q \eor R))$.
+Olhando para a segunda cláusula da definição, ele é uma sentença se
+$(P \eand \enot (\enot Q \eor R))$ for, e isso é uma sentença se
+\emph{ambos} $P$ e $\enot (\enot Q \eor R)$ forem sentenças. O primeiro
+é uma letra sentencial, e o segundo é uma sentença se
+$(\enot Q \eor R)$ for uma sentença. E é. Olhando para a quarta cláusula
+da definição, esta é uma sentença se tanto $\enot Q$ quanto $R$ forem
+sentenças, e ambos são!
 
-Ultimately, every sentence is constructed nicely out of sentence letters. When we are dealing with a \emph{sentence} other than a sentence letter, we can see that there must be some sentential connective that was introduced \emph{last}, when constructing the sentence. We call that connective the \define{main logical operator} of the sentence. In the case of `$\enot\enot\enot D$', the main logical operator is the very first `$\enot$' sign. In the case of `$(P \eand \enot (\enot Q \eor R))$', the main logical operator is `$\eand$'. In the case of `$((\enot E \eor F) \eif \enot\enot G)$', the main logical operator is `$\eif$'.
+Em última análise, toda sentença é construída de maneira adequada a
+partir de letras sentenciais. Quando lidamos com uma \emph{sentença} que
+não é uma letra sentencial, podemos ver que algum conectivo sentencial
+deve ter sido introduzido \emph{por último} na construção da sentença.
+Chamamos esse conectivo de \define{operador l\'ogico principal} da
+sentença. No caso de $\enot\enot\enot D$, o operador lógico principal é
+o primeiro símbolo $\enot$. No caso de
+$(P \eand \enot (\enot Q \eor R))$, o operador lógico principal é
+$\eand$. No caso de $((\enot E \eor F) \eif \enot\enot G)$, o operador
+lógico principal é $\eif$.
 
-As a general rule, you can find the main logical operator for a sentence by using the following method:
+Como regra geral, você pode encontrar o operador lógico principal de uma
+sentença usando o método a seguir:
 \begin{itemize}
-	\item If the first symbol in the sentence is `$\enot$', then that is the main logical operator
-	\item Otherwise, start counting the brackets. For each open-bracket, i.e., `(', add $1$; for each closing-bracket, i.e., `$)$', subtract $1$. When your count is at exactly $1$, the first operator you hit (\emph{apart} from a `$\enot$') is the main logical operator.
+	\item Se o primeiro símbolo da sentença é $\enot$, então esse é o operador lógico principal.
+	\item Caso contrário, comece a contar os parênteses. Para cada parêntese de abertura, isto é, o símbolo (, acrescente $1$; para cada parêntese de fechamento, isto é, o símbolo $)$, subtraia $1$. Quando sua contagem estiver exatamente em $1$, o primeiro operador que você encontrar (\emph{exceto} um $\enot$) será o operador lógico principal.
 \end{itemize}
 
-(Note: if you do use this method, then make sure to include \emph{all} the brackets in the sentence, rather than omitting some as per the conventions of \cref{TFLconventions}!)
+(Observação: se você usar esse método, inclua \emph{todos} os parênteses
+da sentença, em vez de omitir alguns de acordo com as convenções de
+\cref{TFLconventions}!)
 
-The inductive structure of sentences in TFL will be important when we consider the circumstances under which a particular sentence would be true or false. The sentence `$\enot \enot \enot D$' is true if and only if the sentence `$\enot \enot D$' is false, and so on through the structure of the sentence, until we arrive at the atomic components. We will return to this point in \cref{ch.TruthTables}.
+A estrutura indutiva das sentenças da LVF será importante quando
+considerarmos as circunstâncias em que uma sentença particular seria
+verdadeira ou falsa. A sentença $\enot \enot \enot D$ é verdadeira se e
+somente se a sentença $\enot \enot D$ é falsa, e assim por diante ao longo
+da estrutura da sentença, até chegarmos aos componentes atômicos.
+Voltaremos a esse ponto em \cref{ch.TruthTables}.
 
-The inductive structure of sentences in TFL also allows us to give a formal definition of the \emph{scope} of a negation (mentioned in \cref{s:ConnectiveConjunction}). The scope of a `$\enot$' is the subsentence for which `$\enot$' is the main logical operator. Consider a sentence like:
+A estrutura indutiva das sentenças da LVF também nos permite fornecer uma
+definição formal do \emph{escopo} de uma negação (mencionado em
+\cref{s:ConnectiveConjunction}). O escopo de um $\enot$ é a subsentença
+para a qual $\enot$ é o operador lógico principal. Considere uma sentença
+como:
 $$(P \eand (\enot (R \eand B) \eiff Q))$$
-which was constructed by conjoining `$P$' with `$ (\enot (R \eand B) \eiff Q)$'. This last sentence was constructed by placing a biconditional between `$\enot (R \eand B)$' and `$Q$'. The former of these sentences---a subsentence of our original sentence---is a sentence for which `$\enot$' is the main logical operator. So the scope of the negation is just `$\enot(R \eand B)$'. More generally:
-	\factoidbox{The \define{scope} of a connective (in a sentence) is the subsentence for which that connective is the main logical operator.}
+que foi construída combinando $P$ com
+$ (\enot (R \eand B) \eiff Q)$. Esta última sentença foi construída
+colocando um bicondicional entre $\enot (R \eand B)$ e $Q$. A primeira
+dessas sentenças — uma subsentença da sentença original — é uma sentença
+para a qual $\enot$ é o operador lógico principal. Portanto, o escopo da
+negação é simplesmente $\enot(R \eand B)$. De modo mais geral:
+	\factoidbox{O \define{escopo} de um conectivo (em uma sentença) é a subsentença para a qual esse conectivo é o operador lógico principal.}
 
 
-\section{Bracketing conventions}
+\section{Convenções de agrupamento}
 \label{TFLconventions}
-Strictly speaking, the brackets in `$(Q \eand R)$' are an indispensable part of the sentence. Part of this is because we might use `$(Q \eand R)$' as a subsentence in a more complicated sentence. For example, we might want to negate `$(Q \eand R)$', obtaining `$\enot(Q \eand R)$'. If we just had `$Q \eand R$' without the brackets and put a negation in front of it, we would have `$\enot Q \eand R$'. It is most natural to read this as meaning the same thing as `$(\enot Q \eand R)$', but as we saw in  \cref{s:ConnectiveConjunction}, this is very different from `$\enot(Q\eand R)$'.
+Estritamente falando, os parênteses em $(Q \eand R)$ são uma parte
+indispensável da sentença. Isso ocorre, em parte, porque poderíamos usar
+$(Q \eand R)$ como uma subsentença em uma sentença mais complicada. Por
+exemplo, poderíamos querer negar $(Q \eand R)$, obtendo
+$\enot(Q \eand R)$. Se tivéssemos apenas $Q \eand R$, sem os parênteses,
+e colocássemos uma negação diante dele, teríamos
+$\enot Q \eand R$. É mais natural ler isso como significando o mesmo que
+$(\enot Q \eand R)$, mas, como vimos em \cref{s:ConnectiveConjunction},
+isso é muito diferente de $\enot(Q\eand R)$.
 
-Strictly speaking, then, `$Q \eand R$' is \emph{not} a sentence. It is a mere \emph{expression}.
+Estritamente falando, então, $Q \eand R$ \emph{não} é uma sentença. É
+uma mera \emph{expressão}.
 
-When working with TFL, however, it will make our lives easier if we are sometimes a little less than strict. So, here are some convenient conventions.
+Ao trabalhar com a LVF, contudo, será mais fácil para nós se às vezes
+formos um pouco menos rigorosos. Portanto, eis algumas convenções úteis.
 
-First,  we allow ourselves to omit the \emph{outermost} brackets of a sentence. Thus we allow ourselves to write `$Q \eand R$' instead of the sentence `$(Q \eand R)$'. However, we must remember to put the brackets back in, when we want to embed the sentence into a more complicated sentence!
+Primeiro, permitimo-nos omitir os parênteses \emph{externos} de uma
+sentença. Assim, permitimo-nos escrever $Q \eand R$ em vez da sentença
+$(Q \eand R)$. No entanto, devemos nos lembrar de recolocar os
+parênteses quando quisermos inserir a sentença em uma sentença mais
+complicada!
 
-Second, it can be a bit painful to stare at long sentences with many nested pairs of brackets. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and~`]', instead of rounded ones. So there is no logical difference between `$(P\eor Q)$' and `$[P\eor Q]$', for example.
+Segundo, pode ser um pouco doloroso olhar para sentenças longas com
+muitos pares de parênteses aninhados. Para facilitar a leitura,
+permitimo-nos usar colchetes, os símbolos [ e ], em vez de parênteses redondos.
+Assim, não há diferença lógica entre $(P\eor Q)$ e $[P\eor Q]$, por
+exemplo.
 
-Combining these two conventions, we can rewrite the unwieldy sentence
+Combinando essas duas convenções, podemos reescrever a sentença
+desajeitada
 $$(((H \eif I) \eor (I \eif H)) \eand (J \eor K))$$
-rather more clearly as follows:
+de maneira muito mais clara, da seguinte forma:
 $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
-The scope of each connective is now much easier to pick out.
+Agora é muito mais fácil identificar o escopo de cada conectivo.
 
 \practiceproblems
 
 \solutions
 \problempart
 \label{pr.wiffTFL}
-For each of the following: (a) Is it a sentence of TFL, strictly speaking? (b) Is it a sentence of TFL, allowing for our relaxed bracketing conventions?
+Para cada item a seguir: (a) ele é uma sentença da LVF, estritamente
+falando? (b) ele é uma sentença da LVF, considerando nossas convenções
+relaxadas de agrupamento?
 \begin{compactlist}
 \item $(A)$
 \item $J_{374} \eor \enot J_{374}$
@@ -939,10 +1047,10 @@ For each of the following: (a) Is it a sentence of TFL, strictly speaking? (b) I
 \end{compactlist}
 
 \problempart
-Are there any sentences of TFL that contain no sentence letters? Explain your answer.\\
+Há alguma sentença da LVF que não contenha letras sentenciais? Explique sua resposta.\\
 
 \problempart
-What is the scope of each connective in the sentence
+Qual é o escopo de cada conectivo na sentença
 $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
 
 \chapter{Ambiguity}\label{s:AmbiguityTFL}
