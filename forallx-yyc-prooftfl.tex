@@ -1249,8 +1249,8 @@ Use as estratégias para encontrar provas para cada um dos argumentos e sentenç
 \end{compactlist}
 Todos exigirão a estratégia IP. Os três últimos são especialmente difíceis!
 
-\chapter{Additional rules for TFL}\label{s:Further}
-In \cref{s:BasicTFL}, we introduced the basic rules of our proof system for TFL. In this section, we will add some additional rules to our system. Our extended proof system is a bit easier to work with. (However, in \cref{s:Derived} we will see that they are not strictly speaking \emph{necessary}.)
+\chapter{Regras adicionais para a LVF}\label{s:Further}
+Em \cref{s:BasicTFL}, introduzimos as regras básicas do nosso sistema de provas para a LVF. Nesta seção, acrescentaremos algumas regras ao nosso sistema. O sistema de provas estendido é um pouco mais fácil de usar. (Contudo, em \cref{s:Derived}, veremos que, estritamente falando, elas não são \emph{necessárias}.)
 
 % \section{Reiteration}
 % The first additional rule is \emph{reiteration} (R). This just allows us to repeat ourselves:
@@ -1275,14 +1275,14 @@ In \cref{s:BasicTFL}, we introduced the basic rules of our proof system for TFL.
 % \end{fitchproof}
 % This is a fairly typical use of the R rule.
 
-\section{Disjunctive syllogism}
-Here is a very natural argument form.
+\section{Silogismo disjuntivo}
+Eis uma forma de argumento muito natural.
 	\begin{earg}
-		\item Elizabeth is either in Massachusetts or in DC. 
-		\item She is not in DC. 
-		\item[\texttherefore] She is in Massachusetts.
+\item Elizabeth está em Massachusetts ou em DC.
+\item Ela não está em DC.
+\item[\texttherefore] Ela está em Massachusetts.
 	\end{earg}
-This is called \emph{disjunctive syllogism}. We add it to our proof system as follows:
+Isso é chamado de \emph{silogismo disjuntivo}. Nós o adicionamos ao nosso sistema de provas da seguinte forma:
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\metav{A} \eor \metav{B}}
 	\have[n]{nb}{\enot \metav{A}}
@@ -1294,39 +1294,38 @@ and
 	\have[n]{nb}{\enot \metav{B}}
 	\have[\ ]{con}{\metav{A}}\by{DS}{ab, nb}
 \end{fitchproof}}
-As usual, the disjunction and the negation of one disjunct may occur in either order and need not be adjacent. However, we always cite the disjunction first.
+Como de costume, a disjunção e a negação de um dos disjuntivos podem ocorrer em qualquer ordem e não precisam ser adjacentes. No entanto, sempre citamos primeiro a disjunção.
 
 \section{Modus tollens}
-Another useful pattern of inference is embodied in the following argument:
+Outro padrão útil de inferência aparece no argumento a seguir:
 	\begin{earg}
-		\item If Hilary has won the election, then she is in the White
-		House. 
-		\item She is not in the White House. 
-		\item[\texttherefore] She has not won the election.
+		\item Se Hilary venceu a eleição, então ela está na Casa Branca.
+		\item Ela não está na Casa Branca.
+		\item[\texttherefore] Ela não venceu a eleição.
 	\end{earg}
-This inference pattern is called \emph{modus tollens}. The corresponding rule is:
+Esse padrão de inferência é chamado de \emph{modus tollens}. A regra correspondente é:
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eif\metav{B}}
 	\have[n]{a}{\enot\metav{B}}
 	\have[\ ]{b}{\enot\metav{A}}\mt{ab,a}
 \end{fitchproof}}
-As usual, the premises may occur in either order, but we always cite the conditional first.
+Como de costume, as premissas podem ocorrer em qualquer ordem, mas sempre citamos primeiro o condicional.
 
-\section{Double-negation elimination}
-Another useful rule is \emph{double-negation elimination}. It does exactly what it says on the tin:
+\section{Eliminação da dupla negação}
+Outra regra útil é a \emph{eliminação da dupla negação}. Ela faz exatamente o que seu nome indica:
 \factoidbox{\begin{fitchproof}
 		\have[m]{dna}{\enot \enot \metav{A}}
 		\have[ ]{a}{\metav{A}}\dne{dna}
 	\end{fitchproof}}
-The justification for this is that, in natural language, double-negations tend to cancel out.
+A justificativa para isso é que, na linguagem natural, duplas negações tendem a se cancelar.
 
-That said, you should be aware that context and emphasis can prevent them from doing so. Consider: `Jane is not \emph{not} happy'. Arguably, one cannot infer `Jane is happy', since the first sentence should be understood as meaning the same as  `Jane is not \emph{un}happy'. This is compatible with `Jane is in a state of profound indifference'. As usual, moving to TFL forces us to sacrifice certain nuances of English expressions.
+Dito isso, você deve estar ciente de que o contexto e a ênfase podem impedir que isso aconteça. Considere: \textquotedblleft{}Jane não está \emph{não} feliz\textquotedblright{}. Pode-se argumentar que não é possível inferir \textquotedblleft{}Jane está feliz\textquotedblright{}, pois a primeira sentença deve ser entendida como equivalente a \textquotedblleft{}Jane não está \emph{infeliz}\textquotedblright{}. Isso é compatível com \textquotedblleft{}Jane está em um estado de profunda indiferença\textquotedblright{}. Como de costume, passar para a LVF nos obriga a sacrificar certas nuances das expressões em linguagem natural.
 
-\section{Excluded middle}
+\section{Terceiro excluído}
 
-Suppose that we can show that if it's sunny outside, then Bill will have brought an umbrella (for fear of burning). Suppose we can also show that, if it's not sunny outside, then Bill will have brought an umbrella (for fear of rain). Well, there is no third way for the weather to be. So, \emph{whatever the weather}, Bill will have brought an umbrella.
+Suponha que possamos mostrar que, se estiver ensolarado lá fora, Bill terá levado um guarda-chuva (por medo de se queimar). Suponha também que possamos mostrar que, se não estiver ensolarado lá fora, Bill terá levado um guarda-chuva (por medo da chuva). Bem, não há uma terceira possibilidade para o tempo. Portanto, \emph{qualquer que seja o tempo}, Bill terá levado um guarda-chuva.
 
-This line of thinking motivates the following rule:
+Essa linha de raciocínio motiva a regra a seguir:
 \factoidbox{\begin{fitchproof}
 		\open
 			\hypo[i]{a}{\metav{A}}\AS
@@ -1338,16 +1337,15 @@ This line of thinking motivates the following rule:
 		\close
 		\have[\ ]{ab}{\metav{B}}\tnd{a-c1,b-c2}
 	\end{fitchproof}}
-The rule is sometimes called the \emph{rule of excluded middle}. You
-can think of it as $\eor$E applied to $\metav{A} \eor \enot \metav{A}$.
-There can be as many lines as you like between $i$ and $j$, and as
-many lines as you like between $k$ and $l$. Moreover, the subproofs
-can come in any order, and the second subproof does not need to come
-immediately after the first.
+Às vezes, a regra é chamada de \emph{regra do terceiro excluído}. Você
+pode entendê-la como $\eor$E aplicado a $\metav{A} \eor \enot \metav{A}$.
+Pode haver quantas linhas você quiser entre $i$ e $j$ e quantas linhas
+você quiser entre $k$ e $l$. Além disso, as subprovas podem aparecer em
+qualquer ordem, e a segunda subprova não precisa vir imediatamente após a primeira.
 
-To see the rule in action, consider:
+Para ver a regra em ação, considere:
 	$$P \therefore (P \eand D) \eor (P \eand \enot D)$$
-Here is a proof corresponding with the argument:
+Eis uma prova correspondente ao argumento:
 	\begin{fitchproof}
 		\hypo{a}{P}\PR
 		\open
@@ -1362,7 +1360,7 @@ Here is a proof corresponding with the argument:
 		\close
 		\have{con}{(P \eand D) \eor (P \eand \enot D)}\tnd{b-abo, nb-anbo}
 	\end{fitchproof}
-Here is another example:
+Eis outro exemplo:
 \begin{fitchproof}
 	\hypo{ana}{A \eif \enot A}\PR
 	\open
@@ -1377,36 +1375,36 @@ Here is another example:
 \end{fitchproof}
 
 
-\section{De Morgan Rules}
-Our final additional rules are called De~Morgan's Laws (named after Augustus De~Morgan). The shape of the rules should be familiar from truth tables.
+\section{Regras de De Morgan}
+As nossas últimas regras adicionais são chamadas de leis de De~Morgan (em homenagem a Augustus De~Morgan). A forma das regras deve ser familiar a partir das tabelas-verdade.
 
-The first De Morgan rule is:
+A primeira regra de De Morgan é:
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\enot (\metav{A} \eand \metav{B})}
 	\have[\ ]{dm}{\enot \metav{A} \eor \enot \metav{B}}\dem{ab}
 \end{fitchproof}}
-The second De Morgan is the reverse of the first:
+A segunda regra de De Morgan é o inverso da primeira:
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\enot \metav{A} \eor \enot \metav{B}}
 	\have[\ ]{dm}{\enot (\metav{A} \eand \metav{B})}\dem{ab}
 \end{fitchproof}}
-The third De Morgan rule is the \emph{dual} of the first:
+A terceira regra de De Morgan é a \emph{dual} da primeira:
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\enot (\metav{A} \eor \metav{B})}
 	\have[\ ]{dm}{\enot \metav{A} \eand \enot \metav{B}}\dem{ab}
 \end{fitchproof}}
-And the fourth is the reverse of the third:
+E a quarta é o inverso da terceira:
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\enot \metav{A} \eand \enot \metav{B}}
 	\have[\ ]{dm}{\enot (\metav{A} \eor \metav{B})}\dem{ab}
 \end{fitchproof}}
-\emph{These are all of the additional rules of our proof system for TFL.}
+\emph{Essas são todas as regras adicionais do nosso sistema de provas para a LVF.}
 
 \practiceproblems
 \solutions
 \problempart
 \label{pr.justifyTFLproof}
-The following proofs are missing their citations (rule and line numbers). Add them wherever they are required:
+As provas a seguir estão sem suas citações (regras e números de linhas). Acrescente-as onde forem necessárias:
 \begin{compactlist}
 \item\begin{fitchproof}
 \hypo{1}{W \eif \enot B}
@@ -1454,7 +1452,7 @@ The following proofs are missing their citations (rule and line numbers). Add th
 \end{compactlist}
 
 \problempart 
-Give a proof for each of these arguments:
+Forneça uma prova para cada um destes argumentos:
 \begin{compactlist}
 \item $E\eor F$, $F\eor G$, $\enot F \therefore E \eand G$
 \item $M\eor(N\eif M) \therefore \enot M \eif \enot N$
@@ -1464,25 +1462,25 @@ Give a proof for each of these arguments:
 
 
 
-\chapter{Proof-theoretic concepts}\label{s:ProofTheoreticConcepts}
+\chapter{Conceitos prova-teóricos}\label{s:ProofTheoreticConcepts}
 
-In this chapter we will introduce some new vocabulary. The following expression:
+Neste capítulo, introduziremos algum vocabulário novo. A expressão a seguir:
 $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \proves \metav{C}$$
-means that there is some proof which ends with $\metav{C}$ whose undischarged assumptions are among $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$. When we want to say that it is \emph{not} the case that there is some proof which ends with $\metav{C}$ from $\metav{A}_1$, $\metav{A}_2$, \dots,~$\metav{A}_n$, we write:  $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nproves \metav{C}$$ 
+significa que existe alguma prova que termina com $\metav{C}$ cujas suposições não descarregadas estão entre $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$. Quando queremos dizer que \emph{não} é o caso de existir uma prova que termine com $\metav{C}$ a partir de $\metav{A}_1$, $\metav{A}_2$, \dots,~$\metav{A}_n$, escrevemos:  $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nproves \metav{C}$$
 
-The symbol `$\proves$' is called the \emph{single turnstile}. We want to emphasize that this is not the {double turnstile} symbol (`$\entails$') that we introduced in \cref{s:SemanticConcepts} to symbolize entailment. The single turnstile, `$\proves$', concerns the existence of proofs; the double turnstile, `$\entails$', concerns the existence of valuations (or interpretations, when used for FOL). \emph{They are very different notions.}
+O símbolo \textquotedblleft{}$\proves$\textquotedblright{} é chamado de \emph{turnstile simples}. Queremos enfatizar que ele não é o símbolo de {turnstile duplo} (\textquotedblleft{}$\entails$\textquotedblright{}) que introduzimos em \cref{s:SemanticConcepts} para simbolizar a consequência lógica. O turnstile simples, \textquotedblleft{}$\proves$\textquotedblright{}, diz respeito à existência de provas; o turnstile duplo, \textquotedblleft{}$\entails$\textquotedblright{}, diz respeito à existência de valorações (ou interpretações, quando usado para a LPO). \emph{São noções muito diferentes.}
 
-Armed with our `$\proves$' symbol, we can introduce some more terminology. To say that there is a proof of $\metav{A}$ with no undischarged assumptions, we write: ${} \proves \metav{A}$. In this case, we say that $\metav{A}$ is a \define{theorem}.
+Munidos do símbolo \textquotedblleft{}$\proves$\textquotedblright{}, podemos introduzir mais terminologia. Para dizer que existe uma prova de $\metav{A}$ sem suposições não descarregadas, escrevemos: ${} \proves \metav{A}$. Nesse caso, dizemos que $\metav{A}$ é um \define{teorema}.
 	\factoidbox{\label{def:syntactic_tautology_in_sl}
-		$\metav{A}$ is a \define{theorem} \ifeff{} $\proves \metav{A}$
+		$\metav{A}$ é um \define{teorema} \ifeff{} $\proves \metav{A}$
 	}
 \newglossaryentry{theorem}
 {
-name=theorem,
-description={A sentence that can be proved without any premises}
+name=teorema,
+description={Uma senten\c{c}a que pode ser provada sem quaisquer premissas}
 }
 
-To illustrate this, suppose we want to show that `$\enot (A \eand \enot A)$' is a theorem.  So we need a proof of `$\enot(A \eand \enot A)$' which has \emph{no} undischarged assumptions. However, since we want to prove a sentence whose main logical operator is a negation, we will want to start with a \emph{subproof} within which we assume `$A \eand \enot A$', and show that this assumption leads to contradiction. All told, then, the proof looks like this:
+Para ilustrar isso, suponha que queremos mostrar que \textquotedblleft{}$\enot (A \eand \enot A)$\textquotedblright{} é um teorema. Portanto, precisamos de uma prova de \textquotedblleft{}$\enot(A \eand \enot A)$\textquotedblright{} que não tenha \emph{nenhuma} suposição não descarregada. Contudo, como queremos provar uma sentença cujo operador lógico principal é uma negação, vamos começar com uma \emph{subprova} dentro da qual supomos \textquotedblleft{}$A \eand \enot A$\textquotedblright{} e mostrar que essa suposição conduz a uma contradição. Em suma, a prova é a seguinte:
 	\begin{fitchproof}
 		\open
 			\hypo{con}{A \eand \enot A}\AS
@@ -1492,76 +1490,76 @@ To illustrate this, suppose we want to show that `$\enot (A \eand \enot A)$' is 
 		\close
 		\have{lnc}{\enot (A \eand \enot A)}\ni{con-red}
 	\end{fitchproof}
-We have therefore proved `$\enot (A \eand \enot A)$' on no
-(undischarged) assumptions. This particular theorem is an instance of
-what is sometimes called the \emph{law of non-contradiction}.
+Portanto, provamos \textquotedblleft{}$\enot (A \eand \enot A)$\textquotedblright{} sem
+suposições (não descarregadas). Esse teorema particular é um caso
+do que às vezes se chama \emph{lei da não contradição}.
 
-To show that something is a theorem, you just have to find a suitable proof. It is typically much harder to show that something is \emph{not} a theorem. To do this, you would have to demonstrate, not just that certain proof strategies fail, but that \emph{no} proof is possible. Even if you fail in trying to prove a sentence in a thousand different ways, perhaps the proof is just too long and complex for you to make out. Perhaps you just didn't try hard enough.
+Para mostrar que algo é um teorema, basta encontrar uma prova adequada. Normalmente, é muito mais difícil mostrar que algo \emph{não} é um teorema. Para isso, seria preciso demonstrar não apenas que determinadas estratégias de prova falham, mas que \emph{nenhuma} prova é possível. Mesmo que você não consiga provar uma sentença de mil maneiras diferentes, talvez a prova seja simplesmente longa e complexa demais para que consiga compreendê-la. Talvez você simplesmente não tenha tentado o suficiente.
 
-Here is another new bit of terminology:
+Eis outro termo novo:
 	\factoidbox{
-		Two sentences \metav{A} and \metav{B} are \define{interderivable} \ifeff{} each can be proved from the other; i.e., both $\metav{A}\proves\metav{B}$ and $\metav{B}\proves\metav{A}$.
+		Duas sentenças \metav{A} e \metav{B} são \define{interderiv\'aveis} \ifeff{} cada uma pode ser provada a partir da outra; isto é, tanto $\metav{A}\proves\metav{B}$ quanto $\metav{B}\proves\metav{A}$.
 	}
         
 \newglossaryentry{interderivable}
 {
-  name=interderivability,
-  text = interderivable,
-description={A property held by pairs of statements if and only if there is a derivation which takes you from each one to the other one}
+  name=interderivabilidade,
+  text = interderiv\'avel,
+description={Uma propriedade de pares de senten\c{c}as se, e somente se, existe uma deriva\c{c}\~{a}o que leva de cada uma \`a outra}
 }
 
 
-As in the case of showing that a sentence is a theorem, it is relatively easy to show that two sentences are interderivable: it just requires a pair of proofs. Showing that sentences are \emph{not} interderivable would be much harder: it is just as hard as showing that a sentence is not a theorem.
+Assim como no caso de mostrar que uma sentença é um teorema, é relativamente fácil mostrar que duas sentenças são interderiváveis: basta fornecer um par de provas. Mostrar que sentenças \emph{não} são interderiváveis seria muito mais difícil: é tão difícil quanto mostrar que uma sentença não é um teorema.
 
-Here is a third, related, bit of terminology:
+Eis um terceiro termo relacionado:
 	\factoidbox{
-	The sentences $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n$ are
-	\define{jointly inconsistent} \ifeff{} the contradiction~$\ered$ can be proved from
-	them, i.e., $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n \proves
-	\ered$. If they are not \define{inconsistent}, we call them
-	\define{jointly consistent}.
+	As sentenças $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n$ são
+	\define{conjuntamente inconsistentes} \ifeff{} a contradição~$\ered$ pode ser provada a partir
+	delas, isto é, $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n \proves
+	\ered$. Se elas não são \define{inconsistentes}, nós as chamamos de
+	\define{conjuntamente consistentes}.
 	}
         
 \newglossaryentry{inconsistent}
-{    name={inconsistency}, 
-  description={Sentences are inconsistent \ifeff{} the contradiction~$\ered$ can be proved from them},
-    text={inconsistent}
+{    name={inconsist\^encia},
+  description={Senten\c{c}as s\~{a}o inconsistentes \ifeff{} a contradi\c{c}\~{a}o~$\ered$ pode ser provada a partir delas},
+    text={inconsistente}
 }
 
 \newglossaryentry{consistent}
-{    name={consistency}, 
-  description={Sentences are jointly consistent \ifeff{} the contradiction~$\ered$ can\emph{not} be proved from them},
-    text={consistent}
+{    name={consist\^encia},
+  description={Senten\c{c}as s\~{a}o conjuntamente consistentes \ifeff{} a contradi\c{c}\~{a}o~$\ered$ \emph{n\~{a}o} pode ser provada a partir delas},
+    text={consistente}
 }
 
-It is easy to show that some sentences are inconsistent: you just need
-to prove the contradiction~$\ered$, assuming all the sentences as
-premises. Showing that some sentences are \emph{not} inconsistent is much
-harder. It would require more than just providing a proof or two; it
-would require showing that no proof of a certain kind is
-\emph{possible}.
+É fácil mostrar que algumas sentenças são inconsistentes: basta
+provar a contradição~$\ered$, supondo todas as sentenças como
+premissas. Mostrar que algumas sentenças \emph{não} são inconsistentes é muito
+mais difícil. Isso exigiria mais do que fornecer uma ou duas provas;
+exigiria mostrar que nenhuma prova de certo tipo é
+\emph{possível}.
 
 \
 \\
-This table summarizes whether one or two proofs suffice, or whether we must reason about all possible proofs.
+Esta tabela resume se uma ou duas provas são suficientes ou se precisamos raciocinar sobre todas as provas possíveis.
 
 \begin{center}
 \begin{tabular}{l l l}
 %\cline{2-3}
- & \textbf{Yes} & \textbf{No}\\
+ & \textbf{Sim} & \textbf{Não}\\
  \hline
 %\cline{2-3}
-theorem? & one proof & all possible proofs\\
-inconsistent? &  one proof  & all possible proofs\\
-equivalent? & two proofs & all possible proofs\\
-consistent? & all possible proofs & one proof\\
+teorema? & uma prova & todas as provas possíveis\\
+inconsistente? & uma prova & todas as provas possíveis\\
+equivalente? & duas provas & todas as provas possíveis\\
+consistente? & todas as provas possíveis & uma prova\\
 \end{tabular}
 \end{center}
 
 
 \practiceproblems
 \problempart
-Show that each of the following sentences is a theorem:
+Mostre que cada uma das sentenças a seguir é um teorema:
 \begin{compactlist}
 \item $O \eif O$
 \item $N \eor \enot N$
@@ -1570,7 +1568,7 @@ Show that each of the following sentences is a theorem:
 \end{compactlist}
 
 \problempart
-Provide proofs to show each of the following:
+Forneça provas para mostrar cada uma das afirmações a seguir:
 \begin{compactlist}
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
@@ -1579,7 +1577,7 @@ Provide proofs to show each of the following:
 \end{compactlist}
 
 \problempart
-Show that each of the following pairs of sentences are interderivable:
+Mostre que cada um dos pares de sentenças a seguir é interderivável:
 \begin{compactlist}
 \item $R \eiff E$, $E \eiff R$
 \item $G$, $\enot\enot\enot\enot G$
@@ -1590,39 +1588,39 @@ Show that each of the following pairs of sentences are interderivable:
 \end{compactlist}
 
 \problempart
-If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}\eand\metav{C})\proves\metav{B}$? What about $(\metav{A}\eor\metav{C})\proves\metav{B}$? Explain your answers.
+Se você sabe que $\metav{A}\proves\metav{B}$, o que pode dizer sobre $(\metav{A}\eand\metav{C})\proves\metav{B}$? E sobre $(\metav{A}\eor\metav{C})\proves\metav{B}$? Explique suas respostas.
 
 \
 
-\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not interderivable, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem \ifeff{} \metav{A} and \metav{B} were interderivable.)
+\problempart Neste capítulo, afirmamos que é tão difícil mostrar que duas sentenças não são interderiváveis quanto mostrar que uma sentença não é um teorema. Por que fizemos essa afirmação? (\emph{Dica}: pense em uma sentença que seria um teorema \ifeff{} \metav{A} e \metav{B} fossem interderiváveis.)
 
 
-\chapter{Derived rules}\label{s:Derived}
-In this section, we will see why we introduced the rules of our proof system in two separate batches. In particular, we want to show that the additional rules of \cref{s:Further} are not strictly speaking necessary, but can be derived from the basic rules of \cref{s:BasicTFL}.
+\chapter{Regras derivadas}\label{s:Derived}
+Nesta seção, veremos por que introduzimos as regras do nosso sistema de provas em dois grupos separados. Em particular, queremos mostrar que as regras adicionais de \cref{s:Further} não são, estritamente falando, necessárias, mas podem ser derivadas das regras básicas de \cref{s:BasicTFL}.
 
-\section{Derivation of Reiteration}
-To illustrate what it means to derive a \emph{rule} from other rules, first consider reiteration. It is a basic rule of our system, but it is also not necessary. Suppose you have some sentence on some line of your deduction:
+\section{Derivação da reiteração}
+Para ilustrar o que significa derivar uma \emph{regra} a partir de outras regras, considere primeiro a reiteração. Ela é uma regra básica do nosso sistema, mas também não é necessária. Suponha que você tenha alguma sentença em alguma linha da sua dedução:
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
 \end{fitchproof}
-You now want to repeat yourself, on some line $k$. You could just invoke the rule~R. But equally well, you can do this with other basic rules of \cref{s:BasicTFL}:
+Agora você quer repetir essa sentença em alguma linha $k$. Poderia simplesmente invocar a regra~R. Mas também pode fazer isso com outras regras básicas de \cref{s:BasicTFL}:
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
 	\have[k]{aa}{\metav{A} \eand \metav{A}}\ai{a, a}
 	\have{a2}{\metav{A}}\ae{aa}
 \end{fitchproof}
-To be clear: this is not a proof. Rather, it is a proof \emph{scheme}. After all, it uses a variable, `$\metav{A}$', rather than a sentence of TFL, but the point is simple: Whatever sentences of TFL we plugged in for `$\metav{A}$', and whatever lines we were working on, we could produce a bona fide proof. So you can think of this as a recipe for producing proofs.
+Para deixar claro: isto não é uma prova. É, antes, um \emph{esquema} de prova. Afinal, ele usa uma variável, $\metav{A}$, em vez de uma sentença da LVF, mas o ponto é simples: quaisquer sentenças da LVF que substituíssemos por $\metav{A}$, e quaisquer linhas em que estivéssemos trabalhando, permitiriam produzir uma prova genuína. Portanto, você pode pensar nisso como uma receita para produzir provas.
 
-Indeed, it is a recipe which shows us the following: anything we can prove using the rule R, we can prove (with one more line) using just the basic rules of \cref{s:BasicTFL} without~R. That is what it means to say that the rule~R can be derived from the other basic rules: anything that can be justified using~R can be justified using only the other basic rules.
+De fato, essa é uma receita que mostra o seguinte: tudo o que podemos provar usando a regra R, podemos provar (com uma linha a mais) usando apenas as regras básicas de \cref{s:BasicTFL}, sem~R. É isso que significa dizer que a regra~R pode ser derivada das outras regras básicas: tudo o que pode ser justificado usando~R pode ser justificado usando apenas as outras regras básicas.
 
 
-\section{Derivation of Disjunctive Syllogism}
-Suppose that you are in a proof, and you have something of this form:
+\section{Derivação do silogismo disjuntivo}
+Suponha que você esteja em uma prova e tenha algo desta forma:
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eor\metav{B}}
 	\have[n]{na}{\enot \metav{A}}
 \end{fitchproof}
-You now want, on line $k$, to prove $\metav{B}$. You can do this with the rule of DS, introduced in \cref{s:Further}, but equally well, you can do this with the \emph{basic} rules of \cref{s:BasicTFL}:
+Agora você quer provar $\metav{B}$ na linha $k$. Pode fazer isso com a regra DS, introduzida em \cref{s:Further}, mas também pode fazê-lo com as regras \emph{básicas} de \cref{s:BasicTFL}:
 	\begin{fitchproof}
 		\have[m]{ab}{\metav{A}\eor\metav{B}}
 		\have[n]{na}{\enot \metav{A}}
@@ -1637,15 +1635,15 @@ You now want, on line $k$, to prove $\metav{B}$. You can do this with the rule o
 		\close
 	\have{con}{\metav{B}}\oe{ab, a-b1, b-b2}
 \end{fitchproof}
-So the DS rule, again, can be derived from our more basic rules. Adding it to our system did not make any new proofs possible. Anytime you use the DS rule, you could always take a few extra lines and prove the same thing using only our basic rules. It is a \emph{derived} rule.
+Assim, a regra DS, novamente, pode ser derivada das nossas regras mais básicas. Adicioná-la ao nosso sistema não tornou possíveis novas provas. Sempre que usar a regra DS, você poderia acrescentar algumas linhas e provar a mesma coisa usando apenas as nossas regras básicas. Ela é uma regra \emph{derivada}.
 
-\section{Derivation of Modus Tollens}
-Suppose you have the following in your proof:
+\section{Derivação do modus tollens}
+Suponha que você tenha o seguinte na sua prova:
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eif\metav{B}}
 	\have[n]{a}{\enot\metav{B}}
 \end{fitchproof}
-You now want, on line $k$, to prove $\enot \metav{A}$. You can do this with the rule of MT, introduced in \cref{s:Further}. Equally well, you can do this with the \emph{basic} rules of \cref{s:BasicTFL}:
+Agora você quer provar $\enot \metav{A}$ na linha $k$. Pode fazer isso com a regra MT, introduzida em \cref{s:Further}. Igualmente, pode fazê-lo com as regras \emph{básicas} de \cref{s:BasicTFL}:
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eif\metav{B}}
 	\have[n]{nb}{\enot\metav{B}}
@@ -1656,10 +1654,10 @@ You now want, on line $k$, to prove $\enot \metav{A}$. You can do this with the 
 		\close
 	\have{no}{\enot\metav{A}}\ni{a-nb1}
 \end{fitchproof}
-Again, the rule of MT can be derived from the \emph{basic} rules of \cref{s:BasicTFL}.
+Novamente, a regra MT pode ser derivada das regras \emph{básicas} de \cref{s:BasicTFL}.
 
-\section{Derivation of Double-Negation Elimination}
-Consider the following deduction scheme:
+\section{Derivação da eliminação da dupla negação}
+Considere o seguinte esquema de dedução:
 	\begin{fitchproof}
 	\have[m]{m}{\enot \enot \metav{A}}
 	\open
@@ -1668,10 +1666,10 @@ Consider the following deduction scheme:
 	\close
 	\have{con}{\metav{A}}\ip{a-a1}
 \end{fitchproof}
-Again,  we can derive the DNE rule from the \emph{basic} rules of \cref{s:BasicTFL}.
+Novamente, podemos derivar a regra DNE das regras \emph{básicas} de \cref{s:BasicTFL}.
 
-\section{Derivation of Excluded Middle}
-Suppose you want to prove something using the LEM rule, i.e., you have in your proof
+\section{Derivação do terceiro excluído}
+Suponha que você queira provar algo usando a regra LEM, isto é, que tenha na sua prova
 \begin{fitchproof}
   \open
   \hypo[m]{a}{\metav{A}}\AS
@@ -1682,11 +1680,11 @@ Suppose you want to prove something using the LEM rule, i.e., you have in your p
   \have[l]{bbb}{\metav{B}}
   \close
 \end{fitchproof}
-You now want, on line $l+1$, to prove $\metav{B}$. The rule LEM from
-\cref{s:Further} would allow you to do it. But can you do this with
-the \emph{basic} rules of \cref{s:BasicTFL}?
+Agora você quer provar $\metav{B}$ na linha $l+1$. A regra LEM de
+\cref{s:Further} permitiria fazer isso. Mas você consegue fazê-lo usando
+as regras \emph{básicas} de \cref{s:BasicTFL}?
 
-One option is to first prove $\metav{A} \eor \enot\metav{A}$, and then apply $\eor$E, i.e., proof by cases:
+Uma opção é primeiro provar $\metav{A} \eor \enot\metav{A}$ e então aplicar $\eor$E, isto é, fazer uma prova por casos:
 \begin{fitchproof}
   \open
   \hypo[m]{a}{\metav{A}}\AS
@@ -1700,9 +1698,9 @@ One option is to first prove $\metav{A} \eor \enot\metav{A}$, and then apply $\e
   \have[i]{tnd}{\metav{A} \eor \enot \metav{A}}
   \have[i+1]{fin}{\metav{B}}\oe{tnd, a-aaa,b-bbb}
 \end{fitchproof}
-(We gave a proof of $\metav{A} \eor \enot\metav{A}$ using only our basic rules in \cref{s:proofLEM}.)
+(Demos uma prova de $\metav{A} \eor \enot\metav{A}$ usando apenas as nossas regras básicas em \cref{s:proofLEM}.)
 
-Here is another way that is a bit more complicated than the ones before. What you have to do is embed your two subproofs inside another subproof. The assumption of the subproof will be $\enot \metav{B}$, and the last line will be $\ered$. Thus, the complete subproof is the kind you need to conclude \metav{B} using IP. Inside the proof, you'd have to do a bit more work to get~$\ered$:
+Eis outra maneira, um pouco mais complicada que as anteriores. O que você tem de fazer é inserir as duas subprovas dentro de outra subprova. A suposição da subprova será $\enot \metav{B}$ e a última linha será $\ered$. Assim, a subprova completa é do tipo de que você precisa para concluir \metav{B} usando IP. Dentro da prova, você teria de trabalhar um pouco mais para obter~$\ered$:
 \begin{fitchproof}
   \open
   \hypo[m]{nb}{\enot\metav{B}}\AS
@@ -1724,11 +1722,11 @@ Here is another way that is a bit more complicated than the ones before. What yo
   \close
   \have{B}{\metav{B}}\ip{nb-(bot)}
 \end{fitchproof}
-Note that because we add an assumption at the top and additional conclusions inside the subproofs, the line numbers change. You may have to stare at this for a while before you understand what's going on.
+Observe que, como adicionamos uma suposição no alto e conclusões adicionais dentro das subprovas, os números das linhas mudam. Talvez você precise examinar isso por algum tempo antes de entender o que está acontecendo.
 
 
-\section{Derivation of De Morgan rules}
-Here is a demonstration of how we could derive the first De Morgan rule:
+\section{Derivação das regras de De Morgan}
+Eis uma demonstração de como poderíamos derivar a primeira regra de De Morgan:
  	\begin{fitchproof}
 		\have[m]{nab}{\enot (\metav{A} \eand \metav{B})}
 		\open
@@ -1747,7 +1745,7 @@ Here is a demonstration of how we could derive the first De Morgan rule:
 		\close
 		\have{con}{\enot \metav{A} \eor \enot \metav{B}}\tnd{a-(dis), (na1)-(dis1)}
 	\end{fitchproof}
-Here is a demonstration of how we could derive the second De Morgan rule:
+Eis uma demonstração de como poderíamos derivar a segunda regra de De Morgan:
  	\begin{fitchproof}
 		\have[m]{nab}{\enot \metav{A} \eor \enot \metav{B}}
 		\open
@@ -1766,30 +1764,30 @@ Here is a demonstration of how we could derive the second De Morgan rule:
 		\close
 		\have{nab}{\enot (\metav{A} \eand \metav{B})}\ni{ab-(con2)}
 	\end{fitchproof}
-Similar demonstrations can be offered explaining how we could derive the third and fourth De Morgan rules. These are left as exercises.
+Demonstrações semelhantes poderiam explicar como derivar a terceira e a quarta regras de De Morgan. Deixamos isso como exercício.
 
 
 
 \practiceproblems
 
 \problempart
-Provide proof schemes that justify the addition of the third and fourth De Morgan rules as derived rules.
+Forneça esquemas de prova que justifiquem a inclusão da terceira e da quarta regras de De Morgan como regras derivadas.
 
 \
 
 \problempart
-The proofs you offered in response to the practice exercises of \crefrange{s:Further}{s:ProofTheoreticConcepts} used derived rules. Replace the use of derived rules, in such proofs, with only basic rules. You will find some `repetition' in the resulting proofs; in such cases, offer a streamlined proof using only basic rules.  (This will give you a sense, both of the power of derived rules, and of how all the rules interact.)
+As provas que você ofereceu em resposta aos exercícios práticos de \crefrange{s:Further}{s:ProofTheoreticConcepts} usaram regras derivadas. Substitua o uso de regras derivadas, nessas provas, apenas por regras básicas. Você encontrará alguma ``repetição'' nas provas resultantes; nesses casos, ofereça uma prova simplificada usando apenas regras básicas. (Isso lhe dará uma noção tanto do poder das regras derivadas quanto da maneira como todas as regras interagem.)
 
 \
 
 \problempart
-Give a proof of $\metav{A} \eor \enot\metav{A}$. Then
-give a proof that \emph{uses only the basic rules}.
+Forneça uma prova de $\metav{A} \eor \enot\metav{A}$. Em seguida,
+forneça uma prova que \emph{use apenas as regras básicas}.
 
 \
 
 \problempart
-Show that if you had LEM as a basic rule, you could justify IP as a derived rule. That is, suppose you had the proof:
+Mostre que, se você tivesse LEM como regra básica, poderia justificar IP como regra derivada. Isto é, suponha que você tivesse a prova:
 \begin{fitchproof}
   \open
   \hypo[m]{a}{\enot\metav{A}}\AS
@@ -1797,90 +1795,93 @@ Show that if you had LEM as a basic rule, you could justify IP as a derived rule
   \have[n]{aaa}{\ered}
   \close
 \end{fitchproof}
-How could you use it to prove \metav{A} without using IP but with using LEM as well as all the other basic rules?
+Como você poderia usá-la para provar $\metav{A}$ sem usar IP, mas usando LEM e todas as outras regras básicas?
 
 \
 
 \problempart
-Give a proof of the first De Morgan rule, but using only the basic rules, in particular, \emph{without using LEM}. (Of course, you can combine the proof using LEM with the proof \emph{of}~LEM. Try to find a proof directly.)
+Forneça uma prova da primeira regra de De Morgan usando apenas as regras básicas, em particular, \emph{sem usar LEM}. (É claro que você pode combinar a prova usando LEM com a prova \emph{de}~LEM. Tente encontrar uma prova diretamente.)
 
-\chapter{Soundness and completeness}
+\chapter{Correção e completude}
 \label{sec:soundness_and_completeness}
 
-In \cref{s:ProofTheoreticConcepts}, we saw that we could use
-derivations to test for similar things we used truth tables to test
-for. Not only could show that a conclusion is derivable from some
-premises, we could also use them to test if a sentence is a theorem or
-a pair of sentences are interderivable. We also started using the
-single turnstile the same way we used the double turnstile. If we
-could prove that \metav{A} was a tautology using a truth table, we
-wrote $\entails \metav{A}$, and if we could prove it using a
-derivation, we wrote $\proves \metav{A}$.
+Em \cref{s:ProofTheoreticConcepts}, vimos que podíamos usar
+derivações para testar coisas semelhantes àquelas para as quais usávamos tabelas-verdade.
+Podíamos não apenas mostrar que uma conclusão é derivável a partir de algumas
+premissas, mas também usar derivações para testar se uma sentença é um teorema ou
+se um par de sentenças é interderivável. Também começamos a usar o
+turnstile simples da mesma maneira que usávamos o turnstile duplo. Se
+conseguíssemos provar que $\metav{A}$ era uma tautologia usando uma tabela-verdade,
+escrevíamos $\entails \metav{A}$; e, se conseguíssemos prová-la usando uma
+derivação, escrevíamos $\proves \metav{A}$.
 
-You may have wondered at that point if the two kinds of turnstiles
-always worked the same way. If you can show that \metav{A} is a
-tautology using truth tables, can you also always show that it is a
-theorem using a derivation? Is the reverse true? Are these things also
-true for valid arguments and pairs of equivalent sentences? As it
-turns out, the answer to all these questions and many more like them
-is yes. We can show this by proving that the concepts based on truth
-tables and the corresponding concepts based on derivations are
-equivalent. That is, we show that, e.g., $\entails \metav{A}$ \ifeff{}
-$\proves \metav{A}$ for any sentence~$\metav{A}$.
+Talvez, nesse ponto, você tenha se perguntado se os dois tipos de turnstile
+sempre funcionam da mesma maneira. Se você pode mostrar que $\metav{A}$ é uma
+tautologia usando tabelas-verdade, também pode sempre mostrar que ela é um
+teorema usando uma derivação? O inverso é verdadeiro? Essas coisas também
+valem para argumentos válidos e pares de sentenças equivalentes? Acontece que
+a resposta a todas essas perguntas, e a muitas outras semelhantes, é sim.
+Podemos mostrar isso provando que os conceitos baseados em tabelas-verdade e
+os conceitos correspondentes baseados em derivações são equivalentes. Isto é,
+mostramos que, por exemplo, $\entails \metav{A}$ \ifeff{}
+$\proves \metav{A}$ para qualquer sentença~$\metav{A}$.
 
-To begin with, we need to define all of our logical concepts separately for truth tables and derivations. A lot of this work has already been done. We handled all of the truth table definitions in \cref{s:SemanticConcepts}. We have also already given proof-theoretic definitions for theorems and pairs of interderivable sentences. The other definitions follow naturally. For most logical properties we can devise a test using derivations, and those that we cannot test for directly can be defined in terms of the concepts that we can define.
+Para começar, precisamos definir todos os nossos conceitos lógicos separadamente para tabelas-verdade e derivações. Boa parte desse trabalho já foi feita. Tratamos de todas as definições por tabela-verdade em \cref{s:SemanticConcepts}. Também já fornecemos definições prova-teóricas para teoremas e pares de sentenças interderiváveis. As outras definições seguem naturalmente. Para a maioria das propriedades lógicas, podemos conceber um teste usando derivações; aquelas que não podemos testar diretamente podem ser definidas em termos dos conceitos que conseguimos definir.
 
-For instance, we defined a theorem as a sentence that can be derived
-without any premises (p.~\pageref{def:syntactic_tautology_in_sl}).
-We can define an \define{inconsistent sentence in TFL}%
-\label{def:syntactic_contradiction_in_sl} as a sentence from which we
-can derive the contradiction~`$\ered$'.\footnote{Note that $\metav{A}
-\proves \ered$ \ifeff{} $\lnot \metav{A}$ is a theorem.} The syntactic
-definition of a contingent sentence is a little different. We don't
-have any practical, finite method for proving that a sentence is
-contingent using derivations, the way we did using truth tables. So we
-have to content ourselves with defining ``contingent sentence''
-negatively. A sentence is \define{{proof-theoretically contingent in
-TFL}} \label{def:syntactically_contingent_in_sl} if it is neither a
-theorem nor an inconsistent sentence.
+Por exemplo, definimos um teorema como uma sentença que pode ser derivada
+sem quaisquer premissas (p.~\pageref{def:syntactic_tautology_in_sl}).
+Podemos definir uma \define{sentença inconsistente na LVF}%
+\label{def:syntactic_contradiction_in_sl} como uma sentença a partir da qual
+podemos derivar a contradição~$\ered$.\footnote{Observe que $\metav{A}
+\proves \ered$ \ifeff{} $\lnot \metav{A}$ é um teorema.} A definição sintática
+de uma sentença contingente é um pouco diferente. Não dispomos de nenhum
+método prático e finito para provar que uma sentença é contingente usando
+derivações, como fizemos usando tabelas-verdade. Portanto, temos de nos
+contentar em definir negativamente ``sentença contingente''. Uma sentença é
+\define{contingente prova-teoricamente na LVF}
+\label{def:syntactically_contingent_in_sl} se não é nem um teorema nem uma
+sentença inconsistente.
 
-A collection of sentences is \define{inconsistent in TFL}
-\label{def:syntactically_inconsistent_ in_sl} if and only if one can
-derive the contradiction~$\ered$ from them. Consistency, on the other
-hand, is like contingency, in that we do not have a practical finite
-method to test for it directly. So again, we have to define a term
-negatively. A collection of sentences is \define{consistent in TFL}
-\label{def:syntactically consistent in SL} if and only if it is not
-inconsistent.
+Uma coleção de sentenças é \define{inconsistente na LVF}
+\label{def:syntactically_inconsistent_ in_sl} se, e somente se, podemos
+derivar a contradição~$\ered$ a partir dela. A consistência, por outro lado,
+é semelhante à contingência, pois não temos um método prático e finito para
+testá-la diretamente. Portanto, novamente temos de definir o termo
+negativamente. Uma coleção de sentenças é \define{consistente na LVF}
+\label{def:syntactically consistent in SL} se, e somente se, não é
+inconsistente.
 
-Finally, an argument is \define{provably valid in TFL} \label{def:syntactically_valid_in_SL} if and only if there is a derivation of its conclusion from its premises. All of these definitions are given in \cref{table:truth_tables_or_derivations}.
+Finalmente, um argumento é \define{demonstravelmente válido na LVF}
+\label{def:syntactically_valid_in_SL} se, e somente se, existe uma derivação
+da sua conclusão a partir das suas premissas. Todas essas definições são
+apresentadas em \cref{table:truth_tables_or_derivations}.
 
-\def\tmptable{\textbf{Concepts} 		&	\textbf{Truth table (semantic) definition} 	&	\textbf{Proof-theoretic (syntactic) definition} \\ \hline \hline
+\def\tmptable{\textbf{Conceitos} 		&	\textbf{Definição por tabela-verdade (semântica)} 	&	\textbf{Definição prova-teórica (sintática)} \\ \hline \hline
 
-Tautology/ theorem   &	A sentence whose truth table only has Ts under the main connective & A sentence that can be derived without any premises.	 \\ \hline
+Tautologia/ teorema   &	Uma sentença cuja tabela-verdade tem apenas V sob o conectivo principal & Uma sentença que pode ser derivada sem quaisquer premissas.	 \\ \hline
  
-Contradiction/ inconsistent sentence		&	A sentence whose truth table
-only has Fs under the main connective  &	A sentence from which the
-contradiction~$\ered$ can be derived\\ \hline
+Contradição/ sentença inconsistente		&	Uma sentença cuja tabela-verdade
+tem apenas F sob o conectivo principal  &	Uma sentença a partir da qual a
+contradição~$\ered$ pode ser derivada\\ \hline
 
-Contingent sentence	&	A sentence whose truth table contains both Ts and Fs under the main connective & A sentence that is not a theorem or inconsistent \\ \hline
+Sentença contingente	&	Uma sentença cuja tabela-verdade contém V e F sob o conectivo principal & Uma sentença que não é um teorema nem é inconsistente \\ \hline
 
-Equivalent/ interderivable sentences &	The columns under the main connectives are identical.& The sentences can be derived from each other	\\ \hline
+Sentenças equivalentes/ interderiváveis &	As colunas sob os conectivos principais são idênticas.& As sentenças podem ser derivadas uma da outra	\\ \hline
 
-Unsatisfiable/ inconsistent sentences	&	Sentences which do not have a single line in their truth table where they are all true.	& Sentences  from which one can derive the contradiction~$\ered$ \\ \hline
+Sentenças insatisfatíveis/ inconsistentes	&	Sentenças que não têm uma única linha na tabela-verdade em que sejam todas verdadeiras.	& Sentenças a partir das quais se pode derivar a contradição~$\ered$ \\ \hline
 
-Satisfiable/ Consistent sentences	&	Sentences which have at least one
-line in their truth table where they are all true. & Sentences from
-which the contradiction~$\ered$ cannot be derived	\\ \hline
+Sentenças satisfatíveis/ consistentes	&	Sentenças que têm pelo menos uma
+linha na tabela-verdade em que são todas verdadeiras. & Sentenças a partir
+das quais não se pode derivar a contradição~$\ered$	\\ \hline
 
-Valid argument		&	An argument whose truth table has no lines where there are all Ts under main connectives for the premises and an F under the main connective for the conclusion.  & An argument where one can derive the conclusion from the premises.}
+Argumento válido		&	Um argumento cuja tabela-verdade não tem linhas em que haja V sob os conectivos principais das premissas e F sob o conectivo principal da conclusão.  & Um argumento cuja conclusão pode ser derivada a partir das premissas.}
 
 \ifHTMLtarget
 \begin{table}
 \begin{tabularx}{\textwidth}{X||X|X}
 \tmptable
 \end{tabularx}
-\caption{Two ways to define logical concepts.}
+\caption{Duas maneiras de definir conceitos lógicos.}
 \label{table:truth_tables_or_derivations}
 \end{table}
 \else
@@ -1891,77 +1892,104 @@ Valid argument		&	An argument whose truth table has no lines where there are all
 \tmptable
 \end{tabularx}
 %\end{tabu}
-\caption{Two ways to define logical concepts.}
+\caption{Duas maneiras de definir conceitos lógicos.}
 \label{table:truth_tables_or_derivations}
 \end{sidewaystable}
 \fi
 
-We now have matching pairs of concepts defined once
-semantically (using valuations and truth tables) and once
-proof-theoretically (on the basis of natural deduction). How can we
-establish that these definitions always work the same way? A full
-proof here goes well beyond the scope of this book. However, we can
-sketch what it would be like. We will focus on showing the two notions
-of validity to be equivalent. From that the other concepts will follow
-quickly. The proof will have to go in two directions. First we will
-have to show that things which are proof-theoretically valid will also
-be semantically valid. In other words, everything that we can prove
-using derivations could also be proven using truth tables. Put
-symbolically, we want to show that $\proves$ implies
-$\entails$. Afterwards, we will need to show things in the
-other directions, $\entails$ implies $\proves$
+Agora temos pares correspondentes de conceitos definidos uma vez
+semanticamente (usando valorações e tabelas-verdade) e outra vez
+prova-teoricamente (com base na dedução natural). Como podemos
+estabelecer que essas definições sempre funcionam da mesma maneira? Uma
+prova completa está muito além do escopo deste livro. Contudo, podemos
+esboçar como ela seria. Vamos nos concentrar em mostrar que as duas noções
+de validade são equivalentes. A partir disso, os outros conceitos seguirão
+rapidamente. A prova terá de seguir em duas direções. Primeiro, teremos de
+mostrar que as coisas que são válidas prova-teoricamente também são
+semanticamente válidas. Em outras palavras, tudo o que podemos provar
+usando derivações também poderia ser provado usando tabelas-verdade. Em
+termos simbólicos, queremos mostrar que $\proves$ implica
+$\entails$. Depois, precisaremos mostrar a implicação na outra direção:
+$\entails$ implica $\proves$.
 
 \newglossaryentry{soundness}
 {
-name=soundness,
-description={A property held by logical systems if and only if $\proves $ implies $\entails $}
+name=correção,
+description={Uma propriedade de sistemas lógicos que vale se, e somente se, $\proves $ implica $\entails $}
 }
 
-This argument from $\proves $ to $\entails $ is the problem of
-\define{\gls{soundness}}.\label{def:soundness} A proof system is
-\define{sound} if there are no derivations of arguments that can be
-shown invalid by truth tables. \label{def_Soundness} Demonstrating
-that the proof system is sound would require showing that \emph{any}
-possible proof is the proof of a valid argument. It would not be
-enough simply to succeed when trying to prove many valid arguments and
-to fail when trying to prove invalid ones. The proof itself requires
-some care. In a nutshell, it involves showing that every inference
-rule preserves the property that its conclusion is entailed by the
-premises of the proof together with whatever assumptions are open. You
-can find the details of this proof worked out in \cref{ch:Soundness}.
+Esse argumento de $\proves $ para $\entails $ é o problema da
+\define{\gls{soundness}}.\label{def:soundness} Um sistema de provas é
+\define{correto} se não há derivações de argumentos que possam ser
+mostrados inválidos por tabelas-verdade. \label{def_Soundness} Demonstrar
+que o sistema de provas é correto exigiria mostrar que \emph{toda} prova
+possível é a prova de um argumento válido. Não bastaria simplesmente ter
+sucesso ao tentar provar muitos argumentos válidos e falhar ao tentar provar
+argumentos inválidos. A prova em si requer algum cuidado. Em suma, ela
+envolve mostrar que toda regra de inferência preserva a propriedade de que
+sua conclusão é consequência lógica das premissas da prova juntamente com
+quaisquer suposições abertas. Os detalhes dessa prova podem ser encontrados
+em \cref{ch:Soundness}.
 
-Soundness means that $\metav{A} \proves \metav{B}$ implies $\metav{A}
-\entails \metav{B}.$ What about the other direction, that is, why
-think that \emph{every} argument that can be shown valid using truth
-tables can also be proven using a derivation? 
+Correção significa que $\metav{A} \proves \metav{B}$ implica $\metav{A}
+\entails \metav{B}$. E quanto à outra direção, isto é, por que pensar
+que \emph{todo} argumento que pode ser mostrado válido usando tabelas-verdade
+também pode ser provado usando uma derivação?
 
 \newglossaryentry{completeness}
 {
-name=completeness,
-description={A property held by logical systems if and only if $\entails $ implies $\proves $}
+name=completude,
+description={Uma propriedade de sistemas lógicos que vale se, e somente se, $\entails $ implica $\proves $}
 }
 
-This is the problem of completeness. A proof system has the property of  \define{\gls{completeness}}\label{def:completeness} if and only if there is a derivation of every semantically valid argument. Proving that a system is complete is generally harder than proving that it is sound. Proving that a system is sound amounts to showing that all of the rules of your proof system work the way they are supposed to. Showing that a system is complete means showing that you have included \emph{all} the rules you need, that you haven't left any out. Showing this is beyond the scope of this book. The important point is that, happily, the proof system for TFL is both sound and complete. This is not the case for all proof systems or all formal languages. Because it is true of TFL, we can choose to give proofs or give truth tables---whichever is easier for the task at hand.
+Esse é o problema da completude. Um sistema de provas tem a propriedade da
+\define{\gls{completeness}}\label{def:completeness} se, e somente se, existe
+uma derivação de todo argumento semanticamente válido. Provar que um sistema
+é completo geralmente é mais difícil do que provar que ele é correto. Provar
+que um sistema é correto equivale a mostrar que todas as regras do sistema de
+provas funcionam como deveriam. Mostrar que um sistema é completo significa
+mostrar que incluímos \emph{todas} as regras de que precisamos, sem deixar
+nenhuma de fora. Demonstrar isso está além do escopo deste livro. O ponto
+importante é que, felizmente, o sistema de provas para a LVF é correto e
+completo. Isso não vale para todos os sistemas de provas ou todas as
+linguagens formais. Como isso vale para a LVF, podemos escolher entre
+fornecer provas e fornecer tabelas-verdade---o que for mais fácil para a
+tarefa em questão.
 
-Now that we know that the truth table method is interchangeable with the method of derivations, you can chose which method you want to use for any given problem. Students often prefer to use truth tables, because they can be produced purely mechanically, and that seems `easier'. However, we have already seen that truth tables become impossibly large after just a few sentence letters. On the other hand, there are a couple of situations where using proofs simply isn't possible. We syntactically defined a contingent sentence as a sentence that couldn't be proven to be a tautology or a contradiction. There is no practical way to prove this kind of negative statement. We will never know if there isn't some proof out there that a statement is a contradiction and we just haven't found it yet. We have nothing to do in this situation but resort to truth tables. Similarly, we can use derivations to prove two sentences equivalent, but what if we want to prove that they are \emph{not} equivalent? We have no way of proving that we will never find the relevant proof. So we have to fall back on truth tables again.
+Agora que sabemos que o método das tabelas-verdade é intercambiável com o
+método das derivações, podemos escolher qual método usar em cada problema.
+Os estudantes frequentemente preferem usar tabelas-verdade, porque elas
+podem ser produzidas de maneira puramente mecânica, o que parece ``mais
+fácil''. Contudo, já vimos que as tabelas-verdade se tornam impossivelmente
+grandes depois de apenas algumas letras sentenciais. Por outro lado, há
+algumas situações em que simplesmente não é possível usar provas. Definimos
+sintaticamente uma sentença contingente como uma sentença que não pode ser
+provada como tautologia nem como contradição. Não há uma maneira prática de
+provar esse tipo de afirmação negativa. Nunca saberemos se não existe alguma
+prova, ainda não encontrada, de que uma sentença é uma contradição. Nessa
+situação, não nos resta nada além de recorrer às tabelas-verdade. Do mesmo
+modo, podemos usar derivações para provar que duas sentenças são equivalentes,
+mas e se quisermos provar que elas \emph{não} são equivalentes? Não temos como
+provar que nunca encontraremos a prova relevante. Portanto, precisamos
+recorrer novamente às tabelas-verdade.
 
-\Cref{table.ProofOrModel} summarizes when it is best to give proofs 
-and when it is best to give truth tables.
+\Cref{table.ProofOrModel} resume quando é melhor fornecer provas e quando é
+melhor fornecer tabelas-verdade.
 
-\def\tmptable{\textbf{Logical property} 	&	\textbf{To prove it present} 	&	\textbf{To prove it absent} \\ \hline \hline
-Being a tautology/theorem 		& Derive the sentence  						& Find a false line in the truth table for the sentence \\ \hline
-Being a contradiction 	&  Derive $\ered$ from the sentence  		 & Find a true line in the truth table for the sentence\\ \hline
-Contingency 			& Find a false line and a true line in the truth table for the sentence & Prove the sentence or its negation\\ \hline
-Equivalence 			& Derive each sentence from the other 		 & Find a line in the truth tables for the sentence where they have different values\\ \hline
-Consistency 		& Find a line in truth table for the sentence where they all are true & Derive $\ered$ from the sentences\\ \hline
-Validity 				& Derive the conclusion from the premises & Find a line in the truth table where the premises are true and the conclusion false. \\ }
+\def\tmptable{\textbf{Propriedade lógica} 	&	\textbf{Para prová-la, apresente} 	&	\textbf{Para mostrar que ela não vale} \\ \hline \hline
+Ser uma tautologia/teorema 		& Derive a sentença 						& Encontre uma linha falsa na tabela-verdade da sentença \\ \hline
+Ser uma contradição 	& Derive $\ered$ a partir da sentença 		 & Encontre uma linha verdadeira na tabela-verdade da sentença\\ \hline
+Contingência 			& Encontre uma linha falsa e uma linha verdadeira na tabela-verdade da sentença & Prove a sentença ou sua negação\\ \hline
+Equivalência 			& Derive cada sentença a partir da outra 		 & Encontre uma linha nas tabelas-verdade das sentenças em que elas tenham valores diferentes\\ \hline
+Consistência 		& Encontre uma linha na tabela-verdade da sentença em que todas sejam verdadeiras & Derive $\ered$ a partir das sentenças\\ \hline
+Validade 				& Derive a conclusão a partir das premissas & Encontre uma linha na tabela-verdade em que as premissas sejam verdadeiras e a conclusão seja falsa. \\ }
 
 \ifHTMLtarget
 \begin{table}
 \begin{tabularx}{\textwidth}{X||X|X}
 \tmptable
 \end{tabularx}
-\caption{When to provide a truth table and when to provide a proof.}
+\caption{Quando fornecer uma tabela-verdade e quando fornecer uma prova.}
 \label{table.ProofOrModel}
 \end{table}
 \else
@@ -1972,7 +2000,7 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 \tmptable
 \end{tabularx}
 %\end{tabu}
-\caption{When to provide a truth table and when to provide a proof.}
+\caption{Quando fornecer uma tabela-verdade e quando fornecer uma prova.}
 \label{table.ProofOrModel}
 \end{table}
 \fi
@@ -1980,35 +2008,35 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 
 
 \practiceproblems
-\noindent\problempart Use either a derivation or a truth table for each of the following.
+\noindent\problempart Use uma derivação ou uma tabela-verdade para cada item a seguir.
 \begin{compactlist}%[label=(\arabic*)]
-\item Show that $A \eif [((B \eand C) \eor D) \eif A]$ is a theorem.
-\item Show that $A \eif (A \eif B)$ is not a theorem.
-\item Show that the sentence $A \eif \enot{A}$ is not a contradiction.
-\item Show that the sentence $A \eiff \enot A$ is a contradiction.
-\item Show that the sentence $ \enot (W \eif (J \eor J)) $ is contingent.
-\item Show that the sentence $ \enot(X \eor (Y \eor Z)) \eor (X \eor (Y \eor Z))$ is not contingent.
- \item Show that the sentence $B \eif \enot S$ is equivalent to the sentence $\enot \enot B \eif \enot S$.
-\item Show that the sentence $ \enot (X \eor O) $ is not equivalent to the sentence $X \eand O$.
-\item Show that the sentences $\enot(A \eor B)$, $C$, $C \eif A$  are jointly inconsistent.
-\item Show that the sentences $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ are jointly consistent.
-\item Show that $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ is valid.
-\item Show that $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ is invalid.
+\item Mostre que $A \eif [((B \eand C) \eor D) \eif A]$ é um teorema.
+\item Mostre que $A \eif (A \eif B)$ não é um teorema.
+\item Mostre que a sentença $A \eif \enot{A}$ não é uma contradição.
+\item Mostre que a sentença $A \eiff \enot A$ é uma contradição.
+\item Mostre que a sentença $ \enot (W \eif (J \eor J)) $ é contingente.
+\item Mostre que a sentença $ \enot(X \eor (Y \eor Z)) \eor (X \eor (Y \eor Z))$ não é contingente.
+ \item Mostre que a sentença $B \eif \enot S$ é equivalente à sentença $\enot \enot B \eif \enot S$.
+\item Mostre que a sentença $ \enot (X \eor O) $ não é equivalente à sentença $X \eand O$.
+\item Mostre que as sentenças $\enot(A \eor B)$, $C$, $C \eif A$ são conjuntamente inconsistentes.
+\item Mostre que as sentenças $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ são conjuntamente consistentes.
+\item Mostre que $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ é válido.
+\item Mostre que $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ é inválido.
 \end{compactlist}
 
 
-\noindent\problempart Use either a derivation or a truth table for each of the following.
+\noindent\problempart Use uma derivação ou uma tabela-verdade para cada item a seguir.
 \begin{compactlist}%[label=(\arabic*)]
-\item Show that $A \eif (B \eif A)$ is a theorem.
-\item Show that $\enot (((N \eiff Q) \eor Q) \eor N)$ is not a theorem.
-\item Show that $ Z \eor (\enot Z \eiff Z) $ is contingent.
-\item Show that $ (L \eiff ((N \eif N) \eif L)) \eor H $ is not contingent.
-\item Show that $ (A \eiff A) \eand (B \eand \enot B)$ is a contradiction.
-\item Show that $ (B \eiff (C \eor B)) $ is not a contradiction.
-\item Show that $ ((\enot X \eiff X) \eor X) $ is equivalent to $X$.
-\item Show that $F \eand (K \eand R) $ is not equivalent to $ (F \eiff (K \eiff R)) $.
-\item Show that the sentences $ \enot (W \eif W)$, $(W \eiff W) \eand W$, $E \eor (W \eif \enot (E \eand W))$ are jointly inconsistent.
-\item Show that the sentences  $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor C) \eif R) $ are jointly consistent.
-\item Show that $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ is valid.
-\item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid.
+\item Mostre que $A \eif (B \eif A)$ é um teorema.
+\item Mostre que $\enot (((N \eiff Q) \eor Q) \eor N)$ não é um teorema.
+\item Mostre que $ Z \eor (\enot Z \eiff Z) $ é contingente.
+\item Mostre que $ (L \eiff ((N \eif N) \eif L)) \eor H $ não é contingente.
+\item Mostre que $ (A \eiff A) \eand (B \eand \enot B)$ é uma contradição.
+\item Mostre que $ (B \eiff (C \eor B)) $ não é uma contradição.
+\item Mostre que $ ((\enot X \eiff X) \eor X) $ é equivalente a $X$.
+\item Mostre que $F \eand (K \eand R) $ não é equivalente a $ (F \eiff (K \eiff R)) $.
+\item Mostre que as sentenças $ \enot (W \eif W)$, $(W \eiff W) \eand W$, $E \eor (W \eif \enot (E \eand W))$ são conjuntamente inconsistentes.
+\item Mostre que as sentenças $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor C) \eif R) $ são conjuntamente consistentes.
+\item Mostre que $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ é válido.
+\item Mostre que $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ é inválido.
 \end{compactlist}
