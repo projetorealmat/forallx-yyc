@@ -1,28 +1,28 @@
 %!TEX root = forallxyyc.tex
-\part{Natural deduction for TFL}
+\part{Dedução natural para a LVF}
 \label{ch.NDTFL}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\chapter{The very idea of natural deduction}\label{s:NDVeryIdea}
+\chapter{A própria ideia da dedução natural}\label{s:NDVeryIdea}
 
-Way back in \cref{s:Valid}, we said that an argument is valid \ifeff{} there is no case in which all of the premises are true and the conclusion is false.
+Bem antes, em \cref{s:Valid}, dissemos que um argumento é válido \ifeff{} não há caso em que todas as premissas sejam verdadeiras e a conclusão seja falsa.
 
-In the case of TFL, this led us to develop truth tables. Each line of a complete truth table corresponds to a valuation. So, when faced with a TFL argument, we have a very direct way to assess whether there is a valuation on which the premises are true and the conclusion is false: just thrash through the truth table.
+No caso da LVF, isso nos levou a desenvolver tabelas-verdade. Cada linha de uma tabela-verdade completa corresponde a uma valoração. Assim, diante de um argumento da LVF, temos uma maneira muito direta de avaliar se existe uma valoração na qual as premissas sejam verdadeiras e a conclusão seja falsa: basta percorrer exaustivamente a tabela-verdade.
 
-However, truth tables may not give us much \emph{insight}. Consider two arguments in TFL:
+No entanto, as tabelas-verdade talvez não nos deem muita \emph{compreensão}. Considere dois argumentos da LVF:
 \begin{align*}
 P \eor Q, \enot P & \therefore Q\\
 P \eif Q, P & \therefore Q
 \end{align*}
-Clearly, these are valid arguments. You can confirm that they are valid by constructing four-line truth tables, but we might say that they make use of different \emph{forms} of reasoning. It might be nice to keep track of these different forms of inference.
+Claramente, são argumentos válidos. Você pode confirmar que são válidos construindo tabelas-verdade de quatro linhas, mas podemos dizer que eles empregam diferentes \emph{formas} de raciocínio. Seria interessante acompanhar essas diferentes formas de inferência.
 
-One aim of a \emph{natural deduction system} is to show that particular arguments are valid, in a way that allows us to understand the reasoning that the arguments might involve. We begin with very basic rules of inference. These rules can be combined to offer more complicated arguments. Indeed, with just a small starter pack of rules of inference, we hope to capture all valid arguments.
+Um objetivo de um \emph{sistema de dedução natural} é mostrar que determinados argumentos são válidos, de uma maneira que nos permita compreender o raciocínio que eles podem envolver. Começamos com regras de inferência muito básicas. Essas regras podem ser combinadas para produzir argumentos mais complicados. De fato, esperamos captar todos os argumentos válidos com apenas um pequeno conjunto inicial de regras de inferência.
 
-\emph{This is a very different way of thinking about arguments.} 
+\emph{Esta é uma maneira muito diferente de pensar sobre argumentos.}
 
-With truth tables, we directly consider different ways to make sentences true or false. With natural deduction systems, we manipulate sentences in accordance with rules that we have set down as good rules. The latter promises to give us a better insight---or at least, a different insight---into how arguments work.
+Com tabelas-verdade, consideramos diretamente diferentes maneiras de tornar as sentenças verdadeiras ou falsas. Com sistemas de dedução natural, manipulamos sentenças de acordo com regras que estabelecemos como boas regras. Este último método promete nos dar uma compreensão melhor---ou, pelo menos, uma compreensão diferente---de como os argumentos funcionam.
 
-The move to natural deduction might be motivated by more than the search for insight. It might also be motivated by \emph{necessity}. Consider:
+A adoção da dedução natural pode ser motivada por mais que a busca por compreensão. Ela também pode ser motivada pela \emph{necessidade}. Considere:
 \ifHTMLtarget
 \begin{earg}
 	\item $A_1 \eif C_1$
@@ -36,7 +36,7 @@ The move to natural deduction might be motivated by more than the search for ins
 	& \qquad ((((C_1 \eor C_2) \eor C_3) \eor C_4) \eor C_5)
 \end{align*}
 \fi
-To test this argument for validity, you might use a 1{,}024-line truth table. If you do it correctly, then you will see that there is no line on which all the premises are true and on which the conclusion is false. So you will know that the argument is valid. (But, as just mentioned, there is a sense in which you will not know \emph{why} the argument is valid.) But now consider:
+Para testar a validade desse argumento, você poderia usar uma tabela-verdade de 1{,}024 linhas. Se fizer isso corretamente, verá que não há linha na qual todas as premissas sejam verdadeiras e a conclusão seja falsa. Assim, saberá que o argumento é válido. (Mas, como acabamos de mencionar, há um sentido em que você não saberá \emph{por que} o argumento é válido.) Considere agora:
 \ifHTMLtarget
 \begin{earg}
 \item $A_1 \eif C_1$
@@ -54,14 +54,14 @@ To test this argument for validity, you might use a 1{,}024-line truth table. If
 & \qquad C_6) \eor C_7) \eor C_8) \eor C_9) \eor C_{10})
 \end{align*}
 \fi
-This argument is also valid---as you can probably tell---but to test it requires a truth table with $2^{20} = 1{,}048{,}576$ lines. In principle, we can set a machine to grind through truth tables and report back when it is finished. In practice, complicated arguments in TFL can become \emph{intractable} if we use truth tables.
+Esse argumento também é válido---como provavelmente dá para perceber---, mas, para testá-lo, é necessária uma tabela-verdade com $2^{20} = 1{,}048{,}576$ linhas. Em princípio, podemos programar uma máquina para processar tabelas-verdade e informar quando terminar. Na prática, argumentos complicados na LVF podem se tornar \emph{intratáveis} se usarmos tabelas-verdade.
 
-When we get to first-order logic (FOL) (beginning in \cref{s:FOLBuildingBlocks}), though, the problem gets dramatically worse. There is nothing like the truth table test for FOL. To assess whether or not an argument is valid, we have to reason about \emph{all} interpretations, but, as we will see, there are infinitely many possible interpretations. We cannot even in principle set a machine to grind through infinitely many possible interpretations and report back when it is finished: it will \emph{never} finish. We either need to come up with some more efficient way of reasoning about all interpretations, or we need to look for something different.
+Quando chegarmos à lógica de primeira ordem (LPO) (a partir de \cref{s:FOLBuildingBlocks}), porém, o problema ficará dramaticamente pior. Não há nada semelhante ao teste das tabelas-verdade para a LPO. Para avaliar se um argumento é válido ou não, temos de raciocinar sobre \emph{todas} as interpretações, mas, como veremos, há infinitas interpretações possíveis. Nem em princípio podemos programar uma máquina para processar infinitas interpretações possíveis e informar quando terminar: ela \emph{nunca} terminará. Precisamos ou encontrar uma maneira mais eficiente de raciocinar sobre todas as interpretações, ou procurar algo diferente.
 
-There are, indeed, systems that codify ways to reason about all possible interpretations. They were developed in the 1950s by Evert Beth and Jaakko Hintikka, but we will not follow this path. We will, instead, look to natural deduction.
+De fato, existem sistemas que codificam maneiras de raciocinar sobre todas as interpretações possíveis. Eles foram desenvolvidos na década de 1950 por Evert Beth e Jaakko Hintikka, mas não seguiremos esse caminho. Em vez disso, recorreremos à dedução natural.
 
-Rather than reasoning directly about all valuations (in the case of TFL), we will try to select a few basic rules of inference. Some of these will govern the behaviour of the sentential connectives. Others will govern the behaviour of the quantifiers and identity that are the hallmarks of FOL. The resulting system of rules will give us a new way to think about the validity of arguments.
-The modern development of natural deduction dates from simultaneous and unrelated papers by Gerhard Gentzen and Stanis\l{}aw Ja\'{s}kowski (1934). However, the natural deduction system that we will consider is based largely around work by Frederic Fitch (first published in 1952).
+Em vez de raciocinar diretamente sobre todas as valorações (no caso da LVF), tentaremos selecionar algumas regras básicas de inferência. Algumas delas regerão o comportamento dos conectivos sentenciais. Outras regerão o comportamento dos quantificadores e da identidade, que são marcas distintivas da LPO. O sistema de regras resultante nos dará uma nova maneira de pensar sobre a validade de argumentos.
+O desenvolvimento moderno da dedução natural remonta a artigos simultâneos e independentes de Gerhard Gentzen e Stanis\l{}aw Ja\'{s}kowski (1934). No entanto, o sistema de dedução natural que consideraremos baseia-se em grande medida no trabalho de Frederic Fitch (publicado pela primeira vez em 1952).
 
 
 \chapter{Basic rules for TFL}\label{s:BasicTFL}
@@ -2019,4 +2019,3 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 \item Show that $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ is valid.
 \item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid.
 \end{compactlist}
-

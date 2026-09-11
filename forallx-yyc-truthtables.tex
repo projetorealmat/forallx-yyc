@@ -948,99 +948,111 @@ Considere o seguinte princípio:
 	\end{quote}
 Esse princípio está correto? Explique sua resposta.
 
-\chapter{Limitations of TFL}\label{s:ParadoxesOfMaterialConditional}
+\chapter{Limitações da LVF}\label{s:ParadoxesOfMaterialConditional}
 
-We have reached an important milestone: a test for the validity of
-arguments! However, we should not get carried away just yet. It is
-important to understand the \emph{limits} of our achievement. We will
-illustrate these limits with four examples.
+Alcançamos um marco importante: um teste para a validade de
+argumentos! No entanto, ainda não devemos nos empolgar. É importante
+compreender os \emph{limites} da nossa conquista. Ilustraremos esses
+limites com quatro exemplos.
 
-First, consider the argument: 
+Primeiro, considere o argumento:
 	\begin{earg}
-		\item Daisy has four legs.
-		\item[\texttherefore] Daisy has more than two legs.
+		\item Daisy tem quatro patas.
+		\item[\texttherefore] Daisy tem mais de duas patas.
 	\end{earg}
-To symbolize this argument in TFL, we would have to use two different sentence letters---perhaps `$F$'  and `$T$'---for the premise and the conclusion respectively. Now, it is obvious that `$F$' does not entail~`$T$'. But the English argument is surely valid!
+Para simbolizar esse argumento na LVF, teríamos de usar duas letras
+sentenciais diferentes---talvez `$F$' e `$T$'---para a premissa e a
+conclusão, respectivamente. Ora, é evidente que `$F$' não implica~`$T$'.
+Mas o argumento em português é certamente válido!
 
-Second, consider the sentence:
+Segundo, considere a sentença:
 	\begin{enumerate}
-		\item\label{n:JanBald} Jan is neither bald nor not bald.
+		\item\label{n:JanBald} Jan não é nem careca nem não careca.
 	\end{enumerate}
-To symbolize this sentence in TFL, we would offer something like
-`$\enot J \eand \enot \enot J$'. This a contradiction (check this with
-a truth-table), but \cref*{n:JanBald} does not itself seem like a
-contradiction: we might have happily added `Jan is on the borderline
-of baldness'!
+Para simbolizar essa sentença na LVF, ofereceríamos algo como
+`$\enot J \eand \enot \enot J$'. Isso é uma contradição (verifique com
+uma tabela-verdade), mas a sentença \cref*{n:JanBald} em si não parece
+ser uma contradição: poderíamos perfeitamente acrescentar `Jan está no
+limiar da calvície'!
 
-Third, consider the following sentence:
+Terceiro, considere a seguinte sentença:
 	\begin{enumerate}
-	\item\label{n:GodParadox} It's not the case that, if God exists, She answers malevolent prayers.
+	\item\label{n:GodParadox} Não é o caso de que, se Deus existe, Ela atende a preces malévolas.
 	\end{enumerate}
-Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' entails `$G$' (again, check this with a truth table). So if we symbolize \cref*{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even an atheist can accept \cref*{n:GodParadox}, without contradicting herself!
+Ao simbolizá-la na LVF, ofereceríamos algo como `$\enot (G \eif M)$'.
+Ora, `$\enot (G \eif M)$' implica `$G$' (novamente, verifique com uma
+tabela-verdade). Assim, se simbolizarmos \cref*{n:GodParadox} na LVF,
+parece que ela implica que Deus existe. Mas isso é estranho: certamente
+até mesmo um ateu pode aceitar \cref*{n:GodParadox} sem se contradizer!
 
-One lesson of this is that the symbolization of \cref*{n:GodParadox} as `$\enot(G \eif M)$' does not express what we intend. Perhaps we should rephrase \cref*{n:GodParadox} as
+Uma lição disso é que a simbolização de \cref*{n:GodParadox} como
+`$\enot(G \eif M)$' não expressa o que pretendemos. Talvez devêssemos
+reformular \cref*{n:GodParadox} assim:
 	\begin{enumerate}
-	\item\label{n:GodParadox2} If God exists, She does not answer malevolent prayers.
+	\item\label{n:GodParadox2} Se Deus existe, Ela não atende a preces malévolas.
 	\end{enumerate}
-and symbolize \cref*{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, `$G \eif M$', i.e., `If God exists, She answers malevolent prayers', is \emph{also} true!
+e simbolizar \cref*{n:GodParadox2} como `$G \eif \enot M$'. Agora, se os
+ateus estiverem certos e não houver Deus, então `$G$' é falsa e, portanto,
+`$G \eif \enot M$' é verdadeira, e o problema desaparece. No entanto,
+se `$G$' é falsa, `$G \eif M$', isto é, `Se Deus existe, Ela atende a
+preces malévolas', também é \emph{verdadeira}!
 
-In different ways, these four examples highlight some of the limits of
-TFL, symbolization of English in TFL, and the tests based on truth
-tables we've devised. Our first example showed that TFL is not
-expressive enough to symbolize everything we might want to in a way
-that allows us to apply our logical toolkit to even the best possible
-symbolization. We will see later (\cref{sec.identity}) that we
-\emph{can} properly symbolize `Daisy has four legs' in the more
-expressive language FOL, and then the test we will devise for FOL will
-apply (and give the correct answer).
+De maneiras diferentes, esses quatro exemplos destacam alguns dos
+limites da LVF, da simbolização do português na LVF e dos testes baseados
+em tabelas-verdade que elaboramos. Nosso primeiro exemplo mostrou que a
+LVF não é suficientemente expressiva para simbolizar tudo o que podemos
+querer, de um modo que nos permita aplicar nosso instrumental lógico até
+mesmo à melhor simbolização possível. Veremos mais adiante
+(\cref{sec.identity}) que \emph{podemos} simbolizar corretamente `Daisy
+tem quatro patas' na linguagem mais expressiva LPO, e então o teste que
+elaboraremos para a LPO será aplicável (e dará a resposta correta).
 
-In \cref{n:JanBald} we similarly had an example where the
-straightforward symbolization in TFL does not quite work. The best we
-can do in TFL is to symbolize `Jan is not bald' using its own sentence
-letter, say,~`$N$' (contrary to our standing practice). But this also
-does not work. For instance, we would then symbolize `Jan is both bald
-and isn't' as `$J \eand N$'. But `Jan is both bald and isn't' arguably
-is a self-contradiction, yet the alternate symbolization `$J \eand N$'
-is not. Some logicians have proposed that in cases of sentences like
-`Jan is bald' which allow borderline cases, we have to adjust our
-semantics and allow that the sentence letter~`$J$' that symbolizes it
-should be allowed to take truth values other than T and~F. But this is
-by no means universally accepted.
+Em \cref{n:JanBald}, tivemos de modo semelhante um exemplo em que a
+simbolização direta na LVF não funciona inteiramente. O melhor que podemos
+fazer na LVF é simbolizar `Jan não é careca' usando sua própria letra
+sentencial, digamos,~`$N$' (contrariamente à nossa prática usual). Mas isso
+também não funciona. Por exemplo, então simbolizaríamos `Jan é careca e
+não é' como `$J \eand N$'. Mas `Jan é careca e não é' é, plausivelmente,
+uma autocontradição, enquanto a simbolização alternativa `$J \eand N$' não
+é. Alguns lógicos propuseram que, nos casos de sentenças como `Jan é
+careca', que admitem casos limítrofes, devemos ajustar nossa semântica e
+permitir que a letra sentencial `$J$' que a simboliza possa assumir valores
+de verdade diferentes de T e~F. Mas isso está longe de ser universalmente
+aceito.
 
-\Cref{n:GodParadox} also showed that symbolization is often tricky,
-and that the straightforward symbolization of an English sentence
-sometimes does not capture its intended truth conditions. But even our
-improvement, \cref{n:GodParadox2}, and its symbolization `$G \eif
-\enot M$' turned out to not be good enough. The phenomenon we
-encountered here is one of the so-called paradoxes of the material
-conditional. The paradox is that material conditionals like
-`$G \eif M$' and `$G \eif \enot M$' are true whenever their
-antecedent~`$G$' is false, even though intuitively the two sentences
-`If God exists, She answers malevolent prayers' and `If God exists,
-She does \emph{not} answer malevolent prayers' should not both be true. This
-indicates that the `if \dots then' in these two examples is not
-properly captured by the TFL connective~`\eif'. The
-truth-functionality of TFL here is a real limitation. The solution
-would be to treat `if \dots then' in this case as a subjunctive
-conditional (see \cref{s:IndicativeSubjunctive}), but TFL cannot
-capture those.\footnote{Logicians have devised logics that deal with
-subjunctive conditionals better. They are called `conditional logics'
-or `logics of counterfactuals'.}
+\Cref{n:GodParadox} também mostrou que a simbolização costuma ser
+complicada e que a simbolização direta de uma sentença em português às
+vezes não capta suas condições de verdade pretendidas. Mas até mesmo nossa
+melhoria, \cref{n:GodParadox2}, e sua simbolização `$G \eif
+\enot M$' acabaram não sendo suficientes. O fenômeno que encontramos aqui
+é um dos chamados paradoxos do condicional material. O paradoxo é que
+condicionais materiais como `$G \eif M$' e `$G \eif \enot M$' são
+verdadeiros sempre que seu antecedente~`$G$' é falso, embora, intuitivamente,
+as duas sentenças `Se Deus existe, Ela atende a preces malévolas' e `Se Deus
+existe, Ela \emph{não} atende a preces malévolas' não devessem ser ambas
+verdadeiras. Isso indica que o `se \dots então' nesses dois exemplos não é
+captado adequadamente pelo conectivo da LVF~`\eif'. A verofuncionalidade da
+LVF é uma limitação real nesse caso. A solução seria tratar o `se \dots
+então' nesse caso como um condicional subjuntivo (ver
+\cref{s:IndicativeSubjunctive}), mas a LVF não consegue captar esse tipo de
+condicional.\footnote{Os lógicos desenvolveram lógicas que lidam melhor com
+condicionais subjuntivos. Elas são chamadas de `lógicas condicionais' ou
+`lógicas dos contrafactuais'.}
 
-The case of Jan's baldness (or otherwise) raises the general question
-of what logic we should use when dealing with \emph{vague} discourse.
-The case of the atheist raises the question of how to deal with the
-(so-called) \emph{paradoxes of the material conditional}. Part of the
-purpose of this book is to equip you with the tools to explore these
-questions of \emph{philosophical logic}. But we have to walk before we
-can run; we have to become proficient in using TFL, before we can
-adequately discuss its limits, and consider alternatives.
+O caso da calvície de Jan (ou da ausência dela) levanta a questão geral de
+qual lógica devemos usar ao lidar com discurso \emph{vago}. O caso do ateu
+levanta a questão de como lidar com os (assim chamados) \emph{paradoxos do
+condicional material}. Um dos objetivos deste livro é fornecer as
+ferramentas para explorar essas questões de \emph{lógica filosófica}. Mas
+precisamos aprender a andar antes de correr; temos de nos tornar proficientes
+no uso da LVF antes de podermos discutir adequadamente suas limitações e
+considerar alternativas.
 
-\chapter{Truth table shortcuts}
-With practice, you will quickly become adept at filling out truth tables. In this chapter, we consider (and justify) some shortcuts which will help you along the way.
+\chapter{Atalhos de tabelas-verdade}
+Com a prática, você rapidamente se tornará hábil em preencher tabelas-verdade. Neste capítulo, consideramos (e justificamos) alguns atalhos que ajudarão ao longo do caminho.
 
-\section{Working through truth tables}
-You will quickly find that you do not need to copy the truth value of each sentence letter, but can simply refer back to them. So you can speed things up by writing:
+\section{Trabalhando com tabelas-verdade}
+Você logo descobrirá que não precisa copiar o valor de verdade de cada letra sentencial, mas pode simplesmente consultá-las. Assim, pode agilizar o trabalho escrevendo:
 \begin{center}
 \begin{tabular}{c c|d e e e e f}
 $P$&$Q$&$(P$&\eor&$Q)$&\eiff&\enot&$P$\\
@@ -1051,7 +1063,7 @@ $P$&$Q$&$(P$&\eor&$Q)$&\eiff&\enot&$P$\\
  F & F &  & F &  & \TTbf{F} & T
 \end{tabular}
 \end{center}
-You also know for sure that a disjunction is true whenever one of the disjuncts is true. So if you find a true disjunct, there is no need to work out the truth value of the other disjunct. Thus you might offer:
+Você também sabe com certeza que uma disjunção é verdadeira sempre que um dos disjuntos é verdadeiro. Portanto, se encontrar um disjunto verdadeiro, não há necessidade de calcular o valor de verdade do outro disjunto. Assim, você poderia apresentar:
 \begin{center}
 \begin{tabular}{c c|d e e e e e e f}
 $P$&$Q$& $(\enot$ & $P$&\eor&\enot&$Q)$&\eor&\enot&$P$\\
@@ -1062,7 +1074,7 @@ $P$&$Q$& $(\enot$ & $P$&\eor&\enot&$Q)$&\eor&\enot&$P$\\
  F & F & & & & & &\TTbf{T} & T
 \end{tabular}
 \end{center}
-Equally, you know for sure that a conjunction is false whenever one of the conjuncts is false. So if you find a false conjunct, there is no need to work out the truth value of the other conjunct. Thus you might offer:
+Do mesmo modo, você sabe com certeza que uma conjunção é falsa sempre que um dos conjuntos é falso. Portanto, se encontrar um conjunto falso, não há necessidade de calcular o valor de verdade do outro conjunto. Assim, você poderia apresentar:
 \begin{center}
 \begin{tabular}{c c|d e e e e e e f}
 $P$&$Q$&\enot &$(P$&\eand&\enot&$Q)$&\eand&\enot&$P$\\
@@ -1073,7 +1085,7 @@ $P$&$Q$&\enot &$(P$&\eand&\enot&$Q)$&\eand&\enot&$P$\\
  F & F & T &  & F & & & \TTbf{T} & T
 \end{tabular}
 \end{center}
-A similar short cut is available for conditionals. You immediately know that a conditional is true if either its consequent is true, or its antecedent is false. Thus you might present:
+Um atalho semelhante está disponível para condicionais. Você sabe imediatamente que um condicional é verdadeiro se seu consequente é verdadeiro ou se seu antecedente é falso. Assim, você poderia apresentar:
 \begin{center}
 \begin{tabular}{c c|d e e e e e f}
 $P$&$Q$& $((P$&\eif&$Q$)&\eif&$P)$&\eif&$P$\\
@@ -1084,19 +1096,19 @@ $P$&$Q$& $((P$&\eif&$Q$)&\eif&$P)$&\eif&$P$\\
  F & F & & T & & F & &\TTbf{T} & 
 \end{tabular}
 \end{center}
-So `$((P \eif Q) \eif P) \eif P$' is a tautology. In fact, it is an instance of \emph{Peirce's Law}, named after Charles Sanders Peirce.
+Portanto, `$((P \eif Q) \eif P) \eif P$' é uma tautologia. Na verdade, é uma instância da \emph{Lei de Peirce}, assim chamada em homenagem a Charles Sanders Peirce.
 
-\section{Testing for validity and entailment}
-In \cref{s:SemanticConcepts}, we saw how to use truth tables to test for validity. In that test, we look for \emph{bad} lines: lines where the premises are all true and the conclusion is false. Now:
+\section{Testando validade e implicação}
+Em \cref{s:SemanticConcepts}, vimos como usar tabelas-verdade para testar a validade. Nesse teste, procuramos \emph{linhas ruins}: linhas em que todas as premissas são verdadeiras e a conclusão é falsa. Agora:
 \begin{itemize}
-	\item If the conclusion is true on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
-	\item If any premise is false on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
+	\item Se a conclusão é verdadeira em uma linha, então essa linha não é ruim. (E não precisamos avaliar mais nada \emph{além} disso nessa linha para confirmar o fato.)
+	\item Se alguma premissa é falsa em uma linha, então essa linha não é ruim. (E não precisamos avaliar mais nada \emph{além} disso nessa linha para confirmar o fato.)
 \end{itemize}
-With this in mind, we can speed up our tests for validity quite considerably.
+Com isso em mente, podemos acelerar consideravelmente nossos testes de validade.
 
-Let's consider how we might test the following:
+Consideremos como podemos testar o seguinte:
 $$\enot L \eif (J \eor L), \enot L \therefore J$$
-The \emph{first} thing we should do is evaluate the conclusion. If we find that the conclusion is \emph{true} on some line, then that is not a bad line. So we can simply ignore the rest of the line. So, after our first stage, we are left with something like this:
+A \emph{primeira} coisa que devemos fazer é avaliar a conclusão. Se descobrirmos que a conclusão é \emph{verdadeira} em alguma linha, então essa não é uma linha ruim. Assim, podemos simplesmente ignorar o restante da linha. Depois dessa primeira etapa, ficamos com algo como:
 \begin{center}
 	\begin{tabular}{c c|d e e e e f |d f|c}
 		$J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
@@ -1108,9 +1120,9 @@ The \emph{first} thing we should do is evaluate the conclusion. If we find that 
 		F & F & &&?&&&&?&& {F}
 	\end{tabular}
 \end{center}
-where the blanks indicate that we won't bother with any more investigation (since the line is not bad), and the question marks indicate that we need to keep digging.
+em que os espaços em branco indicam que não nos daremos ao trabalho de continuar investigando (pois a linha não é ruim), e os pontos de interrogação indicam que precisamos continuar investigando.
 
-The easiest premise to evaluate is the second, so we do that next, and get:
+A premissa mais fácil de avaliar é a segunda; fazemos isso em seguida e obtemos:
 \begin{center}
 	\begin{tabular}{c c|d e e e e f |d f|c}
 		$J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
@@ -1122,7 +1134,7 @@ The easiest premise to evaluate is the second, so we do that next, and get:
 		F & F & &&?&&&&{T}&& {F}
 	\end{tabular}
 \end{center}
-Note that we no longer need to consider the third line on the table: it is certainly not bad, because some premise is false on that line. And finally, we complete the truth table:
+Observe que não precisamos mais considerar a terceira linha da tabela: ela certamente não é ruim, pois alguma premissa é falsa nessa linha. E, finalmente, completamos a tabela-verdade:
 \begin{center}
 	\begin{tabular}{c c|d e e e e f |d f|c}
 		$J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
@@ -1134,11 +1146,11 @@ Note that we no longer need to consider the third line on the table: it is certa
 		F & F & T &  & \TTbf{F} &  & F & & {T} & & {F}
 	\end{tabular}
 \end{center}
-The truth table has no bad lines, so the argument is valid. Any valuation which makes every premise true makes the conclusion true.
+A tabela-verdade não tem linhas ruins, portanto o argumento é válido. Qualquer valoração que torne verdadeiras todas as premissas torna verdadeira a conclusão.
 
-It's probably worth illustrating the tactic again. Consider this argument:
+Vale a pena ilustrar a estratégia novamente. Considere este argumento:
 $$A\eor B, \enot (B\eand C) \therefore (A \eor \enot C)$$
-Again, we start by evaluating the conclusion. Since this is a disjunction, it is true whenever either disjunct is true, so we can speed things along a bit.
+Mais uma vez, começamos avaliando a conclusão. Como ela é uma disjunção, é verdadeira sempre que qualquer um dos disjuntos é verdadeiro, de modo que podemos acelerar um pouco o trabalho.
 \begin{center}
 \begin{tabular}[t]{c c c| c|c|d e e f }
 $A$ & $B$ & $C$ & $A\eor B$ & $\enot (B \eand C)$ & $(A$ &$\eor $& $\enot $ & $C)$\\
@@ -1153,7 +1165,7 @@ F & F & T & ? & ? && \TTbf{F} & F& \\
 F & F & F &  &  & & \TTbf{T} & T& \\
 \end{tabular}
 \end{center}
-We can now ignore all but the two lines where the sentence after the turnstile is false. Evaluating the two sentences on the left of the turnstile, we get:
+Agora podemos ignorar todas as linhas, exceto as duas em que a sentença depois do símbolo de consequência é falsa. Avaliando as duas sentenças à esquerda do símbolo de consequência, obtemos:
 \begin{center}
 	\begin{tabular}[t]{c c c| c|d e e f |d e e f }
 		$A$ & $B$ & $C$ & $A\eor B$ & $\enot ($&$B$&$ \eand$&$ C)$ & $(A$ &$\eor $& $\enot $ & $C)$\\
@@ -1168,13 +1180,13 @@ We can now ignore all but the two lines where the sentence after the turnstile i
 		F & F & F & &&&& && \TTbf{T} & T& \\
 	\end{tabular}
 \end{center}
-So the entailment holds! And our shortcuts saved us a \emph{lot} of work.
+Logo, a implicação vale! E nossos atalhos nos pouparam \emph{muito} trabalho.
  
-We have been discussing shortcuts in testing for validity. But exactly the same shortcuts can be used in testing for entailment. By employing a similar notion of bad lines, you can save yourself a huge amount of work.
+Estivemos discutindo atalhos para testar a validade. Mas exatamente os mesmos atalhos podem ser usados para testar a implicação. Empregando uma noção semelhante de linhas ruins, você pode poupar uma enorme quantidade de trabalho.
  
 \practiceproblems
 \problempart
-Using shortcuts, check whether each sentence is a tautology, a contradiction, or neither.
+Usando atalhos, verifique se cada sentença é uma tautologia, uma contradição ou nenhuma das duas.
 \begin{compactlist}
 	\item $\enot B \eand B$ %contra
 	\item $\enot D \eor D$ %taut
@@ -1187,16 +1199,16 @@ Using shortcuts, check whether each sentence is a tautology, a contradiction, or
 	\item $(B\eand D) \eiff [A \eiff(A \eor C)]$%contingent
 \end{compactlist}
 
-\chapter{Partial truth tables}\label{s:PartialTruthTable}
+\chapter{Tabelas-verdade parciais}\label{s:PartialTruthTable}
 
-Sometimes, we do not need to know what happens on every line of a truth table. Sometimes, just a line or two will do.
+Às vezes, não precisamos saber o que acontece em todas as linhas de uma tabela-verdade. Às vezes, basta uma ou duas linhas.
 
-\paragraph{Tautology} 
-In order to show that a sentence is a tautology, we need to show that it is true on every valuation. That is to say, we need to know that it comes out true on every line of the truth table. So we need a complete truth table.
+\paragraph{Tautologia}
+Para mostrar que uma sentença é uma tautologia, precisamos mostrar que ela é verdadeira em toda valoração. Isto é, precisamos saber que ela resulta verdadeira em todas as linhas da tabela-verdade. Portanto, precisamos de uma tabela-verdade completa.
 
-To show that a sentence is \emph{not} a tautology, however, we only need one line: a line on which the sentence is false. Therefore, in order to show that some sentence is not a tautology, it is enough to provide a single valuation---a single line of the truth table---which makes the sentence false.
+Para mostrar, no entanto, que uma sentença \emph{não} é uma tautologia, precisamos de apenas uma linha: uma linha na qual a sentença é falsa. Portanto, para mostrar que uma sentença não é uma tautologia, basta fornecer uma única valoração---uma única linha da tabela-verdade---que torne a sentença falsa.
 
-Suppose that we want to show that the sentence `$(U \eand T) \eif (S \eand W)$' is \emph{not} a tautology. We set up a \define{partial truth table}:
+Suponha que queiramos mostrar que a sentença `$(U \eand T) \eif (S \eand W)$' \emph{não} é uma tautologia. Montamos uma \define{tabela-verdade parcial}:
 \begin{center}
 \begin{tabular}{c c c c |d e e e e e f}
 $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
@@ -1204,9 +1216,9 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
    &   &   &   &    &   &    &\TTbf{F}&    &   &   
 \end{tabular}
 \end{center}
-We have only left space for one line, rather than 16, since we are only looking for one line, on which the sentence is false (hence, also, the `F').
+Deixamos espaço para apenas uma linha, em vez de 16, pois estamos procurando somente uma linha na qual a sentença seja falsa (daí também o `F').
 
-The main logical operator of the sentence is a conditional. In order for the conditional to be false, the antecedent must be true and the consequent must be false. So we fill these in on the table:
+O operador lógico principal da sentença é um condicional. Para que o condicional seja falso, o antecedente deve ser verdadeiro e o consequente deve ser falso. Portanto, preenchemos esses valores na tabela:
 \begin{center}
 \begin{tabular}{c c c c |d e e e e e f}
 $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
@@ -1214,7 +1226,7 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
    &   &   &   &    &  T  &    &\TTbf{F}&    &   F &   
 \end{tabular}
 \end{center}
-In order for the `$(U\eand T)$' to be true, both `$U$' and `$T$' must be true.
+Para que `$(U\eand T)$' seja verdadeira, tanto `$U$' quanto `$T$' devem ser verdadeiras.
 \begin{center}
 \begin{tabular}{c c c c|d e e e e e f}
 $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
@@ -1222,7 +1234,7 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
    & T & T &   &  T &  T  & T  &\TTbf{F}&    &   F &   
 \end{tabular}
 \end{center}
-Now we just need to make `$(S\eand W)$' false. To do this, we need to make at least one of `$S$' and `$W$' false. We can make both `$S$' and `$W$' false if we want. All that matters is that the whole sentence turns out false on this line. Making an arbitrary decision, we finish the table in this way:
+Agora só precisamos tornar `$(S\eand W)$' falsa. Para isso, precisamos tornar pelo menos uma de `$S$' e `$W$' falsa. Podemos tornar ambas, `$S$' e `$W$', falsas, se quisermos. O que importa é que a sentença inteira resulte falsa nessa linha. Tomando uma decisão arbitrária, terminamos a tabela desta maneira:
 \begin{center}
 \begin{tabular}{c c c c|d e e e e e f}
 $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
@@ -1230,12 +1242,12 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
  F & T & T & F &  T &  T  & T  &\TTbf{F}&  F &   F & F  
 \end{tabular}
 \end{center}
-We now have a partial truth table, which shows that `$(U \eand T) \eif (S \eand W)$' is not a tautology. Put otherwise, we have shown that there is a valuation which makes `$(U \eand T) \eif (S \eand W)$' false, namely, the valuation which makes `$S$' false, `$T$' true, `$U$' true and `$W$' false.
+Agora temos uma tabela-verdade parcial, que mostra que `$(U \eand T) \eif (S \eand W)$' não é uma tautologia. Dito de outro modo, mostramos que existe uma valoração que torna `$(U \eand T) \eif (S \eand W)$' falsa, a saber, a valoração que torna `$S$' falsa, `$T$' verdadeira, `$U$' verdadeira e `$W$' falsa.
 
-\paragraph{Contradictions}
-Showing that something is a contradiction in TFL requires a complete truth table: we need to show that there is no valuation which makes the sentence true; that is, we need to show that the sentence is false on every line of the truth table.
+\paragraph{Contradições}
+Mostrar que algo é uma contradição na LVF requer uma tabela-verdade completa: precisamos mostrar que não existe valoração que torne a sentença verdadeira; isto é, precisamos mostrar que a sentença é falsa em todas as linhas da tabela-verdade.
 
-However, to show that something is \emph{not} a contradiction, all we need to do is find a valuation which makes the sentence true, and a single line of a truth table will suffice. We can illustrate this with the same example.
+Para mostrar, no entanto, que algo \emph{não} é uma contradição, tudo o que precisamos fazer é encontrar uma valoração que torne a sentença verdadeira, e uma única linha de uma tabela-verdade será suficiente. Podemos ilustrar isso com o mesmo exemplo.
 \begin{center}
 \begin{tabular}{c c c c|d e e e e e f}
 $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
@@ -1243,7 +1255,7 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
   &  &  &  &   &   &   &\TTbf{T}&  &  &
 \end{tabular}
 \end{center}
-To make the sentence true, it will suffice to ensure that the antecedent is false. Since the antecedent is a conjunction, we can just make one of them false. Making an arbitrary choice, let's make `$U$' false; we can then assign any truth value we like to the other sentence letters.
+Para tornar a sentença verdadeira, será suficiente garantir que o antecedente seja falso. Como o antecedente é uma conjunção, podemos simplesmente tornar um de seus conjuntos falso. Tomando uma decisão arbitrária, vamos tornar `$U$' falso; então podemos atribuir qualquer valor de verdade que quisermos às outras letras sentenciais.
 \begin{center}
 \begin{tabular}{c c c c|d e e e e e f}
 $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
@@ -1252,38 +1264,36 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
 \end{tabular}
 \end{center}
 
-\paragraph{Equivalence}
-To show that two sentences are equivalent, we must show that the sentences have the same truth value on every valuation. So this requires a  complete truth table.
+\paragraph{Equivalência}
+Para mostrar que duas sentenças são equivalentes, devemos mostrar que elas têm o mesmo valor de verdade em toda valoração. Portanto, isso requer uma tabela-verdade completa.
 
-To show that two sentences are \emph{not} equivalent, we only need to show that there is a valuation on which they have different truth values. So this requires only a one-line partial truth table: make the table so that one sentence is true and the other false.
+Para mostrar que duas sentenças \emph{não} são equivalentes, precisamos apenas mostrar que existe uma valoração na qual elas têm valores de verdade diferentes. Portanto, isso requer somente uma tabela-verdade parcial de uma linha: faça a tabela de modo que uma sentença seja verdadeira e a outra falsa.
 
-\paragraph{Joint satisfiability}
-To show that some sentences are jointly satisfiable, we must show that
-there is a valuation which makes all of the sentences true, so this
-requires only a partial truth table with a single line.
+\paragraph{Satisfatibilidade conjunta}
+Para mostrar que algumas sentenças são conjuntamente satisfatíveis, devemos mostrar que existe uma valoração que torna todas as sentenças verdadeiras; portanto, isso requer apenas uma tabela-verdade parcial com uma única linha.
 
-To show that some sentences are jointly unsatisfiable, we must show that there is no valuation which makes all of the sentence true. So this requires a complete truth table: You must show that on every row of the table at least one of the sentences is false.
+Para mostrar que algumas sentenças são conjuntamente insatisfatíveis, devemos mostrar que não existe valoração que torne todas as sentenças verdadeiras. Portanto, isso requer uma tabela-verdade completa: você deve mostrar que, em cada linha da tabela, pelo menos uma das sentenças é falsa.
 
-\paragraph{Validity and entailment}
-To show that an argument is valid, we must show that there is no valuation which makes all of the premises true and the conclusion false. So this  requires a complete truth table.  (Likewise for entailment.)
+\paragraph{Validade e implicação}
+Para mostrar que um argumento é válido, devemos mostrar que não existe valoração que torne verdadeiras todas as premissas e falsa a conclusão. Portanto, isso requer uma tabela-verdade completa. (O mesmo vale para a implicação.)
 
-To show that an argument is \emph{invalid}, we must show that there is a valuation which makes all of the premises true and the conclusion false. So this requires only a one-line partial truth table on which all of the premises are true and the conclusion is false. (Likewise for a failure of entailment.)
+Para mostrar que um argumento é \emph{inválido}, devemos mostrar que existe uma valoração que torna verdadeiras todas as premissas e falsa a conclusão. Portanto, isso requer apenas uma tabela-verdade parcial de uma linha na qual todas as premissas são verdadeiras e a conclusão é falsa. (O mesmo vale para uma falha de implicação.)
 
-This table summarizes what is required:
+Esta tabela resume o que é necessário:
 
 \begin{center}
 \begin{tabular}{l l l}
 %\cline{2-3}
- & \textbf{Yes} & \textbf{No}\\
+ & \textbf{Sim} & \textbf{Não}\\
  \hline
 %\cline{2-3}
-tautology? & complete & one-line partial \\
-contradiction? &  complete & one-line partial \\
+tautologia? & completa & parcial de uma linha \\
+contradição? &  completa & parcial de uma linha \\
 %contingent? & two-line partial truth table & complete truth table\\
-equivalent? & complete  & one-line partial \\
-satisfiable? & one-line partial & complete \\
-valid? & complete & one-line partial \\
-entailment? & complete & one-line partial\\
+equivalente? & completa  & parcial de uma linha \\
+satisfatível? & parcial de uma linha & completa \\
+válido? & completa & parcial de uma linha \\
+implicação? & completa & parcial de uma linha\\
 \end{tabular}
 \end{center}
 \label{table.CompleteVsPartial}
@@ -1293,7 +1303,7 @@ entailment? & complete & one-line partial\\
 
 \problempart
 \label{pr.TT.equiv3}
-Use complete or partial truth tables (as appropriate) to determine whether these pairs of sentences are logically equivalent:
+Use tabelas-verdade completas ou parciais (conforme apropriado) para determinar se estes pares de sentenças são logicamente equivalentes:
 \begin{compactlist}
 \item $A$, $\enot A$ %No
 \item $A$, $A \eor A$ %Yes
@@ -1307,7 +1317,7 @@ Use complete or partial truth tables (as appropriate) to determine whether these
 
 \problempart
 \label{pr.TT.satisfiable4}
-Use complete or partial truth tables (as appropriate) to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
+Use tabelas-verdade completas ou parciais (conforme apropriado) para determinar se estas sentenças são conjuntamente satisfatíveis ou conjuntamente insatisfatíveis:
 \begin{compactlist}
 \item $A \eand B$, $C\eif \enot B$, $C$ %unsatisfiable
 \item $A\eif B$, $B\eif C$, $A$, $\enot C$ %unsatisfiable
@@ -1319,7 +1329,7 @@ Use complete or partial truth tables (as appropriate) to determine whether these
 
 \problempart
 \label{pr.TT.valid4}
-Use complete or partial truth tables (as appropriate) to determine whether each argument is valid or invalid:
+Use tabelas-verdade completas ou parciais (conforme apropriado) para determinar se cada argumento é válido ou inválido:
 \begin{compactlist}
 \item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore A$ %invalid
 \item $A\eiff\enot(B\eiff A) \therefore A$ %invalid
@@ -1330,7 +1340,7 @@ Use complete or partial truth tables (as appropriate) to determine whether each 
 
 \problempart
 \label{pr.TT.TTorC3}
-Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table as appropriate.
+Determine se cada sentença é uma tautologia, uma contradição ou uma sentença contingente. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 
 % truth tables in LaTeX generated by http://www.curtisbright.com/logic/. Be sure to give him a shout out.
 
@@ -1523,7 +1533,7 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 
 \noindent\problempart
 \label{pr.TT.TTorC4}
-Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table as appropriate.
+Determine se cada sentença é uma tautologia, uma contradição ou uma sentença contingente. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \begin{compactlist}
 \item  $\enot (A \eor A)$\vspace{.5ex}							%	Contradiction		1 letter, 2 connectives
 \item $(A \eif B) \eor (B \eif A)$\vspace{.5ex}					%	Tautology			2 letters, 2 connectives
@@ -1540,23 +1550,23 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 
 
 \noindent\problempart
-Determine whether each of the following pairs of sentences are logically equivalent using truth tables. Justify your answer with a complete or partial truth table as appropriate.
+Determine se cada um dos seguintes pares de sentenças é logicamente equivalente usando tabelas-verdade. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \begin{compactlist}
-\item $A$ and $A \eor A$
-\item $A$ and $A \eand A$
-\item $A \eor \enot B$ and $A\eif B$
-\item $(A \eif B)$ and $(\enot B \eif \enot A)$
-\item $\enot(A \eand B)$ and $\enot A \eor \enot B$
-\item $ ((U \eif (X \eor X)) \eor U)$ and $\enot (X \eand (X \eand U))$
-\item $ ((C \eand (N \eiff C)) \eiff C)$ and $(\enot \enot \enot N \eif C)$
-\item $[(A \eor B) \eand C]$ and $[A \eor (B \eand C)]$
-\item $((L \eand C) \eand I)$ and $L \eor C$
+\item $A$ e $A \eor A$
+\item $A$ e $A \eand A$
+\item $A \eor \enot B$ e $A\eif B$
+\item $(A \eif B)$ e $(\enot B \eif \enot A)$
+\item $\enot(A \eand B)$ e $\enot A \eor \enot B$
+\item $ ((U \eif (X \eor X)) \eor U)$ e $\enot (X \eand (X \eand U))$
+\item $ ((C \eand (N \eiff C)) \eiff C)$ e $(\enot \enot \enot N \eif C)$
+\item $[(A \eor B) \eand C]$ e $[A \eor (B \eand C)]$
+\item $((L \eand C) \eand I)$ e $L \eor C$
 \end{compactlist}
 
 
 \noindent\problempart
 \label{pr.TT.satisfiable5}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable. Justify your answer with a complete or partial truth table as appropriate.
+Determine se cada coleção de sentenças é conjuntamente satisfatível ou conjuntamente insatisfatível. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \begin{compactlist}
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %satisfiable
 \item $A \eif \enot A$, $\enot A \eif A$%unsatisfiable.
@@ -1570,7 +1580,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \item $\enot (A \eand \enot B)$,  $B \eif \enot A$, $\enot B$   %Consistent
 \end{compactlist}
 
-\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
+\noindent\problempart Determine se cada argumento é válido ou inválido. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \label{pr.TT.valid5} 
 \begin{compactlist}
 \item $A\eif(A\eand\enot A)\therefore \enot A$% valid
@@ -1586,7 +1596,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 \end{compactlist}
 
-\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
+\noindent\problempart Determine se cada argumento é válido ou inválido. Justifique sua resposta com uma tabela-verdade completa ou parcial, conforme apropriado.
 \label{pr.TT.valid6} 
 \begin{compactlist}
 \item $A\eiff\enot(B\eiff A)\therefore A$ % invalid
@@ -1595,4 +1605,3 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \item $A \eor B$, $C \eif A$, $C \eif B\therefore A \eif (B \eif C)$ % invalid
 \item $A \eif B$, $\enot B \eor A\therefore A \eiff B$ % valid
 \end{compactlist}
-
