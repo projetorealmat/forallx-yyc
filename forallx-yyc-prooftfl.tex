@@ -64,103 +64,98 @@ Em vez de raciocinar diretamente sobre todas as valorações (no caso da LVF), t
 O desenvolvimento moderno da dedução natural remonta a artigos simultâneos e independentes de Gerhard Gentzen e Stanis\l{}aw Ja\'{s}kowski (1934). No entanto, o sistema de dedução natural que consideraremos baseia-se em grande medida no trabalho de Frederic Fitch (publicado pela primeira vez em 1952).
 
 
-\chapter{Basic rules for TFL}\label{s:BasicTFL}
-We will develop a \define{natural deduction} system. For each connective, there will be \define{introduction} rules, that allow us to prove a sentence that has that connective as the main logical operator, and \define{elimination} rules, that allow us to prove something given a sentence that has that connective as the main logical operator.
+\chapter{Regras básicas para a LVF}\label{s:BasicTFL}
+Desenvolveremos um sistema de \define{dedu\c{c}\~{a}o natural}. Para cada conectivo, haverá regras de \define{introdu\c{c}\~{a}o}, que nos permitirão provar uma sentença que tenha esse conectivo como operador lógico principal, e regras de \define{elimina\c{c}\~{a}o}, que nos permitirão provar algo a partir de uma sentença que tenha esse conectivo como operador lógico principal.
 
-\section{The idea of a formal proof}
-A \emph{formal proof} or \emph{derivation} is a sequence of sentences,
-some of which are marked as being initial assumptions (or premises).
-The last line of the formal proof is the conclusion. (Henceforth, we
-will simply call these `proofs' or `derivations', but be aware that
-there are \emph{informal proofs} too.)
+\section{A ideia de uma prova formal}
+A \emph{prova formal} ou \emph{derivação} é uma sequência de sentenças,
+algumas das quais são marcadas como suposições iniciais (ou premissas).
+A última linha da prova formal é a conclusão. (Daqui em diante,
+chamaremos simplesmente essas sequências de \textquotedblleft provas\textquotedblright{} ou \textquotedblleft derivações\textquotedblright{}, mas tenha em mente que também existem \emph{provas informais}.)
 
-As an illustration, consider:
+Como ilustração, considere:
 	$$\enot (A \eor B) \therefore \enot A \eand \enot B$$
-We will start a proof by writing the premise:
+Começaremos uma prova escrevendo a premissa:
 \begin{fitchproof}
 	\hypo{a1}{\enot (A \eor B)}\PR
 \end{fitchproof}
-Note that we have numbered the premise, since we will want to refer back to it. Indeed, every line of the proof is numbered, so that we can refer back to it.
+Observe que numeramos a premissa, pois desejaremos voltar a ela. Com efeito, cada linha da prova é numerada, para que possamos fazer referência a ela.
 
-Note also that we have drawn a line underneath the premise. Everything written above the line is an \emph{assumption}. Everything written below the line will either be something which follows from the assumptions, or it will be some new assumption. We are hoping to conclude `$\enot A \eand \enot B$'; so we are hoping ultimately to conclude our proof with
+Observe também que traçamos uma linha abaixo da premissa. Tudo o que estiver escrito acima da linha é uma \emph{suposição}. Tudo o que estiver escrito abaixo da linha será algo que decorre das suposições ou será uma nova suposição. Esperamos concluir \textquotedblleft$\enot A \eand \enot B$\textquotedblright{}; portanto, esperamos finalmente concluir nossa prova com
 \begin{fitchproof}
 	\have[n]{con}{\enot A \eand \enot B}
 \end{fitchproof}
-for some number $n$. It doesn't matter what line number we end on, but we would obviously prefer a short proof to a long one.
+para algum número $n$. Não importa em que número de linha terminaremos, mas obviamente preferimos uma prova curta a uma longa.
 
-Similarly, suppose we wanted to consider:
+Suponha, de modo semelhante, que quiséssemos considerar:
 $$A\eor B, \enot (A\eand C), \enot (B \eand \enot D) \therefore \enot C\eor D$$
-The argument has three premises, so we start by writing them all down, numbered, and drawing a line under them:
+O argumento tem três premissas; portanto, começamos escrevendo todas elas, numeradas, e traçando uma linha abaixo delas:
 \begin{fitchproof}
 	\hypo{a1}{A \eor B}\PR
 	\hypo{a2}{\enot (A\eand C)}\PR
 	\hypo{a3}{\enot (B \eand \enot D)}\PR
 \end{fitchproof}
-and we are hoping to conclude with some line:
+e esperamos concluir com alguma linha:
 \begin{fitchproof}
 	\have[n]{con}{\enot C \eor D}
 \end{fitchproof}
-All that remains to do is to explain each of the rules that we can use along the way from premises to conclusion. The rules are broken down by our logical connectives.
+Resta apenas explicar cada uma das regras que podemos usar no caminho das premissas à conclusão. As regras são organizadas de acordo com nossos conectivos lógicos.
 
-\section{Reiteration}
-The very first rule is so breathtakingly obvious that it is surprising we bother with it at all.
+\section{Reiteração}
+A primeira regra é tão estonteantemente óbvia que chega a ser surpreendente que nos demos ao trabalho de apresentá-la.
 
-If you already have shown something in the course of a proof, the \emph{reiteration rule} allows you to repeat it on a new line. For example:
+Se você já mostrou algo no curso de uma prova, a \emph{regra de reiteração} permite repeti-lo em uma nova linha. Por exemplo:
 \begin{fitchproof}
 	\have[4]{a1}{A \eand B}
 	\ellipsesline
 	\have[10]{a2}{A \eand B} \by{R}{a1}
 \end{fitchproof}
-This indicates that we have written `$A \eand B$' on line~$4$. Now, at some later line---line~$10$, for example---we have decided that we want to repeat this. So we write it down again. We also add a citation which justifies what we have written. In this case, we write `R', to indicate that we are using the reiteration rule, and we write `$4$', to indicate that we have applied it to line $4$.
+Isso indica que escrevemos \textquotedblleft$A \eand B$\textquotedblright{} na linha~$4$. Agora, em alguma linha posterior — por exemplo, a linha~$10$ — decidimos que queremos repetir isso. Então, escrevemo-lo novamente. Também acrescentamos uma citação que justifica o que escrevemos. Neste caso, escrevemos \textquotedblleft$R$\textquotedblright{}, para indicar que estamos usando a regra de reiteração, e escrevemos \textquotedblleft$4$\textquotedblright{}, para indicar que a aplicamos à linha $4$.
 
-Here is a general expression of the rule:
+Eis uma expressão geral da regra:
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
 	\have[\ ]{c}{\metav{A}} \by{R}{a}
 \end{fitchproof}}
-The point is that, if any sentence $\metav{A}$ occurs on some line,
-then we can repeat $\metav{A}$ on later lines. Each line of our proof
-must have a justification, and here we have~`R $m$'. This means:
-Reiteration, applied to line~$m$.
+O ponto é que, se qualquer sentença $\metav{A}$ ocorre em alguma linha,
+podemos repetir $\metav{A}$ em linhas posteriores. Cada linha de nossa prova
+deve ter uma justificativa, e aqui temos~\textquotedblleft$R$ $m$\textquotedblright{}. Isso significa:
+Reiteração, aplicada à linha~$m$.
 
-Two things need emphasizing. First `$\metav{A}$' is not a sentence of
-TFL. Rather, it is a symbol in the metalanguage, which we use when we
-want to talk about any sentence of TFL (see \cref{s:UseMention}).
-Second, and similarly, `$m$' is not a symbol that will appear on a
-proof. Rather, it is a symbol in the metalanguage, which we use when
-we want to talk about any line number of a proof. In an actual proof,
-the lines are numbered `$1$', `$2$', `$3$', and so forth. But when we
-define the rule, we use variables like `$m$' to underscore the point
-that the rule may be applied at any point.
+Duas coisas precisam ser enfatizadas. Primeiro, \textquotedblleft$\metav{A}$\textquotedblright{} não é uma sentença da
+LVF. Trata-se, na verdade, de um símbolo da metalinguagem, que usamos quando queremos falar sobre qualquer sentença da LVF (veja \cref{s:UseMention}).
+Segundo, e de modo semelhante, \textquotedblleft$m$\textquotedblright{} não é um símbolo que aparecerá em uma
+prova. Trata-se, na verdade, de um símbolo da metalinguagem, que usamos quando queremos falar sobre qualquer número de linha de uma prova. Em uma prova real,
+as linhas são numeradas \textquotedblleft$1$\textquotedblright{}, \textquotedblleft$2$\textquotedblright{}, \textquotedblleft$3$\textquotedblright{} e assim por diante. Mas, quando
+definimos a regra, usamos variáveis como \textquotedblleft$m$\textquotedblright{} para enfatizar que a regra pode ser aplicada em qualquer ponto.
 
-\section{Conjunction}
-Suppose we want to show that Ludwig is both reactionary and libertarian. One obvious way to do this would be as follows: first we show that Ludwig is reactionary; then we show that Ludwig is libertarian; then we put these two demonstrations together, to obtain the conjunction.
+\section{Conjunção}
+Suponha que queiramos mostrar que Ludwig é tanto reacionário quanto libertário. Uma maneira óbvia de fazer isso seria a seguinte: primeiro mostramos que Ludwig é reacionário; depois mostramos que Ludwig é libertário; por fim, reunimos essas duas demonstrações para obter a conjunção.
 
-Our natural deduction system will capture this thought straightforwardly. In the example given, we might adopt the following symbolization key:
+Nosso sistema de dedução natural captará essa ideia de maneira direta. No exemplo dado, podemos adotar a seguinte chave de simbolização:
 	\begin{ekey}
-		\item[R] Ludwig is reactionary
-		\item[L] Ludwig is libertarian
+		\item[R] Ludwig é reacionário
+		\item[L] Ludwig é libertário
 	\end{ekey}
-Perhaps we are working through a proof, and we have obtained `$R$' on
-line~$8$ and `$L$' on line~$15$. Then on any subsequent line we can
-obtain `$R \eand L$' thus:
+Talvez estejamos desenvolvendo uma prova e tenhamos obtido \textquotedblleft$R$\textquotedblright{} na
+linha~$8$ e \textquotedblleft$L$\textquotedblright{} na linha~$15$. Então, em qualquer linha subsequente, podemos
+obter \textquotedblleft$R \eand L$\textquotedblright{} da seguinte maneira:
 \begin{fitchproof}
 	\have[8]{a}{R}
 	\have[15]{b}{L}
 	\have[\ ]{c}{R \eand L} \ai{a, b}
 \end{fitchproof}
-Note that every line of our proof must either be an assumption, or
-must be justified by some rule. We cite `$\eand$I $8$, $15$' here to
-indicate that the line is obtained by the rule of conjunction
-introduction ($\eand$I) applied to lines $8$ and~$15$. We could
-equally well obtain:
+Observe que cada linha de nossa prova deve ser uma suposição ou
+ser justificada por alguma regra. Aqui citamos \textquotedblleft$\eand$I $8$, $15$\textquotedblright{} para
+indicar que a linha é obtida pela regra de introdução da conjunção
+($\eand$I), aplicada às linhas $8$ e~$15$. Poderíamos igualmente obter:
 \begin{fitchproof}
 	\have[8]{a}{R}
 	\have[15]{b}{L}
 	\have[\ ]{c}{L \eand R} \ai{b, a}
 \end{fitchproof}
-with the citation reversed, to reflect the order of the conjuncts. More generally, here is our conjunction introduction rule:
+com a citação invertida, para refletir a ordem dos conjuntos. De modo mais geral, eis nossa regra de introdução da conjunção:
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
@@ -168,46 +163,45 @@ with the citation reversed, to reflect the order of the conjuncts. More generall
 	\have[\ ]{c}{\metav{A}\eand\metav{B}} \ai{a, b}
 \end{fitchproof}}
 
-Again, this statement of the rule is \emph{schematic}. It is not
-itself a proof. `$\metav{A}$' and `$\metav{B}$' are metavariables
-standing for arbitrary sentence of TFL. Similarly, `$m$' and `$n$' are
-not letters that will appear in any actual proof, but symbols we use
-to talk about any line number of any proof. We use such metavariables to
-emphasize that the rule may be applied at any point. The rule requires
-only that we have both conjuncts available to us somewhere earlier in
-the proof. They can be separated from one another, and they can appear
-in any order.
+Novamente, este enunciado da regra é \emph{esquemático}. Ele não é
+uma prova propriamente dita. \textquotedblleft$\metav{A}$\textquotedblright{} e \textquotedblleft$\metav{B}$\textquotedblright{} são metavariáveis
+que representam qualquer sentença da LVF. Do mesmo modo, \textquotedblleft$m$\textquotedblright{} e \textquotedblleft$n$\textquotedblright{} não são
+letras que aparecerão em nenhuma prova real, mas símbolos que usamos
+para falar sobre qualquer número de linha de qualquer prova. Usamos essas metavariáveis para
+enfatizar que a regra pode ser aplicada em qualquer ponto. A regra exige
+apenas que ambos os conjuntos estejam disponíveis em algum ponto anterior da
+prova. Eles podem estar separados e podem aparecer em qualquer ordem.
 
-The rule is called `conjunction \emph{introduction}' because it introduces the symbol `$\eand$' into our proof where it may have been absent. Correspondingly, we have a rule that \emph{eliminates} that symbol.  Suppose you have shown that Ludwig is both reactionary and libertarian. You are entitled to conclude that Ludwig is reactionary. Equally, you are entitled to conclude that Ludwig is libertarian. Putting this together, we obtain our conjunction elimination rule(s):
+A regra é chamada de \textquotedblleft\emph{introdução} da conjunção\textquotedblright{} porque introduz o símbolo \textquotedblleft$\eand$\textquotedblright{} em nossa prova, onde ele talvez estivesse ausente. Correspondentemente, temos uma regra que \emph{elimina} esse símbolo. Suponha que você tenha mostrado que Ludwig é tanto reacionário quanto libertário. Você pode concluir que Ludwig é reacionário. Da mesma forma, pode concluir que Ludwig é libertário. Reunindo isso, obtemos nossas regras de eliminação da conjunção:
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eand\metav{B}}
 	\have[\ ]{a}{\metav{A}} \ae{ab}
 \end{fitchproof}}
-and equally:
+e, de modo equivalente:
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eand\metav{B}}
 	\have[\ ]{b}{\metav{B}} \ae{ab}
 \end{fitchproof}}
-The point is simply that, when you have a conjunction on some line of a proof, you can obtain either of the conjuncts by~{\eand}E. One point is worth emphasising: you can only apply this rule when conjunction is the main logical operator. So you cannot infer `$D$' just from `$C \eor (D \eand E)$'!
+O ponto é simplesmente que, quando você tem uma conjunção em alguma linha de uma prova, pode obter qualquer um dos conjuntos por meio de~{\eand}E. Vale enfatizar um ponto: você só pode aplicar essa regra quando a conjunção é o operador lógico principal. Portanto, não pode inferir \textquotedblleft$D$\textquotedblright{} apenas de \textquotedblleft$C \eor (D \eand E)$\textquotedblright{}!
 
-Even with just these two rules, we can start to see some of the power of our formal proof system. Consider:
+Mesmo com apenas essas duas regras, já podemos começar a perceber parte do poder de nosso sistema de provas formais. Considere:
 \begin{earg}
 \item[] $[(A\eor B)\eif(C\eor D)] \eand [(E \eor F) \eif (G\eor H)]$
 \item[\texttherefore] $[(E \eor F) \eif (G\eor H)] \eand [(A\eor B)\eif(C\eor D)]$
 \end{earg}
-The main logical operator in both the premise and conclusion of this argument is `$\eand$'. In order to provide a proof, we begin by writing down the premise, which is our assumption. We draw a line below this: everything after this line must follow from our assumptions by (repeated applications of) our rules of inference. So the beginning of the proof looks like this:
+O operador lógico principal tanto da premissa quanto da conclusão desse argumento é \textquotedblleft$\eand$\textquotedblright{}. Para fornecer uma prova, começamos escrevendo a premissa, que é nossa suposição. Traçamos uma linha abaixo dela: tudo o que vier depois dessa linha deve decorrer de nossas suposições por meio de (aplicações repetidas de) nossas regras de inferência. Assim, o início da prova é:
 \begin{fitchproof}
 	\hypo{ab}{{[}(A\eor B)\eif(C\eor D){]} \eand {[}(E \eor F) \eif (G\eor H){]}}\PR
 \end{fitchproof}
-From the premise, we can get each of the conjuncts by {\eand}E. The proof now looks like this:
+Da premissa, podemos obter cada um dos conjuntos por meio de {\eand}E. A prova agora é:
 \begin{fitchproof}
 	\hypo{ab}{{[}(A\eor B)\eif(C\eor D){]} \eand {[}(E \eor F) \eif (G\eor H){]}}\PR
 	\have{a}{{[}(A\eor B)\eif(C\eor D){]}} \ae{ab}
 	\have{b}{{[}(E \eor F) \eif (G\eor H){]}} \ae{ab}
 \end{fitchproof}
-So by applying the {\eand}I rule to lines 3 and 2 (in that order), we arrive at the desired conclusion. The finished proof looks like this:
+Assim, aplicando a regra {\eand}I às linhas 3 e 2 (nessa ordem), chegamos à conclusão desejada. A prova completa é:
 \begin{fitchproof}
 	\hypo{ab}{{[}(A\eor B)\eif(C\eor D){]} \eand {[}(E \eor F) \eif (G\eor H){]}}\PR
 
@@ -215,15 +209,15 @@ So by applying the {\eand}I rule to lines 3 and 2 (in that order), we arrive at 
 	\have{b}{{[}(E \eor F) \eif (G\eor H){]}} \ae{ab}
 	\have{ba}{{[}(E \eor F) \eif (G\eor H){]} \eand {[}(A\eor B)\eif(C\eor D){]}} \ai{b,a}
 \end{fitchproof}
-This is a very simple proof, but it shows how we can chain rules of proof together into longer proofs. In passing, note that investigating this argument with a truth table would have required 256 lines; our formal proof required only four lines.
+Esta é uma prova muito simples, mas mostra como podemos encadear regras de prova para formar provas mais longas. A propósito, observe que investigar esse argumento com uma tabela-verdade teria exigido 256 linhas; nossa prova formal exigiu apenas quatro linhas.
 
-It is worth giving another example. Back in \cref{s:MoreBracketingConventions}, we noted that this argument is valid:
+Vale a pena dar outro exemplo. Em \cref{s:MoreBracketingConventions}, observamos que este argumento é válido:
 	$$A \eand (B \eand C) \therefore (A \eand B) \eand C$$
-To provide a proof corresponding to this argument, we start by writing:
+Para fornecer uma prova correspondente a esse argumento, começamos escrevendo:
 \begin{fitchproof}
 	\hypo{ab}{A \eand (B \eand C)}\PR
 \end{fitchproof}
-From the premise, we can get each of the conjuncts by applying~$\eand$E twice. We can then apply $\eand$E twice more, so our proof looks like:
+Da premissa, podemos obter cada um dos conjuntos aplicando~$\eand$E duas vezes. Podemos então aplicar $\eand$E mais duas vezes; assim, nossa prova fica:
 \begin{fitchproof}
 	\hypo{ab}{A \eand (B \eand C)}\PR
 	\have{a}{A} \ae{ab}
@@ -231,7 +225,7 @@ From the premise, we can get each of the conjuncts by applying~$\eand$E twice. W
 	\have{b}{B} \ae{bc}
 	\have{c}{C} \ae{bc}
 \end{fitchproof}
-But now we can merrily reintroduce conjunctions in the order we wanted them, so that our final proof is:
+Mas agora podemos reintroduzir sem dificuldade as conjunções na ordem que desejávamos; assim, nossa prova final é:
 \begin{fitchproof}
 	\hypo{abc}{A \eand (B \eand C)}\PR
 	\have{a}{A} \ae{abc}
@@ -241,66 +235,66 @@ But now we can merrily reintroduce conjunctions in the order we wanted them, so 
 	\have{ab}{A \eand B}\ai{a, b}
 	\have{con}{(A \eand B) \eand C}\ai{ab, c}
 \end{fitchproof}
-Recall that our official definition of sentences in TFL only allowed conjunctions with two conjuncts. The proof just given suggests that we could drop inner brackets in all of our proofs. However, this is not standard, and we will not do this. Instead, we will maintain our more austere bracketing conventions. (Though we will still allow ourselves to drop outermost brackets, for legibility.)
+Lembre-se de que nossa definição oficial de sentenças da LVF permitia apenas conjunções com dois conjuntos. A prova apresentada sugere que poderíamos eliminar os parênteses internos em todas as nossas provas. Entretanto, isso não é padrão e não faremos isso. Em vez disso, manteremos nossas convenções mais austeras para o uso de parênteses. (Ainda assim, continuaremos nos permitindo eliminar os parênteses mais externos, para facilitar a leitura.)
 
-Let's give one final illustration. When using the $\eand$I rule, there is no requirement to apply it to different sentences. So, if we want, we can formally prove `$A \eand A$' from `$A$' thus:
+Vejamos uma última ilustração. Ao usar a regra $\eand$I, não há exigência de aplicá-la a sentenças diferentes. Portanto, se quisermos, podemos provar formalmente \textquotedblleft$A \eand A$\textquotedblright{} a partir de \textquotedblleft$A$\textquotedblright{} da seguinte maneira:
 \begin{fitchproof}
 	\hypo{a}{A}\PR
 	\have{aa}{A \eand A}\ai{a, a}
 \end{fitchproof}
-Simple, but effective.
+Simples, mas eficaz.
 
-\section{Conditional}
-Consider the following argument:
+\section{Condicional}
+Considere o seguinte argumento:
 \begin{earg}
-		\item[] If Jane is smart then she is fast.
-		\item[] Jane is smart.
-		\item[\texttherefore] Jane is fast.
+		\item[] Se Jane é inteligente, então é rápida.
+		\item[] Jane é inteligente.
+		\item[\texttherefore] Jane é rápida.
 \end{earg}
-This argument is certainly valid, and it suggests a straightforward conditional elimination rule ($\eif$E):
+Esse argumento é certamente válido e sugere uma regra direta de eliminação do condicional ($\eif$E):
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eif\metav{B}}
 	\have[n]{a}{\metav{A}}
 	\have[\ ]{b}{\metav{B}} \ce{ab,a}
 \end{fitchproof}}
-This rule is also sometimes called \emph{modus ponens}. Again, this is
-an elimination rule, because it allows us to obtain a sentence that
-may not contain `$\eif$', having started with a sentence that did
-contain `$\eif$'. Note that the conditional $\metav{A}\eif\metav{B}$
-and the antecedent~$\metav{A}$ can be separated from one another in
-the proof, and they can appear in any order. It is conventional to
-cite the line number containing the conditional
-$\metav{A}\eif\metav{B}$ first.
+Essa regra também é chamada às vezes de \emph{modus ponens}. Novamente, trata-se
+de uma regra de eliminação, pois permite obter uma sentença que
+talvez não contenha \textquotedblleft$\eif$\textquotedblright{}, tendo começado com uma sentença que
+continha \textquotedblleft$\eif$\textquotedblright{}. Observe que o condicional $\metav{A}\eif\metav{B}$
+e o antecedente~$\metav{A}$ podem estar separados na prova
+e podem aparecer em qualquer ordem. É convencional
+citar primeiro o número da linha que contém o condicional
+$\metav{A}\eif\metav{B}$.
 
-The rule for conditional introduction is also quite easy to motivate. The following argument should be valid:
+A regra de introdução do condicional também é bastante fácil de motivar. O argumento a seguir deveria ser válido:
 	\begin{earg}
-		\item Ludwig is reactionary. 
-		\item[\texttherefore] If Ludwig is libertarian, then Ludwig is both reactionary \emph{and} libertarian.
+		\item Ludwig é reacionário.
+		\item[\texttherefore] Se Ludwig é libertário, então Ludwig é reacionário \emph{e} libertário.
 	\end{earg}
-If someone doubted that this was valid, we might try to convince them otherwise by explaining ourselves as follows:
+Se alguém duvidasse da validade desse argumento, poderíamos tentar convencê-lo do contrário explicando nosso raciocínio da seguinte maneira:
 	\begin{quote}
-		Assume that Ludwig is reactionary. Now, \emph{additionally} assume that Ludwig is libertarian. Then by conjunction introduction---which we just discussed---Ludwig is both reactionary and libertarian. Of course, that's conditional on the assumption that Ludwig is libertarian. But this just means that, if Ludwig is libertarian, then he is both reactionary and libertarian.
+		Suponha que Ludwig seja reacionário. Agora, suponha \emph{adicionalmente} que Ludwig seja libertário. Então, pela introdução da conjunção — que acabamos de discutir —, Ludwig é reacionário e libertário. É claro que isso depende da suposição de que Ludwig seja libertário. Mas isso significa simplesmente que, se Ludwig é libertário, então ele é reacionário e libertário.
 	\end{quote}
-Transferred into natural deduction format, here is the pattern of reasoning that we just used. We started with one premise, `Ludwig is reactionary', thus:
+Transpondo para o formato da dedução natural, eis o padrão de raciocínio que acabamos de usar. Começamos com uma premissa, \textquotedblleft{}Ludwig é reacionário\textquotedblright{}, da seguinte maneira:
 	\begin{fitchproof}
 		\hypo{r}{R}\PR
 	\end{fitchproof}
-The next thing we did is to make an \emph{additional} assumption (`Ludwig is libertarian'), for the sake of argument. To indicate that we are no longer dealing \emph{merely} with our original premise (`$R$'), but with some additional assumption, we continue our proof as follows:
+A coisa seguinte que fizemos foi fazer uma suposição \emph{adicional} (\textquotedblleft{}Ludwig é libertário\textquotedblright{}), para fins do argumento. Para indicar que já não estamos lidando \emph{meramente} com nossa premissa original (\textquotedblleft$R$\textquotedblright{}), mas com uma suposição adicional, continuamos nossa prova da seguinte maneira:
 	\begin{fitchproof}
 		\hypo{r}{R}\PR
 		\open
 			\hypo{l}{L}\AS
 	\end{fitchproof}
-Note that we are \emph{not} claiming, on line~$2$, to have proved
-`$L$' from line~$1$, so we do not write in any justification for the
-additional assumption on line~$2$. We do, however, need to mark that
-it is an additional assumption. We do this by drawing a line under it
-(to indicate that it is an assumption) and by indenting it with a
-further vertical line (to indicate that it is additional).
+Observe que \emph{não} estamos afirmando, na linha~$2$, ter provado
+\textquotedblleft$L$\textquotedblright{} a partir da linha~$1$; por isso, não escrevemos nenhuma justificativa para a
+suposição adicional na linha~$2$. Contudo, precisamos marcar que ela
+é uma suposição adicional. Fazemos isso traçando uma linha abaixo dela
+(para indicar que é uma suposição) e recuando-a com uma linha
+vertical adicional (para indicar que é adicional).
 
-With this extra assumption in place, we are in a position to
-use~$\eand$I. So we can continue our proof:
+Com essa suposição extra estabelecida, estamos em condições de
+usar~$\eand$I. Assim, podemos continuar nossa prova:
 	\begin{fitchproof}
 		\hypo{r}{R}\PR
 		\open
@@ -309,7 +303,7 @@ use~$\eand$I. So we can continue our proof:
 %			\close
 %		\have{con}{L \eif (R \eand L)}\ci{l-rl}
 	\end{fitchproof}
-So we have now shown that, on the additional assumption, `$L$', we can obtain `$R \eand L$'. We can therefore conclude that, if `$L$' obtains, then so does `$R \eand L$'. Or, to put it more briefly, we can conclude `$L \eif (R \eand L)$':
+Assim, mostramos que, sob a suposição adicional \textquotedblleft$L$\textquotedblright{}, podemos obter \textquotedblleft$R \eand L$\textquotedblright{}. Portanto, podemos concluir que, se \textquotedblleft$L$\textquotedblright{} for verdadeira, \textquotedblleft$R \eand L$\textquotedblright{} também será. Ou, de forma mais breve, podemos concluir \textquotedblleft$L \eif (R \eand L)$\textquotedblright{}:
 	\begin{fitchproof}
 		\hypo{r}{R}\PR
 		\open
@@ -318,9 +312,9 @@ So we have now shown that, on the additional assumption, `$L$', we can obtain `$
 			\close
 		\have{con}{L \eif (R \eand L)}\ci{l-rl}
 	\end{fitchproof}
-Observe that we have dropped back to using one vertical line on the left.  We have \emph{discharged} the additional assumption, `$L$', since the conditional itself follows just from our original assumption,~`$R$'.
+Observe que voltamos a usar uma única linha vertical à esquerda. \emph{Descarregamos} a suposição adicional, \textquotedblleft$L$\textquotedblright{}, pois o próprio condicional decorre apenas de nossa suposição original,~\textquotedblleft$R$\textquotedblright{}.
 
-The general pattern at work here is the following. We first make an additional assumption, $\metav{A}$; and from that additional assumption, we prove~$\metav{B}$. In that case, we know the following: If~$\metav{A}$ is true, then~$\metav{B}$ is true. This is wrapped up in the rule for conditional introduction:
+O padrão geral em ação aqui é o seguinte. Primeiro fazemos uma suposição adicional, $\metav{A}$; a partir dessa suposição adicional, provamos~$\metav{B}$. Nesse caso, sabemos o seguinte: se~$\metav{A}$ é verdadeira, então~$\metav{B}$ é verdadeira. Isso é resumido na regra de introdução do condicional:
 \factoidbox{
 	\begin{fitchproof}
 		\open
@@ -329,12 +323,12 @@ The general pattern at work here is the following. We first make an additional a
 		\close
 		\have[\ ]{ab}{\metav{A}\eif\metav{B}}\ci{a-b}
 \end{fitchproof}}
-There can be as many or as few lines as you like between lines $i$
-and~$j$.
+Pode haver quantas linhas você quiser — ou tão poucas quanto quiser — entre as linhas $i$
+e~$j$.
 
-It will help to offer a second  illustration of $\eif$I in action. Suppose we want to consider the following:
+Será útil oferecer uma segunda ilustração da aplicação de $\eif$I. Suponha que queiramos considerar o seguinte:
 	$$P \eif Q, Q \eif R \therefore P \eif R$$
-We start by listing \emph{both} of our premises. Then, since we want to arrive at a conditional (namely, `$P \eif R$'), we additionally assume the antecedent to that conditional. Thus our main proof starts:
+Começamos listando \emph{ambas} as premissas. Então, como queremos chegar a um condicional (a saber, \textquotedblleft$P \eif R$\textquotedblright{}), fazemos adicionalmente a suposição do antecedente desse condicional. Assim, nossa prova principal começa:
 \begin{fitchproof}
 	\hypo{pq}{P \eif Q}\PR
 	\hypo{qr}{Q \eif R}\PR
@@ -342,7 +336,7 @@ We start by listing \emph{both} of our premises. Then, since we want to arrive a
 		\hypo{p}{P}\AS
 	\close
 \end{fitchproof}
-Note that we have made `$P$' available, by treating it as an additional assumption, but now, we can use {\eif}E on the first premise. This will yield `$Q$'. We can then use {\eif}E on the second premise. So, by assuming `$P$' we were able to prove `$R$', so we apply the {\eif}I rule---discharging `$P$'---and finish the proof. Putting all this together, we have:
+Observe que tornamos \textquotedblleft$P$\textquotedblright{} disponível tratando-o como uma suposição adicional; agora, podemos usar {\eif}E na primeira premissa. Isso produzirá \textquotedblleft$Q$\textquotedblright{}. Podemos então usar {\eif}E na segunda premissa. Assim, ao supor \textquotedblleft$P$\textquotedblright{}, conseguimos provar \textquotedblleft$R$\textquotedblright{}; portanto, aplicamos a regra {\eif}I — descarregando \textquotedblleft$P$\textquotedblright{} — e concluímos a prova. Reunindo tudo isso, temos:
 \label{HSproof}
 \begin{fitchproof}
 	\hypo{pq}{P \eif Q}\PR
@@ -356,8 +350,8 @@ Note that we have made `$P$' available, by treating it as an additional assumpti
 \end{fitchproof}
 
 
-\section{Additional assumptions and subproofs}
-The rule $\eif$I invoked the idea of making additional assumptions. These need to be handled with some care. Consider this proof:
+\section{Suposições adicionais e subprovas}
+A regra $\eif$I evocou a ideia de fazer suposições adicionais. Elas precisam ser tratadas com algum cuidado. Considere esta prova:
 \begin{fitchproof}
 	\hypo{a}{A}\PR
 	\open
@@ -366,9 +360,9 @@ The rule $\eif$I invoked the idea of making additional assumptions. These need t
 	\close
 	\have{con}{B \eif B}\ci{b1-b2}
 \end{fitchproof}
-This is perfectly in keeping with the rules we have laid down already, and it should not seem particularly strange. Since `$B \eif B$' is a tautology, no particular premises should be required to prove it.
+Isso está perfeitamente de acordo com as regras que estabelecemos até aqui e não deve parecer particularmente estranho. Como \textquotedblleft$B \eif B$\textquotedblright{} é uma tautologia, nenhuma premissa específica deveria ser necessária para prová-la.
 
-But suppose we now tried to continue the proof as follows:
+Mas suponha que agora tentássemos continuar a prova da seguinte maneira:
 \begin{fitchproof}
 	\hypo{a}{A}\PR
 	\open
@@ -377,32 +371,31 @@ But suppose we now tried to continue the proof as follows:
 	\close
 	\have{con}{B \eif B}\ci{b1-b2}
 \ifHTMLtarget
-	\have{b}{B} \by{naughty attempt to invoke $\eif$E}{con, b2}
+	\have{b}{B} \by{tentativa indevida de aplicar $\eif$E}{con, b2}
 \else
-	\have{b}{B} \by{naughty attempt}{}
-	\have [\ ]{x}{} \by{to invoke $\eif$E}{con, b2}
+	\have{b}{B} \by{tentativa indevida}{}
+	\have [\ ]{x}{} \by{de aplicar $\eif$E}{con, b2}
 \fi
 \end{fitchproof}
-If we were allowed to do this, it would be a disaster. It would allow us to prove any sentence letter from any other sentence letter. However, if you tell me that Anne is fast (symbolized by `$A$'), we shouldn't be able to conclude that Queen Boudica stood twenty-feet tall (symbolized by `$B$')! We must be prohibited from doing this, but how are we to implement the prohibition?
+Se tivéssemos permissão para fazer isso, seria um desastre. Isso nos permitiria provar qualquer letra sentencial a partir de qualquer outra letra sentencial. Entretanto, se você me disser que Anne é rápida (simbolizada por \textquotedblleft$A$\textquotedblright{}), não deveríamos poder concluir que a rainha Boudica tinha vinte pés de altura (simbolizada por \textquotedblleft$B$\textquotedblright{})! Precisamos proibir isso, mas como implementar a proibição?
 
-We can describe the process of making an additional assumption as one of performing a \emph{subproof}: a subsidiary proof within the main proof. When we start a subproof, we draw another vertical line to indicate that we are no longer in the main proof. Then we write in the assumption upon which the subproof will be based. A subproof can be thought of as essentially posing this question: \emph{what could we show, if we also make this additional assumption?}
+Podemos descrever o processo de fazer uma suposição adicional como a realização de uma \emph{subprova}: uma prova subsidiária dentro da prova principal. Quando iniciamos uma subprova, traçamos outra linha vertical para indicar que já não estamos na prova principal. Em seguida, escrevemos a suposição na qual a subprova se baseará. Uma subprova pode ser entendida essencialmente como a formulação da seguinte pergunta: \emph{o que poderíamos mostrar se também fizéssemos essa suposição adicional?}
 
-When we are working within the subproof, we can refer to the additional assumption that we made in introducing the subproof, and to anything that we obtained from our original assumptions. (After all, those original assumptions are still in effect.) At some point though, we will want to stop working with the additional assumption: we will want to return from the subproof to the main proof. To indicate that we have returned to the main proof, the vertical line for the subproof comes to an end. At this point, we say that the subproof is \define{closed}. Having closed a subproof, we have set aside the additional assumption, so it will be illegitimate to draw upon anything that depends upon that additional assumption. Thus we stipulate:
-\factoidbox{To cite an individual line when applying a rule:
+Quando estamos trabalhando dentro da subprova, podemos fazer referência à suposição adicional que fizemos ao introduzir a subprova e a qualquer coisa que obtivemos a partir de nossas suposições originais. (Afinal, essas suposições originais continuam em vigor.) Contudo, em algum momento, queremos deixar de trabalhar com a suposição adicional: queremos retornar da subprova à prova principal. Para indicar que retornamos à prova principal, a linha vertical da subprova chega ao fim. Nesse ponto, dizemos que a subprova está \define{fechada}. Ao fechar uma subprova, deixamos de lado a suposição adicional; portanto, será ilegítimo recorrer a qualquer coisa que dependa dessa suposição adicional. Assim, estipulamos:
+\factoidbox{Para citar uma linha individual ao aplicar uma regra:
 \begin{compactlist}
-\item the line must come before the line where the rule is applied, but 
-\item not occur within a subproof that has been closed before the line where the rule is applied.
+\item a linha deve vir antes da linha em que a regra é aplicada, mas
+\item não pode ocorrer dentro de uma subprova que tenha sido fechada antes da linha em que a regra é aplicada.
 \end{compactlist}}
-This stipulation rules out the disastrous attempted proof above. The application of rule $\eif$E on line~$5$ requires that we cite two individual lines from earlier in the proof. One of these lines (namely, line~$3$) occurs within a subproof (lines $2$--$3$). By line $5$, where we have to cite line $3$, the subproof has been closed. This is illegitimate: we are not allowed to cite line $3$ on line $5$.
+Essa estipulação exclui a tentativa de prova desastrosa apresentada acima. A aplicação da regra $\eif$E na linha~$5$ exige que citemos duas linhas individuais anteriores na prova. Uma dessas linhas (a saber, a linha~$3$) ocorre dentro de uma subprova (linhas $2$--$3$). Na linha $5$, quando temos de citar a linha $3$, a subprova já foi fechada. Isso é ilegítimo: não temos permissão para citar a linha $3$ na linha $5$.
 
-Closing a subproof is called \define{discharging} the assumptions of
-that subproof. So we can put the point this way: \emph{you cannot
-refer back to anything that was obtained using a discharged
-assumption}.
+O fechamento de uma subprova é chamado de \define{descarga} das suposições
+dessa subprova. Assim, podemos formular o ponto desta maneira: \emph{você não pode
+fazer referência a nada que tenha sido obtido usando uma suposição descarregada}.
 
-Subproofs, then, allow us to think about what we could show, if we made additional assumptions. The point to take away from this is not surprising---in the course of a proof, we have to keep very careful track of what assumptions we are making, at any given moment. Our proof system does this very graphically. (Indeed, that's precisely why we have chosen to use \emph{this} proof system.)
+As subprovas, portanto, permitem pensar sobre o que poderíamos mostrar se fizéssemos suposições adicionais. A lição a extrair disso não é surpreendente — no curso de uma prova, precisamos acompanhar com muito cuidado quais suposições estamos fazendo a cada momento. Nosso sistema de provas faz isso de maneira muito gráfica. (De fato, é precisamente por isso que escolhemos usar \emph{este} sistema de provas.)
 
-Once we have started thinking about what we can show by making additional assumptions, nothing stops us from posing the question of what we could show if we were to make \emph{even more} assumptions? This might motivate us to introduce a subproof within a subproof. Here is an example using only the rules which we have considered so far: 
+Uma vez que começamos a pensar sobre o que podemos mostrar fazendo suposições adicionais, nada nos impede de formular a pergunta: o que poderíamos mostrar se fizéssemos \emph{ainda mais} suposições? Isso pode nos motivar a introduzir uma subprova dentro de outra subprova. Eis um exemplo que usa apenas as regras consideradas até aqui:
 \begin{fitchproof}
 \hypo{a}{A}\PR
 \open
@@ -415,12 +408,12 @@ Once we have started thinking about what we can show by making additional assump
 \close
 \have{bcab}{B \eif (C \eif (A \eand B))}\ci{b-cab}
 \end{fitchproof}
-Notice that the citation on line~$4$ refers back to the initial
-assumption (on line~$1$) and an assumption of a subproof (on
-line~$2$). This is perfectly in order, since neither assumption has
-been discharged at the time (i.e., by line~$4$).
+Observe que a citação na linha~$4$ faz referência à suposição inicial
+(na linha~$1$) e a uma suposição de uma subprova (na
+linha~$2$). Isso está perfeitamente correto, pois nenhuma das duas suposições havia
+sido descarregada naquele momento (isto é, até a linha~$4$).
 
-Again, though, we need to keep careful track of what we are assuming at any given moment. Suppose we tried to continue the proof as follows:
+Ainda assim, precisamos acompanhar cuidadosamente o que estamos supondo a cada momento. Suponha que tentássemos continuar a prova da seguinte maneira:
 \begin{fitchproof}
 \hypo{a}{A}\PR
 \open
@@ -433,20 +426,20 @@ Again, though, we need to keep careful track of what we are assuming at any give
 \close
 \have{bcab}{B \eif(C \eif (A \eand B))}\ci{b-cab}
 \ifHTMLtarget
-	\have{bcab}{C \eif (A \eand B)}\by{naughty attempt to invoke $\eif$I}{c-ab}
+	\have{bcab}{C \eif (A \eand B)}\by{tentativa indevida de aplicar $\eif$I}{c-ab}
 \else
-	\have{bcab}{C \eif (A \eand B)}\by{naughty attempt}{}
-	\have [\ ]{x}{} \by{to invoke $\eif$I}{c-ab}
+	\have{bcab}{C \eif (A \eand B)}\by{tentativa indevida}{}
+	\have [\ ]{x}{} \by{de aplicar $\eif$I}{c-ab}
 \fi
 \end{fitchproof}
-This would be awful. If we tell you that Anne is smart, you should not
-be able to infer that, if Cath is smart (symbolized by `$C$') then
-\emph{both} Anne is smart and Queen Boudica stood 20~feet tall! But
-this is just what such a proof would suggest, if it were permissible.
+Isso seria terrível. Se lhe dissermos que Anne é inteligente, você não
+deveria poder inferir que, se Cath é inteligente (simbolizada por \textquotedblleft$C$\textquotedblright{}), então
+\emph{tanto} Anne é inteligente quanto a rainha Boudica tinha 20~pés de altura! Mas
+é exatamente isso que uma prova desse tipo sugeriria, se ela fosse permitida.
 
-The essential problem is that the subproof that began with the assumption~`$C$' depended crucially on the fact that we had assumed `$B$' on line~$2$. By line~$6$, we have \emph{discharged} the assumption~`$B$': we have stopped asking ourselves what we could show, if we also assumed `$B$'. So it is simply cheating, to try to help ourselves (on line~$7$) to the subproof that began with the assumption~`$C$'. Thus we stipulate, much as before, that a subproof can only be cited on a line if it does not occur within some other subproof which is already closed at that line. The attempted disastrous proof violates this stipulation. The subproof of lines $3$--$4$ occurs within a subproof that ends on line~$5$. So it cannot be invoked on line~$7$.
+O problema essencial é que a subprova que começou com a suposição~\textquotedblleft$C$\textquotedblright{} dependia crucialmente do fato de termos suposto \textquotedblleft$B$\textquotedblright{} na linha~$2$. Na linha~$6$, \emph{descarregamos} a suposição~\textquotedblleft$B$\textquotedblright{}: deixamos de perguntar o que poderíamos mostrar se também supuséssemos \textquotedblleft$B$\textquotedblright{}. Portanto, é simplesmente trapacear tentar nos valer (na linha~$7$) da subprova que começou com a suposição~\textquotedblleft$C$\textquotedblright{}. Assim, estipulamos, como antes, que uma subprova só pode ser citada em uma linha se não estiver contida em outra subprova que já esteja fechada nessa linha. A tentativa de prova desastrosa viola essa estipulação. A subprova das linhas $3$--$4$ ocorre dentro de uma subprova que termina na linha~$5$. Portanto, ela não pode ser invocada na linha~$7$.
 
-Here is one further case we have to exclude:
+Eis mais um caso que precisamos excluir:
 \begin{fitchproof}
 \hypo{a}{A}\PR
 \open
@@ -458,22 +451,22 @@ Here is one further case we have to exclude:
 	\close
 \close
 \ifHTMLtarget
-\have{bcab}{B \eif C}\by{naughty attempt to invoke $\eif$I}{b-c2}
+\have{bcab}{B \eif C}\by{tentativa indevida de aplicar $\eif$I}{b-c2}
 \else
-\have{bcab}{B \eif C}\by{naughty attempt}{}
-\have [\ ]{x}{} \by{to invoke $\eif$I}{b-c2}
+\have{bcab}{B \eif C}\by{tentativa indevida}{}
+\have [\ ]{x}{} \by{de aplicar $\eif$I}{b-c2}
 \fi
 \end{fitchproof}
-Here we are trying to cite a subproof that begins on line~$2$ and ends on line~$5$---but the sentence on line~$5$ depends not only on the assumption on line~$2$, but also on one another assumption (line~$3$) which we have not discharged at the end of the subproof. The subproof started on line~$3$ is still open at line~$5$. But $\eif$I requires that the last line of the subproof \emph{only} relies on the assumption of the subproof being cited, i.e., the subproof beginning on line~$2$ (and anything before it), and not on assumptions of any subproofs within it. In particular, the last line of the subproof cited must not itself lie within a nested subproof.
+Aqui estamos tentando citar uma subprova que começa na linha~$2$ e termina na linha~$5$ — mas a sentença da linha~$5$ depende não apenas da suposição da linha~$2$, mas também de outra suposição (a linha~$3$) que não descarregamos ao final da subprova. A subprova iniciada na linha~$3$ ainda está aberta na linha~$5$. Entretanto, $\eif$I exige que a última linha da subprova dependa \emph{somente} da suposição da subprova citada, isto é, da subprova que começa na linha~$2$ (e de tudo o que vem antes dela), e não das suposições de quaisquer subprovas contidas nela. Em particular, a última linha da subprova citada não pode estar, ela própria, dentro de uma subprova aninhada.
 
-\factoidbox{To cite a subproof when applying a rule:
+\factoidbox{Para citar uma subprova ao aplicar uma regra:
 \begin{compactlist} 
-\item the cited subproof must come entirely before the application of the rule where it is cited, 
-\item the cited subproof must not lie within some other closed subproof which is closed at the line it is cited, and 
-\item the last line of the cited subproof must not occur inside a nested subproof.
+\item a subprova citada deve vir inteiramente antes da aplicação da regra em que é citada,
+\item a subprova citada não deve estar contida em outra subprova que esteja fechada na linha em que é citada, e
+\item a última linha da subprova citada não deve ocorrer dentro de uma subprova aninhada.
 \end{compactlist}}
 
-One last point to emphasize how rules can be applied: where a rule requires you to cite an individual line, you cannot cite a subproof instead; and where it requires you to cite a subproof, you cannot cite an individual line instead. So for instance, this is incorrect:
+Um último ponto para enfatizar como as regras podem ser aplicadas: quando uma regra exige que você cite uma linha individual, não pode citar uma subprova em seu lugar; e, quando exige que você cite uma subprova, não pode citar uma linha individual em seu lugar. Por exemplo, isto está incorreto:
 \begin{fitchproof}
 \hypo{a}{A}\PR
 \open
@@ -484,37 +477,37 @@ One last point to emphasize how rules can be applied: where a rule requires you 
 	\have{c2}{C}\ae{bc}
 	\close
 \ifHTMLtarget
-	\have{c3}{C}\by{naughty attempt to invoke R}{c-c2}
+	\have{c3}{C}\by{tentativa indevida de aplicar R}{c-c2}
 \else
-\have{c3}{C}\by{naughty attempt}{}
-\have [\ ]{x}{} \by{to invoke R}{c-c2}
+\have{c3}{C}\by{tentativa indevida}{}
+\have [\ ]{x}{} \by{de aplicar R}{c-c2}
 \fi
 \close
 \have[7]{bcab}{B \eif C}\ci{b-c3}
 \end{fitchproof}
-Here, we have tried to justify $C$ on line~$6$ by the reiteration
-rule, but we have cited the subproof on lines $3$--$5$ with it. That
-subproof is closed and can in principle be cited on line~$6$. (For
-instance, we could use it to justify $C \eif C$ by $\eif$I.) But the
-reiteration rule~R requires you to cite an individual line, so citing
-the entire subproof is inadmissible (even if that subproof contains
-the sentence~$C$ we want to reiterate). Citing the individual lines
-containing~$C$ ($3$ or $5$) on line~$6$ is of course also inadmissible,
-since these lie in a subproof closed before line~$6$.
+Aqui, tentamos justificar $C$ na linha~$6$ pela regra de reiteração,
+mas citamos com ela a subprova das linhas $3$--$5$. Essa subprova está
+fechada e, em princípio, pode ser citada na linha~$6$. (Por
+exemplo, poderíamos usá-la para justificar $C \eif C$ por $\eif$I.) Mas a
+regra de reiteração~R exige que você cite uma linha individual; portanto, citar
+a subprova inteira é inadmissível (mesmo que essa subprova contenha
+a sentença~$C$ que queremos reiterar). Citar as linhas individuais
+que contêm $C$ ($3$ ou $5$) na linha~$6$ também é, evidentemente, inadmissível,
+pois elas estão em uma subprova fechada antes da linha~$6$.
 
 
-It is always permissible to open a subproof with any assumption. However, there is some strategy involved in picking a useful assumption. Starting a subproof with an arbitrary, wacky assumption would just waste lines of the proof. In order to obtain a conditional by {\eif}I, for instance, you must assume the antecedent of the conditional in a subproof.
+É sempre permitido abrir uma subprova com qualquer suposição. Entretanto, há alguma estratégia envolvida na escolha de uma suposição útil. Começar uma subprova com uma suposição arbitrária e absurda apenas desperdiçaria linhas da prova. Para obter um condicional por {\eif}I, por exemplo, você deve supor o antecedente do condicional em uma subprova.
 
-Equally, it is always permissible to close a subproof (and discharge
-its assumptions). However, it will not be helpful to do so until you
-have reached something useful. Once the subproof is closed, you can
-only cite the entire subproof in any justification. Those rules that
-call for a subproof or subproofs, in turn, require that the last line
-of the subproof is a sentence of some form or other. For instance, you
-are only allowed to cite a subproof for~$\eif$I if the line you are
-justifying is of the form $\metav{A} \eif \metav{B}$, $\metav{A}$ is
-the assumption of your subproof, and $\metav{B}$ is the last line of
-your subproof.
+Da mesma forma, é sempre permitido fechar uma subprova (e descarregar
+suas suposições). Contudo, não será útil fazê-lo até que você tenha
+alcançado algo útil. Uma vez fechada a subprova, você só pode citar
+a subprova inteira em qualquer justificativa. Essas regras que
+exigem uma subprova ou subprovas, por sua vez, exigem que a última linha
+da subprova seja uma sentença de alguma forma. Por exemplo, só é
+permitido citar uma subprova para~$\eif$I se a linha que você está
+justificando tiver a forma $\metav{A} \eif \metav{B}$, $\metav{A}$ for
+a suposição de sua subprova e $\metav{B}$ for a última linha de
+sua subprova.
 
 
 \section{Biconditional}
