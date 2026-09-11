@@ -794,21 +794,21 @@ Forneça uma prova para cada um dos argumentos a seguir:
 \end{compactlist}
 
 
-\chapter{Constructing proofs}\label{s:stratTFL}
+\chapter{Construindo provas}\label{s:stratTFL}
 
-There is no simple recipe for finding proofs, and there is no substitute for practice. Here, though, are some rules of thumb and strategies to keep in mind.
+Não há uma receita simples para encontrar provas, e nada substitui a prática. Ainda assim, seguem algumas regras práticas e estratégias que convém ter em mente.
 
-\section{Working backward from what we want}
+\section{Trabalhando de trás para frente a partir do que queremos}
 
-So you're trying to find a proof of some conclusion~$\metav{C}$, which will be the last line of your proof. The first thing you do is look at~$\metav{C}$ and ask what the introduction rule is for its main logical operator. This gives you an idea of what should happen \emph{before} the last line of the proof. The justifications for the introduction rule require one or two other sentences above the last line, or one or two subproofs. Moreover, you can tell from~$\metav{C}$ what those sentences are, or what the assumptions and conclusions of the subproof(s) are. Then you can write down those sentence or outline the subproof(s) above the last line, and treat those as your new goals.
+Suponha que você esteja tentando encontrar uma prova para alguma conclusão~$\metav{C}$, que será a última linha da sua prova. A primeira coisa a fazer é olhar para~$\metav{C}$ e perguntar qual é a regra de introdução do seu operador lógico principal. Isso dá uma ideia do que deve acontecer \emph{antes} da última linha da prova. As justificativas para a regra de introdução exigem uma ou duas outras sentenças acima da última linha, ou uma ou duas subprovas. Além disso, a partir de~$\metav{C}$ você consegue determinar quais são essas sentenças, ou quais são as suposições e conclusões da(s) subprova(s). Então, você pode escrever essas sentenças ou esquematizar a(s) subprova(s) acima da última linha e tratá-las como seus novos objetivos.
 
-For example: If your conclusion is a conditional $\metav{A}\eif\metav{B}$, plan to use the {\eif}I rule. This requires starting a subproof in which you assume~\metav{A}. The subproof ought to end with~\metav{B}. Then, continue by thinking about what you should do to get $\metav{B}$ inside that subproof, and how you can use the assumption~$\metav{A}$.
+Por exemplo: se a sua conclusão é um condicional $\metav{A}\eif\metav{B}$, planeje usar a regra {\eif}I. Isso exige iniciar uma subprova na qual você supõe~\metav{A}. A subprova deve terminar com~\metav{B}. Em seguida, continue pensando no que deve fazer para obter $\metav{B}$ dentro dessa subprova e em como pode usar a suposição~$\metav{A}$.
 
-If your goal is a conjunction, conditional, or negated sentence, you should start by working backward in this way. We'll describe what you have to do in each of these cases in detail.
+Se o seu objetivo é uma conjunção, um condicional ou uma sentença negada, você deve começar trabalhando de trás para frente dessa maneira. Descreveremos em detalhe o que fazer em cada um desses casos.
 
-\subsection*{Working backward from a conjunction}
+\subsection*{Trabalhando de trás para frente a partir de uma conjunção}
 
-If we want to prove $\metav{A} \eand \metav{B}$, working backward means we should write $\metav{A} \eand \metav{B}$ at the bottom of our proof, and try to prove it using $\eand$I. At the top, we'll write out the premises of the proof, if there are any. Then, at the bottom, we write the sentence we want to prove. If it is a conjunction, we'll prove it using $\eand$I.
+Se queremos provar $\metav{A} \eand \metav{B}$, trabalhar de trás para frente significa escrever $\metav{A} \eand \metav{B}$ na parte inferior da nossa prova e tentar prová-la usando $\eand$I. Na parte superior, escreveremos as premissas da prova, se houver alguma. Depois, na parte inferior, escrevemos a sentença que queremos provar. Se ela for uma conjunção, vamos prová-la usando $\eand$I.
   \begin{fitchproof}
 	\hypo{1}{\metav{P}_1}\PR
 	\ellipsesline 
@@ -819,16 +819,16 @@ If we want to prove $\metav{A} \eand \metav{B}$, working backward means we shoul
 	\have[m]{m}{\metav{B}}
     \have{4}{\metav{A} \eand \metav{B}}\ai{n,m}
   \end{fitchproof}
-For $\eand$I, we need to prove $\metav{A}$ first, then prove
-$\metav{B}$. For the last line, we have to cite the lines where we
-(will have) proved $\metav{A}$ and  $\metav{B}$, and use~$\eand$I. The
-parts of the proof labelled by the vertical $\cdots$ have to still be filled in.
-We'll mark the line numbers $m$, $n$ for now. When the proof is
-complete, these placeholders can be replaced by actual numbers.
+Para $\eand$I, precisamos primeiro provar $\metav{A}$ e depois provar
+$\metav{B}$. Na última linha, temos de citar as linhas nas quais
+(teremos) provado $\metav{A}$ e $\metav{B}$ e usar~$\eand$I. As
+partes da prova indicadas pelo $\cdots$ vertical ainda precisam ser preenchidas.
+Por enquanto, marcaremos os números das linhas como $m$ e $n$. Quando a prova estiver
+completa, esses marcadores poderão ser substituídos pelos números reais.
 
-\subsection*{Working backward from a conditional}
+\subsection*{Trabalhando de trás para frente a partir de um condicional}
 
-If our goal is to prove a conditional $\metav{A} \eif \metav{B}$, we'll have to use $\eif$I. This requires a subproof starting with $\metav{A}$ and ending with~$\metav{B}$. We'll set up our proof as follows:
+Se o nosso objetivo é provar um condicional $\metav{A} \eif \metav{B}$, teremos de usar $\eif$I. Isso exige uma subprova que comece com $\metav{A}$ e termine com~$\metav{B}$. Estruturaremos a nossa prova da seguinte forma:
 \begin{fitchproof}
 \open
 \hypo[n]{2}{\metav{A}}
@@ -837,11 +837,11 @@ If our goal is to prove a conditional $\metav{A} \eif \metav{B}$, we'll have to 
 \close
 \have{4}{\metav{A} \eif \metav{B}}\ci{2-3}
 \end{fitchproof} 
-Again we'll leave placeholders in the line number slots. We'll record the last inference as $\eif$I, citing the subproof.
+Novamente, deixaremos marcadores nos espaços destinados aos números das linhas. Registraremos a última inferência como $\eif$I, citando a subprova.
 
-\subsection*{Working backward from a negated sentence}
+\subsection*{Trabalhando de trás para frente a partir de uma sentença negada}
 
-If we want to prove $\enot \metav{A}$, we'll have to use $\enot$I.
+Se queremos provar $\enot \metav{A}$, teremos de usar $\enot$I.
 \begin{fitchproof}
 \open
 \hypo[n]{2}{\metav{A}}
@@ -850,48 +850,48 @@ If we want to prove $\enot \metav{A}$, we'll have to use $\enot$I.
 \close
 \have{4}{\enot \metav{A}}\ni{2-3}
 \end{fitchproof} 
-For $\enot$I, we have to start a subproof with assumption $\metav{A}$; the last line of the subproof has to be $\ered$.  We'll cite the subproof, and use~$\enot$I as the rule.
+Para $\enot$I, temos de iniciar uma subprova com a suposição $\metav{A}$; a última linha da subprova tem de ser~$\ered$. Citaremos a subprova e usaremos~$\enot$I como regra.
 
-When working backward, continue to do so as long as you can. So if you're working backward to prove $\metav{A} \eif \metav{B}$ and have set up a subproof in which you want to prove $\metav{B}$. Now look at~$\metav{B}$. If, say, it is a conjunction, work backward from it, and write down the two conjuncts inside your subproof. Etc.
+Ao trabalhar de trás para frente, continue assim enquanto puder. Portanto, se você estiver trabalhando de trás para frente para provar $\metav{A} \eif \metav{B}$ e tiver estabelecido uma subprova na qual quer provar $\metav{B}$, olhe agora para~$\metav{B}$. Se, por exemplo, ele for uma conjunção, trabalhe de trás para frente a partir dele e escreva os dois conjuntivos dentro da sua subprova, e assim por diante.
 
-\subsection*{Working backward from a disjunction}
+\subsection*{Trabalhando de trás para frente a partir de uma disjunção}
 
-Of course, you can also work backward from a disjunction $\metav{A} \eor \metav{B}$, if that is your goal.
-The $\eor$I rule requires that you have one of the disjuncts in order to infer $\metav{A} \eor \metav{B}$.
-So to work backward, you pick a disjunct, infer $\metav{A} \eor \metav{B}$ from it, and then continue to look for a proof of the disjunct you picked:
+É claro que também se pode trabalhar de trás para frente a partir de uma disjunção $\metav{A} \eor \metav{B}$, se esse for o seu objetivo.
+A regra $\eor$I exige que você tenha um dos disjuntivos para inferir $\metav{A} \eor \metav{B}$.
+Assim, para trabalhar de trás para frente, escolha um disjuntivo, infira $\metav{A} \eor \metav{B}$ a partir dele e, em seguida, continue procurando uma prova do disjuntivo escolhido:
 \begin{fitchproof}
 	\ellipsesline
 	\have[n]{2}{\metav{A}} 
 	\have{3}{\metav{A} \eor \metav{B}}\oi{2}
 \end{fitchproof}
-However, you may not be able to prove the disjunct you picked. In that
-case you have to backtrack. When you can't fill in the part labelled
-by the vertical $\cdots$,
-delete everything, and try with the other disjunct:
+No entanto, talvez você não consiga provar o disjuntivo escolhido. Nesse
+caso, terá de voltar atrás. Quando não conseguir preencher a parte indicada
+pelo $\cdots$ vertical,
+apague tudo e tente com o outro disjuntivo:
 \begin{fitchproof}
 	\ellipsesline 
 	\have[n]{2}{\metav{B}} 
 	\have{3}{\metav{A} \eor \metav{B}}\oi{2}
 \end{fitchproof}
-Obviously, deleting everything and starting over is frustrating, so you should avoid it. If your goal is a disjunction, therefore, you should \emph{not start} by working backward: try working forward first, and apply the $\eor$I strategy only when working forward (and working backward using $\eand$I, $\eif$I, and $\enot$I) no longer work.
+Obviamente, apagar tudo e começar de novo é frustrante, portanto você deve evitar isso. Se o seu objetivo é uma disjunção, então, você \emph{não deve começar} trabalhando de trás para frente: tente trabalhar para frente primeiro e aplique a estratégia de $\eor$I somente quando trabalhar para frente (e trabalhar de trás para frente usando $\eand$I, $\eif$I e $\enot$I) já não funcionar.
 
-\section{Working forward from what we have}
+\section{Trabalhando para frente a partir do que temos}
 
-Your proof may have premises. And if you've worked backward in order to prove a conditional or a negated sentence, you will have set up subproofs with an assumption, and be looking to prove a final sentence in the subproof. These premises and assumptions are sentences you can work forward from in order to fill in the missing steps in your proof. That means applying elimination rules for the main operators of these sentences. The form of the rules will tell you what you'll have to do.
+Sua prova pode ter premissas. E, se você trabalhou de trás para frente para provar um condicional ou uma sentença negada, terá estabelecido subprovas com uma suposição e estará tentando provar uma sentença final dentro da subprova. Essas premissas e suposições são sentenças a partir das quais você pode trabalhar para frente a fim de preencher os passos ausentes da sua prova. Isso significa aplicar as regras de eliminação dos operadores principais dessas sentenças. A forma das regras dirá o que você terá de fazer.
 
-\subsection*{Working forward from a conjunction}
+\subsection*{Trabalhando para frente a partir de uma conjunção}
 
-To work forward from a sentence of the form $\metav{A} \eand \metav{B}$, we use $\eand$E. That rule allows us to do two things: infer $\metav{A}$, and infer $\metav{B}$. So in a proof where we have $\metav{A} \eand \metav{B}$, we can work forward by writing $\metav{A}$ and/or $\metav{B}$ immediately below the conjunction:
+Para trabalhar para frente a partir de uma sentença da forma $\metav{A} \eand \metav{B}$, usamos $\eand$E. Essa regra nos permite fazer duas coisas: inferir $\metav{A}$ e inferir $\metav{B}$. Assim, em uma prova na qual temos $\metav{A} \eand \metav{B}$, podemos trabalhar para frente escrevendo $\metav{A}$ e/ou $\metav{B}$ imediatamente abaixo da conjunção:
 \begin{fitchproof}
   \have[n]{1}{\metav{A} \eand \metav{B}}
   \have{2}{\metav{A}}\ae{1}
   \have{3}{\metav{B}}\ae{1}
 \end{fitchproof}
-Usually it will be clear in the particular situation you're in which one of \metav{A} or \metav{B} you'll need. It doesn't hurt, however, to write them both down.
+Normalmente ficará claro, na situação particular em que você se encontra, qual de \metav{A} ou \metav{B} será necessário. No entanto, não faz mal escrever os dois.
 
-\subsection*{Working forward from a disjunction}
+\subsection*{Trabalhando para frente a partir de uma disjunção}
 
-Working forward from a disjunction works a bit differently. To use a disjunction, we use the $\eor$E rule. In order to apply that rule, it is not enough to know what the disjuncts of the disjunction are that we want to use. We must also keep in mind what we want to prove. Suppose we want to prove~$\metav{C}$, and we have $\metav{A} \eor B$ to work with. (That $\metav{A} \eor B$ may be a premise of the proof, an assumption of a subproof, or something already proved.) In order to be able to apply the $\eor$E rule, we'll have to set up two subproofs:
+Trabalhar para frente a partir de uma disjunção funciona de maneira um pouco diferente. Para usar uma disjunção, usamos a regra $\eor$E. Para aplicar essa regra, não basta saber quais são os disjuntivos da disjunção que queremos usar. Também temos de manter em mente o que queremos provar. Suponha que queremos provar~$\metav{C}$ e temos $\metav{A} \eor B$ com que trabalhar. (Essa $\metav{A} \eor B$ pode ser uma premissa da prova, uma suposição de uma subprova ou algo já provado.) Para poder aplicar a regra $\eor$E, teremos de estabelecer duas subprovas:
 \begin{fitchproof}
 	\have[n]{1}{\metav{A} \eor \metav{B}}
 	\open
@@ -906,11 +906,11 @@ Working forward from a disjunction works a bit differently. To use a disjunction
 	\close
 	\have{6}{\metav{C}}\oe{1,(2)-3,(4)-5} 
 \end{fitchproof} 
-The first subproof starts with the first disjunct, $\metav{A}$, and ends with the sentence we're looking for, $\metav{C}$. The second subproof starts with the other disjunct, $\metav{B}$, and also ends with the goal sentence~$\metav{C}$. Each of these subproofs have to be filled in further. We can then justify the goal sentence $\metav{C}$ by using $\eor$E, citing the line with $\metav{A} \eor \metav{B}$ and the two subproofs.
+A primeira subprova começa com o primeiro disjuntivo, $\metav{A}$, e termina com a sentença que estamos procurando, $\metav{C}$. A segunda subprova começa com o outro disjuntivo, $\metav{B}$, e também termina com a sentença objetivo~$\metav{C}$. Cada uma dessas subprovas ainda precisa ser preenchida. Então, podemos justificar a sentença objetivo $\metav{C}$ usando $\eor$E, citando a linha com $\metav{A} \eor \metav{B}$ e as duas subprovas.
 
-\subsection*{Working forward from a conditional}
+\subsection*{Trabalhando para frente a partir de um condicional}
 
-In order to use a conditional $\metav{A} \eif \metav{B}$, you also need the antecedent $\metav{A}$ in order to apply~$\eif$E. So to work forward from a conditional, you will derive $\metav{B}$, justify it by $\eif$E, and set up $\metav{A}$ as a new subgoal.
+Para usar um condicional $\metav{A} \eif \metav{B}$, você também precisa do antecedente $\metav{A}$ para aplicar~$\eif$E. Assim, para trabalhar para frente a partir de um condicional, você derivará $\metav{B}$, justificá-lo-á por $\eif$E e estabelecerá $\metav{A}$ como um novo subobjetivo.
 \begin{fitchproof}
 	\have[n]{1}{\metav{A} \eif \metav{B}}
 	\ellipsesline 
@@ -918,9 +918,9 @@ In order to use a conditional $\metav{A} \eif \metav{B}$, you also need the ante
 	\have{3}{\metav{B}}\ce{1,2} 
 \end{fitchproof}
 
-\subsection*{Working forward from a negated sentence}
+\subsection*{Trabalhando para frente a partir de uma sentença negada}
 
-Finally, to use a negated sentence $\enot \metav{A}$, you would apply $\enot$E. It requires, in addition to $\enot \metav{A}$, also the corresponding sentence~$\metav{A}$ without the negation. The sentence you'll get is always the same: $\ered$. So working forward from a negated sentence works especially well inside a subproof that you'll want to use for $\enot$I (or IP). You work forward from $\enot \metav{A}$ if you already have $\enot \metav{A}$ and you want to prove~$\ered$. To do it, you set up $\metav{A}$ as a new subgoal.
+Por fim, para usar uma sentença negada $\enot \metav{A}$, você aplicaria $\enot$E. Além de $\enot \metav{A}$, ela exige também a sentença correspondente~$\metav{A}$ sem a negação. A sentença que você obterá é sempre a mesma: $\ered$. Assim, trabalhar para frente a partir de uma sentença negada funciona especialmente bem dentro de uma subprova que você pretende usar para $\enot$I (ou IP). Você trabalha para frente a partir de $\enot \metav{A}$ se já tem $\enot \metav{A}$ e quer provar~$\ered$. Para isso, estabeleça $\metav{A}$ como um novo subobjetivo.
 \begin{fitchproof}
 	\have[n]{1}{\enot \metav{A}}
 	\ellipsesline 
@@ -928,15 +928,15 @@ Finally, to use a negated sentence $\enot \metav{A}$, you would apply $\enot$E. 
 	\have{3}{\ered}\ne{1,2} 
 \end{fitchproof}
 
-\section{Strategies at work}
+\section{Estratégias em ação}
 
-Suppose we want to show that the argument $(A \eand B) \eor (A \eand C) \therefore A \eand (B \eor C)$ is valid. We start the proof by writing the premise and conclusion down. (On a piece of paper, you would want as much space as possible between them, so write the premises at the top of the sheet and the conclusion at the bottom.)
+Suponha que queremos mostrar que o argumento $(A \eand B) \eor (A \eand C) \therefore A \eand (B \eor C)$ é válido. Começamos a prova escrevendo a premissa e a conclusão. (Em uma folha de papel, você vai querer deixar o máximo de espaço possível entre elas; portanto, escreva as premissas no alto da folha e a conclusão na parte inferior.)
 \begin{fitchproof}
    \hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 \ellipsesline
   \have[n]{2}{A \eand (B \eor C)}
 \end{fitchproof}
-We now have two options: either work backward from the conclusion, or work forward from the premise. We'll pick the second strategy: we use the disjunction on line~$1$, and set up the subproofs we need for $\eor$E. The disjunction on line~$1$ has two disjuncts, $A \eand B$ and $A \eand C$. The goal sentence you want to prove is $A \eand (B \eor C)$. So in this case you have to set up two subproofs, one with assumption $A \eand B$ and last line $A \eand (B \eor C)$, the other with assumption $A \eand C$ and last line $A \eand (B \eor C)$. The justification for the conclusion on line~$n$ will be $\eor$E, citing the disjunction on line~$1$ and the two subproofs. So your proof now looks like this:
+Agora temos duas opções: trabalhar de trás para frente a partir da conclusão ou trabalhar para frente a partir da premissa. Escolheremos a segunda estratégia: usamos a disjunção na linha~$1$ e estabelecemos as subprovas necessárias para $\eor$E. A disjunção na linha~$1$ tem dois disjuntivos, $A \eand B$ e $A \eand C$. A sentença objetivo que você quer provar é $A \eand (B \eor C)$. Portanto, neste caso, você tem de estabelecer duas subprovas: uma com a suposição $A \eand B$ e a última linha $A \eand (B \eor C)$; a outra com a suposição $A \eand C$ e a última linha $A \eand (B \eor C)$. A justificativa para a conclusão na linha~$n$ será $\eor$E, citando a disjunção na linha~$1$ e as duas subprovas. Assim, sua prova passa a ter a seguinte aparência:
 \begin{fitchproof}
 	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
@@ -951,7 +951,7 @@ We now have two options: either work backward from the conclusion, or work forwa
 	\close
 	\have{12}{A \eand (B \eor C)}\oe{1,2-6,(7)-11}
 \end{fitchproof}
-You now have two separate tasks, namely to fill in each of the two subproofs. In the first subproof, we now work backward from the conclusion $A \eand (B \eor C)$. That is a conjunction, so inside the first subproof, you will have two separate subgoals: proving $A$, and proving $B \eor C$. These subgoals will let you justify line~$n$ using~$\eand$I. Your proof now looks like this:
+Agora você tem duas tarefas separadas, a saber, preencher cada uma das duas subprovas. Na primeira subprova, trabalhamos de trás para frente a partir da conclusão $A \eand (B \eor C)$. Essa é uma conjunção; portanto, dentro da primeira subprova, você terá dois subobjetivos separados: provar $A$ e provar $B \eor C$. Esses subobjetivos permitirão justificar a linha~$n$ usando~$\eand$I. Sua prova passa a ter a seguinte aparência:
 \begin{fitchproof}
 	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
@@ -969,7 +969,7 @@ You now have two separate tasks, namely to fill in each of the two subproofs. In
 	\close
 	\have{12}{A \eand (B \eor C)}\oe{1,2-6,(7)-11}
 \end{fitchproof}
-We immediately see that we can get line $i$ from line~$2$ by $\eand$E. So line~$i$ is actually line~$3$, and can be justified with $\eand$E from line~$2$. The other subgoal $B \eor C$ is a disjunction. We'll apply the strategy for working backward from a disjunctions to line $n-1$. We have a choice of which disjunct to pick as a subgoal, $B$ or~$C$. Picking $C$ wouldn't work and we'd end up having to backtrack. And you can already see that if you pick $B$ as a subgoal, you could get that by working forward again from the conjunction $A \eand B$ on line~$2$. So we can complete the first subproof as follows:
+Vemos imediatamente que podemos obter a linha $i$ a partir da linha~$2$ por $\eand$E. Portanto, a linha $i$ é, na verdade, a linha~$3$ e pode ser justificada com $\eand$E a partir da linha~$2$. O outro subobjetivo, $B \eor C$, é uma disjunção. Aplicaremos a estratégia de trabalhar de trás para frente a partir de uma disjunção até a linha $n-1$. Temos a opção de escolher $B$ ou~$C$ como subobjetivo. Escolher $C$ não funcionaria e acabaríamos tendo de voltar atrás. E você já pode ver que, se escolher $B$ como subobjetivo, poderá obtê-lo trabalhando novamente para frente a partir da conjunção $A \eand B$ na linha~$2$. Assim, podemos completar a primeira subprova da seguinte maneira:
 \begin{fitchproof}
 	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
@@ -986,11 +986,11 @@ We immediately see that we can get line $i$ from line~$2$ by $\eand$E. So line~$
 	\close
 	\have{12}{A \eand (B \eor C)}\oe{1,2-6,7-11}
 \end{fitchproof}
-Like line~$3$, we get line $4$ from $2$ by $\eand$E. Line~$5$ is justified by $\eor$I from line~$4$, since we were working backward from a disjunction there.
+Assim como a linha~$3$, obtemos a linha~$4$ a partir da linha~$2$ por $\eand$E. A linha~$5$ é justificada por $\eor$I a partir da linha~$4$, pois ali estávamos trabalhando de trás para frente a partir de uma disjunção.
 
-That's it for the first subproof. The second subproof is almost exactly the same. We'll leave it as an exercise.
+Isso conclui a primeira subprova. A segunda subprova é quase exatamente igual. Deixaremos isso como exercício.
 
-Remember that when we started, we had the option of working forward from the premise, or working backward from the conclusion, and we picked the first option. The second option also leads to a proof, but it will look different.  The first steps would be to work backward from the conclusion and set up two subgoals, $A$ and $B \eor C$, and then work forward from the premise to prove them, e.g.,
+Lembre-se de que, quando começamos, tínhamos a opção de trabalhar para frente a partir da premissa ou de trabalhar de trás para frente a partir da conclusão, e escolhemos a primeira opção. A segunda opção também conduz a uma prova, mas ela terá uma aparência diferente. Os primeiros passos seriam trabalhar de trás para frente a partir da conclusão, estabelecendo dois subobjetivos, $A$ e $B \eor C$, e então trabalhar para frente a partir da premissa para prová-los, por exemplo:
 \begin{fitchproof}
 	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
@@ -1017,18 +1017,18 @@ Remember that when we started, we had the option of working forward from the pre
 	\have{11}{B \eor C}\oe{1,(7)-8,(9)-(10)}	
 	\have{12}{A \eand (B \eor C)}\ai{6,11}
 \end{fitchproof}
-We'll leave you to fill in the missing pieces indicated by~$\vdots$.
+Deixaremos para você o preenchimento das partes ausentes indicadas por~$\vdots$.
 
-Let's give another example to illustrate how to apply the strategies
-to deal with conditionals and negation. The sentence $(A \eif B) \eif
-(\enot B \eif \enot A)$ is a tautology. Let's see if we can find a
-proof of it, from no premises, using the strategies. We first write
-the sentence at the bottom of a sheet of paper. Since working forward
-is not an option (there is nothing to work forward from), we work
-backward, and set up a subproof to establish the sentence we want, $(A
-\eif B) \eif (\enot B \eif \enot A)$, using $\eif$I. Its assumption
-must be the antecedent of the conditional we want to prove, i.e., $A
-\eif B$, and its last line the consequent, $\enot B \eif \enot A$.
+Vejamos outro exemplo para ilustrar como aplicar as estratégias
+para lidar com condicionais e negação. A sentença $(A \eif B) \eif
+(\enot B \eif \enot A)$ é uma tautologia. Vamos ver se conseguimos encontrar uma
+prova dela, sem premissas, usando as estratégias. Primeiro escrevemos
+a sentença na parte inferior de uma folha de papel. Como trabalhar para frente
+não é uma opção (não há nada a partir do qual trabalhar para frente), trabalhamos
+de trás para frente e estabelecemos uma subprova para provar a sentença desejada, $(A
+\eif B) \eif (\enot B \eif \enot A)$, usando $\eif$I. Sua suposição
+deve ser o antecedente do condicional que queremos provar, isto é, $A
+\eif B$, e sua última linha deve ser o consequente, $\enot B \eif \enot A$.
 \begin{fitchproof}
 \open
 \hypo{1}{A \eif B}\AS
@@ -1037,7 +1037,7 @@ must be the antecedent of the conditional we want to prove, i.e., $A
 \close
 \have{8}{(A \eif B) \eif (\enot B \eif \enot A)}\ci{1-7}
 \end{fitchproof}
-The new goal, $\enot B \eif \enot A$ is itself a conditional, so working backward we set up another subproof:
+O novo objetivo, $\enot B \eif \enot A$, também é um condicional; portanto, trabalhando de trás para frente, estabelecemos outra subprova:
 \begin{fitchproof}
 	\open
 	\hypo{1}{A \eif B}\AS
@@ -1050,7 +1050,7 @@ The new goal, $\enot B \eif \enot A$ is itself a conditional, so working backwar
 	\close
 	\have{8}{(A \eif B) \eif (\enot B \eif \enot A)}\ci{1-7}
 \end{fitchproof}
-From $\enot A$ we again work backward. To do this, look at the $\enot$I rule. It requires a subproof with~$A$ as assumption, and $\ered$ as its last line. So the proof is now:
+A partir de $\enot A$, trabalhamos novamente de trás para frente. Para isso, olhe para a regra $\enot$I. Ela exige uma subprova com~$A$ como suposição e $\ered$ como sua última linha. Assim, a prova agora é:
 \begin{fitchproof}
 	\open
 	\hypo{1}{A \eif B}\AS
@@ -1066,17 +1066,17 @@ From $\enot A$ we again work backward. To do this, look at the $\enot$I rule. It
 	\close
 	\have{8}{(A \eif B) \eif (\enot B \eif \enot A)}\ci{1-7}
 \end{fitchproof}
-Now our goal is to prove~$\ered$. We said above, when discussing how
-to work forward from a negated sentence, that the $\enot$E rule allows
-you to prove~$\ered$, which is our goal in the innermost subproof. So
-we look for a negated sentence which we can work forward from: that
-would be $\enot B$ on line~$2$. That means we have to derive $B$
-inside the subproof, since $\enot$E requires not just $\enot B$ (which
-we have already), but also~$B$. And $B$, in turn, we get by working
-forward from $A \eif B$, since $\eif$E will allow us to justify the
-consequent of that conditional, $B$, by $\eif$E. The rule $\eif$E also
-requires the antecedent~$A$ of the conditional, but that is also
-already available (on line~$3$). So we finish with:
+Agora o nosso objetivo é provar~$\ered$. Como dissemos acima, ao discutir
+como trabalhar para frente a partir de uma sentença negada, a regra $\enot$E permite
+provar~$\ered$, que é o nosso objetivo na subprova mais interna. Assim,
+procuramos uma sentença negada a partir da qual possamos trabalhar para frente:
+seria $\enot B$ na linha~$2$. Isso significa que temos de derivar $B$
+dentro da subprova, pois $\enot$E exige não apenas $\enot B$ (que já
+temos), mas também~$B$. E, por sua vez, obtemos $B$ trabalhando para
+frente a partir de $A \eif B$, pois $\eif$E nos permitirá justificar o
+consequente desse condicional, $B$, por $\eif$E. A regra $\eif$E também
+exige o antecedente~$A$ do condicional, mas ele também já está
+disponível (na linha~$3$). Portanto, terminamos com:
 \begin{fitchproof}
 	\open
 	\hypo{1}{A \eif B}\AS
@@ -1093,9 +1093,9 @@ already available (on line~$3$). So we finish with:
 	\have{8}{(A \eif B) \eif (\enot B \eif \enot A)}\ci{1-7}
 \end{fitchproof}
 
-\section{Working forward from $\ered$}\label{sec:backred}
+\section{Trabalhando para frente a partir de $\ered$}\label{sec:backred}
 
-When applying the strategies, you will sometimes find yourself in a situation where you can justify~$\ered$. Using the explosion rule, this would allow you to justify \emph{anything}. So $\ered$ works like a wildcard in proofs. For instance, suppose you want to give a proof of the argument $A \eor B, \enot A \therefore B$. You set up your proof, writing the premises $A \eor B$ and $\enot A$ at the top on lines $1$ and $2$, and the conclusion~$B$ at the bottom of the page. $B$ has no main connective, so you can't work backward from it. Instead, you must work forward from $A \eor B$: That requires two subproofs, like so:
+Ao aplicar as estratégias, às vezes você se encontrará em uma situação em que pode justificar~$\ered$. Usando a regra da explosão, isso permitiria justificar \emph{qualquer coisa}. Assim, $\ered$ funciona como um curinga nas provas. Por exemplo, suponha que você queira dar uma prova do argumento $A \eor B, \enot A \therefore B$. Você estrutura a prova escrevendo as premissas $A \eor B$ e $\enot A$ no alto, nas linhas $1$ e $2$, e a conclusão~$B$ na parte inferior da página. $B$ não tem conectivo principal, então não se pode trabalhar de trás para frente a partir dele. Em vez disso, é preciso trabalhar para frente a partir de $A \eor B$: isso exige duas subprovas, assim:
 \begin{fitchproof}
 	\hypo{1}{A \eor B}\PR
 	\hypo{7}{\enot A}\PR
@@ -1111,7 +1111,7 @@ When applying the strategies, you will sometimes find yourself in a situation wh
 	\close
 	\have{6}{B}\oe{1,2-3,(4)-5} 
 \end{fitchproof} 
-Notice that you have $\enot A$ on line~$2$ and $A$ as the assumption of your first subproof. That gives you $\ered$ using $\enot$E, and from $\ered$ you get the conclusion~$B$ of the first subproof using~X. Recall that you can repeat a sentence you already have by using the reiteration rule~R. So our proof would be:
+Observe que você tem $\enot A$ na linha~$2$ e $A$ como suposição da sua primeira subprova. Isso lhe dá $\ered$ usando $\enot$E e, a partir de $\ered$, você obtém a conclusão~$B$ da primeira subprova usando~X. Lembre-se de que é possível repetir uma sentença que você já tem usando a regra de reiteração~R. Portanto, a nossa prova seria:
 \begin{fitchproof}
 	\hypo{1}{A \eor B}\PR
 	\hypo{7}{\enot A}\PR
@@ -1127,9 +1127,9 @@ Notice that you have $\enot A$ on line~$2$ and $A$ as the assumption of your fir
 	\have{6}{B}\oe{1,2-3,4-5} 
 \end{fitchproof} 
 
-\section{Proceed indirectly}
+\section{Procedendo indiretamente}
 
-In very many cases, the strategies of working forward and backward will eventually pan out. But there are cases where they do not work.  If you cannot find a way to show $\metav{A}$ directly using those, use IP instead. To do this, set up a subproof in which you assume $\enot\metav{A}$ and look for a proof of $\ered$ inside that subproof.
+Em muitos casos, as estratégias de trabalhar para frente e de trás para frente acabam funcionando. Mas há casos em que elas não funcionam. Se você não conseguir encontrar uma maneira de mostrar $\metav{A}$ diretamente usando essas estratégias, use IP. Para isso, estabeleça uma subprova na qual você supõe $\enot\metav{A}$ e procure uma prova de $\ered$ dentro dessa subprova.
 
 \begin{fitchproof}
 \open
@@ -1139,10 +1139,10 @@ In very many cases, the strategies of working forward and backward will eventual
 \close
 \have{4}{\metav{A}}\ip{2-3}
 \end{fitchproof}
-Here, we have to start a subproof with assumption $\enot \metav{A}$;
-the last line of the subproof has to be~$\ered$. We'll cite the subproof, and use~IP as the rule.  In the subproof, we now have an additional assumption (on line $n$) to work with.
+Aqui, temos de iniciar uma subprova com a suposição $\enot \metav{A}$;
+a última linha da subprova tem de ser~$\ered$. Citaremos a subprova e usaremos~IP como regra. Na subprova, agora temos uma suposição adicional (na linha $n$) com a qual trabalhar.
 
-Suppose we used the indirect proof strategy, or we're in some other situation where we're looking for a proof of $\ered$.  What's a good candidate? Of course the obvious candidate would be to use a negated sentence, since (as we saw above) $\enot$E always yields~$\ered$. If you set up a proof as above, trying to prove \metav{A} using~IP, you will have $\enot \metav{A}$ as the assumption of your subproof---so working forward from it to justify $\ered$ inside your subproof, you would next set up \metav{A} as a goal inside your subproof. If you are using this IP strategy, you will find yourself in the following situation: 
+Suponha que usamos a estratégia da prova indireta ou que estamos em alguma outra situação na qual procuramos uma prova de $\ered$. Qual é um bom candidato? Naturalmente, o candidato óbvio seria usar uma sentença negada, pois, como vimos acima, $\enot$E sempre produz~$\ered$. Se você estrutura uma prova como a anterior, tentando provar \metav{A} usando~IP, terá $\enot \metav{A}$ como suposição da sua subprova; portanto, trabalhando para frente a partir dela para justificar $\ered$ dentro da subprova, estabelecerá em seguida \metav{A} como um objetivo dentro da subprova. Se estiver usando essa estratégia IP, você se encontrará na seguinte situação:
 \begin{fitchproof}
 \open
 \hypo[n]{2}{\enot \metav{A}}\AS
@@ -1152,12 +1152,12 @@ Suppose we used the indirect proof strategy, or we're in some other situation wh
 \close
 \have{5}{\metav{A}}\ip{2-4}
 \end{fitchproof} 
-This looks weird: We wanted to prove $\metav{A}$ and the strategies failed us; so we used IP as a last resort. And now we find ourselves in the same situation: we are again looking for a proof of~$\metav{A}$. But notice that we are now \emph{inside} a subproof, and in that subproof we have an additional assumption ($\enot \metav{A}$) to work with which we didn't have before. Let's look at an example.
+Isso parece estranho: queríamos provar $\metav{A}$ e as estratégias falharam; por isso, usamos IP como último recurso. E agora nos encontramos na mesma situação: estamos novamente procurando uma prova de~$\metav{A}$. Mas observe que agora estamos \emph{dentro} de uma subprova e, nessa subprova, temos uma suposição adicional ($\enot \metav{A}$) com a qual trabalhar, algo que não tínhamos antes. Vejamos um exemplo.
 
-\section{Indirect proof of excluded middle}\label{s:proofLEM}
+\section{Prova indireta do terceiro excluído}\label{s:proofLEM}
 
-The sentence $A \eor \enot A$ is a tautology called the \emph{law of
-excluded middle} (LEM), since it encapsulates the idea that \metav{A} may be true or $\enot \metav{A}$ may be true, but there is no middle way where neither is true.\footnote{You may sometimes find logicians or philosophers talking about ``tertium non datur.'' That's the same principle as excluded middle; it means ``no third way.'' Logicians who have qualms about indirect proof also have qualms about LEM.} It should have a proof even without any premises. But working backward fails us: to get $A \eor \enot A$ using $\eor$I we would have to prove either $A$ or $\enot A$---again, from no premises. Neither of these is a tautology, so we won't be able to prove either. Working forward doesn't work either, since there is nothing to work forward from. So, the only option is indirect proof.
+A sentença $A \eor \enot A$ é uma tautologia chamada \emph{lei do
+terceiro excluído} (LTE), pois expressa a ideia de que \metav{A} pode ser verdadeira ou $\enot \metav{A}$ pode ser verdadeira, mas não há uma via intermediária em que nenhuma das duas seja verdadeira.\footnote{Às vezes, você pode encontrar lógicos ou filósofos falando em ``tertium non datur''. Esse é o mesmo princípio do terceiro excluído; significa ``não há uma terceira via''. Lógicos que têm reservas quanto à prova indireta também têm reservas quanto à LTE.} Ela deve ter uma prova mesmo sem premissas. Mas trabalhar de trás para frente não nos ajuda: para obter $A \eor \enot A$ usando $\eor$I, teríamos de provar $A$ ou $\enot A$---novamente, sem premissas. Nenhuma das duas é uma tautologia, portanto não conseguiremos provar nenhuma delas. Trabalhar para frente também não funciona, pois não há nada a partir do qual trabalhar para frente. Assim, a única opção é a prova indireta.
 \begin{fitchproof}
 	\open
 	\hypo{2}{\enot (A \eor \enot A)}\AS
@@ -1166,7 +1166,7 @@ excluded middle} (LEM), since it encapsulates the idea that \metav{A} may be tru
 	\close
 	\have{9}{A \eor \enot A}\ip{2-8}
 \end{fitchproof}
-Now we do have something to work forward from: the assumption $\enot(A \eor \enot A)$. To use it, we justify $\ered$ by $\enot$E, citing the assumption on line~$1$, and also the corresponding unnegated sentence $A \eor \enot A$, yet to be proved.
+Agora temos algo a partir do qual trabalhar para frente: a suposição $\enot(A \eor \enot A)$. Para usá-la, justificamos $\ered$ por $\enot$E, citando a suposição na linha~$1$ e também a sentença correspondente sem negação, $A \eor \enot A$, que ainda precisa ser provada.
 \begin{fitchproof}
 	\open
 	\hypo{2}{\enot (A \eor \enot A)}\AS
@@ -1176,7 +1176,7 @@ Now we do have something to work forward from: the assumption $\enot(A \eor \eno
 	\close
 	\have{9}{A \eor \enot A}\ip{2-8}
 \end{fitchproof}
-At the outset, working backward to prove $A \eor\enot A$ by $\eor$I did not work. But we are now in a different situation: we want to prove $A \eor\enot A$ inside a subproof. In general, when dealing with new goals we should go back and start with the basic strategies. In this case, we should first try to work backward from the disjunction $A \eor \enot A$, i.e., we have to pick a disjunct and try to prove it. Let's pick~$\enot A$. This would let us justify $A \eor \enot A$ on line~$m - 1$ using $\eor$I. Then working backward from $\enot A$, we start another subproof in order to justify $\enot A$ using $\enot$I. That subproof must have $A$ as the assumption and~$\ered$ as its last line.
+No início, trabalhar de trás para frente para provar $A \eor\enot A$ por $\eor$I não funcionou. Mas agora estamos em uma situação diferente: queremos provar $A \eor\enot A$ dentro de uma subprova. Em geral, ao lidar com novos objetivos, devemos voltar e começar com as estratégias básicas. Neste caso, devemos primeiro tentar trabalhar de trás para frente a partir da disjunção $A \eor \enot A$, isto é, temos de escolher um disjuntivo e tentar prová-lo. Vamos escolher~$\enot A$. Isso nos permitiria justificar $A \eor \enot A$ na linha~$m - 1$ usando $\eor$I. Então, trabalhando de trás para frente a partir de $\enot A$, iniciamos outra subprova para justificar $\enot A$ usando $\enot$I. Essa subprova deve ter $A$ como suposição e~$\ered$ como sua última linha.
 \begin{fitchproof}
 	\open
 	\hypo{2}{\enot (A \eor \enot A)}\AS
@@ -1191,7 +1191,7 @@ At the outset, working backward to prove $A \eor\enot A$ by $\eor$I did not work
 	\close
 	\have{9}{A \eor \enot A}\ip{2-8}
 \end{fitchproof}
-Inside this new subproof, we again need to justify $\ered$. The best way to do this is to work forward from a negated sentence; $\enot(A \eor \enot A)$ on line~$1$ is the only negated sentence we can use. The corresponding unnegated sentence, $A \eor \enot A$, however, directly follows from $A$ (which we have on line~$2$) by $\eor$I. Our complete proof is:
+Dentro dessa nova subprova, novamente precisamos justificar $\ered$. A melhor maneira de fazer isso é trabalhar para frente a partir de uma sentença negada; $\enot(A \eor \enot A)$ na linha~$1$ é a única sentença negada que podemos usar. A sentença correspondente sem negação, $A \eor \enot A$, porém, segue diretamente de $A$ (que temos na linha~$2$) por $\eor$I. A nossa prova completa é:
 \begin{fitchproof}
 	\open
 	\hypo{2}{\enot (A \eor \enot A)}\AS
@@ -1210,7 +1210,7 @@ Inside this new subproof, we again need to justify $\ered$. The best way to do t
 \practiceproblems
 
 \problempart
-Use the strategies to find proofs for each of the following arguments:
+Use as estratégias para encontrar provas para cada um dos argumentos a seguir:
 \begin{compactlist}
 \item $A \eif B, A \eif C \therefore A \eif (B \eand C)$
 \item $(A \eand B) \eif C \therefore A \eif (B \eif C)$
@@ -1223,10 +1223,10 @@ Use the strategies to find proofs for each of the following arguments:
 \end{compactlist}
 
 \problempart
-Formulate strategies for working backward and forward from $\metav{A} \eiff \metav{B}$.
+Formule estratégias para trabalhar de trás para frente e para frente a partir de $\metav{A} \eiff \metav{B}$.
 
 \problempart
-Use the strategies to find proofs for each of the following sentences:
+Use as estratégias para encontrar provas para cada uma das sentenças a seguir:
 \begin{compactlist}
 \item $\enot A \eif (A \eif \ered)$
 \item $\enot(A \eand \enot A)$
@@ -1234,10 +1234,10 @@ Use the strategies to find proofs for each of the following sentences:
 \item $\enot(A \eif B) \eif (A \eand \enot B)$
 \item $(\enot A \eor B) \eif (A \eif B)$
 \end{compactlist}
-Since these should be proofs of sentences from no premises, you will start with the respective sentence at the \emph{bottom} of the proof, which will have no premises.
+Como estas devem ser provas de sentenças sem premissas, você começará com a respectiva sentença na \emph{parte inferior} da prova, que não terá premissas.
 
 \problempart
-Use the strategies to find proofs for each one of the following arguments and sentences:
+Use as estratégias para encontrar provas para cada um dos argumentos e sentenças a seguir:
 \begin{compactlist}
 \item $\enot\enot A \eif A$
 \item $\enot A \eif \enot B \therefore B \eif A$
@@ -1247,7 +1247,7 @@ Use the strategies to find proofs for each one of the following arguments and se
 \item $(A \eif B) \lor (B \eif A)$
 \item $((A \eif B) \eif A) \eif A$
 \end{compactlist}
-These all will require the IP strategy. The last three especially are quite hard!
+Todos exigirão a estratégia IP. Os três últimos são especialmente difíceis!
 
 \chapter{Additional rules for TFL}\label{s:Further}
 In \cref{s:BasicTFL}, we introduced the basic rules of our proof system for TFL. In this section, we will add some additional rules to our system. Our extended proof system is a bit easier to work with. (However, in \cref{s:Derived} we will see that they are not strictly speaking \emph{necessary}.)
