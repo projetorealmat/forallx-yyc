@@ -1,147 +1,160 @@
 %!TEX root = forallxyyc.tex
-\part{Truth-functional logic}
+\part{Lógica proposicional verofuncional}
 \label{ch.TFL}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\chapter{First steps to symbolization}
+\chapter{Primeiros passos para a simbolização}
 
-\section{Validity in virtue of form}\label{s:ValidityInVirtueOfForm}
-Consider this argument:
+\section{Validade em virtude da forma}\label{s:ValidityInVirtueOfForm}
+Considere este argumento:
 	\begin{earg}
-		\item[] It is raining outside.
-		\item[] If it is raining outside, then Jenny is miserable.
-		\item[\texttherefore] Jenny is miserable.
+		\item[] Está chovendo lá fora.
+		\item[] Se está chovendo lá fora, então Jenny está infeliz.
+		\item[\texttherefore] Jenny está infeliz.
 	\end{earg}
-and another argument:
+e outro argumento:
 	\begin{earg}
-		\item[] Jenny is an anarcho-syndicalist.
-		\item[] If Jenny is an anarcho-syndicalist, then Dipan is an avid reader of Tolstoy.
-		\item[\texttherefore] Dipan is an avid reader of Tolstoy.
+		\item[] Jenny é anarco-sindicalista.
+		\item[] Se Jenny é anarco-sindicalista, então Dipan é leitor ávido de Tolstói.
+		\item[\texttherefore] Dipan é leitor ávido de Tolstói.
 	\end{earg}
-Both arguments are valid, and there is a straightforward sense in which we can say that they share a common structure. We might express the structure thus:
+Ambos os argumentos são válidos, e há um sentido direto em que podemos dizer que eles compartilham uma estrutura comum. Podemos expressar a estrutura da seguinte maneira:
 	\begin{earg}
 		\item[] $A$
-		\item[] If $A$, then $C$
+		\item[] Se $A$, então $C$
 		\item[\texttherefore] $C$
 	\end{earg}
-This looks like an excellent argument \emph{structure}. Indeed, surely any argument with this structure will be valid. And this is not the only good argument structure. Consider an argument like:
+Esta parece uma excelente \emph{estrutura} de argumento. Com efeito, certamente todo argumento com essa estrutura será válido. E essa não é a única boa estrutura de argumento. Considere um argumento como:
 	\begin{earg}
-		\item[] Jenny is either happy or sad.
-		\item[] Jenny is not happy.
-		\item[\texttherefore] Jenny is sad.
+		\item[] Jenny está feliz ou triste.
+		\item[] Jenny não está feliz.
+		\item[\texttherefore] Jenny está triste.
 	\end{earg}
-Again, this is a valid argument. The structure here is something like:
+Novamente, este é um argumento válido. A estrutura aqui é algo como:
 	\begin{earg}
-		\item[] $A$ or $B$
-		\item[] not-$A$
+		\item[] $A$ ou $B$
+		\item[] não-$A$
 		\item[\texttherefore] $B$
 	\end{earg}
-A superb structure! Here is another example:
+Uma estrutura extraordinária! Eis outro exemplo:
 	\begin{earg}
-		\item[] It's not the case that Jim both studied hard and acted in lots of plays.
-		\item[] Jim studied hard.
-		\item[\texttherefore] Jim did not act in lots of plays.
+		\item[] Não é o caso de Jim ter estudado muito e atuado em muitas peças.
+		\item[] Jim estudou muito.
+		\item[\texttherefore] Jim não atuou em muitas peças.
 	\end{earg}
-This valid argument has a structure which we might represent thus:
+Este argumento válido tem uma estrutura que poderíamos representar assim:
 	\begin{earg}
-		\item[] not-($A$ and $B$)
+		\item[] não-($A$ e $B$)
 		\item[] $A$
-		\item[\texttherefore] not-$B$
+		\item[\texttherefore] não-$B$
 	\end{earg}
-These examples illustrate an important idea, which we might describe as \emph{validity in virtue of form}. The validity of the arguments just considered has nothing very much to do with the meanings of English expressions like `Jenny is miserable', `Dipan is an avid reader of Tolstoy', or `Jim acted in lots of plays'. If it has to do with meanings at all, it is with the meanings of phrases like `and', `or', `not,' and `if \ldots, then \ldots'.
+Esses exemplos ilustram uma ideia importante, que poderíamos descrever como \emph{validade em virtude da forma}. A validade dos argumentos que acabamos de considerar não tem relação significativa com os significados de expressões em português como Jenny está infeliz, Dipan é leitor ávido de Tolstói ou Jim atuou em muitas peças. Se tiver relação com significados, é com os significados de expressões como \emph{e}, \emph{ou}, \emph{não} e \emph{se ..., então ...}.
+ 
+Em \crefrange{ch.TFL}{ch.NDTFL}, desenvolveremos uma
+linguagem formal que nos permitirá simbolizar muitos argumentos de modo a
+mostrar que eles são válidos em virtude de sua forma. Essa será a
+linguagem da \emph{lógica proposicional verofuncional}, ou
+LVF.\footnote{A lógica proposicional verofuncional também é frequentemente chamada de lógica (clássica) proposicional ou sentencial.}
 
-In \crefrange{ch.TFL}{ch.NDTFL}, we are going to develop a formal
-language which allows us to symbolize many arguments in such a way as
-to show that they are valid in virtue of their form. This will be the
-language of \emph{truth-functional logic}, or
-TFL.\footnote{Truth-functional logic is also often called (classical)
-``propositional'' or ``sentential'' logic.}
+\section{Validade por razões especiais}
 
-\section{Validity for special reasons}
-
-In \cref{s:FormalValidity}, we first introduced the notion of formal
-validity, and contrasted it with other kinds of validity related to
-what kinds of counterexamples we consider. It bears repeating that
-there are plenty of arguments that are valid, but not for reasons
-relating to their form. Take an example:
+Em \cref{s:FormalValidity}, introduzimos inicialmente a noção de
+validade formal e a contrastamos com outros tipos de validade relacionados
+aos tipos de contraexemplo que consideramos. Vale repetir que há muitos
+argumentos que são válidos, mas não por razões relacionadas à sua forma.
+Considere o seguinte exemplo:
 	\begin{earg}
-		\item[] Juanita is a vixen.
-		\item[\texttherefore] Juanita is a fox.
+		\item[] Juanita é uma raposa fêmea.
+		\item[\texttherefore] Juanita é uma raposa.
 	\end{earg}
-It is impossible for the premise to be true and the conclusion false,
-since `vixen' just means `female fox'. So the argument is
-(conceptually) valid. The validity is not explained by the form of the
-argument. To see this, we can give an invalid argument with the same
-form, e.g.:
+É impossível que a premissa seja verdadeira e a conclusão falsa, pois
+raposa fêmea significa simplesmente raposa. Portanto, o argumento é
+(conceitualmente) válido. A validade não é explicada pela forma do
+argumento. Para perceber isso, podemos apresentar um argumento inválido
+com a mesma forma, por exemplo:
 	\begin{earg}
-		\item[] Juanita is a vixen.
-		\item[\texttherefore] Juanita is a cathedral.
+		\item[] Juanita é uma raposa fêmea.
+		\item[\texttherefore] Juanita é uma catedral.
 	\end{earg}
-Equally, consider the argument:
+Considere também o argumento:
 	\begin{earg}
-		\item[] The sculpture is green all over.
-		\item[\texttherefore] The sculpture is not red all over.
+		\item[] A escultura é verde por toda parte.
+		\item[\texttherefore] A escultura não é vermelha por toda parte.
 	\end{earg}
-Again, it seems there can be no case where the premise is true and the
-conclusion false, for nothing can be both green all over and red all
-over. So the argument is valid, but here is an invalid argument with
-the same form:
+Novamente, parece não haver caso em que a premissa seja verdadeira e a
+conclusão falsa, pois nada pode ser verde por toda parte e vermelho por
+toda parte ao mesmo tempo. Portanto, o argumento é válido, mas eis um
+argumento inválido com a mesma forma:
 	\begin{earg}
-		\item[] The sculpture is green all over.
-		\item[\texttherefore] The sculpture is not shiny all over.
+		\item[] A escultura é verde por toda parte.
+		\item[\texttherefore] A escultura não é brilhante por toda parte.
 	\end{earg}
-This argument is invalid, since it is possible to be green all over
-and shiny all over. (One might paint the sculpture with an elegant
-shiny green varnish.) Plausibly, the validity of the first argument is
-keyed to the way that colours (or colour-words) interact, but, whether
-or not that is right, it is not simply the \emph{form} of the
-argument alone that makes it valid.
+Este argumento é inválido, pois é possível ser verde por toda parte e
+brilhante por toda parte. (Pode-se pintar a escultura com um elegante
+verniz verde brilhante.) É plausível que a validade do primeiro argumento
+esteja ligada à maneira como as cores (ou as palavras que designam cores)
+interagem, mas, esteja isso correto ou não, não é simplesmente a
+\emph{forma} do argumento, por si só, que o torna válido.
 
-The important moral can be stated as follows. \emph{At best, TFL will help us to understand arguments that are valid due to their form.}
+A lição importante pode ser enunciada assim. \emph{Na melhor das hipóteses, a LVF nos ajudará a compreender argumentos que são válidos em virtude de sua forma.}
 
-\section{Atomic sentences}
+\section{Sentenças atômicas}
 
-We started isolating the form of an argument, in \cref{s:ValidityInVirtueOfForm}, by replacing \emph{subsentences} of sentences with individual letters. Thus in the first example of this section, `it is raining outside' is a subsentence of `If it is raining outside, then Jenny is miserable', and we replaced this subsentence with `$A$'.
+Começamos a isolar a forma de um argumento, em
+\cref{s:ValidityInVirtueOfForm}, substituindo \emph{subsentenças} de
+sentenças por letras individuais. Assim, no primeiro exemplo desta seção,
+está chovendo lá fora é uma subsentença de se está chovendo lá fora, então
+Jenny está infeliz, e substituímos essa subsentença por $A$.
 
-The artificial language of TFL pursues this idea absolutely
-ruthlessly. We start with some \emph{sentence letters}. These will be
-the basic building blocks out of which more complex sentences are
-built (they are the ``atomic'' sentences of TFL). We will use single
-uppercase letters as sentence letters of TFL. There are only
-twenty-six letters of the alphabet, but there is no limit to the
-number of sentence letters that we might want to consider. By adding
-subscripts to letters, we obtain new sentence letters. So, here are
-five different sentence letters of TFL:
+A linguagem artificial da LVF leva essa ideia às últimas consequências.
+Começamos com algumas \emph{letras sentenciais}. Elas serão os blocos
+básicos de construção a partir dos quais sentenças mais complexas serão
+construídas (são as sentenças \emph{atômicas} da LVF). Usaremos letras
+maiúsculas isoladas como letras sentenciais da LVF. Há apenas vinte e seis
+letras no alfabeto, mas não há limite para o número de letras sentenciais
+que podemos querer considerar. Ao acrescentar subscritos às letras,
+obtemos novas letras sentenciais. Portanto, eis cinco letras sentenciais
+diferentes da LVF:
 	$$A, P, P_1, P_2, A_{234}$$
-We will use sentence letters to represent, or \emph{symbolize}, certain English sentences. To do this, we provide a \define{symbolization key}, such as the following:
+Usaremos letras sentenciais para representar, ou \emph{simbolizar},
+certas sentenças em português. Para isso, fornecemos uma
+\define{chave de simboliza\c{c}\~ao}, como a seguinte:
 	\begin{ekey}
-		\item[A] It is raining outside
-		\item[C] Jenny is miserable
+		\item[A] Está chovendo lá fora
+		\item[C] Jenny está infeliz
 	\end{ekey}
-In doing this, we are not fixing this symbolization \emph{once and for all}. We are just saying that, for the time being, we will think of the sentence letter of TFL, `$A$', as symbolizing the English sentence `It is raining outside', and the sentence letter of TFL, `$C$', as symbolizing the English sentence `Jenny is miserable'. Later, when we are dealing with different sentences or different arguments, we can provide a new symbolization key; as it might be:
+Ao fazer isso, não estamos fixando essa simbolização \emph{de uma vez
+por todas}. Estamos apenas dizendo que, por enquanto, consideraremos a
+letra sentencial da LVF, $A$, como simbolizando a sentença em português
+Está chovendo lá fora, e a letra sentencial da LVF, $C$, como simbolizando
+a sentença em português Jenny está infeliz. Mais tarde, quando estivermos
+lidando com sentenças ou argumentos diferentes, poderemos fornecer uma
+nova chave de simbolização, como esta:
 	\begin{ekey}
-		\item[A] Jenny is an anarcho-syndicalist
-		\item[C] Dipan is an avid reader of Tolstoy
+		\item[A] Jenny é anarco-sindicalista
+		\item[C] Dipan é leitor ávido de Tolstói
 	\end{ekey}
-It is important to understand that whatever structure an English sentence might have is lost when it is symbolized by a sentence letter of TFL. From the point of view of TFL, a sentence letter is just a letter. It can be used to build more complex sentences, but it cannot be taken apart.
+É importante compreender que qualquer estrutura que uma sentença em
+português possa ter se perde quando ela é simbolizada por uma letra
+sentencial da LVF. Do ponto de vista da LVF, uma letra sentencial é apenas
+uma letra. Ela pode ser usada para construir sentenças mais complexas,
+mas não pode ser decomposta.
 
 \newglossaryentry{sentence letter}
 {
-name=sentence letter,
-description={An letter used to represent a basic sentence in TFL}
+name=letra sentencial,
+description={Uma letra usada para representar uma sentença básica na LVF}
 }
 \newglossaryentry{atomic sentence}
 {
-name=atomic sentence,
-description={An expression used to represent a basic sentence; a sentence letter in TFL, or a predicate symbol followed by names in FOL}
+name=sentença atômica,
+description={Uma expressão usada para representar uma sentença básica: uma letra sentencial na LVF ou um símbolo de predicado seguido de nomes na LPO}
 }
-
 \newglossaryentry{symbolization key}
 {
-name=symbolization key,
-description={A list that shows which English sentences are represented by which \glspl{sentence letter} in TFL}
+name=chave de simbolização,
+description={Uma lista que mostra quais sentenças em português são representadas por quais \glspl{sentence letter} na LVF}
 }
-
 \chapter{Connectives}
 \label{s:TFLConnectives}
 
