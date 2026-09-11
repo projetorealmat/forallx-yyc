@@ -816,117 +816,225 @@ Para cada argumento, escreva uma chave de simbolização e simbolize o argumento
 \problempart
 Simbolizamos um \emph{ou exclusivo} usando \eor, \eand e \enot. Como você poderia simbolizar um \emph{ou exclusivo} usando apenas dois conectivos? Há alguma maneira de simbolizar um \emph{ou exclusivo} usando apenas um conectivo?
 
-\chapter{Sentences of TFL}\label{s:TFLSentences}
-The sentence `either apples are red, or berries are blue' is a sentence of English, and the sentence `$(A\eor B)$' is a sentence of TFL. Although we can identify sentences of English when we encounter them, we do not have a formal definition of `sentence of English'. But in this chapter, we will \emph{define} exactly what will count as a sentence of TFL. This is one respect in which a formal language like TFL is more precise than a natural language like English.
+\chapter{Sentenças da LVF}\label{s:TFLSentences}
+A sentença \emph{ou maçãs são vermelhas, ou bagas são azuis} é uma
+sentença em português, e a sentença $(A\eor B)$ é uma sentença da LVF.
+Embora possamos identificar sentenças em português quando nos deparamos
+com elas, não temos uma definição formal de \emph{sentença em português}.
+Neste capítulo, porém, definiremos exatamente o que contará como uma
+sentença da LVF. Este é um dos aspectos em que uma linguagem formal como
+a LVF é mais precisa que uma linguagem natural como o português.
 
 
-\section{Expressions}
+\section{Expressões}
 
-We have seen that there are three kinds of symbols in TFL:
+Vimos que há três tipos de símbolos na LVF:
 \begin{center}
 \begin{tabular}{l l}
-Atomic sentences & $A,B,C,\ldots,Z,\ldots$\\
-with subscripts, as needed & $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\[12pt]
-Connectives & $\enot,\eand,\eor,\eif,\eiff$\\[12pt]
-Brackets &( , )
+Sentenças atômicas & $A,B,C,\ldots,Z,\ldots$\\
+com subscritos, conforme necessário & $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\[12pt]
+Conectivos & $\enot,\eand,\eor,\eif,\eiff$\\[12pt]
+Parênteses &( , )
 \end{tabular}
 \end{center}
-Define an \define{expression of TFL} as any string of symbols of TFL.
-So: write down any sequence of symbols of TFL, in any order, and you
-have an expression of TFL.\footnote{In \cref{sec:contradiction}, we
-will introduce the symbol~`$\ered$', which will also count as an
-atomic sentence.}
+Defina uma \define{express\~ao da LVF} como qualquer cadeia de símbolos
+da LVF.
+Assim: escreva qualquer sequência de símbolos da LVF, em qualquer ordem,
+e você terá uma expressão da LVF.\footnote{Em \cref{sec:contradiction},
+introduziremos o símbolo~$\ered$, que também contará como uma sentença
+atômica.}
 
-\section{Sentences}\label{s:Sentences}
-Given what we just said, `$(A \eand B)$' is an expression of TFL, and so is `$\lnot)(\eor()\eand(\enot\enot())((B$'. But the former is a \emph{sentence}, and the latter is \emph{gibberish}. We want some rules to tell us which TFL expressions are sentences.
+\section{Sentenças}\label{s:Sentences}
+Dado o que acabamos de dizer, $(A \eand B)$ é uma expressão da LVF, e
+também o é $\lnot)(\eor()\eand(\enot\enot())((B$. Mas a primeira é uma
+\emph{sentença}, e a segunda é um \emph{amontoado de símbolos sem
+sentido}. Queremos algumas regras que nos digam quais expressões da LVF
+são sentenças.
 
-Obviously, individual sentence letters like `$A$' and `$G_{13}$' should count as sentences. (We'll also call them \define{atomic} sentences.) We can form further sentences out of these by using the various connectives. Using negation, we can get `$\enot A$' and `$\enot G_{13}$'. Using conjunction, we can get `$(A \eand G_{13})$', `$(G_{13} \eand A)$', `$(A \eand A)$', and `$(G_{13} \eand G_{13})$'. We could also apply negation repeatedly to get sentences like `$\enot \enot A$' or apply negation along with conjunction to get sentences like `$\enot(A \eand G_{13})$' and `$\enot(G_{13} \eand \enot G_{13})$'. The possible combinations are endless, even starting with just these two sentence letters, and there are infinitely many sentence letters. So there is no point in trying to list all the sentences one by one.
+Obviamente, letras sentenciais individuais como $A$ e $G_{13}$ devem
+contar como sentenças. (Também as chamaremos de sentenças
+\define{at\^omicas}.) Podemos formar outras sentenças a partir delas
+usando os vários conectivos. Usando a negação, podemos obter $\enot A$ e
+$\enot G_{13}$. Usando a conjunção, podemos obter $(A \eand G_{13})$,
+$(G_{13} \eand A)$, $(A \eand A)$ e $(G_{13} \eand G_{13})$. Também
+poderíamos aplicar a negação repetidamente para obter sentenças como
+$\enot \enot A$ ou aplicar a negação junto com a conjunção para obter
+sentenças como $\enot(A \eand G_{13})$ e
+$\enot(G_{13} \eand \enot G_{13})$. As combinações possíveis são
+infinitas, mesmo começando apenas com essas duas letras sentenciais, e
+há infinitas letras sentenciais. Portanto, não faz sentido tentar listar
+todas as sentenças uma a uma.
 
-Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: Given any sentence \metav{A} of TFL, $\enot\metav{A}$ is a sentence of TFL. (Why the funny fonts? We return to this in \cref{s:Metavariables}.)
+Em vez disso, descreveremos o processo pelo qual as sentenças podem ser
+\emph{construídas}. Considere a negação: dada qualquer sentença
+\metav{A} da LVF, $\enot\metav{A}$ é uma sentença da LVF. (Por que as
+fontes tipográficas estranhas? Voltaremos a isso em
+\cref{s:Metavariables}.)
 
-We can say similar things for each of the other connectives. For instance, if \metav{A} and \metav{B} are sentences of TFL, then $(\metav{A}\eand\metav{B})$ is a sentence of TFL. Providing clauses like this for all of the connectives, we arrive at the following formal definition for a \define{sentence of TFL}:
+Podemos dizer coisas semelhantes para cada um dos outros conectivos. Por
+exemplo, se \metav{A} e \metav{B} são sentenças da LVF, então
+$(\metav{A}\eand\metav{B})$ é uma sentença da LVF. Ao fornecer cláusulas
+como essa para todos os conectivos, chegamos à seguinte definição formal
+de uma \define{senten\c{c}a da LVF}:
 	\factoidbox{\label{TFLsentences}
 	\begin{factoidnumber}
-		\item Every sentence letter is a sentence.
-		\item If \metav{A} is a sentence, then $\enot\metav{A}$ is a sentence.
-		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eand\metav{B})$ is a sentence.
-		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eor\metav{B})$ is a sentence.
-		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eif\metav{B})$ is a sentence.
-		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eiff\metav{B})$ is a sentence.
-		\item Nothing else is a sentence.
+		\item Toda letra sentencial é uma sentença.
+		\item Se \metav{A} é uma sentença, então $\enot\metav{A}$ é uma sentença.
+		\item Se \metav{A} e \metav{B} são sentenças, então $(\metav{A}\eand\metav{B})$ é uma sentença.
+		\item Se \metav{A} e \metav{B} são sentenças, então $(\metav{A}\eor\metav{B})$ é uma sentença.
+		\item Se \metav{A} e \metav{B} são sentenças, então $(\metav{A}\eif\metav{B})$ é uma sentença.
+		\item Se \metav{A} e \metav{B} são sentenças, então $(\metav{A}\eiff\metav{B})$ é uma sentença.
+		\item Nada mais é uma sentença.
 	\end{factoidnumber}
 	}
 \newglossaryentry{sentence of TFL}
 {
-name=sentence (of TFL),
-text = sentence of TFL,
-plural = sentences of TFL,
-description={A string of symbols in TFL that can be built up according to the inductive rules given \ifHTMLtarget in \cref{s:Sentences}\else on p.~\pageref{TFLsentences}\fi}
+name=sentença (da LVF),
+text = sentença da LVF,
+plural = sentenças da LVF,
+description={Uma cadeia de símbolos na LVF que pode ser construída de acordo com as regras indutivas dadas \ifHTMLtarget em \cref{s:Sentences}\else na p.~\pageref{TFLsentences}\fi}
 }
 
-Definitions like this are called \define{inductive}. Inductive definitions begin with some specifiable base elements, and then present ways to generate indefinitely many more elements by compounding together previously established ones. To give you a better idea of what an inductive definition is, we can give an inductive definition of the idea of \emph{an ancestor of mine}. We specify a base clause:
+Definições como essa são chamadas de \define{indutivas}. Definições
+indutivas começam com alguns elementos básicos especificáveis e, então,
+apresentam maneiras de gerar indefinidamente muitos outros elementos,
+combinando elementos previamente estabelecidos. Para dar uma ideia
+melhor do que é uma definição indutiva, podemos fornecer uma definição
+indutiva da ideia de \emph{um ancestral meu}. Especificamos uma cláusula
+básica:
 	\begin{itemize}
-		\item My parents are ancestors of mine.
+		\item Meus pais são meus ancestrais.
 	\end{itemize}
-and then offer further clauses like:
+e então oferecemos cláusulas adicionais como:
 	\begin{itemize}
-		\item If $x$ is an ancestor of mine, then $x$'s parents are ancestors of mine.
+		\item Se $x$ é um ancestral meu, então os pais de $x$ são meus ancestrais.
 	\end{itemize}
-Finally, we stipulate that \emph{only} what the base and inductive
-clauses say are ancestors of mine will count as such.
+Por fim, estipulamos que \emph{somente} aquilo que as cláusulas básica e
+indutiva dizem ser ancestral meu contará como tal.
 	\begin{itemize}
-		\item Nothing else is an ancestor of mine.
+		\item Nada mais é um ancestral meu.
 	\end{itemize}
-Using this definition, we can easily check to see whether someone is my ancestor: just check whether she is the parent of the parent of\ldots one of my parents. And the same is true for our inductive definition of sentences of TFL. Just as the inductive definition allows complex sentences to be built up from simpler parts, the definition allows us to decompose sentences into their simpler parts. Once we get down to sentence letters, then we know we are ok.
+Usando essa definição, podemos verificar facilmente se alguém é meu
+ancestral: basta verificar se essa pessoa é mãe ou pai de um dos meus pais,
+ou de um dos pais de um dos meus pais, e assim por diante. O mesmo vale para nossa
+definição indutiva de sentenças da LVF. Assim como a definição indutiva
+permite construir sentenças complexas a partir de partes mais simples, a
+definição permite decompor sentenças em suas partes mais simples. Quando
+chegamos às letras sentenciais, sabemos que está tudo certo.
 
-Let's consider some examples.
+Consideremos alguns exemplos.
 
-Suppose we want to know whether or not `$\enot \enot \enot D$' is a sentence of TFL. Looking at the second clause of the definition, we know that `$\enot \enot \enot D$' is a sentence \emph{if} `$\enot \enot D$' is a sentence. So now we need to ask whether or not `$\enot \enot D$' is a sentence. Again looking at the second clause of the definition, `$\enot \enot D$' is a sentence \emph{if} `$\enot D$' is. So, `$\enot D$' is a sentence \emph{if} `$D$' is a sentence. Now `$D$' is a sentence letter of TFL, so we know that `$D$' is a sentence by the first clause of the definition. So for a compound sentence like `$\enot \enot \enot D$', we must apply the definition repeatedly. Eventually we arrive at the sentence letters from which the sentence is built up.
+Suponha que queiramos saber se $\enot \enot \enot D$ é ou não uma
+sentença da LVF. Olhando para a segunda cláusula da definição, sabemos
+que $\enot \enot \enot D$ é uma sentença \emph{se} $\enot \enot D$ é uma
+sentença. Portanto, agora precisamos perguntar se $\enot \enot D$ é uma
+sentença. Novamente, olhando para a segunda cláusula da definição,
+$\enot \enot D$ é uma sentença \emph{se} $\enot D$ for. Assim,
+$\enot D$ é uma sentença \emph{se} $D$ for uma sentença. Ora, $D$ é uma
+letra sentencial da LVF, portanto sabemos, pela primeira cláusula da
+definição, que $D$ é uma sentença. Assim, para uma sentença composta como
+$\enot \enot \enot D$, precisamos aplicar a definição repetidamente.
+Por fim, chegamos às letras sentenciais a partir das quais a sentença foi
+construída.
 
-Next, consider the example `$\enot (P \eand \enot (\enot Q \eor R))$'. Looking at the second clause of the definition, this is a sentence if `$(P \eand \enot (\enot Q \eor R))$' is, and this is a sentence if \emph{both} `$P$' \emph{and} `$\enot (\enot Q \eor R)$' are sentences. The former is a sentence letter, and the latter is a sentence if `$(\enot Q \eor R)$' is a sentence. It is. Looking at the fourth clause of the definition, this is a sentence if both `$\enot Q$' and `$R$' are sentences, and both are!
+Considere agora o exemplo $\enot (P \eand \enot (\enot Q \eor R))$.
+Olhando para a segunda cláusula da definição, ele é uma sentença se
+$(P \eand \enot (\enot Q \eor R))$ for, e isso é uma sentença se
+\emph{ambos} $P$ e $\enot (\enot Q \eor R)$ forem sentenças. O primeiro
+é uma letra sentencial, e o segundo é uma sentença se
+$(\enot Q \eor R)$ for uma sentença. E é. Olhando para a quarta cláusula
+da definição, esta é uma sentença se tanto $\enot Q$ quanto $R$ forem
+sentenças, e ambos são!
 
-Ultimately, every sentence is constructed nicely out of sentence letters. When we are dealing with a \emph{sentence} other than a sentence letter, we can see that there must be some sentential connective that was introduced \emph{last}, when constructing the sentence. We call that connective the \define{main logical operator} of the sentence. In the case of `$\enot\enot\enot D$', the main logical operator is the very first `$\enot$' sign. In the case of `$(P \eand \enot (\enot Q \eor R))$', the main logical operator is `$\eand$'. In the case of `$((\enot E \eor F) \eif \enot\enot G)$', the main logical operator is `$\eif$'.
+Em última análise, toda sentença é construída de maneira adequada a
+partir de letras sentenciais. Quando lidamos com uma \emph{sentença} que
+não é uma letra sentencial, podemos ver que algum conectivo sentencial
+deve ter sido introduzido \emph{por último} na construção da sentença.
+Chamamos esse conectivo de \define{operador l\'ogico principal} da
+sentença. No caso de $\enot\enot\enot D$, o operador lógico principal é
+o primeiro símbolo $\enot$. No caso de
+$(P \eand \enot (\enot Q \eor R))$, o operador lógico principal é
+$\eand$. No caso de $((\enot E \eor F) \eif \enot\enot G)$, o operador
+lógico principal é $\eif$.
 
-As a general rule, you can find the main logical operator for a sentence by using the following method:
+Como regra geral, você pode encontrar o operador lógico principal de uma
+sentença usando o método a seguir:
 \begin{itemize}
-	\item If the first symbol in the sentence is `$\enot$', then that is the main logical operator
-	\item Otherwise, start counting the brackets. For each open-bracket, i.e., `(', add $1$; for each closing-bracket, i.e., `$)$', subtract $1$. When your count is at exactly $1$, the first operator you hit (\emph{apart} from a `$\enot$') is the main logical operator.
+	\item Se o primeiro símbolo da sentença é $\enot$, então esse é o operador lógico principal.
+	\item Caso contrário, comece a contar os parênteses. Para cada parêntese de abertura, isto é, o símbolo (, acrescente $1$; para cada parêntese de fechamento, isto é, o símbolo $)$, subtraia $1$. Quando sua contagem estiver exatamente em $1$, o primeiro operador que você encontrar (\emph{exceto} um $\enot$) será o operador lógico principal.
 \end{itemize}
 
-(Note: if you do use this method, then make sure to include \emph{all} the brackets in the sentence, rather than omitting some as per the conventions of \cref{TFLconventions}!)
+(Observação: se você usar esse método, inclua \emph{todos} os parênteses
+da sentença, em vez de omitir alguns de acordo com as convenções de
+\cref{TFLconventions}!)
 
-The inductive structure of sentences in TFL will be important when we consider the circumstances under which a particular sentence would be true or false. The sentence `$\enot \enot \enot D$' is true if and only if the sentence `$\enot \enot D$' is false, and so on through the structure of the sentence, until we arrive at the atomic components. We will return to this point in \cref{ch.TruthTables}.
+A estrutura indutiva das sentenças da LVF será importante quando
+considerarmos as circunstâncias em que uma sentença particular seria
+verdadeira ou falsa. A sentença $\enot \enot \enot D$ é verdadeira se e
+somente se a sentença $\enot \enot D$ é falsa, e assim por diante ao longo
+da estrutura da sentença, até chegarmos aos componentes atômicos.
+Voltaremos a esse ponto em \cref{ch.TruthTables}.
 
-The inductive structure of sentences in TFL also allows us to give a formal definition of the \emph{scope} of a negation (mentioned in \cref{s:ConnectiveConjunction}). The scope of a `$\enot$' is the subsentence for which `$\enot$' is the main logical operator. Consider a sentence like:
+A estrutura indutiva das sentenças da LVF também nos permite fornecer uma
+definição formal do \emph{escopo} de uma negação (mencionado em
+\cref{s:ConnectiveConjunction}). O escopo de um $\enot$ é a subsentença
+para a qual $\enot$ é o operador lógico principal. Considere uma sentença
+como:
 $$(P \eand (\enot (R \eand B) \eiff Q))$$
-which was constructed by conjoining `$P$' with `$ (\enot (R \eand B) \eiff Q)$'. This last sentence was constructed by placing a biconditional between `$\enot (R \eand B)$' and `$Q$'. The former of these sentences---a subsentence of our original sentence---is a sentence for which `$\enot$' is the main logical operator. So the scope of the negation is just `$\enot(R \eand B)$'. More generally:
-	\factoidbox{The \define{scope} of a connective (in a sentence) is the subsentence for which that connective is the main logical operator.}
+que foi construída combinando $P$ com
+$ (\enot (R \eand B) \eiff Q)$. Esta última sentença foi construída
+colocando um bicondicional entre $\enot (R \eand B)$ e $Q$. A primeira
+dessas sentenças — uma subsentença da sentença original — é uma sentença
+para a qual $\enot$ é o operador lógico principal. Portanto, o escopo da
+negação é simplesmente $\enot(R \eand B)$. De modo mais geral:
+	\factoidbox{O \define{escopo} de um conectivo (em uma sentença) é a subsentença para a qual esse conectivo é o operador lógico principal.}
 
 
-\section{Bracketing conventions}
+\section{Convenções de agrupamento}
 \label{TFLconventions}
-Strictly speaking, the brackets in `$(Q \eand R)$' are an indispensable part of the sentence. Part of this is because we might use `$(Q \eand R)$' as a subsentence in a more complicated sentence. For example, we might want to negate `$(Q \eand R)$', obtaining `$\enot(Q \eand R)$'. If we just had `$Q \eand R$' without the brackets and put a negation in front of it, we would have `$\enot Q \eand R$'. It is most natural to read this as meaning the same thing as `$(\enot Q \eand R)$', but as we saw in  \cref{s:ConnectiveConjunction}, this is very different from `$\enot(Q\eand R)$'.
+Estritamente falando, os parênteses em $(Q \eand R)$ são uma parte
+indispensável da sentença. Isso ocorre, em parte, porque poderíamos usar
+$(Q \eand R)$ como uma subsentença em uma sentença mais complicada. Por
+exemplo, poderíamos querer negar $(Q \eand R)$, obtendo
+$\enot(Q \eand R)$. Se tivéssemos apenas $Q \eand R$, sem os parênteses,
+e colocássemos uma negação diante dele, teríamos
+$\enot Q \eand R$. É mais natural ler isso como significando o mesmo que
+$(\enot Q \eand R)$, mas, como vimos em \cref{s:ConnectiveConjunction},
+isso é muito diferente de $\enot(Q\eand R)$.
 
-Strictly speaking, then, `$Q \eand R$' is \emph{not} a sentence. It is a mere \emph{expression}.
+Estritamente falando, então, $Q \eand R$ \emph{não} é uma sentença. É
+uma mera \emph{expressão}.
 
-When working with TFL, however, it will make our lives easier if we are sometimes a little less than strict. So, here are some convenient conventions.
+Ao trabalhar com a LVF, contudo, será mais fácil para nós se às vezes
+formos um pouco menos rigorosos. Portanto, eis algumas convenções úteis.
 
-First,  we allow ourselves to omit the \emph{outermost} brackets of a sentence. Thus we allow ourselves to write `$Q \eand R$' instead of the sentence `$(Q \eand R)$'. However, we must remember to put the brackets back in, when we want to embed the sentence into a more complicated sentence!
+Primeiro, permitimo-nos omitir os parênteses \emph{externos} de uma
+sentença. Assim, permitimo-nos escrever $Q \eand R$ em vez da sentença
+$(Q \eand R)$. No entanto, devemos nos lembrar de recolocar os
+parênteses quando quisermos inserir a sentença em uma sentença mais
+complicada!
 
-Second, it can be a bit painful to stare at long sentences with many nested pairs of brackets. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and~`]', instead of rounded ones. So there is no logical difference between `$(P\eor Q)$' and `$[P\eor Q]$', for example.
+Segundo, pode ser um pouco doloroso olhar para sentenças longas com
+muitos pares de parênteses aninhados. Para facilitar a leitura,
+permitimo-nos usar colchetes, os símbolos [ e ], em vez de parênteses redondos.
+Assim, não há diferença lógica entre $(P\eor Q)$ e $[P\eor Q]$, por
+exemplo.
 
-Combining these two conventions, we can rewrite the unwieldy sentence
+Combinando essas duas convenções, podemos reescrever a sentença
+desajeitada
 $$(((H \eif I) \eor (I \eif H)) \eand (J \eor K))$$
-rather more clearly as follows:
+de maneira muito mais clara, da seguinte forma:
 $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
-The scope of each connective is now much easier to pick out.
+Agora é muito mais fácil identificar o escopo de cada conectivo.
 
 \practiceproblems
 
 \solutions
 \problempart
 \label{pr.wiffTFL}
-For each of the following: (a) Is it a sentence of TFL, strictly speaking? (b) Is it a sentence of TFL, allowing for our relaxed bracketing conventions?
+Para cada item a seguir: (a) ele é uma sentença da LVF, estritamente
+falando? (b) ele é uma sentença da LVF, considerando nossas convenções
+relaxadas de agrupamento?
 \begin{compactlist}
 \item $(A)$
 \item $J_{374} \eor \enot J_{374}$
@@ -939,226 +1047,427 @@ For each of the following: (a) Is it a sentence of TFL, strictly speaking? (b) I
 \end{compactlist}
 
 \problempart
-Are there any sentences of TFL that contain no sentence letters? Explain your answer.\\
+Há alguma sentença da LVF que não contenha letras sentenciais? Explique sua resposta.\\
 
 \problempart
-What is the scope of each connective in the sentence
+Qual é o escopo de cada conectivo na sentença
 $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
 
-\chapter{Ambiguity}\label{s:AmbiguityTFL}
+\chapter{Ambiguidade}\label{s:AmbiguityTFL}
 
-In English, sentences can be \define{ambiguous}, i.e., they can have more than one meaning.  There are many sources of ambiguity. One is \emph{lexical ambiguity:} a sentence can contain words which have more than one meaning.  For instance, `bank' can mean the bank of a river, or a financial institution. So I might say that `I went to the bank' when I took a stroll along the river, or when I went to deposit a check.  Depending on the situation, a different meaning of `bank' is intended, and so the sentence, when uttered in these different contexts, expresses different meanings.
+Em português, as sentenças podem ser \define{amb\'iguas}, isto é, podem
+ter mais de um significado. Há muitas fontes de ambiguidade. Uma delas é
+a \emph{ambiguidade lexical:} uma sentença pode conter palavras que têm
+mais de um significado. Por exemplo, banco pode significar a
+margem de um rio ou uma instituição financeira. Assim, posso dizer que
+fui ao banco quando dei um passeio ao longo do rio ou quando fui
+depositar um cheque. Dependendo da situação, pretende-se um significado
+diferente de banco e, portanto, a sentença, quando proferida
+nesses diferentes contextos, expressa significados diferentes.
 
-A different kind of ambiguity is \emph{structural ambiguity}.  This arises when a sentence can be interpreted in different ways, and depending on the interpretation, a different meaning is selected.  A famous example due to Noam Chomsky is the following:
+Um tipo diferente de ambiguidade é a \emph{ambiguidade estrutural}. Ela
+surge quando uma sentença pode ser interpretada de maneiras diferentes
+e, dependendo da interpretação, um significado diferente é selecionado.
+Um exemplo famoso, devido a Noam Chomsky, é o seguinte:
 \begin{enumerate}
-	\item[] Flying planes can be dangerous.
+	\item[] Voar aviões pode ser perigoso.
 \end{enumerate}
-There is one reading in which `flying' is used as an adjective which modifies `planes'. In this sense, what's claimed to be dangerous are airplanes which are in the process of flying.  In another reading, `flying' is a gerund: what's claimed to be dangerous is the act of flying a plane.  In the first case, you might use the sentence to warn someone who's about to launch a hot air baloon.  In the second case, you might use it to counsel someone against becoming a pilot.
+Há uma leitura em que voar é usado como um adjetivo que modifica
+aviões. Nesse sentido, o que se afirma ser perigoso são aviões que
+estão voando. Em outra leitura, voar é um infinitivo: o que se
+afirma ser perigoso é o ato de pilotar um avião. No primeiro caso, você
+poderia usar a sentença para advertir alguém que está prestes a lançar um
+balão de ar quente. No segundo caso, poderia usá-la para aconselhar
+alguém a não se tornar piloto.
 
-When the sentence is uttered, usually only one meaning is intended. Which of the possible meanings an utterance of a sentence intends is determined by context, or sometimes by how it is uttered (which parts of the sentence are stressed, for instance). Often one interpretation is much more likely to be intended, and in that case it will even be difficult to ``see'' the unintended reading.  This is often the reason why a joke works, as in this example from Groucho Marx:
+Quando a sentença é proferida, geralmente apenas um significado é
+pretendido. Qual dos possíveis significados uma elocução pretende é
+determinado pelo contexto ou, às vezes, pela maneira como é proferida
+(por exemplo, por quais partes da sentença recebem ênfase). Muitas vezes,
+uma interpretação é muito mais provável que tenha sido pretendida e,
+nesse caso, pode ser até difícil perceber a leitura não pretendida. Essa
+é frequentemente a razão pela qual uma piada funciona, como neste exemplo
+de Groucho Marx:
 \begin{compactlist}
-	\item[] One morning I shot an elephant in my pajamas.
-	\item[] How he got in my pajamas, I don't know.
+	\item[] Certa manhã, atirei em um elefante usando meu pijama.
+	\item[] Como ele entrou no meu pijama, não sei.
 \end{compactlist}
 
-Ambiguity is related to, but not the same as, vagueness. An adjective, for instance `rich' or `tall,' is \define{vague} when it is not always possible to determine if it applies or not.  For instance, a person who's 6~ft 4~in (1.9~m) tall is pretty clearly tall, but a building that size is tiny.  Here, context has a role to play in determining what the clear cases and clear non-cases are (`tall for a person,' `tall for a basketball player,' `tall for a building'). Even when the context is clear, however, there will still be cases that fall in a middle range.
+A ambiguidade está relacionada à vagueza, mas não é a mesma coisa que
+ela. Um adjetivo, por exemplo rico ou alto, é
+\define{vago} quando nem sempre é possível determinar se ele se aplica ou
+não. Por exemplo, uma pessoa que mede 6~ft 4~in (1.9~m) é claramente
+alta, mas um edifício dessa altura é minúsculo. Aqui, o contexto
+desempenha um papel na determinação de quais são os casos claros e os
+casos claramente negativos (alto para uma pessoa, alto para
+um jogador de basquete, alto para um edifício). Mesmo quando o
+contexto é claro, contudo, ainda haverá casos que se encontram em uma
+faixa intermediária.
 
-In TFL, we generally aim to avoid ambiguity. We will try to give our symbolization keys in such a way that they do not use ambiguous words or  disambiguate them if a word has different meanings. So, e.g., your symbolization key will need two different sentence letters for `Rebecca went to the (money) bank' and `Rebecca went to the (river) bank.' Vagueness is harder to avoid. Since we have stipulated that every case (and later, every valuation) must make every basic sentence (or sentence letter) either true or false and nothing in between, we cannot accommodate borderline cases in TFL.
+Na LVF, geralmente buscamos evitar a ambiguidade. Tentaremos fornecer
+nossas chaves de simbolização de modo que não usem palavras ambíguas ou
+as desambiguem quando uma palavra tiver significados diferentes. Assim,
+por exemplo, sua chave de simbolização precisará de duas letras
+sentenciais diferentes para Rebecca foi ao banco (financeiro) e
+Rebecca foi ao banco (do rio). A vagueza é mais difícil de evitar.
+Como estipulamos que todo caso (e, mais tarde, toda valoração) deve tornar
+cada sentença básica (ou letra sentencial) verdadeira ou falsa, e nada
+intermediário, não podemos acomodar casos limítrofes na LVF.
 
-It is an important feature of sentences of TFL that they \emph{cannot} be structurally ambiguous. Every sentence of TFL can be read in one, and only one, way. This feature of TFL is also a strength. If an English sentence is ambiguous, TFL can help us make clear what the different meanings are.  Although we are pretty good at dealing with ambiguity in everyday conversation, avoiding it can sometimes be terribly important. Logic can then be usefully applied: it helps philosophers express their thoughts clearly, mathematicians to state their theorems rigorously, and software engineers to specify loop conditions, database queries, or verification criteria unambiguously.
+É uma característica importante das sentenças da LVF que elas
+\emph{não podem} ser estruturalmente ambíguas. Toda sentença da LVF pode
+ser lida de uma, e somente uma, maneira. Essa característica da LVF
+também é uma virtude. Se uma sentença em português é ambígua, a LVF pode
+nos ajudar a tornar claros os diferentes significados. Embora sejamos
+bastante bons em lidar com a ambiguidade na conversa cotidiana, evitá-la
+pode ser extremamente importante em algumas ocasiões. A lógica pode então
+ser aplicada de maneira proveitosa: ajuda filósofos a expressar seus
+pensamentos com clareza, matemáticos a enunciar seus teoremas com rigor e
+engenheiros de software a especificar condições de laço, consultas a
+bancos de dados ou critérios de verificação sem ambiguidade.
 
-Stating things without ambiguity is of crucial importance in the law as well. Here, ambiguity can, without exaggeration, be a matter of life and death. Here is a famous example of where a death sentence hinged on the interpretation of an ambiguity in the law. Roger Casement (1864--1916) was a British diplomat who was famous in his time for publicizing human-rights violations in the Congo and Peru (for which he was knighted in 1911). He was also an Irish nationalist. In 1914--16, Casement secretly travelled to Germany, with which Britain was at war at the time, and tried to recruit Irish prisoners of war to fight against Britain and for Irish independence. Upon his return to Ireland, he was captured by the British and tried for high treason.
+Dizer as coisas sem ambiguidade também é de importância crucial no
+direito. Aqui, a ambiguidade pode, sem exagero, ser uma questão de vida
+ou morte. Eis um famoso exemplo em que uma sentença de morte dependeu da
+interpretação de uma ambiguidade na lei. Roger Casement (1864--1916) foi
+um diplomata britânico famoso em sua época por tornar públicas violações
+dos direitos humanos no Congo e no Peru (pelas quais recebeu o título de
+cavaleiro em 1911). Ele também era um nacionalista irlandês. Entre
+1914--16, Casement viajou secretamente para a Alemanha, com a qual a
+Grã-Bretanha estava em guerra na época, e tentou recrutar prisioneiros de
+guerra irlandeses para lutar contra a Grã-Bretanha e pela independência
+da Irlanda. Ao retornar à Irlanda, foi capturado pelos britânicos e
+julgado por alta traição.
 
-The law under which Casement was tried is the \textit{Treason Act of 1351}. That act specifies what counts as treason, and so the prosecution had to establish at trial that Casement's actions met the criteria set forth in the Treason Act. The relevant passage stipulated that someone is guilty of treason
+A lei com base na qual Casement foi julgado é a
+\textit{Treason Act of 1351}. Essa lei especifica o que conta como
+traição e, por isso, a acusação teve de estabelecer no julgamento que as
+ações de Casement atendiam aos critérios estabelecidos na Treason Act. A
+passagem relevante estipulava que alguém é culpado de traição
 \begin{quote}
-	if a man is adherent to the King's enemies in his
-realm, giving to them aid and comfort in the realm, or elsewhere.
+	se um homem é aliado dos inimigos do Rei em seu
+	reino, prestando-lhes ajuda e conforto no reino, ou em outro lugar.
 \end{quote}
-Casement's defense hinged on the last comma in this sentence, which is not present in the original French text of the law from 1351.  It was not under dispute that Casement had been `adherent to the King's enemies', but the question was whether being adherent to the King's enemies constituted treason only when it was done in the realm, or also when it was done abroad. The defense argued that the law was ambiguous. The claimed ambiguity hinged on whether `or elsewhere' attaches only to `giving aid and comfort to the King's enemies' (the natural reading without the comma), or to both `being adherent to the King's enemies' and `giving aid and comfort to the King's enemies' (the natural reading with the comma).  Although the former interpretation might seem far fetched, the argument in its favor was actually not unpersuasive. Nevertheless, the court decided that the passage should be read with the comma, so Casement's antics in Germany were treasonous, and he was sentenced to death. Casement himself wrote that he was `hanged by a comma'.
+A defesa de Casement dependia da última vírgula dessa sentença, que não
+está presente no texto original em francês da lei de 1351. Não se
+discutia que Casement havia sido aliado dos inimigos do Rei, mas a
+questão era saber se ser aliado dos inimigos do Rei constituía traição
+somente quando isso ocorresse no reino ou também quando ocorresse no
+exterior. A defesa argumentou que a lei era ambígua. A ambiguidade alegada
+dependia de saber se ou em outro lugar se ligava apenas a
+prestar ajuda e conforto aos inimigos do Rei (a leitura natural
+sem a vírgula) ou a ambos ser aliado dos inimigos do Rei e
+prestar ajuda e conforto aos inimigos do Rei (a leitura natural
+com a vírgula). Embora a primeira interpretação possa parecer forçada, o
+argumento em seu favor não era, na realidade, pouco persuasivo. Ainda
+assim, o tribunal decidiu que a passagem deveria ser lida com a vírgula,
+de modo que as ações de Casement na Alemanha eram traiçoeiras, e ele foi
+condenado à morte. O próprio Casement escreveu que foi
+enforcado por uma vírgula.
 
-We can use TFL to symbolize both readings of the passage, and thus to provide a disambiguiation. First, we need a symbolization key:
+Podemos usar a LVF para simbolizar as duas leituras da passagem e,
+assim, fornecer uma desambiguação. Primeiro, precisamos de uma chave de
+simbolização:
 \begin{ekey}
-	\item[A] Casement was adherent to the King's enemies in the realm
-	\item[G] Casement gave aid and comfort to the King's enemies in the realm
-	\item[B] Casement was adherent to the King's enemies abroad
-	\item[H] Casement gave aid and comfort to the King's enemies abroad
+	\item[A] Casement era aliado dos inimigos do Rei no reino
+	\item[G] Casement prestou ajuda e conforto aos inimigos do Rei no reino
+	\item[B] Casement era aliado dos inimigos do Rei no exterior
+	\item[H] Casement prestou ajuda e conforto aos inimigos do Rei no exterior
 \end{ekey}
-The interpretation according to which Casement's behavior was not treasonous is this:
+A interpretação segundo a qual o comportamento de Casement não foi
+traiçoeiro é:
 \[A \lor (G \lor H)\]
-The interpretation which got him executed, on the other hand, can be symbolized by:
+A interpretação que levou à sua execução, por outro lado, pode ser
+simbolizada por:
 \[(A \lor B) \lor (G \lor H)\]
-Remember that in the case we're dealing with, Casement was adherent to the King's enemies abroad ($B$~is true), but not in the realm, and he did not give the King's enemies aid or comfort in or outside the realm ($A$, $G$, and~$H$ are false).
+Lembre-se de que, no caso de que estamos tratando, Casement era aliado
+dos inimigos do Rei no exterior ($B$ é verdadeira), mas não no reino, e
+não prestou ajuda ou conforto aos inimigos do Rei dentro ou fora do reino
+($A$, $G$ e $H$ são falsas).
 
-One common source of structural ambiguity in English arises from its lack of parentheses. For instance, if I say `I like movies that are not long and boring', you will most likely think that what I dislike are movies that are long and boring. A less likely, but possible, interpretation is that I like movies that are both (a) not long and (b) boring. The first reading is more likely because who likes boring movies? But what about `I like dishes that are not sweet and flavorful'? Here, the more likely interpretation is that I like savory, flavorful dishes.  (Of course, I could have said that better, e.g., `I like dishes that are not sweet, yet flavorful'.) Similar ambiguities result from the interaction of `and' with `or'. For instance, suppose I ask you to send me a picture of a small and dangerous or stealthy animal.  Would a leopard count? It's stealthy, but not small. So it depends whether I'm looking for small animals that are dangerous or stealthy (leopard doesn't count), or whether I'm after either a small, dangerous animal or a stealthy animal (of any size).
+Uma fonte comum de ambiguidade estrutural em português surge da ausência
+de parênteses. Por exemplo, se eu disser Gosto de filmes que não
+são longos e entediantes, você provavelmente pensará que o que eu não
+gosto são filmes longos e entediantes. Uma interpretação menos provável,
+mas possível, é que eu gosto de filmes que são ao mesmo tempo (a) não
+longos e (b) entediantes. A primeira leitura é mais provável porque quem
+gosta de filmes entediantes? Mas e quanto a Gosto de pratos que não
+são doces e saborosos? Aqui, a interpretação mais provável é que eu gosto
+de pratos salgados e saborosos. (É claro que eu poderia ter dito isso
+melhor, por exemplo, Gosto de pratos que não são doces, mas são
+saborosos.) Ambiguidades semelhantes resultam da interação entre
+e e ou. Por exemplo, suponha que eu peça que você me envie
+uma foto de um animal pequeno e perigoso ou furtivo. Um leopardo serviria?
+Ele é furtivo, mas não é pequeno. Portanto, depende de eu estar procurando
+animais pequenos que sejam perigosos ou furtivos (o leopardo não serve) ou
+de estar atrás de um animal pequeno e perigoso ou de um animal furtivo (de
+qualquer tamanho).
 
-These kinds of ambiguities are called \emph{scope ambiguities}, since they depend on whether or not a connective is in the scope of another. For instance, the sentence, `\textit{Avengers: Endgame} is not long and boring' is ambiguous between:
+Esses tipos de ambiguidade são chamados de \emph{ambiguidades de escopo},
+pois dependem de um conectivo estar ou não no escopo de outro. Por
+exemplo, a sentença \textit{Avengers: Endgame} não é longo e entediante é
+ambígua entre:
 \begin{enumerate}
-	\item\label{scamb1} \textit{Avengers: Endgame} is not: both long and boring.
-	\item\label{scamb2} \textit{Avengers: Endgame} is both: not long and boring.
+	\item\label{scamb1} \textit{Avengers: Endgame} não é: simultaneamente longo e entediante.
+	\item\label{scamb2} \textit{Avengers: Endgame} é, ao mesmo tempo: não longo e entediante.
 \end{enumerate}
-\Cref*{scamb2} is certainly false, since \textit{Avengers: Endgame} is over three hours long. Whether you think~\cref*{scamb1} is true depends on if you think it is boring or not. We can use the symbolization key:
+\Cref*{scamb2} é certamente falsa, pois \textit{Avengers: Endgame} tem
+mais de três horas de duração. Se você considera \cref*{scamb1}
+verdadeira depende de considerar o filme entediante ou não. Podemos usar
+a chave de simbolização:
 \begin{ekey}
-	\item[B] \textit{Avengers: Endgame} is boring
-	\item[L] \textit{Avengers: Endgame} is long
+	\item[B] \textit{Avengers: Endgame} é entediante
+	\item[L] \textit{Avengers: Endgame} é longo
 \end{ekey}
-\Cref*{scamb1} can now be symbolized as `$\enot(L \eand B)$', whereas \cref*{scamb2} would be `$\enot L \eand B$'. In the first case, the `\eand' is in the scope of `\enot', in the second case `\enot' is in the scope of `\eand'.
+\Cref*{scamb1} pode agora ser simbolizada por $\enot(L \eand B)$,
+enquanto \cref*{scamb2} seria $\enot L \eand B$. No primeiro caso, o
+\eand está no escopo de \enot; no segundo, \enot está no escopo de
+\eand.
 
-The sentence `Tai Lung is small and dangerous or stealthy' is ambiguous between:
+A sentença Tai Lung é pequeno e perigoso ou furtivo é ambígua
+entre:
 \begin{enumerate}
-	\item\label{scamb3} Tai Lung is either both small and dangerous or stealthy.
-	\item\label{scamb4} Tai Lung is both small and either dangerous or stealthy.
+	\item\label{scamb3} Tai Lung é ou ao mesmo tempo pequeno e perigoso ou furtivo.
+	\item\label{scamb4} Tai Lung é pequeno e ou perigoso ou furtivo.
 \end{enumerate}
-We can use the following symbolization key:
+Podemos usar a seguinte chave de simbolização:
 \begin{ekey}
-	\item[D] Tai Lung is dangerous
-	\item[S] Tai Lung is small
-	\item[T] Tai Lung is stealthy
+	\item[D] Tai Lung é perigoso
+	\item[S] Tai Lung é pequeno
+	\item[T] Tai Lung é furtivo
 \end{ekey}
-The symbolization of \cref*{scamb3} is `$(S \eand D) \eor T$' and that of \cref*{scamb4} is `$S \eand (D \eor T)$'. In the first, `\eand' is in the scope of `\eor', and in the second `\eor' is in the scope of `\eand'.
+A simbolização de \cref*{scamb3} é $(S \eand D) \eor T$ e a de
+\cref*{scamb4} é $S \eand (D \eor T)$. Na primeira, \eand está no escopo
+de \eor; na segunda, \eor está no escopo de \eand.
 
 \practiceproblems
 \solutions
-\problempart The following sentences are ambiguous. Give symbolization keys for each and symbolize the different readings.
+\problempart As seguintes sentenças são ambíguas. Forneça chaves de simbolização para cada uma e simbolize as diferentes leituras.
 \begin{compactlist}
-	\item Haskell is a birder and enjoys watching cranes.
-	\item The zoo has lions or tigers and bears.
-	\item The flower is not red or fragrant.
+	\item Haskell é observador de aves e gosta de observar grous.
+	\item O zoológico tem leões ou tigres e ursos.
+	\item A flor não é vermelha ou perfumada.
 \end{compactlist}
 
-\chapter{Use and mention}\label{s:UseMention}
-In this Part, we have talked a lot \emph{about} sentences. So we should pause to explain an important, and very general, point.
+\chapter{Uso e menção}\label{s:UseMention}
+Nesta Parte, falamos muito \emph{sobre} sentenças. Portanto, devemos
+parar para explicar um ponto importante e muito geral.
 
-\section{Quotation conventions}
-Consider these two sentences:
+\section{Convenções de citação}
+Considere estas duas sentenças:
 	\begin{itemize}
-		\item Aristotle is the founding father of logic.
-		\item The expression `Aristotle' is composed of one uppercase letter and eight lowercase letters.
+		\item Aristotle é o fundador da lógica.
+		\item A expressão `Aristotle' é composta por uma letra maiúscula e oito letras minúsculas.
 	\end{itemize}
-When we want to talk about the founding father of logic, we \emph{use}
-his name. When we want to talk about the name of the founding father
-of logic, we \emph{mention} that name, which we do by putting it in
-quotation marks.
+Quando queremos falar sobre o fundador da lógica, \emph{usamos} seu nome.
+Quando queremos falar sobre o nome do fundador da lógica, \emph{mencionamos}
+esse nome, o que fazemos colocando-o entre aspas.
 
-There is a general point here. When we want to talk about things in the world, we just \emph{use} words. When we want to talk about words, we typically have to \emph{mention} those words. We need to indicate that we are mentioning them, rather than using them. To do this, some convention is needed. We can put them in quotation marks, or display them centrally in the page (say). So this sentence:
+Há um ponto geral aqui. Quando queremos falar sobre coisas no mundo,
+simplesmente \emph{usamos} palavras. Quando queremos falar sobre palavras,
+normalmente temos de \emph{mencionar} essas palavras. Precisamos indicar que
+as estamos mencionando, em vez de usá-las. Para isso, é necessária alguma
+convenção. Podemos colocá-las entre aspas ou, por exemplo, exibi-las
+centralizadas na página. Assim, esta sentença:
 	\begin{itemize}
-		\item `Aristotle' was an ancient Greek philosopher.
+		\item `Aristotle' foi um filósofo grego antigo.
 	\end{itemize}
-says that some \emph{expression} was an ancient Greek philosopher.
-That's false. The \emph{man} was a Greek philosopher; his \emph{name} wasn't. Conversely,
-this sentence:
+diz que alguma \emph{expressão} foi um filósofo grego antigo.
+Isso é falso. O \emph{homem} era um filósofo grego; seu \emph{nome} não
+era. Inversamente, esta sentença:
 	\begin{itemize}
-		\item Aristotle is composed of one uppercase letter and eight lowercase letters.
+		\item Aristotle é composto por uma letra maiúscula e oito letras minúsculas.
 	\end{itemize}
-also says something false: Aristotle is a man (or was when he was alive), made of flesh rather than letters. One final example:
+também diz algo falso: Aristotle é um homem (ou era, quando estava vivo),
+feito de carne, e não de letras. Um último exemplo:
 	\begin{itemize}
-		\item ``\,`Aristotle'\,'' is the name of `Aristotle'.
-	\end{itemize} 
-On the left-hand-side, here, we have the name of a name. On the right hand side, we have a name. Perhaps this kind of sentence only occurs in logic textbooks, but it is true nonetheless.
+		\item ``\,`Aristotle'\,'' é o nome de `Aristotle'.
+	\end{itemize}
+Aqui, no lado esquerdo, temos o nome de um nome. No lado direito, temos um
+nome. Talvez esse tipo de sentença só ocorra em livros-texto de lógica,
+mas, ainda assim, é verdadeira.
 
-Those are just general rules for quotation, and you should observe them carefully in all your work! To be clear, the quotation-marks here do not indicate reported speech. They indicate that you are moving from talking about an object, to talking about a name of that object.
+Essas são apenas regras gerais para o uso de aspas, e você deve observá-las
+cuidadosamente em todo o seu trabalho! Para deixar claro, as aspas aqui não
+indicam discurso relatado. Elas indicam que você está passando de falar
+sobre um objeto para falar sobre o nome desse objeto.
 
 
-\section{Object language and metalanguage}
-These general quotation conventions are very important for us. After all, we are describing a formal language here, TFL, and so we must often \emph{mention} expressions from TFL.
+\section{Linguagem-objeto e metalinguagem}
+Essas convenções gerais de citação são muito importantes para nós. Afinal,
+estamos descrevendo aqui uma linguagem formal, a LVF, e portanto
+frequentemente precisamos \emph{mencionar} expressões da LVF.
 
-When we talk about a language, the language that we are talking about is called the \define{object language}. The language that we use to talk about the object language is called the \define{metalanguage}.
+Quando falamos sobre uma linguagem, a linguagem sobre a qual estamos falando
+é chamada de \define{linguagem-objeto}. A linguagem que usamos para falar
+sobre a linguagem-objeto é chamada de \define{metalinguagem}.
 \label{def.metalanguage}
 \newglossaryentry{object language}
 {
-name=object language,
-description={A language that is constructed and studied by logicians. In this textbook,
- the object languages are TFL and FOL}
+name=linguagem-objeto,
+description={Uma linguagem que é construída e estudada por lógicos. Neste livro,
+ as linguagens-objeto são a LVF e a FOL}
 }
 
 \newglossaryentry{metalanguage}
 {
-name=metalanguage,
-description={The language logicians use to talk about the object language. In this textbook, the metalanguage is English, supplemented by certain symbols like metavariables and technical terms like ``valid''}
+name=metalinguagem,
+description={A linguagem que lógicos usam para falar sobre a linguagem-objeto. Neste livro, a metalinguagem é o português, complementado por certos símbolos, como metavariáveis, e por termos técnicos, como ``válido''}
 }
 
-For the most part, the object language in this chapter has been the formal language that we have been developing: TFL. The metalanguage is English. Not conversational English exactly, but English supplemented with some additional vocabulary to help us get along.
+Na maior parte deste capítulo, a linguagem-objeto foi a linguagem formal
+que estivemos desenvolvendo: a LVF. A metalinguagem é o português. Não
+exatamente o português coloquial, mas o português complementado por algum
+vocabulário adicional para nos ajudar a prosseguir.
 
-Now, we have used uppercase letters as sentence letters of TFL:
+Agora, usamos letras maiúsculas como letras sentenciais da LVF:
 	$$A, B, C, Z, A_1, B_4, A_{25}, J_{375},\ldots$$
-These are sentences of the object language (TFL). They are not sentences of English. So we must not say, for example:
+Estas são sentenças da linguagem-objeto (LVF). Elas não são sentenças em
+português. Portanto, não devemos dizer, por exemplo:
 	\begin{itemize}
-		\item $D$ is a sentence letter of TFL.
+		\item $D$ é uma letra sentencial da LVF.
 	\end{itemize}
-Obviously, we are trying to come out with an English sentence that says something about the object language (TFL), but `$D$' is a sentence of TFL, and not part of English. So the preceding is gibberish, just like:
+Obviamente, estamos tentando produzir uma sentença em português que diga
+algo sobre a linguagem-objeto (LVF), mas `$D$' é uma sentença da LVF, e
+não parte do português. Assim, o que foi escrito acima é um amontoado de
+símbolos sem sentido, tal como:
 	\begin{itemize}
-		\item \foreignlanguage{german}{Schnee ist wei\ss} is a German sentence.
+		\item \foreignlanguage{german}{Schnee ist wei\ss} é uma sentença alemã.
 	\end{itemize}
-What we surely meant to say, in this case, is:
+O que certamente queríamos dizer, nesse caso, é:
 	\begin{itemize}
-		\item `\foreignlanguage{german}{Schnee ist wei\ss}' is a German sentence.
+		\item `\foreignlanguage{german}{Schnee ist wei\ss}' é uma sentença alemã.
 	\end{itemize}
-Equally, what we meant to say above is just:
+Do mesmo modo, o que queríamos dizer acima é simplesmente:
 	\begin{itemize}
-		\item `$D$' is a sentence letter of TFL.
+		\item `$D$' é uma letra sentencial da LVF.
 	\end{itemize}
-The general point is that, whenever we want to talk in English about some specific expression of TFL, we need to indicate that we are \emph{mentioning} the expression, rather than \emph{using} it. We can either deploy quotation marks, or we can adopt some similar convention, such as  placing it centrally in the page.
+O ponto geral é que, sempre que queremos falar em português sobre alguma
+expressão específica da LVF, precisamos indicar que estamos
+\emph{mencionando} a expressão, em vez de \emph{usá-la}. Podemos empregar
+aspas ou adotar alguma convenção semelhante, como colocá-la centralizada
+na página.
 
 
-\section{Metavariables}\label{s:Metavariables}
-However, we do not just want to talk about \emph{specific} expressions of TFL. We also want to be able to talk about \emph{any arbitrary} sentence of TFL. Indeed, we had to do this in \cref{s:Sentences}, when we presented the inductive definition of a sentence of TFL. We used uppercase script letters to do this, namely:
+\section{Metavariáveis}\label{s:Metavariables}
+No entanto, não queremos falar apenas sobre expressões \emph{específicas}
+da LVF. Também queremos poder falar sobre
+\emph{qualquer sentença arbitrária} da LVF. De fato, tivemos de fazer isso
+em \cref{s:Sentences}, quando apresentamos a definição indutiva de uma
+sentença da LVF. Usamos letras maiúsculas cursivas para isso, a saber:
 	$$\metav{A}, \metav{B}, \metav{C}, \metav{D}, \ldots$$
-These symbols do not belong to TFL. Rather, they are part of our (augmented) metalanguage that we use to talk about \emph{any} expression of TFL. To explain why we need them, recall the second clause of the recursive definition of a sentence of TFL:
+Esses símbolos não pertencem à LVF. Em vez disso, fazem parte da nossa
+metalinguagem (ampliada), que usamos para falar sobre \emph{qualquer}
+expressão da LVF. Para explicar por que precisamos deles, recorde a segunda
+cláusula da definição recursiva de uma sentença da LVF:
 	\begin{compactlist}
-		\item[2.] If $\metav{A}$ is a sentence, then $\enot \metav{A}$ is a sentence.
+		\item[2.] Se $\metav{A}$ é uma sentença, então $\enot \metav{A}$ é uma sentença.
 	\end{compactlist}
-This talks about \emph{arbitrary} sentences. If we had instead offered:
+Isso fala sobre sentenças \emph{arbitrárias}. Se tivéssemos oferecido, em
+vez disso:
 	\begin{compactlist}
-		\item[2$'$.] If `$A$' is a sentence, then `$\enot A$' is a sentence.
+		\item[2$'$.] Se `$A$' é uma sentença, então `$\enot A$' é uma sentença.
 	\end{compactlist}
-this would not have allowed us to determine whether `$\enot B$' is a sentence. To emphasize:
+isso não nos permitiria determinar se `$\enot B$' é uma sentença. Para
+enfatizar:
 	\factoidbox{
-	  `$\metav{A}$' is a symbol (called a \define{metavariable}) in augmented English, which we use to talk about expressions of TFL. 	`$A$' is a particular sentence letter of TFL.}
+	  `$\metav{A}$' é um símbolo (chamado de \define{metavari\'avel}) no português ampliado, que usamos para falar sobre expressões da LVF. `$A$' é uma letra sentencial particular da LVF.}
 
         \newglossaryentry{metavariables}
 {
-name=metavariables,
-description={A variable in the metalanguage that can represent any sentence in the object language}
+name=metavariáveis,
+description={Uma variável na metalinguagem que pode representar qualquer sentença na linguagem-objeto}
 }
-But this last example raises a further complication, concerning quotation conventions. We did not include any quotation marks in the second clause of our inductive definition. Should we have done so?
+Mas este último exemplo levanta uma complicação adicional, relacionada às
+convenções de citação. Não incluímos aspas na segunda cláusula da nossa
+definição indutiva. Deveríamos tê-las incluído?
 
-The problem is that the expression on the right-hand-side of this rule, i.e., `$\enot\metav{A}$', is not a sentence of English, since it contains~`$\enot$'. So we might try to write:
+O problema é que a expressão do lado direito dessa regra, isto é,
+`$\enot\metav{A}$', não é uma sentença em português, pois contém
+`$\enot$'. Portanto, poderíamos tentar escrever:
 	\begin{numberlist}
-		\item[2$''$.] If \metav{A} is a sentence, then `$\enot \metav{A}$' is a sentence.
+		\item[2$''$.] Se \metav{A} é uma sentença, então `$\enot \metav{A}$' é uma sentença.
 	\end{numberlist}
-But this is no good: `$\enot \metav{A}$' is not a TFL sentence, since `$\metav{A}$' is a symbol of (augmented) English rather than a symbol of TFL.
+Mas isso não serve: `$\enot \metav{A}$' não é uma sentença da LVF, pois
+`$\metav{A}$' é um símbolo do português (ampliado), e não um símbolo da
+LVF.
 
-What we really want to say is something like this:
+O que realmente queremos dizer é algo como:
 	\begin{numberlist}
-		\item[2$'''$.] If \metav{A} is a sentence, then the result of concatenating the symbol `$\enot$' with the sentence \metav{A} is a sentence.
+		\item[2$'''$.] Se \metav{A} é uma sentença, então o resultado de concatenar o símbolo `$\enot$' com a sentença \metav{A} é uma sentença.
 	\end{numberlist}
-This is impeccable, but rather long-winded. %Quine introduced a convention that speeds things up here. In place of (2$''$), he suggested:
+Isso é impecável, mas bastante prolixo. %Quine introduziu uma convenção que acelera as coisas aqui. Em lugar de (2$''$), ele sugeriu:
 %	\begin{numberlist}
-%		\item[2$'''$.] If \metav{A} and \metav{B} are sentences, then $\ulcorner (\metav{A}\eand\metav{B})\urcorner$ is a sentence
+%		\item[2$'''$.] Se \metav{A} e \metav{B} são sentenças, então $\ulcorner (\metav{A}\eand\metav{B})\urcorner$ é uma sentença
 %	\end{numberlist}
-%The rectangular quote-marks are sometimes called `Quine quotes', after Quine. The general interpretation of an expression like `$\ulcorner (\metav{A}\eand\metav{B})\urcorner$' is in terms of rules for concatenation.
-But we can avoid long-windedness by creating our own conventions. We can perfectly well stipulate that an expression like `$\enot \metav{A}$' should simply be read \emph{directly} in terms of rules for concatenation. So, \emph{officially}, the metalanguage expression `$\enot \metav{A}$'
-simply abbreviates:
+%As aspas retangulares às vezes são chamadas de aspas de Quine, em homenagem a Quine. A interpretação geral de uma expressão como `$\ulcorner (\metav{A}\eand\metav{B})\urcorner$' é dada em termos de regras de concatenação.
+Mas podemos evitar a prolixidade criando nossas próprias convenções. Podemos
+estipular perfeitamente que uma expressão como `$\enot \metav{A}$' deve
+simplesmente ser lida \emph{diretamente} em termos de regras de concatenação.
+Assim, \emph{oficialmente}, a expressão da metalinguagem `$\enot \metav{A}$'
+simplesmente abrevia:
 \begin{quote}
-	the result of concatenating the symbol `$\enot$' with the sentence \metav{A}
+	o resultado de concatenar o símbolo `$\enot$' com a sentença \metav{A}
 \end{quote}
-and similarly, for expressions like `$(\metav{A} \eand \metav{B})$', `$(\metav{A} \eor \metav{B})$', etc.
+e, de modo semelhante, para expressões como
+`$(\metav{A} \eand \metav{B})$' e `$(\metav{A} \eor \metav{B})$' etc.
 
 
-\section{Quotation conventions for arguments}
-One of our main purposes for using TFL is to study arguments, and that will be our concern in \cref{ch.TruthTables}. In English, the premises of an argument are often expressed by individual sentences, and the conclusion by a further sentence. Since we can symbolize English sentences, we can symbolize English arguments using TFL.
+\section{Convenções de citação para argumentos}
+Uma das nossas principais finalidades ao usar a LVF é estudar argumentos, e
+essa será nossa preocupação em \cref{ch.TruthTables}. Em português, as
+premissas de um argumento são frequentemente expressas por sentenças
+individuais, e a conclusão por uma sentença adicional. Como podemos
+simbolizar sentenças em português, podemos simbolizar argumentos em
+português usando a LVF.
 
-Or rather, we can use TFL to symbolize each of the \emph{sentences} used in an English argument. However, TFL itself has no way to flag some of them as the \emph{premises} and another as the \emph{conclusion} of an argument.  (Contrast this with natural English, which uses words like `so', `therefore', etc., to mark that a sentence is the \emph{conclusion} of an argument.)
+Ou melhor, podemos usar a LVF para simbolizar cada uma das \emph{sentenças}
+usadas em um argumento em português. A própria LVF, contudo, não tem como
+sinalizar que algumas delas são as \emph{premissas} e outra é a
+\emph{conclusão} de um argumento. (Compare isso com o português natural,
+que usa palavras como `então`, `portanto`, etc., para indicar
+que uma sentença é a \emph{conclusão} de um argumento.)
 
-%So, if we want to symbolize an \emph{argument} in TFL, what are we to do? 
+%Portanto, se quisermos simbolizar um \emph{argumento} na LVF, o que devemos fazer?
 
-%An obvious thought would be to add a new symbol to the \emph{object} language of TFL itself, which we could use to separate the premises from the conclusion of an argument. However, adding a new symbol to our object language would add significant complexity to that language, since that symbol would require an official syntax.\footnote{\emph{The following footnote should be read only after you have finished the entire book!} And it would require a semantics. Here, there are deep barriers concerning the semantics. First: an object-language symbol which adequately expressed `therefore' for TFL would not be truth-functional. (\emph{Exercise}: why?) Second: a paradox known as `validity Curry' shows that FOL itself \emph{cannot} be augmented with an adequate, object-language `therefore'.} 
+%Uma ideia óbvia seria adicionar um novo símbolo à própria linguagem
+%\emph{objeto} da LVF, que poderíamos usar para separar as premissas da
+%conclusão de um argumento. No entanto, adicionar um novo símbolo à nossa
+%linguagem-objeto acrescentaria uma complexidade significativa a essa
+%linguagem, pois esse símbolo exigiria uma sintaxe oficial.\footnote{\emph{A
+%nota de rodapé a seguir só deve ser lida depois que você tiver terminado o
+%livro inteiro!} E exigiria uma semântica. Aqui, há barreiras profundas
+%relativas à semântica. Primeiro: um símbolo da linguagem-objeto que
+%expressasse adequadamente `portanto` para a LVF não seria
+%verofuncional. (\emph{Exercício}: por quê?) Segundo: um paradoxo conhecido
+%como `Curry da validade` mostra que a própria FOL \emph{não pode} ser
+%ampliada com um `portanto` adequado na linguagem-objeto.)}
 
-So, we need another bit of notation. Suppose we want to symbolize the premises of an argument with $\metav{A}_1$, \dots,~$\metav{A}_n$ and the conclusion with $\metav{C}$. Then we will write:
+Portanto, precisamos de outro elemento de notação. Suponha que queiramos
+simbolizar as premissas de um argumento com
+$\metav{A}_1$, \dots,~$\metav{A}_n$ e a conclusão com $\metav{C}$. Então
+escreveremos:
 $$\metav{A}_1, \ldots, \metav{A}_n \therefore \metav{C}$$
-The role of the symbol `$\therefore$' is simply to indicate which sentences are the premises and which is the conclusion.
+O papel do símbolo `$\therefore$' é simplesmente indicar quais sentenças
+são as premissas e qual é a conclusão.
 
-%Strictly, this extra notation is \emph{unnecessary}. After all, we could always just write things down long-hand, saying: the premises of the argument are well symbolized by $\metav{A}_1, \ldots \metav{A}_n$, and the conclusion of the argument is well symbolized by $\metav{C}$. But having some convention will save us some time. Equally, the particular convention we chose was fairly \emph{arbitrary}. After all, an equally good convention would have been to underline the conclusion of the argument. Still, this is the convention we will use.
+%Estritamente falando, essa notação adicional é \emph{desnecessária}. Afinal,
+%poderíamos sempre escrever tudo por extenso, dizendo: as premissas do
+%argumento são bem simbolizadas por $\metav{A}_1, \ldots \metav{A}_n$, e a
+%conclusão do argumento é bem simbolizada por $\metav{C}$. Mas ter alguma
+%convenção nos poupará tempo. Do mesmo modo, a convenção particular que
+%escolhemos foi bastante \emph{arbitrária}. Afinal, uma convenção igualmente
+%boa teria sido sublinhar a conclusão do argumento. Ainda assim, esta é a
+%convenção que usaremos.
 
-Strictly, the symbol `$\therefore$' will not be a part of the object language, but of the \emph{metalanguage}. As such, one might think that we would need to put quote-marks around the TFL-sentences which flank it. That is a sensible thought, but adding these quote-marks would make things harder to read. Moreover---and as above---recall that \emph{we} are stipulating some new conventions. So, we can simply stipulate that these quote-marks are unnecessary. That is, we can simply write:
+Estritamente, o símbolo `$\therefore$' não fará parte da linguagem-objeto,
+mas da \emph{metalinguagem}. Como tal, alguém poderia pensar que
+precisaríamos colocar aspas nas sentenças da LVF que o ladeiam. É um
+pensamento sensato, mas adicionar essas aspas tornaria as coisas mais
+difíceis de ler. Além disso — como acima — recorde que \emph{nós} estamos
+estipulando algumas convenções novas. Assim, podemos simplesmente estipular
+que essas aspas são desnecessárias. Isto é, podemos simplesmente escrever:
 $$A, A \eif B \therefore B$$
-\emph{without any quotation marks}, to indicate an argument whose premises are (symbolized by) `$A$' and `$A \eif B$' and whose conclusion is (symbolized by)~`$B$'.
+\emph{sem quaisquer aspas}, para indicar um argumento cujas premissas são
+(simbolizadas por) `$A$' e `$A \eif B$' e cuja conclusão é
+(simbolizada por) `$B$'.
