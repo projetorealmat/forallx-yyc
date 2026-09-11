@@ -92,129 +92,116 @@ F & F & T
 O conectivo com esta tabela-verdade também é frequentemente chamado de
 \define{bicondicional material}. Como era de esperar, o bicondicional é
 comutativo.
-\chapter{Truth-functional connectives}
+\chapter{Conectivos verofuncionais}
 \label{s:TruthFunctionality}
 
-\section{The idea of truth-functionality}
-Let's introduce an important idea.
+\section{A ideia da verofuncionalidade}
+Introduzamos uma ideia importante.
 	\factoidbox{
-		A connective is \define{truth-functional} \ifeff{} the truth value of a sentence with that connective as its main logical operator is uniquely determined by the truth value(s) of the constituent sentence(s).
+		Um conectivo é \define{verofuncional} \ifeff{} o valor de verdade de uma sentença que tem esse conectivo como seu operador lógico principal é determinado univocamente pelo(s) valor(es) de verdade da(s) sentença(s) constituintes.
 	}
 \newglossaryentry{truth-functional connective}
 {
-name=truth-functional connective,
-description={An operator that builds larger sentences out of smaller ones and fixes the \gls{truth value} of the resulting sentence based only on the truth value of the component sentences}
+name=conectivo verofuncional,
+description={Um operador que constrói sentenças maiores a partir de sentenças menores e fixa o \gls{truth value} da sentença resultante com base apenas no valor de verdade das sentenças componentes}
 }
         
-Every connective in TFL is truth-functional. The truth value of a negation is uniquely determined by the truth value of the unnegated sentence. The truth value of a conjunction is uniquely determined by the truth value of both conjuncts. The truth value of a disjunction is uniquely determined by the truth value of both disjuncts, and so on. To determine the truth value of some TFL sentence, we only need to know the truth value of its components.
+Todo conectivo da LVF é verofuncional. O valor de verdade de uma negação é determinado univocamente pelo valor de verdade da sentença não negada. O valor de verdade de uma conjunção é determinado univocamente pelo valor de verdade de ambos os conjuntos. O valor de verdade de uma disjunção é determinado univocamente pelo valor de verdade de ambos os disjuntos, e assim por diante. Para determinar o valor de verdade de uma sentença da LVF, só precisamos conhecer o valor de verdade de seus componentes.
 
-This is what gives TFL its name: it is \emph{truth-functional logic}.
+É isso que dá nome à LVF: ela é uma \emph{lógica proposicional verofuncional}.
 
-Many languages use connectives that are not truth-functional. In English, for example, we can form a new sentence from any simpler sentence by prefixing it with `It is necessarily the case that\ldots'. The truth value of this new sentence is not fixed solely by the truth value of the original sentence. For consider two true sentences:
+Muitas línguas usam conectivos que não são verofuncionais. Em português, por exemplo, podemos formar uma nova sentença a partir de qualquer sentença mais simples prefixando-a com \textquotedblleft{}É necessariamente o caso que\ldots\textquotedblright{}. O valor de verdade dessa nova sentença não é fixado apenas pelo valor de verdade da sentença original. Considere duas sentenças verdadeiras:
 	\begin{compactlist}
 		\item $2 + 2 = 4$
-		\item Shostakovich wrote fifteen string quartets.
+		\item Shostakovich compôs quinze quartetos de cordas.
 	\end{compactlist}
-Whereas it is necessarily the case that $2 + 2 = 4$, it is not \emph{necessarily} the case that Shostakovich wrote fifteen string quartets. If Shostakovich had died earlier, he would have failed to finish Quartet no.~15; if he had lived longer, he might have written a few more. So `It is necessarily the case that\ldots' is not \emph{truth-functional}.
+Embora seja necessariamente o caso que $2 + 2 = 4$, não é \emph{necessariamente} o caso que Shostakovich compôs quinze quartetos de cordas. Se Shostakovich tivesse morrido antes, não teria conseguido terminar o Quarteto nº~15; se tivesse vivido mais, talvez tivesse composto mais alguns. Portanto, \textquotedblleft{}É necessariamente o caso que\ldots\textquotedblright{} não é \emph{verofuncional}.
 
+\section{Simbolizar versus traduzir}
+Todos os conectivos da LVF são verofuncionais, mas, mais do que isso: eles realmente não fazem \emph{nada além de} nos mapear entre valores de verdade.
 
-\section{Symbolizing versus translating}
-All of the connectives of TFL are truth-functional, but more than that: they really do nothing \emph{but} map us between truth values.  
-
-When we symbolize a sentence or an argument in TFL, we ignore everything \emph{besides} the contribution that the truth values of a component might make to the truth value of the whole. There are subtleties to our ordinary claims that far outstrip their mere truth values. Sarcasm; poetry; snide implicature; emphasis; these are important parts of everyday discourse, but none of this is retained in TFL. As remarked in \cref{s:TFLConnectives}, TFL cannot capture the subtle differences between the following English sentences:
+Ao simbolizarmos uma sentença ou um argumento na LVF, ignoramos tudo \emph{além} da contribuição que os valores de verdade de um componente podem dar ao valor de verdade do todo. Há sutilezas em nossas afirmações ordinárias que vão muito além de seus meros valores de verdade. Sarcasmo; poesia; implicatura maliciosa; ênfase; tudo isso são partes importantes do discurso cotidiano, mas nada disso é preservado na LVF. Como observamos em \cref{s:TFLConnectives}, a LVF não consegue captar as diferenças sutis entre as seguintes sentenças em português:
 	\begin{compactlist}
-		\item Dana is a logician and Dana is a nice person
-		\item Although Dana is a logician, Dana is a nice person
-		\item Dana is a logician despite being a nice person
-		\item Dana is a nice person, but also a logician
-		\item Dana's being a logician notwithstanding, he is a nice person
+		\item Dana é uma lógica e Dana é uma pessoa gentil
+		\item Embora Dana seja uma lógica, Dana é uma pessoa gentil
+		\item Dana é uma lógica apesar de ser uma pessoa gentil
+		\item Dana é uma pessoa gentil, mas também é uma lógica
+		\item Não obstante Dana ser uma lógica, ela é uma pessoa gentil
 	\end{compactlist}
-All of the above sentences will be symbolized with the same TFL sentence, perhaps `$L \eand N$'.
+Todas as sentenças acima serão simbolizadas com a mesma sentença da LVF, talvez \textquotedblleft{}$L \eand N$\textquotedblright{}.
 
-Now, we keep saying that we use TFL sentences to \emph{symbolize} English sentences. Many other textbooks talk about \emph{translating} English sentences into TFL. However, a good translation should preserve certain facets of meaning, and---as we just saw---TFL just cannot do that. This is why we will speak of \emph{symbolizing} English sentences, rather than of \emph{translating} them.
+Continuamos dizendo que usamos sentenças da LVF para \emph{simbolizar} sentenças em português. Muitos outros livros didáticos falam em \emph{traduzir} sentenças em português para a LVF. Entretanto, uma boa tradução deveria preservar certos aspectos do significado e — como acabamos de ver — a LVF simplesmente não consegue fazer isso. É por isso que falaremos em \emph{simbolizar} sentenças em português, em vez de \emph{traduzi-las}.
 
-This affects how we should understand our symbolization keys. Consider a key like:
+Isso afeta a maneira como devemos entender nossas chaves de simbolização. Considere uma chave como:
 	\begin{ekey}
-		\item[L] Dana is a logician.
-		\item[N] Dana is a nice person.
+		\item[L] Dana é uma lógica.
+		\item[N] Dana é uma pessoa gentil.
 	\end{ekey}
-Other textbooks will understand this as a stipulation that the TFL sentence `$L$' should \emph{mean} that Dana is a logician, and that the TFL sentence `$N$' should \emph{mean} that Dana is a nice person. But TFL just is totally unequipped to deal with \emph{meaning}. The preceding symbolization key is doing no more and no less than stipulating that the TFL sentence `$L$' should take the same truth value as the English sentence `Dana is a logician' (whatever that might be), and that the TFL sentence `$N$' should take the same truth value as the English sentence `Dana is a nice person' (whatever that might be).
+Outros livros didáticos entenderão isso como uma estipulação de que a sentença da LVF \textquotedblleft{}$L$\textquotedblright{} deve \emph{significar} que Dana é uma lógica e de que a sentença da LVF \textquotedblleft{}$N$\textquotedblright{} deve \emph{significar} que Dana é uma pessoa gentil. Mas a LVF é totalmente incapaz de lidar com \emph{significado}. A chave de simbolização anterior não faz nada mais nem menos do que estipular que a sentença da LVF \textquotedblleft{}$L$\textquotedblright{} deve ter o mesmo valor de verdade que a sentença em português \textquotedblleft{}Dana é uma lógica\textquotedblright{} (seja lá qual for esse valor), e que a sentença da LVF \textquotedblleft{}$N$\textquotedblright{} deve ter o mesmo valor de verdade que a sentença em português \textquotedblleft{}Dana é uma pessoa gentil\textquotedblright{} (seja lá qual for esse valor).
 	\factoidbox{
-		When we treat a TFL sentence as \emph{symbolizing} an English sentence, we are stipulating that the TFL sentence is to take the same truth value as that English sentence.
+		Quando tratamos uma sentença da LVF como \emph{simbolizando} uma sentença em português, estamos estipulando que a sentença da LVF deve ter o mesmo valor de verdade que essa sentença em português.
 	}
 
 
-\section{Indicative versus subjunctive conditionals}\label{s:IndicativeSubjunctive}
-We want to bring home the point that TFL can \emph{only} deal with
-truth functions by considering the case of the conditional. When we
-introduced the characteristic truth table for the material conditional
-in \cref{s:CharacteristicTruthTables}, we did not say anything to
-justify it. Let's now offer a justification, which follows Dorothy
-Edgington.\footnote{Dorothy Edgington, ``Conditionals'',
+\section{Condicionais indicativos versus subjuntivos}\label{s:IndicativeSubjunctive}
+Queremos enfatizar o ponto de que a LVF só pode lidar com funções de verdade considerando o caso do condicional. Quando introduzimos a tabela-verdade característica do condicional material em \cref{s:CharacteristicTruthTables}, não dissemos nada para justificá-la. Ofereçamos agora uma justificativa, seguindo Dorothy Edgington.\footnote{Dorothy Edgington, \textquotedblleft{}Conditionals\textquotedblright{},
 \textit{Stanford Encyclopedia of Philosophy} (Fall 2020)
-(\url{https://plato.stanford.edu/archives/fall2020/entries/conditionals/}).} 
+(\url{https://plato.stanford.edu/archives/fall2020/entries/conditionals/}).}
 
-Suppose that Lara has drawn some shapes on a piece of paper, and coloured some of them in. We have not seen them, but nevertheless claim:
+Suponha que Lara tenha desenhado algumas formas em uma folha de papel e colorido algumas delas. Não as vimos, mas ainda assim afirmamos:
 	\begin{quote}
-		If any shape is grey, then that shape is also circular.
+		Se alguma forma é cinza, então essa forma também é circular.
 	\end{quote}
-As it happens, Lara has drawn the following:
+Acontece que Lara desenhou o seguinte:
 \begin{center}
-\begin{tikzpicture}[alt={There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}]
+\begin{tikzpicture}[alt={Há três formas: a primeira forma é um círculo cinza rotulado A, há algum espaço vazio, a segunda forma é um círculo branco rotulado C e a quarta é um quadrado branco rotulado D.}]
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, diamond, phantom_shape] (cat2)  { } ;
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C} ;
 	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
-\bmlDescription{There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}
+\bmlDescription{Há três formas: a primeira forma é um círculo cinza rotulado A, há algum espaço vazio, a segunda forma é um círculo branco rotulado C e a quarta é um quadrado branco rotulado D.}
 \end{center}
-In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
+Neste caso, nossa afirmação é certamente verdadeira. As formas C e D não são cinzas e, portanto, dificilmente podem constituir \emph{contraexemplos} à nossa afirmação. A forma A \emph{é} cinza, mas felizmente também é circular. Portanto, nossa afirmação não tem contraexemplos. Ela deve ser verdadeira. Isso significa que cada uma das seguintes \emph{instâncias} da nossa afirmação também deve ser verdadeira:
 	\begin{itemize}
-		\item If A is grey, then it is circular
+		\item Se A é cinza, então é circular
 
-		\qquad (true antecedent, true consequent)
-		\item If C is grey, then it is circular
+		\qquad (antecedente verdadeiro, consequente verdadeiro)
+		\item Se C é cinza, então é circular
 
-		\qquad (false antecedent, true consequent)
-		\item If D is grey, then it is circular
+		\qquad (antecedente falso, consequente verdadeiro)
+		\item Se D é cinza, então é circular
 
-		\qquad (false antecedent, false consequent)
+		\qquad (antecedente falso, consequente falso)
 	\end{itemize}
-However, if Lara had drawn a fourth shape, thus:
+Contudo, se Lara tivesse desenhado uma quarta forma, assim:
 \begin{center}
-\begin{tikzpicture}[alt={There are four shapes: the first shape is
-a grey circle labelled A, the second a grey square labelled B, the
-third a white circle labelled C, and the fourth a white square
-labelled D.}]
+\begin{tikzpicture}[alt={Há quatro formas: a primeira forma é um círculo cinza rotulado A, a segunda é um quadrado cinza rotulado B, a terceira é um círculo branco rotulado C e a quarta é um quadrado branco rotulado D.}]
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, grey_shape] (cat2)  {B};
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C};
 	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
-\bmlDescription{There are four shapes: the first shape is
-a grey circle labelled A, the second a grey square labelled B, the
-third a white circle labelled C, and the fourth a white square
-labelled D.}
+\bmlDescription{Há quatro formas: a primeira forma é um círculo cinza rotulado A, a segunda é um quadrado cinza rotulado B, a terceira é um círculo branco rotulado C e a quarta é um quadrado branco rotulado D.}
 \end{center}
-then our claim would have been false. So this claim must also be false:
+então nossa afirmação teria sido falsa. Portanto, esta instância da nossa afirmação também deve ser falsa:
 	\begin{itemize}
-		\item If B is grey, then it is circular
+		\item Se B é cinza, então é circular
 
-		\qquad (true antecedent, false consequent)
+		\qquad (antecedente verdadeiro, consequente falso)
 	\end{itemize}
-Now, recall that every connective of TFL has to be truth-functional. This means that the truth values of the antecedent and consequent alone must uniquely determine the truth value of the conditional as a whole. Thus, from the truth values of our four claims---which provide us with all possible combinations of truth and falsity in antecedent and consequent---we can read off the truth table for the material conditional.
+Agora, lembre-se de que todo conectivo da LVF precisa ser verofuncional. Isso significa que os valores de verdade do antecedente e do consequente, sozinhos, devem determinar univocamente o valor de verdade do condicional como um todo. Assim, a partir dos valores de verdade das nossas quatro afirmações — que nos fornecem todas as combinações possíveis de verdade e falsidade no antecedente e no consequente — podemos deduzir a tabela-verdade do condicional material.
 
-What this argument shows is that `$\eif$' is the \emph{best} candidate for a truth-functional conditional. Otherwise put, \emph{it is the best conditional that TFL can provide}. But is it any good, as a surrogate for the conditionals we use in everyday language? Consider two sentences:
+O que esse argumento mostra é que \textquotedblleft{}$\eif$\textquotedblright{} é o \emph{melhor} candidato a um condicional verofuncional. Dito de outro modo, \emph{é o melhor condicional que a LVF pode oferecer}. Mas ele é bom como substituto dos condicionais que usamos na linguagem cotidiana? Considere duas sentenças:
 	\begin{enumerate}
-		\item\label{brownwins1} If Hillary Clinton had won the 2016 election, then she would have been the first woman president of the USA.
-		\item\label{brownwins2} If Hillary Clinton had won the 2016 election, then she would have turned into a helium-filled balloon and floated away into the night sky.
+		\item\label{brownwins1} Se Hillary Clinton tivesse vencido a eleição de 2016, então teria sido a primeira mulher presidente dos EUA.
+		\item\label{brownwins2} Se Hillary Clinton tivesse vencido a eleição de 2016, então teria se transformado em um balão cheio de hélio e flutuado para longe no céu noturno.
 	\end{enumerate}
-\Cref*{brownwins1} is true; \cref*{brownwins2} is false, but both have false antecedents and false consequents. (Hillary did not win; she did not become the first woman president of the US; and she did not fill with helium and float away.) So the truth value of the whole sentence is not uniquely determined by the truth value of the parts.
+\Cref*{brownwins1} é verdadeira; \cref*{brownwins2} é falsa, mas ambas têm antecedentes falsos e consequentes falsos. (Hillary não venceu; não se tornou a primeira mulher presidente dos EUA; e não se encheu de hélio nem saiu flutuando.) Portanto, o valor de verdade da sentença inteira não é determinado univocamente pelo valor de verdade de suas partes.
 
-The crucial point is that \cref*{brownwins1,brownwins2} employ \emph{subjunctive} conditionals, rather than \emph{indicative} conditionals. They ask us to imagine something contrary to fact---after all, Hillary Clinton lost the 2016 election---and then ask us to evaluate what \emph{would} have happened in that case. Such considerations simply cannot be tackled using~`$\eif$'.
+O ponto crucial é que \cref*{brownwins1,brownwins2} empregam condicionais \emph{subjuntivos}, em vez de condicionais \emph{indicativos}. Eles nos pedem que imaginemos algo contrário aos fatos — afinal, Hillary Clinton perdeu a eleição de 2016 — e então nos pedem que avaliemos o que \emph{teria} acontecido nesse caso. Tais considerações simplesmente não podem ser tratadas usando~\textquotedblleft{}$\eif$\textquotedblright{}.
 
-We will say more about the difficulties with conditionals in \cref{s:ParadoxesOfMaterialConditional}. For now, we will content ourselves with the observation that `$\eif$' is the only candidate for a truth-functional conditional for TFL, but that many English conditionals cannot be represented adequately using `$\eif$'. TFL is an intrinsically limited language.
-
+Diremos mais sobre as dificuldades com os condicionais em \cref{s:ParadoxesOfMaterialConditional}. Por ora, vamos nos contentar com a observação de que \textquotedblleft{}$\eif$\textquotedblright{} é o único candidato a condicional verofuncional para a LVF, mas que muitos condicionais em português não podem ser representados adequadamente usando \textquotedblleft{}$\eif$\textquotedblright{}. A LVF é uma linguagem intrinsecamente limitada.
 
 \chapter{Complete truth tables}
 \label{s:CompleteTruthTables}
