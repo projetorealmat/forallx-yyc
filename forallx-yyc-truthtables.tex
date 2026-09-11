@@ -1,22 +1,22 @@
 %!TEX root = forallxyyc.tex
-\part{Truth tables}
+\part{Tabelas-verdade}
 \label{ch.TruthTables}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\chapter{Characteristic truth tables}
+\chapter{Tabelas-verdade características}
 \label{s:CharacteristicTruthTables}
 
-Any sentence of TFL is composed of sentence letters, possibly combined using sentential connectives. The truth value of the compound sentence depends only on the truth value of the sentence letters that comprise it. In order to know the truth value of `$(D \eand E)$', for instance, you only need to know the truth value of `$D$' and the truth value of `$E$'.
+Qualquer sentença da LVF é composta de letras sentenciais, possivelmente combinadas por meio de conectivos sentenciais. O valor de verdade da sentença composta depende somente dos valores de verdade das letras sentenciais que a compõem. Para saber o valor de verdade de \textquotedblleft$(D \eand E)$\textquotedblright{}, por exemplo, você só precisa saber o valor de verdade de \textquotedblleft$D$\textquotedblright{} e o valor de verdade de \textquotedblleft$E$\textquotedblright{}.
 
-We introduced five connectives in \cref{s:TFLConnectives}. So we just need to explain how they map between truth values. For convenience, we abbreviate `True' with `T' and `False' with `F'. (But, to be clear, the two truth values are True and False; the truth values are not \emph{letters}!)
+Introduzimos cinco conectivos em \cref{s:TFLConnectives}. Portanto, só precisamos explicar como eles mapeiam valores de verdade. Por conveniência, abreviaremos \textquotedblleft{}Verdadeiro\textquotedblright{} por \textquotedblleft T\textquotedblright{} e \textquotedblleft{}Falso\textquotedblright{} por \textquotedblleft F\textquotedblright{}. (Mas, para deixar claro, os dois valores de verdade são Verdadeiro e Falso; os valores de verdade não são \emph{letras}!)
 
 \newglossaryentry{truth value}
                  {
-                   name = truth value,
-                   description = {One of the two logical values sentences can have: True and False}
+                   name = valor de verdade,
+                   description = {Um dos dois valores lógicos que as sentenças podem ter: Verdadeiro e Falso}
                    }
 
-\paragraph{Negation} For any sentence \metav{A}: If \metav{A} is true, then \enot\metav{A} is false; and if \enot\metav{A} is true, then \metav{A} is false. We can summarize this in the \emph{characteristic truth table} for negation:
+\paragraph{Negação} Para qualquer sentença \metav{A}: se \metav{A} é verdadeira, então \enot\metav{A} é falsa; e se \enot\metav{A} é verdadeira, então \metav{A} é falsa. Podemos resumir isso na \emph{tabela-verdade característica} da negação:
 \begin{center}
 \begin{tabular}{c|c}
 \metav{A} & \enot\metav{A}\\
@@ -26,7 +26,7 @@ F & T
 \end{tabular}
 \end{center}
 
-\paragraph{Conjunction} For any sentences \metav{A} and \metav{B}, \metav{A}\eand\metav{B} is true if and only if both \metav{A} and \metav{B} are true. We can summarize this in the {characteristic truth table} for conjunction:
+\paragraph{Conjunção} Para quaisquer sentenças \metav{A} e \metav{B}, \metav{A}\eand\metav{B} é verdadeira se e somente se tanto \metav{A} quanto \metav{B} são verdadeiras. Podemos resumir isso na {tabela-verdade característica} da conjunção:
 \begin{center}
 \begin{tabular}{c c |c}
 \metav{A} & \metav{B} & $\metav{A}\eand\metav{B}$\\
@@ -37,11 +37,11 @@ F & T & F\\
 F & F & F
 \end{tabular}
 \end{center}
-Note that the truth value for $\metav{A} \eand \metav{B}$ is always
-the same as the truth value for $\metav{B} \eand \metav{A}$.
-Connectives that have this property are called \emph{commutative}.
+Observe que o valor de verdade de $\metav{A} \eand \metav{B}$ é sempre
+o mesmo que o valor de verdade de $\metav{B} \eand \metav{A}$.
+Conectivos que têm essa propriedade são chamados de \emph{comutativos}.
 
-\paragraph{Disjunction} Recall that `$\eor$' always represents inclusive or. So, for any sentences \metav{A} and \metav{B}, $\metav{A}\eor \metav{B}$ is true if and only if either \metav{A} or \metav{B} is true. We can summarize this in the {characteristic truth table} for disjunction:
+\paragraph{Disjunção} Recorde que \textquotedblleft$\eor$\textquotedblright{} sempre representa ou inclusivo. Portanto, para quaisquer sentenças \metav{A} e \metav{B}, $\metav{A}\eor \metav{B}$ é verdadeira se e somente se \metav{A} ou \metav{B} é verdadeira. Podemos resumir isso na {tabela-verdade característica} da disjunção:
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eor\metav{B}$ \\
@@ -52,19 +52,18 @@ F & T & T\\
 F & F & F
 \end{tabular}
 \end{center}
-Like conjunction, disjunction is commutative.
+Assim como a conjunção, a disjunção é comutativa.
 
-\paragraph{Conditional} We're just going to come clean and admit it:
-Conditionals are a mess. Exactly how much of a
-mess they are is \emph{philosophically} contentious. We'll discuss a
-few of the subtleties in
-\cref{s:IndicativeSubjunctive,s:ParadoxesOfMaterialConditional}. For
-now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$
-is false if and only if \metav{A} is true and \metav{B} is false.
-The connective with these stipulated truth conditions is called the
-\define{material conditional}. We
-can summarize this with a characteristic truth table for the
-conditional.
+\paragraph{Condicional} Vamos simplesmente admitir:
+Os condicionais são uma bagunça. Exatamente qual é o grau dessa
+bagunça é uma questão \emph{filosoficamente} controversa. Discutiremos
+algumas das sutilezas em
+\cref{s:IndicativeSubjunctive,s:ParadoxesOfMaterialConditional}. Por
+ora, estipularemos o seguinte: $\metav{A}\eif\metav{B}$ é falsa se e somente
+se \metav{A} é verdadeira e \metav{B} é falsa. O conectivo com essas
+condições de verdade estipuladas é chamado de
+\define{condicional material}. Podemos resumir isso com uma tabela-verdade
+característica do condicional.
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eif\metav{B}$\\
@@ -75,9 +74,11 @@ F & T & T\\
 F & F & T
 \end{tabular}
 \end{center}
-The conditional is \emph{not commutative}. You cannot swap the antecedent and consequent without changing the meaning of the sentence; $\metav{A}\eif\metav{B}$ and $\metav{B} \eif \metav{A}$ have different truth tables.
+O condicional \emph{não} é comutativo. Não se pode trocar o antecedente
+e o consequente sem mudar o significado da sentença; $\metav{A}\eif\metav{B}$
+e $\metav{B} \eif \metav{A}$ têm tabelas-verdade diferentes.
 
-\paragraph{Biconditional} Since a biconditional is to be the same as the conjunction of the conditionals running in both directions, we will want the truth table for the biconditional to be:
+\paragraph{Bicondicional} Como um bicondicional deve ser o mesmo que a conjunção dos condicionais que percorrem ambas as direções, queremos que a tabela-verdade do bicondicional seja:
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eiff\metav{B}$\\
@@ -88,152 +89,138 @@ F & T & F\\
 F & F & T
 \end{tabular}
 \end{center}
-The connective with this truth table is also often called the
-\define{material biconditional}. Unsurprisingly, the biconditional is
-commutative.
-
-\chapter{Truth-functional connectives}
+O conectivo com esta tabela-verdade também é frequentemente chamado de
+\define{bicondicional material}. Como era de esperar, o bicondicional é
+comutativo.
+\chapter{Conectivos verofuncionais}
 \label{s:TruthFunctionality}
 
-\section{The idea of truth-functionality}
-Let's introduce an important idea.
+\section{A ideia da verofuncionalidade}
+Introduzamos uma ideia importante.
 	\factoidbox{
-		A connective is \define{truth-functional} \ifeff{} the truth value of a sentence with that connective as its main logical operator is uniquely determined by the truth value(s) of the constituent sentence(s).
+		Um conectivo é \define{verofuncional} \ifeff{} o valor de verdade de uma sentença que tem esse conectivo como seu operador lógico principal é determinado univocamente pelo(s) valor(es) de verdade da(s) sentença(s) constituintes.
 	}
 \newglossaryentry{truth-functional connective}
 {
-name=truth-functional connective,
-description={An operator that builds larger sentences out of smaller ones and fixes the \gls{truth value} of the resulting sentence based only on the truth value of the component sentences}
+name=conectivo verofuncional,
+description={Um operador que constrói sentenças maiores a partir de sentenças menores e fixa o \gls{truth value} da sentença resultante com base apenas no valor de verdade das sentenças componentes}
 }
         
-Every connective in TFL is truth-functional. The truth value of a negation is uniquely determined by the truth value of the unnegated sentence. The truth value of a conjunction is uniquely determined by the truth value of both conjuncts. The truth value of a disjunction is uniquely determined by the truth value of both disjuncts, and so on. To determine the truth value of some TFL sentence, we only need to know the truth value of its components.
+Todo conectivo da LVF é verofuncional. O valor de verdade de uma negação é determinado univocamente pelo valor de verdade da sentença não negada. O valor de verdade de uma conjunção é determinado univocamente pelo valor de verdade de ambos os conjuntos. O valor de verdade de uma disjunção é determinado univocamente pelo valor de verdade de ambos os disjuntos, e assim por diante. Para determinar o valor de verdade de uma sentença da LVF, só precisamos conhecer o valor de verdade de seus componentes.
 
-This is what gives TFL its name: it is \emph{truth-functional logic}.
+É isso que dá nome à LVF: ela é uma \emph{lógica proposicional verofuncional}.
 
-Many languages use connectives that are not truth-functional. In English, for example, we can form a new sentence from any simpler sentence by prefixing it with `It is necessarily the case that\ldots'. The truth value of this new sentence is not fixed solely by the truth value of the original sentence. For consider two true sentences:
+Muitas línguas usam conectivos que não são verofuncionais. Em português, por exemplo, podemos formar uma nova sentença a partir de qualquer sentença mais simples prefixando-a com \textquotedblleft{}É necessariamente o caso que\ldots\textquotedblright{}. O valor de verdade dessa nova sentença não é fixado apenas pelo valor de verdade da sentença original. Considere duas sentenças verdadeiras:
 	\begin{compactlist}
 		\item $2 + 2 = 4$
-		\item Shostakovich wrote fifteen string quartets.
+		\item Shostakovich compôs quinze quartetos de cordas.
 	\end{compactlist}
-Whereas it is necessarily the case that $2 + 2 = 4$, it is not \emph{necessarily} the case that Shostakovich wrote fifteen string quartets. If Shostakovich had died earlier, he would have failed to finish Quartet no.~15; if he had lived longer, he might have written a few more. So `It is necessarily the case that\ldots' is not \emph{truth-functional}.
+Embora seja necessariamente o caso que $2 + 2 = 4$, não é \emph{necessariamente} o caso que Shostakovich compôs quinze quartetos de cordas. Se Shostakovich tivesse morrido antes, não teria conseguido terminar o Quarteto nº~15; se tivesse vivido mais, talvez tivesse composto mais alguns. Portanto, \textquotedblleft{}É necessariamente o caso que\ldots\textquotedblright{} não é \emph{verofuncional}.
 
+\section{Simbolizar versus traduzir}
+Todos os conectivos da LVF são verofuncionais, mas, mais do que isso: eles realmente não fazem \emph{nada além de} nos mapear entre valores de verdade.
 
-\section{Symbolizing versus translating}
-All of the connectives of TFL are truth-functional, but more than that: they really do nothing \emph{but} map us between truth values.  
-
-When we symbolize a sentence or an argument in TFL, we ignore everything \emph{besides} the contribution that the truth values of a component might make to the truth value of the whole. There are subtleties to our ordinary claims that far outstrip their mere truth values. Sarcasm; poetry; snide implicature; emphasis; these are important parts of everyday discourse, but none of this is retained in TFL. As remarked in \cref{s:TFLConnectives}, TFL cannot capture the subtle differences between the following English sentences:
+Ao simbolizarmos uma sentença ou um argumento na LVF, ignoramos tudo \emph{além} da contribuição que os valores de verdade de um componente podem dar ao valor de verdade do todo. Há sutilezas em nossas afirmações ordinárias que vão muito além de seus meros valores de verdade. Sarcasmo; poesia; implicatura maliciosa; ênfase; tudo isso são partes importantes do discurso cotidiano, mas nada disso é preservado na LVF. Como observamos em \cref{s:TFLConnectives}, a LVF não consegue captar as diferenças sutis entre as seguintes sentenças em português:
 	\begin{compactlist}
-		\item Dana is a logician and Dana is a nice person
-		\item Although Dana is a logician, Dana is a nice person
-		\item Dana is a logician despite being a nice person
-		\item Dana is a nice person, but also a logician
-		\item Dana's being a logician notwithstanding, he is a nice person
+		\item Dana é uma lógica e Dana é uma pessoa gentil
+		\item Embora Dana seja uma lógica, Dana é uma pessoa gentil
+		\item Dana é uma lógica apesar de ser uma pessoa gentil
+		\item Dana é uma pessoa gentil, mas também é uma lógica
+		\item Não obstante Dana ser uma lógica, ela é uma pessoa gentil
 	\end{compactlist}
-All of the above sentences will be symbolized with the same TFL sentence, perhaps `$L \eand N$'.
+Todas as sentenças acima serão simbolizadas com a mesma sentença da LVF, talvez \textquotedblleft{}$L \eand N$\textquotedblright{}.
 
-Now, we keep saying that we use TFL sentences to \emph{symbolize} English sentences. Many other textbooks talk about \emph{translating} English sentences into TFL. However, a good translation should preserve certain facets of meaning, and---as we just saw---TFL just cannot do that. This is why we will speak of \emph{symbolizing} English sentences, rather than of \emph{translating} them.
+Continuamos dizendo que usamos sentenças da LVF para \emph{simbolizar} sentenças em português. Muitos outros livros didáticos falam em \emph{traduzir} sentenças em português para a LVF. Entretanto, uma boa tradução deveria preservar certos aspectos do significado e — como acabamos de ver — a LVF simplesmente não consegue fazer isso. É por isso que falaremos em \emph{simbolizar} sentenças em português, em vez de \emph{traduzi-las}.
 
-This affects how we should understand our symbolization keys. Consider a key like:
+Isso afeta a maneira como devemos entender nossas chaves de simbolização. Considere uma chave como:
 	\begin{ekey}
-		\item[L] Dana is a logician.
-		\item[N] Dana is a nice person.
+		\item[L] Dana é uma lógica.
+		\item[N] Dana é uma pessoa gentil.
 	\end{ekey}
-Other textbooks will understand this as a stipulation that the TFL sentence `$L$' should \emph{mean} that Dana is a logician, and that the TFL sentence `$N$' should \emph{mean} that Dana is a nice person. But TFL just is totally unequipped to deal with \emph{meaning}. The preceding symbolization key is doing no more and no less than stipulating that the TFL sentence `$L$' should take the same truth value as the English sentence `Dana is a logician' (whatever that might be), and that the TFL sentence `$N$' should take the same truth value as the English sentence `Dana is a nice person' (whatever that might be).
+Outros livros didáticos entenderão isso como uma estipulação de que a sentença da LVF \textquotedblleft{}$L$\textquotedblright{} deve \emph{significar} que Dana é uma lógica e de que a sentença da LVF \textquotedblleft{}$N$\textquotedblright{} deve \emph{significar} que Dana é uma pessoa gentil. Mas a LVF é totalmente incapaz de lidar com \emph{significado}. A chave de simbolização anterior não faz nada mais nem menos do que estipular que a sentença da LVF \textquotedblleft{}$L$\textquotedblright{} deve ter o mesmo valor de verdade que a sentença em português \textquotedblleft{}Dana é uma lógica\textquotedblright{} (seja lá qual for esse valor), e que a sentença da LVF \textquotedblleft{}$N$\textquotedblright{} deve ter o mesmo valor de verdade que a sentença em português \textquotedblleft{}Dana é uma pessoa gentil\textquotedblright{} (seja lá qual for esse valor).
 	\factoidbox{
-		When we treat a TFL sentence as \emph{symbolizing} an English sentence, we are stipulating that the TFL sentence is to take the same truth value as that English sentence.
+		Quando tratamos uma sentença da LVF como \emph{simbolizando} uma sentença em português, estamos estipulando que a sentença da LVF deve ter o mesmo valor de verdade que essa sentença em português.
 	}
 
 
-\section{Indicative versus subjunctive conditionals}\label{s:IndicativeSubjunctive}
-We want to bring home the point that TFL can \emph{only} deal with
-truth functions by considering the case of the conditional. When we
-introduced the characteristic truth table for the material conditional
-in \cref{s:CharacteristicTruthTables}, we did not say anything to
-justify it. Let's now offer a justification, which follows Dorothy
-Edgington.\footnote{Dorothy Edgington, ``Conditionals'',
+\section{Condicionais indicativos versus subjuntivos}\label{s:IndicativeSubjunctive}
+Queremos enfatizar o ponto de que a LVF só pode lidar com funções de verdade considerando o caso do condicional. Quando introduzimos a tabela-verdade característica do condicional material em \cref{s:CharacteristicTruthTables}, não dissemos nada para justificá-la. Ofereçamos agora uma justificativa, seguindo Dorothy Edgington.\footnote{Dorothy Edgington, \textquotedblleft{}Conditionals\textquotedblright{},
 \textit{Stanford Encyclopedia of Philosophy} (Fall 2020)
-(\url{https://plato.stanford.edu/archives/fall2020/entries/conditionals/}).} 
+(\url{https://plato.stanford.edu/archives/fall2020/entries/conditionals/}).}
 
-Suppose that Lara has drawn some shapes on a piece of paper, and coloured some of them in. We have not seen them, but nevertheless claim:
+Suponha que Lara tenha desenhado algumas formas em uma folha de papel e colorido algumas delas. Não as vimos, mas ainda assim afirmamos:
 	\begin{quote}
-		If any shape is grey, then that shape is also circular.
+		Se alguma forma é cinza, então essa forma também é circular.
 	\end{quote}
-As it happens, Lara has drawn the following:
+Acontece que Lara desenhou o seguinte:
 \begin{center}
-\begin{tikzpicture}[alt={There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}]
+\begin{tikzpicture}[alt={Há três formas: a primeira forma é um círculo cinza rotulado A, há algum espaço vazio, a segunda forma é um círculo branco rotulado C e a quarta é um quadrado branco rotulado D.}]
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, diamond, phantom_shape] (cat2)  { } ;
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C} ;
 	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
-\bmlDescription{There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}
+\bmlDescription{Há três formas: a primeira forma é um círculo cinza rotulado A, há algum espaço vazio, a segunda forma é um círculo branco rotulado C e a quarta é um quadrado branco rotulado D.}
 \end{center}
-In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
+Neste caso, nossa afirmação é certamente verdadeira. As formas C e D não são cinzas e, portanto, dificilmente podem constituir \emph{contraexemplos} à nossa afirmação. A forma A \emph{é} cinza, mas felizmente também é circular. Portanto, nossa afirmação não tem contraexemplos. Ela deve ser verdadeira. Isso significa que cada uma das seguintes \emph{instâncias} da nossa afirmação também deve ser verdadeira:
 	\begin{itemize}
-		\item If A is grey, then it is circular
+		\item Se A é cinza, então é circular
 
-		\qquad (true antecedent, true consequent)
-		\item If C is grey, then it is circular
+		\qquad (antecedente verdadeiro, consequente verdadeiro)
+		\item Se C é cinza, então é circular
 
-		\qquad (false antecedent, true consequent)
-		\item If D is grey, then it is circular
+		\qquad (antecedente falso, consequente verdadeiro)
+		\item Se D é cinza, então é circular
 
-		\qquad (false antecedent, false consequent)
+		\qquad (antecedente falso, consequente falso)
 	\end{itemize}
-However, if Lara had drawn a fourth shape, thus:
+Contudo, se Lara tivesse desenhado uma quarta forma, assim:
 \begin{center}
-\begin{tikzpicture}[alt={There are four shapes: the first shape is
-a grey circle labelled A, the second a grey square labelled B, the
-third a white circle labelled C, and the fourth a white square
-labelled D.}]
+\begin{tikzpicture}[alt={Há quatro formas: a primeira forma é um círculo cinza rotulado A, a segunda é um quadrado cinza rotulado B, a terceira é um círculo branco rotulado C e a quarta é um quadrado branco rotulado D.}]
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, grey_shape] (cat2)  {B};
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C};
 	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
-\bmlDescription{There are four shapes: the first shape is
-a grey circle labelled A, the second a grey square labelled B, the
-third a white circle labelled C, and the fourth a white square
-labelled D.}
+\bmlDescription{Há quatro formas: a primeira forma é um círculo cinza rotulado A, a segunda é um quadrado cinza rotulado B, a terceira é um círculo branco rotulado C e a quarta é um quadrado branco rotulado D.}
 \end{center}
-then our claim would have been false. So this claim must also be false:
+então nossa afirmação teria sido falsa. Portanto, esta instância da nossa afirmação também deve ser falsa:
 	\begin{itemize}
-		\item If B is grey, then it is circular
+		\item Se B é cinza, então é circular
 
-		\qquad (true antecedent, false consequent)
+		\qquad (antecedente verdadeiro, consequente falso)
 	\end{itemize}
-Now, recall that every connective of TFL has to be truth-functional. This means that the truth values of the antecedent and consequent alone must uniquely determine the truth value of the conditional as a whole. Thus, from the truth values of our four claims---which provide us with all possible combinations of truth and falsity in antecedent and consequent---we can read off the truth table for the material conditional.
+Agora, lembre-se de que todo conectivo da LVF precisa ser verofuncional. Isso significa que os valores de verdade do antecedente e do consequente, sozinhos, devem determinar univocamente o valor de verdade do condicional como um todo. Assim, a partir dos valores de verdade das nossas quatro afirmações — que nos fornecem todas as combinações possíveis de verdade e falsidade no antecedente e no consequente — podemos deduzir a tabela-verdade do condicional material.
 
-What this argument shows is that `$\eif$' is the \emph{best} candidate for a truth-functional conditional. Otherwise put, \emph{it is the best conditional that TFL can provide}. But is it any good, as a surrogate for the conditionals we use in everyday language? Consider two sentences:
+O que esse argumento mostra é que \textquotedblleft{}$\eif$\textquotedblright{} é o \emph{melhor} candidato a um condicional verofuncional. Dito de outro modo, \emph{é o melhor condicional que a LVF pode oferecer}. Mas ele é bom como substituto dos condicionais que usamos na linguagem cotidiana? Considere duas sentenças:
 	\begin{enumerate}
-		\item\label{brownwins1} If Hillary Clinton had won the 2016 election, then she would have been the first woman president of the USA.
-		\item\label{brownwins2} If Hillary Clinton had won the 2016 election, then she would have turned into a helium-filled balloon and floated away into the night sky.
+		\item\label{brownwins1} Se Hillary Clinton tivesse vencido a eleição de 2016, então teria sido a primeira mulher presidente dos EUA.
+		\item\label{brownwins2} Se Hillary Clinton tivesse vencido a eleição de 2016, então teria se transformado em um balão cheio de hélio e flutuado para longe no céu noturno.
 	\end{enumerate}
-\Cref*{brownwins1} is true; \cref*{brownwins2} is false, but both have false antecedents and false consequents. (Hillary did not win; she did not become the first woman president of the US; and she did not fill with helium and float away.) So the truth value of the whole sentence is not uniquely determined by the truth value of the parts.
+\Cref*{brownwins1} é verdadeira; \cref*{brownwins2} é falsa, mas ambas têm antecedentes falsos e consequentes falsos. (Hillary não venceu; não se tornou a primeira mulher presidente dos EUA; e não se encheu de hélio nem saiu flutuando.) Portanto, o valor de verdade da sentença inteira não é determinado univocamente pelo valor de verdade de suas partes.
 
-The crucial point is that \cref*{brownwins1,brownwins2} employ \emph{subjunctive} conditionals, rather than \emph{indicative} conditionals. They ask us to imagine something contrary to fact---after all, Hillary Clinton lost the 2016 election---and then ask us to evaluate what \emph{would} have happened in that case. Such considerations simply cannot be tackled using~`$\eif$'.
+O ponto crucial é que \cref*{brownwins1,brownwins2} empregam condicionais \emph{subjuntivos}, em vez de condicionais \emph{indicativos}. Eles nos pedem que imaginemos algo contrário aos fatos — afinal, Hillary Clinton perdeu a eleição de 2016 — e então nos pedem que avaliemos o que \emph{teria} acontecido nesse caso. Tais considerações simplesmente não podem ser tratadas usando~\textquotedblleft{}$\eif$\textquotedblright{}.
 
-We will say more about the difficulties with conditionals in \cref{s:ParadoxesOfMaterialConditional}. For now, we will content ourselves with the observation that `$\eif$' is the only candidate for a truth-functional conditional for TFL, but that many English conditionals cannot be represented adequately using `$\eif$'. TFL is an intrinsically limited language.
+Diremos mais sobre as dificuldades com os condicionais em \cref{s:ParadoxesOfMaterialConditional}. Por ora, vamos nos contentar com a observação de que \textquotedblleft{}$\eif$\textquotedblright{} é o único candidato a condicional verofuncional para a LVF, mas que muitos condicionais em português não podem ser representados adequadamente usando \textquotedblleft{}$\eif$\textquotedblright{}. A LVF é uma linguagem intrinsecamente limitada.
 
-
-\chapter{Complete truth tables}
+\chapter{Tabelas-verdade completas}
 \label{s:CompleteTruthTables}
 
-So far, we have used symbolization keys to assign truth values to TFL sentences \emph{indirectly}. For example, we might say that the TFL sentence `$B$' is to be true \ifeff{} Big Ben is in London. Since Big Ben \emph{is} in London, this symbolisation would make `$B$' true. But we can also assign truth values \emph{directly}. We can simply stipulate that `$B$' is to be true, or stipulate that it is to be false. Such stipulations are called \emph{valuations}: 
+Até aqui, usamos chaves de simbolização para atribuir valores de verdade a sentenças da LVF \emph{indiretamente}. Por exemplo, podemos dizer que a sentença da LVF \textquotedblleft{}$B$\textquotedblright{} deve ser verdadeira \ifeff{} Big Ben está em Londres. Como Big Ben \emph{está} em Londres, essa simbolização tornaria \textquotedblleft{}$B$\textquotedblright{} verdadeira. Mas também podemos atribuir valores de verdade \emph{diretamente}. Podemos simplesmente estipular que \textquotedblleft{}$B$\textquotedblright{} é verdadeira ou estipular que ela é falsa. Essas estipulações são chamadas de \emph{valorações}:
 	\factoidbox{
-		A \define{valuation} is any assignment of truth values to particular sentence letters of TFL.
+		Uma \define{valora\c{c}\~{a}o} é qualquer atribuição de valores de verdade a determinadas letras sentenciais da LVF.
 	}
 
 \newglossaryentry{valuation}
 {
-name=valuation,
-description={An assignment of \glspl{truth value} to particular \glspl{sentence letter}}
+name=valoração,
+description={Uma atribuição de \glspl{truth value} a determinadas \glspl{sentence letter}}
 }
 
-The power of truth tables lies in the following. Each row of a truth table represents a possible valuation. The complete truth table represents all possible valuations. And the truth table provides us with a means to calculate the truth value of complex sentences, on each possible valuation. But all of this is easiest to explain by example.
+A força das tabelas-verdade está no seguinte. Cada linha de uma tabela-verdade representa uma valoração possível. A tabela-verdade completa representa todas as valorações possíveis. E a tabela-verdade nos fornece um meio de calcular o valor de verdade de sentenças complexas, para cada valoração possível. Mas tudo isso é mais fácil de explicar com um exemplo.
 
-\section{A worked example}
-Consider the sentence `$(H\eand I)\eif H$'. There are four possible ways to assign True and False to the sentence letter `$H$' and `$I$'---four valuations---which we can represent as follows:
+\section{Um exemplo trabalhado}
+Considere a sentença \textquotedblleft{}$(H\eand I)\eif H$\textquotedblright{}. Há quatro maneiras possíveis de atribuir Verdadeiro e Falso à letra sentencial \textquotedblleft{}$H$\textquotedblright{} e à letra \textquotedblleft{}$I$\textquotedblright{} — quatro valorações — que podemos representar assim:
 \begin{center}
 \begin{tabular}{c c|d e e e f}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -244,7 +231,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F
 \end{tabular}
 \end{center}
-To calculate the truth value of the entire sentence `$(H \eand I) \eif H$', we first copy the truth values for the sentence letters and write them underneath the letters in the sentence:
+Para calcular o valor de verdade da sentença inteira \textquotedblleft{}$(H \eand I) \eif H$\textquotedblright{}, primeiro copiamos os valores de verdade das letras sentenciais e os escrevemos abaixo das letras na sentença:
 \begin{center}
 \begin{tabular}{c c|d e e e f}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -255,7 +242,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F & {F} & & {F} & & {F}
 \end{tabular}
 \end{center}
-Now consider the subsentence `$(H\eand I)$'. This is a conjunction, $(\metav{A}\eand\metav{B})$, with `$H$' as \metav{A} and with `$I$' as \metav{B}. The characteristic truth table for conjunction gives the truth conditions for \emph{any} sentence of the form $(\metav{A}\eand\metav{B})$, whatever $\metav{A}$ and $\metav{B}$ might be. It represents the point that a conjunction is true \ifeff{} both conjuncts are true. In this case, our conjuncts are just `$H$' and `$I$'. They are both true on (and only on) the first line of the truth table. Accordingly, we can calculate the truth value of the conjunction on all four rows.
+Agora considere a subsentença \textquotedblleft{}$(H\eand I)$\textquotedblright{}. Ela é uma conjunção, $(\metav{A}\eand\metav{B})$, com \textquotedblleft{}$H$\textquotedblright{} como \metav{A} e \textquotedblleft{}$I$\textquotedblright{} como \metav{B}. A tabela-verdade característica da conjunção fornece as condições de verdade para \emph{qualquer} sentença da forma $(\metav{A}\eand\metav{B})$, quaisquer que sejam $\metav{A}$ e $\metav{B}$. Ela representa o fato de que uma conjunção é verdadeira \ifeff{} ambos os conjuntos são verdadeiros. Neste caso, nossos conjuntos são simplesmente \textquotedblleft{}$H$\textquotedblright{} e \textquotedblleft{}$I$\textquotedblright{}. Ambos são verdadeiros na primeira linha da tabela-verdade, e somente nela. Consequentemente, podemos calcular o valor de verdade da conjunção em todas as quatro linhas.
 \begin{center}
 \begin{tabular}{c c|d e e e f}
  & & \metav{A} & \eand & \metav{B} & & \\
@@ -267,7 +254,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F & F & {F} & F & & F
 \end{tabular}
 \end{center}
-Now, the entire sentence that we are dealing with is a conditional, $\metav{A}\eif\metav{B}$, with `$(H \eand I)$' as \metav{A} and with `$H$' as \metav{B}. On the second row, for example, `$(H\eand I)$' is false and `$H$' is true. Since a conditional is true when the antecedent is false, we write a `T' in the second row underneath the conditional symbol. We continue for the other three rows and get this:
+Agora, a sentença inteira com que estamos lidando é um condicional, $\metav{A}\eif\metav{B}$, com \textquotedblleft{}$(H \eand I)$\textquotedblright{} como \metav{A} e \textquotedblleft{}$H$\textquotedblright{} como \metav{B}. Na segunda linha, por exemplo, \textquotedblleft{}$(H\eand I)$\textquotedblright{} é falsa e \textquotedblleft{}$H$\textquotedblright{} é verdadeira. Como um condicional é verdadeiro quando o antecedente é falso, escrevemos um \textquotedblleft{}T\textquotedblright{} na segunda linha, abaixo do símbolo condicional. Continuamos com as outras três linhas e obtemos:
 \begin{center}
 \begin{tabular}{c c| d e e e f}
  & &  & \metav{A} &  &\eif &\metav{B} \\
@@ -279,9 +266,9 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F &  & {F} &  &{T} & F
 \end{tabular}
 \end{center}
-The conditional is the main logical operator of the sentence, so the column of `T's underneath the conditional tells us that the sentence `$(H \eand I)\eif H$' is true regardless of the truth values of `$H$' and `$I$'. They can be true or false in any combination, and the compound sentence still comes out true. Since we have considered all four possible assignments of truth and falsity to `$H$' and `$I$'---since, that is, we have considered all the different \emph{valuations}---we can say that `$(H \eand I)\eif H$' is true on every valuation.
+O condicional é o operador lógico principal da sentença, portanto a coluna de \textquotedblleft{}T\textquotedblright{} abaixo do condicional nos diz que a sentença \textquotedblleft{}$(H \eand I)\eif H$\textquotedblright{} é verdadeira independentemente dos valores de verdade de \textquotedblleft{}$H$\textquotedblright{} e \textquotedblleft{}$I$\textquotedblright{}. Eles podem ser verdadeiros ou falsos em qualquer combinação, e a sentença composta ainda resulta verdadeira. Como consideramos todas as quatro atribuições possíveis de verdade e falsidade a \textquotedblleft{}$H$\textquotedblright{} e \textquotedblleft{}$I$\textquotedblright{} — isto é, como consideramos todas as diferentes \emph{valorações} — podemos dizer que \textquotedblleft{}$(H \eand I)\eif H$\textquotedblright{} é verdadeira em toda valoração.
 
-In this example, we have not repeated all of the entries in every column in every successive table. When actually writing truth tables on paper, however, it is impractical to erase whole columns or rewrite the whole table for every step. Although it is more crowded, the truth table can be written in this way:
+Neste exemplo, não repetimos todas as entradas em cada coluna de cada tabela sucessiva. Ao escrever tabelas-verdade no papel, porém, é impraticável apagar colunas inteiras ou reescrever a tabela toda a cada passo. Embora fique mais carregada, a tabela-verdade pode ser escrita assim:
 \begin{center}
 \begin{tabular}{c c| d e e e f}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -292,20 +279,20 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F & F & {F} & F & \TTbf{T} & F
 \end{tabular}
 \end{center}
-Most of the columns underneath the sentence are only there for bookkeeping purposes. The column that matters most is the column underneath the \emph{main logical operator} for the sentence, since this tells you the truth value of the entire sentence. We have emphasized this, by putting this column in bold. When you work through truth tables yourself, you should similarly emphasize it (perhaps by highlighting).
+A maior parte das colunas abaixo da sentença serve apenas para fins de registro. A coluna que mais importa é a coluna abaixo do \emph{operador lógico principal} da sentença, pois ela informa o valor de verdade da sentença inteira. Destacamos isso colocando essa coluna em negrito. Ao trabalhar com tabelas-verdade por conta própria, você deve destacá-la da mesma maneira (talvez realçando-a).
 
-\section{Building complete truth tables}
-A \define{complete truth table} has a line for every possible assignment of True and False to the relevant sentence letters. Each line represents a \emph{valuation}, and a complete truth table has a line for all the different valuations.
+\section{Construindo tabelas-verdade completas}
+Uma \define{tabela-verdade completa} tem uma linha para cada atribuição possível de Verdadeiro e Falso às letras sentenciais relevantes. Cada linha representa uma \emph{valoração}, e uma tabela-verdade completa tem uma linha para todas as diferentes valorações.
 
 \newglossaryentry{complete truth table}
 {
-name=complete truth table,
-description={A table that gives all the possible \glspl{truth value} for a \gls{sentence of TFL} or sentences in TFL, with a line for every possible \gls{valuation} of all sentence letters}
+name=tabela-verdade completa,
+description={Uma tabela que fornece todos os possíveis \glspl{truth value} para uma \gls{sentence of TFL} ou sentenças da LVF, com uma linha para cada \gls{valuation} possível de todas as letras sentenciais}
 }
 
-The size of the complete truth table depends on the number of different sentence letters in the table. A sentence that contains only one sentence letter requires only two rows, as in the characteristic truth table for negation. This is true even if the same letter is repeated many times, as in the sentence
-`$[(C\eiff C) \eif C] \eand \enot(C \eif C)$'.
-The complete truth table requires only two lines because there are only two possibilities: `$C$' can be true or it can be false. The truth table for this sentence looks like this:
+O tamanho da tabela-verdade completa depende do número de letras sentenciais diferentes na tabela. Uma sentença que contém apenas uma letra sentencial requer somente duas linhas, como na tabela-verdade característica da negação. Isso é verdade mesmo que a mesma letra se repita muitas vezes, como na sentença
+\textquotedblleft{}$[(C\eiff C) \eif C] \eand \enot(C \eif C)$\textquotedblright{}.
+A tabela-verdade completa requer apenas duas linhas porque há somente duas possibilidades: \textquotedblleft{}$C$\textquotedblright{} pode ser verdadeira ou pode ser falsa. A tabela-verdade para essa sentença é assim:
 \begin{center}
 \begin{tabular}{c| d e e e e e e e e e e e e e e f}
 $C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
@@ -314,11 +301,11 @@ $C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
  F &    & F &  T  & F &   & F  & F & &\TTbf{F}&  F& &   F &  T  & F &   \\
 \end{tabular}
 \end{center}
-Looking at the column underneath the main logical operator, we see that the sentence is false on both rows of the table; i.e., the sentence is false regardless of whether `$C$' is true or false. It is false on every valuation.
+Ao observar a coluna abaixo do operador lógico principal, vemos que a sentença é falsa nas duas linhas da tabela; isto é, a sentença é falsa independentemente de \textquotedblleft{}$C$\textquotedblright{} ser verdadeira ou falsa. Ela é falsa em toda valoração.
 
-There will be four lines in the complete truth table for a sentence containing two sentence letters, as in the characteristic truth tables, or the truth table for `$(H \eand I)\eif H$'.
+Haverá quatro linhas na tabela-verdade completa para uma sentença contendo duas letras sentenciais, como nas tabelas-verdade características ou na tabela-verdade para \textquotedblleft{}$(H \eand I)\eif H$\textquotedblright{}.
 
-There will be eight lines in the complete truth table for a sentence containing three sentence letters, e.g.: 
+Haverá oito linhas na tabela-verdade completa para uma sentença contendo três letras sentenciais, por exemplo:
 \begin{center}
 \begin{tabular}{c c c|d e e e f}
 $M$&$N$&$P$&$M$&\eand&$(N$&\eor&$P)$\\
@@ -334,60 +321,59 @@ F & F & T & F & \TTbf{F} & F & T & T\\
 F & F & F & F & \TTbf{F} & F & F & F
 \end{tabular}
 \end{center}
-From this table, we know that the sentence `$M\eand(N\eor P)$' can be true or false, depending on the truth values of `$M$', `$N$', and `$P$'.
+A partir dessa tabela, sabemos que a sentença \textquotedblleft{}$M\eand(N\eor P)$\textquotedblright{} pode ser verdadeira ou falsa, dependendo dos valores de verdade de \textquotedblleft{}$M$\textquotedblright{}, \textquotedblleft{}$N$\textquotedblright{} e \textquotedblleft{}$P$\textquotedblright{}.
 
-A complete truth table for a sentence that contains four different sentence letters requires 16 lines. Five letters, 32 lines. Six letters, 64 lines. And so on. To be perfectly general: If a complete truth table has $n$ different sentence letters, then it must have $2^n$ lines.
+Uma tabela-verdade completa para uma sentença que contém quatro letras sentenciais diferentes requer 16 linhas. Cinco letras, 32 linhas. Seis letras, 64 linhas. E assim por diante. Para sermos perfeitamente gerais: se uma tabela-verdade completa tem $n$ letras sentenciais diferentes, então ela deve ter $2^n$ linhas.
 
-In order to fill in the columns of a complete truth table, begin with the right-most sentence letter and alternate between `T' and `F'. In the next column to the left, write two `T's, write two `F's, and repeat. For the third sentence letter, write four `T's followed by four `F's. This yields an eight line truth table like the one above. For a 16 line truth table, the next column of sentence letters should have eight `T's followed by eight `F's. For a 32 line table, the next column would have 16 `T's followed by 16 `F's, and so on.
+Para preencher as colunas de uma tabela-verdade completa, comece com a letra sentencial mais à direita e alterne entre \textquotedblleft{}T\textquotedblright{} e \textquotedblleft{}F\textquotedblright{}. Na coluna seguinte à esquerda, escreva dois \textquotedblleft{}T\textquotedblright{}, escreva dois \textquotedblleft{}F\textquotedblright{} e repita. Para a terceira letra sentencial, escreva quatro \textquotedblleft{}T\textquotedblright{} seguidos de quatro \textquotedblleft{}F\textquotedblright{}. Isso produz uma tabela-verdade com oito linhas como a acima. Para uma tabela-verdade com 16 linhas, a coluna seguinte de letras sentenciais deve ter oito \textquotedblleft{}T\textquotedblright{} seguidos de oito \textquotedblleft{}F\textquotedblright{}. Para uma tabela com 32 linhas, a coluna seguinte teria 16 \textquotedblleft{}T\textquotedblright{} seguidos de 16 \textquotedblleft{}F\textquotedblright{} e assim por diante.
 
-
-\section{More about brackets}\label{s:MoreBracketingConventions}
-Consider these two sentences:
+\section{Mais sobre parênteses}\label{s:MoreBracketingConventions}
+Considere estas duas sentenças:
 	\begin{align*}
 		((A \eand B) \eand C)\\
 		(A \eand (B \eand C))
 	\end{align*}
-These are truth functionally equivalent. Consequently, it will never make any difference from the perspective of truth value---which is all that TFL cares about (see \cref{s:TruthFunctionality})---which of the two sentences we assert (or deny). Even though the order of the brackets does not matter as to their truth, we should not just drop them. The expression
+Elas são equivalentes verofuncionalmente. Consequentemente, nunca fará diferença, do ponto de vista do valor de verdade — que é tudo com que a LVF se preocupa (ver \cref{s:TruthFunctionality}) —, qual das duas sentenças afirmamos (ou negamos). Embora a ordem dos parênteses não importe para a verdade delas, não devemos simplesmente eliminá-los. A expressão
 	\begin{align*}
 		A \eand B \eand C
 	\end{align*}
-is ambiguous between the two sentences above.  The same observation holds for disjunctions. The following sentences are logically equivalent:
+é ambígua entre as duas sentenças acima. A mesma observação vale para disjunções. As sentenças seguintes são logicamente equivalentes:
 	\begin{align*}
 		((A \eor B) \eor C)\\
 		(A \eor (B \eor C))
 	\end{align*}
-But we should not simply write:
+Mas não devemos simplesmente escrever:
 	\begin{align*}
 		A \eor B \eor C
 	\end{align*}
-In fact, it is a specific fact about the characteristic truth table of
-$\eor$ and $\eand$ that guarantees that any two conjunctions (or
-disjunctions) of the same sentences are truth functionally equivalent,
-however you place the brackets. \emph{This is only true of
-conjunctions, disjunctions, and biconditionals}, however. The following two sentences
-have \emph{different} truth tables:
+Na verdade, é um fato específico da tabela-verdade característica de
+$\eor$ e $\eand$ que garante que quaisquer duas conjunções (ou
+disjunções) das mesmas sentenças são equivalentes verofuncionalmente,
+independentemente de como você coloca os parênteses. \emph{Isso só é
+verdade para conjunções, disjunções e bicondicionais}, contudo. As duas
+sentenças seguintes têm tabelas-verdade \emph{diferentes}:
 	\begin{align*}
 		((A \eif B) \eif C)\\
 		(A \eif (B \eif C))
 	\end{align*}
-So if we were to write:
+Portanto, se escrevêssemos:
 	\begin{align*}
 		A \eif B \eif C
 	\end{align*}
-it would be dangerously ambiguous. Leaving out brackets in this case would be disastrous. Equally, these sentences have different truth tables:
+isso seria perigosamente ambíguo. Omitir os parênteses neste caso seria desastroso. Da mesma forma, estas sentenças têm tabelas-verdade diferentes:
 	\begin{align*}
 		((A \eor B) \eand C)\\
 		(A \eor (B \eand C))
 	\end{align*}
-So if we were to write:
+Portanto, se escrevêssemos:
 	\begin{align*}
 		A \eor B \eand C
 	\end{align*}
-it would be dangerously ambiguous. \emph{Never write this.} The moral is: never drop brackets (except the outermost ones).
+isso seria perigosamente ambíguo. \emph{Nunca escreva isso.} A moral é: nunca elimine os parênteses (exceto os mais externos).
 
 \practiceproblems\label{pr.TT.TTorC}
 \problempart
-Offer complete truth tables for each of the following:
+Forneça tabelas-verdade completas para cada uma das seguintes sentenças:
 \begin{compactlist}
 \item $A \eif A$ %taut
 \item $C \eif\enot C$ %contingent
@@ -400,20 +386,20 @@ Offer complete truth tables for each of the following:
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
 \end{compactlist}
 \problempart
-Check all the claims made in \cref{s:MoreBracketingConventions}, i.e., show that:
+Verifique todas as afirmações feitas em \cref{s:MoreBracketingConventions}, isto é, mostre que:
 \begin{compactlist}
-	\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
-	\item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
-	\item `$((A \eor B) \eand C)$' and `$(A \eor (B \eand C))$' do not have the same truth table
-	\item `$((A \eif B) \eif C)$' and `$(A \eif (B \eif C))$' do not have the same truth table
+	\item \textquotedblleft{}$((A \eand B) \eand C)$\textquotedblright{} e \textquotedblleft{}$(A \eand (B \eand C))$\textquotedblright{} têm a mesma tabela-verdade
+	\item \textquotedblleft{}$((A \eor B) \eor C)$\textquotedblright{} e \textquotedblleft{}$(A \eor (B \eor C))$\textquotedblright{} têm a mesma tabela-verdade
+	\item \textquotedblleft{}$((A \eor B) \eand C)$\textquotedblright{} e \textquotedblleft{}$(A \eor (B \eand C))$\textquotedblright{} não têm a mesma tabela-verdade
+	\item \textquotedblleft{}$((A \eif B) \eif C)$\textquotedblright{} e \textquotedblleft{}$(A \eif (B \eif C))$\textquotedblright{} não têm a mesma tabela-verdade
 \end{compactlist}
-Also, check whether:
+Além disso, verifique se:
 \begin{compactlist}
-	\item[5.] `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table
+	\item[5.] \textquotedblleft{}$((A \eiff B) \eiff C)$\textquotedblright{} e \textquotedblleft{}$(A \eiff (B \eiff C))$\textquotedblright{} têm a mesma tabela-verdade
 \end{compactlist}
 
 \problempart
-Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
+Escreva tabelas-verdade completas para as sentenças seguintes e marque a coluna que representa os possíveis valores de verdade da sentença inteira.
 
 \begin{compactlist}
 
@@ -441,7 +427,7 @@ Write complete truth tables for the following sentences and mark the column that
 %	&	F	&	T	&	F	&	F	&	T	&	T	&	T	&	F	\\
 %	&	F	&	F	&	F	&	T	&	T	&	F	&	T	&	T	\\
 %	&	T	&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
-%\cline{2-2}
+%\cline{2-9}
 %\end{tabular}
 
 
@@ -453,7 +439,7 @@ Write complete truth tables for the following sentences and mark the column that
 %	&	T	&	T	&	T	&	T		&	F	 &	T	&	T	&	F		&	T	\\	
 %	&	T	&	F	&	F	&	T		&	T	 &	F	&	F	&	F		&	T	\\
 %	&	F	&	T	&	T	&	F		&	F	 &	T	&	F	&	T		&	F	\\
-%	&	F	&	T	&	F	&	T		&	T	 &	F	&	T	&	T		&	F	\\
+%	&	F		&	T		&	F		&	T		&	T	 &	F	&	T	&	T	&	F	\\
 %\cline{5-5}
 %\end{tabular}
 
@@ -482,7 +468,7 @@ Write complete truth tables for the following sentences and mark the column that
 %\cline{2-13}
 %	&F	   &	T	&	  T &	T	&	T		&	T	&	F	&	T	&	T	&	T	&	T	&	T	\\
 %	&T	   &	T	&	  F &	T	&	F		&	F	&	T	&	T	&	T	&	T	&	T	&	F	\\	
-%	&T	   &	T	&	 F  &	F	&	F		&	T	&	T	&	T	&	T	&	F	&	T	&	T	\\
+%	&T	   &	T	&	 F  &	F	&	F		&	T	&	T	&	T	&	F	&	T	&	T	\\
 %	&T	   &	T	&	 F  &	F	&	F		&	F	&	T	&	T	&	T	&	F	&	F	&	F	\\
 %	&T	   &	F	&	F   &	T	&	T		&	T	&	T	&	F	&	T	&	T	&	T	&	T	\\
 %	&T	   &	F	&	F   &	T	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	F	\\
@@ -496,7 +482,7 @@ Write complete truth tables for the following sentences and mark the column that
 \end{compactlist}
 
 \problempart
-Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
+Escreva tabelas-verdade completas para as sentenças seguintes e marque a coluna que representa os possíveis valores de verdade da sentença inteira.
 
 \begin{compactlist}
 
@@ -509,8 +495,8 @@ Write complete truth tables for the following sentences and mark the column that
 %1.	&	(D 	&	 \eand 	& 	 \enot	&	 D) 	&	 \eif 	&	 G \\
 %	&	T	&	F		&	F		&	T	&	T	&	T	\\
 %	&	T	&	F		&	F		&	T	&	T	&	F	\\
-%	&	F	&	F		&	T		&	F	&	T	&	T	\\
-%	&	F	&	F		&	T		&	F	&	T	&	F	\\
+%	&	F		&	F		&	T	&	F	&	T	&	T	\\
+%	&	F		&	F		&	T	&	F	&	T	&	F	\\
 %\cline{6-6}
 %\end{tabular}
 %\vspace{1em}
@@ -555,10 +541,10 @@ Write complete truth tables for the following sentences and mark the column that
 %	&	T	&	T		&	T	&	F	&	F	&	T	&	F		&	T	&	T		&T	\\
 %	&	T	&	F		&	F	&	T	&	T	&	F	&	F		&	T	&	T		&F	\\
 %	&	T	&	F		&	F	&	T	&	F	&	F	&	F		&	T	&	T		&F	\\
-%	&	F	&	F		&	T	&	T	&	T	&	F	&	F		&	F	&	T		&T	\\
-%	&	F	&	F		&	T	&	T	&	F	&	F	&	F		&	F	&	T		&T	\\
-%	&	F	&	F		&	F	&	T	&	T	&	T	&	T		&	F	&	F		&F	\\
-%	&	F	&	F		&	F	&	T	&	F	&	T	&	T		&	F	&	F		&F	\\
+%	&	F		&	F		&	T	&	T	&	T	&	F	&	F		&	F	&	T		&T	\\
+%	&	F		&	F		&	T	&	T	&	F	&	F	&	F		&	F	&	T		&T	\\
+%	&	F		&	F		&	F	&	T	&	T	&	T	&	T		&	F	&	F		&F	\\
+%	&	F		&	F		&	F	&	T	&	F	&	T	&	T		&	F	&	F		&F	\\
 %\cline{7-7}
 %\end{tabular}
 %	
@@ -577,64 +563,62 @@ Write complete truth tables for the following sentences and mark the column that
 %	&	T		&	F	&	F	&	T	&	F	&	T	&	T	&	T		&	F	&	T	&T	\\
 %	&	F		&	F	&	F	&	T	&	T	&	F	&	T	&	T		&	F	&	T	&T	\\
 %	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	T		&	F	&	F	&F	\\
-%	&	T		&	F	&	T	&	F	&	F	&	F	&	T	&	T		&	F	&	F	&F	\\
+%	&	T		&	F	&	T	&	F	&	F	&	F	&	F	&	T		&	F	&	F	&F	\\
 %\cline{8-8}
 %\end{tabular}
 %\vspace{1em}
 \end{compactlist}
 
 
-If you want additional practice, you can construct truth tables for any of the sentences and arguments in the exercises for the previous chapter.
-
-
-\chapter{Semantic concepts}
+Se quiser prática adicional, você pode construir tabelas-verdade para qualquer uma das sentenças e argumentos dos exercícios do capítulo anterior.
+\chapter{Conceitos semânticos}
 \label{s:SemanticConcepts}
 
-In the previous chapter, we introduced the idea of a valuation and showed how to determine the truth value of any TFL sentence, on any valuation, using a truth table. In this chapter, we will introduce some related ideas, and show how to use truth tables to test whether or not they apply.
+No capítulo anterior, introduzimos a ideia de uma valoração e mostramos como determinar o valor de verdade de qualquer sentença da LVF, em qualquer valoração, usando uma tabela-verdade. Neste capítulo, introduziremos algumas ideias relacionadas e mostraremos como usar tabelas-verdade para testar se elas se aplicam ou não.
 
 
-\section{Tautologies and contradictions}
-In \cref{s:BasicNotions}, we explained \emph{necessary truth} and \emph{necessary falsity}. Both notions have surrogates in TFL. We will start with a surrogate for necessary truth.
+\section{Tautologias e contradições}
+Em \cref{s:BasicNotions}, explicamos \emph{verdade necessária} e \emph{falsidade necessária}. Ambas as noções têm substitutos na LVF. Começaremos com um substituto para a verdade necessária.
 	\factoidbox{
-		$\metav{A}$ is a \define{tautology} \ifeff{} it is true on every valuation.
+		$\metav{A}$ é uma \define{tautologia} \ifeff{} se é verdadeira em toda valoração.
 	}
 
 \newglossaryentry{tautology}
 {
-name=tautology,
-description={A sentence that has only Ts in the column under the main logical operator of its \gls{complete truth table}; a sentence that is true on every \gls{valuation}}
+name=tautologia,
+description={Uma sentença que tem somente T na coluna sob o operador lógico principal de sua \gls{complete truth table}; uma sentença que é verdadeira em toda \gls{valuation}}
 }
 
-We can use truth tables to decide whether a sentence is a tautology. If the sentence is true on every line of its complete truth table, then it is true on every valuation, so it is a tautology. In the example of \cref{s:CompleteTruthTables}, `$(H \eand I) \eif H$' is a tautology.
+Podemos usar tabelas-verdade para decidir se uma sentença é uma tautologia. Se a sentença é verdadeira em todas as linhas de sua tabela-verdade completa, então é verdadeira em toda valoração e, portanto, é uma tautologia. No exemplo de \cref{s:CompleteTruthTables}, \textquotedblleft{}$(H \eand I) \eif H$\textquotedblright{} é uma tautologia.
 
-This is only, though, a \emph{surrogate} for necessary truth. There are some necessary truths that we cannot adequately symbolize in TFL. One example is `$2 + 2 = 4$'. This \emph{must} be true, but if we try to symbolize it in TFL, the best we can offer is a sentence letter, and no sentence letter is a tautology. Still, if we can adequately symbolize some English sentence using a TFL sentence which is a tautology, then that English sentence expresses a necessary truth.
+No entanto, este é apenas um \emph{substituto} para a verdade necessária. Há algumas verdades necessárias que não podemos simbolizar adequadamente na LVF. Um exemplo é \textquotedblleft{}$2 + 2 = 4$\textquotedblright{}. Isso \emph{deve} ser verdadeiro, mas, se tentarmos simbolizá-lo na LVF, o melhor que podemos oferecer é uma letra sentencial, e nenhuma letra sentencial é uma tautologia. Ainda assim, se pudermos simbolizar adequadamente alguma sentença em português usando uma sentença da LVF que seja uma tautologia, então essa sentença em português expressa uma verdade necessária.
 
-We have a similar surrogate for necessary falsity:
+Temos um substituto semelhante para a falsidade necessária:
 	\factoidbox{
-		$\metav{A}$ is a \define{contradiction} (in TFL) \ifeff{} it is false on every valuation.
+		$\metav{A}$ é uma \define{contradi\c{c}\~{a}o} (na LVF) \ifeff{} é falsa em toda valoração.
 	}
 \newglossaryentry{contradiction of TFL}
 {
-  name=contradiction (of TFL),
-  text = contradiction,
-description={A sentence that has only Fs in the column under the main logical operator of its \gls{complete truth table}; a sentence that is false on every \gls{valuation}}
+  name=contradição (da LVF),
+  text = contradição,
+description={Uma sentença que tem somente F na coluna sob o operador lógico principal de sua \gls{complete truth table}; uma sentença que é falsa em toda \gls{valuation}}
 }
 
-We can use truth tables to decide whether a sentence is a contradiction. If the sentence is false on every line of its complete truth table, then it is false on every valuation, so it is a contradiction. In the example of \cref{s:CompleteTruthTables}, `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$' is a contradiction.
+Podemos usar tabelas-verdade para decidir se uma sentença é uma contradição. Se a sentença é falsa em todas as linhas de sua tabela-verdade completa, então é falsa em toda valoração e, portanto, é uma contradição. No exemplo de \cref{s:CompleteTruthTables}, \textquotedblleft{}$[(C\eiff C) \eif C] \eand \enot(C \eif C)$\textquotedblright{} é uma contradição.
 
-\section{Equivalence}\label{sec:equivalent}
-Here is a similar useful notion:
+\section{Equivalência}\label{sec:equivalent}
+Eis uma noção útil semelhante:
 	\factoidbox{
-		$\metav{A}$ and $\metav{B}$ are \define{equivalent} (in TFL) iff, for every valuation, their truth values agree, i.e., if there is no valuation in which they have opposite truth values.
+		$\metav{A}$ e $\metav{B}$ são \define{equivalentes} (na LVF) se e somente se, para toda valoração, seus valores de verdade coincidem, isto é, se não há valoração na qual tenham valores de verdade opostos.
 	}
 \newglossaryentry{equivalent}
 {
-  name=equivalence (in TFL),
-  text = equivalent,
-description={A property held by pairs of sentences if and only if the \gls{complete truth table} for those sentences has identical columns under the two main logical operators, i.e., if the sentences have the same truth value on every valuation}
+  name=equivalência (na LVF),
+  text = equivalente,
+description={Uma propriedade de pares de sentenças se, e somente se, a \gls{complete truth table} dessas sentenças tem colunas idênticas sob os dois operadores lógicos principais, isto é, se as sentenças têm o mesmo valor de verdade em toda valoração}
 }
 
-We have already made use of this notion, in effect, in \cref{s:MoreBracketingConventions}; the point was that `$(A \eand B) \eand C$' and  `$A \eand (B \eand C)$' are equivalent. Again, it is easy to test for equivalence using truth tables. Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they equivalent? To find out, we construct a truth table.
+Já usamos essa noção, na prática, em \cref{s:MoreBracketingConventions}; o ponto era que \textquotedblleft{}$(A \eand B) \eand C$\textquotedblright{} e \textquotedblleft{}$A \eand (B \eand C)$\textquotedblright{} são equivalentes. Novamente, é fácil testar a equivalência usando tabelas-verdade. Considere as sentenças \textquotedblleft{}$\enot(P \eor Q)$\textquotedblright{} e \textquotedblleft{}$\enot P \eand \enot Q$\textquotedblright{}. Elas são equivalentes? Para descobrir, construímos uma tabela-verdade.
 \begin{center}
 \begin{tabular}{c c|d e e f |d e e e f}
 $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
@@ -645,40 +629,40 @@ $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
  F & F & \TTbf{T} & F & F & F & T & F & \TTbf{T} & T & F
 \end{tabular}
 \end{center}
-Look at the columns for the main logical operators; negation for the first sentence, conjunction for the second. Go through the rows in the table one by one and compare the truth values in the columns for the main logical operators. On the first three rows, both are false. On the final row, both are true. Since they match on every row, the two sentences are equivalent.
+Observe as colunas dos operadores lógicos principais: negação para a primeira sentença, conjunção para a segunda. Percorra as linhas da tabela uma a uma e compare os valores de verdade nas colunas dos operadores lógicos principais. Nas três primeiras linhas, ambos são falsos. Na última linha, ambos são verdadeiros. Como coincidem em todas as linhas, as duas sentenças são equivalentes.
 
 
-\section{Satisfiability}
-In \cref{s:BasicNotions}, we said that sentences are jointly possible \ifeff{} it is possible for all of them to be true at once. We can offer a surrogate for this notion too:
+\section{Satisfatibilidade}
+Em \cref{s:BasicNotions}, dissemos que sentenças são conjuntamente possíveis \ifeff{} é possível que todas sejam verdadeiras ao mesmo tempo. Podemos oferecer um substituto também para essa noção:
 	\factoidbox{
-		$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ are \define{jointly satisfiable} (in TFL) \ifeff{} there is some valuation which makes them all true.
+		$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ são \define{conjuntamente satisfat\'{i}veis} (na LVF) \ifeff{} há alguma valoração que as torna todas verdadeiras.
 	}
 
         \newglossaryentry{satisfiability in TFL}
 {
-  name=satisfiability (in TFL),
-  text=jointly satisfiable,
-  description={A property held by \glspl{sentence of TFL} if and only if the
-  \gls{complete truth table} for all those sentences together contains one line
-  on which all the sentences are true, i.e., if some \gls{valuation}
-  makes all the sentences true}
+  name=satisfatibilidade (na LVF),
+  text=conjuntamente satisfatíveis,
+  description={Uma propriedade de \glspl{sentence of TFL} se e somente se a
+  \gls{complete truth table} de todas essas sentenças em conjunto contém uma linha
+  na qual todas as sentenças são verdadeiras, isto é, se alguma \gls{valuation}
+  torna todas as sentenças verdadeiras}
 }
 
-Derivatively, sentences are \define{jointly unsatisfiable} \ifeff{} no valuation makes them all true. Again, it is easy to test for joint satisfiability using truth tables.
+Como consequência, sentenças são \define{conjuntamente insatisfat\'{i}veis} \ifeff{} nenhuma valoração torna todas verdadeiras. Novamente, é fácil testar a satisfatibilidade conjunta usando tabelas-verdade.
 
-\section{Entailment and validity}
-The following idea is closely related to that of joint satisfiability:
+\section{Implicação e validade}
+A ideia seguinte está intimamente relacionada à da satisfatibilidade conjunta:
 	\factoidbox{
-		The sentences $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ \define{entail} (in TFL) the sentence $\metav{C}$ \ifeff{} no valuation of the relevant sentence letters makes all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and $\metav{C}$ false.
+		As sentenças $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ \define{implicam} (na LVF) a sentença $\metav{C}$ \ifeff{} nenhuma valoração das letras sentenciais relevantes torna todas as $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ verdadeiras e $\metav{C}$ falsa.
 	}
        \newglossaryentry{valid in TFL}
 {
-  name= validity of arguments (in TFL),
-  text = valid,
-description={A property held by arguments if and only if the \gls{complete truth table} for the argument contains no rows where the \glspl{premise} are all true and the \gls{conclusion} false, i.e., if no \gls{valuation} makes all premises true and the conclusion false}
+  name= validade de argumentos (na LVF),
+  text = válido,
+description={Uma propriedade de argumentos se, e somente se, a \gls{complete truth table} para o argumento não contém linhas nas quais as \glspl{premise} sejam todas verdadeiras e a \gls{conclusion} seja falsa, isto é, se nenhuma \gls{valuation} torna todas as premissas verdadeiras e a conclusão falsa}
 }
  
-Again, it is easy to test this with a truth table. To check whether `$\enot L \eif (J \eor L)$' and `$\enot L$' entail `$J$', we simply need to check whether there is any valuation which makes both `$\enot L \eif (J \eor L)$' and `$\enot L$' true whilst making `$J$' false. So we use a truth table: 
+Novamente, é fácil testar isso com uma tabela-verdade. Para verificar se \textquotedblleft{}$\enot L \eif (J \eor L)$\textquotedblright{} e \textquotedblleft{}$\enot L$\textquotedblright{} implicam \textquotedblleft{}$J$\textquotedblright{}, basta verificar se há alguma valoração que torne verdadeiras tanto \textquotedblleft{}$\enot L \eif (J \eor L)$\textquotedblright{} quanto \textquotedblleft{}$\enot L$\textquotedblright{}, ao mesmo tempo que torna \textquotedblleft{}$J$\textquotedblright{} falsa. Portanto, usamos uma tabela-verdade:
 \begin{center}
 \begin{tabular}{c c|d e e e e f|d f| c}
 $J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
@@ -690,7 +674,7 @@ $J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
  F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F & \TTbf{F}
 \end{tabular}
 \end{center}
-The only row on which both`$\enot L \eif (J \eor L)$' and `$\enot L$' are true is the second row, and that is a row on which `$J$' is also true. So `$\enot L \eif (J \eor L)$' and `$\enot L$' entail `$J$'.
+A única linha na qual tanto \textquotedblleft{}$\enot L \eif (J \eor L)$\textquotedblright{} quanto \textquotedblleft{}$\enot L$\textquotedblright{} são verdadeiras é a segunda, e essa é uma linha na qual \textquotedblleft{}$J$\textquotedblright{} também é verdadeira. Portanto, \textquotedblleft{}$\enot L \eif (J \eor L)$\textquotedblright{} e \textquotedblleft{}$\enot L$\textquotedblright{} implicam \textquotedblleft{}$J$\textquotedblright{}.
 
 % We now make an important observation:
 % 	\factoidbox{
@@ -724,80 +708,62 @@ The only row on which both`$\enot L \eif (J \eor L)$' and `$\enot L$' are true i
 
 
 
-\section{The double turnstile}
-In what follow, we will use the notion of entailment rather a lot in this book. It will help us, then, to introduce a symbol that abbreviates it. Rather than saying that the TFL sentences $\metav{A}_1$, $\metav{A}_2$, \dots{} and $\metav{A}_n$ together entail $\metav{C}$, we will abbreviate this by:
+\section{O duplo turnstile}
+Neste livro, usaremos bastante a noção de implicação. Será útil, então, introduzir um símbolo que a abrevia. Em vez de dizer que as sentenças da LVF $\metav{A}_1$, $\metav{A}_2$, \dots{} e $\metav{A}_n$ em conjunto implicam $\metav{C}$, abreviaremos isso assim:
 	$$\metav{A}_1, \metav{A}_2, \dots, \metav{A}_n \entails \metav{C}$$
-The symbol `$\entails$' is known as \emph{the double turnstile}, since it looks like a turnstile with two horizontal beams.
+O símbolo \textquotedblleft{}$\entails$\textquotedblright{} é conhecido como \emph{duplo turnstile}, pois se parece com um turnstile com duas barras horizontais.
 
-Let's be clear. `$\entails$' is not a symbol of TFL. Rather, it is a symbol of our metalanguage, augmented English (recall the difference between object language and metalanguage from \cref{s:UseMention}). So the metalanguage sentence:
+Sejamos claros. \textquotedblleft{}$\entails$\textquotedblright{} não é um símbolo da LVF. Antes, é um símbolo de nossa metalinguagem, o português ampliado (recorde a diferença entre linguagem-objeto e metalinguagem em \cref{s:UseMention}). Assim, a sentença da metalinguagem:
 	\[\metav{A}, \metav{A} \eif \metav{B} \entails \metav{B}\]
-is \emph{just} an abbreviation for this metalanguage sentence: 
+é \emph{apenas} uma abreviação desta sentença da metalinguagem:
 	\begin{center}
-		The TFL sentences $\metav{A}$ and $\metav{A} \eif \metav{B}$ entail $\metav{B}$
+		As sentenças da LVF $\metav{A}$ e $\metav{A} \eif \metav{B}$ implicam $\metav{B}$
 	\end{center}
-Note that there is no limit on the number of TFL sentences that can be mentioned before the symbol~`$\entails$'. Indeed, we can even consider the limiting case:
+Observe que não há limite para o número de sentenças da LVF que podem ser mencionadas antes do símbolo~\textquotedblleft{}$\entails$\textquotedblright{}. Com efeito, podemos até considerar o caso-limite:
 	$$\entails \metav{C}$$
-This says that there is no valuation which makes all the sentences
-mentioned on the left side of `$\entails$' true whilst making all
-sentences on the right side (in this case, $\metav{C}$) false. Since \emph{no} sentences are mentioned on the left
-side of `$\entails$' in this case, this just means that there is no
-valuation which makes $\metav{C}$ false. Otherwise put, it says that
-every valuation makes $\metav{C}$ true. Otherwise put, it says that
-$\metav{C}$ is a tautology. Equally, to say that $\metav{A}$ is a
-contradiction, we could write:
+Isso diz que não há valoração que torne verdadeiras todas as sentenças mencionadas no lado esquerdo de \textquotedblleft{}$\entails$\textquotedblright{} e, ao mesmo tempo, torne falsas todas as sentenças no lado direito (neste caso, $\metav{C}$). Como \emph{nenhuma} sentença é mencionada no lado esquerdo de \textquotedblleft{}$\entails$\textquotedblright{} neste caso, isso significa simplesmente que não há valoração que torne $\metav{C}$ falsa. Dito de outro modo, significa que toda valoração torna $\metav{C}$ verdadeira. Dito de outro modo, significa que $\metav{C}$ é uma tautologia. Da mesma forma, para dizer que $\metav{A}$ é uma contradição, poderíamos escrever:
 	$$\metav{A} \entails\phantom{\metav{C}}$$
-to mean that no valuation makes $\metav{A}$ true.
+para significar que nenhuma valoração torna $\metav{A}$ verdadeira.
 
-Sometimes, we will want to deny that there is a tautological entailment, and say something of this shape: 
+Às vezes, queremos negar que haja uma implicação tautológica e dizer algo desta forma:
 \begin{center}
-	it is \emph{not} the case that $\metav{A}_1, \ldots, \metav{A}_n \entails \metav{C}$
+	não é o caso que $\metav{A}_1, \ldots, \metav{A}_n \entails \metav{C}$
 \end{center}
-In that case, we can just slash the turnstile through, and write: 
+Nesse caso, podemos simplesmente riscar o turnstile e escrever:
 $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nentails\metav{C}$$
-This means that \emph{some} valuation makes all of $\metav{A}_1,
-\ldots, \metav{A}_n$ true whilst making $\metav{C}$ false. Note that
-it does \emph{not} follow that $\metav{A}_1,\ldots, \metav{A}_n
-\entails \enot \metav{C}$, for it is possible that some \emph{other}
-valuation makes all of $\metav{A}_1, \ldots, \metav{A}_n$ true and
-makes $\metav{C}$ \emph{true}. For instance, $P \nentails Q$ but also
-$P \nentails \enot Q$.
+Isso significa que alguma valoração torna todas as $\metav{A}_1, \ldots, \metav{A}_n$ verdadeiras e torna $\metav{C}$ falsa. Observe que disso \emph{não} se segue que $\metav{A}_1,\ldots, \metav{A}_n \entails \enot \metav{C}$, pois é possível que alguma \emph{outra} valoração torne todas as $\metav{A}_1, \ldots, \metav{A}_n$ verdadeiras e torne $\metav{C}$ \emph{verdadeira}. Por exemplo, $P \nentails Q$, mas também $P \nentails \enot Q$.
 
-\section{`$\entails$' versus `$\eif$'}\label{entails-v-iff}
-We now want to compare and contrast `$\entails$' and `$\eif$'.
+\section{$\entails$ versus $\eif$}\label{entails-v-iff}
+Agora queremos comparar e contrastar \textquotedblleft{}$\entails$\textquotedblright{} e \textquotedblleft{}$\eif$\textquotedblright{}.
 
-Observe: $\metav{A} \entails \metav{C}$ \ifeff{} no valuation of the sentence letters makes $\metav{A}$ true and $\metav{C}$ false.
+Observe: $\metav{A} \entails \metav{C}$ \ifeff{} nenhuma valoração das letras sentenciais torna $\metav{A}$ verdadeira e $\metav{C}$ falsa.
 
-Observe: $\metav{A} \eif \metav{C}$ is a tautology \ifeff{} no valuation of the sentence letters makes $\metav{A} \eif \metav{C}$ false. Since a conditional is true except when its antecedent is true and its consequent false, $\metav{A} \eif \metav{C}$ is a tautology \ifeff{} no valuation makes $\metav{A}$ true and $\metav{C}$ false.
+Observe: $\metav{A} \eif \metav{C}$ é uma tautologia \ifeff{} nenhuma valoração das letras sentenciais torna $\metav{A} \eif \metav{C}$ falsa. Como um condicional é verdadeiro exceto quando seu antecedente é verdadeiro e seu consequente é falso, $\metav{A} \eif \metav{C}$ é uma tautologia \ifeff{} nenhuma valoração torna $\metav{A}$ verdadeira e $\metav{C}$ falsa.
 
-Combining these two observations, we see that $\metav{A} \eif \metav{C}$  is a tautology \ifeff{}  $\metav{A} \entails \metav{C}$. But there is a really, really important difference between `$\entails$' and `$\eif$':
+Combinando essas duas observações, vemos que $\metav{A} \eif \metav{C}$ é uma tautologia \ifeff{} $\metav{A} \entails \metav{C}$. Mas há uma diferença realmente, realmente importante entre \textquotedblleft{}$\entails$\textquotedblright{} e \textquotedblleft{}$\eif$\textquotedblright{}:
 	\factoidbox{
 		\begin{itemize}
-			\item `$\eif$' is a sentential connective of TFL.
-			\item `$\entails$' is a symbol of augmented English.
+			\item \textquotedblleft{}$\eif$\textquotedblright{} é um conectivo sentencial da LVF.
+			\item \textquotedblleft{}$\entails$\textquotedblright{} é um símbolo do português ampliado.
 		\end{itemize}
 	}
-Indeed, when `$\eif$' is flanked with two TFL sentences, the result is a longer TFL sentence. By contrast, when we use `$\entails$', we form a metalinguistic sentence that \emph{mentions} the surrounding TFL sentences.
+Com efeito, quando \textquotedblleft{}$\eif$\textquotedblright{} é ladeado por duas sentenças da LVF, o resultado é uma sentença mais longa da LVF. Em contraste, quando usamos \textquotedblleft{}$\entails$\textquotedblright{}, formamos uma sentença metalinguística que \emph{menciona} as sentenças da LVF ao seu redor.
 
-The English word `implies' is often used as a synonym for `entails',
-i.e.,~`$\entails$'. Some logicians \emph{also} use it for the
-conditional, i.e.,~`$\eif$'. Since this is liable to commit the
-confusion warned about above, we avoid the use of `implies' as much as
-possible. (Whenever it is used, it means `entails'.)
-
+A palavra inglesa \textquotedblleft implies\textquotedblright{} é frequentemente usada como sinônimo de \textquotedblleft entails\textquotedblright{}, isto é, de \textquotedblleft{}$\entails$\textquotedblright{}. Alguns lógicos \emph{também} a usam para o condicional, isto é, para \textquotedblleft{}$\eif$\textquotedblright{}. Como isso pode levar à confusão alertada acima, evitamos usar \textquotedblleft implies\textquotedblright{} tanto quanto possível. (Quando ela é usada, significa \textquotedblleft entails\textquotedblright{}.)
 
 \practiceproblems
 \problempart
-Revisit your answers to
-\hyperref[pr.TT.TTorC]{exercise~\ref*{s:CompleteTruthTables}A}. Determine which
-sentences were tautologies, which were contradictions, and which were
-neither tautologies nor contradictions.
+Reveja suas respostas para
+\hyperref[pr.TT.TTorC]{exercício~\ref*{s:CompleteTruthTables}A}. Determine quais
+sentenças eram tautologias, quais eram contradições e quais eram
+não eram nem tautologias nem contradições.
 \solutions
 
 \
 
 \problempart
 \label{pr.TT.satisfiable}
-Use truth tables to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
+Use tabelas-verdade para determinar se estas sentenças são conjuntamente satisfatíveis ou conjuntamente insatisfatíveis:
 \begin{compactlist}
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %satisfiable
 \item $A\eor B$, $A\eif C$, $B\eif C$ %satisfiable
@@ -809,7 +775,7 @@ Use truth tables to determine whether these sentences are jointly satisfiable, o
 \solutions
 \problempart
 \label{pr.TT.valid}
-Use truth tables to determine whether each argument is valid or invalid.
+Use tabelas-verdade para determinar se cada argumento é válido ou inválido.
 \begin{compactlist}
 \item $A\eif A \therefore A$ %invalid
 \item $A\eif(A\eand\enot A) \therefore \enot A$ %valid
@@ -818,7 +784,7 @@ Use truth tables to determine whether each argument is valid or invalid.
 \item $(B\eand A)\eif C, (C\eand A)\eif B \therefore (C\eand B)\eif A$ %invalid
 \end{compactlist}
 
-\problempart Determine whether each sentence is a tautology, a contradiction, or a contingent sentence, using a complete truth table.
+\problempart Determine se cada sentença é uma tautologia, uma contradição ou uma sentença contingente, usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $\enot B \eand B$ \vspace{.5ex}%contra
 
@@ -843,30 +809,30 @@ Use truth tables to determine whether each argument is valid or invalid.
 
 \noindent\problempart
 \label{pr.TT.equiv}
-Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are logically equivalent, write ``equivalent.'' Otherwise write, ``Not equivalent.'' 
+Determine se as sentenças seguintes são logicamente equivalentes usando tabelas-verdade completas. Se as duas sentenças forem realmente logicamente equivalentes, escreva ``equivalentes.'' Caso contrário, escreva ``não equivalentes.'' 
 \begin{compactlist}
-\item $A$ and $\enot A$
-\item $A \eand \enot A$ and $\enot B \eiff B$
-\item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$
-\item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$
-\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$\end{compactlist}
+\item $A$ e $\enot A$
+\item $A \eand \enot A$ e $\enot B \eiff B$
+\item $[(A \eor B) \eor C]$ e $[A \eor (B \eor C)]$
+\item $A \eor (B \eand C)$ e $(A \eor B) \eand (A \eor C)$
+\item $[A \eand (A \eor B)] \eif B$ e $A \eif B$\end{compactlist}
 
 
 \problempart
 \label{pr.TT.equiv2}
-Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are equivalent, write ``equivalent.'' Otherwise write, ``not equivalent.''
+Determine se as sentenças seguintes são logicamente equivalentes usando tabelas-verdade completas. Se as duas sentenças forem realmente equivalentes, escreva ``equivalentes.'' Caso contrário, escreva ``não equivalentes.''
 \begin{compactlist}
-\item $A\eif A$ and $A \eiff A$
-\item $\enot(A \eif B)$ and $\enot A \eif \enot B$
-\item $A \eor B$ and $\enot A \eif B$
-\item$(A \eif B) \eif C$ and $A \eif (B \eif C)$
-\item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$
+\item $A\eif A$ e $A \eiff A$
+\item $\enot(A \eif B)$ e $\enot A \eif \enot B$
+\item $A \eor B$ e $\enot A \eif B$
+\item$(A \eif B) \eif C$ e $A \eif (B \eif C)$
+\item $A \eiff (B \eiff C)$ e $A \eand (B \eand C)$
 \end{compactlist}
 
 
 \problempart
 \label{pr.TT.satisfiable2}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable using a complete truth table.
+Determine se cada coleção de sentenças é conjuntamente satisfatível ou conjuntamente insatisfatível usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$\vspace{.5ex} %Consistent
 
@@ -919,7 +885,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 \noindent\problempart
 \label{pr.TT.satisfiable3}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable, using a complete truth table.
+Determine se cada coleção de sentenças é conjuntamente satisfatível ou conjuntamente insatisfatível, usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $\enot B$, $A \eif B$, $A$ \vspace{.5ex}%unsatisfiable.
 \item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} %Consistent
@@ -933,7 +899,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 \noindent\problempart
 \label{pr.TT.valid2}
-Determine whether each argument is valid or invalid, using a complete truth table.
+Determine se cada argumento é válido ou inválido, usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $A\eif B$, $B \therefore  A$ %invalid
 
@@ -947,7 +913,7 @@ Determine whether each argument is valid or invalid, using a complete truth tabl
 
 \noindent\problempart
 \label{pr.TT.valid3}
-Determine whether each argument is valid or invalid, using a complete truth table.
+Determine se cada argumento é válido ou inválido, usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore  A $\vspace{.5ex}%invalid
 \item $A\eor B$, $B\eor C$, $\enot B \therefore A \eand C$\vspace{.5ex} %valid
@@ -959,28 +925,28 @@ Determine whether each argument is valid or invalid, using a complete truth tabl
 \solutions
 \problempart
 \label{pr.TT.concepts}
-Answer each of the questions below and justify your answer.
+Responda a cada uma das perguntas abaixo e justifique sua resposta.
 \begin{compactlist}
-\item Suppose that \metav{A} and \metav{B} are logically equivalent. What can you say about $\metav{A}\eiff\metav{B}$?
+\item Suponha que \metav{A} e \metav{B} sejam logicamente equivalentes. O que se pode dizer sobre $\metav{A}\eiff\metav{B}$?
 %\metav{A} and \metav{B} have the same truth value on every line of a complete truth table, so $\metav{A}\eiff\metav{B}$ is true on every line. It is a tautology.
-\item Suppose that $(\metav{A}\eand\metav{B})\eif\metav{C}$ is neither a tautology nor a contradiction. What can you say about whether $\metav{A}, \metav{B} \therefore\metav{C}$ is valid?
+\item Suponha que $(\metav{A}\eand\metav{B})\eif\metav{C}$ não seja nem uma tautologia nem uma contradição. O que se pode dizer sobre a validade de $\metav{A}, \metav{B} \therefore\metav{C}$?
 %The sentence is false on some line of a complete truth table. On that line, \metav{A} and \metav{B} are true and \metav{C} is false. So the argument is invalid.
-\item Suppose that $\metav{A}$, $\metav{B}$ and $\metav{C}$  are jointly unsatisfiable. What can you say about $(\metav{A}\eand\metav{B}\eand\metav{C})$?
-\item Suppose that \metav{A} is a contradiction. What can you say about whether $\metav{A}, \metav{B} \entails \metav{C}$?
+\item Suponha que $\metav{A}$, $\metav{B}$ e $\metav{C}$  sejam conjuntamente insatisfatíveis. O que se pode dizer sobre $(\metav{A}\eand\metav{B}\eand\metav{C})$?
+\item Suponha que \metav{A} seja uma contradição. O que se pode dizer sobre a validade de $\metav{A}, \metav{B} \entails \metav{C}$?
 %Since \metav{A} is false on every line of a complete truth table, there is no line on which \metav{A} and \metav{B} are true and \metav{C} is false. So the argument is valid.
-\item Suppose that \metav{C} is a tautology. What can you say about whether $\metav{A}, \metav{B}\entails \metav{C}$?
+\item Suponha que \metav{C} seja uma tautologia. O que se pode dizer sobre a validade de $\metav{A}, \metav{B}\entails \metav{C}$?
 %Since \metav{C} is true on every line of a complete truth table, there is no line on which \metav{A} and \metav{B} are true and \metav{C} is false. So the argument is valid.
-\item Suppose that \metav{A} and \metav{B} are logically equivalent. What can you say about $(\metav{A}\eor\metav{B})$?
+\item Suponha que \metav{A} e \metav{B} sejam logicamente equivalentes. O que se pode dizer sobre $(\metav{A}\eor\metav{B})$?
 %Not much. $(\metav{A}\eor\metav{B})$ is a tautology if \metav{A} and \metav{B} are tautologies; it is a contradiction if they are contradictions; it is contingent if they are contingent.
-\item Suppose that \metav{A} and \metav{B} are \emph{not} logically equivalent. What can you say about $(\metav{A}\eor\metav{B})$?
+\item Suponha que \metav{A} e \metav{B} não sejam logicamente equivalentes. O que se pode dizer sobre $(\metav{A}\eor\metav{B})$?
 %\metav{A} and \metav{B} have different truth values on at least one line of a complete truth table, and $(\metav{A}\eor\metav{B})$ will be true on that line. On other lines, it might be true or false. So $(\metav{A}\eor\metav{B})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.
 \end{compactlist}
 \problempart 
-Consider the following principle:
+Considere o seguinte princípio:
 	\begin{quote}
-		Suppose $\metav{A}$ and $\metav{B}$ are logically equivalent. Suppose an argument contains $\metav{A}$ (either as a premise, or as the conclusion). The validity of the argument would be unaffected, if we replaced $\metav{A}$ with $\metav{B}$.
+		Suponha que $\metav{A}$ e $\metav{B}$ sejam logicamente equivalentes. Suponha que um argumento contenha $\metav{A}$ (seja como premissa, seja como conclusão). A validade do argumento não seria afetada se substituíssemos $\metav{A}$ por $\metav{B}$.
 	\end{quote}
-Is this principle correct? Explain your answer.
+Esse princípio está correto? Explique sua resposta.
 
 \chapter{Limitations of TFL}\label{s:ParadoxesOfMaterialConditional}
 
