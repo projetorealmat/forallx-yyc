@@ -1053,84 +1053,200 @@ Há alguma sentença da LVF que não contenha letras sentenciais? Explique sua r
 Qual é o escopo de cada conectivo na sentença
 $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
 
-\chapter{Ambiguity}\label{s:AmbiguityTFL}
+\chapter{Ambiguidade}\label{s:AmbiguityTFL}
 
-In English, sentences can be \define{ambiguous}, i.e., they can have more than one meaning.  There are many sources of ambiguity. One is \emph{lexical ambiguity:} a sentence can contain words which have more than one meaning.  For instance, `bank' can mean the bank of a river, or a financial institution. So I might say that `I went to the bank' when I took a stroll along the river, or when I went to deposit a check.  Depending on the situation, a different meaning of `bank' is intended, and so the sentence, when uttered in these different contexts, expresses different meanings.
+Em português, as sentenças podem ser \define{amb\'iguas}, isto é, podem
+ter mais de um significado. Há muitas fontes de ambiguidade. Uma delas é
+a \emph{ambiguidade lexical}: uma sentença pode conter palavras que têm
+mais de um significado. Por exemplo, \emph{banco} pode significar a
+margem de um rio ou uma instituição financeira. Assim, posso dizer que
+\emph{fui ao banco} quando dei um passeio ao longo do rio ou quando fui
+depositar um cheque. Dependendo da situação, pretende-se um significado
+diferente de \emph{banco} e, portanto, a sentença, quando proferida
+nesses diferentes contextos, expressa significados diferentes.
 
-A different kind of ambiguity is \emph{structural ambiguity}.  This arises when a sentence can be interpreted in different ways, and depending on the interpretation, a different meaning is selected.  A famous example due to Noam Chomsky is the following:
+Um tipo diferente de ambiguidade é a \emph{ambiguidade estrutural}. Ela
+surge quando uma sentença pode ser interpretada de maneiras diferentes
+e, dependendo da interpretação, um significado diferente é selecionado.
+Um exemplo famoso, devido a Noam Chomsky, é o seguinte:
 \begin{enumerate}
-	\item[] Flying planes can be dangerous.
+	\item[] Voar aviões pode ser perigoso.
 \end{enumerate}
-There is one reading in which `flying' is used as an adjective which modifies `planes'. In this sense, what's claimed to be dangerous are airplanes which are in the process of flying.  In another reading, `flying' is a gerund: what's claimed to be dangerous is the act of flying a plane.  In the first case, you might use the sentence to warn someone who's about to launch a hot air baloon.  In the second case, you might use it to counsel someone against becoming a pilot.
+Há uma leitura em que \emph{voar} é usado como um adjetivo que modifica
+\emph{aviões}. Nesse sentido, o que se afirma ser perigoso são aviões que
+estão voando. Em outra leitura, \emph{voar} é um infinitivo: o que se
+afirma ser perigoso é o ato de pilotar um avião. No primeiro caso, você
+poderia usar a sentença para advertir alguém que está prestes a lançar um
+balão de ar quente. No segundo caso, poderia usá-la para aconselhar
+alguém a não se tornar piloto.
 
-When the sentence is uttered, usually only one meaning is intended. Which of the possible meanings an utterance of a sentence intends is determined by context, or sometimes by how it is uttered (which parts of the sentence are stressed, for instance). Often one interpretation is much more likely to be intended, and in that case it will even be difficult to ``see'' the unintended reading.  This is often the reason why a joke works, as in this example from Groucho Marx:
+Quando a sentença é proferida, geralmente apenas um significado é
+pretendido. Qual dos possíveis significados uma elocução pretende é
+determinado pelo contexto ou, às vezes, pela maneira como é proferida
+(por exemplo, por quais partes da sentença recebem ênfase). Muitas vezes,
+uma interpretação é muito mais provável que tenha sido pretendida e,
+nesse caso, pode ser até difícil perceber a leitura não pretendida. Essa
+é frequentemente a razão pela qual uma piada funciona, como neste exemplo
+de Groucho Marx:
 \begin{compactlist}
-	\item[] One morning I shot an elephant in my pajamas.
-	\item[] How he got in my pajamas, I don't know.
+	\item[] Certa manhã, atirei em um elefante usando meu pijama.
+	\item[] Como ele entrou no meu pijama, não sei.
 \end{compactlist}
 
-Ambiguity is related to, but not the same as, vagueness. An adjective, for instance `rich' or `tall,' is \define{vague} when it is not always possible to determine if it applies or not.  For instance, a person who's 6~ft 4~in (1.9~m) tall is pretty clearly tall, but a building that size is tiny.  Here, context has a role to play in determining what the clear cases and clear non-cases are (`tall for a person,' `tall for a basketball player,' `tall for a building'). Even when the context is clear, however, there will still be cases that fall in a middle range.
+A ambiguidade está relacionada à vagueza, mas não é a mesma coisa que
+ela. Um adjetivo, por exemplo \emph{rico} ou \emph{alto}, é
+\define{vago} quando nem sempre é possível determinar se ele se aplica ou
+não. Por exemplo, uma pessoa que mede 6~ft 4~in (1.9~m) é claramente
+alta, mas um edifício dessa altura é minúsculo. Aqui, o contexto
+desempenha um papel na determinação de quais são os casos claros e os
+casos claramente negativos (\emph{alto para uma pessoa}, \emph{alto para
+um jogador de basquete}, \emph{alto para um edifício}). Mesmo quando o
+contexto é claro, contudo, ainda haverá casos que se encontram em uma
+faixa intermediária.
 
-In TFL, we generally aim to avoid ambiguity. We will try to give our symbolization keys in such a way that they do not use ambiguous words or  disambiguate them if a word has different meanings. So, e.g., your symbolization key will need two different sentence letters for `Rebecca went to the (money) bank' and `Rebecca went to the (river) bank.' Vagueness is harder to avoid. Since we have stipulated that every case (and later, every valuation) must make every basic sentence (or sentence letter) either true or false and nothing in between, we cannot accommodate borderline cases in TFL.
+Na LVF, geralmente buscamos evitar a ambiguidade. Tentaremos fornecer
+nossas chaves de simbolização de modo que não usem palavras ambíguas ou
+as desambiguem quando uma palavra tiver significados diferentes. Assim,
+por exemplo, sua chave de simbolização precisará de duas letras
+sentenciais diferentes para \emph{Rebecca foi ao banco (financeiro)} e
+\emph{Rebecca foi ao banco (do rio)}. A vagueza é mais difícil de evitar.
+Como estipulamos que todo caso (e, mais tarde, toda valoração) deve tornar
+cada sentença básica (ou letra sentencial) verdadeira ou falsa, e nada
+intermediário, não podemos acomodar casos limítrofes na LVF.
 
-It is an important feature of sentences of TFL that they \emph{cannot} be structurally ambiguous. Every sentence of TFL can be read in one, and only one, way. This feature of TFL is also a strength. If an English sentence is ambiguous, TFL can help us make clear what the different meanings are.  Although we are pretty good at dealing with ambiguity in everyday conversation, avoiding it can sometimes be terribly important. Logic can then be usefully applied: it helps philosophers express their thoughts clearly, mathematicians to state their theorems rigorously, and software engineers to specify loop conditions, database queries, or verification criteria unambiguously.
+É uma característica importante das sentenças da LVF que elas
+\emph{não podem} ser estruturalmente ambíguas. Toda sentença da LVF pode
+ser lida de uma, e somente uma, maneira. Essa característica da LVF
+também é uma virtude. Se uma sentença em português é ambígua, a LVF pode
+nos ajudar a tornar claros os diferentes significados. Embora sejamos
+bastante bons em lidar com a ambiguidade na conversa cotidiana, evitá-la
+pode ser extremamente importante em algumas ocasiões. A lógica pode então
+ser aplicada de maneira proveitosa: ajuda filósofos a expressar seus
+pensamentos com clareza, matemáticos a enunciar seus teoremas com rigor e
+engenheiros de software a especificar condições de laço, consultas a
+bancos de dados ou critérios de verificação sem ambiguidade.
 
-Stating things without ambiguity is of crucial importance in the law as well. Here, ambiguity can, without exaggeration, be a matter of life and death. Here is a famous example of where a death sentence hinged on the interpretation of an ambiguity in the law. Roger Casement (1864--1916) was a British diplomat who was famous in his time for publicizing human-rights violations in the Congo and Peru (for which he was knighted in 1911). He was also an Irish nationalist. In 1914--16, Casement secretly travelled to Germany, with which Britain was at war at the time, and tried to recruit Irish prisoners of war to fight against Britain and for Irish independence. Upon his return to Ireland, he was captured by the British and tried for high treason.
+Dizer as coisas sem ambiguidade também é de importância crucial no
+direito. Aqui, a ambiguidade pode, sem exagero, ser uma questão de vida
+ou morte. Eis um famoso exemplo em que uma sentença de morte dependeu da
+interpretação de uma ambiguidade na lei. Roger Casement (1864--1916) foi
+um diplomata britânico famoso em sua época por tornar públicas violações
+dos direitos humanos no Congo e no Peru (pelas quais recebeu o título de
+cavaleiro em 1911). Ele também era um nacionalista irlandês. Entre
+1914--16, Casement viajou secretamente para a Alemanha, com a qual a
+Grã-Bretanha estava em guerra na época, e tentou recrutar prisioneiros de
+guerra irlandeses para lutar contra a Grã-Bretanha e pela independência
+da Irlanda. Ao retornar à Irlanda, foi capturado pelos britânicos e
+julgado por alta traição.
 
-The law under which Casement was tried is the \textit{Treason Act of 1351}. That act specifies what counts as treason, and so the prosecution had to establish at trial that Casement's actions met the criteria set forth in the Treason Act. The relevant passage stipulated that someone is guilty of treason
+A lei com base na qual Casement foi julgado é a
+\textit{Treason Act of 1351}. Essa lei especifica o que conta como
+traição e, por isso, a acusação teve de estabelecer no julgamento que as
+ações de Casement atendiam aos critérios estabelecidos na Treason Act. A
+passagem relevante estipulava que alguém é culpado de traição
 \begin{quote}
-	if a man is adherent to the King's enemies in his
-realm, giving to them aid and comfort in the realm, or elsewhere.
+	se um homem é aliado dos inimigos do Rei em seu
+	reino, prestando-lhes ajuda e conforto no reino, ou em outro lugar.
 \end{quote}
-Casement's defense hinged on the last comma in this sentence, which is not present in the original French text of the law from 1351.  It was not under dispute that Casement had been `adherent to the King's enemies', but the question was whether being adherent to the King's enemies constituted treason only when it was done in the realm, or also when it was done abroad. The defense argued that the law was ambiguous. The claimed ambiguity hinged on whether `or elsewhere' attaches only to `giving aid and comfort to the King's enemies' (the natural reading without the comma), or to both `being adherent to the King's enemies' and `giving aid and comfort to the King's enemies' (the natural reading with the comma).  Although the former interpretation might seem far fetched, the argument in its favor was actually not unpersuasive. Nevertheless, the court decided that the passage should be read with the comma, so Casement's antics in Germany were treasonous, and he was sentenced to death. Casement himself wrote that he was `hanged by a comma'.
+A defesa de Casement dependia da última vírgula dessa sentença, que não
+está presente no texto original em francês da lei de 1351. Não se
+discutia que Casement havia sido \emph{aliado dos inimigos do Rei}, mas a
+questão era saber se ser aliado dos inimigos do Rei constituía traição
+somente quando isso ocorresse no reino ou também quando ocorresse no
+exterior. A defesa argumentou que a lei era ambígua. A ambiguidade alegada
+dependia de saber se \emph{ou em outro lugar} se ligava apenas a
+\emph{prestar ajuda e conforto aos inimigos do Rei} (a leitura natural
+sem a vírgula) ou a ambos \emph{ser aliado dos inimigos do Rei} e
+\emph{prestar ajuda e conforto aos inimigos do Rei} (a leitura natural
+com a vírgula). Embora a primeira interpretação possa parecer forçada, o
+argumento em seu favor não era, na realidade, pouco persuasivo. Ainda
+assim, o tribunal decidiu que a passagem deveria ser lida com a vírgula,
+de modo que as ações de Casement na Alemanha eram traiçoeiras, e ele foi
+condenado à morte. O próprio Casement escreveu que foi
+\emph{enforcado por uma vírgula}.
 
-We can use TFL to symbolize both readings of the passage, and thus to provide a disambiguiation. First, we need a symbolization key:
+Podemos usar a LVF para simbolizar as duas leituras da passagem e,
+assim, fornecer uma desambiguação. Primeiro, precisamos de uma chave de
+simbolização:
 \begin{ekey}
-	\item[A] Casement was adherent to the King's enemies in the realm
-	\item[G] Casement gave aid and comfort to the King's enemies in the realm
-	\item[B] Casement was adherent to the King's enemies abroad
-	\item[H] Casement gave aid and comfort to the King's enemies abroad
+	\item[A] Casement era aliado dos inimigos do Rei no reino
+	\item[G] Casement prestou ajuda e conforto aos inimigos do Rei no reino
+	\item[B] Casement era aliado dos inimigos do Rei no exterior
+	\item[H] Casement prestou ajuda e conforto aos inimigos do Rei no exterior
 \end{ekey}
-The interpretation according to which Casement's behavior was not treasonous is this:
+A interpretação segundo a qual o comportamento de Casement não foi
+traiçoeiro é:
 \[A \lor (G \lor H)\]
-The interpretation which got him executed, on the other hand, can be symbolized by:
+A interpretação que levou à sua execução, por outro lado, pode ser
+simbolizada por:
 \[(A \lor B) \lor (G \lor H)\]
-Remember that in the case we're dealing with, Casement was adherent to the King's enemies abroad ($B$~is true), but not in the realm, and he did not give the King's enemies aid or comfort in or outside the realm ($A$, $G$, and~$H$ are false).
+Lembre-se de que, no caso de que estamos tratando, Casement era aliado
+dos inimigos do Rei no exterior ($B$ é verdadeira), mas não no reino, e
+não prestou ajuda ou conforto aos inimigos do Rei dentro ou fora do reino
+($A$, $G$ e $H$ são falsas).
 
-One common source of structural ambiguity in English arises from its lack of parentheses. For instance, if I say `I like movies that are not long and boring', you will most likely think that what I dislike are movies that are long and boring. A less likely, but possible, interpretation is that I like movies that are both (a) not long and (b) boring. The first reading is more likely because who likes boring movies? But what about `I like dishes that are not sweet and flavorful'? Here, the more likely interpretation is that I like savory, flavorful dishes.  (Of course, I could have said that better, e.g., `I like dishes that are not sweet, yet flavorful'.) Similar ambiguities result from the interaction of `and' with `or'. For instance, suppose I ask you to send me a picture of a small and dangerous or stealthy animal.  Would a leopard count? It's stealthy, but not small. So it depends whether I'm looking for small animals that are dangerous or stealthy (leopard doesn't count), or whether I'm after either a small, dangerous animal or a stealthy animal (of any size).
+Uma fonte comum de ambiguidade estrutural em português surge da ausência
+de parênteses. Por exemplo, se eu disser \emph{Gosto de filmes que não
+são longos e entediantes}, você provavelmente pensará que o que eu não
+gosto são filmes longos e entediantes. Uma interpretação menos provável,
+mas possível, é que eu gosto de filmes que são ao mesmo tempo (a) não
+longos e (b) entediantes. A primeira leitura é mais provável porque quem
+gosta de filmes entediantes? Mas e quanto a \emph{Gosto de pratos que não
+são doces e saborosos}? Aqui, a interpretação mais provável é que eu gosto
+de pratos salgados e saborosos. (É claro que eu poderia ter dito isso
+melhor, por exemplo, \emph{Gosto de pratos que não são doces, mas são
+saborosos}.) Ambiguidades semelhantes resultam da interação entre
+\emph{e} e \emph{ou}. Por exemplo, suponha que eu peça que você me envie
+uma foto de um animal pequeno e perigoso ou furtivo. Um leopardo serviria?
+Ele é furtivo, mas não é pequeno. Portanto, depende de eu estar procurando
+animais pequenos que sejam perigosos ou furtivos (o leopardo não serve) ou
+de estar atrás de um animal pequeno e perigoso ou de um animal furtivo (de
+qualquer tamanho).
 
-These kinds of ambiguities are called \emph{scope ambiguities}, since they depend on whether or not a connective is in the scope of another. For instance, the sentence, `\textit{Avengers: Endgame} is not long and boring' is ambiguous between:
+Esses tipos de ambiguidade são chamados de \emph{ambiguidades de escopo},
+pois dependem de um conectivo estar ou não no escopo de outro. Por
+exemplo, a sentença \textit{Avengers: Endgame} não é longo e entediante é
+ambígua entre:
 \begin{enumerate}
-	\item\label{scamb1} \textit{Avengers: Endgame} is not: both long and boring.
-	\item\label{scamb2} \textit{Avengers: Endgame} is both: not long and boring.
+	\item\label{scamb1} \textit{Avengers: Endgame} não é: simultaneamente longo e entediante.
+	\item\label{scamb2} \textit{Avengers: Endgame} é, ao mesmo tempo: não longo e entediante.
 \end{enumerate}
-\Cref*{scamb2} is certainly false, since \textit{Avengers: Endgame} is over three hours long. Whether you think~\cref*{scamb1} is true depends on if you think it is boring or not. We can use the symbolization key:
+\Cref*{scamb2} é certamente falsa, pois \textit{Avengers: Endgame} tem
+mais de três horas de duração. Se você considera \cref*{scamb1}
+verdadeira depende de considerar o filme entediante ou não. Podemos usar
+a chave de simbolização:
 \begin{ekey}
-	\item[B] \textit{Avengers: Endgame} is boring
-	\item[L] \textit{Avengers: Endgame} is long
+	\item[B] \textit{Avengers: Endgame} é entediante
+	\item[L] \textit{Avengers: Endgame} é longo
 \end{ekey}
-\Cref*{scamb1} can now be symbolized as `$\enot(L \eand B)$', whereas \cref*{scamb2} would be `$\enot L \eand B$'. In the first case, the `\eand' is in the scope of `\enot', in the second case `\enot' is in the scope of `\eand'.
+\Cref*{scamb1} pode agora ser simbolizada por $\enot(L \eand B)$,
+enquanto \cref*{scamb2} seria $\enot L \eand B$. No primeiro caso, o
+\eand está no escopo de \enot; no segundo, \enot está no escopo de
+\eand.
 
-The sentence `Tai Lung is small and dangerous or stealthy' is ambiguous between:
+A sentença \emph{Tai Lung é pequeno e perigoso ou furtivo} é ambígua
+entre:
 \begin{enumerate}
-	\item\label{scamb3} Tai Lung is either both small and dangerous or stealthy.
-	\item\label{scamb4} Tai Lung is both small and either dangerous or stealthy.
+	\item\label{scamb3} Tai Lung é ou ao mesmo tempo pequeno e perigoso ou furtivo.
+	\item\label{scamb4} Tai Lung é pequeno e ou perigoso ou furtivo.
 \end{enumerate}
-We can use the following symbolization key:
+Podemos usar a seguinte chave de simbolização:
 \begin{ekey}
-	\item[D] Tai Lung is dangerous
-	\item[S] Tai Lung is small
-	\item[T] Tai Lung is stealthy
+	\item[D] Tai Lung é perigoso
+	\item[S] Tai Lung é pequeno
+	\item[T] Tai Lung é furtivo
 \end{ekey}
-The symbolization of \cref*{scamb3} is `$(S \eand D) \eor T$' and that of \cref*{scamb4} is `$S \eand (D \eor T)$'. In the first, `\eand' is in the scope of `\eor', and in the second `\eor' is in the scope of `\eand'.
+A simbolização de \cref*{scamb3} é $(S \eand D) \eor T$ e a de
+\cref*{scamb4} é $S \eand (D \eor T)$. Na primeira, \eand está no escopo
+de \eor; na segunda, \eor está no escopo de \eand.
 
 \practiceproblems
 \solutions
-\problempart The following sentences are ambiguous. Give symbolization keys for each and symbolize the different readings.
+\problempart As seguintes sentenças são ambíguas. Forneça chaves de simbolização para cada uma e simbolize as diferentes leituras.
 \begin{compactlist}
-	\item Haskell is a birder and enjoys watching cranes.
-	\item The zoo has lions or tigers and bears.
-	\item The flower is not red or fragrant.
+	\item Haskell é observador de aves e gosta de observar grous.
+	\item O zoológico tem leões ou tigres e ursos.
+	\item A flor não é vermelha ou perfumada.
 \end{compactlist}
 
 \chapter{Use and mention}\label{s:UseMention}
