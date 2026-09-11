@@ -443,28 +443,28 @@ Se quiser prática adicional, você pode construir tabelas-verdade para qualquer
 
 
 
-\chapter{Semantic concepts}\setcounter{ProbPart}{0}
+\chapter{Conceitos semânticos}\setcounter{ProbPart}{0}
 \problempart
-Revisit your answers to \hyperref[pr.TT.TTorC]{exercise~\ref*{s:CompleteTruthTables}A}. Determine which sentences were tautologies, which were contradictions, and which were neither tautologies nor contradictions.
+Reveja suas respostas para \hyperref[pr.TT.TTorC]{exercício~\ref*{s:CompleteTruthTables}A}. Determine quais sentenças eram tautologias, quais eram contradições e quais não eram nem tautologias nem contradições.
 \begin{compactlist}
-\item $A \eif A$ \hfill \myanswer{Tautology}
-\item $C \eif\enot C$ \hfill \myanswer{Neither}
-\item $(A \eiff B) \eiff \enot(A\eiff \enot B)$  \hfill \myanswer{Tautology}
-\item $(A \eif B) \eor (B \eif A)$  \hfill \myanswer{Tautology}
-\item $(A \eand B) \eif (B \eor A)$  \hfill \myanswer{Tautology}
-\item $\enot(A \eor B) \eiff (\enot A \eand \enot B)$ \hfill \myanswer{Tautology}
-\item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$  \hfill \myanswer{Contradiction}
-\item $[(A \eand B) \eand C] \eif B$  \hfill \myanswer{Tautology}
-\item $\enot\bigl[(C\eor A) \eor B\bigr]$  \hfill \myanswer{Neither}
+\item $A \eif A$ \hfill \myanswer{Tautologia}
+\item $C \eif\enot C$ \hfill \myanswer{Nenhuma das duas}
+\item $(A \eiff B) \eiff \enot(A\eiff \enot B)$  \hfill \myanswer{Tautologia}
+\item $(A \eif B) \eor (B \eif A)$  \hfill \myanswer{Tautologia}
+\item $(A \eand B) \eif (B \eor A)$  \hfill \myanswer{Tautologia}
+\item $\enot(A \eor B) \eiff (\enot A \eand \enot B)$ \hfill \myanswer{Tautologia}
+\item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$  \hfill \myanswer{Contradição}
+\item $[(A \eand B) \eand C] \eif B$  \hfill \myanswer{Tautologia}
+\item $\enot\bigl[(C\eor A) \eor B\bigr]$  \hfill \myanswer{Nenhuma das duas}
 \end{compactlist}
 
 \
 
 \problempart
 \label{pr.TT.satisfiable}
-Use truth tables to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
+Use tabelas-verdade para determinar se estas sentenças são conjuntamente satisfatíveis ou conjuntamente insatisfatíveis:
 \begin{compactlist}
-\item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ \hfill \myanswer{Jointly satisfiable (see line 1)}
+\item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ \hfill \myanswer{Conjuntamente satisfatíveis (ver linha 1)}
 \myanswer{\begin{center}
 \begin{tabular}{c | d e f | d e e e f | d e f | d e f}
 $A$ &  $A$&$\eif$&$A$&$\enot$&$A$&$\eif$&$\enot$&$A$&$A$&$\eand$&$A$&$A$&$\eor$&$A$\\
@@ -473,7 +473,7 @@ T & T & \TTbf{T} & T& F & T & \TTbf{T} & F & T & T & \TTbf{T} & T & T & \TTbf{T}
 F & F & \TTbf{T} & F& T & F & \TTbf{T} & T & F & F & \TTbf{F} & F & F & \TTbf{F} & F
 \end{tabular}
 \end{center}}
-\item $A\eor B$, $A\eif C$, $B\eif C$ \hfill \myanswer{Jointly satisfiable (see line 1)}
+\item $A\eor B$, $A\eif C$, $B\eif C$ \hfill \myanswer{Conjuntamente satisfatíveis (ver linha 1)}
 \myanswer{\begin{center}
 \begin{tabular}{c c c | d e f | d e f | d e f}
 $A$ & $B$ & $C$ & $A$&$\eor$&$B$&$A$&$\eif$&$C$&$B$&$\eif$&$C$\\
@@ -488,7 +488,7 @@ F & F & T & F & \TTbf{F} & F & F & \TTbf{T} & T & F & \TTbf{T} & T\\
 F & F & F & F & \TTbf{F} & F & F & \TTbf{T} & F & F & \TTbf{T} & F\\
 \end{tabular}
 \end{center}}
-\item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$ \hfill \myanswer{Jointly unsatisfiable}
+\item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$ \hfill \myanswer{Conjuntamente insatisfatíveis}
 \myanswer{\begin{center}
 \begin{tabular}{c c c | d e e e f | d e f | d e e f}
 $A$ & $B$ & $C$ & $B$&$\eand$&$(C$&$\eor$&$A)$&$A$&$\eif$&$B$&$\enot$&$(B$&$\eor$&$C)$\\
@@ -503,7 +503,7 @@ F & F & T & F & \TTbf{F} & T & T & F & F & \TTbf{T} & F & \TTbf{F} & F & T & T\\
 F & F & F & F & \TTbf{F} & F & F & F & F & \TTbf{T} & F & \TTbf{T} & F & F & F\\
 \end{tabular}
 \end{center}}
-\item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$  \hfill \myanswer{Jointly satisfiable (see line 8)}
+\item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$  \hfill \myanswer{Conjuntamente satisfatíveis (ver linha 8)}
 \myanswer{\begin{center}
 \begin{tabular}{c c c | d e e e f | d e e f | d e e f}
 $A$ & $B$ & $C$ & $A$&$\eiff$&$(B$&$\eor$&$C)$&$C$&$\eif$&$\enot$&$A$&$A$&$\eif$&$\enot$&$B$\\
@@ -523,9 +523,9 @@ F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T & F & F & \TTbf{T} & T &
 \solutions
 \problempart
 \label{pr.TT.valid}
-Use truth tables to determine whether each argument is valid or invalid.
+Use tabelas-verdade para determinar se cada argumento é válido ou inválido.
 \begin{compactlist}
-\item $A\eif A \therefore A$  \hfill \myanswer{Invalid (see line 2)}
+\item $A\eif A \therefore A$  \hfill \myanswer{Inválido (ver linha 2)}
 \myanswer{\begin{center}
 \begin{tabular}{c | d e f | c}
 $A$ &$A$&$\eif$&$A$&$A$\\
@@ -534,7 +534,7 @@ $A$ &$A$&$\eif$&$A$&$A$\\
  F & F & \TTbf{T} & F & F
  \end{tabular}
 \end{center}}
-\item $A\eif(A\eand\enot A) \therefore \enot A$  \hfill \myanswer{Valid}
+\item $A\eif(A\eand\enot A) \therefore \enot A$  \hfill \myanswer{Válido}
 \myanswer{\begin{center}
 \begin{tabular}{c | d e e e e f | df}
 $A$&$A$&$\eif$&$(A$&$\eand$&$\enot$&$A)$&$\enot$&$A$\\
@@ -543,7 +543,7 @@ $A$&$A$&$\eif$&$(A$&$\eand$&$\enot$&$A)$&$\enot$&$A$\\
  F & F & \TTbf{T} & F & F&T&F&\TTbf{T}&F
  \end{tabular}
 \end{center}}
-\item $A\eor(B\eif A) \therefore \enot A \eif \enot B$  \hfill \myanswer{Valid}
+\item $A\eor(B\eif A) \therefore \enot A \eif \enot B$  \hfill \myanswer{Válido}
 \myanswer{\begin{center}
 \begin{tabular}{c c | d e e e f | d e e e f}
 $A$ & $B$ & $A$&$\eor$&$(B$&$\eif$&$A)$&$\enot$&$A$&$\eif$&$\enot$&$B$\\
@@ -554,7 +554,7 @@ F & T & F & \TTbf{F} & T & F & F & T & F & \TTbf{F} & F & T \\
 F & F & F & \TTbf{T} & F & T & F & T & F & \TTbf{T} & T & F
 \end{tabular}
 \end{center}}
-\item $A\eor B, B\eor C, \enot A \therefore B \eand C$  \hfill \myanswer{Invalid (see line 6)}
+\item $A\eor B, B\eor C, \enot A \therefore B \eand C$  \hfill \myanswer{Inválido (ver linha 6)}
 \myanswer{\begin{center}
 \begin{tabular}{c c c | d e f | d e f | d f | d e f}
 $A$ & $B$ & $C$ & $A$&$\eor$&$B$&$B$&$\eor$&$C$&$\enot$&$A$&$B$&$\eand$&$C$\\
@@ -569,7 +569,7 @@ T & F & T & F & \TTbf{F} & F & F & \TTbf{T} & T & \TTbf{T} & F & F & \TTbf{F} & 
 T & F & F & F & \TTbf{F} & F & F & \TTbf{F} & F & \TTbf{T} & F & F & \TTbf{F} & F
 \end{tabular}
 \end{center}}
-\item $(B\eand A)\eif C, (C\eand A)\eif B \therefore (C\eand B)\eif A$  \hfill \myanswer{Invalid (see line 5)}
+\item $(B\eand A)\eif C, (C\eand A)\eif B \therefore (C\eand B)\eif A$  \hfill \myanswer{Inválido (ver linha 5)}
 \myanswer{\begin{center}
 \begin{tabular}{c c c | d e e e f | d e e e f | d e e e f}
 $A$ & $B$ & $C$ & $(B$&$\eand$&$A)$&$\eif$&$C$&$(C$&$\eand$&$A)$&$\eif$&$B$&$(C$&$\eand$&$ B)$&$\eif$&$A$\\
@@ -586,58 +586,58 @@ F & F & F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F & F & F & F & \T
 \end{center}}
 \end{compactlist}
 
-\problempart Determine whether each sentence is a tautology, a contradiction, or a contingent sentence, using a complete truth table.
+\problempart Determine se cada sentença é uma tautologia, uma contradição ou uma sentença contingente, usando uma tabela-verdade completa.
 \begin{compactlist}
-\item $\enot B \eand B$ \vspace{.5ex} \hfill \myanswer{Contradiction}
+\item $\enot B \eand B$ \vspace{.5ex} \hfill \myanswer{Contradição}
 
 
-\item $\enot D \eor D$ \vspace{.5ex} \hfill \myanswer{Tautology}
+\item $\enot D \eor D$ \vspace{.5ex} \hfill \myanswer{Tautologia}
 
 
-\item $(A\eand B) \eor (B\eand A)$\vspace{.5ex} \hfill \myanswer{Contingent}
+\item $(A\eand B) \eor (B\eand A)$\vspace{.5ex} \hfill \myanswer{Contingente}
 
 
-\item $\enot[A \eif (B \eif A)]$\vspace{.5ex} \hfill \myanswer{Contradiction}
+\item $\enot[A \eif (B \eif A)]$\vspace{.5ex} \hfill \myanswer{Contradição}
 
 
-\item $A \eiff [A \eif (B \eand \enot B)]$ \vspace{.5ex} \hfill \myanswer{Contradiction}
+\item $A \eiff [A \eif (B \eand \enot B)]$ \vspace{.5ex} \hfill \myanswer{Contradição}
 
 
-\item $[(A \eand B) \eiff B] \eif (A \eif B)$ \vspace{.5ex} \hfill \myanswer{Contingent}
+\item $[(A \eand B) \eiff B] \eif (A \eif B)$ \vspace{.5ex} \hfill \myanswer{Contingente}
 
 
 \end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.equiv}
-Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are logically equivalent, write ``equivalent.'' Otherwise write, ``Not equivalent.'' 
+Determine se as sentenças seguintes são logicamente equivalentes usando tabelas-verdade completas. Se as duas sentenças forem realmente logicamente equivalentes, escreva ``equivalentes.'' Caso contrário, escreva ``não equivalentes.'' 
 \begin{compactlist}
-\item $A$ and $\enot A$
-\item $A \eand \enot A$ and $\enot B \eiff B$
-\item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$
-\item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$
-\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$\end{compactlist}
+\item $A$ e $\enot A$
+\item $A \eand \enot A$ e $\enot B \eiff B$
+\item $[(A \eor B) \eor C]$ e $[A \eor (B \eor C)]$
+\item $A \eor (B \eand C)$ e $(A \eor B) \eand (A \eor C)$
+\item $[A \eand (A \eor B)] \eif B$ e $A \eif B$\end{compactlist}
 
 
 \problempart
 \label{pr.TT.equiv2}
-Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are equivalent, write ``equivalent.'' Otherwise write, ``not equivalent.''
+Determine se as sentenças seguintes são logicamente equivalentes usando tabelas-verdade completas. Se as duas sentenças forem realmente equivalentes, escreva ``equivalentes.'' Caso contrário, escreva ``não equivalentes.''
 \begin{compactlist}
-\item $A\eif A$ and $A \eiff A$
-\item $\enot(A \eif B)$ and $\enot A \eif \enot B$
-\item $A \eor B$ and $\enot A \eif B$
-\item$(A \eif B) \eif C$ and $A \eif (B \eif C)$
-\item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$
+\item $A\eif A$ e $A \eiff A$
+\item $\enot(A \eif B)$ e $\enot A \eif \enot B$
+\item $A \eor B$ e $\enot A \eif B$
+\item$(A \eif B) \eif C$ e $A \eif (B \eif C)$
+\item $A \eiff (B \eiff C)$ e $A \eand (B \eand C)$
 \end{compactlist}
 
 \problempart
 \label{pr.TT.satisfiable2}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable using a complete truth table.
+Determine se cada coleção de sentenças é conjuntamente satisfatível ou conjuntamente insatisfatível usando uma tabela-verdade completa.
 
 \begin{compactlist}
 
 \item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$ %Consistent
-\hfill\myanswer{Consistent
+\hfill\myanswer{Consistente
 \begin{center}
 \begin{tabular}{ccccccccccccccc} 
 ~ 	&	A 	& \eand	&  \enot & B &  & \enot &  (A &  \eif & B)	 & 	 & 	 B	 & 	\eif  & A   \\ 
@@ -653,7 +653,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 }
 
 \item $A \eor B$, $A \eif \enot A$, $B \eif \enot B$ %unsatisfiable.
-\hfill \myanswer{Unsatisfiable
+\hfill \myanswer{Insatisfatível
 \begin{center}
 \begin{tabular}{ccccccccccccccc} 
   & A	 & \eor 	 & B 	 & 	 	 & A 	 & \eif 	 & 	\enot & A 	 & 	 	 & B 	 & \eif 	 & \enot	 & 	B 	 \\ 
@@ -666,7 +666,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \end{center}
 }
 
-\item $\enot(\enot A \eor B) $, $A \eif \enot C$, $A \eif (B \eif C)$ \hfill \myanswer{Consistent}
+\item $\enot(\enot A \eor B) $, $A \eif \enot C$, $A \eif (B \eif C)$ \hfill \myanswer{Consistente}
 
 \myanswer{
 \begin{center}
@@ -689,75 +689,75 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 
 
-\item $A \eif B$, $A \eand \enot B$ \hfill \myanswer{Unsatisfiable}
+\item $A \eif B$, $A \eand \enot B$ \hfill \myanswer{Insatisfatível}
 
-\item $A \eif (B \eif C)$, $(A \eif B) \eif C$, $A \eif C$ \hfill \myanswer{Consistent} 
+\item $A \eif (B \eif C)$, $(A \eif B) \eif C$, $A \eif C$ \hfill \myanswer{Consistente} 
 
 \end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.satisfiable3}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable, using a complete truth table.
+Determine se cada coleção de sentenças é conjuntamente satisfatível ou conjuntamente insatisfatível, usando uma tabela-verdade completa.
 \begin{compactlist}
-\item $\enot B$, $A \eif B$, $A$ \vspace{.5ex} \hfill \myanswer{Unsatisfiable}
-\item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} \hfill \myanswer{Consistent}
-\item $A \eor B$, $\enot B$, $\enot B \eif \enot A$\vspace{.5ex} \hfill \myanswer{Unsatisfiable}
-\item $A \eiff B$, $\enot B \eor \enot A$, $A \eif B$\vspace{.5ex} \hfill \myanswer{Consistent} 
-\item $(A \eor B) \eor C$, $\enot A \eor \enot B$, $\enot C \eor \enot B$\vspace{.5ex} \hfill \myanswer{Consistent}
+\item $\enot B$, $A \eif B$, $A$ \vspace{.5ex} \hfill \myanswer{Insatisfatível}
+\item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} \hfill \myanswer{Consistente}
+\item $A \eor B$, $\enot B$, $\enot B \eif \enot A$\vspace{.5ex} \hfill \myanswer{Insatisfatível}
+\item $A \eiff B$, $\enot B \eor \enot A$, $A \eif B$\vspace{.5ex} \hfill \myanswer{Consistente} 
+\item $(A \eor B) \eor C$, $\enot A \eor \enot B$, $\enot C \eor \enot B$\vspace{.5ex} \hfill \myanswer{Consistente}
 \end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.valid2}
-Determine whether each argument is valid or invalid, using a complete truth table.
+Determine se cada argumento é válido ou inválido, usando uma tabela-verdade completa.
 \begin{compactlist}
-\item $A\eif B$, $B \therefore  A$ \hfill \myanswer{Invalid}
+\item $A\eif B$, $B \therefore  A$ \hfill \myanswer{Inválido}
 
-\item $A\eiff B$, $B\eiff C \therefore A\eiff C$ \hfill \myanswer{Valid}
+\item $A\eiff B$, $B\eiff C \therefore A\eiff C$ \hfill \myanswer{Válido}
 
-\item $A \eif B$, $A \eif C\therefore B \eif C$ \hfill \myanswer{Invalid}.
+\item $A \eif B$, $A \eif C\therefore B \eif C$ \hfill \myanswer{Inválido}.
 
-\item $A \eif B$, $B \eif A\therefore A \eiff B$ \hfill \myanswer{Valid} 
+\item $A \eif B$, $B \eif A\therefore A \eiff B$ \hfill \myanswer{Válido} 
 \end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.valid3}
-Determine whether each argument is valid or invalid, using a complete truth table.
+Determine se cada argumento é válido ou inválido, usando uma tabela-verdade completa.
 \begin{compactlist}
-\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore  A $\vspace{.5ex} \hfill \myanswer{Invalid}
-\item $A\eor B$, $B\eor C$, $\enot B \therefore A \eand C$\vspace{.5ex} \hfill \myanswer{Valid}
-\item $A \eif B$, $\enot A\therefore \enot B$ \vspace{.5ex} \hfill \myanswer{Invalid}
-\item $A$, $B\therefore \enot(A\eif \enot B)$ \vspace{.5ex} \hfill \myanswer{Valid}
-\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\therefore C$ \vspace{.5ex} \hfill \myanswer{Valid}
+\item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore  A $\vspace{.5ex} \hfill \myanswer{Inválido}
+\item $A\eor B$, $B\eor C$, $\enot B \therefore A \eand C$\vspace{.5ex} \hfill \myanswer{Válido}
+\item $A \eif B$, $\enot A\therefore \enot B$ \vspace{.5ex} \hfill \myanswer{Inválido}
+\item $A$, $B\therefore \enot(A\eif \enot B)$ \vspace{.5ex} \hfill \myanswer{Válido}
+\item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\therefore C$ \vspace{.5ex} \hfill \myanswer{Válido}
 \end{compactlist}
 
 \solutions
 \problempart
 \label{pr.TT.concepts}
-Answer each of the questions below and justify your answer.
+Responda a cada uma das perguntas abaixo e justifique sua resposta.
 \begin{compactlist}
-\item Suppose that \metav{A} and \metav{B} are logically equivalent. What can you say about $\metav{A}\eiff\metav{B}$?
-\item[] \myanswer{\metav{A} and \metav{B} have the same truth value on every line of a complete truth table, so $\metav{A}\eiff\metav{B}$ is true on every line. It is a tautology.}
-\item Suppose that $(\metav{A}\eand\metav{B})\eif\metav{C}$ is neither a tautology nor a contradiction. What can you say about whether $\metav{A}, \metav{B} \therefore\metav{C}$ is valid?
-\item[] \myanswer{Since the sentence $(\metav{A}\eand\metav{B})\eif\metav{C}$ is not a tautology, there is some line on which it is false. Since it is a conditional, on that line, \metav{A} and \metav{B} are true and \metav{C} is false. So the argument is invalid.}
-\item Suppose that $\metav{A}$, $\metav{B}$ and $\metav{C}$  are jointly unsatisfiable. What can you say about $(\metav{A}\eand\metav{B}\eand\metav{C})$?
-\item[] \myanswer{Since the sentences are jointly unsatisfiable, there is no valuation on which they are all true. So their conjunction is false on every valuation. It is a contradiction}
-\item Suppose that \metav{A} is a contradiction. What can you say about whether $\metav{A}, \metav{B} \entails \metav{C}$?
-\item[] \myanswer{Since \metav{A} is false on every line of a complete truth table, there is no line on which \metav{A} and \metav{B} are true and \metav{C} is false. So the entailment holds.}
-\item Suppose that \metav{C} is a tautology. What can you say about whether $\metav{A}, \metav{B}\entails \metav{C}$?
-\item[] \myanswer{Since \metav{C} is true on every line of a complete truth table, there is no line on which \metav{A} and \metav{B} are true and \metav{C} is false. So the entailment holds.}
-\item Suppose that \metav{A} and \metav{B} are logically equivalent. What can you say about $(\metav{A}\eor\metav{B})$?
-\item[] \myanswer{Not much. Since $\metav{A}$ and $\metav{B}$ are true on exactly the same lines of the truth table, their disjunction is true on exactly the same lines. So, their disjunction is logically equivalent to them.}
-\item Suppose that \metav{A} and \metav{B} are \emph{not} logically equivalent. What can you say about $(\metav{A}\eor\metav{B})$?
-\item[] \myanswer{\metav{A} and \metav{B} have different truth values on at least one line of a complete truth table, and $(\metav{A}\eor\metav{B})$ will be true on that line. On other lines, it might be true or false. So $(\metav{A}\eor\metav{B})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.}
+\item Suponha que \metav{A} e \metav{B} sejam logicamente equivalentes. O que se pode dizer sobre $\metav{A}\eiff\metav{B}$?
+\item[] \myanswer{\metav{A} e \metav{B} têm o mesmo valor de verdade em todas as linhas de uma tabela-verdade completa, portanto $\metav{A}\eiff\metav{B}$ é verdadeira em todas as linhas. É uma tautologia.}
+\item Suponha que $(\metav{A}\eand\metav{B})\eif\metav{C}$ não seja nem uma tautologia nem uma contradição. O que se pode dizer sobre a validade de $\metav{A}, \metav{B} \therefore\metav{C}$?
+\item[] \myanswer{Como a sentença $(\metav{A}\eand\metav{B})\eif\metav{C}$ não é uma tautologia, há alguma linha na qual ela é falsa. Como ela é um condicional, nessa linha, \metav{A} e \metav{B} são verdadeiras e \metav{C} é falsa. Portanto, o argumento é inválido.}
+\item Suponha que $\metav{A}$, $\metav{B}$ e $\metav{C}$  sejam conjuntamente insatisfatíveis. O que se pode dizer sobre $(\metav{A}\eand\metav{B}\eand\metav{C})$?
+\item[] \myanswer{Como as sentenças são conjuntamente insatisfatíveis, não há valoração na qual todas sejam verdadeiras. Portanto, sua conjunção é falsa em toda valoração. É uma contradição}
+\item Suponha que \metav{A} seja uma contradição. O que se pode dizer sobre a validade de $\metav{A}, \metav{B} \entails \metav{C}$?
+\item[] \myanswer{Como \metav{A} é falsa em todas as linhas de uma tabela-verdade completa, não há linha na qual \metav{A} e \metav{B} sejam verdadeiras e \metav{C} seja falsa. Portanto, a implicação vale.}
+\item Suponha que \metav{C} seja uma tautologia. O que se pode dizer sobre a validade de $\metav{A}, \metav{B}\entails \metav{C}$?
+\item[] \myanswer{Como \metav{C} é verdadeira em todas as linhas de uma tabela-verdade completa, não há linha na qual \metav{A} e \metav{B} sejam verdadeiras e \metav{C} seja falsa. Portanto, a implicação vale.}
+\item Suponha que \metav{A} e \metav{B} sejam logicamente equivalentes. O que se pode dizer sobre $(\metav{A}\eor\metav{B})$?
+\item[] \myanswer{Não muito. Como $\metav{A}$ e $\metav{B}$ são verdadeiras exatamente nas mesmas linhas da tabela-verdade, sua disjunção é verdadeira exatamente nas mesmas linhas. Portanto, sua disjunção é logicamente equivalente a elas.}
+\item Suponha que \metav{A} e \metav{B} não sejam logicamente equivalentes. O que se pode dizer sobre $(\metav{A}\eor\metav{B})$?
+\item[] \myanswer{\metav{A} e \metav{B} têm valores de verdade diferentes em pelo menos uma linha de uma tabela-verdade completa, e $(\metav{A}\eor\metav{B})$ será verdadeira nessa linha. Nas outras linhas, ela pode ser verdadeira ou falsa. Portanto, $(\metav{A}\eor\metav{B})$ é ou uma tautologia ou contingente; ela \emph{não} é uma contradição.}
 \end{compactlist}
 
 \problempart
-Consider the following principle:
+Considere o seguinte princípio:
 	\begin{quote}
-		Suppose $\metav{A}$ and $\metav{B}$ are logically equivalent. Suppose an argument contains $\metav{A}$ (either as a premise, or as the conclusion). The validity of the argument would be unaffected, if we replaced $\metav{A}$ with $\metav{B}$.
+		Suponha $\metav{A}$ e $\metav{B}$ sejam logicamente equivalentes. Suponha que um argumento contenha $\metav{A}$ (seja como premissa, seja como conclusão). A validade do argumento não seria afetada se substituíssemos $\metav{A}$ por $\metav{B}$.
 	\end{quote}
-Is this principle correct? Explain your answer.
-\\\myanswer{The principle is correct. Since $\metav{A}$ and $\metav{B}$ are logically equivalent, they have the same truth table. So every valuation that makes $\metav{A}$ true also makes $\metav{B}$ true, and every valuation that makes $\metav{A}$ false also makes $\metav{B}$ false. So if no valuation makes all the premises true and the conclusion false, when $\metav{A}$ was among the premises or the conclusion, then no valuation makes all the premises true and the conclusion false, when we replace $\metav{A}$ with $\metav{B}$.}
+Esse princípio está correto? Explique sua resposta.
+\\\myanswer{O princípio está correto. Como $\metav{A}$ e $\metav{B}$ são logicamente equivalentes, elas têm a mesma tabela-verdade. Portanto, toda valoração que torna $\metav{A}$ verdadeira também torna $\metav{B}$ verdadeira, e toda valoração que torna $\metav{A}$ falsa também torna $\metav{B}$ falsa. Portanto, se nenhuma valoração torna todas as premissas verdadeiras e a conclusão falsa quando $\metav{A}$ estava entre as premissas ou era a conclusão, então nenhuma valoração torna todas as premissas verdadeiras e a conclusão falsa quando substituímos $\metav{A}$ por $\metav{B}$.}
 
 \stepcounter{chapter} % Limitations of TFL
 

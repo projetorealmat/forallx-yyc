@@ -571,54 +571,54 @@ Escreva tabelas-verdade completas para as sentenças seguintes e marque a coluna
 
 
 Se quiser prática adicional, você pode construir tabelas-verdade para qualquer uma das sentenças e argumentos dos exercícios do capítulo anterior.
-\chapter{Semantic concepts}
+\chapter{Conceitos semânticos}
 \label{s:SemanticConcepts}
 
-In the previous chapter, we introduced the idea of a valuation and showed how to determine the truth value of any TFL sentence, on any valuation, using a truth table. In this chapter, we will introduce some related ideas, and show how to use truth tables to test whether or not they apply.
+No capítulo anterior, introduzimos a ideia de uma valoração e mostramos como determinar o valor de verdade de qualquer sentença da LVF, em qualquer valoração, usando uma tabela-verdade. Neste capítulo, introduziremos algumas ideias relacionadas e mostraremos como usar tabelas-verdade para testar se elas se aplicam ou não.
 
 
-\section{Tautologies and contradictions}
-In \cref{s:BasicNotions}, we explained \emph{necessary truth} and \emph{necessary falsity}. Both notions have surrogates in TFL. We will start with a surrogate for necessary truth.
+\section{Tautologias e contradições}
+Em \cref{s:BasicNotions}, explicamos \emph{verdade necessária} e \emph{falsidade necessária}. Ambas as noções têm substitutos na LVF. Começaremos com um substituto para a verdade necessária.
 	\factoidbox{
-		$\metav{A}$ is a \define{tautology} \ifeff{} it is true on every valuation.
+		$\metav{A}$ é uma \define{tautologia} \ifeff{} se é verdadeira em toda valoração.
 	}
 
 \newglossaryentry{tautology}
 {
-name=tautology,
-description={A sentence that has only Ts in the column under the main logical operator of its \gls{complete truth table}; a sentence that is true on every \gls{valuation}}
+name=tautologia,
+description={Uma sentença que tem somente T na coluna sob o operador lógico principal de sua \gls{complete truth table}; uma sentença que é verdadeira em toda \gls{valuation}}
 }
 
-We can use truth tables to decide whether a sentence is a tautology. If the sentence is true on every line of its complete truth table, then it is true on every valuation, so it is a tautology. In the example of \cref{s:CompleteTruthTables}, `$(H \eand I) \eif H$' is a tautology.
+Podemos usar tabelas-verdade para decidir se uma sentença é uma tautologia. Se a sentença é verdadeira em todas as linhas de sua tabela-verdade completa, então é verdadeira em toda valoração e, portanto, é uma tautologia. No exemplo de \cref{s:CompleteTruthTables}, \textquotedblleft{}$(H \eand I) \eif H$\textquotedblright{} é uma tautologia.
 
-This is only, though, a \emph{surrogate} for necessary truth. There are some necessary truths that we cannot adequately symbolize in TFL. One example is `$2 + 2 = 4$'. This \emph{must} be true, but if we try to symbolize it in TFL, the best we can offer is a sentence letter, and no sentence letter is a tautology. Still, if we can adequately symbolize some English sentence using a TFL sentence which is a tautology, then that English sentence expresses a necessary truth.
+No entanto, este é apenas um \emph{substituto} para a verdade necessária. Há algumas verdades necessárias que não podemos simbolizar adequadamente na LVF. Um exemplo é \textquotedblleft{}$2 + 2 = 4$\textquotedblright{}. Isso \emph{deve} ser verdadeiro, mas, se tentarmos simbolizá-lo na LVF, o melhor que podemos oferecer é uma letra sentencial, e nenhuma letra sentencial é uma tautologia. Ainda assim, se pudermos simbolizar adequadamente alguma sentença em português usando uma sentença da LVF que seja uma tautologia, então essa sentença em português expressa uma verdade necessária.
 
-We have a similar surrogate for necessary falsity:
+Temos um substituto semelhante para a falsidade necessária:
 	\factoidbox{
-		$\metav{A}$ is a \define{contradiction} (in TFL) \ifeff{} it is false on every valuation.
+		$\metav{A}$ é uma \define{contradi\c{c}\~{a}o} (na LVF) \ifeff{} é falsa em toda valoração.
 	}
 \newglossaryentry{contradiction of TFL}
 {
-  name=contradiction (of TFL),
-  text = contradiction,
-description={A sentence that has only Fs in the column under the main logical operator of its \gls{complete truth table}; a sentence that is false on every \gls{valuation}}
+  name=contradição (da LVF),
+  text = contradição,
+description={Uma sentença que tem somente F na coluna sob o operador lógico principal de sua \gls{complete truth table}; uma sentença que é falsa em toda \gls{valuation}}
 }
 
-We can use truth tables to decide whether a sentence is a contradiction. If the sentence is false on every line of its complete truth table, then it is false on every valuation, so it is a contradiction. In the example of \cref{s:CompleteTruthTables}, `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$' is a contradiction.
+Podemos usar tabelas-verdade para decidir se uma sentença é uma contradição. Se a sentença é falsa em todas as linhas de sua tabela-verdade completa, então é falsa em toda valoração e, portanto, é uma contradição. No exemplo de \cref{s:CompleteTruthTables}, \textquotedblleft{}$[(C\eiff C) \eif C] \eand \enot(C \eif C)$\textquotedblright{} é uma contradição.
 
-\section{Equivalence}\label{sec:equivalent}
-Here is a similar useful notion:
+\section{Equivalência}\label{sec:equivalent}
+Eis uma noção útil semelhante:
 	\factoidbox{
-		$\metav{A}$ and $\metav{B}$ are \define{equivalent} (in TFL) iff, for every valuation, their truth values agree, i.e., if there is no valuation in which they have opposite truth values.
+		$\metav{A}$ e $\metav{B}$ são \define{equivalentes} (na LVF) se e somente se, para toda valoração, seus valores de verdade coincidem, isto é, se não há valoração na qual tenham valores de verdade opostos.
 	}
 \newglossaryentry{equivalent}
 {
-  name=equivalence (in TFL),
-  text = equivalent,
-description={A property held by pairs of sentences if and only if the \gls{complete truth table} for those sentences has identical columns under the two main logical operators, i.e., if the sentences have the same truth value on every valuation}
+  name=equivalência (na LVF),
+  text = equivalente,
+description={Uma propriedade de pares de sentenças se, e somente se, a \gls{complete truth table} dessas sentenças tem colunas idênticas sob os dois operadores lógicos principais, isto é, se as sentenças têm o mesmo valor de verdade em toda valoração}
 }
 
-We have already made use of this notion, in effect, in \cref{s:MoreBracketingConventions}; the point was that `$(A \eand B) \eand C$' and  `$A \eand (B \eand C)$' are equivalent. Again, it is easy to test for equivalence using truth tables. Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they equivalent? To find out, we construct a truth table.
+Já usamos essa noção, na prática, em \cref{s:MoreBracketingConventions}; o ponto era que \textquotedblleft{}$(A \eand B) \eand C$\textquotedblright{} e \textquotedblleft{}$A \eand (B \eand C)$\textquotedblright{} são equivalentes. Novamente, é fácil testar a equivalência usando tabelas-verdade. Considere as sentenças \textquotedblleft{}$\enot(P \eor Q)$\textquotedblright{} e \textquotedblleft{}$\enot P \eand \enot Q$\textquotedblright{}. Elas são equivalentes? Para descobrir, construímos uma tabela-verdade.
 \begin{center}
 \begin{tabular}{c c|d e e f |d e e e f}
 $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
@@ -629,40 +629,40 @@ $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
  F & F & \TTbf{T} & F & F & F & T & F & \TTbf{T} & T & F
 \end{tabular}
 \end{center}
-Look at the columns for the main logical operators; negation for the first sentence, conjunction for the second. Go through the rows in the table one by one and compare the truth values in the columns for the main logical operators. On the first three rows, both are false. On the final row, both are true. Since they match on every row, the two sentences are equivalent.
+Observe as colunas dos operadores lógicos principais: negação para a primeira sentença, conjunção para a segunda. Percorra as linhas da tabela uma a uma e compare os valores de verdade nas colunas dos operadores lógicos principais. Nas três primeiras linhas, ambos são falsos. Na última linha, ambos são verdadeiros. Como coincidem em todas as linhas, as duas sentenças são equivalentes.
 
 
-\section{Satisfiability}
-In \cref{s:BasicNotions}, we said that sentences are jointly possible \ifeff{} it is possible for all of them to be true at once. We can offer a surrogate for this notion too:
+\section{Satisfatibilidade}
+Em \cref{s:BasicNotions}, dissemos que sentenças são conjuntamente possíveis \ifeff{} é possível que todas sejam verdadeiras ao mesmo tempo. Podemos oferecer um substituto também para essa noção:
 	\factoidbox{
-		$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ are \define{jointly satisfiable} (in TFL) \ifeff{} there is some valuation which makes them all true.
+		$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ são \define{conjuntamente satisfat\'{i}veis} (na LVF) \ifeff{} há alguma valoração que as torna todas verdadeiras.
 	}
 
         \newglossaryentry{satisfiability in TFL}
 {
-  name=satisfiability (in TFL),
-  text=jointly satisfiable,
-  description={A property held by \glspl{sentence of TFL} if and only if the
-  \gls{complete truth table} for all those sentences together contains one line
-  on which all the sentences are true, i.e., if some \gls{valuation}
-  makes all the sentences true}
+  name=satisfatibilidade (na LVF),
+  text=conjuntamente satisfatíveis,
+  description={Uma propriedade de \glspl{sentence of TFL} se e somente se a
+  \gls{complete truth table} de todas essas sentenças em conjunto contém uma linha
+  na qual todas as sentenças são verdadeiras, isto é, se alguma \gls{valuation}
+  torna todas as sentenças verdadeiras}
 }
 
-Derivatively, sentences are \define{jointly unsatisfiable} \ifeff{} no valuation makes them all true. Again, it is easy to test for joint satisfiability using truth tables.
+Como consequência, sentenças são \define{conjuntamente insatisfat\'{i}veis} \ifeff{} nenhuma valoração torna todas verdadeiras. Novamente, é fácil testar a satisfatibilidade conjunta usando tabelas-verdade.
 
-\section{Entailment and validity}
-The following idea is closely related to that of joint satisfiability:
+\section{Implicação e validade}
+A ideia seguinte está intimamente relacionada à da satisfatibilidade conjunta:
 	\factoidbox{
-		The sentences $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ \define{entail} (in TFL) the sentence $\metav{C}$ \ifeff{} no valuation of the relevant sentence letters makes all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and $\metav{C}$ false.
+		As sentenças $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ \define{implicam} (na LVF) a sentença $\metav{C}$ \ifeff{} nenhuma valoração das letras sentenciais relevantes torna todas as $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ verdadeiras e $\metav{C}$ falsa.
 	}
        \newglossaryentry{valid in TFL}
 {
-  name= validity of arguments (in TFL),
-  text = valid,
-description={A property held by arguments if and only if the \gls{complete truth table} for the argument contains no rows where the \glspl{premise} are all true and the \gls{conclusion} false, i.e., if no \gls{valuation} makes all premises true and the conclusion false}
+  name= validade de argumentos (na LVF),
+  text = válido,
+description={Uma propriedade de argumentos se, e somente se, a \gls{complete truth table} para o argumento não contém linhas nas quais as \glspl{premise} sejam todas verdadeiras e a \gls{conclusion} seja falsa, isto é, se nenhuma \gls{valuation} torna todas as premissas verdadeiras e a conclusão falsa}
 }
  
-Again, it is easy to test this with a truth table. To check whether `$\enot L \eif (J \eor L)$' and `$\enot L$' entail `$J$', we simply need to check whether there is any valuation which makes both `$\enot L \eif (J \eor L)$' and `$\enot L$' true whilst making `$J$' false. So we use a truth table: 
+Novamente, é fácil testar isso com uma tabela-verdade. Para verificar se \textquotedblleft{}$\enot L \eif (J \eor L)$\textquotedblright{} e \textquotedblleft{}$\enot L$\textquotedblright{} implicam \textquotedblleft{}$J$\textquotedblright{}, basta verificar se há alguma valoração que torne verdadeiras tanto \textquotedblleft{}$\enot L \eif (J \eor L)$\textquotedblright{} quanto \textquotedblleft{}$\enot L$\textquotedblright{}, ao mesmo tempo que torna \textquotedblleft{}$J$\textquotedblright{} falsa. Portanto, usamos uma tabela-verdade:
 \begin{center}
 \begin{tabular}{c c|d e e e e f|d f| c}
 $J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
@@ -674,7 +674,7 @@ $J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
  F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F & \TTbf{F}
 \end{tabular}
 \end{center}
-The only row on which both`$\enot L \eif (J \eor L)$' and `$\enot L$' are true is the second row, and that is a row on which `$J$' is also true. So `$\enot L \eif (J \eor L)$' and `$\enot L$' entail `$J$'.
+A única linha na qual tanto \textquotedblleft{}$\enot L \eif (J \eor L)$\textquotedblright{} quanto \textquotedblleft{}$\enot L$\textquotedblright{} são verdadeiras é a segunda, e essa é uma linha na qual \textquotedblleft{}$J$\textquotedblright{} também é verdadeira. Portanto, \textquotedblleft{}$\enot L \eif (J \eor L)$\textquotedblright{} e \textquotedblleft{}$\enot L$\textquotedblright{} implicam \textquotedblleft{}$J$\textquotedblright{}.
 
 % We now make an important observation:
 % 	\factoidbox{
@@ -708,80 +708,62 @@ The only row on which both`$\enot L \eif (J \eor L)$' and `$\enot L$' are true i
 
 
 
-\section{The double turnstile}
-In what follow, we will use the notion of entailment rather a lot in this book. It will help us, then, to introduce a symbol that abbreviates it. Rather than saying that the TFL sentences $\metav{A}_1$, $\metav{A}_2$, \dots{} and $\metav{A}_n$ together entail $\metav{C}$, we will abbreviate this by:
+\section{O duplo turnstile}
+Neste livro, usaremos bastante a noção de implicação. Será útil, então, introduzir um símbolo que a abrevia. Em vez de dizer que as sentenças da LVF $\metav{A}_1$, $\metav{A}_2$, \dots{} e $\metav{A}_n$ em conjunto implicam $\metav{C}$, abreviaremos isso assim:
 	$$\metav{A}_1, \metav{A}_2, \dots, \metav{A}_n \entails \metav{C}$$
-The symbol `$\entails$' is known as \emph{the double turnstile}, since it looks like a turnstile with two horizontal beams.
+O símbolo \textquotedblleft{}$\entails$\textquotedblright{} é conhecido como \emph{duplo turnstile}, pois se parece com um turnstile com duas barras horizontais.
 
-Let's be clear. `$\entails$' is not a symbol of TFL. Rather, it is a symbol of our metalanguage, augmented English (recall the difference between object language and metalanguage from \cref{s:UseMention}). So the metalanguage sentence:
+Sejamos claros. \textquotedblleft{}$\entails$\textquotedblright{} não é um símbolo da LVF. Antes, é um símbolo de nossa metalinguagem, o português ampliado (recorde a diferença entre linguagem-objeto e metalinguagem em \cref{s:UseMention}). Assim, a sentença da metalinguagem:
 	\[\metav{A}, \metav{A} \eif \metav{B} \entails \metav{B}\]
-is \emph{just} an abbreviation for this metalanguage sentence: 
+é \emph{apenas} uma abreviação desta sentença da metalinguagem:
 	\begin{center}
-		The TFL sentences $\metav{A}$ and $\metav{A} \eif \metav{B}$ entail $\metav{B}$
+		As sentenças da LVF $\metav{A}$ e $\metav{A} \eif \metav{B}$ implicam $\metav{B}$
 	\end{center}
-Note that there is no limit on the number of TFL sentences that can be mentioned before the symbol~`$\entails$'. Indeed, we can even consider the limiting case:
+Observe que não há limite para o número de sentenças da LVF que podem ser mencionadas antes do símbolo~\textquotedblleft{}$\entails$\textquotedblright{}. Com efeito, podemos até considerar o caso-limite:
 	$$\entails \metav{C}$$
-This says that there is no valuation which makes all the sentences
-mentioned on the left side of `$\entails$' true whilst making all
-sentences on the right side (in this case, $\metav{C}$) false. Since \emph{no} sentences are mentioned on the left
-side of `$\entails$' in this case, this just means that there is no
-valuation which makes $\metav{C}$ false. Otherwise put, it says that
-every valuation makes $\metav{C}$ true. Otherwise put, it says that
-$\metav{C}$ is a tautology. Equally, to say that $\metav{A}$ is a
-contradiction, we could write:
+Isso diz que não há valoração que torne verdadeiras todas as sentenças mencionadas no lado esquerdo de \textquotedblleft{}$\entails$\textquotedblright{} e, ao mesmo tempo, torne falsas todas as sentenças no lado direito (neste caso, $\metav{C}$). Como \emph{nenhuma} sentença é mencionada no lado esquerdo de \textquotedblleft{}$\entails$\textquotedblright{} neste caso, isso significa simplesmente que não há valoração que torne $\metav{C}$ falsa. Dito de outro modo, significa que toda valoração torna $\metav{C}$ verdadeira. Dito de outro modo, significa que $\metav{C}$ é uma tautologia. Da mesma forma, para dizer que $\metav{A}$ é uma contradição, poderíamos escrever:
 	$$\metav{A} \entails\phantom{\metav{C}}$$
-to mean that no valuation makes $\metav{A}$ true.
+para significar que nenhuma valoração torna $\metav{A}$ verdadeira.
 
-Sometimes, we will want to deny that there is a tautological entailment, and say something of this shape: 
+Às vezes, queremos negar que haja uma implicação tautológica e dizer algo desta forma:
 \begin{center}
-	it is \emph{not} the case that $\metav{A}_1, \ldots, \metav{A}_n \entails \metav{C}$
+	não é o caso que $\metav{A}_1, \ldots, \metav{A}_n \entails \metav{C}$
 \end{center}
-In that case, we can just slash the turnstile through, and write: 
+Nesse caso, podemos simplesmente riscar o turnstile e escrever:
 $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nentails\metav{C}$$
-This means that \emph{some} valuation makes all of $\metav{A}_1,
-\ldots, \metav{A}_n$ true whilst making $\metav{C}$ false. Note that
-it does \emph{not} follow that $\metav{A}_1,\ldots, \metav{A}_n
-\entails \enot \metav{C}$, for it is possible that some \emph{other}
-valuation makes all of $\metav{A}_1, \ldots, \metav{A}_n$ true and
-makes $\metav{C}$ \emph{true}. For instance, $P \nentails Q$ but also
-$P \nentails \enot Q$.
+Isso significa que alguma valoração torna todas as $\metav{A}_1, \ldots, \metav{A}_n$ verdadeiras e torna $\metav{C}$ falsa. Observe que disso \emph{não} se segue que $\metav{A}_1,\ldots, \metav{A}_n \entails \enot \metav{C}$, pois é possível que alguma \emph{outra} valoração torne todas as $\metav{A}_1, \ldots, \metav{A}_n$ verdadeiras e torne $\metav{C}$ \emph{verdadeira}. Por exemplo, $P \nentails Q$, mas também $P \nentails \enot Q$.
 
-\section{`$\entails$' versus `$\eif$'}\label{entails-v-iff}
-We now want to compare and contrast `$\entails$' and `$\eif$'.
+\section{$\entails$ versus $\eif$}\label{entails-v-iff}
+Agora queremos comparar e contrastar \textquotedblleft{}$\entails$\textquotedblright{} e \textquotedblleft{}$\eif$\textquotedblright{}.
 
-Observe: $\metav{A} \entails \metav{C}$ \ifeff{} no valuation of the sentence letters makes $\metav{A}$ true and $\metav{C}$ false.
+Observe: $\metav{A} \entails \metav{C}$ \ifeff{} nenhuma valoração das letras sentenciais torna $\metav{A}$ verdadeira e $\metav{C}$ falsa.
 
-Observe: $\metav{A} \eif \metav{C}$ is a tautology \ifeff{} no valuation of the sentence letters makes $\metav{A} \eif \metav{C}$ false. Since a conditional is true except when its antecedent is true and its consequent false, $\metav{A} \eif \metav{C}$ is a tautology \ifeff{} no valuation makes $\metav{A}$ true and $\metav{C}$ false.
+Observe: $\metav{A} \eif \metav{C}$ é uma tautologia \ifeff{} nenhuma valoração das letras sentenciais torna $\metav{A} \eif \metav{C}$ falsa. Como um condicional é verdadeiro exceto quando seu antecedente é verdadeiro e seu consequente é falso, $\metav{A} \eif \metav{C}$ é uma tautologia \ifeff{} nenhuma valoração torna $\metav{A}$ verdadeira e $\metav{C}$ falsa.
 
-Combining these two observations, we see that $\metav{A} \eif \metav{C}$  is a tautology \ifeff{}  $\metav{A} \entails \metav{C}$. But there is a really, really important difference between `$\entails$' and `$\eif$':
+Combinando essas duas observações, vemos que $\metav{A} \eif \metav{C}$ é uma tautologia \ifeff{} $\metav{A} \entails \metav{C}$. Mas há uma diferença realmente, realmente importante entre \textquotedblleft{}$\entails$\textquotedblright{} e \textquotedblleft{}$\eif$\textquotedblright{}:
 	\factoidbox{
 		\begin{itemize}
-			\item `$\eif$' is a sentential connective of TFL.
-			\item `$\entails$' is a symbol of augmented English.
+			\item \textquotedblleft{}$\eif$\textquotedblright{} é um conectivo sentencial da LVF.
+			\item \textquotedblleft{}$\entails$\textquotedblright{} é um símbolo do português ampliado.
 		\end{itemize}
 	}
-Indeed, when `$\eif$' is flanked with two TFL sentences, the result is a longer TFL sentence. By contrast, when we use `$\entails$', we form a metalinguistic sentence that \emph{mentions} the surrounding TFL sentences.
+Com efeito, quando \textquotedblleft{}$\eif$\textquotedblright{} é ladeado por duas sentenças da LVF, o resultado é uma sentença mais longa da LVF. Em contraste, quando usamos \textquotedblleft{}$\entails$\textquotedblright{}, formamos uma sentença metalinguística que \emph{menciona} as sentenças da LVF ao seu redor.
 
-The English word `implies' is often used as a synonym for `entails',
-i.e.,~`$\entails$'. Some logicians \emph{also} use it for the
-conditional, i.e.,~`$\eif$'. Since this is liable to commit the
-confusion warned about above, we avoid the use of `implies' as much as
-possible. (Whenever it is used, it means `entails'.)
-
+A palavra inglesa \textquotedblleft implies\textquotedblright{} é frequentemente usada como sinônimo de \textquotedblleft entails\textquotedblright{}, isto é, de \textquotedblleft{}$\entails$\textquotedblright{}. Alguns lógicos \emph{também} a usam para o condicional, isto é, para \textquotedblleft{}$\eif$\textquotedblright{}. Como isso pode levar à confusão alertada acima, evitamos usar \textquotedblleft implies\textquotedblright{} tanto quanto possível. (Quando ela é usada, significa \textquotedblleft entails\textquotedblright{}.)
 
 \practiceproblems
 \problempart
-Revisit your answers to
-\hyperref[pr.TT.TTorC]{exercise~\ref*{s:CompleteTruthTables}A}. Determine which
-sentences were tautologies, which were contradictions, and which were
-neither tautologies nor contradictions.
+Reveja suas respostas para
+\hyperref[pr.TT.TTorC]{exercício~\ref*{s:CompleteTruthTables}A}. Determine quais
+sentenças eram tautologias, quais eram contradições e quais eram
+não eram nem tautologias nem contradições.
 \solutions
 
 \
 
 \problempart
 \label{pr.TT.satisfiable}
-Use truth tables to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
+Use tabelas-verdade para determinar se estas sentenças são conjuntamente satisfatíveis ou conjuntamente insatisfatíveis:
 \begin{compactlist}
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %satisfiable
 \item $A\eor B$, $A\eif C$, $B\eif C$ %satisfiable
@@ -793,7 +775,7 @@ Use truth tables to determine whether these sentences are jointly satisfiable, o
 \solutions
 \problempart
 \label{pr.TT.valid}
-Use truth tables to determine whether each argument is valid or invalid.
+Use tabelas-verdade para determinar se cada argumento é válido ou inválido.
 \begin{compactlist}
 \item $A\eif A \therefore A$ %invalid
 \item $A\eif(A\eand\enot A) \therefore \enot A$ %valid
@@ -802,7 +784,7 @@ Use truth tables to determine whether each argument is valid or invalid.
 \item $(B\eand A)\eif C, (C\eand A)\eif B \therefore (C\eand B)\eif A$ %invalid
 \end{compactlist}
 
-\problempart Determine whether each sentence is a tautology, a contradiction, or a contingent sentence, using a complete truth table.
+\problempart Determine se cada sentença é uma tautologia, uma contradição ou uma sentença contingente, usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $\enot B \eand B$ \vspace{.5ex}%contra
 
@@ -827,30 +809,30 @@ Use truth tables to determine whether each argument is valid or invalid.
 
 \noindent\problempart
 \label{pr.TT.equiv}
-Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are logically equivalent, write ``equivalent.'' Otherwise write, ``Not equivalent.'' 
+Determine se as sentenças seguintes são logicamente equivalentes usando tabelas-verdade completas. Se as duas sentenças forem realmente logicamente equivalentes, escreva ``equivalentes.'' Caso contrário, escreva ``não equivalentes.'' 
 \begin{compactlist}
-\item $A$ and $\enot A$
-\item $A \eand \enot A$ and $\enot B \eiff B$
-\item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$
-\item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$
-\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$\end{compactlist}
+\item $A$ e $\enot A$
+\item $A \eand \enot A$ e $\enot B \eiff B$
+\item $[(A \eor B) \eor C]$ e $[A \eor (B \eor C)]$
+\item $A \eor (B \eand C)$ e $(A \eor B) \eand (A \eor C)$
+\item $[A \eand (A \eor B)] \eif B$ e $A \eif B$\end{compactlist}
 
 
 \problempart
 \label{pr.TT.equiv2}
-Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are equivalent, write ``equivalent.'' Otherwise write, ``not equivalent.''
+Determine se as sentenças seguintes são logicamente equivalentes usando tabelas-verdade completas. Se as duas sentenças forem realmente equivalentes, escreva ``equivalentes.'' Caso contrário, escreva ``não equivalentes.''
 \begin{compactlist}
-\item $A\eif A$ and $A \eiff A$
-\item $\enot(A \eif B)$ and $\enot A \eif \enot B$
-\item $A \eor B$ and $\enot A \eif B$
-\item$(A \eif B) \eif C$ and $A \eif (B \eif C)$
-\item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$
+\item $A\eif A$ e $A \eiff A$
+\item $\enot(A \eif B)$ e $\enot A \eif \enot B$
+\item $A \eor B$ e $\enot A \eif B$
+\item$(A \eif B) \eif C$ e $A \eif (B \eif C)$
+\item $A \eiff (B \eiff C)$ e $A \eand (B \eand C)$
 \end{compactlist}
 
 
 \problempart
 \label{pr.TT.satisfiable2}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable using a complete truth table.
+Determine se cada coleção de sentenças é conjuntamente satisfatível ou conjuntamente insatisfatível usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$\vspace{.5ex} %Consistent
 
@@ -903,7 +885,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 \noindent\problempart
 \label{pr.TT.satisfiable3}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable, using a complete truth table.
+Determine se cada coleção de sentenças é conjuntamente satisfatível ou conjuntamente insatisfatível, usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $\enot B$, $A \eif B$, $A$ \vspace{.5ex}%unsatisfiable.
 \item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} %Consistent
@@ -917,7 +899,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 \noindent\problempart
 \label{pr.TT.valid2}
-Determine whether each argument is valid or invalid, using a complete truth table.
+Determine se cada argumento é válido ou inválido, usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $A\eif B$, $B \therefore  A$ %invalid
 
@@ -931,7 +913,7 @@ Determine whether each argument is valid or invalid, using a complete truth tabl
 
 \noindent\problempart
 \label{pr.TT.valid3}
-Determine whether each argument is valid or invalid, using a complete truth table.
+Determine se cada argumento é válido ou inválido, usando uma tabela-verdade completa.
 \begin{compactlist}
 \item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore  A $\vspace{.5ex}%invalid
 \item $A\eor B$, $B\eor C$, $\enot B \therefore A \eand C$\vspace{.5ex} %valid
@@ -943,28 +925,28 @@ Determine whether each argument is valid or invalid, using a complete truth tabl
 \solutions
 \problempart
 \label{pr.TT.concepts}
-Answer each of the questions below and justify your answer.
+Responda a cada uma das perguntas abaixo e justifique sua resposta.
 \begin{compactlist}
-\item Suppose that \metav{A} and \metav{B} are logically equivalent. What can you say about $\metav{A}\eiff\metav{B}$?
+\item Suponha que \metav{A} e \metav{B} sejam logicamente equivalentes. O que se pode dizer sobre $\metav{A}\eiff\metav{B}$?
 %\metav{A} and \metav{B} have the same truth value on every line of a complete truth table, so $\metav{A}\eiff\metav{B}$ is true on every line. It is a tautology.
-\item Suppose that $(\metav{A}\eand\metav{B})\eif\metav{C}$ is neither a tautology nor a contradiction. What can you say about whether $\metav{A}, \metav{B} \therefore\metav{C}$ is valid?
+\item Suponha que $(\metav{A}\eand\metav{B})\eif\metav{C}$ não seja nem uma tautologia nem uma contradição. O que se pode dizer sobre a validade de $\metav{A}, \metav{B} \therefore\metav{C}$?
 %The sentence is false on some line of a complete truth table. On that line, \metav{A} and \metav{B} are true and \metav{C} is false. So the argument is invalid.
-\item Suppose that $\metav{A}$, $\metav{B}$ and $\metav{C}$  are jointly unsatisfiable. What can you say about $(\metav{A}\eand\metav{B}\eand\metav{C})$?
-\item Suppose that \metav{A} is a contradiction. What can you say about whether $\metav{A}, \metav{B} \entails \metav{C}$?
+\item Suponha que $\metav{A}$, $\metav{B}$ e $\metav{C}$  sejam conjuntamente insatisfatíveis. O que se pode dizer sobre $(\metav{A}\eand\metav{B}\eand\metav{C})$?
+\item Suponha que \metav{A} seja uma contradição. O que se pode dizer sobre a validade de $\metav{A}, \metav{B} \entails \metav{C}$?
 %Since \metav{A} is false on every line of a complete truth table, there is no line on which \metav{A} and \metav{B} are true and \metav{C} is false. So the argument is valid.
-\item Suppose that \metav{C} is a tautology. What can you say about whether $\metav{A}, \metav{B}\entails \metav{C}$?
+\item Suponha que \metav{C} seja uma tautologia. O que se pode dizer sobre a validade de $\metav{A}, \metav{B}\entails \metav{C}$?
 %Since \metav{C} is true on every line of a complete truth table, there is no line on which \metav{A} and \metav{B} are true and \metav{C} is false. So the argument is valid.
-\item Suppose that \metav{A} and \metav{B} are logically equivalent. What can you say about $(\metav{A}\eor\metav{B})$?
+\item Suponha que \metav{A} e \metav{B} sejam logicamente equivalentes. O que se pode dizer sobre $(\metav{A}\eor\metav{B})$?
 %Not much. $(\metav{A}\eor\metav{B})$ is a tautology if \metav{A} and \metav{B} are tautologies; it is a contradiction if they are contradictions; it is contingent if they are contingent.
-\item Suppose that \metav{A} and \metav{B} are \emph{not} logically equivalent. What can you say about $(\metav{A}\eor\metav{B})$?
+\item Suponha que \metav{A} e \metav{B} não sejam logicamente equivalentes. O que se pode dizer sobre $(\metav{A}\eor\metav{B})$?
 %\metav{A} and \metav{B} have different truth values on at least one line of a complete truth table, and $(\metav{A}\eor\metav{B})$ will be true on that line. On other lines, it might be true or false. So $(\metav{A}\eor\metav{B})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.
 \end{compactlist}
 \problempart 
-Consider the following principle:
+Considere o seguinte princípio:
 	\begin{quote}
-		Suppose $\metav{A}$ and $\metav{B}$ are logically equivalent. Suppose an argument contains $\metav{A}$ (either as a premise, or as the conclusion). The validity of the argument would be unaffected, if we replaced $\metav{A}$ with $\metav{B}$.
+		Suponha que $\metav{A}$ e $\metav{B}$ sejam logicamente equivalentes. Suponha que um argumento contenha $\metav{A}$ (seja como premissa, seja como conclusão). A validade do argumento não seria afetada se substituíssemos $\metav{A}$ por $\metav{B}$.
 	\end{quote}
-Is this principle correct? Explain your answer.
+Esse princípio está correto? Explique sua resposta.
 
 \chapter{Limitations of TFL}\label{s:ParadoxesOfMaterialConditional}
 
