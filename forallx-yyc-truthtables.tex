@@ -203,24 +203,24 @@ O ponto crucial é que \cref*{brownwins1,brownwins2} empregam condicionais \emph
 
 Diremos mais sobre as dificuldades com os condicionais em \cref{s:ParadoxesOfMaterialConditional}. Por ora, vamos nos contentar com a observação de que \textquotedblleft{}$\eif$\textquotedblright{} é o único candidato a condicional verofuncional para a LVF, mas que muitos condicionais em português não podem ser representados adequadamente usando \textquotedblleft{}$\eif$\textquotedblright{}. A LVF é uma linguagem intrinsecamente limitada.
 
-\chapter{Complete truth tables}
+\chapter{Tabelas-verdade completas}
 \label{s:CompleteTruthTables}
 
-So far, we have used symbolization keys to assign truth values to TFL sentences \emph{indirectly}. For example, we might say that the TFL sentence `$B$' is to be true \ifeff{} Big Ben is in London. Since Big Ben \emph{is} in London, this symbolisation would make `$B$' true. But we can also assign truth values \emph{directly}. We can simply stipulate that `$B$' is to be true, or stipulate that it is to be false. Such stipulations are called \emph{valuations}: 
+Até aqui, usamos chaves de simbolização para atribuir valores de verdade a sentenças da LVF \emph{indiretamente}. Por exemplo, podemos dizer que a sentença da LVF \textquotedblleft{}$B$\textquotedblright{} deve ser verdadeira \ifeff{} Big Ben está em Londres. Como Big Ben \emph{está} em Londres, essa simbolização tornaria \textquotedblleft{}$B$\textquotedblright{} verdadeira. Mas também podemos atribuir valores de verdade \emph{diretamente}. Podemos simplesmente estipular que \textquotedblleft{}$B$\textquotedblright{} é verdadeira ou estipular que ela é falsa. Essas estipulações são chamadas de \emph{valorações}:
 	\factoidbox{
-		A \define{valuation} is any assignment of truth values to particular sentence letters of TFL.
+		Uma \define{valoração} é qualquer atribuição de valores de verdade a determinadas letras sentenciais da LVF.
 	}
 
 \newglossaryentry{valuation}
 {
-name=valuation,
-description={An assignment of \glspl{truth value} to particular \glspl{sentence letter}}
+name=valoração,
+description={Uma atribuição de \glspl{truth value} a determinadas \glspl{sentence letter}}
 }
 
-The power of truth tables lies in the following. Each row of a truth table represents a possible valuation. The complete truth table represents all possible valuations. And the truth table provides us with a means to calculate the truth value of complex sentences, on each possible valuation. But all of this is easiest to explain by example.
+A força das tabelas-verdade está no seguinte. Cada linha de uma tabela-verdade representa uma valoração possível. A tabela-verdade completa representa todas as valorações possíveis. E a tabela-verdade nos fornece um meio de calcular o valor de verdade de sentenças complexas, para cada valoração possível. Mas tudo isso é mais fácil de explicar com um exemplo.
 
-\section{A worked example}
-Consider the sentence `$(H\eand I)\eif H$'. There are four possible ways to assign True and False to the sentence letter `$H$' and `$I$'---four valuations---which we can represent as follows:
+\section{Um exemplo trabalhado}
+Considere a sentença \textquotedblleft{}$(H\eand I)\eif H$\textquotedblright{}. Há quatro maneiras possíveis de atribuir Verdadeiro e Falso à letra sentencial \textquotedblleft{}$H$\textquotedblright{} e à letra \textquotedblleft{}$I$\textquotedblright{} — quatro valorações — que podemos representar assim:
 \begin{center}
 \begin{tabular}{c c|d e e e f}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -231,7 +231,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F
 \end{tabular}
 \end{center}
-To calculate the truth value of the entire sentence `$(H \eand I) \eif H$', we first copy the truth values for the sentence letters and write them underneath the letters in the sentence:
+Para calcular o valor de verdade da sentença inteira \textquotedblleft{}$(H \eand I) \eif H$\textquotedblright{}, primeiro copiamos os valores de verdade das letras sentenciais e os escrevemos abaixo das letras na sentença:
 \begin{center}
 \begin{tabular}{c c|d e e e f}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -242,7 +242,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F & {F} & & {F} & & {F}
 \end{tabular}
 \end{center}
-Now consider the subsentence `$(H\eand I)$'. This is a conjunction, $(\metav{A}\eand\metav{B})$, with `$H$' as \metav{A} and with `$I$' as \metav{B}. The characteristic truth table for conjunction gives the truth conditions for \emph{any} sentence of the form $(\metav{A}\eand\metav{B})$, whatever $\metav{A}$ and $\metav{B}$ might be. It represents the point that a conjunction is true \ifeff{} both conjuncts are true. In this case, our conjuncts are just `$H$' and `$I$'. They are both true on (and only on) the first line of the truth table. Accordingly, we can calculate the truth value of the conjunction on all four rows.
+Agora considere a subsentença \textquotedblleft{}$(H\eand I)$\textquotedblright{}. Ela é uma conjunção, $(\metav{A}\eand\metav{B})$, com \textquotedblleft{}$H$\textquotedblright{} como \metav{A} e \textquotedblleft{}$I$\textquotedblright{} como \metav{B}. A tabela-verdade característica da conjunção fornece as condições de verdade para \emph{qualquer} sentença da forma $(\metav{A}\eand\metav{B})$, quaisquer que sejam $\metav{A}$ e $\metav{B}$. Ela representa o fato de que uma conjunção é verdadeira \ifeff{} ambos os conjuntos são verdadeiros. Neste caso, nossos conjuntos são simplesmente \textquotedblleft{}$H$\textquotedblright{} e \textquotedblleft{}$I$\textquotedblright{}. Ambos são verdadeiros na primeira linha da tabela-verdade, e somente nela. Consequentemente, podemos calcular o valor de verdade da conjunção em todas as quatro linhas.
 \begin{center}
 \begin{tabular}{c c|d e e e f}
  & & \metav{A} & \eand & \metav{B} & & \\
@@ -254,7 +254,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F & F & {F} & F & & F
 \end{tabular}
 \end{center}
-Now, the entire sentence that we are dealing with is a conditional, $\metav{A}\eif\metav{B}$, with `$(H \eand I)$' as \metav{A} and with `$H$' as \metav{B}. On the second row, for example, `$(H\eand I)$' is false and `$H$' is true. Since a conditional is true when the antecedent is false, we write a `T' in the second row underneath the conditional symbol. We continue for the other three rows and get this:
+Agora, a sentença inteira com que estamos lidando é um condicional, $\metav{A}\eif\metav{B}$, com \textquotedblleft{}$(H \eand I)$\textquotedblright{} como \metav{A} e \textquotedblleft{}$H$\textquotedblright{} como \metav{B}. Na segunda linha, por exemplo, \textquotedblleft{}$(H\eand I)$\textquotedblright{} é falsa e \textquotedblleft{}$H$\textquotedblright{} é verdadeira. Como um condicional é verdadeiro quando o antecedente é falso, escrevemos um \textquotedblleft{}T\textquotedblright{} na segunda linha, abaixo do símbolo condicional. Continuamos com as outras três linhas e obtemos:
 \begin{center}
 \begin{tabular}{c c| d e e e f}
  & &  & \metav{A} &  &\eif &\metav{B} \\
@@ -266,9 +266,9 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F &  & {F} &  &{T} & F
 \end{tabular}
 \end{center}
-The conditional is the main logical operator of the sentence, so the column of `T's underneath the conditional tells us that the sentence `$(H \eand I)\eif H$' is true regardless of the truth values of `$H$' and `$I$'. They can be true or false in any combination, and the compound sentence still comes out true. Since we have considered all four possible assignments of truth and falsity to `$H$' and `$I$'---since, that is, we have considered all the different \emph{valuations}---we can say that `$(H \eand I)\eif H$' is true on every valuation.
+O condicional é o operador lógico principal da sentença, portanto a coluna de \textquotedblleft{}T\textquotedblright{} abaixo do condicional nos diz que a sentença \textquotedblleft{}$(H \eand I)\eif H$\textquotedblright{} é verdadeira independentemente dos valores de verdade de \textquotedblleft{}$H$\textquotedblright{} e \textquotedblleft{}$I$\textquotedblright{}. Eles podem ser verdadeiros ou falsos em qualquer combinação, e a sentença composta ainda resulta verdadeira. Como consideramos todas as quatro atribuições possíveis de verdade e falsidade a \textquotedblleft{}$H$\textquotedblright{} e \textquotedblleft{}$I$\textquotedblright{} — isto é, como consideramos todas as diferentes \emph{valorações} — podemos dizer que \textquotedblleft{}$(H \eand I)\eif H$\textquotedblright{} é verdadeira em toda valoração.
 
-In this example, we have not repeated all of the entries in every column in every successive table. When actually writing truth tables on paper, however, it is impractical to erase whole columns or rewrite the whole table for every step. Although it is more crowded, the truth table can be written in this way:
+Neste exemplo, não repetimos todas as entradas em cada coluna de cada tabela sucessiva. Ao escrever tabelas-verdade no papel, porém, é impraticável apagar colunas inteiras ou reescrever a tabela toda a cada passo. Embora fique mais carregada, a tabela-verdade pode ser escrita assim:
 \begin{center}
 \begin{tabular}{c c| d e e e f}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -279,20 +279,20 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F & F & {F} & F & \TTbf{T} & F
 \end{tabular}
 \end{center}
-Most of the columns underneath the sentence are only there for bookkeeping purposes. The column that matters most is the column underneath the \emph{main logical operator} for the sentence, since this tells you the truth value of the entire sentence. We have emphasized this, by putting this column in bold. When you work through truth tables yourself, you should similarly emphasize it (perhaps by highlighting).
+A maior parte das colunas abaixo da sentença serve apenas para fins de registro. A coluna que mais importa é a coluna abaixo do \emph{operador lógico principal} da sentença, pois ela informa o valor de verdade da sentença inteira. Destacamos isso colocando essa coluna em negrito. Ao trabalhar com tabelas-verdade por conta própria, você deve destacá-la da mesma maneira (talvez realçando-a).
 
-\section{Building complete truth tables}
-A \define{complete truth table} has a line for every possible assignment of True and False to the relevant sentence letters. Each line represents a \emph{valuation}, and a complete truth table has a line for all the different valuations.
+\section{Construindo tabelas-verdade completas}
+Uma \define{tabela-verdade completa} tem uma linha para cada atribuição possível de Verdadeiro e Falso às letras sentenciais relevantes. Cada linha representa uma \emph{valoração}, e uma tabela-verdade completa tem uma linha para todas as diferentes valorações.
 
 \newglossaryentry{complete truth table}
 {
-name=complete truth table,
-description={A table that gives all the possible \glspl{truth value} for a \gls{sentence of TFL} or sentences in TFL, with a line for every possible \gls{valuation} of all sentence letters}
+name=tabela-verdade completa,
+description={Uma tabela que fornece todos os possíveis \glspl{truth value} para uma \gls{sentence of TFL} ou sentenças da LVF, com uma linha para cada \gls{valuation} possível de todas as letras sentenciais}
 }
 
-The size of the complete truth table depends on the number of different sentence letters in the table. A sentence that contains only one sentence letter requires only two rows, as in the characteristic truth table for negation. This is true even if the same letter is repeated many times, as in the sentence
-`$[(C\eiff C) \eif C] \eand \enot(C \eif C)$'.
-The complete truth table requires only two lines because there are only two possibilities: `$C$' can be true or it can be false. The truth table for this sentence looks like this:
+O tamanho da tabela-verdade completa depende do número de letras sentenciais diferentes na tabela. Uma sentença que contém apenas uma letra sentencial requer somente duas linhas, como na tabela-verdade característica da negação. Isso é verdade mesmo que a mesma letra se repita muitas vezes, como na sentença
+\textquotedblleft{}$[(C\eiff C) \eif C] \eand \enot(C \eif C)$\textquotedblright{}.
+A tabela-verdade completa requer apenas duas linhas porque há somente duas possibilidades: \textquotedblleft{}$C$\textquotedblright{} pode ser verdadeira ou pode ser falsa. A tabela-verdade para essa sentença é assim:
 \begin{center}
 \begin{tabular}{c| d e e e e e e e e e e e e e e f}
 $C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
@@ -301,11 +301,11 @@ $C$&$[($&$C$&\eiff&$C$&$)$&\eif&$C$&$]$&\eand&\enot&$($&$C$&\eif&$C$&$)$\\
  F &    & F &  T  & F &   & F  & F & &\TTbf{F}&  F& &   F &  T  & F &   \\
 \end{tabular}
 \end{center}
-Looking at the column underneath the main logical operator, we see that the sentence is false on both rows of the table; i.e., the sentence is false regardless of whether `$C$' is true or false. It is false on every valuation.
+Ao observar a coluna abaixo do operador lógico principal, vemos que a sentença é falsa nas duas linhas da tabela; isto é, a sentença é falsa independentemente de \textquotedblleft{}$C$\textquotedblright{} ser verdadeira ou falsa. Ela é falsa em toda valoração.
 
-There will be four lines in the complete truth table for a sentence containing two sentence letters, as in the characteristic truth tables, or the truth table for `$(H \eand I)\eif H$'.
+Haverá quatro linhas na tabela-verdade completa para uma sentença contendo duas letras sentenciais, como nas tabelas-verdade características ou na tabela-verdade para \textquotedblleft{}$(H \eand I)\eif H$\textquotedblright{}.
 
-There will be eight lines in the complete truth table for a sentence containing three sentence letters, e.g.: 
+Haverá oito linhas na tabela-verdade completa para uma sentença contendo três letras sentenciais, por exemplo:
 \begin{center}
 \begin{tabular}{c c c|d e e e f}
 $M$&$N$&$P$&$M$&\eand&$(N$&\eor&$P)$\\
@@ -321,60 +321,59 @@ F & F & T & F & \TTbf{F} & F & T & T\\
 F & F & F & F & \TTbf{F} & F & F & F
 \end{tabular}
 \end{center}
-From this table, we know that the sentence `$M\eand(N\eor P)$' can be true or false, depending on the truth values of `$M$', `$N$', and `$P$'.
+A partir dessa tabela, sabemos que a sentença \textquotedblleft{}$M\eand(N\eor P)$\textquotedblright{} pode ser verdadeira ou falsa, dependendo dos valores de verdade de \textquotedblleft{}$M$\textquotedblright{}, \textquotedblleft{}$N$\textquotedblright{} e \textquotedblleft{}$P$\textquotedblright{}.
 
-A complete truth table for a sentence that contains four different sentence letters requires 16 lines. Five letters, 32 lines. Six letters, 64 lines. And so on. To be perfectly general: If a complete truth table has $n$ different sentence letters, then it must have $2^n$ lines.
+Uma tabela-verdade completa para uma sentença que contém quatro letras sentenciais diferentes requer 16 linhas. Cinco letras, 32 linhas. Seis letras, 64 linhas. E assim por diante. Para sermos perfeitamente gerais: se uma tabela-verdade completa tem $n$ letras sentenciais diferentes, então ela deve ter $2^n$ linhas.
 
-In order to fill in the columns of a complete truth table, begin with the right-most sentence letter and alternate between `T' and `F'. In the next column to the left, write two `T's, write two `F's, and repeat. For the third sentence letter, write four `T's followed by four `F's. This yields an eight line truth table like the one above. For a 16 line truth table, the next column of sentence letters should have eight `T's followed by eight `F's. For a 32 line table, the next column would have 16 `T's followed by 16 `F's, and so on.
+Para preencher as colunas de uma tabela-verdade completa, comece com a letra sentencial mais à direita e alterne entre \textquotedblleft{}T\textquotedblright{} e \textquotedblleft{}F\textquotedblright{}. Na coluna seguinte à esquerda, escreva dois \textquotedblleft{}T\textquotedblright{}, escreva dois \textquotedblleft{}F\textquotedblright{} e repita. Para a terceira letra sentencial, escreva quatro \textquotedblleft{}T\textquotedblright{} seguidos de quatro \textquotedblleft{}F\textquotedblright{}. Isso produz uma tabela-verdade com oito linhas como a acima. Para uma tabela-verdade com 16 linhas, a coluna seguinte de letras sentenciais deve ter oito \textquotedblleft{}T\textquotedblright{} seguidos de oito \textquotedblleft{}F\textquotedblright{}. Para uma tabela com 32 linhas, a coluna seguinte teria 16 \textquotedblleft{}T\textquotedblright{} seguidos de 16 \textquotedblleft{}F\textquotedblright{} e assim por diante.
 
-
-\section{More about brackets}\label{s:MoreBracketingConventions}
-Consider these two sentences:
+\section{Mais sobre parênteses}\label{s:MoreBracketingConventions}
+Considere estas duas sentenças:
 	\begin{align*}
 		((A \eand B) \eand C)\\
 		(A \eand (B \eand C))
 	\end{align*}
-These are truth functionally equivalent. Consequently, it will never make any difference from the perspective of truth value---which is all that TFL cares about (see \cref{s:TruthFunctionality})---which of the two sentences we assert (or deny). Even though the order of the brackets does not matter as to their truth, we should not just drop them. The expression
+Elas são equivalentes verofuncionalmente. Consequentemente, nunca fará diferença, do ponto de vista do valor de verdade — que é tudo com que a LVF se preocupa (ver \cref{s:TruthFunctionality}) —, qual das duas sentenças afirmamos (ou negamos). Embora a ordem dos parênteses não importe para a verdade delas, não devemos simplesmente eliminá-los. A expressão
 	\begin{align*}
 		A \eand B \eand C
 	\end{align*}
-is ambiguous between the two sentences above.  The same observation holds for disjunctions. The following sentences are logically equivalent:
+é ambígua entre as duas sentenças acima. A mesma observação vale para disjunções. As sentenças seguintes são logicamente equivalentes:
 	\begin{align*}
 		((A \eor B) \eor C)\\
 		(A \eor (B \eor C))
 	\end{align*}
-But we should not simply write:
+Mas não devemos simplesmente escrever:
 	\begin{align*}
 		A \eor B \eor C
 	\end{align*}
-In fact, it is a specific fact about the characteristic truth table of
-$\eor$ and $\eand$ that guarantees that any two conjunctions (or
-disjunctions) of the same sentences are truth functionally equivalent,
-however you place the brackets. \emph{This is only true of
-conjunctions, disjunctions, and biconditionals}, however. The following two sentences
-have \emph{different} truth tables:
+Na verdade, é um fato específico da tabela-verdade característica de
+$\eor$ e $\eand$ que garante que quaisquer duas conjunções (ou
+disjunções) das mesmas sentenças são equivalentes verofuncionalmente,
+independentemente de como você coloca os parênteses. \emph{Isso só é
+verdade para conjunções, disjunções e bicondicionais}, contudo. As duas
+sentenças seguintes têm tabelas-verdade \emph{diferentes}:
 	\begin{align*}
 		((A \eif B) \eif C)\\
 		(A \eif (B \eif C))
 	\end{align*}
-So if we were to write:
+Portanto, se escrevêssemos:
 	\begin{align*}
 		A \eif B \eif C
 	\end{align*}
-it would be dangerously ambiguous. Leaving out brackets in this case would be disastrous. Equally, these sentences have different truth tables:
+isso seria perigosamente ambíguo. Omitir os parênteses neste caso seria desastroso. Da mesma forma, estas sentenças têm tabelas-verdade diferentes:
 	\begin{align*}
 		((A \eor B) \eand C)\\
 		(A \eor (B \eand C))
 	\end{align*}
-So if we were to write:
+Portanto, se escrevêssemos:
 	\begin{align*}
 		A \eor B \eand C
 	\end{align*}
-it would be dangerously ambiguous. \emph{Never write this.} The moral is: never drop brackets (except the outermost ones).
+isso seria perigosamente ambíguo. \emph{Nunca escreva isso.} A moral é: nunca elimine os parênteses (exceto os mais externos).
 
 \practiceproblems\label{pr.TT.TTorC}
 \problempart
-Offer complete truth tables for each of the following:
+Forneça tabelas-verdade completas para cada uma das seguintes sentenças:
 \begin{compactlist}
 \item $A \eif A$ %taut
 \item $C \eif\enot C$ %contingent
@@ -387,20 +386,20 @@ Offer complete truth tables for each of the following:
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
 \end{compactlist}
 \problempart
-Check all the claims made in \cref{s:MoreBracketingConventions}, i.e., show that:
+Verifique todas as afirmações feitas em \cref{s:MoreBracketingConventions}, isto é, mostre que:
 \begin{compactlist}
-	\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
-	\item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
-	\item `$((A \eor B) \eand C)$' and `$(A \eor (B \eand C))$' do not have the same truth table
-	\item `$((A \eif B) \eif C)$' and `$(A \eif (B \eif C))$' do not have the same truth table
+	\item \textquotedblleft{}$((A \eand B) \eand C)$\textquotedblright{} e \textquotedblleft{}$(A \eand (B \eand C))$\textquotedblright{} têm a mesma tabela-verdade
+	\item \textquotedblleft{}$((A \eor B) \eor C)$\textquotedblright{} e \textquotedblleft{}$(A \eor (B \eor C))$\textquotedblright{} têm a mesma tabela-verdade
+	\item \textquotedblleft{}$((A \eor B) \eand C)$\textquotedblright{} e \textquotedblleft{}$(A \eor (B \eand C))$\textquotedblright{} não têm a mesma tabela-verdade
+	\item \textquotedblleft{}$((A \eif B) \eif C)$\textquotedblright{} e \textquotedblleft{}$(A \eif (B \eif C))$\textquotedblright{} não têm a mesma tabela-verdade
 \end{compactlist}
-Also, check whether:
+Além disso, verifique se:
 \begin{compactlist}
-	\item[5.] `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table
+	\item[5.] \textquotedblleft{}$((A \eiff B) \eiff C)$\textquotedblright{} e \textquotedblleft{}$(A \eiff (B \eiff C))$\textquotedblright{} têm a mesma tabela-verdade
 \end{compactlist}
 
 \problempart
-Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
+Escreva tabelas-verdade completas para as sentenças seguintes e marque a coluna que representa os possíveis valores de verdade da sentença inteira.
 
 \begin{compactlist}
 
@@ -428,7 +427,7 @@ Write complete truth tables for the following sentences and mark the column that
 %	&	F	&	T	&	F	&	F	&	T	&	T	&	T	&	F	\\
 %	&	F	&	F	&	F	&	T	&	T	&	F	&	T	&	T	\\
 %	&	T	&	F	&	F	&	F	&	F	&	F	&	F	&	F	\\
-%\cline{2-2}
+%\cline{2-9}
 %\end{tabular}
 
 
@@ -440,7 +439,7 @@ Write complete truth tables for the following sentences and mark the column that
 %	&	T	&	T	&	T	&	T		&	F	 &	T	&	T	&	F		&	T	\\	
 %	&	T	&	F	&	F	&	T		&	T	 &	F	&	F	&	F		&	T	\\
 %	&	F	&	T	&	T	&	F		&	F	 &	T	&	F	&	T		&	F	\\
-%	&	F	&	T	&	F	&	T		&	T	 &	F	&	T	&	T		&	F	\\
+%	&	F		&	T		&	F		&	T		&	T	 &	F	&	T	&	T	&	F	\\
 %\cline{5-5}
 %\end{tabular}
 
@@ -469,7 +468,7 @@ Write complete truth tables for the following sentences and mark the column that
 %\cline{2-13}
 %	&F	   &	T	&	  T &	T	&	T		&	T	&	F	&	T	&	T	&	T	&	T	&	T	\\
 %	&T	   &	T	&	  F &	T	&	F		&	F	&	T	&	T	&	T	&	T	&	T	&	F	\\	
-%	&T	   &	T	&	 F  &	F	&	F		&	T	&	T	&	T	&	T	&	F	&	T	&	T	\\
+%	&T	   &	T	&	 F  &	F	&	F		&	T	&	T	&	T	&	F	&	T	&	T	\\
 %	&T	   &	T	&	 F  &	F	&	F		&	F	&	T	&	T	&	T	&	F	&	F	&	F	\\
 %	&T	   &	F	&	F   &	T	&	T		&	T	&	T	&	F	&	T	&	T	&	T	&	T	\\
 %	&T	   &	F	&	F   &	T	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	F	\\
@@ -483,7 +482,7 @@ Write complete truth tables for the following sentences and mark the column that
 \end{compactlist}
 
 \problempart
-Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
+Escreva tabelas-verdade completas para as sentenças seguintes e marque a coluna que representa os possíveis valores de verdade da sentença inteira.
 
 \begin{compactlist}
 
@@ -496,8 +495,8 @@ Write complete truth tables for the following sentences and mark the column that
 %1.	&	(D 	&	 \eand 	& 	 \enot	&	 D) 	&	 \eif 	&	 G \\
 %	&	T	&	F		&	F		&	T	&	T	&	T	\\
 %	&	T	&	F		&	F		&	T	&	T	&	F	\\
-%	&	F	&	F		&	T		&	F	&	T	&	T	\\
-%	&	F	&	F		&	T		&	F	&	T	&	F	\\
+%	&	F		&	F		&	T	&	F	&	T	&	T	\\
+%	&	F		&	F		&	T	&	F	&	T	&	F	\\
 %\cline{6-6}
 %\end{tabular}
 %\vspace{1em}
@@ -542,10 +541,10 @@ Write complete truth tables for the following sentences and mark the column that
 %	&	T	&	T		&	T	&	F	&	F	&	T	&	F		&	T	&	T		&T	\\
 %	&	T	&	F		&	F	&	T	&	T	&	F	&	F		&	T	&	T		&F	\\
 %	&	T	&	F		&	F	&	T	&	F	&	F	&	F		&	T	&	T		&F	\\
-%	&	F	&	F		&	T	&	T	&	T	&	F	&	F		&	F	&	T		&T	\\
-%	&	F	&	F		&	T	&	T	&	F	&	F	&	F		&	F	&	T		&T	\\
-%	&	F	&	F		&	F	&	T	&	T	&	T	&	T		&	F	&	F		&F	\\
-%	&	F	&	F		&	F	&	T	&	F	&	T	&	T		&	F	&	F		&F	\\
+%	&	F		&	F		&	T	&	T	&	T	&	F	&	F		&	F	&	T		&T	\\
+%	&	F		&	F		&	T	&	T	&	F	&	F	&	F		&	F	&	T		&T	\\
+%	&	F		&	F		&	F	&	T	&	T	&	T	&	T		&	F	&	F		&F	\\
+%	&	F		&	F		&	F	&	T	&	F	&	T	&	T		&	F	&	F		&F	\\
 %\cline{7-7}
 %\end{tabular}
 %	
@@ -564,16 +563,14 @@ Write complete truth tables for the following sentences and mark the column that
 %	&	T		&	F	&	F	&	T	&	F	&	T	&	T	&	T		&	F	&	T	&T	\\
 %	&	F		&	F	&	F	&	T	&	T	&	F	&	T	&	T		&	F	&	T	&T	\\
 %	&	F		&	F	&	T	&	F	&	T	&	T	&	T	&	T		&	F	&	F	&F	\\
-%	&	T		&	F	&	T	&	F	&	F	&	F	&	T	&	T		&	F	&	F	&F	\\
+%	&	T		&	F	&	T	&	F	&	F	&	F	&	F	&	T		&	F	&	F	&F	\\
 %\cline{8-8}
 %\end{tabular}
 %\vspace{1em}
 \end{compactlist}
 
 
-If you want additional practice, you can construct truth tables for any of the sentences and arguments in the exercises for the previous chapter.
-
-
+Se quiser prática adicional, você pode construir tabelas-verdade para qualquer uma das sentenças e argumentos dos exercícios do capítulo anterior.
 \chapter{Semantic concepts}
 \label{s:SemanticConcepts}
 
