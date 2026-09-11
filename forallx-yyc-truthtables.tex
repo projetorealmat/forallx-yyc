@@ -1,22 +1,22 @@
 %!TEX root = forallxyyc.tex
-\part{Truth tables}
+\part{Tabelas-verdade}
 \label{ch.TruthTables}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\chapter{Characteristic truth tables}
+\chapter{Tabelas-verdade características}
 \label{s:CharacteristicTruthTables}
 
-Any sentence of TFL is composed of sentence letters, possibly combined using sentential connectives. The truth value of the compound sentence depends only on the truth value of the sentence letters that comprise it. In order to know the truth value of `$(D \eand E)$', for instance, you only need to know the truth value of `$D$' and the truth value of `$E$'.
+Qualquer sentença da LVF é composta de letras sentenciais, possivelmente combinadas por meio de conectivos sentenciais. O valor de verdade da sentença composta depende somente dos valores de verdade das letras sentenciais que a compõem. Para saber o valor de verdade de \textquotedblleft$(D \eand E)$\textquotedblright{}, por exemplo, você só precisa saber o valor de verdade de \textquotedblleft$D$\textquotedblright{} e o valor de verdade de \textquotedblleft$E$\textquotedblright{}.
 
-We introduced five connectives in \cref{s:TFLConnectives}. So we just need to explain how they map between truth values. For convenience, we abbreviate `True' with `T' and `False' with `F'. (But, to be clear, the two truth values are True and False; the truth values are not \emph{letters}!)
+Introduzimos cinco conectivos em \cref{s:TFLConnectives}. Portanto, só precisamos explicar como eles mapeiam valores de verdade. Por conveniência, abreviaremos \textquotedblleftVerdadeiro\textquotedblright{} por \textquotedblleft T\textquotedblright{} e \textquotedblleftFalso\textquotedblright{} por \textquotedblleft F\textquotedblright{}. (Mas, para deixar claro, os dois valores de verdade são Verdadeiro e Falso; os valores de verdade não são \emph{letras}!)
 
 \newglossaryentry{truth value}
                  {
-                   name = truth value,
-                   description = {One of the two logical values sentences can have: True and False}
+                   name = valor de verdade,
+                   description = {Um dos dois valores lógicos que as sentenças podem ter: Verdadeiro e Falso}
                    }
 
-\paragraph{Negation} For any sentence \metav{A}: If \metav{A} is true, then \enot\metav{A} is false; and if \enot\metav{A} is true, then \metav{A} is false. We can summarize this in the \emph{characteristic truth table} for negation:
+\paragraph{Negação} Para qualquer sentença \metav{A}: se \metav{A} é verdadeira, então \enot\metav{A} é falsa; e se \enot\metav{A} é verdadeira, então \metav{A} é falsa. Podemos resumir isso na \emph{tabela-verdade característica} da negação:
 \begin{center}
 \begin{tabular}{c|c}
 \metav{A} & \enot\metav{A}\\
@@ -26,7 +26,7 @@ F & T
 \end{tabular}
 \end{center}
 
-\paragraph{Conjunction} For any sentences \metav{A} and \metav{B}, \metav{A}\eand\metav{B} is true if and only if both \metav{A} and \metav{B} are true. We can summarize this in the {characteristic truth table} for conjunction:
+\paragraph{Conjunção} Para quaisquer sentenças \metav{A} e \metav{B}, \metav{A}\eand\metav{B} é verdadeira se e somente se tanto \metav{A} quanto \metav{B} são verdadeiras. Podemos resumir isso na {tabela-verdade característica} da conjunção:
 \begin{center}
 \begin{tabular}{c c |c}
 \metav{A} & \metav{B} & $\metav{A}\eand\metav{B}$\\
@@ -37,11 +37,11 @@ F & T & F\\
 F & F & F
 \end{tabular}
 \end{center}
-Note that the truth value for $\metav{A} \eand \metav{B}$ is always
-the same as the truth value for $\metav{B} \eand \metav{A}$.
-Connectives that have this property are called \emph{commutative}.
+Observe que o valor de verdade de $\metav{A} \eand \metav{B}$ é sempre
+o mesmo que o valor de verdade de $\metav{B} \eand \metav{A}$.
+Conectivos que têm essa propriedade são chamados de \emph{comutativos}.
 
-\paragraph{Disjunction} Recall that `$\eor$' always represents inclusive or. So, for any sentences \metav{A} and \metav{B}, $\metav{A}\eor \metav{B}$ is true if and only if either \metav{A} or \metav{B} is true. We can summarize this in the {characteristic truth table} for disjunction:
+\paragraph{Disjunção} Recorde que \textquotedblleft$\eor$\textquotedblright{} sempre representa ou inclusivo. Portanto, para quaisquer sentenças \metav{A} e \metav{B}, $\metav{A}\eor \metav{B}$ é verdadeira se e somente se \metav{A} ou \metav{B} é verdadeira. Podemos resumir isso na {tabela-verdade característica} da disjunção:
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eor\metav{B}$ \\
@@ -52,19 +52,18 @@ F & T & T\\
 F & F & F
 \end{tabular}
 \end{center}
-Like conjunction, disjunction is commutative.
+Assim como a conjunção, a disjunção é comutativa.
 
-\paragraph{Conditional} We're just going to come clean and admit it:
-Conditionals are a mess. Exactly how much of a
-mess they are is \emph{philosophically} contentious. We'll discuss a
-few of the subtleties in
-\cref{s:IndicativeSubjunctive,s:ParadoxesOfMaterialConditional}. For
-now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$
-is false if and only if \metav{A} is true and \metav{B} is false.
-The connective with these stipulated truth conditions is called the
-\define{material conditional}. We
-can summarize this with a characteristic truth table for the
-conditional.
+\paragraph{Condicional} Vamos simplesmente admitir:
+Os condicionais são uma bagunça. Exatamente qual é o grau dessa
+bagunça é uma questão \emph{filosoficamente} controversa. Discutiremos
+algumas das sutilezas em
+\cref{s:IndicativeSubjunctive,s:ParadoxesOfMaterialConditional}. Por
+ora, estipularemos o seguinte: $\metav{A}\eif\metav{B}$ é falsa se e somente
+se \metav{A} é verdadeira e \metav{B} é falsa. O conectivo com essas
+condições de verdade estipuladas é chamado de
+\define{condicional material}. Podemos resumir isso com uma tabela-verdade
+característica do condicional.
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eif\metav{B}$\\
@@ -75,9 +74,11 @@ F & T & T\\
 F & F & T
 \end{tabular}
 \end{center}
-The conditional is \emph{not commutative}. You cannot swap the antecedent and consequent without changing the meaning of the sentence; $\metav{A}\eif\metav{B}$ and $\metav{B} \eif \metav{A}$ have different truth tables.
+O condicional \emph{não} é comutativo. Não se pode trocar o antecedente
+e o consequente sem mudar o significado da sentença; $\metav{A}\eif\metav{B}$
+e $\metav{B} \eif \metav{A}$ têm tabelas-verdade diferentes.
 
-\paragraph{Biconditional} Since a biconditional is to be the same as the conjunction of the conditionals running in both directions, we will want the truth table for the biconditional to be:
+\paragraph{Bicondicional} Como um bicondicional deve ser o mesmo que a conjunção dos condicionais que percorrem ambas as direções, queremos que a tabela-verdade do bicondicional seja:
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eiff\metav{B}$\\
@@ -88,10 +89,9 @@ F & T & F\\
 F & F & T
 \end{tabular}
 \end{center}
-The connective with this truth table is also often called the
-\define{material biconditional}. Unsurprisingly, the biconditional is
-commutative.
-
+O conectivo com esta tabela-verdade também é frequentemente chamado de
+\define{bicondicional material}. Como era de esperar, o bicondicional é
+comutativo.
 \chapter{Truth-functional connectives}
 \label{s:TruthFunctionality}
 
