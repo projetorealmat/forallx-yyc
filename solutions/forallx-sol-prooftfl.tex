@@ -9,10 +9,10 @@
 
 \stepcounter{chapter} % The very idea
 
-\chapter{Basic rules for TFL}\setcounter{ProbPart}{0}
+\chapter{Regras básicas para a LVF}\setcounter{ProbPart}{0}
 
 \problempart
-The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
+As duas \textquotedblleft provas\textquotedblright{} a seguir estão \emph{incorretas}. Explique os erros que elas cometem.
 \begin{multicols}{2}
 \begin{fitchproof}[arrayenv=tabular]
 \hypo{abc}{(\enot L \land A) \eor L}
@@ -29,9 +29,9 @@ The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \have{con}{A}\oe{abc, nla-a, l-a2}
 \end{fitchproof}
 \vfill
-\noindent\myanswer{$\eand$E on line 4 can't be applied to line~1, since it is not of the form $\metav{A} \eand \metav{B}$.  `$A$' could be obtained by $\eand$E, but from line~2.}
+\noindent\myanswer{A regra $\eand$E na linha 4 não pode ser aplicada à linha~1, pois ela não tem a forma $\metav{A} \eand \metav{B}$. \textquotedblleft$A$\textquotedblright{} poderia ser obtido por $\eand$E, mas a partir da linha~2.}
 
-\myanswer{$\enot$E on line~6 illicitly refers to a line from a closed subproof (line~3).}
+\myanswer{A regra $\enot$E na linha~6 faz referência indevidamente a uma linha de uma subprova fechada (a linha~3).}
 \hfill
 \columnbreak
 \begin{fitchproof}[arrayenv=tabular]
@@ -42,13 +42,13 @@ The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \have{d}{D}\ce{bc, bcd}
 \end{fitchproof}
 \vfill
-\noindent\myanswer{$\eand$E on line 3 should yield `$B \eand C$'.  `$B$' could then be obtained by $\eand$E again.}
+\noindent\myanswer{A regra $\eand$E na linha 3 deveria produzir \textquotedblleft$B \eand C$\textquotedblright{}. \textquotedblleft$B$\textquotedblright{} poderia então ser obtido aplicando novamente $\eand$E.}
 
-\myanswer{The citation for line 5 is the wrong way round: it should be `$\eif$E 2, 4'.}
+\myanswer{A citação da linha 5 está invertida: deveria ser \textquotedblleft$\eif$E 2, 4\textquotedblright{}.}
 \end{multicols}
 
 \problempart
-The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into \textit{bona fide} proofs. Additionally, write down the argument that corresponds to each proof.
+As três provas seguintes estão sem suas citações (a regra e os números das linhas). Acrescente-as para transformá-las em provas \textit{bona fide}. Além disso, escreva o argumento correspondente a cada prova.
 
 \begin{fitchproof}
 \hypo{ps}{P \eand S}
@@ -58,7 +58,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 \have{r}{R}\ce{nsor, s}
 \have{re}{R \eor E}\oi{r}
 \end{fitchproof}
-\myanswer{Corresponding argument: \\$P \eand S, S \eif R \therefore R \eor E$}
+\myanswer{Argumento correspondente: \\$P \eand S, S \eif R \therefore R \eor E$}
 
 \medskip
 
@@ -73,7 +73,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 \have{conc}{(A \eand B) \eif (D \eor E)}\ci{ab-de}
 \end{fitchproof}
 
-\noindent\myanswer{Corresponding argument: \\$A \eif D \therefore (A \eand B) \eif (D \eor E)$}
+\noindent\myanswer{Argumento correspondente: \\$A \eif D \therefore (A \eand B) \eif (D \eor E)$}
 
 \medskip
 
@@ -94,7 +94,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 \have{conc}{J}\oe{jol, j-j2, l-j3}
 \end{fitchproof}
 
-\noindent\myanswer{Corresponding argument:\\
+\noindent\myanswer{Argumento correspondente:\\
 $\enot L \eif (J \eor L), \enot L \therefore J$}
 
 \
@@ -102,7 +102,7 @@ $\enot L \eif (J \eor L), \enot L \therefore J$}
 \solutions
 \problempart
 \label{pr.solvedTFLproofs}
-Give a proof for each of the following arguments:
+Forneça uma prova para cada um dos argumentos a seguir:
 \begin{compactlist}
 \item $J\eif\enot J \therefore \enot J$
 \myanswer{\begin{fitchproof}
