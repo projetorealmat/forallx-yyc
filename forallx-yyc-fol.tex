@@ -1277,63 +1277,63 @@ simbolização de \textquotedblleft há exatamente duas maçãs\textquotedblrigh
 	\end{compactlist}
 
 
-\chapter{Sentences of FOL}\label{s:FOLSentences}
-We know how to represent English sentences in FOL. The time has finally come to define the notion of a \emph{sentence} of FOL.
+\chapter{Sentenças da LPO}\label{s:FOLSentences}
+Sabemos como representar sentenças em português na LPO. Finalmente chegou o momento de definir a noção de uma \emph{sentença} da LPO.
 
-\section{Expressions}
-There are six kinds of symbols in FOL:
+\section{Expressões}
+Há seis tipos de símbolos na LPO:
 
 \begin{compactlist}
-\item \textbf{Predicates:} $A$, $B$, $C$, \dots, $Z$, or 
-with subscripts, as needed: $A_1$, $B_1$, $Z_1$, $A_2$, $A_{25}$,
-$J_{375}$, \dots
+\item \textbf{Predicados:} $A$, $B$, $C$, \dots, $Z$, ou com subscritos, conforme necessário: $A_1$, $B_1$, $Z_1$, $A_2$, $A_{25}$, $J_{375}$, \dots
 
-The identity symbol `$=$' counts as a special predicate.
-\item \textbf{Names:} $a$, $b$, $c$, \dots, $r$, or
-with subscripts, as needed: $a_1$, $b_{224}$, $h_7$, $m_{32}$, \dots
-\item \textbf{Variables:} $s$, $t$, $u$, $v$, $w$, $x$, $y$, $z$, or
-with subscripts, as needed: $x_1$, $y_1$, $z_1$, $x_2$, \dots
-\item \textbf{Connectives:}  $\enot$, $\eand$, $\eor$, $\eif$, $\eiff$
-\item \textbf{Brackets:} ( , )
-\item \textbf{Quantifiers:}  $\forall$, $\exists$
+
+
+O símbolo de identidade \textquotedblleft $=$\textquotedblright{} conta como um predicado especial.
+\item \textbf{Nomes:} $a$, $b$, $c$, \dots, $r$, ou com subscritos, conforme necessário: $a_1$, $b_{224}$, $h_7$, $m_{32}$, \dots
+
+\item \textbf{Variáveis:} $s$, $t$, $u$, $v$, $w$, $x$, $y$, $z$, ou com subscritos, conforme necessário: $x_1$, $y_1$, $z_1$, $x_2$, \dots
+
+\item \textbf{Conectivos:}  $\enot$, $\eand$, $\eor$, $\eif$, $\eiff$
+\item \textbf{Parênteses:} ( , )
+\item \textbf{Quantificadores:}  $\forall$, $\exists$
 \end{compactlist}
-We define an \define{expression of FOL} as any string of symbols of FOL. Take any of the symbols of FOL and write them down, in any order, and you have an expression.
+Definimos uma \define{express\~ao da LPO} como qualquer sequência de símbolos da LPO. Tome quaisquer símbolos da LPO e escreva-os, em qualquer ordem, e você terá uma expressão.
 
-\section{Terms and formulas}
+\section{Termos e fórmulas}
 \label{s:TermsFormulas}
 
-In \cref{s:TFLSentences}, we went straight from the statement of the vocabulary of TFL to the definition of a sentence of TFL. In FOL, we will have to go via an intermediary stage: via the notion of a \define{formula}. The intuitive idea is that a formula is any sentence, or anything which can be turned into a sentence by adding quantifiers out front. But this intuitive idea will take some time to unpack.
+Em \cref{s:TFLSentences}, passamos diretamente da apresentação do vocabulário da LVF para a definição de uma sentença da LVF. Na LPO, teremos de passar por uma etapa intermediária: a noção de uma \define{f\'ormula}. A ideia intuitiva é que uma fórmula seja qualquer sentença, ou qualquer coisa que possa ser transformada em uma sentença acrescentando quantificadores à frente. Mas será necessário algum tempo para desenvolver essa ideia intuitiva.
 
-We start by defining the notion of a term.
+Começamos definindo a noção de termo.
 	\factoidbox{
-		A \define{term} is any name or any variable. }
-So, here are some terms:
+		Um \define{termo} é qualquer nome ou qualquer variável. }
+Assim, eis alguns termos:
 	$$a, b, x, x_1, x_2, y, y_{254}, z$$
-Next we need to define atomic formulas.
+Em seguida, precisamos definir fórmulas atômicas.
 	\factoidbox{
 		\begin{factoidnumber}
-		\item Any sentence letter is an atomic formula.
-		\item If $\metav{R}$ is an $n$-place predicate and $\metav{t}_1, \metav{t}_2, \ldots, \metav{t}_n$ are terms, then $\atom{\metav{R}}{\metav{t}_1, \metav{t}_2, \ldots, \metav{t}_n}$ is an atomic formula.
-		\item If $\metav{t}_1$ and $\metav{t}_2$ are terms, then $\metav{t}_1 = \metav{t}_2$ is an atomic formula.
-		\item Nothing else is an atomic formula.
+\item Qualquer letra sentencial é uma fórmula atômica.
+\item Se $\metav{R}$ é um predicado de $n$ lugares e $\metav{t}_1, \metav{t}_2, \ldots, \metav{t}_n$ são termos, então $\atom{\metav{R}}{\metav{t}_1, \metav{t}_2, \ldots, \metav{t}_n}$ é uma fórmula atômica.
+\item Se $\metav{t}_1$ e $\metav{t}_2$ são termos, então $\metav{t}_1 = \metav{t}_2$ é uma fórmula atômica.
+\item Nada mais é uma fórmula atômica.
 		\end{factoidnumber}
 	}
-Note that we consider sentence letters also formulas of FOL, so every
-sentence of TFL is also a formula of FOL. In \cref{ch.NDFOL}, we will
-again also allow the contradiction~`$\ered$' as an atomic formula.
+Observe que também consideramos as letras sentenciais como fórmulas da LPO; assim, toda sentença da LVF também é uma fórmula da LPO. Em \cref{ch.NDFOL}, permitiremos novamente que a contradição~\textquotedblleft $\ered$\textquotedblright{} seja uma fórmula atômica.
+
+
 
 \newglossaryentry{term}{
-  name = term,
-  description = {Either a \gls{name} or a \gls{variable}}
+  name = termo,
+  description = {Um \gls{name} ou uma \gls{variable}}
 }
 
 \newglossaryentry{formula}{
-  name = formula,
-  description = {An expression of FOL built according to the inductive rules in \cref{s:TermsFormulas}}
+  name = fórmula,
+  description = {Uma expressão da LPO construída segundo as regras indutivas de \cref{s:TermsFormulas}}
 }
 
 
-The use of script letters here follows the conventions laid down in \cref{s:UseMention}. So, `$\metav{R}$' is not itself a predicate of FOL. Rather, it is a symbol of our metalanguage (augmented English) that we use to talk about any predicate of FOL. Similarly, `$\metav{t}_1$' is not a term of FOL, but a symbol of the metalanguage that we can use to talk about any term of FOL. So, where `$F$' is a one-place predicate, `$G$' is a three-place predicate, and `$S$' is a six-place predicate, here are some atomic formulas:
+O uso de letras de tipo especial aqui segue as convenções estabelecidas em \cref{s:UseMention}. Assim, \textquotedblleft $\metav{R}$\textquotedblright{} não é por si só um predicado da LPO. Em vez disso, é um símbolo da nossa metalinguagem (português aumentado) que usamos para falar de qualquer predicado da LPO. Da mesma forma, \textquotedblleft $\metav{t}_1$\textquotedblright{} não é um termo da LPO, mas um símbolo da metalinguagem que podemos usar para falar de qualquer termo da LPO. Portanto, quando \textquotedblleft $F$\textquotedblright{} é um predicado de um lugar, \textquotedblleft $G$\textquotedblright{} é um predicado de três lugares e \textquotedblleft $S$\textquotedblright{} é um predicado de seis lugares, eis algumas fórmulas atômicas:
 	\begin{center}
 		\begin{tabular}{l@{\qquad\qquad}l}
 		$D$ & $\atom{F}{a}$\\
@@ -1342,25 +1342,25 @@ The use of script letters here follows the conventions laid down in \cref{s:UseM
 		$\atom{F}{x}$ & $\atom{S}{x_1, x_2, a, b, y, x_1}$
 	\end{tabular}
 \end{center}
-Once we know what atomic formulas are, we can offer recursion clauses to define arbitrary formulas. The first few clauses are exactly analogous to those in the definition of `sentence of TFL'.
+Agora que sabemos o que são fórmulas atômicas, podemos oferecer cláusulas recursivas para definir fórmulas arbitrárias. As primeiras cláusulas são exatamente análogas às da definição de \textquotedblleft sentença da LVF\textquotedblright{}.
 	\factoidbox{
 	\begin{factoidnumber}
-		\item Every atomic formula is a formula.
-		\item If \metav{A} is a formula, then $\enot\metav{A}$ is a formula.
-		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eand\metav{B})$ is a formula.
-		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eor\metav{B})$ is a formula.
-		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eif\metav{B})$ is a formula.
-		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eiff\metav{B})$ is a formula.
-		\item\label{formForall} If \metav{A} is a formula and \metav{x} is a variable,
-		% \metav{A} contains at least one occurrence of \metav{x}, and \metav{A} contains neither $\forall \metav{x}$ nor $\exists \metav{x}$, 
-		then $\forall\metav{x}\,\metav{A}$ is a formula.
-		\item\label{formExists} If \metav{A} is a formula and \metav{x} is a variable, 
-		%\metav{A} contains at least one occurrence of \metav{x}, and \metav{A} contains neither $\forall \metav{x}$ nor $\exists \metav{x}$, 
-		then $\exists\metav{x}\,\metav{A}$ is a formula.
-		\item Nothing else is a formula.
+\item Toda fórmula atômica é uma fórmula.
+\item Se \metav{A} é uma fórmula, então $\enot\metav{A}$ é uma fórmula.
+\item Se \metav{A} e \metav{B} são fórmulas, então $(\metav{A}\eand\metav{B})$ é uma fórmula.
+\item Se \metav{A} e \metav{B} são fórmulas, então $(\metav{A}\eor\metav{B})$ é uma fórmula.
+\item Se \metav{A} e \metav{B} são fórmulas, então $(\metav{A}\eif\metav{B})$ é uma fórmula.
+\item Se \metav{A} e \metav{B} são fórmulas, então $(\metav{A}\eiff\metav{B})$ é uma fórmula.
+\item\label{formForall} Se \metav{A} é uma fórmula e \metav{x} é uma variável,
+		% \metav{A} contains at least one occurrence of \metav{x}, and \metav{A} contains neither $\forall \metav{x}$ nor $\exists \metav{x}$,
+então $\forall\metav{x}\,\metav{A}$ é uma fórmula.
+\item\label{formExists} Se \metav{A} é uma fórmula e \metav{x} é uma variável,
+		%\metav{A} contains at least one occurrence of \metav{x}, and \metav{A} contains neither $\forall \metav{x}$ nor $\exists \metav{x}$,
+então $\exists\metav{x}\,\metav{A}$ é uma fórmula.
+\item Nada mais é uma fórmula.
 	\end{factoidnumber}
 	}
-So, assuming again that `$F$' is a one-place predicate, `$G$' is a three-place predicate and `$S$' is a six place-predicate, here are some formulas you can build this way:
+Assim, supondo novamente que \textquotedblleft $F$\textquotedblright{} seja um predicado de um lugar, \textquotedblleft $G$\textquotedblright{} um predicado de três lugares e \textquotedblleft $S$\textquotedblright{} um predicado de seis lugares, eis algumas fórmulas que você pode construir dessa maneira:
 	\begin{align*}
 		& \atom{F}{x}\\
 		& \atom{G}{a,y,z}\\
@@ -1378,149 +1378,149 @@ So, assuming again that `$F$' is a one-place predicate, `$G$' is a three-place p
 %Certainly `$\atom{G}{x,x,x}$' is a formula, and `$\exists x\, \atom{G}{x,x,x}$' is therefore also a formula. But we cannot form a new formula by putting `$\forall x$' at the front. This violates the constraints on clause 7 of our inductive definition: `$\exists x\, \atom{G}{x,x,x}$' contains at least one occurrence of `$x$', but it already contains `$\exists x$'.
 
 %These constraints have the effect of ensuring that variables only serve one master at any one time (see \cref{s:MultipleGenerality}). In fact, w
-We can now give a formal definition of scope, which incorporates the definition of the scope of a quantifier. Here we follow the case of TFL, though we note that a logical operator can be either a connective or a quantifier:
+Podemos agora oferecer uma definição formal de escopo, que incorpora a definição do escopo de um quantificador. Aqui seguimos o caso da LVF, embora observemos que um operador lógico pode ser um conectivo ou um quantificador:
 	\factoidbox{
 		\begin{factoiditems}
-		\item The \define{main logical operator} in a formula is the
-		operator that was introduced most recently, when that formula was
-		constructed using the recursion rules.
-		\item The \define{scope} of a logical operator in a formula is the
-	subformula for which that operator is the main logical operator. 
+\item O \define{operador l\'ogico principal} em uma fórmula é o operador que foi introduzido mais recentemente, quando essa fórmula foi construída usando as regras de recursão.
+
+
+\item O \define{escopo} de um operador lógico em uma fórmula é a subfórmula para a qual esse operador é o operador lógico principal.
+
 \end{factoiditems}}
-So we can graphically illustrate the scope of the quantifiers in the
-preceding example thus:
-$$\overbrace{\forall x \overbrace{\exists y (\atom{F}{x} \eiff
-\overbrace{\forall z (\atom{G}{a,y,z} \eif
-\atom{S}{y,z,y,a,y,x})}^{\text{scope of `}\forall
-z\text{'}}}^{\text{scope of `}\exists y\text{'}})}^{\text{scope of
-`$\forall x$'}}$$
+Assim, podemos ilustrar graficamente o escopo dos quantificadores no exemplo anterior da seguinte maneira:
+
+$$\overbrace{\forall x \overbrace{\exists y (\atom{F}{x} \eiff \overbrace{\forall z (\atom{G}{a,y,z} \eif \atom{S}{y,z,y,a,y,x})}^{\text{escopo de }\forall z})}^{\text{escopo de }\exists y}}^{\text{escopo de }\forall x}$$
+
+
+
+
 
 \newglossaryentry{main logical operator}{
-  name = main logical operator,
-  description = {The operator used last in the construction of a \gls{sentence of TFL} or a \gls{formula} of FOL}
+  name = operador lógico principal,
+  description = {O operador usado por último na construção de uma \gls{sentence of TFL} ou de uma \gls{formula} da LPO}
 }
 
 \newglossaryentry{scope}{
-  name = scope,
-  description = {The subformula of a \gls{sentence of TFL} or a \gls{formula} of FOL for which the \gls{main logical operator} is the operator}
+  name = escopo,
+  description = {A subfórmula de uma \gls{sentence of TFL} ou de uma \gls{formula} da LPO para a qual o \gls{main logical operator} é o operador}
 }
 
-\section{Sentences and free variables}\label{s:FreeVars}
+\section{Sentenças e variáveis livres}\label{s:FreeVars}
 
-Recall that we are largely concerned in logic with assertoric
-sentences: sentences that can be either true or false. Many formulas
-are not sentences. Consider the following symbolization key:
+Lembre-se de que, em lógica, estamos preocupados principalmente com sentenças assertóricas: sentenças que podem ser verdadeiras ou falsas. Muitas fórmulas não são sentenças. Considere a seguinte chave de simbolização:
+
+
 	\begin{ekey}
-		\item[\text{domain}] people
-		\item[\atom{L}{x,y}] \gap{x} loves \gap{y}
+\item[\text{domínio}] pessoas
+\item[\atom{L}{x,y}] \gap{x} ama \gap{y}
 		\item[b] Boris
 	\end{ekey}
-Consider the atomic formula `$\atom{L}{z,z}$'. All atomic formulas are
-formulas, so `$\atom{L}{z,z}$' is a formula, but can it be true or
-false? You might think that it will be true just in case the person
-named by `$z$' loves themself, in the same way that `$\atom{L}{b,b}$'
-is true just in case Boris (the person named by `$b$') loves himself.
-\emph{However, `$z$' is a variable, and does not name anyone or any
-thing.}
+Considere a fórmula atômica \textquotedblleft $\atom{L}{z,z}$\textquotedblright{}. Todas as fórmulas atômicas são fórmulas, portanto \textquotedblleft $\atom{L}{z,z}$\textquotedblright{} é uma fórmula, mas ela pode ser verdadeira ou falsa? Você pode pensar que será verdadeira se, e somente se, a pessoa nomeada por \textquotedblleft $z$\textquotedblright{} amar a si mesma, da mesma maneira que \textquotedblleft $\atom{L}{b,b}$\textquotedblright{} é verdadeira se, e somente se, Boris (a pessoa nomeada por \textquotedblleft $b$\textquotedblright{}) amar a si mesmo. \emph{Entretanto, \textquotedblleft $z$\textquotedblright{} é uma variável e não nomeia ninguém nem coisa alguma.}
 
-Of course, if we put an existential quantifier out front, obtaining
-`$\exists z\,\atom{L}{z,z}$', then this would be true \ifeff{} someone
-loves themselves. Equally, if we wrote `$\forall z\, \atom{L}{z,z}$',
-this would be true \ifeff{} everyone loves themselves. The point is
-that we need a quantifier to tell us how to deal with a variable.
 
-Let's make this idea precise.
+
+
+
+
+
+É claro que, se colocarmos um quantificador existencial à frente, obtendo \textquotedblleft $\exists z\,\atom{L}{z,z}$\textquotedblright{}, isso será verdadeiro \ifeff{} alguém amar a si mesmo. Da mesma forma, se escrevermos \textquotedblleft $\forall z\, \atom{L}{z,z}$\textquotedblright{}, isso será verdadeiro \ifeff{} todos amarem a si mesmos. O ponto é que precisamos de um quantificador para nos dizer como lidar com uma variável.
+
+
+
+
+
+Vamos tornar essa ideia precisa.
 	\factoidbox{
-		An occurrence of a variable \metav{x} is \define{bound} \ifeff{} it falls within the scope of either $\forall\metav{x}$ or~$\exists\metav{x}$. An occurrence of a variable which is not bound is \define{free}.}
+		Uma ocorrência de uma variável \metav{x} é \define{ligada} \ifeff{} ela cai dentro do escopo de $\forall\metav{x}$ ou~$\exists\metav{x}$. Uma ocorrência de uma variável que não é ligada é \define{livre}.}
 
 \newglossaryentry{bound variable}{
-  name = bound variable,
-  description = {An occurrence of a variable in a \gls{formula} which is in the scope of a quantifier followed by the same variable}
+  name = variável ligada,
+  description = {Uma ocorrência de uma variável em uma \gls{formula} que está no escopo de um quantificador seguido pela mesma variável}
 }
 
 \newglossaryentry{free variable}{
-  name = free variable,
-  description = {An occurrence of a variable in a \gls{formula} which is not a \gls{bound variable}}
+  name = variável livre,
+  description = {Uma ocorrência de uma variável em uma \gls{formula} que não é uma \gls{bound variable}}
 }
 
-For example, consider the formula
+Por exemplo, considere a fórmula
 	$$(\forall x(\atom{E}{x} \eor \atom{D}{y}) \eif \exists z(\atom{E}{x} \eif \atom{L}{z,x}))$$
-The scope of the universal quantifier `$\forall x$' is `$\forall x (\atom{E}{x} \eor \atom{D}{y})$', so the first `$x$' is bound by the universal quantifier. However, the second and third occurrence of `$x$' are free. Equally, the `$y$' is free. The scope of the existential quantifier `$\exists z$' is `$\exists z(\atom{E}{x} \eif \atom{L}{z,x})$', so `$z$' is bound.
+O escopo do quantificador universal \textquotedblleft $\forall x$\textquotedblright{} é \textquotedblleft $\forall x (\atom{E}{x} \eor \atom{D}{y})$\textquotedblright{}, portanto o primeiro \textquotedblleft $x$\textquotedblright{} é ligado pelo quantificador universal. No entanto, a segunda e a terceira ocorrências de \textquotedblleft $x$\textquotedblright{} são livres. Da mesma forma, \textquotedblleft $y$\textquotedblright{} é livre. O escopo do quantificador existencial \textquotedblleft $\exists z$\textquotedblright{} é \textquotedblleft $\exists z(\atom{E}{x} \eif \atom{L}{z,x})$\textquotedblright{}, portanto \textquotedblleft $z$\textquotedblright{} é ligada.
 
-Formulas that do not have free variables, i.e., every variable is
-bound, are called \define{sentences}. Only sentences can be true or false.
-\factoidbox{	
-		A \define{sentence} of FOL is any formula of FOL that contains no free variables.
+Fórmulas que não têm variáveis livres, isto é, nas quais toda variável é ligada, são chamadas \define{senten\c{c}as}. Somente sentenças podem ser verdadeiras ou falsas.
+
+\factoidbox{
+		Uma \define{senten\c{c}a} da LPO é qualquer fórmula da LPO que não contenha variáveis livres.
 	}
 
 \newglossaryentry{sentence of FOL}{
-	name = sentence (of FOL),
-	text = sentence of FOL,
-	plural = sentences of FOL,
-	description = {A \gls{formula} of FOL which has no \glspl{free variable}}
+	name = sentença (da LPO),
+	text = sentença da LPO,
+	plural = sentenças da LPO,
+	description = {Uma \gls{formula} da LPO que não tem \glspl{free variable}}
 }
 
-Note that in the formation rules given in \cref{s:TermsFormulas},
-specifically in the clauses for $\forall$ and~$\exists$, we did not
-require that the variable~$\metav{x}$ in $\forall\metav{x}\,
-\metav{A}$ and $\exists\metav{x}\,\metav{A}$ does not \emph{already}
-occur as a bound variable in~$\metav{A}$. So we allow, for instance,
-`$\exists x(\forall x\,\atom{F}{x} \eif \atom{G}{x})$' as a sentence. We
-won't be meeting such special cases often, since we can always rename
-bound variables to obtain an equivalent sentence that avoids such
-weirdness; in this case, e.g., `$\exists x(\forall y\,\atom{F}{y} \eif
-\atom{G}{x})$'. But since it is allowed to happen, we should clarify
-which quantifiers bind which variables: An occurrence of a bound
-variable is always bound by the quantifier with the same matching
-variable that is closest to it. By ``closest'' we mean: it is the main
-logical operator of the smallest subformula into the scope of which
-the occurrence of the variable falls. So in our previous example,
-`$\forall x$' binds the occurrence of~$x$ in `$\atom{F}{x}$', since it is
-the main logical operator of `$\forall x\,\atom{F}{x}$'. The `$\forall x$'
-does not bind the `$x$' in~`$\atom{G}{x}$', however. The `$\exists x$' does
-not bind the `$x$' in `$\atom{F}{x}$', but it does bind the `$x$'
-in~`$\atom{G}{x}$'.
+Observe que, nas regras de formação dadas em \cref{s:TermsFormulas}, especificamente nas cláusulas para $\forall$ e~$\exists$, não exigimos que a variável~$\metav{x}$ em $\forall\metav{x}\,\metav{A}$ e $\exists\metav{x}\,\metav{A}$ ainda \emph{não} ocorra como variável ligada em~$\metav{A}$. Assim, permitimos, por exemplo, \textquotedblleft $\exists x(\forall x\,\atom{F}{x} \eif \atom{G}{x})$\textquotedblright{} como sentença. Não encontraremos frequentemente casos tão especiais, pois sempre podemos renomear variáveis ligadas para obter uma sentença equivalente que evite esse tipo de estranheza; neste caso, por exemplo, \textquotedblleft $\exists x(\forall y\,\atom{F}{y} \eif \atom{G}{x})$\textquotedblright{}. Mas, como isso é permitido, devemos esclarecer quais quantificadores ligam quais variáveis: uma ocorrência de uma variável ligada é sempre ligada pelo quantificador com a mesma variável correspondente que esteja mais próximo dela. Por \textquotedblleft mais próximo\textquotedblright{} queremos dizer: ele é o operador lógico principal da menor subfórmula em cujo escopo a ocorrência da variável cai. Assim, no exemplo anterior, \textquotedblleft $\forall x$\textquotedblright{} liga a ocorrência de~$x$ em \textquotedblleft $\atom{F}{x}$\textquotedblright{}, pois é o operador lógico principal de \textquotedblleft $\forall x\,\atom{F}{x}$\textquotedblright{}. Contudo, \textquotedblleft $\forall x$\textquotedblright{} não liga o \textquotedblleft $x$\textquotedblright{} em~\textquotedblleft $\atom{G}{x}$\textquotedblright{}. O \textquotedblleft $\exists x$\textquotedblright{} não liga o \textquotedblleft $x$\textquotedblright{} em \textquotedblleft $\atom{F}{x}$\textquotedblright{}, mas liga o \textquotedblleft $x$\textquotedblright{} em~\textquotedblleft $\atom{G}{x}$\textquotedblright{}.
 
-The rules also do not require that the bound variable~$\metav{x}$
-\emph{actually occurs} free in $\metav{A}$ (or even at all). So our
-rules also allow `$\exists x\,\atom{F}{a}$' and `$\exists x\forall
-x\,\atom{G}{x}$' as formulas. In each case, the `$\exists x$' does not
-bind~`$x$', because `$x$' does not occur free in `$\atom{F}{a}$' or in
-`$\forall x\,\atom{G}{x}$'. In the former case, `$x$' does not occur at
-all; in the latter, it is already bound by~`$\forall x$'. This is called
-\define{vacuous quantification}. It rarely appears in practice, and
-isn't harmful. The two sentences are equivalent to the sentences
-without the `$\exists x$', i.e., to `$\atom{F}{a}$' and~`$\forall
-x\,\atom{G}{x}$'.
 
-\section{Bracketing conventions}
 
-We will adopt the same notational conventions governing brackets that we did for TFL (see \cref{s:TFLSentences,s:MoreBracketingConventions}.) First, we may omit the outermost brackets of a formula.  Second, we may use square brackets, `[' and `]', in place of brackets to increase the readability of formulas.
 
-Sentences of FOL used in our examples can become quite cumbersome, and so we also introduce a convention to deal with conjunctions and disjunctions of more than two sentences. We stipulate that $A_1 \land A_2 \land \dots \land A_n$ and $A_1 \lor A_2 \lor \dots \lor A_n$ are to be interpreted as, respectively:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As regras também não exigem que a variável ligada~$\metav{x}$ \emph{realmente ocorra} livre em $\metav{A}$ (ou sequer ocorra). Assim, nossas regras também permitem \textquotedblleft $\exists x\,\atom{F}{a}$\textquotedblright{} e \textquotedblleft $\exists x\forall x\,\atom{G}{x}$\textquotedblright{} como fórmulas. Em cada caso, \textquotedblleft $\exists x$\textquotedblright{} não liga \textquotedblleft $x$\textquotedblright{}, porque \textquotedblleft $x$\textquotedblright{} não ocorre livre em \textquotedblleft $\atom{F}{a}$\textquotedblright{} ou em \textquotedblleft $\forall x\,\atom{G}{x}$\textquotedblright{}. No primeiro caso, \textquotedblleft $x$\textquotedblright{} não ocorre de modo algum; no segundo, ele já está ligado por \textquotedblleft $\forall x$\textquotedblright{}. Isso é chamado de \define{quantifica\c{c}\~ao vacuosa}. Ela raramente aparece na prática e não é prejudicial. As duas sentenças são equivalentes às sentenças sem o \textquotedblleft $\exists x$\textquotedblright{}, isto é, a \textquotedblleft $\atom{F}{a}$\textquotedblright{} e~\textquotedblleft $\forall x\,\atom{G}{x}$\textquotedblright{}.
+
+
+
+
+
+
+
+
+
+
+
+\section{Convenções de parênteses}
+
+Adotaremos as mesmas convenções notacionais que regiam os parênteses na LVF (ver \cref{s:TFLSentences,s:MoreBracketingConventions}). Primeiro, podemos omitir os parênteses externos de uma fórmula. Segundo, podemos usar colchetes, \textquotedblleft [\textquotedblright{} e \textquotedblleft ]\textquotedblright{}, em lugar de parênteses para aumentar a legibilidade das fórmulas.
+
+As sentenças da LPO usadas em nossos exemplos podem tornar-se bastante trabalhosas, portanto também introduzimos uma convenção para lidar com conjunções e disjunções de mais de duas sentenças. Estipulamos que $A_1 \land A_2 \land \dots \land A_n$ e $A_1 \lor A_2 \lor \dots \lor A_n$ devem ser interpretadas, respectivamente, como:
 \begin{earg}
 	\item[] $(\dots(A_1 \land A_2) \land \dots \land A_n)$
 	\item[] $(\dots(A_1 \lor A_2) \lor \dots \lor A_n)$
 \end{earg}
-In practice, this just means that you are allowed to leave out parentheses in long conjunctions and disjunctions. But remember that (unless they are the outermost parentheses of the sentence) you must still enclose the entire conjunction or disjunction in parentheses. Also, you cannot mix conjunctions and disjunctions with each other or with other connectives. So the following are still not allowed, and would be ambiguous if they were:
+Na prática, isso significa apenas que você pode deixar de fora os parênteses em conjunções e disjunções longas. Mas lembre-se de que (a menos que sejam os parênteses externos da sentença) você ainda deve envolver toda a conjunção ou disjunção com parênteses. Além disso, não pode misturar conjunções e disjunções entre si nem com outros conectivos. Assim, as seguintes fórmulas continuam não sendo permitidas e seriam ambíguas:
 \begin{earg}
 	\item[] $A \lor B \land C \land D$
 	\item[] $B \lor C \eif D$
 \end{earg}
 
-\section{Superscripts on predicates}
-Above, we said that an $n$-place predicate followed by $n$ terms is an atomic formula. But there is a small issue with this definition: the symbols we use for predicates do not, themselves, indicate how many places the predicate has. Indeed, in some places in this book, we have used the letter `$G$' as a one-place predicate; in other places we have used it as a three-place predicate. So, unless we state explicitly whether we want to use `$G$' as a one-place predicate or as a three place predicate, it is \emph{indeterminate} whether `$\atom{G}{a}$' is an atomic formula or not.
+\section{Sobrescritos nos predicados}
+Acima, dissemos que um predicado de $n$ lugares seguido de $n$ termos é uma fórmula atômica. Mas há um pequeno problema com essa definição: os símbolos que usamos para predicados não indicam, por si mesmos, quantos lugares o predicado tem. De fato, em alguns lugares deste livro usamos a letra \textquotedblleft $G$\textquotedblright{} como um predicado de um lugar; em outros, usamos-a como um predicado de três lugares. Portanto, a menos que declaremos explicitamente se queremos usar \textquotedblleft $G$\textquotedblright{} como predicado de um lugar ou de três lugares, é \emph{indeterminado} se \textquotedblleft $\atom{G}{a}$\textquotedblright{} é ou não uma fórmula atômica.
 
-There is an easy way to avoid this, which many books adopt. Instead of saying that our predicates are just capital letters (with numerical subscripts as necessary), we could say that they are capital letters \emph{with numerical superscripts} (and with numerical subscripts as necessary). The purpose of the superscript would be to say explicitly how many places the predicate has. On this approach, `$G^1$' would be a one-place predicate, and `$G^3$' would be an (entirely different) three places predicate. They would need to have different entries in any symbolisation key. And `$\atom{G^1}{a}$' would be an atomic formula, whereas `$\atom{G^3}{a}$' would not; likewise `$\atom{G^3}{a,b,c}$' would be an atomic formula, and `$\atom{G^1}{a,b,c}$' would not.
+Há uma maneira fácil de evitar isso, adotada por muitos livros. Em vez de dizer que nossos predicados são apenas letras maiúsculas (com subscritos numéricos quando necessário), poderíamos dizer que são letras maiúsculas \emph{com sobrescritos numéricos} (e com subscritos numéricos quando necessário). O objetivo do sobrescrito seria dizer explicitamente quantos lugares o predicado tem. Nessa abordagem, \textquotedblleft $G^1$\textquotedblright{} seria um predicado de um lugar, e \textquotedblleft $G^3$\textquotedblright{} seria um predicado de três lugares (inteiramente diferente). Eles precisariam ter entradas diferentes em qualquer chave de simbolização. E \textquotedblleft $\atom{G^1}{a}$\textquotedblright{} seria uma fórmula atômica, ao passo que \textquotedblleft $\atom{G^3}{a}$\textquotedblright{} não seria; da mesma forma, \textquotedblleft $\atom{G^3}{a,b,c}$\textquotedblright{} seria uma fórmula atômica, e \textquotedblleft $\atom{G^1}{a,b,c}$\textquotedblright{} não seria.
 
-So, we \emph{could} add superscripts to all our predicates. This would have the advantage of making certain things completely explicit. However, it would have the disadvantage of making our formulas much harder to read; the superscripts would distract the eye. So, we will not bother to make this change. Our predicates will remain \emph{without} superscripts.  (And, in practice, any book which includes superscripts almost immediately stops including them!)
+Assim, \emph{poderíamos} acrescentar sobrescritos a todos os nossos predicados. Isso teria a vantagem de tornar certas coisas completamente explícitas. No entanto, teria a desvantagem de tornar nossas fórmulas muito mais difíceis de ler; os sobrescritos distrairiam o olhar. Portanto, não vamos nos dar ao trabalho de fazer essa mudança. Nossos predicados continuarão \emph{sem} sobrescritos. (E, na prática, qualquer livro que inclua sobrescritos quase imediatamente deixa de incluí-los!)
 
-However, this leaves open a possibility of ambiguity. So, when any ambiguity could arise---in practice, very rarely---you should say, explicitly, how many places your predicate(s) have.
+No entanto, isso deixa aberta uma possibilidade de ambiguidade. Assim, sempre que puder surgir alguma ambiguidade — na prática, muito raramente — você deve dizer explicitamente quantos lugares tem o(s) seu(s) predicado(s).
 
 \practiceproblems
 \problempart
 \label{pr.freeFOL}
-Identify which variables are bound and which are free.
+Identifique quais variáveis são ligadas e quais são livres.
 \begin{compactlist}
 \item $\exists x\, \atom{L}{x,y} \eand \forall y\, \atom{L}{y,x}$
 \item $\forall x\, \atom{A}{x} \eand \atom{B}{x}$
