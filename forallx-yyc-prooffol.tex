@@ -1,28 +1,28 @@
 %!TEX root = forallxyyc.tex
-\part{Natural deduction for FOL}
+\part{Dedução natural para a LPO}
 \label{ch.NDFOL}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\chapter{Basic rules for FOL}\label{s:BasicFOL}
+\chapter{Regras básicas para a LPO}\label{s:BasicFOL}
 
-The language of FOL makes use of all of the connectives of TFL. So proofs in FOL will use all of the basic and derived rules from \cref{ch.NDTFL}. We will also use the proof-theoretic notions (particularly, the symbol `$\proves$') introduced there. However, we will also need some new basic rules to govern the quantifiers, and to govern the identity sign.
+A linguagem da LPO utiliza todos os conectivos da LVF. Assim, as provas na LPO usarão todas as regras básicas e derivadas de \cref{ch.NDTFL}. Também usaremos as noções teóricas da prova (em particular, o símbolo \textquotedblleft $\proves$\textquotedblright{}) introduzidas ali. No entanto, também precisaremos de algumas novas regras básicas para reger os quantificadores e o sinal de identidade.
 
 
-\section{Universal elimination}\label{s:forallElim}
+\section{Eliminação universal}\label{s:forallElim}
 
-From the claim that everything is~$F$, you can infer that any particular thing is~$F$. You name it; it's~$F$. So the following should be fine:
+Da afirmação de que tudo é~$F$, você pode inferir que qualquer coisa particular é~$F$. Dê-lhe um nome; ela é~$F$. Portanto, o seguinte deve ser permitido:
 \begin{fitchproof}
 	\hypo{a}{\forall x\,\atom{R}{x,x,d}}\PR
 	\have{c}{\atom{R}{a,a,d}} \Ae{a}
 \end{fitchproof}
-We obtained line~$2$ by dropping the universal quantifier and replacing every instance of `$x$' with `$a$'. Equally, the following should be allowed:
+Obtivemos a linha~$2$ eliminando o quantificador universal e substituindo cada ocorrência de \textquotedblleft $x$\textquotedblright{} por \textquotedblleft $a$\textquotedblright{}. Do mesmo modo, o seguinte deve ser permitido:
 \begin{fitchproof}
 	\hypo{a}{\forall x\,\atom{R}{x,x,d}}\PR
 	\have{c}{\atom{R}{d,d,d}} \Ae{a}
 \end{fitchproof}
-We obtained line~$2$ here by dropping the universal quantifier and replacing every instance of `$x$' with~`$d$'. We could have done the same with any other name we wanted.
+Aqui obtivemos a linha~$2$ eliminando o quantificador universal e substituindo cada ocorrência de \textquotedblleft $x$\textquotedblright{} por~\textquotedblleft $d$\textquotedblright{}. Poderíamos ter feito o mesmo com qualquer outro nome que quiséssemos.
 
-This motivates the universal elimination rule ($\forall$E):
+Isso motiva a regra de eliminação universal ($\forall$E):
 
 \factoidbox{
 \begin{fitchproof}
@@ -30,46 +30,46 @@ This motivates the universal elimination rule ($\forall$E):
 	\have[\ ]{c}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)} \Ae{a}
 \end{fitchproof}}
 
-The notation here was introduced in \cref{s:TruthFOL}. The point is
-that you can obtain any \emph{substitution instance} of a universally
-quantified formula: replace every free occurrence of the quantified
-variable with any name you like.
+A notação aqui foi introduzida em \cref{s:TruthFOL}. O ponto é
+que você pode obter qualquer \emph{instância de substituição} de uma fórmula
+quantificada universalmente: substitua cada ocorrência livre da variável
+quantificada por qualquer nome que desejar.
 
-We should emphasize that (as with every elimination rule) you can only apply the $\forall$E rule when the universal quantifier is the main logical operator. So the following is \emph{banned}:
+Devemos enfatizar que (como ocorre com toda regra de eliminação) você só pode aplicar a regra $\forall$E quando o quantificador universal for o operador lógico principal. Portanto, o seguinte é \emph{proibido}:
 \begin{fitchproof}
 	\hypo{a}{\forall x\,\atom{B}{x} \eif \atom{B}{k}}\PR
-	\have{c}{\atom{B}{b} \eif \atom{B}{k}}\by{naughy attempt to invoke $\forall$E}{a}
+	\have{c}{\atom{B}{b} \eif \atom{B}{k}}\by{tentativa indevida de invocar $\forall$E}{a}
 \end{fitchproof}
-This is illegitimate, since `$\forall x$' is not the main logical operator in line~$1$. (If you need a reminder as to why this sort of inference should be banned, reread \cref{s:MoreMonadic}.)
+Isso é ilegítimo, pois \textquotedblleft $\forall x$\textquotedblright{} não é o operador lógico principal na linha~$1$. (Se precisar lembrar por que esse tipo de inferência deve ser proibido, releia \cref{s:MoreMonadic}.)
 
-\section{Existential introduction}\label{s:existsIntro}
+\section{Introdução existencial}\label{s:existsIntro}
 
-From the claim that some particular thing is~$F$, you can infer that something is~$F$. So we ought to allow:
+Da afirmação de que alguma coisa particular é~$F$, você pode inferir que algo é~$F$. Portanto, devemos permitir:
 \begin{fitchproof}
 	\hypo{a}{\atom{R}{a,a,d}}\PR
 	\have{b}{\exists x\, \atom{R}{a,a,x}} \Ei{a}
 \end{fitchproof}
-Here, we have replaced the name `$d$' with a variable `$x$', and then existentially quantified over it. Equally, we would have allowed:
+Aqui substituímos o nome \textquotedblleft $d$\textquotedblright{} por uma variável \textquotedblleft $x$\textquotedblright{} e então quantificamos existencialmente essa variável. Do mesmo modo, poderíamos ter permitido:
 \begin{fitchproof}
 	\hypo{a}{\atom{R}{a,a,d}}\PR
 	\have{c}{\exists x\, \atom{R}{x,x,d}} \Ei{a}
 \end{fitchproof}
-Here we have replaced both instances of the name `$a$' with a variable, and then existentially generalized. But we do not need to replace \emph{both} instances of a name with a variable: if Narcissus loves himself, then there is someone who loves Narcissus. So we also allow:
+Aqui substituímos ambas as ocorrências do nome \textquotedblleft $a$\textquotedblright{} por uma variável e então generalizamos existencialmente. Mas não precisamos substituir \emph{ambas} as ocorrências de um nome por uma variável: se Narciso ama a si mesmo, então há alguém que ama Narciso. Portanto, também permitimos:
 \begin{fitchproof}
 	\hypo{a}{\atom{R}{a,a,d}}\PR
 	\have{d}{\exists x\, \atom{R}{x,a,d}} \Ei{a}
 \end{fitchproof}
-Here we have replaced \emph{one} instance of the name `$a$' with a variable, and then existentially generalized. These observations motivate our introduction rule, although to explain it, we will need to introduce some new notation.
+Aqui substituímos \emph{uma} ocorrência do nome \textquotedblleft $a$\textquotedblright{} por uma variável e então generalizamos existencialmente. Essas observações motivam nossa regra de introdução, embora, para explicá-la, precisemos introduzir alguma notação nova.
 
-Where $\metav{A}$ is a sentence containing the name $\metav{c}$, we
-can emphasize this by writing `$\metav{A}(\ldots \metav{c} \ldots
-\metav{c}\ldots)$'. We will write `$\metav{A}(\ldots \metav{x} \ldots
-\metav{c}\ldots)$' to indicate any formula obtained by replacing
-\emph{some or all} of the instances of the name \metav{c} with the
-variable~\metav{x} (provided~$\metav{c}$, wherever it is
-replaced, does not occur in the scope of a quantifier
-binding~$\metav{x}$). Armed with this, our introduction rule
-$\exists$I is:
+Quando $\metav{A}$ é uma sentença que contém o nome $\metav{c}$,
+podemos enfatizar isso escrevendo
+\textquotedblleft $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$\textquotedblright{}. Escreveremos
+\textquotedblleft $\metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)$\textquotedblright{} para indicar qualquer fórmula obtida substituindo
+\emph{algumas ou todas} as ocorrências do nome $\metav{c}$ pela
+variável~$\metav{x}$ (desde que $\metav{c}$, onde quer que seja
+substituído, não ocorra no escopo de um quantificador que
+ligue~$\metav{x}$). Com isso, nossa regra de introdução
+\exists$I é:
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
@@ -92,98 +92,98 @@ $\exists$I is:
 % \end{fitchproof}
 % since the expression on line~3 contains clashing variables, and so is not a sentence of FOL.
 
-\section{Empty domains}
-The following proof combines our two new rules for quantifiers:
+\section{Domínios vazios}
+A prova a seguir combina nossas duas novas regras para quantificadores:
 	\begin{fitchproof}
 		\hypo{a}{\forall x\, \atom{F}{x}}\PR
 		\have{in}{\atom{F}{a}}\Ae{a}
 		\have{e}{\exists x\, \atom{F}{x}}\Ei{in}
 	\end{fitchproof}
-Could this be a bad proof? If anything exists at all, then certainly we can infer that something is~$F$, from the fact that everything is~$F$. But what if \emph{nothing} exists at all? Then it is surely vacuously true that everything is~$F$; however, it does not following that something is~$F$, for there is nothing to \emph{be}~$F$. So if we claim that, as a matter of logic alone, `$\exists x\,\atom{F}{x}$' follows from `$\forall x\,\atom{F}{x}$', then we are claiming that, as a matter of \emph{logic alone}, there is something rather than nothing. This might strike us as a bit odd.
+Esta poderia ser uma prova ruim? Se algo existe, então certamente podemos inferir que algo é~$F$ a partir do fato de que tudo é~$F$. Mas e se \emph{nada} existir? Então é certamente verdade, de modo vacuamente, que tudo é~$F$; no entanto, disso não se segue que algo seja~$F$, pois não há nada que possa \emph{ser}~$F$. Portanto, se afirmamos que \textquotedblleft $\exists x\,\atom{F}{x}$\textquotedblright{} decorre de \textquotedblleft $\forall x\,\atom{F}{x}$\textquotedblright{} apenas por lógica, então estamos afirmando que, apenas por lógica, há algo em vez de nada. Isso pode parecer um pouco estranho.
 
-Actually, we are already committed to this oddity. In \cref{s:FOLBuildingBlocks}, we stipulated that domains in FOL must have at least one member. We then defined a validity (of FOL) as a sentence which is true in every interpretation. Since `$\exists x\, x=x$' will be true in every interpretation, this \emph{also} had the effect of stipulating that it is a matter of logic that there is something rather than nothing.
+Na verdade, já estamos comprometidos com essa estranheza. Em \cref{s:FOLBuildingBlocks}, estipulamos que os domínios na LPO devem ter pelo menos um membro. Em seguida, definimos uma validade (da LPO) como uma sentença verdadeira em toda interpretação. Como \textquotedblleft $\exists x\,x=x$\textquotedblright{} será verdadeira em toda interpretação, isso também teve o efeito de estipular que é uma questão de lógica haver algo em vez de nada.
 
-Since it is far from clear that logic should tell us that there must be something rather than nothing, we might well be cheating a bit here.
+Como está longe de ser claro que a lógica deva nos dizer que deve haver algo em vez de nada, podemos estar trapaceando um pouco aqui.
 
-If we refuse to cheat, though, then we pay a high cost. Here are three things that we want to hold on to:
+Se nos recusarmos a trapacear, porém, pagaremos um preço alto. Eis três coisas às quais queremos nos apegar:
 	\begin{compactlist}
-		\item $\forall x\,\atom{F}{x} \proves \atom{F}{a}$: after all, that was $\forall$E.
-		\item $\atom{F}{a} \proves \exists x\,\atom{F}{x}$: after all, that was $\exists$I.
-		\item the ability to copy-and-paste proofs together: after all, reasoning works by putting lots of little steps together into rather big chains.
+\item $\forall x\,\atom{F}{x} \proves \atom{F}{a}$: afinal, essa era a regra $\forall$E.
+\item $\atom{F}{a} \proves \exists x\,\atom{F}{x}$: afinal, essa era a regra $\exists$I.
+\item a capacidade de copiar e colar provas: afinal, o raciocínio funciona juntando muitos passos pequenos em cadeias bastante longas.
 	\end{compactlist}
-If we get what we want on all three counts, then we have to countenance that $\forall x\,\atom{F}{x} \proves \exists x\,\atom{F}{x}$. So, if we get what we want on all three counts, the proof system alone tells us that there is something rather than nothing. And if we refuse to accept that, then we have to surrender one of the three things that we want to hold on to!
+Se conseguirmos o que queremos nos três aspectos, teremos de aceitar que $\forall x\,\atom{F}{x} \proves \exists x\,\atom{F}{x}$. Assim, se conseguirmos o que queremos nos três aspectos, o próprio sistema de provas nos dirá que há algo em vez de nada. E, se nos recusarmos a aceitar isso, teremos de abandonar uma das três coisas às quais queremos nos apegar!
 
-Before we start thinking about which to surrender, we might want to ask how \emph{much} of a cheat this is. Granted, it may make it harder to engage in theological debates about why there is something rather than nothing. But the rest of the time, we will get along just fine. So maybe we should just regard our proof system (and FOL, more generally) as having a very slightly limited purview. If we ever want to allow for the possibility of \emph{nothing}, then we will have to cast around for a more complicated proof system. But for as long as we are content to ignore that possibility, our proof system is perfectly in order. (As, similarly, is the stipulation that every domain must contain at least one object.)
+Antes de começar a pensar em qual abandonar, talvez devêssemos perguntar \emph{quanto} estamos trapaceando. É verdade que isso pode dificultar debates teológicos sobre por que há algo em vez de nada. Mas, no restante do tempo, estaremos perfeitamente bem. Talvez devêssemos simplesmente considerar que nosso sistema de provas (e a LPO, de modo mais geral) tem um alcance ligeiramente limitado. Se algum dia quisermos permitir a possibilidade de \emph{nada}, teremos de procurar um sistema de provas mais complicado. Mas, enquanto estivermos contentes em ignorar essa possibilidade, nosso sistema de provas estará perfeitamente em ordem. (Assim como a estipulação de que todo domínio deve conter pelo menos um objeto.)
 
-\section{Universal introduction}\label{s:forallIntro}
+\section{Introdução universal}\label{s:forallIntro}
 
-Suppose you had shown of each particular thing that it is F (and that there are no other things to consider). Then you would be justified in claiming that everything is F. This would motivate the following proof rule. If you had established each and every single substitution instance of `$\forall x\,\atom{F}{x}$', then you can infer `$\forall x\,\atom{F}{x}$'.
+Suponha que você tenha mostrado, para cada coisa particular, que ela é $F$ (e que não há outras coisas a considerar). Então estaria justificado afirmar que tudo é $F$. Isso motiva a seguinte regra de prova. Se você estabeleceu cada uma das instâncias de substituição de \textquotedblleft $\forall x\,\atom{F}{x}$\textquotedblright{}, pode inferir \textquotedblleft $\forall x\,\atom{F}{x}$\textquotedblright{}.
 
-Unfortunately, that rule would be utterly unusable. To establish each and every single substitution instance would require proving `$\atom{F}{a}$', `$\atom{F}{b}$', \dots, `$\atom{F}{j_2}$', \dots, `$\atom{F}{r_{79002}}$', \ldots, and so on. Indeed, since there are infinitely many names in FOL, this process would never come to an end. So we could never apply that rule. We need to be a bit more cunning in coming up with our rule for introducing universal quantification.
+Infelizmente, essa regra seria completamente inutilizável. Estabelecer cada instância de substituição exigiria provar \textquotedblleft $\atom{F}{a}$\textquotedblright{}, \textquotedblleft $\atom{F}{b}$\textquotedblright{}, \dots, \textquotedblleft $\atom{F}{j_2}$\textquotedblright{}, \dots, \textquotedblleft $\atom{F}{r_{79002}}$\textquotedblright{}, \ldots, e assim por diante. De fato, como há infinitos nomes na LPO, esse processo nunca chegaria ao fim. Portanto, jamais poderíamos aplicar essa regra. Precisamos ser um pouco mais engenhosos ao formular nossa regra para introduzir a quantificação universal.
 
-A solution will be inspired by considering:
+Uma solução pode ser inspirada pela consideração de:
 $$\forall x\,\atom{F}{x} \therefore \forall y\,\atom{F}{y}$$
-This argument should \emph{obviously} be valid. After all, alphabetical variation ought to be a matter of taste, and of no logical consequence. But how might our proof system reflect this? Suppose we begin a proof thus:
+Esse argumento deveria ser \emph{obviamente} válido. Afinal, a variação alfabética deveria ser uma questão de gosto, sem consequência lógica. Mas como nosso sistema de provas poderia refletir isso? Suponha que comecemos uma prova assim:
 \begin{fitchproof}
 	\hypo{x}{\forall x\, \atom{F}{x}} \PR
 	\have{a}{\atom{F}{a}} \Ae{x}
 \end{fitchproof}
-We have proved `$\atom{F}{a}$'. And, of course, nothing stops us from using the same justification to prove `$\atom{F}{b}$', `$\atom{F}{c}$', \ldots, `$\atom{F}{j_2}$', \ldots, `$\atom{F}{r_{79002}}$, \dots, and so on until we run out of space, time, or patience. But reflecting on this, we see that there is a way to prove $\atom{F}{\metav{c}}$, for any name~\metav{c}. And if we can do it for \emph{any} thing, we should surely be able to say that `$F$' is true of \emph{everything}. This therefore justifies us in inferring `$\forall y\,\atom{F}{y}$', thus:
+Provamos \textquotedblleft $\atom{F}{a}$\textquotedblright{}. E, naturalmente, nada nos impede de usar a mesma justificativa para provar \textquotedblleft $\atom{F}{b}$\textquotedblright{}, \textquotedblleft $\atom{F}{c}$\textquotedblright{}, \ldots, \textquotedblleft $\atom{F}{j_2}$\textquotedblright{}, \ldots, \textquotedblleft $\atom{F}{r_{79002}}$\textquotedblright{}, \dots, e assim por diante até ficarmos sem espaço, tempo ou paciência. Refletindo sobre isso, porém, vemos que há uma maneira de provar $\atom{F}{\metav{c}}$, para qualquer nome~$\metav{c}$. E, se podemos fazê-lo para \emph{qualquer} coisa, certamente devemos poder dizer que \textquotedblleft $F$\textquotedblright{} é verdadeiro de \emph{tudo}. Isso nos justifica inferir \textquotedblleft $\forall y\,\atom{F}{y}$\textquotedblright{}, assim:
 \begin{fitchproof}
 	\hypo{x}{\forall x\, \atom{F}{x}}\PR
 	\have{a}{\atom{F}{a}} \Ae{x}
 	\have{y}{\forall y\, \atom{F}{y}} \Ai{a}
 \end{fitchproof}
-The crucial thought here is that `$a$' was just some \emph{arbitrary} name. There was nothing special about it---we might have chosen any other name---and still the proof would be fine. And this crucial thought motivates the universal introduction rule ($\forall$I):
+A ideia crucial aqui é que \textquotedblleft $a$\textquotedblright{} era apenas um nome \emph{arbitrário}. Não havia nada de especial nele — poderíamos ter escolhido qualquer outro nome — e ainda assim a prova estaria correta. Essa ideia crucial motiva a regra de introdução universal ($\forall$I):
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
 	\have[\ ]{c}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)} \Ai{a}
 \end{fitchproof}
-where the name \metav{c} must not occur in a premise or an undischarged
-assumption.%\\ 
+em que o nome $\metav{c}$ não pode ocorrer em uma premissa ou em uma
+hipótese não descarregada.%\\
 %\metav{x} must not occur in $\metav{A}(\ldots \metav{c} \ldots
 %\metav{c}\ldots)$
 }
 
-In \cref{s:MainLogicalOperatorQuantifier}, we introduced a convention
-for indicating \emph{substitution instances}: We said that if
-$\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$ is a formula,
-then $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ is the
-result of replacing \emph{every} free occurrence of $\metav{x}$ in
-$\metav{A}$ by~$\metav{c}$. To state our $\forall$I rule, we are using
-the same convention, except in the other direction: If
-$\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ is a formula,
-then $\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$ is the
-result of replacing \emph{every} occurrence of~$\metav{c}$ in it
-by~$\metav{x}$. (This is only allowed as long as $\metav{c}$ does not
-occur in the scope of a quantifier binding~$\metav{x}$ in~$\metav{A}$.)
+Em \cref{s:MainLogicalOperatorQuantifier}, introduzimos uma convenção
+para indicar \emph{instâncias de substituição}: dissemos que, se
+$\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$ é uma fórmula,
+então $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ é o
+resultado de substituir \emph{toda} ocorrência livre de $\metav{x}$ em
+$\metav{A}$ por~$\metav{c}$. Para formular nossa regra $\forall$I, usamos
+a mesma convenção, mas na direção oposta: se
+$\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ é uma fórmula,
+então $\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$ é o
+resultado de substituir \emph{toda} ocorrência de~$\metav{c}$ nela
+por~$\metav{x}$. (Isso só é permitido enquanto $\metav{c}$ não
+ocorrer no escopo de um quantificador que ligue~$\metav{x}$ em~$\metav{A}$.)
 
-There are a two important things to watch out for in applying the
-$\forall$I rule. If we are not careful with the choice of
-name~$\metav{c}$ and its replacement by~$\metav{x}$ we are at risk of
-making some incorrect inferences.
+Há duas coisas importantes às quais devemos prestar atenção ao aplicar a
+regra $\forall$I. Se não formos cuidadosos ao escolher o
+nome~$\metav{c}$ e substituí-lo por~$\metav{x}$, corremos o risco de
+fazer algumas inferências incorretas.
 
-The constraint on the $\forall$I rule requires that \metav{c} must not
-occur in a premise or an undischarged assumption. This constraint
-ensures that we are always reasoning at a sufficiently general level.
-%\footnote{Recall from \cref{s:BasicTFL} that we are treating `$\ered$' as a canonical contradiction. But if it were the canonical contradiction as involving some \emph{constant}, it might interfere with the constraint mentioned here. To avoid such problems, we will treat `$\ered$' as a canonical contradiction \emph{that involves no particular names}.} 
-To see the constraint in action, consider this terrible argument:
+A restrição da regra $\forall$I exige que $\metav{c}$ não
+ocorra em uma premissa ou em uma hipótese não descarregada. Essa restrição
+garante que estejamos sempre raciocinando em um nível suficientemente geral.
+%\footnote{Recall from \cref{s:BasicTFL} that we are treating `$\ered$' as a canonical contradiction. But if it were the canonical contradiction as involving some \emph{constant}, it might interfere with the constraint mentioned here. To avoid such problems, we will treat `$\ered$' as a canonical contradiction \emph{that involves no particular names}.}
+Para ver a restrição em ação, considere este argumento terrível:
 	\begin{earg}
-		\item Everyone loves Kylie Minogue.
-		\item[\texttherefore] Everyone loves themselves.
+\item Todos amam Kylie Minogue.
+\item[\texttherefore] Todos amam a si mesmos.
 	\end{earg}
-We might symbolize this obviously invalid inference pattern as:
+Podemos simbolizar esse padrão de inferência obviamente inválido como:
 $$\forall x\,\atom{L}{x,k} \therefore \forall x\,\atom{L}{x,x}$$
-Now, suppose we tried to offer a proof that vindicates this argument:
+Agora, suponha que tentássemos oferecer uma prova que justificasse esse argumento:
 \begin{fitchproof}
 	\hypo{x}{\forall x\, \atom{L}{x,k}}\PR
 	\have{a}{\atom{L}{k,k}} \Ae{x}
-	\have{y}{\forall x\, \atom{L}{x,x}} \by{naughty attempt to invoke $\forall$I}{a}
+	\have{y}{\forall x\, \atom{L}{x,x}} \by{tentativa indevida de invocar $\forall$I}{a}
 \end{fitchproof}
-This is not allowed, because `$k$' occurred already in a premise, namely, on line~$1$. The crucial point is that, if we have made any assumptions about the object we are working with, then we are not reasoning generally enough to license $\forall$I.
+Isso não é permitido, pois \textquotedblleft $k$\textquotedblright{} já ocorria em uma premissa, a saber, na linha~$1$. O ponto crucial é que, se fizemos alguma suposição sobre o objeto com o qual estamos trabalhando, então não estamos raciocinando de modo suficientemente geral para autorizar $\forall$I.
 
-Although the name may not occur in any \emph{undischarged} assumption, it may occur in a \emph{discharged} assumption. That is, it may occur in a subproof that we have already closed. For example, this is just fine:
+Embora o nome não possa ocorrer em nenhuma hipótese \emph{não descarregada}, ele pode ocorrer em uma hipótese \emph{descarregada}. Isto é, pode ocorrer em uma subprova que já fechamos. Por exemplo, isto é perfeitamente permitido:
 \begin{fitchproof}
 	\open
 		\hypo{f1}{\atom{G}{d}}\AS
@@ -192,35 +192,35 @@ Although the name may not occur in any \emph{undischarged} assumption, it may oc
 	\have{ff}{\atom{G}{d} \eif \atom{G}{d}}\ci{f1-f2}
 	\have{zz}{\forall z(\atom{G}{z} \eif \atom{G}{z})}\Ai{ff}
 \end{fitchproof}
-This tells us that `$\forall z (\atom{G}{z} \eif \atom{G}{z})$' is a \emph{theorem}. And that is as it should be.
+Isso nos diz que \textquotedblleft $\forall z(\atom{G}{z} \eif \atom{G}{z})$\textquotedblright{} é um \emph{teorema}. E é assim que deve ser.
 
-If we only replace \emph{some} names and not others, we end up
-`proving' silly things. For example, consider the argument:
+Se substituirmos apenas \emph{alguns} nomes, e não outros, acabaremos
+\textquotedblleft provando\textquotedblright{} coisas absurdas. Por exemplo, considere o argumento:
 	\begin{earg}
-	\item Everyone is as old as themselves.
-	\item[\texttherefore] Everyone is as old as Judi Dench.
+\item Todos têm a mesma idade que si mesmos.
+\item[\texttherefore] Todos têm a mesma idade que Judi Dench.
 	\end{earg}
-We might symbolize this as follows:
+Podemos simbolizar isso da seguinte maneira:
 $$\forall x\,\atom{O}{x,x} \therefore \forall x\,\atom{O}{x,d}$$
-But now suppose we tried to vindicate this terrible argument with the following:
+Mas suponha agora que tentássemos justificar esse argumento terrível com o seguinte:
 \begin{fitchproof}
 	\hypo{x}{\forall x\, \atom{O}{x,x}}\PR
 	\have{a}{\atom{O}{d,d}}\Ae{x}
-	\have{y}{\forall x\, \atom{O}{x,d}}\by{naughty attempt to invoke $\forall$I}{a}
+	\have{y}{\forall x\, \atom{O}{x,d}}\by{tentativa indevida de invocar $\forall$I}{a}
 \end{fitchproof}
-Fortunately, our rules do not allow us to do this: the attempted proof
-is banned, since it doesn't replace \emph{every} occurrence of `$d$'
-in line $2$ with an~`$x$'.
+Felizmente, nossas regras não nos permitem fazer isso: a prova
+tentada é proibida, pois não substitui \emph{toda} ocorrência de \textquotedblleft $d$\textquotedblright{}
+na linha~$2$ por um~\textquotedblleft $x$\textquotedblright{}.
 
-\section{Existential elimination}\label{s:existsElim}
+\section{Eliminação existencial}\label{s:existsElim}
 
-Suppose we know that \emph{something} is~$F$. The problem is that simply knowing this does not tell us which thing is~$F$. So it would seem that from `$\exists x\,\atom{F}{x}$' we cannot immediately conclude `$\atom{F}{a}$', `$\atom{F}{e_{23}}$', or any other substitution instance of the sentence. What can we do?
+Suponha que saibamos que \emph{algo} é~$F$. O problema é que simplesmente saber isso não nos diz qual coisa é~$F$. Portanto, pareceria que, de \textquotedblleft $\exists x\,\atom{F}{x}$\textquotedblright{}, não podemos concluir imediatamente \textquotedblleft $\atom{F}{a}$\textquotedblright{}, \textquotedblleft $\atom{F}{e_{23}}$\textquotedblright{} ou qualquer outra instância de substituição da sentença. O que podemos fazer?
 
-Suppose we know that something is~$F$, and that everything which is~$F$ is also~$G$. In (almost) natural English, we might reason thus:
+Suponha que saibamos que algo é~$F$ e que tudo o que é~$F$ também é~$G$. Em um inglês quase natural, poderíamos raciocinar assim:
 	\begin{quote}
-		Since something is $F$, there is some particular thing which is an~$F$. We do not know anything about it, other than that it's an~$F$, but for convenience, let's call it `Becky'. So: Becky is $F$. Since everything which is $F$ is~$G$, it follows that Becky is~$G$. But since Becky is~$G$, it follows that something is~$G$. And nothing depended on which object, exactly, Becky was. So, something is~$G$.
+Como algo é $F$, há alguma coisa particular que é~$F$. Não sabemos nada sobre ela além de que é~$F$, mas, por conveniência, vamos chamá-la de \textquotedblleft Becky\textquotedblright{}. Portanto: Becky é $F$. Como tudo o que é $F$ é~$G$, segue-se que Becky é~$G$. Mas, como Becky é~$G$, segue-se que algo é~$G$. Nada dependeu exatamente de qual objeto Becky era. Portanto, algo é~$G$.
 	\end{quote}
-We might try to capture this reasoning pattern in a proof as follows:
+Poderíamos tentar capturar esse padrão de raciocínio em uma prova da seguinte maneira:
 \begin{fitchproof}
 	\hypo{es}{\exists x\, \atom{F}{x}}\PR
 	\hypo{ast}{\forall x(\atom{F}{x} \eif \atom{G}{x})}\PR
@@ -232,30 +232,30 @@ We might try to capture this reasoning pattern in a proof as follows:
 	\close
 	\have{et2}{\exists x\, \atom{G}{x}}\Ee{es,s-et1}
 \end{fitchproof}\noindent
-Breaking this down: we started by writing down our assumptions. At line~$3$, we made an additional assumption: `$\atom{F}{b}$'. This was just a substitution instance of `$\exists x\,\atom{F}{x}$'. On this assumption, we established `$\exists x\,\atom{G}{x}$'. Note that we had made no \emph{special} assumptions about the object named by `$b$'; we had \emph{only} assumed that it satisfies `$\atom{F}{x}$'. So nothing depends upon which object it is. And line~$1$ told us that \emph{something} satisfies `$\atom{F}{x}$', so our reasoning pattern was perfectly general. We can discharge the specific assumption `$\atom{F}{b}$', and simply infer `$\exists x\,\atom{G}{x}$' on its own.
+Analisando a prova: começamos escrevendo nossas hipóteses. Na linha~$3$, fizemos uma hipótese adicional: \textquotedblleft $\atom{F}{b}$\textquotedblright{}. Essa era apenas uma instância de substituição de \textquotedblleft $\exists x\,\atom{F}{x}$\textquotedblright{}. Com base nessa hipótese, estabelecemos \textquotedblleft $\exists x\,\atom{G}{x}$\textquotedblright{}. Observe que não fizemos nenhuma hipótese \emph{especial} sobre o objeto nomeado por \textquotedblleft $b$\textquotedblright{}; apenas supusemos que ele satisfaz \textquotedblleft $\atom{F}{x}$\textquotedblright{}. Portanto, nada depende de qual objeto ele é. E a linha~$1$ nos disse que \emph{algo} satisfaz \textquotedblleft $\atom{F}{x}$\textquotedblright{}, de modo que nosso padrão de raciocínio foi perfeitamente geral. Podemos descarregar a hipótese específica \textquotedblleft $\atom{F}{b}$\textquotedblright{} e simplesmente inferir \textquotedblleft $\exists x\,\atom{G}{x}$\textquotedblright{} por si só.
 
-Putting this together, we obtain the existential elimination rule ($\exists$E):
+Juntando tudo isso, obtemos a regra de eliminação existencial ($\exists$E):
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
-	\open	
+	\open
 		\hypo[i]{b}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\AS
 		\have[j]{c}{\metav{B}}
 	\close
 	\have[\ ]{d}{\metav{B}} \Ee{a,b-c}
 \end{fitchproof}
-\metav{c} must not occur in any assumption undischarged before line $i$\\
-\metav{c} must not occur in $\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$\\
-\metav{c} must not occur in \metav{B}}
-As with universal introduction, the constraints are extremely important. To see why, consider the following terrible argument:
+\metav{c} não pode ocorrer em nenhuma hipótese não descarregada antes da linha $i$\\
+\metav{c} não pode ocorrer em $\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$\\
+\metav{c} não pode ocorrer em \metav{B}}
+Assim como na introdução universal, as restrições são extremamente importantes. Para ver por quê, considere o seguinte argumento terrível:
 	\begin{earg}
-		\item Tim Button is a lecturer. 
-		\item Someone is not a lecturer. 
-		\item[\texttherefore] Tim Button is both a lecturer and not a lecturer.
+\item Tim Button é professor.
+\item Alguém não é professor.
+\item[\texttherefore] Tim Button é simultaneamente professor e não professor.
 	\end{earg}
-We might symbolize this obviously invalid inference pattern as follows:
+Podemos simbolizar este padrão de inferência obviamente inválido da seguinte maneira:
 $$\atom{L}{b}, \exists x\, \enot\atom{L}{x} \therefore \atom{L}{b} \eand \enot \atom{L}{b}$$
-Now, suppose we tried to offer a proof that vindicates this argument:
+Agora suponha que tentássemos oferecer uma prova que justificasse esse argumento:
 \begin{fitchproof}
 	\hypo{f}{\atom{L}{b}}\PR
 	\hypo{nf}{\exists x\, \enot \atom{L}{x}}\PR
@@ -264,153 +264,153 @@ Now, suppose we tried to offer a proof that vindicates this argument:
 		\have{con}{\atom{L}{b} \eand \enot \atom{L}{b}}\ai{f, na}
 	\close
 \ifHTMLtarget
-	\have{econ1}{\atom{L}{b} \eand \enot \atom{L}{b}}\by{naughty attempt
-	to invoke $\exists$E }{nf, na-con}
-\else
-	\have{econ1}{\atom{L}{b} \eand \enot \atom{L}{b}}\by{naughty attempt}{}
-	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con}
-\fi
-\end{fitchproof}
-The last line of the proof is not allowed. The name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$' on line~$3$, namely `$b$', occurs in line~$4$. This would be no better:
-\begin{fitchproof}
-	\hypo{f}{\atom{L}{b}}\PR
-	\hypo{nf}{\exists x\, \enot \atom{L}{x}}\PR
-	\open
-		\hypo{na}{\enot \atom{L}{b}}\AS
-		\have{con}{\atom{L}{b} \eand \enot \atom{L}{b}}\ai{f, na}
-		\have{con1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\Ei{con}		
-	\close
-\ifHTMLtarget
-	\have{econ1}{\exists x (\atom{L}{x} \eand \enot
-	\atom{L}{x})}\by{naughty attempt to invoke $\exists$E }{nf, na-con1}
-\else
-	\have{econ1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\by{naughty attempt}{}
-	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con1}
-\fi
-\end{fitchproof}
-The last line is still not allowed. For the name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$', namely `$b$', occurs in an undischarged assumption, namely line~$1$.
+\have{econ1}{\atom{L}{b} \eand \enot \atom{L}{b}}\by{tentativa indevida de invocar $\exists$E }{nf, na-con}
 
-Finally, consider this `proof':
+\else
+	\have{econ1}{\atom{L}{b} \eand \enot \atom{L}{b}}\by{tentativa indevida}{}
+	\have[\ ]{x}{}\by{para invocar $\exists$E }{nf, na-con}
+\fi
+\end{fitchproof}
+A última linha da prova não é permitida. O nome que usamos em nossa instância de substituição de \textquotedblleft $\exists x\, \enot \atom{L}{x}$\textquotedblright{} na linha~$3$, a saber, \textquotedblleft $b$\textquotedblright{}, ocorre na linha~$4$. Isto não seria melhor:
+\begin{fitchproof}
+	\hypo{f}{\atom{L}{b}}\PR
+	\hypo{nf}{\exists x\, \enot \atom{L}{x}}\PR
+	\open
+		\hypo{na}{\enot \atom{L}{b}}\AS
+		\have{con}{\atom{L}{b} \eand \enot \atom{L}{b}}\ai{f, na}
+		\have{con1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\Ei{con}
+	\close
+\ifHTMLtarget
+\have{econ1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\by{tentativa indevida de invocar $\exists$E }{nf, na-con1}
+
+\else
+\have{econ1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\by{tentativa indevida}{}
+	\have[\ ]{x}{}\by{para invocar $\exists$E }{nf, na-con1}
+\fi
+\end{fitchproof}
+A última linha ainda não é permitida. O nome que usamos em nossa instância de substituição de \textquotedblleft $\exists x\, \enot \atom{L}{x}$\textquotedblright{}, a saber, \textquotedblleft $b$\textquotedblright{}, ocorre em uma hipótese não descarregada, isto é, na linha~$1$.
+
+Por fim, considere esta \textquotedblleft prova\textquotedblright{}:
 \begin{fitchproof}
 	\hypo{nf}{\exists x\, \atom{L}{a, x}}\PR
 	\open
 		\hypo{na}{\atom{L}{a, a}}\AS
-		\have{con1}{\exists x\,\atom{L}{x,x}}\Ei{na}		
+		\have{con1}{\exists x\,\atom{L}{x,x}}\Ei{na}
 	\close
 \ifHTMLtarget
-	\have{econ1}{\exists x\,\atom{L}{x,x}}\by{naughty attempt to invoke $\exists$E }{nf, na-con1}
+	\have{econ1}{\exists x\,\atom{L}{x,x}}\by{tentativa indevida de invocar $\exists$E }{nf, na-con1}
 \else
-	\have{econ1}{\exists x\,\atom{L}{x,x}}\by{naughty attempt}{}
-	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con1}
+	\have{econ1}{\exists x\,\atom{L}{x,x}}\by{tentativa indevida}{}
+	\have[\ ]{x}{}\by{para invocar $\exists$E }{nf, na-con1}
 \fi
 \end{fitchproof}
-Here the name `$a$' violates the second condition of the $\exists$E
-rule: it occurs in `$\exists x\, \atom{L}{a, x}$' on line~$1$. And we
-have to prevent this from being a proof, since it is invalid: `Someone
-likes themselves' does not follow from `Alex likes someone'.
+Aqui o nome \textquotedblleft $a$\textquotedblright{} viola a segunda condição da regra $\exists$E: ele ocorre em \textquotedblleft $\exists x\, \atom{L}{a,x}$\textquotedblright{} na linha~$1$. E precisamos impedir que isto seja uma prova, pois ela é inválida: \textquotedblleft alguém ama a si mesmo\textquotedblright{} não decorre de \textquotedblleft Alex ama alguém\textquotedblright{}.
 
-The moral of the story is this. \emph{If you want to squeeze information out of an existential quantifier, choose a new name for your substitution instance.} That way, you can guarantee that you meet all the constraints on the rule for $\exists$E.
 
-\section{Quantifier rules and vacuous quantification}
 
-There is a subtle issue in our quantifier rules that has to do with an
-aspect of the way we have specified the rules of our syntax, namely
-the possibility of \emph{vacuous quantification} (see the end of
-\cref{s:FreeVars}). In \cref{s:forallElim,s:existsElim} we made use of
-the substitution notation of \cref{s:TruthFOL}: $\metav{A}(\ldots
-\metav{c} \ldots \metav{c} \ldots)$ is the formula obtained by
-replacing every \emph{free} occurrence of $\metav{x}$ in $\metav{A}$
-with~$\metav{c}$. Here, we emphasize the `free' for a reason. It means
-you cannot always replace \emph{every} occurrence of~$\metav{x}$. For
-instance, this would be incorrect:
+
+A lição desta história é a seguinte. \emph{Se você quiser extrair informação de um quantificador existencial, escolha um nome novo para sua instância de substituição.} Assim, poderá garantir que cumpre todas as restrições da regra $\exists$E.
+
+\section{Regras dos quantificadores e quantificação vacuosa}
+
+Há uma questão sutil em nossas regras para quantificadores relacionada a um
+aspecto da maneira como especificamos as regras de nossa sintaxe, a saber,
+a possibilidade de \emph{quantificação vacuosa} (ver o final de
+\cref{s:FreeVars}). Em \cref{s:forallElim,s:existsElim}, usamos
+a notação de substituição de \cref{s:TruthFOL}: $\metav{A}(\ldots
+\metav{c} \ldots \metav{c} \ldots)$ é a fórmula obtida
+substituindo toda ocorrência \emph{livre} de $\metav{x}$ em $\metav{A}$
+por~$\metav{c}$. Aqui enfatizamos o termo \textquotedblleft livre\textquotedblright{} por uma razão. Isso significa
+que nem sempre você pode substituir \emph{toda} ocorrência de~$\metav{x}$.
+Por exemplo, o seguinte estaria incorreto:
 \begin{fitchproof}
 	\hypo{a}{\forall x(\atom{F}{x} \land \exists x\,\atom{G}{x})}\PR
 	\ifHTMLtarget
-	\have{e}{\atom{F}{a} \land \exists x\,\atom{G}{a}}\by{naughty attempt to invoke $\forall$E}{a}
+	\have{e}{\atom{F}{a} \land \exists x\,\atom{G}{a}}\by{tentativa indevida de invocar $\forall$E}{a}
 \else
-	\have{e}{\atom{F}{a} \land \exists x\,\atom{G}{a}}\by{naughty attempt}{}
-	\have[\ ]{x}{}\by{to invoke $\forall$E}{a}
+	\have{e}{\atom{F}{a} \land \exists x\,\atom{G}{a}}\by{tentativa indevida}{}
+	\have[\ ]{x}{}\by{para invocar $\forall$E}{a}
 \fi
 \end{fitchproof}
-On line $2$, we have formed the substitution instance incorrectly: we
-replaced the `$x$' in both `$\atom{F}{x}$' and in `$\atom{G}{x}$'
-by~`$a$', but only the first one is a free occurrence---the other one
-is bound by~`$\exists x$'. Not only would this violate a restriction
-on substitution, it would allow us to `prove' an invalid argument.
-Since `$\exists x\,\atom{G}{a}$' is a case of vacuous quantification,
-it is equivalent to just `$\atom{G}{a}$'. Furthermore, line~$1$ is
-equivalent to `$\forall x(\atom{F}{x} \land \exists y\,\atom{G}{y})$'.
-It should be easy to see that this does not entail `$\atom{F}{a} \land
-\atom{G}{a}$'. You're unlikely to encounter such a case (unless you
-have a devious instructor): your exercises will likely only involve
-sentences like `$\forall x(\atom{F}{x} \land \exists
-y\,\atom{G}{y})$', with variables nicely kept separate.
+Na linha $2$, formamos incorretamente a instância de substituição:
+substituímos o \textquotedblleft $x$\textquotedblright{} tanto em \textquotedblleft $\atom{F}{x}$\textquotedblright{} quanto em \textquotedblleft $\atom{G}{x}$\textquotedblright{}
+por~\textquotedblleft $a$\textquotedblright{}, mas somente a primeira ocorrência é livre — a outra
+é ligada por~\textquotedblleft $\exists x$\textquotedblright{}. Isso não apenas violaria uma restrição
+à substituição, como também permitiria que \textquotedblleft provássemos\textquotedblright{} um argumento inválido.
+Como \textquotedblleft $\exists x\,\atom{G}{a}$\textquotedblright{} é um caso de quantificação vacuosa,
+é equivalente simplesmente a \textquotedblleft $\atom{G}{a}$\textquotedblright{}. Além disso, a linha~$1$ é
+equivalente a \textquotedblleft $\forall x(\atom{F}{x} \land \exists y\,\atom{G}{y})$\textquotedblright{}.
+Deve ser fácil ver que isso não implica \textquotedblleft $\atom{F}{a} \land
+\atom{G}{a}$\textquotedblright{}. É improvável que você encontre um caso assim (a menos que
+tenha um professor ardiloso): seus exercícios provavelmente envolverão apenas
+sentenças como \textquotedblleft $\forall x(\atom{F}{x} \land \exists
+y\,\atom{G}{y})$\textquotedblright{}, com as variáveis cuidadosamente separadas.
 
 
-In \cref{s:existsIntro}, we said that we use `$\metav{A}(\ldots
-\metav{x} \ldots \metav{c}\ldots)$' to indicate any formula obtained
-by replacing \emph{some or all} of the instances of the name \metav{c}
-with the variable~\metav{x} \emph{provided~$\metav{c}$,
-wherever it is replaced, does not occur in the scope of a quantifier
-binding~$\metav{x}$}. The emphasized restriction prohibiting the
-replacement of $\metav{c}$ in some cases is somewhat subtle. You
-probably will never find yourself in a situation where you run the
-risk of violating it. But it is needed to make the rule correct.
-Since we allow vacuous quantification, for instance, `$\exists
-x\forall x\,\atom{L}{x,x}$' is a legal sentence of FOL. It's just that
-in it, the first `$\exists x$' doesn't do any work, and the sentence
-is equivalent to just `$\forall x\,\atom{L}{x,x}$'. Now, `$\forall
-x\,\atom{L}{x,x}$' \emph{could} be obtained from `$\forall
-x\,\atom{L}{a,x}$' by replacing the name~`$a$' by the variable~`$x$'
-if we weren't careful and overlooked that here `$a$' \emph{does} occur
-in the scope of~`$\forall x$'. Without the restriction, the following
-would then be allowed:
+Em \cref{s:existsIntro}, dissemos que usamos \textquotedblleft $\metav{A}(\ldots
+\metav{x} \ldots \metav{c}\ldots)$\textquotedblright{} para indicar qualquer fórmula obtida
+substituindo \emph{algumas ou todas} as ocorrências do nome $\metav{c}
+pela variável~$\metav{x}$ \emph{desde que~$\metav{c}$,
+onde quer que seja substituído, não ocorra no escopo de um quantificador
+que ligue~$\metav{x}$}. A restrição enfatizada, que proíbe
+a substituição de $\metav{c}$ em alguns casos, é um tanto sutil. Você
+provavelmente jamais se encontrará em uma situação em que corra o
+risco de violá-la. Mas ela é necessária para tornar a regra correta.
+Como permitimos quantificação vacuosa, por exemplo, \textquotedblleft $\exists
+x\forall x\,\atom{L}{x,x}$\textquotedblright{} é uma sentença legal da LPO. Ocorre apenas que o primeiro
+\textquotedblleft $\exists x$\textquotedblright{} não faz nada, e a sentença
+é equivalente simplesmente a \textquotedblleft $\forall x\,\atom{L}{x,x}$\textquotedblright{}. Agora, \textquotedblleft $\forall
+x\,\atom{L}{x,x}$\textquotedblright{} \emph{poderia} ser obtida de \textquotedblleft $\forall
+x\,\atom{L}{a,x}$\textquotedblright{} substituindo o nome~\textquotedblleft $a$\textquotedblright{} pela variável~\textquotedblleft $x$\textquotedblright{}
+se não tivéssemos cuidado e ignorássemos que, neste caso, \textquotedblleft $a$\textquotedblright{} \emph{ocorre}
+no escopo de \textquotedblleft $\forall x$\textquotedblright{}. Sem a restrição, o seguinte seria permitido:
+
 \begin{fitchproof}
 		\hypo{a}{\forall x\, \atom{L}{a,x}}\PR
 		\ifHTMLtarget
-		\have{e}{\exists x\, \forall x\, \atom{L}{x,x}}\by{naughty attempt to invoke $\exists$I}{a}
+		\have{e}{\exists x\, \forall x\, \atom{L}{x,x}}\by{tentativa indevida de invocar $\exists$I}{a}
 	\else
-		\have{e}{\exists x\, \forall x\, \atom{L}{x,x}}\by{naughty attempt}{}
-		\have[\ ]{x}{}\by{to invoke $\exists$I}{a}
+		\have{e}{\exists x\, \forall x\, \atom{L}{x,x}}\by{tentativa indevida}{}
+		\have[\ ]{x}{}\by{para invocar $\exists$I}{a}
 	\fi\end{fitchproof}
-But since `$\exists x\, \forall x\, \atom{L}{x,x}$' is equivalent to
-just `$\forall x\, \atom{L}{x,x}$', this would be an invalid inference.
-To see why, read `$L$' as `likes': From `Alex likes everyone' it does
-not follow that everyone likes everyone.
+Mas, como \textquotedblleft $\exists x\, \forall x\, \atom{L}{x,x}$\textquotedblright{} é equivalente
+simplesmente a \textquotedblleft $\forall x\, \atom{L}{x,x}$\textquotedblright{}, isso seria uma inferência inválida.
+Para ver por quê, leia \textquotedblleft $L$\textquotedblright{} como \textquotedblleft ama\textquotedblright{}: de
+\textquotedblleft Alex ama todos\textquotedblright{} não se segue que todos amem todos.
 
-Similarly, in \cref{s:forallIntro}, we said that $\metav{A}(\ldots
-\metav{x} \ldots \metav{x}\ldots)$ is the result of replacing
-\emph{every} occurrence of~$\metav{c}$ in $\metav{A}(\ldots \metav{c}
-\ldots \metav{c}\ldots)$ by~$\metav{x}$, but that \emph{this is only
-allowed as long as $\metav{c}$ does not occur in the scope of a
-quantifier binding~$\metav{x}$ in~$\metav{A}$}. Like the constraint
-involved in the statement of the $\exists$I rule, it does not often
-happen that you'd risk violating it in practice. But here's why it's
-important. Again, since we allow vacuous quantification, `$\forall
-x\exists x\,\atom{L}{x,x}$' is a legal sentence of FOL. However,
-`$\forall x\exists x\,\atom{L}{x,x}$' can be obtained from `$\forall
-x\,\atom{L}{a,x}$' by replacing the name~`$a$' by the variable~`$x$'
-everywhere. This violates the restriction we included, though: `$a$'
-does occur in the scope of~`$\forall x$' in this case. Without the
-restriction, the following would be allowed:
+Da mesma forma, em \cref{s:forallIntro}, dissemos que $\metav{A}(\ldots
+\metav{x} \ldots \metav{x}\ldots)$ é o resultado de substituir
+\emph{toda} ocorrência de~$\metav{c}$ em $\metav{A}(\ldots \metav{c}
+\ldots \metav{c}\ldots)$ por~$\metav{x}$, mas que \emph{isso só é
+permitido enquanto $\metav{c}$ não ocorrer no escopo de um
+quantificador que ligue~$\metav{x}$ em~$\metav{A}$}. Assim como a restrição
+incluída na formulação da regra $\exists$I, isso não costuma acontecer
+na prática. Mas eis por que ela é importante. Novamente, como permitimos
+quantificação vacuosa, \textquotedblleft $\forall
+x\exists x\,\atom{L}{x,x}$\textquotedblright{} é uma sentença legal da LPO. Contudo,
+\textquotedblleft $\forall x\exists x\,\atom{L}{x,x}$\textquotedblright{} pode ser obtida de \textquotedblleft $\forall
+x\,\atom{L}{a,x}$\textquotedblright{} substituindo o nome~\textquotedblleft $a$\textquotedblright{} pela variável~\textquotedblleft $x$\textquotedblright{}
+em toda parte. Isso viola, porém, a restrição que incluímos: \textquotedblleft $a$\textquotedblright{}
+ocorre no escopo de \textquotedblleft $\forall x$\textquotedblright{} neste caso. Sem a restrição, o seguinte seria permitido:
+
 \begin{fitchproof}
 	\hypo{p}{\forall y\exists x\,\atom{L}{y,x}}\PR
 	\have{a}{\exists x\, \atom{L}{a,x}}\Ae{p}
 \ifHTMLtarget
-	\have{e}{\forall x\, \exists x\, \atom{L}{x,x}}\by{naughty attempt to invoke $\forall$I}{a}
+	\have{e}{\forall x\, \exists x\, \atom{L}{x,x}}\by{tentativa indevida de invocar $\forall$I}{a}
 \else
-\have{e}{\forall x\, \exists x\, \atom{L}{x,x}}\by{naughty attempt}{}
-	\have[\ ]{x}{}\by{to invoke $\forall$I}{a}
+\have{e}{\forall x\, \exists x\, \atom{L}{x,x}}\by{tentativa indevida}{}
+	\have[\ ]{x}{}\by{para invocar $\forall$I}{a}
 \fi
 \end{fitchproof}
-But since `$\forall x\, \exists x\, \atom{L}{x,x}$' is equivalent to
-just `$\exists x\, \atom{L}{x,x}$', this would be an invalid
-inference: `Someone likes themselves' does not follow from `Everyone
-likes someone'.
+Mas, como \textquotedblleft $\forall x\, \exists x\, \atom{L}{x,x}$\textquotedblright{} é equivalente
+simplesmente a \textquotedblleft $\exists x\, \atom{L}{x,x}$\textquotedblright{}, isso seria uma inferência
+inválida: \textquotedblleft alguém ama a si mesmo\textquotedblright{} não decorre de
+\textquotedblleft todos amam alguém\textquotedblright{}.
 
 \practiceproblems
 \problempart
-Explain why these two `proofs' are \emph{incorrect}. Also, provide interpretations which would invalidate the fallacious argument forms the `proofs' enshrine:
+Explique por que estas duas \textquotedblleft provas\textquotedblright{} estão \emph{incorretas}. Além disso, forneça interpretações que invalidem as formas de argumento falaciosas que essas \textquotedblleft provas\textquotedblright{} consagram:
 \begin{multicols}{2}
 	\begin{fitchproof}
 		\hypo{Rxx}{\forall x\, \atom{R}{x,x}}\PR
@@ -429,9 +429,9 @@ Explain why these two `proofs' are \emph{incorrect}. Also, provide interpretatio
 	\end{fitchproof}
 \end{multicols}
 
-\problempart 
+\problempart
 \label{pr.justifyFOLproof}
-The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs.
+As três provas a seguir não têm suas citações (regra e números de linha). Acrescente-as para transformá-las em provas legítimas.
 \begin{compactlist}
 \item \begin{fitchproof}
 \hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}
@@ -479,33 +479,33 @@ The following three proofs are missing their citations (rule and line numbers). 
 
 \problempart
 \label{pr.BarbaraEtc.proof1}
-In \hyperref[pr.BarbaraEtc]{exercise \ref*{s:MoreMonadic}A}, we
-considered fifteen syllogistic figures of Aristotelian logic. Provide
-proofs for each of the argument forms. NB: You will find it
-\emph{much} easier if you symbolize (for example) `No F is G' as
-`$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'.
+No \hyperref[pr.BarbaraEtc]{exercício \ref*{s:MoreMonadic}A}, consideramos quinze figuras silogísticas da lógica aristotélica. Forneça
+provas para cada uma das formas de argumento. OBS.: será
+\emph{muito} mais fácil se você simbolizar (por exemplo)
+\textquotedblleft nenhum $F$ é $G$\textquotedblright{} como
+\textquotedblleft $\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$\textquotedblright{}.
 
 \
 
 \problempart
 \label{pr.BarbaraEtc.proof2}
-Aristotle and his successors identified other syllogistic forms which depended upon `existential import'. Symbolize each of these argument forms in FOL and offer proofs.
+Aristóteles e seus sucessores identificaram outras formas silogísticas que dependiam da \textquotedblleft importação existencial\textquotedblright{}. Simbolize cada uma dessas formas de argumento na LPO e ofereça provas.
 \begin{compactlist}
-	\item \textbf{Barbari.} Something is H. All G are F. All H are G. So: Some H is F.
-	\item \textbf{Celaront.} Something is H. No G are F. All H are G. So: Some H is not F.
-	\item \textbf{Cesaro.} Something is H. No F are G. All H are G. So: Some H is not F.
-	\item \textbf{Camestros.} Something is H. All F are G. No H are G. So: Some H is not F.
-	\item \textbf{Felapton.} Something is G. No G are F. All G are H. So: Some H is not F.
-	\item \textbf{Darapti.} Something is G. All G are F. All G are H. So: Some H is F.
-	\item \textbf{Calemos.} Something is H. All F are G. No G are H. So: Some H is not F.
-	\item \textbf{Fesapo.} Something is G. No F is G. All G are H. So: Some H is not F.
-	\item \textbf{Bamalip.} Something is F. All F are G. All G are H. So: Some H are F.
+\item \textbf{Barbari.} Algo é $H$. Todo $G$ é $F$. Todo $H$ é $G$. Logo: algum $H$ é $F$.
+\item \textbf{Celaront.} Algo é $H$. Nenhum $G$ é $F$. Todo $H$ é $G$. Logo: algum $H$ não é $F$.
+\item \textbf{Cesaro.} Algo é $H$. Nenhum $F$ é $G$. Todo $H$ é $G$. Logo: algum $H$ não é $F$.
+\item \textbf{Camestros.} Algo é $H$. Todo $F$ é $G$. Nenhum $H$ é $G$. Logo: algum $H$ não é $F$.
+\item \textbf{Felapton.} Algo é $G$. Nenhum $G$ é $F$. Todo $G$ é $H$. Logo: algum $H$ não é $F$.
+\item \textbf{Darapti.} Algo é $G$. Todo $G$ é $F$. Todo $G$ é $H$. Logo: algum $H$ é $F$.
+\item \textbf{Calemos.} Algo é $H$. Todo $F$ é $G$. Nenhum $G$ é $H$. Logo: algum $H$ não é $F$.
+\item \textbf{Fesapo.} Algo é $G$. Nenhum $F$ é $G$. Todo $G$ é $H$. Logo: algum $H$ não é $F$.
+\item \textbf{Bamalip.} Algo é $F$. Todo $F$ é $G$. Todo $G$ é $H$. Logo: alguns $H$ são $F$.
 \end{compactlist}
 
 \problempart
 \label{pr.someFOLproofs}
-For each of the following claims, provide an FOL proof that shows it
-is true.
+Para cada uma das afirmações a seguir, forneça uma prova na LPO que mostre
+que ela é verdadeira.
 \begin{compactlist}
 \item $\proves \forall x\,\atom{F}{x} \eif \forall y(\atom{F}{y} \eand \atom{F}{y})$
 \item $\forall x(\atom{A}{x}\eif \atom{B}{x}), \exists x\,\atom{A}{x} \proves \exists x\,\atom{B}{x}$
@@ -521,16 +521,16 @@ is true.
 \solutions
 \problempart
 \label{pr.likes}
-Write a symbolization key for the following argument, symbolize it, and prove it:
+Escreva uma chave de simbolização para o argumento a seguir, simbolize-o e prove-o:
 \begin{earg}
-\item There is someone who likes everyone who likes everyone that she
-likes. 
-\item[\texttherefore] There is someone who likes herself.
+\item Há alguém que ama todos que amam todos que ela
+ama.
+\item[\texttherefore] Há alguém que ama a si mesma.
 \end{earg}
 
 
 \problempart
-Show that each pair of sentences is interderivable.
+Mostre que cada par de sentenças é interderivável.
 \begin{compactlist}
 \item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x})$, $\enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot\atom{A}{x}\eif \atom{B}{d})$, $\forall x\,\atom{A}{x} \eor \atom{B}{d}$
@@ -540,7 +540,7 @@ Show that each pair of sentences is interderivable.
 \solutions
 \problempart
 \label{pr.FOLequivornot}
-For each of the following pairs of sentences: If they are interderivable, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
+Para cada um dos pares de sentenças a seguir: se forem interderiváveis, dê provas que mostrem isso. Se não forem, construa uma interpretação que mostre que não são logicamente equivalentes.
 \begin{compactlist}
 \item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$
 \item $\forall x\,\forall y\, \forall z\,\atom{B}{x,y,z}, \forall x\,\atom{B}{x,x,x}$
@@ -552,7 +552,7 @@ For each of the following pairs of sentences: If they are interderivable, give p
 \solutions
 \problempart
 \label{pr.FOLvalidornot}
-For each of the following arguments: If it is valid in FOL, give a proof. If it is invalid, construct an interpretation to show that it is invalid.
+Para cada um dos argumentos a seguir: se for válido na LPO, dê uma prova. Se for inválido, construa uma interpretação que mostre que é inválido.
 \begin{compactlist}
 \item $\exists y\,\forall x\,\atom{R}{x,y} \therefore \forall x\,\exists y\,\atom{R}{x,y}$
 \item $\forall x\,\exists y\,\atom{R}{x,y} \therefore  \exists y\,\forall x\,\atom{R}{x,y}$
