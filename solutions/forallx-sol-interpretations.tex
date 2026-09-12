@@ -1,67 +1,67 @@
 %!TEX root = forallxyyc-solutions.tex
-%\part{Interpretations}
+%\part{Interpretações}
 %\label{ch.semantics}
 %\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
 \stepcounter{chapter} % Extensionality
 
-\chapter{Truth in FOL}\setcounter{ProbPart}{0}
+\chapter{Verdade na LPO}\setcounter{ProbPart}{0}
 \problempart
 \label{pr.TorF1}
-Consider the following interpretation:
+Considere a seguinte interpretação:
 	\begin{itemize}
-		\item The domain comprises only Corwin and Benedict
-		\item `$\atom{A}{x}$' is to be true of both Corwin and Benedict
-		\item `$\atom{B}{x}$' is to be true of Benedict only
-		\item `$\atom{N}{x}$' is to be true of no one
-		\item `$c$' is to refer to Corwin
+		\item O domínio contém apenas Corwin e Benedict
+		\item $\atom{A}{x}$ é verdadeira para Corwin e Benedict
+		\item $\atom{B}{x}$ é verdadeira apenas para Benedict
+		\item $\atom{N}{x}$ não é verdadeira para ninguém
+		\item $c$ refere-se a Corwin
 	\end{itemize}
-Determine whether each of the following sentences is true or false in that interpretation:
+Determine se cada uma das seguintes sentenças é verdadeira ou falsa nessa interpretação:
 \begin{compactlist}
-\item $\atom{B}{c}$ \hfill \myanswer{False}
-\item $\atom{A}{c} \eiff \enot \atom{N}{c}$ \hfill \myanswer{True}
-\item $\atom{N}{c} \eif (\atom{A}{c} \eor \atom{B}{c})$ \hfill \myanswer{True}
-\item $\forall x\,\atom{A}{x}$ \hfill \myanswer{True}
-\item $\forall x \enot \atom{B}{x}$ \hfill \myanswer{False}
-\item $\exists x(\atom{A}{x} \eand \atom{B}{x})$ \hfill \myanswer{True}
-\item $\exists x(\atom{A}{x} \eif \atom{N}{x})$ \hfill \myanswer{False}
-\item $\forall x(\atom{N}{x} \eor \enot \atom{N}{x})$ \hfill \myanswer{True}
-\item $\exists x\,\atom{B}{x} \eif \forall x\,\atom{A}{x}$ \hfill \myanswer{True}
+\item $\atom{B}{c}$ \hfill \myanswer{Falso}
+\item $\atom{A}{c} \eiff \enot \atom{N}{c}$ \hfill \myanswer{Verdadeiro}
+\item $\atom{N}{c} \eif (\atom{A}{c} \eor \atom{B}{c})$ \hfill \myanswer{Verdadeiro}
+\item $\forall x\,\atom{A}{x}$ \hfill \myanswer{Verdadeiro}
+\item $\forall x \enot \atom{B}{x}$ \hfill \myanswer{Falso}
+\item $\exists x(\atom{A}{x} \eand \atom{B}{x})$ \hfill \myanswer{Verdadeiro}
+\item $\exists x(\atom{A}{x} \eif \atom{N}{x})$ \hfill \myanswer{Falso}
+\item $\forall x(\atom{N}{x} \eor \enot \atom{N}{x})$ \hfill \myanswer{Verdadeiro}
+\item $\exists x\,\atom{B}{x} \eif \forall x\,\atom{A}{x}$ \hfill \myanswer{Verdadeiro}
 \end{compactlist}
 
 \problempart
 \label{pr.TorF2}
-Consider the following interpretation:	
+Considere a seguinte interpretação:
 	\begin{itemize}
-		\item The domain comprises only Lemmy, Courtney and Eddy
-		\item `$\atom{G}{x}$' is to be true of Lemmy, Courtney and Eddy.
-		\item `$\atom{H}{x}$' is to be true of and only of Courtney
-		\item `$\atom{M}{x}$' is to be true of and only of Lemmy and Eddy
-		\item `$c$' is to refer to Courtney
-		\item `$e$' is to refer to Eddy
+		\item O domínio contém apenas Lemmy, Courtney e Eddy:
+		\item $\atom{G}{x}$ é verdadeira para Lemmy, Courtney e Eddy.
+		\item $\atom{H}{x}$ é verdadeira somente para Courtney:
+		\item $\atom{M}{x}$ é verdadeira somente para Lemmy e Eddy:
+		\item $c$ refere-se a Courtney:
+		\item $e$ refere-se a Eddy:
 	\end{itemize}
-Determine whether each of the following sentences is true or false in that interpretation:
+Determine se cada uma das seguintes sentenças é verdadeira ou falsa nessa interpretação:
 \begin{compactlist}
-\item $\atom{H}{c}$ \hfill \myanswer{True}
-\item $\atom{H}{e}$\hfill \myanswer{False}
-\item $\atom{M}{c} \eor \atom{M}{e}$ \hfill \myanswer{True}
-\item $\atom{G}{c} \eor \enot \atom{G}{c}$ \hfill \myanswer{True}
-\item $\atom{M}{c} \eif \atom{G}{c}$ \hfill \myanswer{True}
-\item $\exists x\,\atom{H}{x}$ \hfill \myanswer{True}
-\item $\forall x\,\atom{H}{x}$ \hfill \myanswer{False}
-\item $\exists x \enot \atom{M}{x}$ \hfill \myanswer{True}
-\item $\exists x(\atom{H}{x} \eand \atom{G}{x})$ \hfill \myanswer{True}
-\item $\exists x(\atom{M}{x} \eand \atom{G}{x})$ \hfill \myanswer{True}
-\item $\forall x(\atom{H}{x} \eor \atom{M}{x})$ \hfill \myanswer{True}
-\item $\exists x\,\atom{H}{x} \eand \exists x\,\atom{M}{x}$ \hfill \myanswer{True}
-\item $\forall x(\atom{H}{x} \eiff \enot \atom{M}{x})$ \hfill \myanswer{True}
-\item $\exists x\,\atom{G}{x} \eand \exists x \enot \atom{G}{x}$ \hfill \myanswer{False}
-\item $\forall x\exists y(\atom{G}{x} \eand \atom{H}{y})$ \hfill \myanswer{True}
+\item $\atom{H}{c}$ \hfill \myanswer{Verdadeiro}
+\item $\atom{H}{e}$\hfill \myanswer{Falso}
+\item $\atom{M}{c} \eor \atom{M}{e}$ \hfill \myanswer{Verdadeiro}
+\item $\atom{G}{c} \eor \enot \atom{G}{c}$ \hfill \myanswer{Verdadeiro}
+\item $\atom{M}{c} \eif \atom{G}{c}$ \hfill \myanswer{Verdadeiro}
+\item $\exists x\,\atom{H}{x}$ \hfill \myanswer{Verdadeiro}
+\item $\forall x\,\atom{H}{x}$ \hfill \myanswer{Falso}
+\item $\exists x \enot \atom{M}{x}$ \hfill \myanswer{Verdadeiro}
+\item $\exists x(\atom{H}{x} \eand \atom{G}{x})$ \hfill \myanswer{Verdadeiro}
+\item $\exists x(\atom{M}{x} \eand \atom{G}{x})$ \hfill \myanswer{Verdadeiro}
+\item $\forall x(\atom{H}{x} \eor \atom{M}{x})$ \hfill \myanswer{Verdadeiro}
+\item $\exists x\,\atom{H}{x} \eand \exists x\,\atom{M}{x}$ \hfill \myanswer{Verdadeiro}
+\item $\forall x(\atom{H}{x} \eiff \enot \atom{M}{x})$ \hfill \myanswer{Verdadeiro}
+\item $\exists x\,\atom{G}{x} \eand \exists x \enot \atom{G}{x}$ \hfill \myanswer{Falso}
+\item $\forall x\exists y(\atom{G}{x} \eand \atom{H}{y})$ \hfill \myanswer{Verdadeiro}
 \end{compactlist}
 
 \problempart
 \label{pr.TorF3}
-Following the diagram conventions introduced at the end of \S23, consider the following interpretation:	
+Seguindo as convenções para diagramas introduzidas ao final de \S23, considere a seguinte interpretação:
 \begin{center}
 \begin{tikzpicture}
 \node (atom1) at (0,2) {1};
@@ -69,32 +69,32 @@ Following the diagram conventions introduced at the end of \S23, consider the fo
 \node (atom4) at (0,0) {3};
 \node (atom5) at (2,0) {4};
 \node (atom6) at (4,0) {5};
-\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
-\draw[->, thick] (atom6)+(0.15,-0.15) arc (-150:150:.3); 
+\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3);
+\draw[->, thick] (atom6)+(0.15,-0.15) arc (-150:150:.3);
 \draw[->, thick] (atom1) -- (atom2);
 \draw[->, thick] (atom1) -- (atom4);
 \draw[<->, thick] (atom1) -- (atom5);
 \draw[->, thick] (atom1) -- (atom6);
 \draw[->, thick] (atom2) -- (atom6);
 \end{tikzpicture}
-\bmlDescription{The numbers 1, 2, 3, 4, and 5 are connected by arrows.
-There are arrows from 1 to 2, 3, 4, 5, and to itself, from 2 to 5,
-from 5 to itself, and from 4 to 1. There is no arrow leaving 3.}
+\bmlDescription{Os números 1, 2, 3, 4 e 5 estão conectados por setas.
+Há setas de 1 para 2, 3, 4, 5 e para si mesmo; de 2 para 5,
+de 5 para si mesmo e de 4 para 1. Não há nenhuma seta saindo de 3.}
 \end{center}
-Determine whether each of the following sentences is true or false in that interpretation:
+Determine se cada uma das seguintes sentenças é verdadeira ou falsa nessa interpretação:
 \begin{compactlist}
-\item $\exists x\,\atom{R}{x,x}$ \hfill \myanswer{True}
-\item $\forall x\,\atom{R}{x,x}$ \hfill \myanswer{False}
-\item $\exists x \forall y\,\atom{R}{x,y}$ \hfill \myanswer{True}
-\item $\exists x \forall y\,\atom{R}{y,x}$ \hfill \myanswer{False}
-\item $\forall x \forall y \forall z ((\atom{R}{x,y} \eand \atom{R}{y,z}) \eif \atom{R}{x,z})$ \hfill \myanswer{False}
-\item $\forall x \forall y \forall z ((\atom{R}{x,y} \eand \atom{R}{x,z}) \eif \atom{R}{y,z})$ \hfill \myanswer{False}
-\item $\exists x \forall y \enot \atom{R}{x,y}$ \hfill \myanswer{True}
-\item $\forall x(\exists y\,\atom{R}{x,y} \eif \exists y\,\atom{R}{y,x})$ \hfill \myanswer{True}
-\item $\exists x \exists y (\enot x = y \eand \atom{R}{x,y} \eand \atom{R}{y,x})$ \hfill \myanswer{True}
-\item $\exists x \forall y(\atom{R}{x,y} \eiff x = y)$ \hfill \myanswer{True}
-\item $\exists x \forall y(\atom{R}{y,x} \eiff x = y)$ \hfill \myanswer{False}
-\item $\exists x \exists y(\enot x = y \eand \atom{R}{x,y} \eand \forall z(\atom{R}{z,x} \eiff y = z))$ \hfill \myanswer{True}
+\item $\exists x\,\atom{R}{x,x}$ \hfill \myanswer{Verdadeiro}
+\item $\forall x\,\atom{R}{x,x}$ \hfill \myanswer{Falso}
+\item $\exists x \forall y\,\atom{R}{x,y}$ \hfill \myanswer{Verdadeiro}
+\item $\exists x \forall y\,\atom{R}{y,x}$ \hfill \myanswer{Falso}
+\item $\forall x \forall y \forall z ((\atom{R}{x,y} \eand \atom{R}{y,z}) \eif \atom{R}{x,z})$ \hfill \myanswer{Falso}
+\item $\forall x \forall y \forall z ((\atom{R}{x,y} \eand \atom{R}{x,z}) \eif \atom{R}{y,z})$ \hfill \myanswer{Falso}
+\item $\exists x \forall y \enot \atom{R}{x,y}$ \hfill \myanswer{Verdadeiro}
+\item $\forall x(\exists y\,\atom{R}{x,y} \eif \exists y\,\atom{R}{y,x})$ \hfill \myanswer{Verdadeiro}
+\item $\exists x \exists y (\enot x = y \eand \atom{R}{x,y} \eand \atom{R}{y,x})$ \hfill \myanswer{Verdadeiro}
+\item $\exists x \forall y(\atom{R}{x,y} \eiff x = y)$ \hfill \myanswer{Verdadeiro}
+\item $\exists x \forall y(\atom{R}{y,x} \eiff x = y)$ \hfill \myanswer{Falso}
+\item $\exists x \exists y(\enot x = y \eand \atom{R}{x,y} \eand \forall z(\atom{R}{z,x} \eiff y = z))$ \hfill \myanswer{Verdadeiro}
 \end{compactlist}
 
 \chapter{Semantic concepts}
