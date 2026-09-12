@@ -97,96 +97,96 @@ Determine se cada uma das seguintes sentenças é verdadeira ou falsa nessa inte
 \item $\exists x \exists y(\enot x = y \eand \atom{R}{x,y} \eand \forall z(\atom{R}{z,x} \eiff y = z))$ \hfill \myanswer{Verdadeiro}
 \end{compactlist}
 
-\chapter{Semantic concepts}
+\chapter{Conceitos semânticos}
 \setcounter{ProbPart}{0}
 
 \solutions
 \problempart
-Given the following interpretation:
+Dada a seguinte interpretação:
 \begin{ekey}
-	\item[\text{domain}] people
-	\item[\atom{W}{x}] \gap{x} is a woman (or girl)
-	\item[\atom{M}{x}] \gap{x} is a man (or boy)
-	\item[\atom{Y}{x,y}] \gap{x} is younger than \gap{y}
-	\item[\atom{O}{x,y}] \gap{x} is an offspring of \gap{y}
+	\item[\text{domínio}] pessoas
+	\item[\atom{W}{x}] \gap{x} é uma mulher (ou menina)
+	\item[\atom{M}{x}] \gap{x} é um homem (ou menino)
+	\item[\atom{Y}{x,y}] \gap{x} é mais jovem que \gap{y}
+	\item[\atom{O}{x,y}] \gap{x} é descendente de \gap{y}
 	\item[d] Dana
 	\item[a] Alex
 \end{ekey}
-express the following relations:
+expresse as seguintes relações:
 \begin{compactlist}
-	\item \gap{x} is older than \gap{y} \hfill\myanswer{$\atom{Y}{y,x}$}
-	\item \gap{x} is \gap{y}'s mother \hfill\myanswer{$\atom{O}{y,x}
+	\item \gap{x} é mais velho que \gap{y} \hfill\myanswer{$\atom{Y}{y,x}$}
+	\item \gap{x} é a mãe de \gap{y} \hfill\myanswer{$\atom{O}{y,x}
 	\eand \atom{W}{x}$}
-	\item \gap{x} and \gap{y} are siblings (note that you can't be your
-	own sibling) \hfill\myanswer{$\exists z(\atom{O}{x,z} \eand
+	\item \gap{x} e \gap{y} são irmãos (observe que você não pode ser irmão de si mesmo) \hfill\myanswer{$\exists z(\atom{O}{x,z} \eand
 	\atom{O}{y,z}) \eand \enot x=y$}
-	\item \gap{x} is \gap{y}'s brother \hfill\myanswer{$\exists z(\atom{O}{x,z} \eand
+
+	\item \gap{x} é irmão de \gap{y} \hfill\myanswer{$\exists z(\atom{O}{x,z} \eand
 	\atom{O}{y,z}) \eand \enot x=y \eand \atom{M}{x}$}
 \end{compactlist}
 
 \problempart
-Using the symbolization key from the previous
-exercise, symbolize the following sentences:
+Usando a chave de simbolização do exercício anterior, simbolize as seguintes sentenças:
+
 \begin{compactlist}
-	\item Alex and Dana are sisters. \hfill\myanswer{$\exists z(\atom{O}{a,z} \eand
+	\item Alex e Dana são irmãs. \hfill\myanswer{$\exists z(\atom{O}{a,z} \eand
 	\atom{O}{d,z}) \eand \enot a=d \eand \atom{W}{a} \eand \atom{W}{d}$}
-	\item Fathers are older than their children.
+	\item Pais são mais velhos que seus filhos.
 	\hfill\myanswer{$\forall x\forall y((\atom{O}{x,y} \eand
 	\atom{M}{y}) \eif \atom{Y}{x,y})$}
-	\item Alex's parents are the same age. \hfill\myanswer{$\forall
+	\item Os pais de Alex têm a mesma idade. \hfill\myanswer{$\forall
 	x\forall y((\atom{O}{x,a} \eand
 	\atom{O}{y,a}) \eif \enot \atom{Y}{x,y})$}
 \end{compactlist}
 
-\chapter{Using Interpretations}\setcounter{ProbPart}{0}
+\chapter{Usando interpretações}\setcounter{ProbPart}{0}
 
 \solutions
 \problempart
 \label{pr.Contingent}
-Show that each of the following is neither a validity nor a contradiction:
+Mostre que cada uma das seguintes sentenças não é nem uma validade nem uma contradição:
 \begin{compactlist}
 \item $\atom{D}{a} \eand \atom{D}{b}$
 
-\myanswer{The sentence is true in this model:
+\myanswer{A sentença é verdadeira neste modelo:
 \begin{ekey}
-	\item[\text{domain}] Stan
+	\item[\text{domínio}] Stan
 	\item[D(x)] Stan
 	\item[a] Stan
 	\item[b] Stan
 \end{ekey}
-And it is false in this model:
+E é falsa neste modelo:
 \begin{ekey}
-	\item[\text{domain}] Stan
+	\item[\text{domínio}] Stan
 	\item[D(x)] % $\emptyset$
 	\item[a] Stan
 	\item[b] Stan
 \end{ekey}}
 \item \leftsolutions\ $\exists x\,\atom{T}{x,h}$
 
-\myanswer{The sentence is true in this model:
+\myanswer{A sentença é verdadeira neste modelo:
 \begin{ekey}
-	\item[\text{domain}] Stan
+	\item[\text{domínio}] Stan
 	\item[T(x,y)] \ntuple{Stan, Stan}
 	\item[h] Stan
 \end{ekey}
-And it is false in this model:
+E é falsa neste modelo:
 \begin{ekey}
-	\item[\text{domain}] Stan
+	\item[\text{domínio}] Stan
 	\item[T(x,y)] % $\emptyset$
 	\item[h] Stan
 \end{ekey}}
 
 \item $\atom{P}{m} \eand \enot\forall x\,\atom{P}{x}$
 
-\myanswer{	The sentence is true in this model:
+\myanswer{	A sentença é verdadeira neste modelo:
 \begin{ekey}
-	\item[\text{domain}] Stan, Ollie
+	\item[\text{domínio}] Stan, Ollie
 	\item[P(x)] Stan
 	\item[m] Stan
 \end{ekey}
-And it is false in this model:
+E é falsa neste modelo:
 \begin{ekey}
-	\item[\text{domain}] Stan
+	\item[\text{domínio}] Stan
 	\item[P(x)] % $\emptyset$
 	\item[m] Stan
 \end{ekey}}
@@ -199,84 +199,84 @@ And it is false in this model:
 \solutions
 \problempart
 \label{pr.NotEquiv}
-Show that the following pairs of sentences are not logically equivalent.
+Mostre que os seguintes pares de sentenças não são logicamente equivalentes:
 \begin{compactlist}
 \item $\atom{J}{a}$, $\atom{K}{a}$
 
-\myanswer{Making the first sentence true and the second false:
+\myanswer{Tornando a primeira sentença verdadeira e a segunda falsa:
 \begin{ekey}
-	\item[\text{domain}] $0$
+	\item[\text{domínio}] $0$
 	\item[J(x)] $0$
 	\item[K(x)] % $\emptyset$
 	\item[a] $0$
 \end{ekey}}
 \item $\exists x\,\atom{J}{x}$, $\atom{J}{m}$
 
-\myanswer{Making the first sentence true and the second false:
+\myanswer{Tornando a primeira sentença verdadeira e a segunda falsa:
 \begin{ekey}
-	\item[\text{domain}] $0$, $1$
+	\item[\text{domínio}] $0$, $1$
 	\item[J(x)] $0$
 	\item[m] $1$
 \end{ekey}}
 \item $\forall x\,\atom{R}{x,x}$, $\exists x\,\atom{R}{x,x}$
 
-\myanswer{Making the first sentence false and the second true:
+\myanswer{Tornando a primeira sentença falsa e a segunda verdadeira:
 \begin{ekey}
-	\item[\text{domain}] $0$, $1$
+	\item[\text{domínio}] $0$, $1$
 	\item[R(x,y)] \ntuple{$0$,$0$}
 \end{ekey}}
 \item $\exists x\,\atom{P}{x} \eif \atom{Q}{c}$, $\exists x (\atom{P}{x} \eif \atom{Q}{c})$
 
-\myanswer{Making the first sentence false and the second true:
+\myanswer{Tornando a primeira sentença falsa e a segunda verdadeira:
 \begin{ekey}
-	\item[\text{domain}] $0$, $1$
+	\item[\text{domínio}] $0$, $1$
 	\item[P(x)] $0$
 	\item[Q(x)] % $\emptyset$
 	\item[c] $0$
 \end{ekey}}
 \item $\forall x(\atom{P}{x} \eif \enot \atom{Q}{x})$, $\exists x(\atom{P}{x} \eand \enot \atom{Q}{x})$
 
-\myanswer{Making the first sentence true and the second false:
+\myanswer{Tornando a primeira sentença verdadeira e a segunda falsa:
 \begin{ekey}
-	\item[\text{domain}] $0$
+	\item[\text{domínio}] $0$
 	\item[P(x)] % $\emptyset$
 	\item[Q(x)] % $\emptyset$
 \end{ekey}}
 \item $\exists x(\atom{P}{x} \eand \atom{Q}{x})$, $\exists x(\atom{P}{x} \eif \atom{Q}{x})$
 
-\myanswer{Making the first sentence false and the second true:
+\myanswer{Tornando a primeira sentença falsa e a segunda verdadeira:
 \begin{ekey}
-	\item[\text{domain}] $0$
+	\item[\text{domínio}] $0$
 	\item[P(x)] % $\emptyset$
 	\item[Q(x)] $0$
 \end{ekey}}
 \item $\forall x(\atom{P}{x}\eif \atom{Q}{x})$, $\forall x(\atom{P}{x} \eand \atom{Q}{x})$
 
-\myanswer{Making the first sentence true and the second false:
+\myanswer{Tornando a primeira sentença verdadeira e a segunda falsa:
 \begin{ekey}
-	\item[\text{domain}] $0$
+	\item[\text{domínio}] $0$
 	\item[P(x)] % $\emptyset$
 	\item[Q(x)] $0$
 \end{ekey}}
 \item $\forall x\exists y\,\atom{R}{x,y}$, $\exists x\forall y\,\atom{R}{x,y}$
 
-\myanswer{Making the first sentence true and the second false:
+\myanswer{Tornando a primeira sentença verdadeira e a segunda falsa:
 \begin{ekey}
-	\item[\text{domain}] $0$, $1$
+	\item[\text{domínio}] $0$, $1$
 	\item[R(x,y)] \ntuple{$0$, $1$}, \ntuple{$1$, $0$}
 \end{ekey}}
 \item $\forall x\exists y\,\atom{R}{x,y}$, $\forall x\exists y\,\atom{R}{y,x}$
 
-\myanswer{Making the first sentence false and the second true:
+\myanswer{Tornando a primeira sentença falsa e a segunda verdadeira:
 \begin{ekey}
-	\item[\text{domain}] $0$, $1$
+	\item[\text{domínio}] $0$, $1$
 	\item[R(x,y)] \ntuple{$0$, $0$}, \ntuple{$0$, $1$}
 \end{ekey}}
 \end{compactlist}
 
 
 \problempart
-Show that the following sentences are jointly satisfiable:
+Mostre que as seguintes sentenças são conjuntamente satisfatíveis:
 \begin{compactlist}
 \item $\atom{M}{a}, \enot \atom{N}{a}, Pa, \enot \atom{Q}{a}$
 \item $\atom{L}{e,e}, \atom{L}{e,g}, \enot \atom{L}{g,e}, \enot \atom{L}{g,g}$
@@ -290,21 +290,21 @@ Show that the following sentences are jointly satisfiable:
 \item $\enot \exists x \forall y\,\atom{R}{x,y}, \forall x \exists y\,\atom{R}{x,y}$
 \item $\enot \atom{R}{a,a}$, $\forall x (x=a \eor \atom{R}{x,a})$
 
-\myanswer{The sentences are both true in this interpretation:
+\myanswer{As sentenças são ambas verdadeiras nesta interpretação:
 \begin{ekey}
-	\item[\text{domain}] Harry, Sally
+	\item[\text{domínio}] Harry, Sally
 	\item[R(x,y)]\ntuple{Sally, Harry}
 	\item[a] Harry
 	\end{ekey}}
 \item $\forall x\forall y\forall z[(x=y \eor y=z )\eor x=z]$, $\exists x\exists y\ \enot x= y$
 
-\myanswer{There are no predicates or constants, so we only need to give a domain.
-Any domain with 2 elements will do.}
+\myanswer{Não há predicados nem constantes, portanto só precisamos fornecer um domínio. Qualquer domínio com 2 elementos servirá.}
+
 \item $\exists x\exists y((\atom{Z}{x} \eand \atom{Z}{y} )\eand x=y)$, $\enot \atom{Z}{d}$, $d=e$
 \end{compactlist}
 
 \problempart
-Show that the following arguments are invalid:
+Mostre que os seguintes argumentos são inválidos:
 \begin{compactlist}
 \item $\forall x(\atom{A}{x} \eif \atom{B}{x}) \therefore \exists x\,\atom{B}{x}$
 \item $\forall x(\atom{R}{x} \eif \atom{D}{x}), \forall x(\atom{R}{x} \eif \atom{F}{x}) \therefore \exists x(\atom{D}{x} \eand \atom{F}{x})$
@@ -320,30 +320,30 @@ Show that the following arguments are invalid:
 
 \stepcounter{chapter} % Reasoning about interpretations
 
-\chapter{Properties of relations}
+\chapter{Propriedades das relações}
 \setcounter{ProbPart}{0}
 
 \solutions
 \problempart
-Give examples of relations with the following properties:
+Dê exemplos de relações com as seguintes propriedades:
 \begin{compactlist}
-	\item Reflexive but not symmetric \hfill\myanswer{\gap{x} is no
-	older than \gap{y}}
-	\item Symmetric but not transitive \hfill\myanswer{\gap{x} is within
-	1~km of \gap{y}}
-	\item Transitive, symmetric, but not reflexive
-	\hfill\myanswer{\gap{x} is a full (i.e., not half) sibling of \gap{y}}
+	\item Reflexiva, mas não simétrica \hfill\myanswer{\gap{x} não é mais velho que \gap{y}}
+
+	\item Simétrica, mas não transitiva \hfill\myanswer{\gap{x} está a menos de 1~km de \gap{y}}
+
+	\item Transitiva, simétrica, mas não reflexiva
+	\hfill\myanswer{\gap{x} é irmão ou irmã pleno (isto é, não meio-irmão) de \gap{y}}
 \end{compactlist}
 
 \problempart
-Show that a relation can be both symmetric and anti-symmetric by
-giving an interpretation that makes both of the following sentences
-true:
+Mostre que uma relação pode ser simultaneamente simétrica e antissimétrica, fornecendo uma interpretação que torne verdadeiras as duas sentenças seguintes:
+
+
 \begin{align*}
 	& \forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,x})\\
 	& \forall x\forall y((\atom{R}{x,y} \eand \atom{R}{y,x}) \eif x=y)
 \end{align*}
 \myanswer{\begin{ekey}
-	\item[\text{domain}] $0$
+	\item[\text{domínio}] $0$
 	\item[\atom{R}{x,y}] \ntuple{$0$, $0$}
 \end{ekey}}
