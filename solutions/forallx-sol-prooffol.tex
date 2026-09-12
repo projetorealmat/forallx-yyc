@@ -3,9 +3,9 @@
 %\label{ch.NDFOL}
 %\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\chapter{Regras básicas da LPO}\setcounter{ProbPart}{0}
+\chapter{Basic rules for FOL}\setcounter{ProbPart}{0}
 \problempart
-Explique por que essas duas «demonstrações» estão incorretas. Além disso, forneça interpretações que invalidem as formas argumentativas falaciosas que essas «demonstrações» consagram:
+Explain why these two `proofs' are incorrect. Also, provide interpretations which would invalidate the fallacious argument forms the `proofs' enshrine:
 \begin{multicols}{2}
 	\begin{fitchproof}[arrayenv=tabular]
 		\hypo{Rxx}{\forall x\,\atom{R}{x,x}}
@@ -14,17 +14,17 @@ Explique por que essas duas «demonstrações» estão incorretas. Além disso, 
 		\have{Rxy}{\forall x \forall y\,\atom{R}{x,y}}\Ai{Ray}
 	\end{fitchproof}
 \vfill
-\noindent\myanswer{Ao usar $\forall$I, é preciso substituir \emph{todos} os nomes pela nova variável. Portanto, a linha 3 é ilegítima. Como contra-interpretação, considere:
+\noindent\myanswer{When using $\forall$I, you must replace \emph{all} names with the new variable. So line 3 is bogus. As a counterinterpretation, consider the following:
 \begin{center}
 \begin{tikzpicture}
 \node (atom4) at (0,0) {1};
 \node (atom5) at (2,0) {2};
-\draw[->, thick] (atom4)+(-0.15,0.15) arc (-330:-30:.3);
-\draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3);
+\draw[->, thick] (atom4)+(-0.15,0.15) arc (-330:-30:.3); 
+\draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3); 
 \end{tikzpicture}
-\bmlDescription{O número 1 está conectado a si mesmo por uma seta. O
-número 2 também está conectado a si mesmo por uma seta. 1 e 2 não estão
-conectados de nenhuma outra maneira.}
+\bmlDescription{The number 1 is connected to itself by an arrow. The
+number 2 is also connected to itself by an arrow. 1 and 2 are not
+otherwise connected.}
 \end{center}}
 \columnbreak
 	\begin{fitchproof}[arrayenv=tabular]
@@ -37,21 +37,21 @@ conectados de nenhuma outra maneira.}
 		\have{con}{\exists x\,\atom{R}{x,x}}\Ee{E, ass-Ex}
 	\end{fitchproof}
 \vfill
-\noindent\myanswer{A constante instanciadora, $a$, ocorre na linha (linha 2) à qual $\exists$E deve ser aplicada na linha 5. Portanto, o uso de $\exists$E na linha 5 é ilegítimo. Como contra-interpretação, considere:
+\noindent\myanswer{The instantiating constant, `$a$', occurs in the line (line 2) to which $\exists$E is to be applied on line 5. So the use of $\exists$E on line 5 is bogus. As a counterinterpretation, consider the following:
 \begin{center}
 \begin{tikzpicture}
 \node (atom4) at (0,0) {1};
 \node (atom5) at (2,0) {2};
 \draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
-\bmlDescription{Os números 1 e 2 estão conectados por setas em ambas as direções.}
+\bmlDescription{The numbers 1 and 2 are connected by arrows in both directions.}
 \end{center}}
 \end{multicols}
 
 
-\problempart
+\problempart 
 \label{pr.justifyFOLproof}
-As três demonstrações a seguir estão sem suas citações (regra e números de linha). Acrescente-as para transformá-las em demonstrações legítimas.
+The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs.
 \begin{compactlist}
 \item \myanswer{\begin{fitchproof}
 \hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}
@@ -100,13 +100,13 @@ As três demonstrações a seguir estão sem suas citações (regra e números d
 
 \problempart
 \label{pr.BarbaraEtc.proof1}
-Em \hyperref[pr.BarbaraEtc]{exercício \ref*{s:MoreMonadic}A},
-consideramos quinze figuras silogísticas da lógica aristotélica.
-Forneça demonstrações para cada uma das formas argumentativas. OBS.: será
-\emph{muito} mais fácil se você simbolizar, por exemplo, «Nenhum F é G» como
-$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$. \\\myanswer{Demonstraremos os quatro silogismos da Figura I; os demais são
-\emph{extremamente}
-semelhantes.
+In \hyperref[pr.BarbaraEtc]{exercise \ref*{s:MoreMonadic}A}, we
+considered fifteen syllogistic figures of Aristotelian logic. Provide
+proofs for each of the argument forms. NB: You will find it
+\emph{much} easier if you symbolize (for example) `No F is G' as
+`$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'. \\\myanswer{We
+prove the four Figure I syllogisms; the rest are \emph{extremely}
+similar.
 \begin{compactlist}
 \item \textbf{Barbara}
 \begin{fitchproof}
@@ -122,8 +122,8 @@ semelhantes.
 \have{hafa}{\atom{H}{a} \eif \atom{F}{a}}\ci{ha-fa}
 \have{con}{\forall x (\atom{H}{x} \eif \atom{F}{x})}\Ai{hafa}
 \end{fitchproof}
-\item\textbf{Celerant} é exatamente como Barbara, substituindo $F$ por $\enot F$ em toda parte.
-\item\textbf{Ferio}
+\item\textbf{Celerant} is exactly as Barbara, replacing `$F$' with `$\enot F$' throughout.
+\item\textbf{Ferio} 
 \begin{fitchproof}
 \hypo{gnf}{\forall x (\atom{G}{x} \eif \enot \atom{F}{x})}
 \hypo{hg}{\exists x (\atom{H}{x} \eand  \atom{G}{x})}
@@ -138,15 +138,15 @@ semelhantes.
 \close
 \have{con}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ee{hg, haga-hnf}
 \end{fitchproof}
-\item\textbf{Darii} é exatamente como Ferio, substituindo $\enot F$ por $F$ em toda parte.\end{compactlist}}
+\item\textbf{Darii} is exactly as Ferio, replacing `$\enot F$' with `$F$' throughout.\end{compactlist}}
 
 \
 
 \problempart
 \label{pr.BarbaraEtc.proof2}
-Aristóteles e seus sucessores identificaram outras formas silogísticas que dependiam da «importação existencial». Simbolize cada uma das formas argumentativas a seguir na LPO e ofereça demonstrações.
+Aristotle and his successors identified other syllogistic forms which depended upon `existential import'. Symbolize each of the following argument forms in FOL and offer proofs.
 \begin{compactlist}
-\newpage	\item \textbf{Barbari.} Algo é H. Todo G é F. Todo H é G. Logo: algum H é F
+\newpage	\item \textbf{Barbari.} Something is H. All G are F. All H are G. So: Some H is F
 	\\\myanswer{$\exists x\,\atom{H}{x}, \forall x(\atom{G}{x} \eif \atom{F}{x}), \forall x (\atom{H}{x} \eif \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$
 \begin{fitchproof}
 \hypo{imp}{\exists x\,\atom{H}{x}}
@@ -163,11 +163,11 @@ Aristóteles e seus sucessores identificaram outras formas silogísticas que dep
 \close
 \have{con}{\exists x (\atom{H}{x} \eand \atom{F}{x})}\Ee{imp, ha-hf}
 \end{fitchproof}}
-
-	\item \textbf{Celaront.} Algo é H. Nenhum G é F. Todo H é G. Logo: algum H não é F
+	
+	\item \textbf{Celaront.} Something is H. No G are F. All H are G. So: Some H is not F
 	\\\myanswer{$\exists x\,\atom{H}{x}, \forall x(\atom{G}{x} \eif \enot \atom{F}{x}), \forall x (\atom{H}{x} \eif \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$
-\\	A demonstração é exatamente como a de Barbari, substituindo $F$ por $\enot F$ em toda parte.}
-	\item \textbf{Cesaro.} Algo é H. Nenhum F é G. Todo H é G. Logo: algum H não é F
+\\	Proof is exactly as for Barbari, replacing `$F$' with `$\enot F$' throughout.}
+	\item \textbf{Cesaro.} Something is H. No F are G. All H are G. So: Some H is not F.
 	\\\myanswer{$\exists x\,\atom{H}{x}, \forall x(\atom{F}{x} \eif \enot \atom{G}{x}), \forall x (\atom{H}{x} \eif \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$
 \begin{fitchproof}
 \hypo{imp}{\exists x\,\atom{H}{x}}
@@ -190,7 +190,7 @@ Aristóteles e seus sucessores identificaram outras formas silogísticas que dep
 \have{con}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ee{imp, ha-hnf}
 \end{fitchproof}
 }
-\newpage	\item \textbf{Camestros.} Algo é H. Todo F é G. Nenhum H é G. Logo: algum H não é F
+\newpage	\item \textbf{Camestros.} Something is H. All F are G. No H are G. So: Some H is not F.
 	\\\myanswer{$\exists x\,\atom{H}{x}, \forall x(\atom{F}{x} \eif \atom{G}{x}), \forall x (\atom{H}{x} \eif \enot \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$
 \begin{fitchproof}
 \hypo{imp}{\exists x\,\atom{H}{x}}
@@ -208,7 +208,7 @@ Aristóteles e seus sucessores identificaram outras formas silogísticas que dep
 \have{con}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ee{imp, ha-hnf}
 \end{fitchproof}}
 
-	\item \textbf{Felapton.} Algo é G. Nenhum G é F. Todo G é H. Logo: algum H não é F
+	\item \textbf{Felapton.} Something is G. No G are F. All G are H. So: Some H is not F.
 	\\\myanswer{$\exists x\,\atom{G}{x}, \forall x (\atom{G}{x} \eif \enot \atom{F}{x}), \forall x(\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$
 \begin{fitchproof}
 \hypo{imp}{\exists x\,\atom{G}{x}}
@@ -225,11 +225,11 @@ Aristóteles e seus sucessores identificaram outras formas silogísticas que dep
 \close
 \have{con}{\exists x (\atom{H}{x} \eand \atom{F}{x})}\Ee{imp, ga-hnf}
 \end{fitchproof}}
-	\item \textbf{Darapti.} Algo é G. Todo G é F. Todo G é H. Logo: algum H é F
+	\item \textbf{Darapti.} Something is G. All G are F. All G are H. So: Some H is F.
 	\\\myanswer{$\exists x\,\atom{G}{x}, \forall x (\atom{G}{x} \eif \atom{F}{x}), \forall x(\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$\\
-		A demonstração é exatamente como a de Felapton, substituindo $\enot F$ por $F$ em toda parte.}
+	Proof is exactly as for Felapton, replacing `$\enot F$' with `$F$' throughout.}
 
-\newpage	\item \textbf{Calemos.} Algo é H. Todo F é G. Nenhum G é H. Logo: algum H não é F
+\newpage	\item \textbf{Calemos.} Something is H. All F are G. No G are H. So: Some H is not F.
 	\\\myanswer{$\exists x\,\atom{H}{x}, \forall x(\atom{F}{x} \eif \atom{G}{x}), \forall x(\atom{G}{x} \eif \enot \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$
 \begin{fitchproof}
 \hypo{imp}{\exists x\,\atom{H}{x}}
@@ -251,8 +251,8 @@ Aristóteles e seus sucessores identificaram outras formas silogísticas que dep
 \close
 \have{con}{\exists x (\atom{H}{x} \eand \atom{F}{x})}\Ee{imp, ha-hnf}
 \end{fitchproof}}
-
-	\item \textbf{Fesapo.} Algo é G. Nenhum F é G. Todo G é H. Logo: algum H não é F
+	
+	\item \textbf{Fesapo.} Something is G. No F is G. All G are H. So: Some H is not F.
 	\\\myanswer{$\exists x\,\atom{G}{x}, \forall x(\atom{F}{x} \eif \enot \atom{G}{x}), \forall x(\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$
 	\begin{fitchproof}
 \hypo{imp}{\exists x\,\atom{G}{x}}
@@ -275,7 +275,7 @@ Aristóteles e seus sucessores identificaram outras formas silogísticas que dep
 \have{con}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ee{imp, ga-hnf}
 \end{fitchproof}}
 
-\newpage	\item \textbf{Bamalip.} Algo é F. Todo F é G. Todo G é H. Logo: algum H é F
+\newpage	\item \textbf{Bamalip.} Something is F. All F are G. All G are H. So: Some H are F.
 	\\\myanswer{$\exists x\,\atom{F}{x}, \forall x(\atom{F}{x} \eif \atom{G}{x}), \forall x(\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$
 \begin{fitchproof}
 \hypo{imp}{\exists x\,\atom{F}{x}}
@@ -296,8 +296,8 @@ Aristóteles e seus sucessores identificaram outras formas silogísticas que dep
 
 \problempart
 \label{pr.someFOLproofs}
-Para cada uma das afirmações a seguir, forneça uma demonstração na LPO que mostre que ela é verdadeira.
-
+For each of the following claims, provide an FOL proof that shows it
+is true.
 \begin{compactlist}
 \item $\proves \forall x\,\atom{F}{x} \eif \forall y(\atom{F}{y} \eand \atom{F}{y})$
 \myanswer{\begin{fitchproof}
@@ -424,16 +424,16 @@ Para cada uma das afirmações a seguir, forneça uma demonstração na LPO que 
 \solutions
 \problempart
 \label{pr.likes}
-Escreva uma chave de simbolização para o argumento a seguir, simbolize-o e demonstre-o:
+Write a symbolization key for the following argument, symbolize it, and prove it:
 \begin{earg}
-\item Há alguém que gosta de todas as pessoas que gostam de todas as pessoas de quem ela
-gosta.
-\item[\texttherefore] Há alguém que gosta de si mesma.
+\item There is someone who likes everyone who likes everyone that she
+likes. 
+\item[\texttherefore] There is someone who likes herself.
 \end{earg}
-\myanswer{Chave de simbolização:
+\myanswer{Symbolization key:
 \begin{ekey}
-\item[\text{domínio}] todas as pessoas
-\item[\atom{L}{x,y}] \gap{x} gosta de \gap{y}
+\item[\text{domain}] all people
+\item[\atom{L}{x,y}] \gap{x} likes \gap{y}
 \end{ekey}
 $\exists x \forall y(\forall z(\atom{L}{x,z} \eif \atom{L}{y,z}) \eif \atom{L}{x,y}) \therefore \exists x  \,\atom{L}{x,x}$
 \begin{fitchproof}
@@ -454,7 +454,7 @@ $\exists x \forall y(\forall z(\atom{L}{x,z} \eif \atom{L}{y,z}) \eif \atom{L}{x
 \end{fitchproof}}
 
 \problempart
-Mostre que cada par de sentenças é interderivável.
+Show that each pair of sentences is interderivable.
 \begin{compactlist}
 \item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x})$, $\enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot \atom{A}{x}\eif \atom{B}{d})$, $\forall x\,\atom{A}{x} \eor \atom{B}{d}$
@@ -465,13 +465,13 @@ Mostre que cada par de sentenças é interderivável.
 \solutions
 \problempart
 \label{pr.FOLequivornot}
-Para cada um dos pares de sentenças a seguir: se forem interderiváveis, forneça demonstrações que mostrem isso. Se não forem, construa uma interpretação que mostre que não são logicamente equivalentes.
+For each of the following pairs of sentences: If they are interderivable, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
 \begin{compactlist}
-\item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$ \hfill \myanswer{Não são logicamente equivalentes}
-\\\myanswer{Contra-interpretação: tome como domínio os números $1$ e $2$. Faça $c$ designar $1$. Faça $\atom{P}{x}$ ser verdadeira somente para $1$. Faça $\atom{Q}{x}$ ser verdadeira somente para $2$.}
-\item $\forall x\forall y \forall z \atom{B}{x,y,z}, \forall x\,\atom{B}{x,x,x}$\hfill \myanswer{Não são logicamente equivalentes}
-\\\myanswer{Contra-interpretação: tome como domínio os números $1$ e $2$. Faça $\atom{B}{x,y,z}$ ser verdadeira somente para \ntuple{1,1,1} e \ntuple{2,2,2}.}
-\item $\forall x\forall y\,\atom{D}{x,y}, \forall y\forall x\,\atom{D}{x,y}$ \hfill \myanswer{interderiváveis\begin{multicols}{2}
+\item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$ \hfill \myanswer{Not logically equivalent}
+\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$c$' name $1$. Let `$\atom{P}{x}$' be true of and only of $1$. Let `$\atom{Q}{x}$' be true of, and only of, $2$.}
+\item $\forall x\forall y \forall z \atom{B}{x,y,z}, \forall x\,\atom{B}{x,x,x}$\hfill \myanswer{Not logically equivalent}
+\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$\atom{B}{x,y,z}$' be true of, and only of, \ntuple{1,1,1} and \ntuple{2,2,2}.}
+\item $\forall x\forall y\,\atom{D}{x,y}, \forall y\forall x\,\atom{D}{x,y}$ \hfill \myanswer{interderivable\begin{multicols}{2}
 \begin{fitchproof}[arrayenv=tabular]
 \hypo{AAd}{\forall x \forall y\,\atom{D}{x,y}}
 \have{Ad}{\forall y\,\atom{D}{a,y}}\Ae{AAd}
@@ -487,37 +487,37 @@ Para cada um dos pares de sentenças a seguir: se forem interderiváveis, forne�
 \have{AAd1}{\forall x \forall y\,\atom{D}{x,y}}\Ai{Ad1}
 \end{fitchproof}
 \end{multicols}}
-\item $\exists x\forall y\,\atom{D}{x,y}, \forall y\exists x\,\atom{D}{x,y}$ \hfill \myanswer{Não são logicamente equivalentes}
-\\\myanswer{Contra-interpretação: tome como domínio os números $1$ e $2$. Faça $Dxy$ valer somente para \ntuple{1,2} e \ntuple{2,1}. Isso é representado no diagrama:
+\item $\exists x\forall y\,\atom{D}{x,y}, \forall y\exists x\,\atom{D}{x,y}$ \hfill \myanswer{Not logically equivalent}
+\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$Dxy$' hold of and only of \ntuple{1,2} and \ntuple{2,1}. This is depicted thus:
 \begin{center}
 \begin{tikzpicture}
 \node (atom4) at (0,0) {1};
 \node (atom5) at (2,0) {2};
 \draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
-\bmlDescription{Os números 1 e 2 estão conectados por setas em ambas as direções.}
+\bmlDescription{The numbers 1 and 2 are connected by arrows in both directions.}
 \end{center}}
-\item $\forall x (\atom{R}{c,a} \eiff \atom{R}{x,a}), \atom{R}{c,a} \eiff \forall x\,\atom{R}{x,a}$ \hfill \myanswer{Não são logicamente equivalentes}
-\\\myanswer{Contra-interpretação: considere o diagrama a seguir, fazendo $a$ designar 1 e $c$ designar 2:
+\item $\forall x (\atom{R}{c,a} \eiff \atom{R}{x,a}), \atom{R}{c,a} \eiff \forall x\,\atom{R}{x,a}$ \hfill \myanswer{Not logically equivalent}
+\\\myanswer{Counter-interpretation: consider the following diagram, allowing `$a$' to name 1 and `$c$' to name 2:
 \begin{center}
 \begin{tikzpicture}
 \node (atom4) at (0,0) {1};
 \node (atom5) at (2,0) {2};
-\draw[->, thick] (atom4)+(-0.15,0.15) arc (-330:-30:.3);
-%\draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3);
+\draw[->, thick] (atom4)+(-0.15,0.15) arc (-330:-30:.3); 
+%\draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3); 
 %\draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
-\bmlDescription{O número 1 está conectado a si mesmo por uma seta. O
-número 2 não está conectado por nenhuma seta.}
+\bmlDescription{The number 1 is connected to itself by an arrow. The
+number 2 is not connected by any arrows.}
 \end{center}}
 \end{compactlist}
 
 \solutions
 \problempart
 \label{pr.FOLvalidornot}
-Para cada um dos argumentos a seguir: se for válido na LPO, forneça uma demonstração. Se for inválido, construa uma interpretação que mostre que é inválido.
+For each of the following arguments: If it is valid in FOL, give a proof. If it is invalid, construct an interpretation to show that it is invalid.
 \begin{compactlist}
-\item $\exists y\forall x\,\atom{R}{x,y} \therefore \forall x\exists y\,\atom{R}{x,y}$ \hfill \myanswer{Válido
+\item $\exists y\forall x\,\atom{R}{x,y} \therefore \forall x\exists y\,\atom{R}{x,y}$ \hfill \myanswer{Valid
 \begin{fitchproof}
 \hypo{EAr}{\exists y \forall x\,\atom{R}{x,y}}
 \open
@@ -528,18 +528,18 @@ Para cada um dos argumentos a seguir: se for válido na LPO, forneça uma demons
 \have{Er1}{\exists y\,\atom{R}{b,y}}\Ee{EAr, Ar-Er}
 \have{AEr}{\forall x \exists y\,\atom{R}{x,y}}\Ai{Er1}
 \end{fitchproof}}
-\item $\forall x\exists y\,\atom{R}{x,y} \therefore  \exists y\forall x\,\atom{R}{x,y}$ \hfill \myanswer{Inválido
-\\Contra-interpretação: tome como domínio os números $1$ e $2$. Faça $Rxy$ ser verdadeira para $1,2$ e para $2,1$ (mas não para $1,1$ nem para $2,2$).}
-\item $\exists x(\atom{P}{x} \eand \enot \atom{Q}{x}) \therefore \forall x(\atom{P}{x} \eif \enot \atom{Q}{x})$ \hfill \myanswer{Inválido
-\\Contra-interpretação: tome como domínio os números $1$ e $2$. Faça $Px$ ser verdadeira para tudo no domínio. Faça $Qx$ ser verdadeira somente para $2$.}
-\item $\forall x(\atom{S}{x} \eif \atom{T}{a}), \atom{S}{d} \therefore \atom{T}{a}$ \hfill \myanswer{Válido
+\item $\forall x\exists y\,\atom{R}{x,y} \therefore  \exists y\forall x\,\atom{R}{x,y}$ \hfill \myanswer{Not valid
+\\Counter interpretation: let the domain be the numbers $1$ and $2$. Let `$Rxy$' be true of $1$ and $2$, and of $2$ and $1$ (but not $1$ and itself or $2$ and itself).}
+\item $\exists x(\atom{P}{x} \eand \enot \atom{Q}{x}) \therefore \forall x(\atom{P}{x} \eif \enot \atom{Q}{x})$ \hfill \myanswer{Not valid
+\\Counter interpretation: let the domain be the numbers $1$ and $2$. Let `$Px$' be true of everything in the domain. Let `$Qx$' be true of, and only of, $2$.}
+\item $\forall x(\atom{S}{x} \eif \atom{T}{a}), \atom{S}{d} \therefore \atom{T}{a}$ \hfill \myanswer{Valid
 \begin{fitchproof}
 \hypo{Ast}{\forall x (\atom{S}{x} \eif \atom{T}{a})}
 \hypo{s}{\atom{S}{d}}
 \have{st}{\atom{S}{d} \eif \atom{T}{a}}\Ae{Ast}
 \have{t}{\atom{T}{a}}\ce{st, s}
 \end{fitchproof}}
-\item $\forall x(Ax\eif \atom{B}{x}), \forall x(\atom{B}{x} \eif \atom{C}{x}) \therefore \forall x(\atom{A}{x} \eif \atom{C}{x})$ \hfill \myanswer{Válido
+\item $\forall x(Ax\eif \atom{B}{x}), \forall x(\atom{B}{x} \eif \atom{C}{x}) \therefore \forall x(\atom{A}{x} \eif \atom{C}{x})$ \hfill \myanswer{Valid
 \begin{fitchproof}
 \hypo{Aab}{\forall x (\atom{A}{x} \eif \atom{B}{x})}
 \hypo{Abc}{\forall x (\atom{B}{x} \eif \atom{C}{x})}
@@ -553,9 +553,9 @@ Para cada um dos argumentos a seguir: se for válido na LPO, forneça uma demons
 \have{ac}{\atom{A}{a} \eif \atom{C}{a}}\ci{a-c}
 \have{Aac}{\forall x (\atom{A}{x} \eif \atom{C}{x})}\Ai{ac}
 \end{fitchproof}}
-\item $\exists x(\atom{D}{x} \eor \atom{E}{x}), \forall x(\atom{D}{x} \eif \atom{F}{x}) \therefore \exists x(\atom{D}{x} \eand \atom{F}{x})$ \hfill \myanswer{Inválido\\
-Contra-interpretação: tome como domínio o número $1$. Faça $Dx$ não valer para nada. Faça $Ex$ e $Fx$ valerem para tudo.}
-\item $\forall x\forall y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$ \hfill \myanswer{Válido
+\item $\exists x(\atom{D}{x} \eor \atom{E}{x}), \forall x(\atom{D}{x} \eif \atom{F}{x}) \therefore \exists x(\atom{D}{x} \eand \atom{F}{x})$ \hfill \myanswer{Invalid\\
+Counter-interpretation: let the domain be the number $1$ . Let `$Dx$' hold of nothing. Let both `$Ex$' and `$Fx$' hold of everything.}
+\item $\forall x\forall y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$ \hfill \myanswer{Valid
 \begin{fitchproof}
 \hypo{AArr}{\forall x \forall y (\atom{R}{x,y} \eor \atom{R}{y,x})}
 \have{Arr}{\forall y (\atom{R}{j,y} \eor \atom{R}{y,j})}\Ae{AArr}
@@ -571,23 +571,23 @@ Contra-interpretação: tome como domínio o número $1$. Faça $Dx$ não valer 
 \have{r5}{\atom{R}{j,j}}\oe{rr, r1-r2, r3-r4}
 \end{fitchproof}}
 
-\item $\exists x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$ \hfill \myanswer{Inválido\\
-Contra-interpretação: considere o diagrama a seguir, fazendo $j$ designar 2.
+\item $\exists x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$ \hfill \myanswer{Invalid\\
+Counter-interpretation: consider the following diagram, allowing `$j$' to name $2$.
 \begin{center}
 \begin{tikzpicture}
 \node (atom4) at (0,0) {1};
 \node (atom5) at (2,0) {2};
-\draw[->, thick] (atom4)+(-0.15,0.15) arc (-330:-30:.3);
-%\draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3);
+\draw[->, thick] (atom4)+(-0.15,0.15) arc (-330:-30:.3); 
+%\draw[->, thick] (atom5)+(0.15,-0.15) arc (-150:150:.3); 
 %\draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
-\bmlDescription{O número 1 está conectado a si mesmo por uma seta. O
-número 2 não está conectado por nenhuma seta.}
+\bmlDescription{The number 1 is connected to itself by an arrow. The
+number 2 is not connected by any arrows.}
 \end{center}}
-\item $\forall x\,\atom{P}{x} \eif \forall x\,\atom{Q}{x}, \exists x \enot \atom{P}{x} \therefore \exists x \enot \atom{Q}{x}$ \hfill \myanswer{Inválido\\
-Contra-interpretação: tome como domínio o número $1$. Faça $\atom{P}{x}$ não ser verdadeira para nada. Faça $\atom{Q}{x}$ ser verdadeira para tudo.}
+\item $\forall x\,\atom{P}{x} \eif \forall x\,\atom{Q}{x}, \exists x \enot \atom{P}{x} \therefore \exists x \enot \atom{Q}{x}$ \hfill \myanswer{Invalid\\
+Counter-interpretation: let the domain be the number $1$. Let `$\atom{P}{x}$' be true of nothing. Let `$\atom{Q}{x}$' be true of everything.}
 
-\item $\exists x\,\atom{M}{x} \eif \exists x\,\atom{N}{x}$, $\enot \exists x\,\atom{N}{x}\therefore  \forall x \enot \atom{M}{x}$\hfill \myanswer{Válido\\
+\item $\exists x\,\atom{M}{x} \eif \exists x\,\atom{N}{x}$, $\enot \exists x\,\atom{N}{x}\therefore  \forall x \enot \atom{M}{x}$\hfill \myanswer{Valid\\
 \begin{fitchproof}
 \hypo{EMiEN}{\exists x\,\atom{M}{x} \eif \exists x\,\atom{N}{x}}
 \hypo{nEN}{\enot \exists x\,\atom{N}{x}}
@@ -604,9 +604,9 @@ Contra-interpretação: tome como domínio o número $1$. Faça $\atom{P}{x}$ n�
 
 \stepcounter{chapter} % Proofs with quantifiers
 
-\chapter{Conversão de quantificadores}\setcounter{ProbPart}{0}
+\chapter{Conversion of quantifiers}\setcounter{ProbPart}{0}
 \problempart
-Mostre, em cada caso, que as sentenças são inconsistentes:
+Show in each case that the sentences are inconsistent:
 \begin{compactlist}
 \item $Sa\eif \atom{T}{m}, \atom{T}{m} \eif \atom{S}{a}, \atom{T}{m} \eand \enot \atom{S}{a}$
 \myanswer{\begin{fitchproof}
@@ -653,7 +653,7 @@ Mostre, em cada caso, que as sentenças são inconsistentes:
 \end{compactlist}
 
 \problempart
-Mostre que cada par de sentenças é interderivável: %TB: Novamente, foi preciso fazer alguma numeração manual para que as multicols tivessem espaço suficiente.
+Show that each pair of sentences is interderivable: %TB: Again, have to do some manual numbering to make the multicols have enough space.
 
 \begin{compactlist}
 \item $\forall x (\atom{A}{x} \eif \enot \atom{B}{x}), \enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
@@ -688,7 +688,7 @@ Mostre que cada par de sentenças é interderivável: %TB: Novamente, foi precis
 	\have{nb}{\enot \atom{B}{a}}\ni{b-red}
 \close
 \have{anb}{\atom{A}{a} \eif \enot \atom{B}{a}}\ci{a-nb}
-\have{Aanb}{\forall x (\atom{A}{x} \eif \enot \atom{B}{x})}\Ai{anb}
+\have{Aanb}{\forall x (\atom{A}{x} \eif \enot \atom{B}{x})}\Ai{anb}		
 \end{fitchproof}
 }
 \item $\forall x (\enot \atom{A}{x}\eif \atom{B}{d}), \forall x\,\atom{A}{x} \eor \atom{B}{d}$
@@ -730,9 +730,9 @@ Mostre que cada par de sentenças é interderivável: %TB: Novamente, foi precis
 
 
 \problempart
-Em \cref{s:MoreMonadic}, examinamos o que acontece quando movemos quantificadores «através» de vários operadores lógicos. Mostre que cada par de sentenças é interderivável:
+In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is interderivable:
 \begin{compactlist}
-\item $\forall x (\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$
+\item $\forall x (\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$ 
 \myanswer{
 \begin{fitchproof}
 \hypo{Afg}{\forall x (\atom{F}{x} \eand \atom{G}{a})}
@@ -765,7 +765,7 @@ Em \cref{s:MoreMonadic}, examinamos o que acontece quando movemos quantificadore
 	\open
 		\hypo{g}{\atom{G}{a}}
 		\have{Efg2}{\exists x\,\atom{F}{x} \eor \atom{G}{a}}\oi{g}
-	\close
+	\close		
 	\have{Efg3}{\exists x\,\atom{F}{x} \eor \atom{G}{a}}\oe{fg, f-Efg1, g-Efg2}
 \close
 \have{Efg4}{\exists x\,\atom{F}{x} \eor \atom{G}{a}}\Ee{Efg, fg-Efg3}
@@ -826,7 +826,7 @@ Em \cref{s:MoreMonadic}, examinamos o que acontece quando movemos quantificadore
 	\close
 	\have{g1}{\atom{G}{a}}\Ee{Ef, f-g}
 \close
-\have{Efg}{\exists x\,\atom{F}{x} \eif \atom{G}{a}}\ci{Ef-g1}
+\have{Efg}{\exists x\,\atom{F}{x} \eif \atom{G}{a}}\ci{Ef-g1}	
 \end{fitchproof}
 \begin{fitchproof}
 \hypo{Efg}{\exists x\,\atom{F}{x} \eif \atom{G}{a}}
@@ -836,7 +836,7 @@ Em \cref{s:MoreMonadic}, examinamos o que acontece quando movemos quantificadore
 	\have{g}{\atom{G}{a}}\ce{Efg,Ef}
 \close
 \have{fg}{\atom{F}{b} \eif \atom{G}{a}}\ci{f-g}
-\have{Afg}{\forall x(\atom{F}{x} \eif \atom{G}{a})}\Ai{fg}
+\have{Afg}{\forall x(\atom{F}{x} \eif \atom{G}{a})}\Ai{fg}	
 \end{fitchproof}
 }
 \item $\exists x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \exists x\,\atom{F}{x}$
@@ -934,8 +934,8 @@ Em \cref{s:MoreMonadic}, examinamos o que acontece quando movemos quantificadore
 \chapter{Rules for identity}\setcounter{ProbPart}{0}
 \problempart
 \label{pr.identity}
-Para cada uma das afirmações a seguir, forneça uma demonstração na LPO que mostre que ela é verdadeira.
-
+For each of the following claims, provide an FOL proof that shows it
+is true.
 \begin{compactlist}
 \item $\atom{P}{a} \eor \atom{Q}{b}, \atom{Q}{b} \eif b=c, \enot \atom{P}{a} \proves \atom{Q}{c}$
 \myanswer{
@@ -1092,14 +1092,14 @@ Para cada uma das afirmações a seguir, forneça uma demonstração na LPO que 
 \end{compactlist}
 
 \problempart
-Mostre que as sentenças a seguir são interderiváveis:
+Show that the following are interderivable:
 \begin{itemize}
 \item $\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)$
 \item $\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)$
 \end{itemize}
-E, portanto, que ambas podem plausivelmente simbolizar a sentença em português «Nick é o F».
+And hence that both have a decent claim to symbolize the English sentence `Nick is the F'.
 
-\noindent\myanswer{Em uma direção:
+\noindent\myanswer{In one direction:
 \begin{fitchproof}
 \hypo{prem}{\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)}
 \open
@@ -1115,7 +1115,7 @@ E, portanto, que ambas podem plausivelmente simbolizar a sentença em português
 \have{con}{\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)}\Ee{prem, prema-con1}
 \end{fitchproof}}
 
-\myanswer{Agora na outra direção:
+\myanswer{And now in the other:
 \begin{fitchproof}
 \hypo{prem}{\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)}
 \have{nin}{n = n}\ii{}
@@ -1126,14 +1126,14 @@ E, portanto, que ambas podem plausivelmente simbolizar a sentença em português
 \
 
 \problempart
-Em \cref{sec.identity}, afirmamos que as seguintes são simbolizações logicamente equivalentes da sentença «existe exatamente um F»:
+In \cref{sec.identity}, we claimed that the following are logically equivalent symbolizations of the English sentence `there is exactly one F':
 \begin{itemize}
 \item $\exists x\,\atom{F}{x} \eand \forall x \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]$
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
 \item $\exists x \forall y (\atom{F}{y} \eiff x = y)$
 \end{itemize}
-Mostre que todas são interderiváveis. (\emph{Dica}: para mostrar que três afirmações são interderiváveis, basta mostrar que a primeira prova a segunda, a segunda prova a terceira e a terceira prova a primeira; pense por quê.)\\
-\myanswer{Basta mostrar que a primeira prova a segunda, a segunda prova a terceira e a terceira prova a primeira, pois então poderemos mostrar que qualquer uma prova qualquer outra simplesmente encadeando as demonstrações (numerando as linhas quando necessário). Com isso, começamos a primeira demonstração:
+Show that they are all interderivable. (\emph{Hint}: to show that three claims are interderivable, it suffices to show that the first proves the second, the second proves the third and the third proves the first; think about why.)\\
+\myanswer{It suffices to show that the first proves the second, the second proves the third and the third proves the first, for we can then show that any of them prove any others, just by chaining the proofs together (numbering lines, where necessary. Armed with this, we start on the first proof:
 \begin{fitchproof}
 \hypo{prem}{\exists x\,\atom{F}{x} \eand \forall x \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]}
 \have{prem1}{\exists x\,\atom{F}{x}}\ae{prem}
@@ -1148,7 +1148,7 @@ Mostre que todas são interderiváveis. (\emph{Dica}: para mostrar que três afi
 		\have{aib}{a=b}\ce{prem2b, fafb}
 	\close
 	\have{fbaib}{\atom{F}{b} \eif a =b}\ci{fb-aib}
-	\have{Afb}{\forall y(\atom{F}{y} \eif a =y)}\Ai{fbaib}
+	\have{Afb}{\forall y(\atom{F}{y} \eif a =y)}\Ai{fbaib}	
 	\have{cona}{\atom{F}{a} \eand \forall y(\atom{F}{y} \eif a = y))}\ai{fa, Afb}
 	\have{con1}{\exists x \bigl[\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x = y)\bigr]}\Ei{cona}
 \close
@@ -1156,7 +1156,7 @@ Mostre que todas são interderiváveis. (\emph{Dica}: para mostrar que três afi
 \end{fitchproof}}
 
 \
-\\\myanswer{Agora a segunda demonstração:
+\\\myanswer{Now for the second proof:
 \begin{fitchproof}
 \hypo{prem}{\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]}
 \open
@@ -1179,7 +1179,7 @@ Mostre que todas são interderiváveis. (\emph{Dica}: para mostrar que três afi
 \have{con}{\exists x \forall y (\atom{F}{y} \eiff x = y)}\Ee{prem, prema-con1}
 \end{fitchproof}}
 
-\noindent\myanswer{E, por fim, a terceira demonstração:
+\noindent\myanswer{And finally, the third proof:
 \begin{fitchproof}
 \hypo{prem}{\exists x \forall y (\atom{F}{y} \eiff x = y)}
 \open
@@ -1209,17 +1209,17 @@ Mostre que todas são interderiváveis. (\emph{Dica}: para mostrar que três afi
 
 \
 \problempart
-Simbolize o seguinte argumento
+Symbolize the following argument
 	\begin{earg}
-		\item Existe exatamente um F.
-		\item Existe exatamente um G.
-		\item Nada é simultaneamente F e G.
-		\item[\texttherefore] Existem exatamente duas coisas que são F ou G.
+		\item There is exactly one F. 
+		\item There is exactly one G. 
+		\item Nothing is both F and G. 
+		\item[\texttherefore] There are exactly two things that are either F or G.
 	\end{earg}
-E ofereça uma demonstração.\\
+And offer a proof of it.\\
 \myanswer{
 \begin{earg}
-\item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
+\item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$ 
 \item $\exists x \bigl[\atom{G}{x} \eand \forall y ( \atom{G}{y} \eif x = y)\bigr]$
 \item $\forall x (\enot \atom{F}{x} \eor \enot \atom{G}{x}) \therefore \phantom{.}$
 \item[\texttherefore] $\exists x \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = z \eor y = z))\bigr]$
@@ -1273,12 +1273,12 @@ E ofereça uma demonstração.\\
 \have{con}{\exists x \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = z \eor y = z))\bigr]}\Ee{p1, p1a-con1}
 \end{fitchproof}}
 
-\chapter{Regras derivadas}\setcounter{ProbPart}{0}
+\chapter{Derived rules}\setcounter{ProbPart}{0}
 \problempart
-Ofereça demonstrações que justifiquem a adição da segunda e da quarta regras CQ como regras derivadas.
+Offer proofs which justify the addition of the second and fourth CQ
+rules as derived rules.
 
-
-\noindent\myanswer{Justificativa para a segunda regra:
+\noindent\myanswer{Justification for the second rule:
 \begin{fitchproof}
 	\hypo{nEa}{\enot \exists x\,\atom{A}{x}}
 	\open
@@ -1289,8 +1289,8 @@ Ofereça demonstrações que justifiquem a adição da segunda e da quarta regra
 	\have{na}{\enot \atom{A}{a}}\ni{a-red}
 	\have{Ana}{\forall x \enot \atom{A}{x}}\Ai{na}
 \end{fitchproof}
-A quarta regra é mais difícil de justificar. Eis uma demonstração relativamente direta, mas que usa a regra derivada DNE:
-
+The fourth rule is harder to justify.  Here is a proof that
+is relatively straightforward, but uses the derived rule DNE:
 \begin{fitchproof}
 \hypo{nAa}{\enot \forall x\,\atom{A}{x}}
   \open
@@ -1308,9 +1308,9 @@ A quarta regra é mais difícil de justificar. Eis uma demonstração relativame
 \have{nnEna}{\enot \enot \exists x \enot \atom{A}{x}}\ni{nEna-abs2}
 \have{Ena2}{\exists x \enot \atom{A}{x}}\dne{nnEna}
 \end{fitchproof}
-Eis uma demonstração que não usa regras derivadas:
+And here is a proof that does not use any derived rules:
 \begin{fitchproof}
-	\hypo{nAa}{\enot \forall x\,\atom{A}{x}}
+	\hypo{nAa}{\enot \forall x\,\atom{A}{x}} 
 	\open
         \hypo{H1}{\exists x \enot \atom{A}{x}}
         \have{H1C}{\exists x \enot \atom{A}{x} \eand \exists x \enot \atom{A}{x}}\ai{H1}
@@ -1328,7 +1328,7 @@ Eis uma demonstração que não usa regras derivadas:
           \have{EH4}{\exists x \enot \atom{A}{x}}\Ei{H4}
           \have{abs4}{\ered}\ri{EH4,H2}
           \have{Ab4}{\atom{A}{b}}\re{abs4}
-          \close
+          \close          
         \have{Ab}{\atom{A}{b}}\tnd{H3-H3R,H4-Ab4}
         \have{Aa}{\forall x\,\atom{A}{x}}\Ai{Ab}
         \have{abs}{\ered}\ri{Aa,nAa}

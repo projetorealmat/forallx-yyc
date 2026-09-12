@@ -1,8 +1,8 @@
-\Title{forall x: Calgary (Acessível). Uma introdução à lógica formal}
+\Title{forall x: Calgary (Accessible). An Introduction to Formal Logic}
 \Author{P. D. Magnus\sep Tim Button\sep J. Rob Loftis\sep Rob Trueman\sep Aaron Thomas-Bolduc\sep Richard Zach}
-\Subject{Um livro-texto introdutório de acesso aberto sobre lógica formal}
-\Language{pt-BR}
-\Keywords{lógica\sep lógica verofuncional\sep lógica proposicional\sep lógica de predicados\sep lógica de primeira ordem\sep dedução natural\sep Fitch}
+\Subject{An open access introductory textbook in formal logic}
+\Language{en-US}
+\Keywords{logic\sep truth-functional logic\sep propositional logic\sep predicate logic\sep first-order logic\sep natural deduction\sep Fitch}
 \Copyright{CC BY 4.0}
 \PublicationType{book}
 \URLlink{https://forallx.openlogicproject.org/}

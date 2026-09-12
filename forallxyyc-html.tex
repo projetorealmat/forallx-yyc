@@ -1,5 +1,5 @@
 % forallxyyc-html
-% Driver file to produce HTML etc. version of forall x:YYC
+% Driver file to produce HTML etc. version of forall x:YYC 
 % using LaTeXML/bookml
 
 \documentclass{book}
@@ -39,7 +39,7 @@ Richard Zach}
 
 \begin{wrapfigure}{r}{.4\textwidth}
 \includegraphics[width=.4\textwidth,
-  alt={Capa do livro com título, autores e um grande símbolo forall vermelho sobre fundo rosa}]
+  alt={Book cover with title, authors, and a large forall sign in red on pink background}]
   {forallxyyc.png}\bmlPlusClass{bml\_no\_invert fxcover}
 \end{wrapfigure}
 % \iflatexml
@@ -53,12 +53,12 @@ Richard Zach}
 % \<p class="date">\forallxversion{} (\gitCommitterDate~\gitAbbrevHash)\</p>
 % \</div>
 % \<div id="p1" class="ltx\_para">
-% \<p class="ltx\_p">Com contribuições de J. Robert Loftis e Aaron Thomas-Bolduc\</p>
+% \<p class="ltx\_p">With contributions by J. Robert Loftis and Aaron Thomas-Bolduc\</p>
 % \</div>
 % \else
    \maketitle
 
-   Com contribuições de J. Robert Loftis e Aaron Thomas-Bolduc
+   With contributions by J. Robert Loftis and Aaron Thomas-Bolduc
 % \fi
 
 \input{forallx-yyc-content}
@@ -67,8 +67,8 @@ Richard Zach}
 \setlength{\LTleft}{0pt}
 \setlength\LTright\fill
 
-\part*{Soluções de exercícios selecionados}
-\makeatletter\renewcommand{\appendixname}{Soluções para o capítulo}\makeatother
+\part*{Solutions to selected exercices}
+\makeatletter\renewcommand{\appendixname}{Solutions to Chapter}\makeatother
 \setcounter{chapter}{0}
 \def\thechapter{\arabic{chapter}}
 \input{solutions/forallx-sol-what}

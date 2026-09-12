@@ -2,44 +2,44 @@
 % Chapter on modal logic. Original author: Rob Trueman, York
 % University, http://www.rtrueman.com/
 
-\part{Lógica modal}
+\part{Modal logic}
 \label{ch.ML}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\chapter{Introdução à lógica modal}
+\chapter{Introducing modal logic}
 \label{Intro}
 
-A lógica modal (LM) é a lógica das \emph{modalidades}, maneiras pelas quais uma afirmação pode ser verdadeira. \emph{Necessidade} e \emph{possibilidade} são duas dessas modalidades: uma afirmação pode ser verdadeira, mas também pode ser necessariamente verdadeira (verdadeira independentemente de como o mundo poderia ter sido). Por exemplo, verdades lógicas não são apenas verdadeiras por causa de alguma característica acidental do mundo, mas verdadeiras aconteça o que acontecer. Uma afirmação possível pode não ser de fato verdadeira, mas poderia ter sido verdadeira. Usamos $\ebox$ para expressar necessidade e $\ediamond$ para expressar possibilidade. Assim, você pode ler $\ebox \metav{A}$ como \emph{É necessariamente o caso que} $\metav{A}$, e $\ediamond \metav{A}$ como \emph{É possivelmente o caso que} $\metav{A}$.
+Modal logic (ML) is the logic of \emph{modalities}, ways in which a statement can be true. \emph{Necessity} and \emph{possibility} are two such modalities: a statement can be true, but it can also be necessarily true (true no matter how the world might have been). For instance, logical truths are not just true because of some accidental feature of the world, but true come what may. A possible statement may not actually be true, but it might have been true. We use $\ebox$ to express necessity, and $\ediamond$ to express possibility. So you can read $\ebox \metav{A}$ as \emph{It is necessarily the case that} $\metav{A}$, and $\ediamond \metav{A}$ as \emph{It is possibly the case that} $\metav{A}$.
 
-Há muitos tipos diferentes de necessidade. É \emph{humanamente impossível} que eu corra a 160 km/h. Dado o tipo de criaturas que somos, nenhum ser humano consegue fazer isso. Mas ainda assim não é \emph{fisicamente impossível} que eu corra tão rápido. Ainda não temos a tecnologia, mas é certamente fisicamente possível trocar minhas pernas biológicas por pernas robóticas capazes de correr a 160 km/h. Em contraste, é fisicamente impossível que eu corra mais rápido que a luz. As leis da física impedem que qualquer objeto acelere até essa velocidade. Mas nem isso é \emph{logicamente} impossível. Não é uma contradição imaginar que as leis da física pudessem ter sido diferentes e permitido que os objetos se movessem mais rápido que a luz.
+There are lots of different kinds of necessity. It is \emph{humanly impossible} for me to run at 100mph. Given the sorts of creatures that we are, no human can do that. But still, it isn't \emph{physically impossible} for me to run that fast. We haven't got the technology to do it yet, but it is surely physically possible to swap my biological legs for robotic ones which could run at 100mph. By contrast, it is physically impossible for me to run faster than the speed of light. The laws of physics forbid any object from accelerating up to that speed. But even that isn't \emph{logically} impossible. It isn't a contradiction to imagine that the laws of physics might have been different, and that they might have allowed objects to move faster than light.
 
-Com que tipo de modalidade a LM lida? \emph{Com todas elas!} A LM é uma ferramenta muito flexível. Começamos com um conjunto básico de regras que governam $\ebox$ e $\ediamond$ e depois acrescentamos mais regras para adequá-las ao tipo de modalidade que nos interessa. Na verdade, a LM é tão flexível que nem precisamos pensar em $\ebox$ e $\ediamond$ como expressando \emph{necessidade} e \emph{possibilidade}. Poderíamos ler $\ebox$ como expressando \emph{demonstrabilidade}, de modo que $\ebox\metav{A}$ significa \emph{É demonstrável que} $\metav{A}$, e $\ediamond\metav{A}$ significa \emph{Não é refutável que} $\metav{A}$. De modo semelhante, podemos interpretar $\ebox$ como significando que $S$ \emph{sabe que $\metav{A}$} ou que $S$ \emph{acredita que $\metav{A}$}. Ou poderíamos ler $\ebox$ como expressando \emph{obrigação moral}, de modo que $\ebox \metav{A}$ significa \emph{É moralmente obrigatório que} $\metav{A}$, e $\ediamond \metav{A}$ significa \emph{É moralmente permitido que} $\metav{A}$. Tudo o que precisaríamos fazer seria elaborar as regras corretas para essas diferentes leituras de $\ebox$ e $\ediamond$.
+Which kind of modality does ML deal with? \emph{All of them!} ML is a very flexible tool. We start with a basic set of rules that govern $\ebox$ and $\ediamond$, and then add more rules to fit whatever kind of modality we are interested in. In fact, ML is so flexible that we do not even have to think of $\ebox$ and $\ediamond$ as expressing \emph{necessity} and \emph{possibility}. We might instead read $\ebox$ as expressing \emph{provability}, so that $\ebox\metav{A}$ means \emph{It is provable that} $\metav{A}$, and $\ediamond\metav{A}$ means \emph{It is not refutable that} $\metav{A}$. Similarly, we can interpret $\ebox$ to mean $S$ \emph{knows that $\metav{A}$} or $S$ \emph{believes that $\metav{A}$}. Or we might read $\ebox$ as expressing \emph{moral obligation}, so that $\ebox \metav{A}$ means \emph{It is morally obligatory that} $\metav{A}$, and $\ediamond \metav{A}$ means \emph{It is morally permissible that} $\metav{A}$. All we would need to do is cook up the right rules for these different readings of $\ebox$ and $\ediamond$.
 
-Uma fórmula modal é aquela que inclui operadores modais como $\ebox$ e $\ediamond$. Dependendo da interpretação que atribuímos a $\ebox$ e $\ediamond$, diferentes fórmulas modais serão demonstráveis ou válidas. Por exemplo, $\ebox \metav{A} \eif \metav{A}$ pode dizer que \textquotedblleft se $\metav{A}$ é necessário, então é verdadeiro\textquotedblright{}, se $\ebox$ for interpretado como necessidade. Pode expressar \textquotedblleft se $\metav{A}$ é conhecido, então é verdadeiro\textquotedblright{}, se $\ebox$ expressar verdade conhecida. Sob ambas as interpretações, $\ebox\metav{A} \eif \metav{A}$ é válida: todas as proposições necessárias são verdadeiras aconteça o que acontecer e, portanto, verdadeiras no mundo atual. E, se uma proposição é conhecida como verdadeira, ela tem de ser verdadeira (não se pode conhecer algo falso). No entanto, quando $\ebox$ é interpretado como \textquotedblleft acredita-se que\textquotedblright{} ou \textquotedblleft deve ser o caso que\textquotedblright{}, $\ebox\metav{A} \eif \metav{A}$ não é válida: podemos acreditar em proposições falsas. Nem toda proposição que deveria ser verdadeira é de fato verdadeira; por exemplo, \textquotedblleft todo assassino será levado à justiça\textquotedblright{}. Isso \emph{deveria} ser verdadeiro, mas não é.
+A modal formula is one that includes modal operators such as $\ebox$ and $\ediamond$. Depending on the interpretation we assign to $\ebox$ and $\ediamond$, different modal formulas will be provable or valid. For instance, $\ebox \metav{A} \eif \metav{A}$ might say that ``if $\metav{A}$ is necessary, it is true'', if $\ebox$ is interpreted as necessity. It might express ``if $\metav{A}$ is known, then it is true'', if $\ebox$ expresses known truth. Under both these interpretations, $\ebox\metav{A} \eif \metav{A}$ is valid: All necessary propositions are true come what may, so are true in the actual world. And if a proposition is known to be true, it must be true (one can't know something that's false). However, when $\ebox$ is interpreted as ``it is believed that'' or ``it ought to be the case that'', $\ebox\metav{A} \eif \metav{A}$ is not valid: We can believe false propositions. Not every proposition that ought to be true is in fact true, e.g., ``Every murderer will be brought to justice.'' This \emph{ought} to be true, but it isn't.
 
-Consideraremos diferentes tipos de sistemas de LM. Eles diferem nas regras de prova permitidas e na semântica que usamos para definir nossas noções lógicas. Os diferentes sistemas que consideraremos são chamados de \mlK, \mlT, \mlSfour{} e \mlSfive. \mlK{} é o sistema básico; tudo o que é válido ou demonstrável em \mlK{} também é demonstrável nos outros. Mas há coisas que \mlK{} não prova, como a fórmula $\ebox A \eif A$ para a letra sentencial~$A$. Portanto, \mlK{} não é uma lógica modal apropriada para necessidade e possibilidade (em que $\ebox\metav{A} \eif \metav{A}$ deveria ser demonstrável). Isso é demonstrável no sistema \mlT, de modo que \mlT{} é mais apropriado para lidar com necessidade e possibilidade, mas menos apropriado para lidar com crença ou obrigação, pois nesses casos $\ebox\metav{A} \eif \metav{A}$ não deveria ser (sempre) demonstrável. Talvez o melhor sistema de LM para necessidade e possibilidade — e, em qualquer caso, o mais amplamente aceito — seja o mais forte dos sistemas que consideramos, \mlSfive.
+We will consider different kinds of systems of ML. They differ in the rules of proof allowed, and in the semantics we use to define our logical notions. The different systems we'll consider are called \mlK, \mlT, \mlSfour, and \mlSfive. \mlK{} is the basic system; everything that is valid or provable in \mlK{} is also provable in the others. But there are some things that \mlK{} does not prove, such as the formula $\ebox A \eif A$ for sentence letter~$A$. So \mlK{} is not an appropriate modal logic for necessity and possibility (where $\ebox\metav{A} \eif \metav{A}$ should be provable). This is provable in the system \mlT, so \mlT{} is more appropriate when dealing with necessity and possibiliity, but less appropriate when dealing with belief or obligation, since then $\ebox\metav{A} \eif \metav{A}$ should \emph{not} (always) be provable. The perhaps best system of ML for necessity and possibility, and in any case the most widely accepted, is the strongest of the systems we consider, \mlSfive.
 
-\section{A linguagem da LM}
+\section{The Language of ML}
 \label{TFLtoML}
 
-Para fazer lógica modal, precisamos fazer duas coisas. Primeiro, queremos aprender a provar coisas na LM. Segundo, queremos ver como construir interpretações para a LM. Mas, antes de fazermos qualquer uma dessas coisas, precisamos explicar como construir sentenças na LM.
+In order to do modal logic, we have to do two things. First, we want to learn how to prove things in ML. Second, we want to see how to construct interpretations for ML. But before we can do either of these things, we need to explain how to construct sentences in ML.
 
-A linguagem da LM é uma extensão da LVF. Poderíamos ter começado com a LPO, o que nos daria a lógica modal quantificada (LMQ). A LMQ é muito mais poderosa que a LM, mas também é muito, muito mais complicada. Portanto, vamos manter as coisas simples e começar com a LVF.
+The language of ML is an extension of TFL. We could have started with FOL, which would have given us Quantified Modal Logic (QML). QML is much more powerful than ML, but it is also much, much more complicated. So we are going to keep things simple, and start with TFL.
 
-Assim como a LVF, a LM começa com um estoque infinito de \emph{átomos}. Eles são escritos como letras maiúsculas, com ou sem subscritos numéricos: $A$, $B$, \dots, $A_1$, $B_1$, \dots. Em seguida, tomamos todas as regras sobre como formar sentenças da LVF e acrescentamos duas para $\ebox$ e~$\ediamond$:
+Just like TFL, ML starts with an infinite stock of \emph{atoms}. These are written as capital letters, with or without numerical subscripts: $A$, $B$, \dots  $A_1$, $B_1$, \dots  We then take all of the rules about how to make sentences from TFL, and add two more for $\ebox$ and~$\ediamond$:
 \factoidbox{
 \begin{factoidnumber}
-\item Todo átomo da LM é uma sentença da LM.
-\item Se $\metav{A}$ é uma sentença da LM, então $\enot\metav{A}$ é uma sentença da LM.
-\item Se $\metav{A}$ e $\metav{B}$ são sentenças da LM, então $(\metav{A}\eand\metav{B})$ é uma sentença da LM.
-\item Se $\metav{A}$ e $\metav{B}$ são sentenças da LM, então $(\metav{A}\eor\metav{B})$ é uma sentença da LM.
-\item Se $\metav{A}$ e $\metav{B}$ são sentenças da LM, então $(\metav{A}\eif\metav{B})$ é uma sentença da LM.
-\item Se $\metav{A}$ e $\metav{B}$ são sentenças da LM, então $(\metav{A}\eiff\metav{B})$ é uma sentença da LM.
-\item Se $\metav{A}$ é uma sentença da LM, então $\ebox\metav{A}$ é uma sentença da LM.
-\item Se $\metav{A}$ é uma sentença da LM, então $\ediamond\metav{A}$ é uma sentença da LM.
-\item Nada mais é uma sentença da LM.
+	\item Every atom of ML is a sentence of ML.
+	\item If $\metav{A}$ is a sentence of ML, then $\enot\metav{A}$ is a sentence of ML.
+	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eand\metav{B})$ is a sentence of ML.
+	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eor\metav{B})$ is a sentence of ML.
+	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eif\metav{B})$ is a sentence of ML.
+	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eiff\metav{B})$ is a sentence of ML.
+	\item If $\metav{A}$ is a sentence of ML, then $\ebox\metav{A}$ is a sentence of ML.
+	\item If $\metav{A}$ is a sentence of ML, then $\ediamond\metav{A}$ is a sentence of ML.
+	\item Nothing else is a sentence of ML.
 \end{factoidnumber}}
-Eis alguns exemplos de sentenças da LM:
+Here are some examples of ML sentences:
 \begin{align*}
 	& A\\
 	& P\eor Q\\
@@ -49,21 +49,21 @@ Eis alguns exemplos de sentenças da LM:
 	& \ebox\ediamond (S\eand (Z\eiff (\ebox W \eor \ediamond Q)))
 \end{align*}
 
-\chapter{Dedução natural para a LM}
+\chapter{Natural deduction for ML}
 \label{Proof}
 
-Agora que sabemos formar sentenças na LM, podemos ver como \emph{provar} coisas na LM. Usaremos $\proves$ para expressar demonstrabilidade. Assim, $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n \proves \metav{C}$ significa que $\metav{C}$ pode ser provada a partir de $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$. No entanto, examinaremos vários sistemas diferentes de LM e, por isso, será útil acrescentar um subscrito para indicar em qual sistema estamos trabalhando. Por exemplo, se quisermos dizer que podemos provar $\metav{C}$ a partir de $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ \emph{no sistema}~\mlK, escreveremos: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n \proves_\mlK \metav{C}$.
+Now that we know how to make sentences in ML, we can look at how to \emph{prove} things in ML. We will use $\proves$ to express provability.  So $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n \proves \metav{C}$ means that $\metav{C}$ can be proven from $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$. However, we will be looking at a number of different systems of ML, and so it will be useful to add a subscript to indicate which system we are working with. So for example, if we want to say that we can prove $\metav{C}$ from $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ \emph{in system}~\mlK, we will write: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n \proves_\mlK \metav{C}$.
 
-\section{Sistema \mlK}
+\section{System \mlK}
 \label{K}
 
-Começamos com um sistema particularmente simples chamado \mlK, em homenagem ao filósofo e lógico Saul Kripke. \mlK{} inclui todas as regras de dedução natural da LVF, tanto as regras derivadas quanto as básicas. Em seguida, \mlK{} acrescenta um tipo especial de subprova e duas novas regras básicas para $\ebox$.
+We start with a particularly simple system called \mlK, in honour of the philosopher and logician Saul Kripke. \mlK{} includes all of the natural deduction rules from TFL, including the derived rules as well as the basic ones. \mlK{} then adds a special kind of subproof, plus two new basic rules for \ebox.
 
-Esse tipo especial de subprova se parece com uma subprova comum, exceto por ter um $\ebox{}$ em sua linha de hipótese em vez de uma fórmula. Nós as chamamos de \emph{subprovas estritas} — elas nos permitem raciocinar e provar coisas sobre possibilidades alternativas. O que podemos provar dentro de uma subprova estrita vale em qualquer possibilidade alternativa, em particular, em possibilidades alternativas nas quais as hipóteses vigentes em nossa prova podem não valer. Em uma subprova estrita, todas as hipóteses são desconsideradas e não podemos recorrer a nenhuma linha fora da subprova estrita (exceto quando permitido pelas regras modais dadas abaixo).
+The special kind of subproof looks like an ordinary subproof, except it has a~\ebox in its assumption line instead of a formula. We call them \emph{strict subproofs}---they allow as to reason and prove things about alternate possibilities. What we can prove inside a strict subproof holds in any alternate possibility, in particular, in alternate possibilities where the assumptions in force in our proof may not hold. In a strict subproof, all assumptions are disregarded, and we are not allowed to appeal to any lines outside the strict subproof (except as allowed by the modal rules given below).
 
-A regra $\ebox$I permite derivar uma fórmula $\ebox \metav{A}$ se pudermos derivar $\metav{A}$ dentro de uma subprova estrita. Ela é nosso método fundamental para introduzir $\ebox{}$ nas provas. A ideia básica é simples: se $\metav{A}$ é um teorema, então $\ebox \metav{A}$ também deve ser um teorema. (Lembre-se de que chamar $\metav{A}$ de teorema significa dizer que podemos provar $\metav{A}$ sem depender de hipóteses não descarregadas.)
+The \ebox I rule allows us to derive a formula $\ebox \metav{A}$ if we can derive $\metav{A}$ inside a strict subproof.  It is our fundamental method of introducing \ebox{} into proofs. The basic idea is simple enough: if $\metav{A}$ is a theorem, then $\ebox \metav{A}$ should be a theorem too. (Remember that to call $\metav{A}$ a theorem is to say that we can prove $\metav{A}$ without relying on any undischarged assumptions.)
 
-Suponha que quiséssemos provar $\ebox(A\eif A)$. A primeira coisa que precisamos fazer é provar que $A\eif A$ é um teorema. Você já sabe como fazer isso usando a LVF. Basta apresentar uma prova de $A\eif A$ que não comece com premissas, como esta:
+Suppose we wanted to prove $\ebox(A\eif A)$. The first thing we need to do is prove that $A\eif A$ is a theorem. You already know how to do that using TFL. You simply present a proof of $A\eif A$ which doesn't start with any premises, like this:
 \begin{fitchproof}
 		\open
 		\hypo{1}{A}\AS
@@ -71,7 +71,7 @@ Suponha que quiséssemos provar $\ebox(A\eif A)$. A primeira coisa que precisamo
 		\close
 		\have{3}{A\eif A}\ci{1-2}
 \end{fitchproof}
-Mas, para aplicar $\ebox$I, precisamos ter provado a fórmula dentro de uma subprova estrita. Como nossa prova de $A \eif A$ não usa hipótese alguma, isso é possível.
+But to apply \ebox I, we need to have proven the formula inside a strict subproof.  Since our proof of $A \eif A$ makes use of no assumptions at all, this is possible.
 \begin{fitchproof}
 		\open
 		\hypo{1}{\ebox}\AS
@@ -92,20 +92,20 @@ Mas, para aplicar $\ebox$I, precisamos ter provado a fórmula dentro de uma subp
 			\close
 			\have[\,]{o}{\ebox\metav{A}}\boxi{m-n}
 	\end{fitchproof}
-Nenhuma linha acima da linha $m$ pode ser citada por qualquer regra dentro da subprova estrita iniciada na linha $m$, a menos que a regra permita explicitamente essa citação.
+	No line above line $m$ may be cited by any rule within the strict subproof begun at line $m$ unless the rule explicitly allows it.
 }
-É essencial enfatizar que, em uma subprova estrita, você não pode usar nenhuma regra que recorra a algo provado fora da subprova estrita. Há exceções, como a regra $\ebox$E abaixo. Essas regras declararão explicitamente que podem ser usadas dentro de subprovas estritas e citarão linhas fora da subprova estrita. Essa restrição é essencial; caso contrário, obteríamos resultados terríveis. Por exemplo, poderíamos oferecer a seguinte prova para justificar $A\therefore \ebox A:
+It is essential to emphasize that in strict subproof you cannot use any rule which appeals to anything you proved outside of the strict subproof. There are exceptions, e.g., the \ebox E rule below. These rules will explicitly state that they can be used inside strict subproofs and cite lines outside the strict subproof. This restriction is essential, otherwise we would get terrible results. For example, we could provide the following proof to vindicate $A\therefore \ebox A$:
 \begin{fitchproof}
 		\hypo{1}{A}\PR
 		\open
 		\hypo{2}{\ebox}\AS
-		\have{3}{A}\by{uso incorreto de R}{1}
+		\have{3}{A}\by{incorrect use of R}{1}
 		\close
 		\have{4}{\ebox A}\boxi{2-3}
 \end{fitchproof}
-Isso não é uma prova legítima, pois na linha 3 recorremos à linha 1, embora a linha 1 venha antes do início da subprova estrita na linha 2.
+This is not a legitimate proof, because at line 3 we appealed to line 1, even though line 1 comes before the beginning of the strict subproof at line 2.
 
-Dissemos acima que uma subprova estrita nos permite raciocinar sobre situações possíveis alternativas arbitrárias. O que pode ser provado em uma subprova estrita vale em todas as situações alternativas e, portanto, é necessário. Essa é a ideia por trás da regra $\ebox$I. Por outro lado, se supusemos que algo é necessário, assumimos com isso que é verdadeiro em todas as situações possíveis alternativas. Assim, temos a regra $\ebox$E:
+We said above that a strict subproof allows us to reason about arbitrary alternate possible situations. What can be proved in a strict subproof holds in all alternate possible situtations, and so is necessary. This is the idea behind the \ebox I rule. On the other hand, if we've assumed that something is necessary, we have therewith assumed that it is true in all alternate possbile situations.  Hence, we have the rule \ebox E:
 
 \factoidbox{
 	\begin{fitchproof}
@@ -115,21 +115,21 @@ Dissemos acima que uma subprova estrita nos permite raciocinar sobre situações
 			\have[n]{n}{\metav{A}}\boxe{m}
 			\close
 		\end{fitchproof}
-	\ebox E só pode ser aplicada se a linha $m$ (que contém $\ebox A$) estiver \emph{fora} da subprova estrita em que a linha $n$ ocorre, e essa subprova estrita não fizer parte de outra subprova estrita que não contenha~$m$.
+		\ebox E can only be applied if line $m$ (containing $\ebox A$) lies \emph{outside} of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing~$m$.
 		}
-A regra $\ebox$E permite afirmar $\metav{A}$ dentro de uma subprova estrita se você tiver $\ebox \metav{A}$ fora dela. A restrição significa que você só pode fazer isso na primeira subprova estrita; não pode aplicar a regra $\ebox$E dentro de uma subprova estrita aninhada. Portanto, o seguinte não é permitido:
+\ebox E allows you to assert $\metav{A}$ inside a strict subproof if you have $\ebox \metav{A}$ outside the strict subproof. The restriction means that you can only do this in the first strict subproof, you cannot apply the \ebox E rule inside a nested strict subproof. So the following is not allowed:
 \begin{fitchproof}
 	\have{1}{\ebox\metav{A}}
 	\open
 	\hypo{2}{\ebox}\AS
 	\open
 	\hypo{3}{\ebox}\AS
-	\have{4}{\metav{A}}\by{uso incorreto de \ebox E}{1}
+	\have{4}{\metav{A}}\by{incorrect use of \ebox E}{1}
 \close\close
 \end{fitchproof}
-O uso incorreto de $\ebox$E na linha~$4$ viola a condição, pois, embora a linha~$1$ esteja fora da subprova estrita em que a linha~$4$ ocorre, a subprova estrita que contém a linha~$4$ está dentro da subprova estrita iniciada na linha~$2$, que não contém a linha~$1$.
+The incorrect use of \ebox E on line~$4$ violates the condition, because although line~$1$ lies outside the strict subproof in which line~$4$ falls, the strict subproof containing line~$4$ lies inside the strict subproof beginning on line~$2$ which does not contain line~$1$.
 
-Comecemos com um exemplo.
+Let's begin with an example.
 \begin{fitchproof}
 		\hypo{1}{\ebox A}\PR
 		\hypo{2}{\ebox B}\PR
@@ -141,7 +141,7 @@ Comecemos com um exemplo.
 		\close
 		\have{6}{\ebox(A \land B)}\boxi{3-6}
 \end{fitchproof}
-Também podemos misturar subprovas comuns e subprovas estritas:
+We can also mix regular subproofs and strict subproofs:
 \begin{fitchproof}
 		\hypo{1}{\ebox (A \eif B)}\PR
 		\open
@@ -156,18 +156,18 @@ Também podemos misturar subprovas comuns e subprovas estritas:
 		\close
 		\have{8}{\ebox A \eif \ebox B} \ci{2-7}
 \end{fitchproof}
-Isso é chamado de \emph{regra de distribuição}, pois nos diz que $\ebox$ \textquotedblleft se distribui\textquotedblright{} sobre $\eif$.
+This is called the \emph{Distribution Rule}, because it tells us that $\ebox$ `distributes' over $\eif$.
 
-As regras $\ebox$I e $\ebox$E parecem simples o suficiente — e, de fato, \mlK{} é um sistema muito simples! Mas \mlK{} é mais poderoso do que você talvez tenha imaginado. É possível provar várias coisas nele.
+The rules \ebox I and \ebox E look simple enough, and indeed \mlK{} is a very simple system! But \mlK{} is more powerful than you might have thought. You can prove a fair few things in it.
 
-\section{Possibilidade}
+\section{Possibility}
 \label{possibility}
 
-Na última subseção, examinamos todas as regras básicas para \mlK. Mas talvez você tenha notado que todas essas regras tratavam de necessidade, $\ebox$, e nenhuma tratava de possibilidade, $\ediamond$. Isso ocorre porque podemos \emph{definir} possibilidade em termos de necessidade:
+In the last subsection, we looked at all of the basic rules for \mlK. But you might have noticed that all of these rules were about necessity, $\ebox$, and none of them were about possibility, $\ediamond$. That's because we can \emph{define} possibility in terms of necessity:
 \factoidbox{
 $\ediamond\metav{A}=_{df} \enot \ebox\enot \metav{A}$
 }
-Em outras palavras, dizer que $\metav{A}$ é \emph{possivelmente verdadeira} é dizer que $\metav{A}$ \emph{não é necessariamente falsa}. Como resultado, não é realmente essencial acrescentar $\ediamond$, um símbolo especial para possibilidade, ao sistema \mlK. Ainda assim, o sistema será \emph{muito} mais fácil de usar se o fizermos e, por isso, acrescentaremos as seguintes regras definicionais:
+In other words, to say that $\metav{A}$ is \emph{possibly true}, is to say that $\metav{A}$ is \emph{not necessarily false}. As a result, it isn't really essential to add a $\ediamond$, a special symbol for possibility, into system \mlK. Still, the system will be \emph{much} easier to use if we do, and so we will add the following definitional rules:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox\enot \metav{A}}
@@ -178,9 +178,9 @@ Em outras palavras, dizer que $\metav{A}$ é \emph{possivelmente verdadeira} é 
 			\have[\, ]{n}{\enot\ebox\enot \metav{A}}\diadf{m}
 	\end{fitchproof}
 }
-É importante não pensar nessas regras como uma adição real a \mlK: elas apenas registram a maneira como $\ediamond$ é definido em termos de $\ebox$.
+Importantly, you should not think of these rules as any real addition to \mlK: they just record the way that $\ediamond$ is defined in terms of $\ebox$.
 
-Se quiséssemos, poderíamos encerrar aqui nossas regras para \mlK{}. Mas será útil acrescentar algumas regras de \emph{conversão modal}, que nos dão outras maneiras de alternar entre $\ebox$ e $\ediamond$:
+If we wanted, we could leave our rules for \mlK{} here. But it will be helpful to add some \emph{Modal Conversion} rules, which give us some more ways of flipping between $\ebox$ and $\ediamond$:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox \metav{A}}
@@ -199,32 +199,32 @@ Se quiséssemos, poderíamos encerrar aqui nossas regras para \mlK{}. Mas será 
 			\have[\, ]{n}{\enot\ediamond\metav{A}}\mc{m}
 	\end{fitchproof}
 }
-Essas regras de conversão modal também não acrescentam poder ao \mlK, pois podem ser derivadas das regras básicas juntamente com a definição de $\ediamond$.
+These Modal Conversion Rules are also no addition to the power of \mlK, because they can be derived from the basic rules, along with the definition of $\ediamond$.
 
-No sistema \mlK, usando Def\ediamond{} (ou as regras de conversão modal), podemos provar $\ediamond A \eiff \enot\ebox\enot A$. Ao apresentar o sistema \mlK, começamos com $\ebox$ como nosso símbolo modal primitivo e definimos $\ediamond$ em termos dele. Mas, se preferíssemos, poderíamos começar com $\ediamond$ como primitivo e então definir $\ebox$ da seguinte maneira: $\ebox\metav{A} =_{df} \enot \ediamond \enot \metav{A}$. Não há, portanto, nenhum sentido em que a necessidade seja de algum modo mais \emph{fundamental} que a possibilidade. Necessidade e possibilidade são igualmente fundamentais.
+In system \mlK, using Def\ediamond{} (or the modal conversion rules), one can prove $\ediamond A \eiff \enot\ebox\enot A$. When laying out system \mlK, we started with $\ebox$ as our primitive modal symbol, and then defined $\ediamond$ in terms of it. But if we had preferred, we could have started with $\ediamond$ as our primitive, and then defined $\ebox$ as follows: $\ebox\metav{A} =_{df} \enot \ediamond \enot \metav{A}$. There is, then, no sense in which necessity is somehow more \emph{fundamental} than possibility. Necessity and possibility are exactly as fundamental as each other.
 
-\section{Sistema \mlT}
+\section{System \mlT}
 \label{T}
 
-Até aqui, concentramos nossa atenção em \mlK, um sistema modal muito simples. \mlK{} é tão fraco que nem sequer permite provar $\metav{A}$ a partir de $\ebox\metav{A}$. Mas, se estamos pensando em $\ebox$ como expressando \emph{necessidade}, queremos poder fazer esta inferência: se $\metav{A}$ é \emph{necessariamente verdadeira}, então certamente deve ser \emph{verdadeira}!
+So far we have focussed on \mlK, which is a very simple modal system. \mlK{} is so weak that it will not even let you prove $\metav{A}$ from $\ebox\metav{A}$. But if we are thinking of $\ebox$ as expressing \emph{necessity}, then we will want to be able to make this inference: if $\metav{A}$ is \emph{necessarily true}, then it must surely be \emph{true}!
 
-Isso nos leva a um novo sistema, \mlT, que obtemos acrescentando a seguinte regra a \mlK:
+This leads us to a new system,  \mlT, which we get by adding the following rule to \mlK:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox \metav{A}}
 			\have[n]{n}{\metav{A}}\rt{m}
 	\end{fitchproof}
-	A linha $n$ na qual a regra R\mlT{} é aplicada não pode estar \emph{em} uma subprova estrita que comece depois da linha~$m$.
+	The line $n$ on which rule R\mlT{} is applied must \emph{not} lie in a strict subproof that begins after line~$m$.
 }
 
-A restrição da regra~\mlT{} é, de certo modo, o oposto da restrição da regra $\ebox$E: você só pode usar $\ebox$E em uma subprova estrita aninhada, mas não pode usar \mlT{} em uma subprova estrita aninhada.
+The restriction on rule \mlT{} is in a way the opposite of the restriction on \ebox E: you can \emph{only} use \ebox E in a nested strict subproof, but you cannot use \mlT{} in a nested strict subproof.
 
-Podemos provar em \mlT{} coisas que não podíamos provar em \mlK, por exemplo, $\ebox A \eif A$.
+We can prove things in \mlT{} which we could not prove in \mlK, e.g., $\ebox A \eif A$.
 
-\section{Sistema \mlSfour}
+\section{System \mlSfour}
 \label{S4}
 
-\mlT{} permite eliminar as caixas de necessidade: de $\ebox \metav{A}$, você pode inferir $\metav{A}$. Mas e se quiséssemos acrescentar caixas extras? Isto é, passar de $\ebox\metav{A}$ para $\ebox\ebox\metav{A}$? Isso não seria problema se tivéssemos provado $\ebox\metav{A}$ aplicando $\ebox$I a uma subprova estrita de $\metav{A}$ que, por sua vez, não usasse $\ebox$E. Nesse caso, $\metav{A}$ é uma tautologia e, aninhando a subprova estrita dentro de outra subprova estrita e aplicando $\ebox$I novamente, podemos provar $\ebox\ebox \metav{A}$. Por exemplo, poderíamos provar $\ebox\ebox (P\eif P)$ assim:
+\mlT{} allows you to strip away the necessity boxes: from $\ebox \metav{A}$, you may infer $\metav{A}$. But what if we wanted to add extra boxes? That is, what if we wanted to go from $\ebox\metav{A}$ to $\ebox\ebox\metav{A}$? Well, that would be no problem, if we had proved $\ebox\metav{A}$ by applying \ebox I to a strict subproof of $\metav{A}$ which itself does not use \ebox E. In that case, $\metav{A}$ is a tautology, and by nesting the strict subproof inside another strict subproof and applying \ebox I again, we can prove $\ebox\ebox \metav{A}$. For example, we could prove $\ebox\ebox (P\eif P)$ like this:
 \begin{fitchproof}
 		\open
 		\hypo{1}{\ebox}\AS
@@ -240,9 +240,9 @@ Podemos provar em \mlT{} coisas que não podíamos provar em \mlK, por exemplo, 
 		\close
 		\have{7}{\ebox\ebox(P\eif P)}\boxi{1-6}
 \end{fitchproof}
-Mas e se não tivéssemos provado $\ebox\metav{A}$ dessa maneira restrita, mas usado $\ebox$E dentro da subprova estrita de $\metav{A}$? Se colocarmos essa subprova estrita dentro de outra subprova estrita, a exigência da regra $\ebox$E de não citar uma linha que contenha $\ebox\metav{A}$ e esteja em outra subprova estrita ainda não concluída será violada. Ou, e se $\ebox\metav{A}$ fosse apenas uma hipótese com que começamos nossa prova? Poderíamos então inferir $\ebox\ebox\metav{A}$? Não em \mlT. E isso pode parecer uma limitação de \mlT{}, pelo menos se estivermos lendo $\ebox$ como expressando \emph{necessidade}. Parece intuitivo que, se $\metav{A}$ é necessariamente verdadeira, então não poderia ter \emph{deixado} de ser necessariamente verdadeira.
+But what if we didn't prove $\ebox\metav{A}$ in this restricted way, but used \ebox E inside the strict subproof of $\metav{A}$. If we put that strict subproof inside another strict subproof, the requirement of rule \ebox E to not cite a line containing $\ebox\metav{A}$ which lies in another strict subproof that has not yet concluded, is violated.  Or what if $\ebox\metav{A}$ were just an assumption we started our proof with? Could we infer $\ebox\ebox\metav{A}$ then? Not in  \mlT, we couldn't. And this might well strike you as a limitation of  \mlT, at least if we are reading $\ebox$ as expressing \emph{necessity}. It seems intuitive that if $\metav{A}$ is necessarily true, then it couldn't have \emph{failed} to be necessarily true.
 
-Isso nos leva a outro sistema novo, \mlSfour, que obtemos acrescentando a seguinte regra a~\mlT:
+This leads us to another new system, \mlSfour, which we get by adding the following rule to~\mlT:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
@@ -251,12 +251,12 @@ Isso nos leva a outro sistema novo, \mlSfour, que obtemos acrescentando a seguin
 			\have[n]{n}{\ebox\metav{A}}\rfour{m}
 			\close
 	\end{fitchproof}
-Observe que R$\mathbf{4}$ só pode ser aplicada se a linha $m$ (que contém $\ebox A$) estiver fora da subprova estrita em que a linha $n$ ocorre e se essa subprova estrita não fizer parte de outra subprova estrita que não contenha~$m$.
+	Note that R$\mathbf{4}$ can only be applied if line $m$ (containing $\ebox A$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing~$m$.
 }
 
-A regra R$\mathbf{4}$ se parece com a regra {\ebox}E, exceto pelo fato de que, em vez de produzir $\metav{A}$ a partir de $\ebox\metav{A}$, produz $\ebox\metav{A}$ dentro de uma subprova estrita. A restrição, contudo, é a mesma: R$\mathbf{4}$ permite \textquotedblleft importar\textquotedblright{} $\ebox \metav{A}$ para uma subprova estrita, mas não para uma subprova estrita aninhada dentro de outra subprova estrita. Porém, se isso for necessário, uma aplicação adicional de R$\mathbf{4}$ produzirá o mesmo resultado.
+Rule R$\mathbf{4}$ looks just like {\ebox}E, except that instead of yielding $\metav{A}$ from $\ebox\metav{A}$ it yields $\ebox\metav{A}$ inside a strict subproof. The restriction is the same, however: R$\mathbf{4}$ allows us to ``import'' $\ebox \metav{A}$ into a strict subproof, but not into a strict subproof itself nested inside a strict subproof. However, if that is necessary, an additional application of R$\mathbf{4}$ would have the same result.
 
-Agora podemos provar ainda mais resultados. Por exemplo:
+Now we can prove even more results. For instance:
 \begin{fitchproof}
 	\open
 	\hypo{1}{\ebox A}\AS
@@ -268,14 +268,14 @@ Agora podemos provar ainda mais resultados. Por exemplo:
 	\close
 	\have{5}{\ebox A \eif \ebox\ebox A}\ci{1-6}
 \end{fitchproof}
-De modo semelhante, podemos provar $\ediamond\ediamond A \eif \ediamond A$. Isso mostra que, além de permitir \emph{acrescentar} caixas extras, \mlSfour{} permite \emph{eliminar} diamantes extras: de $\ediamond\ediamond \metav{A}$, você sempre pode inferir $\ediamond\metav{A}$.
+Similarly, we can prove $\ediamond\ediamond A \eif \ediamond A$. This shows us that as well as letting us \emph{add} extra \emph{boxes}, \mlSfour{} lets us \emph{delete} extra \emph{diamonds}: from $\ediamond\ediamond \metav{A}$, you can always infer $\ediamond\metav{A}$.
 
-\section{Sistema \mlSfive}
+\section{System \mlSfive}
 \label{S5}
 
-Em \mlSfour, podemos sempre acrescentar uma caixa diante de outra caixa. Mas \mlSfour{} não nos permite automaticamente acrescentar uma caixa diante de um \emph{diamante}. Isto é, \mlSfour{} em geral não permite a inferência de $\ediamond\metav{A}$ para $\ebox\ediamond\metav{A}$. Mas, novamente, isso pode parecer uma deficiência, pelo menos se estivermos lendo $\ebox$ e $\ediamond$ como expressando \emph{necessidade} e \emph{possibilidade}. Parece intuitivo que, se $\metav{A}$ é possivelmente verdadeira, então não poderia ter \emph{deixado} de ser possivelmente verdadeira.
+In \mlSfour, we can always add a box in front of another box. But \mlSfour{} does not automatically let us add a box in front of a \emph{diamond}. That is, \mlSfour{} does not generally permit the inference from $\ediamond\metav{A}$ to $\ebox\ediamond\metav{A}$. But again, that might strike you as a shortcoming, at least if you are reading $\ebox$ and $\ediamond$ as expressing \emph{necessity} and \emph{possibility}. It seems intuitive that if $\metav{A}$ is possibly true, then it couldn't have \emph{failed} to be possibly true.
 
-Isso nos leva ao nosso sistema modal final, \mlSfive, que obtemos acrescentando a seguinte regra à \mlSfour:
+This leads us to our final modal system, \mlSfive, which we get by adding the following rule to \mlSfour:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot \ebox\metav{A}}
@@ -284,10 +284,10 @@ Isso nos leva ao nosso sistema modal final, \mlSfive, que obtemos acrescentando 
 			\have[n]{n}{\enot\ebox\metav{A}}\rfive{m}
 			\close
 	\end{fitchproof}
-A regra R$\mathbf{5}$ só pode ser aplicada se a linha $m$ (que contém $\enot \ebox\metav{A}$) estiver fora da subprova estrita em que a linha $n$ ocorre e se essa subprova estrita não fizer parte de outra subprova estrita que não contenha a linha~$m$.
+	Rule R$\mathbf{5}$ can only be applied if line $m$ (containing $\enot \ebox\metav{A}$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing line~$m$.
 }
 
-Essa regra nos permite mostrar, por exemplo, que $\ediamond\ebox A\proves_\mlSfive  \ebox A:
+This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfive  \ebox A$:
 \begin{fitchproof}
 	\hypo{1}{\ediamond\ebox A}\PR
 	\have{2}{\enot\ebox\enot\ebox A}\by{Def\ediamond}{1}
@@ -303,15 +303,15 @@ Essa regra nos permite mostrar, por exemplo, que $\ediamond\ebox A\proves_\mlSfi
 	\have{8}{\ebox A}\by{IP}{3-7}
 \end{fitchproof}
 
-Assim, além de acrescentar caixas diante de diamantes, também podemos eliminar diamantes diante de caixas.
+So, as well as adding boxes in front of diamonds, we can also delete diamonds in front of boxes.
 
-Obtivemos \mlSfive{} acrescentando a regra~R$\mathbf{5}$ à \mlSfour. Na
-verdade, poderíamos ter acrescentado a regra~R$\mathbf{5}$ à \mlT{}, deixado de fora a
-regra~R$\mathbf{4}$ e obtido um sistema equivalente. Isso ocorre porque
-tudo o que podemos provar usando a regra~R$\mathbf{4}$ também pode ser provado
-usando R\mlT{} junto com~R$\mathbf{5}$. Por exemplo, eis uma
-prova que mostra $\ebox A \proves_\mlSfive \ebox\ebox A$ sem
-usar~R$\mathbf{4}:
+We got \mlSfive{} by adding the rule~R$\mathbf{5}$ to~\mlSfour. In
+fact, we could have added rule~R$\mathbf{5}$ to \mlT{}, left out
+rule~R$\mathbf{4}$, and obtained an equivalent system. That's because
+everything we can prove using rule~R$\mathbf{4}$ can also be proved
+using R\mlT{} together with~R$\mathbf{5}$. For instance, here is a
+proof that shows $\ebox A \proves_\mlSfive \ebox\ebox A$ without
+using~R$\mathbf{4}$:
 \begin{fitchproof}
 	\hypo{1}{\ebox A}\PR
 	\open
@@ -336,14 +336,14 @@ usar~R$\mathbf{4}:
 	\close
 	\have{14}{\ebox\ebox A}\boxi{6-13}
 \end{fitchproof}
-\mlSfive{} é \emph{estritamente mais forte} que \mlSfour: há coisas que podem ser provadas em \mlSfive, mas não em \mlSfour{} (por exemplo, $\ediamond\ebox A \eif \ebox A).
+\mlSfive{} is \emph{strictly stronger} than \mlSfour: there are things which can be proved in \mlSfive, but not in \mlSfour{} (e.g., $\ediamond\ebox A \eif \ebox A$).
 
-O ponto importante sobre \mlSfive{} pode ser expresso assim: se você tem uma longa sequência de caixas e diamantes, em qualquer combinação, pode eliminar todos menos o último. Por exemplo, $\ediamond\ebox\ediamond\ediamond\ebox\ebox\ediamond\ebox A$ pode ser simplificada para simplesmente $\ebox A.
+The important point about \mlSfive{} can be put like this: if you have a long string of boxes and diamonds, in any combination whatsoever, you can delete all but the last of them. So for example, $\ediamond\ebox\ediamond\ediamond\ebox\ebox\ediamond\ebox A$ can be simplified down to just $\ebox A$.
 
 \practiceproblems
 
 \problempart
-Forneça provas para os seguintes:
+Provide proofs for the following:
 \begin{compactlist}
 	\item $\ebox (A\eand B)\proves_\mlK\ebox A \eand \ebox B$
 	\item $\ebox A\eand\ebox B\proves_\mlK\ebox( A \eand  B)$
@@ -352,7 +352,7 @@ Forneça provas para os seguintes:
 \end{compactlist}
 
 \problempart
-Forneça provas para os seguintes (sem usar conversão modal!):
+Provide proofs for the following (without using Modal Conversion!):
 \begin{compactlist}
 	\item $\enot\ebox A\proves_\mlK \ediamond \enot A$
 	\item $\ediamond\enot A\proves_\mlK\enot \ebox A$
@@ -361,7 +361,7 @@ Forneça provas para os seguintes (sem usar conversão modal!):
 \end{compactlist}
 
 \problempart
-Forneça provas para os seguintes (agora você pode usar conversão modal!):
+Provide proofs of the following (and now feel free to use Modal Conversion!):
 \begin{compactlist}
 	\item $\ebox(A\eif B), \ediamond A \proves_\mlK \ediamond B$
 	\item $\ebox A \proves_\mlK \enot\ediamond\enot A$
@@ -369,14 +369,14 @@ Forneça provas para os seguintes (agora você pode usar conversão modal!):
 \end{compactlist}
 
 \problempart
-Forneça provas para os seguintes:
+Provide proofs for the following:
 \begin{compactlist}
 	\item $P\proves_\mlT\ediamond P$
 	\item $\proves_\mlT (A\eand B)\eor(\enot \ebox A\eor\enot\ebox B)$
 \end{compactlist}
 
 \problempart
-Forneça provas para os seguintes:
+Provide proofs for the following:
 \begin{compactlist}
 	\item $\ebox(\ebox A\eif B), \ebox (\ebox B\eif C), \ebox A \proves_\mlSfour \ebox\ebox C$
 	\item $\ebox A \proves_\mlSfour \ebox(\ebox A \eor B)$
@@ -385,7 +385,7 @@ Forneça provas para os seguintes:
 
 
 \problempart
-Forneça provas em \mlSfive{} para os seguintes:
+Provide proofs in \mlSfive{} for the following:
 \begin{compactlist}
 	\item $\enot\ebox\enot A, \ediamond B\proves_\mlSfive \ebox(\ediamond A \eand \ediamond B)$
 	\item $A \proves_\mlSfive  \ebox\ediamond A$
@@ -393,52 +393,52 @@ Forneça provas em \mlSfive{} para os seguintes:
 \end{compactlist}
 
 
-\chapter{Semântica para a LM}
+\chapter{Semantics for ML}
 \label{Semantics}
 
-Até aqui, concentramos nossa atenção em apresentar vários sistemas de dedução natural para a LM. Agora veremos a \emph{semântica} da LM. Uma semântica para uma linguagem é um método de atribuir valores de verdade às sentenças dessa linguagem. Assim, uma semântica para a LM é um método de atribuir valores de verdade às sentenças da LM.
+So far, we have focussed on laying out various systems of Natural Deduction for ML. Now we will look at the \emph{semantics} for ML. A semantics for a language is a method for assigning truth-values to the sentences in that language. So a semantics for ML is a method for assigning truth-values to the sentences of ML.
 
-\section{Interpretações da LM}
+\section{Interpretations of ML}
 
-A ideia central da semântica da LM é esta. Na LM, as sentenças não são simplesmente verdadeiras ou falsas, ponto final. Uma sentença é verdadeira ou falsa \emph{em um determinado mundo possível}, e uma mesma sentença pode ser verdadeira em alguns mundos e falsa em outros. Dizemos então que $\ebox \metav{A}$ é verdadeira \ifeff{} $\metav{A}$ é verdadeira em \emph{todo} mundo, e que $\ediamond\metav{A}$ é verdadeira \ifeff{} $\metav{A}$ é verdadeira em \emph{algum} mundo.
+The big idea behind the semantics for ML is this. In ML, sentences are not just true or false, full stop. A sentence is true or false \emph{at a given possible world}, and a single sentence may well be true at some worlds and false at others. We then say that $\ebox \metav{A}$ is true \ifeff{} $\metav{A}$ is true at \emph{every} world, and $\ediamond\metav{A}$ is true \ifeff{} $\metav{A}$ is true at \emph{some} world.
 
-Essa é a ideia central, mas precisamos refiná-la e torná-la mais precisa. Para isso, precisamos introduzir a ideia de uma \emph{interpretação} da LM. A primeira coisa que você precisa incluir em uma interpretação é uma coleção de \emph{mundos possíveis}. Neste ponto, talvez você queira perguntar: o que exatamente é um mundo possível? A ideia intuitiva é que um mundo possível é outra maneira como este mundo poderia ter sido. Mas o que exatamente isso significa? É uma excelente questão filosófica, que examinaremos em detalhe mais adiante. Por ora, porém, não precisamos nos preocupar muito com ela. No que diz respeito à lógica formal, mundos possíveis podem ser qualquer coisa que você queira. Tudo o que importa é fornecer a cada interpretação uma coleção não vazia de coisas rotuladas como \define{mundos poss\'iveis}.
+That's the big idea, but we need to refine it and make it more precise. To do this, we need to introduce the idea of an \emph{interpretation} of ML. The first thing you need to include in an interpretation is a collection of \emph{possible worlds}. Now, at this point you might well want to ask: What exactly is a possible world? The intuitive idea is that a possible world is another way that this world could have been. But what exactly does that mean? This is an excellent philosophical question, and we will look at it in a lot of detail later. But we do not need to worry too much about it right now. As far as the formal logic goes, possible worlds can be anything you like. All that matters is that you supply each interpretation with a non-empty collection of things labelled \define{possible worlds}.
 
-Depois de escolher sua coleção de mundos possíveis, você precisa encontrar uma maneira de determinar quais sentenças da LM são verdadeiras em quais mundos possíveis. Para isso, precisamos introduzir a noção de uma \emph{função de valoração}. Quem estudou um pouco de matemática já estará familiarizado com a ideia geral de uma função. Para quem não estudou, uma função é uma entidade matemática que associa argumentos a valores. Isso pode parecer um pouco abstrato, mas alguns exemplos familiares ajudarão. Considere a função $x+1$. Ela recebe um número como argumento e devolve o número seguinte como valor. Assim, se você fornecer o número $1$ como argumento, a função $x+1$ devolverá o número $2$; se fornecer $2$, devolverá $3$; se fornecer $3$, devolverá $4$ \dots. Eis outro exemplo: a função $x+y$. Dessa vez, é preciso fornecer dois argumentos à função para que ela devolva um valor: se você fornecer $2$ e $3$, ela devolverá $5$; se fornecer $1003$ e $2005$, devolverá $3008$; e assim por diante.
+Once you have chosen your collection of possible worlds, you need to find some way of determining which sentences of ML are true at which possible worlds. To do that, we need to introduce the notion of a \emph{valuation function}. Those of you who have studied some maths will already be familiar with the general idea of a function. But for those of you who haven't, a function is a mathematical entity which maps arguments to values. That might sound a little bit abstract, but some familiar examples will help. Take the function $x+1$. This is a function which takes in a number as argument, and then spits out the next number as value. So if you feed in the number $1$ as an argument, the function $x+1$ will spit out the number $2$ as a value; if you feed in $2$, it will spit out $3$; if you feed in $3$, it will spit out $4$ \dots  Or here is another example: the function $x+y$. This time, you have to feed two arguments into this function if you want it to return a value: if you feed in $2$ and $3$ as your arguments, it spits out $5$; if you feed in $1003$ and $2005$, it spits out $3008$; and so on.
 
-Uma função de valoração para a LM recebe uma sentença e um mundo como argumentos e devolve um valor de verdade. Assim, se $\nu$ é uma função de valoração e $w$ é um mundo possível, $\nu_w(\metav{A})$ é o valor de verdade que $\nu$ associa a $\metav{A}$ e $w$: se $\nu_w(\metav{A})=F$, então $\metav{A}$ é falsa no mundo $w$ sob a valoração $\nu$; se $\nu_w(\metav{A})=T$, então $\metav{A}$ é verdadeira no mundo $w$ sob a valoração $\nu$.
+A valuation function for ML takes in a sentence and a world as its arguments, and then returns a truth-value as its value. So if $\nu$ is a valuation function and $w$ is a possible world, $\nu_w(\metav{A})$ is whatever truth-value $\nu$ maps $\metav{A}$ and $w$ to: if $\nu_w(\metav{A})=F$, then $\metav{A}$ is false at world $w$ on valuation $\nu$; if $\nu_w(\metav{A})=T$, then $\metav{A}$ is true at world $w$ on valuation $\nu$.
 
-Essas funções de valoração podem associar qualquer valor de verdade a qualquer sentença \emph{atômica} em qualquer mundo. Mas há regras sobre quais valores de verdade as sentenças mais complexas recebem em um mundo. Eis as regras para os conectivos da LVF:
+These valuation functions are allowed to map any \emph{atomic} sentence to any truth-value at any world. But there are rules about which truth-values more complex sentences get assigned at a world. Here are the rules for the connectives from TFL:
 \begin{compactlist}
 	\item $\nu_w(\enot\metav{A})=T$ \ifeff{} $\nu_w(\metav{A})=F$
-	\item $\nu_w(\metav{A}\eand\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ e $\nu_w(\metav{B})=T$
-	\item $\nu_w(\metav{A}\eor\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ ou $\nu_w(\metav{B})=T$, ou ambos
-	\item $\nu_w(\metav{A}\eif\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=F$ ou $\nu_w(\metav{B})=T$, ou ambos
-	\item $\nu_w(\metav{A}\eiff\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ e $\nu_w(\metav{B})=T$, ou $\nu_w(\metav{A})=F$ e $\nu_w(\metav{B})=F$
+	\item $\nu_w(\metav{A}\eand\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ and $\nu_w(\metav{B})=T$
+	\item $\nu_w(\metav{A}\eor\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ or $\nu_w(\metav{B})=T$, or both
+	\item $\nu_w(\metav{A}\eif\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=F$ or $\nu_w(\metav{B})=T$, or both
+	\item $\nu_w(\metav{A}\eiff\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ and $\nu_w(\metav{B})=T$, or $\nu_w(\metav{A})=F$ and $\nu_w(\metav{B})=F$
 \end{compactlist}
-Até aqui, essas regras devem parecer bastante familiares. Essencialmente, todas funcionam exatamente como as tabelas-verdade da LVF. A única diferença é que essas regras de tabela-verdade precisam ser aplicadas repetidamente, um mundo de cada vez.
+So far, these rules should all look very familiar. Essentially, they all work exactly like the truth-tables for TFL. The only difference is that these truth-table rules have to be applied over and over again, to one world at a time.
 
-Mas quais são as regras para os novos operadores modais, $\ebox$ e $\ediamond$? A ideia mais óbvia seria dar regras como estas:
+But what are the rules for the new modal operators, $\ebox$ and $\ediamond$? The most obvious idea would be to give rules like these:
 \begin{itemize}
 	\item $\nu_w(\ebox \metav{A})=T$ \ifeff{} $\forall w' (\nu_{w'}(\metav{A})=T)$
 	\item $\nu_w(\ediamond \metav{A})=T$ \ifeff{} $\exists w' (\nu_{w'}(\metav{A})=T)$
 \end{itemize}
-Esta é apenas a maneira formal sofisticada de escrever a ideia de que $\ebox\metav{A}$ é verdadeira em $w$ se, e somente se, $\metav{A}$ é verdadeira em \emph{todo} mundo, e $\ediamond\metav{A}$ é verdadeira em $w$ se, e somente se, $\metav{A}$ é verdadeira em \emph{algum} mundo.
+This is just the fancy formal way of writing out the idea that $\ebox\metav{A}$ is true at $w$ just in case $\metav{A}$ is true at \emph{every} world, and $\ediamond\metav{A}$ is true at $w$ just in case $\metav{A}$ is true at \emph{some} world.
 
-No entanto, embora essas regras sejam simples e elegantes, elas acabam não sendo tão úteis quanto gostaríamos. Como mencionamos, a LM pretende ser uma ferramenta muito flexível, um quadro geral para lidar com vários tipos de necessidade. Por isso, queremos que nossas regras semânticas para $\ebox$ e $\ediamond$ sejam um pouco menos rígidas. Podemos fazer isso introduzindo outra ideia nova: \emph{relações de acessibilidade}.
+However, while these rules are nice and simple, they turn out not to be quite as useful as we would like. As we mentioned, ML is meant to be a very flexible tool. It is meant to be a general framework for dealing with lots of different kinds of necessity. As a result, we want our semantic rules for $\ebox$ and $\ediamond$ to be a bit less rigid. We can do this by introducing another new idea: \emph{accessibility relations}.
 
-Uma relação de acessibilidade, $R$, é uma relação entre mundos possíveis. Grosso modo, dizer que $Rw_1w_2$ (em português: o mundo $w_1$ \emph{acessa} o mundo $w_2$) é dizer que $w_2$ é possível \emph{relativamente a} $w_1$. Em outras palavras, ao introduzir relações de acessibilidade, abrimos a possibilidade de que um dado mundo seja possível em relação a alguns mundos, mas não a outros. Essa ideia se mostra \emph{muito} fecunda no estudo dos sistemas modais. Agora podemos dar as seguintes regras semânticas para $\ebox$ e $\ediamond:
+An accessibility relation, $R$, is a relation between possible worlds. Roughly, to say that $Rw_1w_2$ (in English: world $w_1$ \emph{accesses} world $w_2$) is to say that $w_2$ is possible \emph{relative to} $w_1$. In other words, by introducing accessibility relations, we open up the idea that a given world might be possible relative to some worlds but not others. This turns out to be a \emph{very} fruitful idea when studying modal systems. We can now give the following semantic rules for $\ebox$ and $\ediamond$:
 \begin{compactlist}[resume]
 	\item $\nu_{w_1}(\ebox \metav{A})=T$ \ifeff{} $\forall w_2 (Rw_1w_2\eif \nu_{w_2}(\metav{A})=T)$
 	\item $\nu_{w_1}(\ediamond \metav{A})=T$ \ifeff{} $\exists w_2 (Rw_1w_2\eand \nu_{w_2}(\metav{A})=T)$
 \end{compactlist}
-Ou, em português corrente: $\ebox\metav{A}$ é verdadeira no mundo $w_1$ \ifeff{} $\metav{A}$ é verdadeira em todo mundo que é possível em relação a $w_1$; e $\ediamond\metav{A}$ é verdadeira no mundo $w_1$ \ifeff{} $\metav{A}$ é verdadeira em algum mundo que é possível em relação a $w_1$.
+Or in plain English: $\ebox\metav{A}$ is true in world $w_1$ \ifeff{} $\metav{A}$ is true in every world that is possible relative to $w_1$; and $\ediamond\metav{A}$ is true in world $w_1$ \ifeff{} $\metav{A}$ is true in some world that is possible relative to $w_1$.
 
-É isso. Uma interpretação para a LM consiste em três coisas: uma coleção de mundos possíveis, $W$; uma relação de acessibilidade, $R$; e uma função de valoração, $\nu$. A coleção de \textquotedblleft mundos possíveis\textquotedblright{} pode ser realmente uma coleção de qualquer coisa que você queira. Isso não importa, desde que $W$ não seja vazia. (Para muitos fins, é útil simplesmente tomar uma coleção de números como sua coleção de mundos.) E, por enquanto, $R$ pode ser qualquer relação que você queira entre os mundos em $W$. Pode ser uma relação que todo mundo em $W$ mantém com todo mundo em $W$, uma relação que nenhum mundo mantém com qualquer mundo, ou qualquer coisa intermediária. Por fim, $\nu$ pode associar qualquer valor de verdade a qualquer sentença atômica da LM em qualquer mundo. Tudo o que importa é que ela siga as regras (1)--(7) para as sentenças mais complexas.
+So, there we have it. An interpretation for ML consists of three things: a collection of possible worlds, $W$; an accessibility relation, $R$; and a valuation function, $\nu$. The collection of `possible worlds' can really be a collection of anything you like. It really doesn't matter, so long as $W$ isn't empty. (For many purposes, it is helpful just to take a collection of numbers to be your collection of worlds.) And for now, at least, $R$ can be any relation between the worlds in $W$ that you like. It could be a relation which every world in $W$ bears to every world in $W$, or one which no world bears to any world, or anything in between. And lastly, $\nu$ can map any atomic sentence of ML to any truth-value at any world. All that matters is that it follows the rules (1)--(7) when it comes to the more complex sentences.
 
-Vejamos um exemplo. Muitas vezes é útil apresentar interpretações da LM como diagramas, assim:
+Let's look at an example. It is often helpful to present interpretations of ML as diagrams, like this:
 \begin{center}
-	\begin{tikzpicture}[alt={Os números 1 e 2 estão conectados por setas. Há uma seta de 1 para si mesmo e uma seta de 2 para 1. O nó 1 está rotulado com A e não-B. O nó 2 está rotulado com não-A e B.}]
+	\begin{tikzpicture}[alt={The numbers 1 and 2 are connected by arrows. There are arrows from 1 to itself, and from 2 to 1. Node 1 is labelled by A and not-B. Node 2 is labelled by not-A and B.}]
 		\node (atom1) at (0,1) {1};
 		\node (atom2) at (3,1) {2};
 		\node (atom3) at (-0.25,0) {$A$};
@@ -446,57 +446,57 @@ Vejamos um exemplo. Muitas vezes é útil apresentar interpretações da LM como
 		\node (atom5) at (-0.25,-0.7) {$\enot B$};
 		\node (atom6) at (3,-0.7) {$B$};
 		\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3);
-		%\draw[->, thick] (atom2)+(0.15,-0.15) arc (-150:150:.3);
+		%\draw[->, thick] (atom2)+(0.15,-0.15) arc (-150:150:.3); 
 		\draw[<-, thick] (atom1) -- (atom2);
 		\draw (-0.8,-1.2) rectangle (0.4,0.5);
 		\draw (2.4,-1.2) rectangle (3.6,0.5);
 	\end{tikzpicture}
-	\bmlDescription{Os números 1 e 2 estão conectados por setas. Há uma seta de 1 para si mesmo e uma seta de 2 para 1. O nó 1 está rotulado com A e não-B. O nó 2 está rotulado com não-A e B.}
+	\bmlDescription{The numbers 1 and 2 are connected by arrows. There are arrows from 1 to itself, and from 2 to 1. Node 1 is labelled by A and not-B. Node 2 is labelled by not-A and B.}
 \end{center}
-Eis como ler a interpretação a partir desse diagrama. Ela contém apenas dois mundos, 1 e 2. As setas entre os mundos indicam a relação de acessibilidade. Assim, tanto 1 quanto 2 acessam 1, mas nem 1 nem 2 acessam 2. As caixas em cada mundo nos informam quais sentenças atômicas são verdadeiras em cada mundo: $A$ é verdadeira em 1, mas falsa em 2; $B$ é falsa em 1, mas verdadeira em 2. Você só pode escrever uma sentença atômica ou a negação de uma sentença atômica em uma dessas caixas. A partir disso, podemos descobrir quais valores de verdade as sentenças mais complexas recebem em cada mundo. Por exemplo, nessa interpretação, todas as sentenças a seguir são verdadeiras em $w_1:
+Here is how to read the interpretation off from this diagram. It contains just two worlds, 1 and 2. The arrows between the worlds indicate the accessibility relation. So 1 and 2 both access 1, but neither 1 nor 2 accesses 2. The boxes at each world let us know which atomic sentences are true at each world: $A$ is true at 1 but false at 2; $B$ is false at 1 but true at 2. You may only write an atomic sentence or the negation of an atomic sentence into one of these boxes. We can figure out what truth-values the more complex sentences get at each world from that. For example, on this interpretation all of the following sentences are true at $w_1$:
 \[
 A\eand\enot B,\qquad B\eif A,\qquad \ediamond A,\qquad \ebox\enot B
 \]
-Se você não gosta de pensar diagramaticamente, também pode apresentar uma interpretação assim:
+If you don't like thinking diagrammatically, then you can also present an interpretation like this:
 \begin{ekey}
 	\item[W]$1,2$
 	\item[R]$\langle 1,1\rangle, \langle 2,1\rangle$
 	\item[\nu]$\nu_{1}(A)=T, \nu_{1}(B)=F, \nu_{2}(A)=F, \nu_{2}(B)=T$
 \end{ekey}
-Em breve você terá a oportunidade de construir algumas interpretações próprias, quando começarmos a examinar \emph{contra-interpretações}.
+You will get the chance to cook up some interpretations of your own shortly, when we start looking at \emph{counter-interpretations}.
 
-\section{Uma semântica para o sistema \mlK}
+\section{A Semantics for System \mlK}
 \label{SemanticsK}
 
-Agora podemos estender à LM todos os conceitos semânticos da LVF:
+We can now extend all of the semantic concepts of TFL to cover ML:
 \factoidbox{
 	\begin{factoiditems}
 		\item $\metav{A}_1,\metav{A}_2, \dots
-		\metav{A}_n\therefore\metav{C}$ é uma \define{validade modal} \ifeff{}
-		não há mundo em nenhuma interpretação no qual
-		$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e
-		$\metav{C}$ seja falsa.
+		\metav{A}_n\therefore\metav{C}$ is \define{modally valid} \ifeff{}
+		there is no world in any interpretation at which
+		$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and
+		$\metav{C}$ is false.
 
-		\item $\metav{A}$ é uma \define{verdade modal} \ifeff{} $\metav{A}$
-		é verdadeira em todo mundo de toda interpretação.
+		\item $\metav{A}$ is a \define{modal truth} \ifeff{} $\metav{A}$
+		is true at every world in every interpretation.
 
-		\item $\metav{A}$ é uma \define{contradi\c{c}\~ao modal} \ifeff{}
-		$\metav{A}$ é falsa em todo mundo de toda interpretação.
+		\item $\metav{A}$ is a \define{modal contradiction} \ifeff{}
+		$\metav{A}$ is false at every world in every interpretation.
 
-		\item $\metav{A}$ é \define{satisfat\'ivel modalmente} \ifeff{}
-		$\metav{A}$ é verdadeira em algum mundo de alguma interpretação.
+		\item $\metav{A}$ is \define{modally satisfiable} \ifeff{}
+		$\metav{A}$ is true at some world in some interpretation.
 	\end{factoiditems}
 		}
-(Daqui em diante, omitiremos as qualificações explícitas \textquotedblleft modal\textquotedblright{}, pois elas podem ser subentendidas.)
+(From now on we will drop the explicit `modal' qualifications, since they can be taken as read.)
 
-Também podemos estender o uso de $\entails$. No entanto, precisamos acrescentar subscritos novamente, assim como fizemos com $\proves$. Portanto, quando quisermos dizer que $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ é válido, escreveremos: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$.
+We can also extend our use of $\entails$. However, we need to add subscripts again, just as we did with $\proves$. So, when we want to say that $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is valid, we will write: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$.
 
-Para compreender melhor essa semântica, apresentemos algumas contra-interpretações. Considere a seguinte afirmação (falsa):
+Let's get more of a feel for this semantics by presenting some counter-interpretations. Consider the following (false) claim:
 \[\enot A\entails_\mlK \enot \ediamond A\]
-Para apresentar uma contra-interpretação dessa afirmação, precisamos construir uma interpretação que torne $\enot A$ verdadeira em algum mundo $w$ e $\enot\ediamond A$ falsa em $w$. Eis uma interpretação, apresentada diagramaticamente:
+In order to present a counter-interpretation to this claim, we need to cook up an interpretation which makes $\enot A$ true at some world $w$, and $\enot\ediamond A$ false at $w$. Here is one such interpretation, presented diagrammatically:
 \begin{center}
-
-	\begin{tikzpicture}[alt={Os números 1 e 2 estão conectados por uma seta de 1 para 2. O nó 1 está rotulado com não-A e o nó 2 está rotulado com A.}]
+	\begin{tikzpicture}[alt={The numbers 1 and 2 are connected by an arrow from 1
+to 2. Node 1 is labelled not-A and node 2 is labelled A.}]
 		\node (atom1) at (0,1) {1};
 		\node (atom2) at (3,1) {2};
 		\node (atom3) at (-0.25,0) {$\enot A$};
@@ -505,68 +505,68 @@ Para apresentar uma contra-interpretação dessa afirmação, precisamos constru
 		\draw (-0.8,-0.6) rectangle (0.4,0.5);
 		\draw (2.4,-0.6) rectangle (3.6,0.5);
 	\end{tikzpicture}
-
-	\bmlDescription{Os números 1 e 2 estão conectados por uma seta de 1 para 2. O nó 1 está rotulado com não-A e o nó 2 está rotulado com A.}
+\bmlDescription{The numbers 1 and 2 are connected by an arrow from 1
+to 2. Node 1 is labelled not-A and node 2 is labelled A.}
 \end{center}
-É fácil ver que isso funciona como contra-interpretação para nossa afirmação. Primeiro, $\enot A$ é verdadeira no mundo $1$. Segundo, $\enot\ediamond A$ é falsa em $1$: $A$ é verdadeira em $2$ e $2$ é acessível a partir de $1$. Portanto, há um mundo nessa interpretação em que $\enot A$ é verdadeira e $\enot\ediamond A$ é falsa; assim, não é o caso que $\enot A\entails_\mlK\enot\ediamond A$.
+It is easy to see that this will work as a counter-interpretation for our claim. First, $\enot A$ is true at world $1$. And second, $\enot\ediamond A$ is false at $1$: $A$ is true at $2$, and $2$ is accessible from $1$. So there is some world in this interpretation where $\enot A$ is true and $\enot\ediamond A$ is false, so it is not the case that $\enot A\entails_\mlK\enot\ediamond A$.
 
-Por que escolhemos o subscrito \mlK? Acontece que há uma relação importante entre o sistema \mlK{} e a definição de validade que acabamos de dar. Em particular, temos os dois resultados seguintes:
+Why did we choose the subscript \mlK? Well, it turns out that there is an important relationship between system \mlK{} and the definition of validity we have just given. In particular, we have the following two results:
 \begin{compactlist}
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$
+	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$
+	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$
 \end{compactlist}
-O primeiro resultado é conhecido como resultado de \emph{correção}, pois nos diz que as regras de \mlK{} são boas regras corretas: se você pode justificar um argumento fornecendo uma prova dele usando o sistema \mlK, então esse argumento é realmente válido. O segundo resultado é conhecido como resultado de \emph{completude}, pois nos diz que as regras de \mlK{} são suficientemente amplas para capturar todos os argumentos válidos: se um argumento é válido, será possível oferecer uma prova em \mlK{} que o justifique.
+The first result is known as a \emph{soundness} result, since it tells us that the rules of \mlK{} are good, sound rules: if you can vindicate an argument by giving a proof for it using system \mlK, then that argument really is valid. The second result is known as a \emph{completeness} result, since it tells us that the rules of \mlK{} are broad enough to capture all of the valid arguments: if an argument is valid, then it will be possible to offer a proof in \mlK{} which vindicates it.
 
-Agora, afirmar esses resultados é uma coisa, prová-los é outra. No entanto, não tentaremos prová-los aqui. Mas a ideia por trás da prova de correção talvez torne mais claro como funcionam as subprovas estritas.
+Now, it is one thing to state these results, quite another to prove them. However, we will not try to prove them here. But the idea behind the proof of soundness will perhaps make clearer how strict subproofs work.
 
-Em uma subprova estrita, não temos permissão para usar informações de fora dela, exceto o que importamos para dentro usando $\ebox$E. Se supusemos ou provamos $\ebox \metav{A}$, pela $\ebox$E podemos usar $\metav{A}$ dentro de uma subprova estrita. E, em \mlK, essa é a única maneira de importar uma fórmula para uma subprova estrita. Portanto, tudo o que pode ser provado dentro de uma subprova estrita deve seguir de fórmulas $\metav{A}$ para as quais temos $\ebox \metav{A}$ fora da subprova estrita. Imaginemos que estamos raciocinando sobre o que é verdadeiro em um mundo possível de alguma interpretação. Se sabemos que $\ebox\metav{A}$ é verdadeira nesse mundo possível, sabemos que $\metav{A}$ é verdadeira em todos os mundos acessíveis. Assim, tudo o que é provado dentro de uma subprova estrita é verdadeiro em todos os mundos possíveis acessíveis. É por isso que $\ebox$I é uma regra correta.
+In a strict subproof, we are not allowed to make use of any information from outside the strict subproof, except what we import into the strict subproof using \ebox E. If we've assumed or proved $\ebox \metav{A}$, by \ebox E, we can used $\metav{A}$ inside a strict subproof. And in \mlK, that is the only way to import a formula into a strict subproof. So everything that can be proved inside a strict subproof must follow from formulas $\metav{A}$ where outside the strict subproof we have $\ebox \metav{A}$. Let's imagine that we are reasoning about what's true in a possible world in some interpretation. If we know that $\ebox\metav{A}$ is true in that possible world, we know that $\metav{A}$ is true in all accessible worlds. So, everything proved inside a strict subproof is true in all accessible possible worlds. That is why \ebox I is a sound rule.
 
-\section{Uma semântica para o sistema \mlT}
+\section{A Semantics for System \mlT}
 \label{SemanticsT}
 
-Há pouco dissemos que o sistema \mlK{} é correto e completo. O que isso implica para os outros sistemas modais que examinamos, \mlT, \mlSfour{} e \mlSfive? Bem, todos eles são \emph{incorretos} em relação à definição de validade dada acima. Por exemplo, todos esses sistemas permitem inferir $A$ a partir de $\ebox A$, embora $\ebox A\nentails_\mlK A$.
+A few moments ago, we said that system \mlK{} is sound and complete. Where does that leave the other modal systems we looked at, namely  \mlT, \mlSfour{} and \mlSfive? Well, they are all \emph{unsound}, relative to the definition of validity we gave above. For example, all of these systems allow us to infer $A$ from $\ebox A$, even though $\ebox A\nentails_\mlK A$.
 
-Isso significa que esses sistemas são uma perda de tempo? De modo algum! Esses sistemas são incorretos apenas \emph{em relação à definição de validade dada acima}. (Ou, em símbolos, são incorretos em relação a $\entails_\mlK$.) Assim, ao lidar com esses sistemas modais mais fortes, precisamos apenas modificar nossa definição de validade para ajustá-la. É aqui que as relações de acessibilidade se tornam muito úteis.
+Does that mean that these systems are a waste of time? Not at all! These systems are only unsound \emph{relative to the definition of validity we gave above}. (Or to use symbols, they are unsound relative to $\entails_\mlK$.) So when we are dealing with these stronger modal systems, we just need to modify our definition of validity to fit. This is where accessibility relations come in really handy.
 
-Quando introduzimos a ideia de uma relação de acessibilidade, dissemos que ela poderia ser qualquer relação entre mundos: poderia relacionar todo mundo a todo mundo, nenhum mundo a qualquer mundo ou qualquer situação intermediária. Era assim que pensávamos nas relações de acessibilidade em nossa definição de $\entails_\mlK$. Mas, se quiséssemos, poderíamos começar a impor algumas restrições à relação de acessibilidade. Em particular, poderíamos exigir que ela fosse \emph{reflexiva}:
+When we introduced the idea of an accessibility relation, we said that it could be any relation between worlds that you like: you could have it relating every world to every world, no world to any world, or anything in between. That is how we were thinking of accessibility relations in our definition of $\entails_\mlK$. But if we wanted, we could start putting some restrictions on the accessibility relation. In particular, we might insist that it has to be \emph{reflexive}:
 \[\forall w\, Rww\]
-Em português: todo mundo acessa a si mesmo. Ou, em termos de possibilidade relativa: todo mundo é possível em relação a si mesmo. Se impuséssemos essa restrição, poderíamos introduzir uma nova relação de consequência, $\entails_\mlT$, da seguinte maneira:
+In English: every world accesses itself. Or in terms of relative possibility: every world is possible relative to itself. If we imposed this restriction, we could introduce a new consequence relation, $\entails_\mlT$, as follows:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT \metav{C}$ \ifeff{} não há mundo em nenhuma interpretação \emph{que tenha uma relação de acessibilidade reflexiva} no qual $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e $\metav{C}$ seja falsa
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
-Acrescentamos o subscrito \mlT{} a $\entails$ porque o sistema \mlT{} é correto e completo em relação a essa nova definição de validade:
+We have attached the \mlT{} subscript to $\entails$ because it turns out that system \mlT{} is sound and complete relative to this new definition of validity:
 \begin{compactlist}
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$
+	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$
+	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$
 \end{compactlist}
-Como antes, não tentaremos provar esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja reflexiva justifica a regra R\mlT{}:
+As before, we will not try to prove these soundness and completeness results. However, it is relatively easy to see how insisting that the accessibility relation must be reflexive will vindicate the R\mlT{} rule:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox \metav{A}}
 			\have[\, ]{n}{\metav{A}}\rt{m}
 	\end{fitchproof}
 }
-Para ver isso, basta imaginar que tentamos construir uma contra-interpretação para essa afirmação:
+To see this, just imagine trying to cook up a counter-interpretation to this claim:
 \[
 	\ebox \metav{A}\entails_\mlT \metav{A}
 \]
-Precisaríamos construir um mundo $w$ no qual $\ebox \metav{A}$ fosse verdadeira, mas $\metav{A}$ fosse falsa. Ora, se $\ebox \metav{A}$ é verdadeira em $w$, então $\metav{A}$ deve ser verdadeira em todo mundo que $w$ acessa. Mas, como a relação de acessibilidade é reflexiva, $w$ acessa $w$. Portanto, $\metav{A}$ deve ser verdadeira em $w$. Mas agora $\metav{A}$ deve ser verdadeira \emph{e} falsa em $w$. Contradição!
+We would need to construct a world, $w$, at which $\ebox \metav{A}$ was true, but $\metav{A}$ was false. Now, if $\ebox \metav{A}$ is true at $w$, then $\metav{A}$ must be true at every world $w$ accesses. But since the accessibility relation is reflexive, $w$ accesses $w$. So $\metav{A}$ must be true at $w$. But now $\metav{A}$ must be true \emph{and} false at $w$. Contradiction!
 
-\section{Uma semântica para \mlSfour}
+\section{A Semantics for \mlSfour}
 \label{SemanticsS4}
 
-Como mais poderíamos ajustar nossa definição de validade? Poderíamos também estipular que a relação de acessibilidade deve ser \emph{transitiva}:
+How else might we tweak our definition of validity? Well, we might also stipulate that the accessibility relation has to be \emph{transitive}:
 \[\forall w_1\forall w_2\forall w_3 ((Rw_1w_2 \eand Rw_2w_3)\eif Rw_1w_3)\]
-Em português: se $w_1$ acessa $w_2$ e $w_2$ acessa $w_3$, então $w_1$ acessa $w_3$. Ou, em termos de possibilidade relativa: se $w_3$ é possível em relação a $w_2$ e $w_2$ é possível em relação a $w_1$, então $w_3$ é possível em relação a $w_1$. Se acrescentássemos essa restrição à relação de acessibilidade, poderíamos introduzir uma nova relação de consequência, $\entails_\mlSfour$, assim:
+In English: if $w_1$ accesses $w_2$, and $w_2$ accesses $w_3$, then $w_1$ accesses $w_3$. Or in terms of relative possibility: if $w_3$ is possible relative to $w_2$, and $w_2$ is possible relative to $w_1$, then $w_3$ is possible relative to $w_1$. If we added this restriction on our accessibility relation, we could introduce a new consequence relation, $\entails_\mlSfour$, as follows:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour \metav{C}$ \ifeff{} não há mundo em nenhuma interpretação \emph{que tenha uma relação de acessibilidade reflexiva e transitiva} no qual $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e $\metav{C}$ seja falsa
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive and transitive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
-Acrescentamos o subscrito \mlSfour{} a $\entails$ porque o sistema \mlSfour{} é correto e completo em relação a essa nova definição de validade:
+We have attached the \mlSfour{} subscript to $\entails$ because it turns out that system \mlSfour{} is sound and complete relative to this new definition of validity:
 \begin{compactlist}
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$
+	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$
+	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$
 \end{compactlist}
-Como antes, não tentaremos provar esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja transitiva justifica a regra \mlSfour{}:
+As before, we will not try to prove these soundness and completeness results. However, it is relatively easy to see how insisting that the accessibility relation must be transitive will vindicate the \mlSfour{} rule:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
@@ -575,27 +575,27 @@ Como antes, não tentaremos provar esses resultados de correção e completude. 
 			\have[\ ]{n}{\ebox\metav{A}}\rfour{m}
 	\end{fitchproof}
 }
-Lembre-se de que a ideia por trás das subprovas estritas é que elas são maneiras de provar coisas que devem ser verdadeiras em todos os mundos acessíveis. Portanto, a regra R$\mathbf{4}$ significa que, sempre que $\ebox \metav{A}$ é verdadeira, $\ebox \metav{A}$ também deve ser verdadeira em todo mundo acessível. Em outras palavras, devemos ter $\ebox\metav{A} \entails_\mlSfour \ebox\ebox\metav{A}$.
+The idea behind strict subproofs, remember, is that they are ways to prove things that must be true in all accessible worlds. So the R$\mathbf{4}$ rule means that whenever $\ebox \metav{A}$ is true, $\ebox \metav{A}$ must also be true in every accessible world. In other words, we must have $\ebox\metav{A} \entails_\mlSfour \ebox\ebox\metav{A}$.
 
-Para ver isso, basta imaginar que tentamos construir uma contra-interpretação para essa afirmação:
+To see this, just imagine trying to cook up a counter-interpretation to this claim:
 \[\ebox\metav{A} \entails_\mlSfour \ebox \ebox \metav{A}\]
-Precisaríamos construir um mundo $w_1$ no qual $\ebox\metav{A}$ fosse verdadeira, mas $\ebox \ebox \metav{A}$ fosse falsa. Ora, se $\ebox \ebox \metav{A}$ é falsa em $w_1$, então $w_1$ deve acessar algum mundo $w_2$ no qual $\ebox\metav{A}$ é falsa. Do mesmo modo, se $\ebox \metav{A}$ é falsa em $w_2$, então $w_2$ deve acessar algum mundo $w_3$ no qual $\metav{A}$ é falsa. Acabamos de dizer que $w_1$ acessa $w_2$ e que $w_2$ acessa $w_3$. Como agora exigimos que a relação de acessibilidade seja transitiva, $w_1$ deve acessar $w_3$. E, como $\ebox\metav{A}$ é verdadeira em $w_1$ e $w_3$ é acessível a partir de $w_1$, segue-se que $\metav{A}$ deve ser verdadeira em $w_3$. Portanto, $\metav{A}$ é verdadeira \emph{e} falsa em $w_3$. Contradição!
+We would need to construct a world, $w_1$, at which $\ebox\metav{A}$ was true, but $\ebox \ebox \metav{A}$ was false. Now, if $\ebox \ebox \metav{A}$ is false at $w_1$, then $w_1$ must access some world, $w_2$, at which $\ebox\metav{A}$ is false. Equally, if $\ebox \metav{A}$ is false at $w_2$, then $w_2$ must access some world, $w_3$, at which $\metav{A}$ is false. We just said that $w_1$ accesses $w_2$, and $w_2$ accesses $w_3$. So since we are now insisting that the accessibility relation be transitive, $w_1$ must access $w_3$. And as $\ebox\metav{A}$ is true at $w_1$, and $w_3$ is accessible from $w_1$, it follows that $\metav{A}$ must be true at $w_3$. So $\metav{A}$ is true \emph{and} false at $w_3$. Contradiction!
 
-\section{Uma semântica para \mlSfive}
+\section{A Semantics for \mlSfive}
 \label{SemanticsS5}
 
-Vamos impor mais uma restrição à relação de acessibilidade. Desta vez, vamos exigir que ela também seja \emph{simétrica}:
+Let's put one more restriction on the accessibility relation. This time, let's insist that it must also be \emph{symmetric}:
 \[\forall w_1\forall w_2(Rw_1w_2 \eif Rw_2w_1)\]
-Em português: se $w_1$ acessa $w_2$, então $w_2$ acessa $w_1$. Ou, em termos de possibilidade relativa: se $w_2$ é possível em relação a $w_1$, então $w_1$ é possível em relação a $w_2$. Os lógicos chamam de relação de \emph{equivalência} uma relação que é reflexiva, simétrica e transitiva. Agora podemos definir uma nova relação de consequência, $\entails_\mlSfive$, assim:
+In English: if $w_1$ accesses $w_2$, then $w_2$ accesses $w_1$. Or in terms of relative possibility: if $w_2$ is possible relative to $w_1$, then $w_1$ is possible relative to $w_2$. Logicians call a relation that is reflexive, symmetric, and transitive an \emph{equivalence} relation. We can now define a new consequence relation, $\entails_\mlSfive $, as follows:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} não há mundo em nenhuma interpretação \emph{cuja relação de acessibilidade seja uma relação de equivalência} no qual $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e $\metav{C}$ seja falsa
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{whose accessibility relation is an equivalence relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
-Acrescentamos o subscrito \mlSfive{} a $\entails$ porque o sistema \mlSfive{} é correto e completo em relação a essa nova definição de validade:
+We have attached the \mlSfive{} subscript to $\entails$ because it turns out that system \mlSfive{} is sound and complete relative to this new definition of validity:
 \begin{compactlist}
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$
+	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$
+	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$
 \end{compactlist}
-Como antes, não tentaremos provar aqui esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja uma relação de equivalência justifica a regra R$\mathbf{5}$:
+As before, we will not try to prove these soundness and completeness results here. However, it is relatively easy to see how insisting that the accessibility relation must be an equivalence relation will vindicate the R$\mathbf{5}$ rule:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox \metav{A}}
@@ -604,27 +604,27 @@ Como antes, não tentaremos provar aqui esses resultados de correção e complet
 			\have[\, ]{n}{\enot\ebox\metav{A}}\rfive{m}
 	\end{fitchproof}
 }
-A regra diz que, se $\metav{A}$ não é necessária, isto é, é falsa em algum mundo acessível, então também não é necessária em nenhum mundo possível acessível; em símbolos, temos $\enot\ebox \metav{A} \proves_\mlSfive  \ebox\enot\ebox \metav{A}$.
+The rule says that if $\metav{A}$ is not necessary, i.e., false in some accessible world, it is also not necessary in any accessible possible world, i.e., we have $\enot\ebox \metav{A} \proves_\mlSfive  \ebox\enot\ebox \metav{A}$.
 
-Para ver isso, basta imaginar que tentamos construir uma contra-interpretação para essa afirmação:
+To see this, just imagine trying to cook up a counter-interpretation to this claim:
 \[
 	\enot\ebox\metav{A} \entails_\mlSfive  \ebox \enot\ebox \metav{A}
 \]
-Precisaríamos construir um mundo $w_1$ no qual $\enot\ebox\metav{A}$ fosse verdadeira, mas $\ebox \enot\ebox\metav{A}$ fosse falsa.
-Ora, se $\enot\ebox\metav{A}$ é verdadeira em $w_1$, então $w_1$ deve acessar algum mundo $w_2$ no qual $\metav{A}$ é falsa. Do mesmo modo, se $\ebox \enot\ebox\metav{A}$ é falsa em $w_1$, então $w_1$ deve acessar algum mundo $w_3$ no qual $\enot\ebox\metav{A}$ é falsa. Como agora exigimos que a relação de acessibilidade seja uma relação de equivalência e, portanto, simétrica, podemos inferir que $w_3$ acessa $w_1$. Assim, $w_3$ acessa $w_1$ e $w_1$ acessa $w_2$. Novamente, como agora exigimos que a relação de acessibilidade seja uma relação de equivalência e, portanto, transitiva, podemos inferir que $w_3$ acessa $w_2$. Mas antes dissemos que $\enot\ebox\metav{A}$ é falsa em $w_3$, o que implica que $\metav{A}$ é verdadeira em todo mundo que $w_3$ acessa. Portanto, $\metav{A}$ é verdadeira \emph{e} falsa em $w_2$. Contradição!
+We would need to construct a world, $w_1$, at which $\enot\ebox\metav{A}$ was true, but $\ebox \enot\ebox \metav{A}$ was false.
+Now, if $\enot\ebox\metav{A}$ is true at $w_1$, then $w_1$ must access some world, $w_2$, at which $\metav{A}$ is false. Equally, if $\ebox \enot\ebox \metav{A}$ is false at $w_1$, then $w_1$ must access some world, $w_3$, at which $\enot\ebox \metav{A}$ is false. Since we are now insisting that the accessibility relation is an equivalence relation, and hence symmetric, we can infer that $w_3$ accesses $w_1$. Thus, $w_3$ accesses $w_1$, and $w_1$ accesses $w_2$. Again, since we are now insisting that the accessibility relation is an equivalence relation, and hence transitive, we can infer that $w_3$ accesses $w_2$. But earlier we said that $\enot\ebox \metav{A}$ is false at $w_3$, which implies that $\metav{A}$ is true at every world which $w_3$ accesses. So $\metav{A}$ is true \emph{and} false at $w_2$. Contradiction!
 
-Na definição de $\entails_\mlSfive$, estipulamos que a relação de acessibilidade deve ser uma relação de equivalência. Mas acontece que há outra maneira de obter uma noção de validade adequada para \mlSfive. Em vez de estipular que a relação de acessibilidade seja uma relação de equivalência, podemos estipular que seja uma relação \emph{universal}:
+In the definition of $\entails_\mlSfive $, we stipulated that the accessibility relation must be an equivalence relation. But it turns out that there is another way of getting a notion of validity fit for \mlSfive. Rather than stipulating that the accessibility relation be an equivalence relation, we can instead stipulate that it be a \emph{universal} relation:
 \[\forall w_1\forall w_2\, Rw_1w_2\]
-Em português: todo mundo acessa todo mundo. Ou, em termos de possibilidade relativa: todo mundo é possível em relação a todo mundo. Usando essa restrição à relação de acessibilidade, poderíamos ter definido $\entails_\mlSfive$ assim:
+In English: every world accesses every world. Or in terms of relative possibility: every world is possible relative to every world. Using this restriction on the accessibility relation, we could have defined $\entails_\mlSfive $ like this:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} não há mundo em nenhuma interpretação \emph{que tenha uma relação de acessibilidade universal} no qual $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e $\metav{C}$ seja falsa.
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a universal accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
 }
-Se definíssemos $\entails_\mlSfive$ assim, ainda obteríamos os mesmos resultados de correção e completude para \mlSfive. O que isso nos diz? Bem, significa que, se estamos lidando com uma noção de necessidade segundo a qual \emph{todo} mundo é possível em relação a \emph{todo} mundo, então devemos usar \mlSfive. Além disso, a maioria dos filósofos supõe que as noções de necessidade que mais lhes interessam, como \emph{necessidade lógica} e \emph{necessidade metafísica}, são exatamente desse tipo. Portanto, \mlSfive{} é o sistema modal que a maioria dos filósofos usa na maior parte do tempo.
+If we defined $\entails_\mlSfive $ like this, we would still get the same soundness and completeness results for \mlSfive. What does this tell us? Well, it means that if we are dealing with a notion of necessity according to which \emph{every} world is possible relative to \emph{every} world, then we should use \mlSfive. What is more, most philosophers assume that the notions of necessity that they are most concerned with, like \emph{logical necessity} and \emph{metaphysical necessity}, are of exactly this kind. So \mlSfive{} is the modal system that most philosophers use most of the time.
 
 \practiceproblems
 
 \problempart
-Apresente contra-interpretações para as seguintes afirmações falsas:
+Present counter-interpretations to the following false claims:
 \begin{compactlist}
 	\item $\enot P \entails_\mlK \enot\ediamond P$
 	\item $\ebox(P \eor Q)\entails_\mlK \ebox P \eor \ebox Q$
@@ -633,22 +633,22 @@ Apresente contra-interpretações para as seguintes afirmações falsas:
 \end{compactlist}
 
 \problempart
-Apresente contra-interpretações para as seguintes afirmações falsas:
+Present counter-interpretations to the following false claims:
 \begin{compactlist}
 	\item $\ediamond A\entails_\mlSfour \ebox\ediamond A$
 	\item $\ediamond A, \ebox (\ediamond A \eif B)\entails_\mlSfour\ebox B$
 \end{compactlist}
 
 \problempart
-Apresente contra-interpretações para as seguintes afirmações falsas:
+Present counter-interpretations to the following false claims:
 \begin{compactlist}
 	\item $\ebox (M\eif O),\ediamond M\entails_\mlT O$
 	\item $\ebox A\entails_\mlT \ebox \ebox A$
 \end{compactlist}
 
-\section*{Leitura adicional}
+\section*{Further reading}
 
-A lógica modal é uma grande subárea da lógica. Nós apenas arranhamos a superfície. Se você quiser aprender mais sobre lógica modal, eis alguns livros didáticos que pode consultar.
+Modal logic is a large subfield of logic. We have only scratched the surface. If you want to learn more about modal logic, here are some textbooks you might consult.
 
 \begin{itemize}
 	\item George E. Hughes and Max J. Cresswell, \textit{A New Introduction
@@ -659,4 +659,4 @@ A lógica modal é uma grande subárea da lógica. Nós apenas arranhamos a supe
 	ed., Cambridge: Cambridge University Press, 2013.
 \end{itemize}
 
-Nenhum desses autores formula seus sistemas de prova modal exatamente da maneira como fizemos, mas a formulação mais próxima é a de Garson.
+None of these authors formulate their modal proof systems in quite the way we did, but the closest formulation is given by Garson.
