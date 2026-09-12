@@ -1813,81 +1813,81 @@ Neste capítulo, simbolizamos \textquotedblleft Nick é o traidor\textquotedblri
 	\end{itemize}
 
 
-\chapter{Ambiguity}\label{s:ambiguityFOL}
+\chapter{Ambiguidade}\label{s:ambiguityFOL}
 
-In \cref{s:AmbiguityTFL} we discussed the fact that sentences of English can be ambiguous, and pointed out that sentences of TFL are not. One important application of this fact is that the structural ambiguity of English sentences can often, and usefully, be straightened out using different symbolizations.  One common source of ambiguity is \emph{scope ambiguity}, where the English sentence does not make it clear which logical word is supposed to be in the scope of which other. Multiple interpretations are possible.  In FOL, every connective and quantifier has a well-determined scope, and so whether or not one of them occurs in the scope of another in a given sentence of FOL is always determined.
+Em \cref{s:AmbiguityTFL}, discutimos o fato de que sentenças em português podem ser ambíguas e observamos que sentenças da LVF não são. Uma aplicação importante desse fato é que a ambiguidade estrutural de sentenças em português pode frequentemente, e de maneira útil, ser esclarecida por meio de diferentes simbolizações. Uma fonte comum de ambiguidade é a \emph{ambiguidade de escopo}, quando a sentença em português não deixa claro qual palavra lógica deve estar no escopo de qual outra. São possíveis múltiplas interpretações. Na LPO, todo conectivo e todo quantificador têm um escopo bem determinado; assim, sempre é determinado se um deles ocorre ou não no escopo de outro em uma dada sentença da LPO.
 
-For instance, consider the English idiom,
+Por exemplo, considere a expressão idiomática em português,
 \begin{enumerate}
 	\item\label{glitters}
-	Everything that glitters is not gold.
+	Tudo o que reluz não é ouro.
 \end{enumerate}
-If we think of this sentence as of the form `every $F$ is not~$G$' where $\atom{F}{x}$ symbolizes `\gap{x} glitters' and $\atom{G}{x}$ is `\gap{x} is gold', we would symbolize it as:
+Se pensarmos nessa sentença como tendo a forma \textquotedblleft todo $F$ não é~$G$\textquotedblright{}, em que $\atom{F}{x}$ simboliza \textquotedblleft \gap{x} reluz\textquotedblright{} e $\atom{G}{x}$ é \textquotedblleft \gap{x} é ouro\textquotedblright{}, nós a simbolizaríamos assim:
 \[\forall x(\atom{F}{x} \eif \enot \atom{G}{x})\]
-In other words, we symbolize it the same way as we would `Nothing that glitters is gold'. But the idiom does not mean that! It means that one should not assume that just because something glitters, it is gold; not everything that appears valuable is in fact valuable.  To capture the actual meaning of the idiom, we would have to symbolize it instead as we would `Not everything that glitters is gold', i.e., in the following way:
+Em outras palavras, nós a simbolizamos da mesma maneira que \textquotedblleft nada que reluz é ouro\textquotedblright{}. Mas a expressão idiomática não significa isso! Ela significa que não se deve supor que, só porque algo reluz, seja ouro; nem tudo o que parece valioso é de fato valioso. Para capturar o significado real da expressão idiomática, teríamos de simbolizá-la como \textquotedblleft nem tudo o que reluz é ouro\textquotedblright{}, isto é, da seguinte maneira:
 \[\enot\forall x(\atom{F}{x} \eif \atom{G}{x})\]
-Compare this with the previous symbolization: again we see that the difference in the two meanings of the ambiguous sentence lies in whether the `\enot' is in the scope of the `$\forall$' (in the first symbolization) or `$\forall$' is in the scope of `\enot' (in the second).
+Compare isso com a simbolização anterior: novamente vemos que a diferença entre os dois significados da sentença ambígua está em saber se o \textquotedblleft $\enot$\textquotedblright{} está no escopo do \textquotedblleft $\forall$\textquotedblright{} (na primeira simbolização) ou se \textquotedblleft $\forall$\textquotedblright{} está no escopo de \textquotedblleft $\enot$\textquotedblright{} (na segunda).
 
-Of course we can alternatively symbolize the two readings using existential quantifiers as well:
+É claro que também podemos simbolizar as duas leituras usando quantificadores existenciais:
 \begin{align*}
 	& \enot\exists x(\atom{F}{x} \eand \atom{G}{x}) \\
 	& \exists x(\atom{F}{x} \eand \enot \atom{G}{x})
 \end{align*}
 
-In \cref{s:MoreMonadic} we discussed how to symbolize sentences involving `only'. Consider the sentence:
+Em \cref{s:MoreMonadic}, discutimos como simbolizar sentenças que envolvem \textquotedblleft somente\textquotedblright{}. Considere a sentença:
 \begin{enumerate}
-	\item\label{onlyamb} Only young cats are playful.
-\end{enumerate} 
-According to our schema, we would symbolize it this way:
+\item\label{onlyamb} Somente gatos jovens são brincalhões.
+\end{enumerate}
+De acordo com nosso esquema, nós a simbolizaríamos desta maneira:
 \[
 	\forall x(\atom{P}{x} \eif (\atom{Y}{x} \eand \atom{C}{x}))
 \]
-The meaning of this sentence of FOL is something like, `If an animal is playful, it is a young cat'. (Assuming that the domain is animals, of course.) This is probably not what's intended in uttering \cref*{onlyamb}, however. It's more likely that we want to say that old cats are not playful. In other words, what we mean to say is that if something is a cat and playful, it must be young. This would be symbolized as:
+O significado dessa sentença da LPO é algo como \textquotedblleft se um animal é brincalhão, então é um gato jovem\textquotedblright{} (supondo, é claro, que o domínio seja formado por animais). No entanto, provavelmente não é isso que se pretende ao enunciar \cref*{onlyamb}. É mais provável que queiramos dizer que gatos velhos não são brincalhões. Em outras palavras, queremos dizer que, se algo é um gato e é brincalhão, então deve ser jovem. Isso seria simbolizado como:
 \[
 	\forall x((\atom{C}{x} \eand \atom{P}{x}) \eif \atom{Y}{x})
 \]
-There is even a third reading! Suppose we're talking about young animals and their characteristics. And suppose you wanted to say that of all the young animals, only the cats are playful. You could symbolize this reading as:
+Há ainda uma terceira leitura! Suponha que estejamos falando de animais jovens e de suas características. E suponha que você queira dizer que, entre todos os animais jovens, somente os gatos são brincalhões. Você poderia simbolizar essa leitura como:
 \[
 	\forall x((\atom{Y}{x} \eand \atom{P}{x}) \eif \atom{C}{x})
 \]
-Each of the last two readings can be made salient in English by placing the stress appropriately. For instance, to suggest the last reading, you would say `Only young \emph{cats} are playful', and to get the other reading you would say `Only \emph{young} cats are playful'.  The very first reading can be indicate by stressing both `young' and `cats': `Only \emph{young cats} are playful' (but not old cats, or dogs of any age).
+Cada uma das duas últimas leituras pode ser tornada saliente em português colocando a ênfase adequadamente. Por exemplo, para sugerir a última leitura, você diria \textquotedblleft somente gatos \emph{jovens} são brincalhões\textquotedblright{}; para obter a outra leitura, diria \textquotedblleft somente \emph{gatos} jovens são brincalhões\textquotedblright{}. A primeira leitura pode ser indicada enfatizando tanto \textquotedblleft jovens\textquotedblright{} quanto \textquotedblleft gatos\textquotedblright{}: \textquotedblleft somente \emph{gatos jovens} são brincalhões\textquotedblright{} (mas não gatos velhos nem cães de qualquer idade).
 
-In \cref{ss:OrderQuant,ss:SuppQuant} we discussed the importance of the order of quantifiers.  This is relevant here because, in English, the order of quantifiers is sometimes not completely determined.  When both universal (`all') and existential (`some', `a') quantifiers are  involved, this can result in scope ambiguities. Consider:
+Em \cref{ss:OrderQuant,ss:SuppQuant}, discutimos a importância da ordem dos quantificadores. Isso é relevante aqui porque, em português, a ordem dos quantificadores às vezes não é completamente determinada. Quando estão envolvidos tanto quantificadores universais (\textquotedblleft todos\textquotedblright{}) quanto existenciais (\textquotedblleft algum\textquotedblright{}, \textquotedblleft um\textquotedblright{}), isso pode resultar em ambiguidades de escopo. Considere:
 \begin{enumerate}
-	\item\label{everya} Everyone went to see a movie.
+\item\label{everya} Todos foram assistir a um filme.
 \end{enumerate}
-This sentence is ambiguous.  In one interpretation, it means that there is a single movie that everyone went to see. In the  other, it means that everyone went to see some movie or other, but not necessarily the same one. The two readings can be symbolized, respectively, by 
+Essa sentença é ambígua. Em uma interpretação, significa que há um único filme ao qual todos foram assistir. Na outra, significa que todos foram assistir a algum filme, mas não necessariamente ao mesmo. As duas leituras podem ser simbolizadas, respectivamente, por
 \begin{align*}
 	& \exists x(\atom{M}{x} \eand \forall y(\atom{P}{y} \eif \atom{S}{y,x}))\\
 	& \forall y(\atom{P}{y} \eif \exists x(\atom{M}{x} \eand \atom{S}{y,x}))
 \end{align*}
-We assume here that the domain contains (at least) people and movies,
-and the following symbolization key:
+Aqui supomos que o domínio contém (pelo menos) pessoas e filmes,
+e a seguinte chave de simbolização:
 \begin{ekey}
-	\item[\atom{P}{y}] \gap{y}~is a person
-	\item[\atom{M}{x}] \gap{x}~is a movie
-	\item[\atom{S}{y,x}] \gap{y}~went to see~\gap{x}
+\item[\atom{P}{y}] \gap{y} é uma pessoa
+\item[\atom{M}{x}] \gap{x} é um filme
+\item[\atom{S}{y,x}] \gap{y} foi assistir a \gap{x}
 \end{ekey}
-In the first reading, we say that the existential quantifier has \emph{wide scope} (and its scope contains the universal quantifier, which has \emph{narrow scope}), and the other way round in the second.
+Na primeira leitura, dizemos que o quantificador existencial tem \emph{escopo amplo} (e seu escopo contém o quantificador universal, que tem \emph{escopo restrito}), e o inverso na segunda.
 
-In \cref{subsec.defdesc}, we encountered another scope ambiguity, arising from definite descriptions interacting with negation.  Consider Russell's own example:
+Em \cref{subsec.defdesc}, encontramos outra ambiguidade de escopo, decorrente da interação entre descrições definidas e negação. Considere o próprio exemplo de Russell:
 \begin{enumerate}
-	\item\label{thenot} The King of France is not bald.
+\item\label{thenot} O rei da França não é careca.
 \end{enumerate}
-If the definite description has wide scope, and we are interpreting the `not' as an `inner' negation (as we said before), \cref*{thenot} is interpreted to assert the existence of a single King of France, to whom we are ascribing non-baldness. In this reading, it is symbolized as `$\exists x\bigl[\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y)) \eand \enot \atom{B}{x}\bigr]$'. In the other reading, the `not' denies the sentence `The King of France is bald', and we would symbolize it as: `$\enot\exists x\bigl[\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y)) \eand \atom{B}{x}\bigr]$'. In the first case, we say that the definite description has wide scope and in the second that it has narrow scope.
+Se a descrição definida tiver escopo amplo e estivermos interpretando o \textquotedblleft não\textquotedblright{} como uma negação \textquotedblleft interna\textquotedblright{} (como dissemos antes), \cref*{thenot} é interpretada como afirmando a existência de um único rei da França, a quem atribuímos a não-calvície. Nessa leitura, ela é simbolizada como \textquotedblleft $\exists x\bigl[\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y)) \eand \enot \atom{B}{x}\bigr]$\textquotedblright{}. Na outra leitura, o \textquotedblleft não\textquotedblright{} nega a sentença \textquotedblleft o rei da França é careca\textquotedblright{} e nós a simbolizaríamos como: \textquotedblleft $\enot\exists x\bigl[\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y)) \eand \atom{B}{x}\bigr]$\textquotedblright{}. No primeiro caso, dizemos que a descrição definida tem escopo amplo e, no segundo, que tem escopo restrito.
 
 \practiceproblems
 \problempart
-Each of the following sentences is ambiguous. Provide a symbolization key for each, and symbolize all readings.
+Cada uma das sentenças a seguir é ambígua. Forneça uma chave de simbolização para cada uma e simbolize todas as leituras.
 \begin{compactlist}
-	\item No one likes a quitter.
-	\item CSI found only red hair at the scene.
-	\item Smith's murderer hasn't been arrested.
+\item Ninguém gosta de um desistente.
+\item A CSI encontrou somente cabelos vermelhos na cena.
+\item O assassino de Smith ainda não foi preso.
 \end{compactlist}
 
 \problempart
-Russell gave the following example in his paper `On Denoting':
+Russell deu o seguinte exemplo em seu artigo \textquotedblleft On Denoting\textquotedblright{}:
 \begin{quote}
-	I have heard of a touchy owner of a yacht to whom a guest, on first seeing it, remarked, `I thought your yacht was larger than it is'; and the owner replied, `No, my yacht is not larger than it is'.
+Ouvi falar de um proprietário suscetível de um iate a quem um convidado, ao vê-lo pela primeira vez, observou: \textquotedblleft Eu pensava que seu iate fosse maior do que é\textquotedblright{}; e o proprietário respondeu: \textquotedblleft Não, meu iate não é maior do que é\textquotedblright{}.
 \end{quote}
-Explain what's going on.
+Explique o que está acontecendo.

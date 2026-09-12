@@ -567,46 +567,46 @@ Neste capítulo, simbolizamos \textquotedblleft Nick é o traidor\textquotedblri
 \item[] \myanswer{Esta sentença pode ser entendida assim: escolha qualquer coisa; agora, se você escolheu um traidor, escolheu Nick, e, se escolheu Nick, escolheu um traidor. Portanto, há um, e somente um, traidor, a saber, Nick, como exigido.}
 	\end{itemize}
 
-\chapter{Ambiguity}
+\chapter{Ambiguidade}
 \setcounter{ProbPart}{0}
 
 \practiceproblems
 \problempart
-Each of the following sentences is ambiguous. Provide a symbolization key for each, and symbolize all readings.
+Cada uma das sentenças a seguir é ambígua. Forneça uma chave de simbolização para cada uma e simbolize todas as leituras.
 \begin{compactlist}
-	\item No one likes a quitter.
+\item Ninguém ama um desistente.
 	\myanswer{\begin{ekey}
-		\item[\text{domain}] people
-		\item[\atom{Q}{x}] \gap{x} is a quitter
-		\item[\atom{L}{x,y}] \gap{x} likes \gap{y}
+		\item[\text{domínio}] pessoas
+\item[\atom{Q}{x}] \gap{x} é um desistente
+\item[\atom{L}{x,y}] \gap{x} ama \gap{y}
 	\end{ekey}}
 	\item[] \myanswer{$\forall x(\atom{Q}{x} \eif \forall y\,\enot\atom{L}{y,x})$
-	(all quitters are disliked by everyone)\\
+(todos os desistentes são odiados por todos)\\
 	$\exists x(\atom{Q}{x} \eand \forall y\,\enot\atom{L}{y,x})$ (A
-	specific quitter is disliked by everyone)}
-	\item CSI found only red hair at the scene.
+desistente específico é odiado por todos)}
+ \item A perícia encontrou apenas cabelos ruivos na cena.
 	\myanswer{\begin{ekey}
-		\item[\text{domain}] items of evidence
-		\item[\atom{R}{x}] \gap{x} is red
-		\item[\atom{H}{x}] \gap{x} is hair
-		\item[\atom{F}{x,y}] \gap{x} found \gap{y} (at the scene)
+		\item[\text{domínio}] itens de evidência
+\item[\atom{R}{x}] \gap{x} é ruivo
+\item[\atom{H}{x}] \gap{x} é cabelo
+\item[\atom{F}{x,y}] \gap{x} encontrou \gap{y} (na cena)
 		\item[c] CSI
 	\end{ekey}}
-	\item[] \myanswer{$\forall x(\atom{F}{c,x} \eif (\atom{R}{x} \eand \atom{H}{x}))$
-	(only hair was found, and it's all red)\\
+\item[] \myanswer{$\forall x(\atom{F}{c,x} \eif (\atom{R}{x} \eand \atom{H}{x}))$
+(apenas cabelo foi encontrado, e todo ele é ruivo)\\
 	$\forall x((\atom{F}{c,x}  \eand \atom{H}{x}) \eif \atom{R}{x})$
-	(only \emph{red} hair was found, but possibly other things that
-	aren't hair)}
-	\item Smith's murderer hasn't been arrested.
+(apenas cabelo \emph{ruivo} foi encontrado, mas possivelmente outras coisas que
+não são cabelo)}
+\item O assassino de Smith não foi preso.
 	\myanswer{\begin{ekey}
-		\item[\text{domain}] people
-		\item[\atom{A}{x}] \gap{x} has been arrested
-		\item[\atom{M}{x,y}] \gap{x} murdered \gap{y}
+		\item[\text{domínio}] pessoas
+\item[\atom{A}{x}] \gap{x} foi preso
+\item[\atom{M}{x,y}] \gap{x} assassinou \gap{y}
 		\item[m] Smith
 	\end{ekey}}
 	\item[] \myanswer{$\exists x(\forall y(\atom{M}{y, m} \eiff y=x)
-	\eand \enot\atom{A}{x})$ (Smith's murderer has: not been arrested)\\
+\eand \enot\atom{A}{x})$ (o assassino de Smith não foi preso)\\
 	$\enot\exists x(\forall y(\atom{M}{y, m} \eiff y=x)
-	\eand \atom{A}{x})$ (It's not the case that Smith's murderer has
-	been arrested; in fact there may not be a ``Smith's murderer''.)}
+\eand \atom{A}{x})$ (não é o caso de que o assassino de Smith tenha sido preso; na verdade, talvez não exista um \textquotedblleft assassino de Smith\textquotedblright{}.)}
+
 \end{compactlist}
