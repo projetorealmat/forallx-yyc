@@ -3,6 +3,15 @@
   "title": "forall x: Calgary — An Introduction to Formal Logic",
   "short_title": "forall x: Calgary",
   "subject": "Formal logic",
+  "translation_stage": "unreviewed",
+  "entrypoint": "pdf",
+  "publications": [
+    {
+      "id": "pdf",
+      "label": "PDF",
+      "format": "pdf"
+    }
+  ],
   "base_branch": "master",
   "build_system": "latex",
   "latex_entrypoint": "forallxyyc.tex",
