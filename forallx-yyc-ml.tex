@@ -49,21 +49,21 @@ Eis alguns exemplos de sentenças da LM:
 	& \ebox\ediamond (S\eand (Z\eiff (\ebox W \eor \ediamond Q)))
 \end{align*}
 
-\chapter{Natural deduction for ML}
+\chapter{Dedução natural para a LM}
 \label{Proof}
 
-Now that we know how to make sentences in ML, we can look at how to \emph{prove} things in ML. We will use $\proves$ to express provability.  So $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n \proves \metav{C}$ means that $\metav{C}$ can be proven from $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$. However, we will be looking at a number of different systems of ML, and so it will be useful to add a subscript to indicate which system we are working with. So for example, if we want to say that we can prove $\metav{C}$ from $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ \emph{in system}~\mlK, we will write: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n \proves_\mlK \metav{C}$.
+Agora que sabemos formar sentenças na LM, podemos ver como \emph{provar} coisas na LM. Usaremos $\proves$ para expressar demonstrabilidade. Assim, $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n \proves \metav{C}$ significa que $\metav{C}$ pode ser provada a partir de $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$. No entanto, examinaremos vários sistemas diferentes de LM e, por isso, será útil acrescentar um subscrito para indicar em qual sistema estamos trabalhando. Por exemplo, se quisermos dizer que podemos provar $\metav{C}$ a partir de $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ \emph{no sistema}~\mlK, escreveremos: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n \proves_\mlK \metav{C}$.
 
-\section{System \mlK}
+\section{Sistema \mlK}
 \label{K}
 
-We start with a particularly simple system called \mlK, in honour of the philosopher and logician Saul Kripke. \mlK{} includes all of the natural deduction rules from TFL, including the derived rules as well as the basic ones. \mlK{} then adds a special kind of subproof, plus two new basic rules for \ebox.
+Começamos com um sistema particularmente simples chamado \mlK, em homenagem ao filósofo e lógico Saul Kripke. \mlK{} inclui todas as regras de dedução natural da LVF, tanto as regras derivadas quanto as básicas. Em seguida, \mlK{} acrescenta um tipo especial de subprova e duas novas regras básicas para $\ebox$.
 
-The special kind of subproof looks like an ordinary subproof, except it has a~\ebox in its assumption line instead of a formula. We call them \emph{strict subproofs}---they allow as to reason and prove things about alternate possibilities. What we can prove inside a strict subproof holds in any alternate possibility, in particular, in alternate possibilities where the assumptions in force in our proof may not hold. In a strict subproof, all assumptions are disregarded, and we are not allowed to appeal to any lines outside the strict subproof (except as allowed by the modal rules given below).
+Esse tipo especial de subprova se parece com uma subprova comum, exceto por ter um $\ebox{}$ em sua linha de hipótese em vez de uma fórmula. Nós as chamamos de \emph{subprovas estritas} — elas nos permitem raciocinar e provar coisas sobre possibilidades alternativas. O que podemos provar dentro de uma subprova estrita vale em qualquer possibilidade alternativa, em particular, em possibilidades alternativas nas quais as hipóteses vigentes em nossa prova podem não valer. Em uma subprova estrita, todas as hipóteses são desconsideradas e não podemos recorrer a nenhuma linha fora da subprova estrita (exceto quando permitido pelas regras modais dadas abaixo).
 
-The \ebox I rule allows us to derive a formula $\ebox \metav{A}$ if we can derive $\metav{A}$ inside a strict subproof.  It is our fundamental method of introducing \ebox{} into proofs. The basic idea is simple enough: if $\metav{A}$ is a theorem, then $\ebox \metav{A}$ should be a theorem too. (Remember that to call $\metav{A}$ a theorem is to say that we can prove $\metav{A}$ without relying on any undischarged assumptions.)
+A regra $\ebox$I permite derivar uma fórmula $\ebox \metav{A}$ se pudermos derivar $\metav{A}$ dentro de uma subprova estrita. Ela é nosso método fundamental para introduzir $\ebox{}$ nas provas. A ideia básica é simples: se $\metav{A}$ é um teorema, então $\ebox \metav{A}$ também deve ser um teorema. (Lembre-se de que chamar $\metav{A}$ de teorema significa dizer que podemos provar $\metav{A}$ sem depender de hipóteses não descarregadas.)
 
-Suppose we wanted to prove $\ebox(A\eif A)$. The first thing we need to do is prove that $A\eif A$ is a theorem. You already know how to do that using TFL. You simply present a proof of $A\eif A$ which doesn't start with any premises, like this:
+Suponha que quiséssemos provar $\ebox(A\eif A)$. A primeira coisa que precisamos fazer é provar que $A\eif A$ é um teorema. Você já sabe como fazer isso usando a LVF. Basta apresentar uma prova de $A\eif A$ que não comece com premissas, como esta:
 \begin{fitchproof}
 		\open
 		\hypo{1}{A}\AS
@@ -71,7 +71,7 @@ Suppose we wanted to prove $\ebox(A\eif A)$. The first thing we need to do is pr
 		\close
 		\have{3}{A\eif A}\ci{1-2}
 \end{fitchproof}
-But to apply \ebox I, we need to have proven the formula inside a strict subproof.  Since our proof of $A \eif A$ makes use of no assumptions at all, this is possible.
+Mas, para aplicar $\ebox$I, precisamos ter provado a fórmula dentro de uma subprova estrita. Como nossa prova de $A \eif A$ não usa hipótese alguma, isso é possível.
 \begin{fitchproof}
 		\open
 		\hypo{1}{\ebox}\AS
@@ -92,20 +92,20 @@ But to apply \ebox I, we need to have proven the formula inside a strict subproo
 			\close
 			\have[\,]{o}{\ebox\metav{A}}\boxi{m-n}
 	\end{fitchproof}
-	No line above line $m$ may be cited by any rule within the strict subproof begun at line $m$ unless the rule explicitly allows it.
+Nenhuma linha acima da linha $m$ pode ser citada por qualquer regra dentro da subprova estrita iniciada na linha $m$, a menos que a regra permita explicitamente essa citação.
 }
-It is essential to emphasize that in strict subproof you cannot use any rule which appeals to anything you proved outside of the strict subproof. There are exceptions, e.g., the \ebox E rule below. These rules will explicitly state that they can be used inside strict subproofs and cite lines outside the strict subproof. This restriction is essential, otherwise we would get terrible results. For example, we could provide the following proof to vindicate $A\therefore \ebox A$:
+É essencial enfatizar que, em uma subprova estrita, você não pode usar nenhuma regra que recorra a algo provado fora da subprova estrita. Há exceções, como a regra $\ebox$E abaixo. Essas regras declararão explicitamente que podem ser usadas dentro de subprovas estritas e citarão linhas fora da subprova estrita. Essa restrição é essencial; caso contrário, obteríamos resultados terríveis. Por exemplo, poderíamos oferecer a seguinte prova para justificar $A\therefore \ebox A:
 \begin{fitchproof}
 		\hypo{1}{A}\PR
 		\open
 		\hypo{2}{\ebox}\AS
-		\have{3}{A}\by{incorrect use of R}{1}
+		\have{3}{A}\by{uso incorreto de R}{1}
 		\close
 		\have{4}{\ebox A}\boxi{2-3}
 \end{fitchproof}
-This is not a legitimate proof, because at line 3 we appealed to line 1, even though line 1 comes before the beginning of the strict subproof at line 2.
+Isso não é uma prova legítima, pois na linha 3 recorremos à linha 1, embora a linha 1 venha antes do início da subprova estrita na linha 2.
 
-We said above that a strict subproof allows us to reason about arbitrary alternate possible situations. What can be proved in a strict subproof holds in all alternate possible situtations, and so is necessary. This is the idea behind the \ebox I rule. On the other hand, if we've assumed that something is necessary, we have therewith assumed that it is true in all alternate possbile situations.  Hence, we have the rule \ebox E:
+Dissemos acima que uma subprova estrita nos permite raciocinar sobre situações possíveis alternativas arbitrárias. O que pode ser provado em uma subprova estrita vale em todas as situações alternativas e, portanto, é necessário. Essa é a ideia por trás da regra $\ebox$I. Por outro lado, se supusemos que algo é necessário, assumimos com isso que é verdadeiro em todas as situações possíveis alternativas. Assim, temos a regra $\ebox$E:
 
 \factoidbox{
 	\begin{fitchproof}
@@ -115,21 +115,21 @@ We said above that a strict subproof allows us to reason about arbitrary alterna
 			\have[n]{n}{\metav{A}}\boxe{m}
 			\close
 		\end{fitchproof}
-		\ebox E can only be applied if line $m$ (containing $\ebox A$) lies \emph{outside} of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing~$m$.
+	\ebox E só pode ser aplicada se a linha $m$ (que contém $\ebox A$) estiver \emph{fora} da subprova estrita em que a linha $n$ ocorre, e essa subprova estrita não fizer parte de outra subprova estrita que não contenha~$m$.
 		}
-\ebox E allows you to assert $\metav{A}$ inside a strict subproof if you have $\ebox \metav{A}$ outside the strict subproof. The restriction means that you can only do this in the first strict subproof, you cannot apply the \ebox E rule inside a nested strict subproof. So the following is not allowed:
+A regra $\ebox$E permite afirmar $\metav{A}$ dentro de uma subprova estrita se você tiver $\ebox \metav{A}$ fora dela. A restrição significa que você só pode fazer isso na primeira subprova estrita; não pode aplicar a regra $\ebox$E dentro de uma subprova estrita aninhada. Portanto, o seguinte não é permitido:
 \begin{fitchproof}
 	\have{1}{\ebox\metav{A}}
 	\open
 	\hypo{2}{\ebox}\AS
 	\open
 	\hypo{3}{\ebox}\AS
-	\have{4}{\metav{A}}\by{incorrect use of \ebox E}{1}
+	\have{4}{\metav{A}}\by{uso incorreto de \ebox E}{1}
 \close\close
 \end{fitchproof}
-The incorrect use of \ebox E on line~$4$ violates the condition, because although line~$1$ lies outside the strict subproof in which line~$4$ falls, the strict subproof containing line~$4$ lies inside the strict subproof beginning on line~$2$ which does not contain line~$1$.
+O uso incorreto de $\ebox$E na linha~$4$ viola a condição, pois, embora a linha~$1$ esteja fora da subprova estrita em que a linha~$4$ ocorre, a subprova estrita que contém a linha~$4$ está dentro da subprova estrita iniciada na linha~$2$, que não contém a linha~$1$.
 
-Let's begin with an example.
+Comecemos com um exemplo.
 \begin{fitchproof}
 		\hypo{1}{\ebox A}\PR
 		\hypo{2}{\ebox B}\PR
@@ -141,7 +141,7 @@ Let's begin with an example.
 		\close
 		\have{6}{\ebox(A \land B)}\boxi{3-6}
 \end{fitchproof}
-We can also mix regular subproofs and strict subproofs:
+Também podemos misturar subprovas comuns e subprovas estritas:
 \begin{fitchproof}
 		\hypo{1}{\ebox (A \eif B)}\PR
 		\open
@@ -156,18 +156,18 @@ We can also mix regular subproofs and strict subproofs:
 		\close
 		\have{8}{\ebox A \eif \ebox B} \ci{2-7}
 \end{fitchproof}
-This is called the \emph{Distribution Rule}, because it tells us that $\ebox$ `distributes' over $\eif$.
+Isso é chamado de \emph{regra de distribuição}, pois nos diz que $\ebox$ \textquotedblleft se distribui\textquotedblright{} sobre $\eif$.
 
-The rules \ebox I and \ebox E look simple enough, and indeed \mlK{} is a very simple system! But \mlK{} is more powerful than you might have thought. You can prove a fair few things in it.
+As regras $\ebox$I e $\ebox$E parecem simples o suficiente — e, de fato, \mlK{} é um sistema muito simples! Mas \mlK{} é mais poderoso do que você talvez tenha imaginado. É possível provar várias coisas nele.
 
-\section{Possibility}
+\section{Possibilidade}
 \label{possibility}
 
-In the last subsection, we looked at all of the basic rules for \mlK. But you might have noticed that all of these rules were about necessity, $\ebox$, and none of them were about possibility, $\ediamond$. That's because we can \emph{define} possibility in terms of necessity:
+Na última subseção, examinamos todas as regras básicas para \mlK. Mas talvez você tenha notado que todas essas regras tratavam de necessidade, $\ebox$, e nenhuma tratava de possibilidade, $\ediamond$. Isso ocorre porque podemos \emph{definir} possibilidade em termos de necessidade:
 \factoidbox{
 $\ediamond\metav{A}=_{df} \enot \ebox\enot \metav{A}$
 }
-In other words, to say that $\metav{A}$ is \emph{possibly true}, is to say that $\metav{A}$ is \emph{not necessarily false}. As a result, it isn't really essential to add a $\ediamond$, a special symbol for possibility, into system \mlK. Still, the system will be \emph{much} easier to use if we do, and so we will add the following definitional rules:
+Em outras palavras, dizer que $\metav{A}$ é \emph{possivelmente verdadeira} é dizer que $\metav{A}$ \emph{não é necessariamente falsa}. Como resultado, não é realmente essencial acrescentar $\ediamond$, um símbolo especial para possibilidade, ao sistema \mlK. Ainda assim, o sistema será \emph{muito} mais fácil de usar se o fizermos e, por isso, acrescentaremos as seguintes regras definicionais:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox\enot \metav{A}}
@@ -178,9 +178,9 @@ In other words, to say that $\metav{A}$ is \emph{possibly true}, is to say that 
 			\have[\, ]{n}{\enot\ebox\enot \metav{A}}\diadf{m}
 	\end{fitchproof}
 }
-Importantly, you should not think of these rules as any real addition to \mlK: they just record the way that $\ediamond$ is defined in terms of $\ebox$.
+É importante não pensar nessas regras como uma adição real a \mlK: elas apenas registram a maneira como $\ediamond$ é definido em termos de $\ebox$.
 
-If we wanted, we could leave our rules for \mlK{} here. But it will be helpful to add some \emph{Modal Conversion} rules, which give us some more ways of flipping between $\ebox$ and $\ediamond$:
+Se quiséssemos, poderíamos encerrar aqui nossas regras para \mlK{}. Mas será útil acrescentar algumas regras de \emph{conversão modal}, que nos dão outras maneiras de alternar entre $\ebox$ e $\ediamond$:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox \metav{A}}
@@ -199,32 +199,32 @@ If we wanted, we could leave our rules for \mlK{} here. But it will be helpful t
 			\have[\, ]{n}{\enot\ediamond\metav{A}}\mc{m}
 	\end{fitchproof}
 }
-These Modal Conversion Rules are also no addition to the power of \mlK, because they can be derived from the basic rules, along with the definition of $\ediamond$.
+Essas regras de conversão modal também não acrescentam poder ao \mlK, pois podem ser derivadas das regras básicas juntamente com a definição de $\ediamond$.
 
-In system \mlK, using Def\ediamond{} (or the modal conversion rules), one can prove $\ediamond A \eiff \enot\ebox\enot A$. When laying out system \mlK, we started with $\ebox$ as our primitive modal symbol, and then defined $\ediamond$ in terms of it. But if we had preferred, we could have started with $\ediamond$ as our primitive, and then defined $\ebox$ as follows: $\ebox\metav{A} =_{df} \enot \ediamond \enot \metav{A}$. There is, then, no sense in which necessity is somehow more \emph{fundamental} than possibility. Necessity and possibility are exactly as fundamental as each other.
+No sistema \mlK, usando Def\ediamond{} (ou as regras de conversão modal), podemos provar $\ediamond A \eiff \enot\ebox\enot A$. Ao apresentar o sistema \mlK, começamos com $\ebox$ como nosso símbolo modal primitivo e definimos $\ediamond$ em termos dele. Mas, se preferíssemos, poderíamos começar com $\ediamond$ como primitivo e então definir $\ebox$ da seguinte maneira: $\ebox\metav{A} =_{df} \enot \ediamond \enot \metav{A}$. Não há, portanto, nenhum sentido em que a necessidade seja de algum modo mais \emph{fundamental} que a possibilidade. Necessidade e possibilidade são igualmente fundamentais.
 
-\section{System \mlT}
+\section{Sistema \mlT}
 \label{T}
 
-So far we have focussed on \mlK, which is a very simple modal system. \mlK{} is so weak that it will not even let you prove $\metav{A}$ from $\ebox\metav{A}$. But if we are thinking of $\ebox$ as expressing \emph{necessity}, then we will want to be able to make this inference: if $\metav{A}$ is \emph{necessarily true}, then it must surely be \emph{true}!
+Até aqui, concentramos nossa atenção em \mlK, um sistema modal muito simples. \mlK{} é tão fraco que nem sequer permite provar $\metav{A}$ a partir de $\ebox\metav{A}$. Mas, se estamos pensando em $\ebox$ como expressando \emph{necessidade}, queremos poder fazer esta inferência: se $\metav{A}$ é \emph{necessariamente verdadeira}, então certamente deve ser \emph{verdadeira}!
 
-This leads us to a new system,  \mlT, which we get by adding the following rule to \mlK:
+Isso nos leva a um novo sistema, \mlT, que obtemos acrescentando a seguinte regra a \mlK:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox \metav{A}}
 			\have[n]{n}{\metav{A}}\rt{m}
 	\end{fitchproof}
-	The line $n$ on which rule R\mlT{} is applied must \emph{not} lie in a strict subproof that begins after line~$m$.
+	A linha $n$ na qual a regra R\mlT{} é aplicada não pode estar \emph{em} uma subprova estrita que comece depois da linha~$m$.
 }
 
-The restriction on rule \mlT{} is in a way the opposite of the restriction on \ebox E: you can \emph{only} use \ebox E in a nested strict subproof, but you cannot use \mlT{} in a nested strict subproof.
+A restrição da regra~\mlT{} é, de certo modo, o oposto da restrição da regra $\ebox$E: você só pode usar $\ebox$E em uma subprova estrita aninhada, mas não pode usar \mlT{} em uma subprova estrita aninhada.
 
-We can prove things in \mlT{} which we could not prove in \mlK, e.g., $\ebox A \eif A$.
+Podemos provar em \mlT{} coisas que não podíamos provar em \mlK, por exemplo, $\ebox A \eif A$.
 
-\section{System \mlSfour}
+\section{Sistema \mlSfour}
 \label{S4}
 
-\mlT{} allows you to strip away the necessity boxes: from $\ebox \metav{A}$, you may infer $\metav{A}$. But what if we wanted to add extra boxes? That is, what if we wanted to go from $\ebox\metav{A}$ to $\ebox\ebox\metav{A}$? Well, that would be no problem, if we had proved $\ebox\metav{A}$ by applying \ebox I to a strict subproof of $\metav{A}$ which itself does not use \ebox E. In that case, $\metav{A}$ is a tautology, and by nesting the strict subproof inside another strict subproof and applying \ebox I again, we can prove $\ebox\ebox \metav{A}$. For example, we could prove $\ebox\ebox (P\eif P)$ like this:
+\mlT{} permite eliminar as caixas de necessidade: de $\ebox \metav{A}$, você pode inferir $\metav{A}$. Mas e se quiséssemos acrescentar caixas extras? Isto é, passar de $\ebox\metav{A}$ para $\ebox\ebox\metav{A}$? Isso não seria problema se tivéssemos provado $\ebox\metav{A}$ aplicando $\ebox$I a uma subprova estrita de $\metav{A}$ que, por sua vez, não usasse $\ebox$E. Nesse caso, $\metav{A}$ é uma tautologia e, aninhando a subprova estrita dentro de outra subprova estrita e aplicando $\ebox$I novamente, podemos provar $\ebox\ebox \metav{A}$. Por exemplo, poderíamos provar $\ebox\ebox (P\eif P)$ assim:
 \begin{fitchproof}
 		\open
 		\hypo{1}{\ebox}\AS
@@ -240,9 +240,9 @@ We can prove things in \mlT{} which we could not prove in \mlK, e.g., $\ebox A \
 		\close
 		\have{7}{\ebox\ebox(P\eif P)}\boxi{1-6}
 \end{fitchproof}
-But what if we didn't prove $\ebox\metav{A}$ in this restricted way, but used \ebox E inside the strict subproof of $\metav{A}$. If we put that strict subproof inside another strict subproof, the requirement of rule \ebox E to not cite a line containing $\ebox\metav{A}$ which lies in another strict subproof that has not yet concluded, is violated.  Or what if $\ebox\metav{A}$ were just an assumption we started our proof with? Could we infer $\ebox\ebox\metav{A}$ then? Not in  \mlT, we couldn't. And this might well strike you as a limitation of  \mlT, at least if we are reading $\ebox$ as expressing \emph{necessity}. It seems intuitive that if $\metav{A}$ is necessarily true, then it couldn't have \emph{failed} to be necessarily true.
+Mas e se não tivéssemos provado $\ebox\metav{A}$ dessa maneira restrita, mas usado $\ebox$E dentro da subprova estrita de $\metav{A}$? Se colocarmos essa subprova estrita dentro de outra subprova estrita, a exigência da regra $\ebox$E de não citar uma linha que contenha $\ebox\metav{A}$ e esteja em outra subprova estrita ainda não concluída será violada. Ou, e se $\ebox\metav{A}$ fosse apenas uma hipótese com que começamos nossa prova? Poderíamos então inferir $\ebox\ebox\metav{A}$? Não em \mlT. E isso pode parecer uma limitação de \mlT{}, pelo menos se estivermos lendo $\ebox$ como expressando \emph{necessidade}. Parece intuitivo que, se $\metav{A}$ é necessariamente verdadeira, então não poderia ter \emph{deixado} de ser necessariamente verdadeira.
 
-This leads us to another new system, \mlSfour, which we get by adding the following rule to~\mlT:
+Isso nos leva a outro sistema novo, \mlSfour, que obtemos acrescentando a seguinte regra a~\mlT:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
@@ -251,12 +251,12 @@ This leads us to another new system, \mlSfour, which we get by adding the follow
 			\have[n]{n}{\ebox\metav{A}}\rfour{m}
 			\close
 	\end{fitchproof}
-	Note that R$\mathbf{4}$ can only be applied if line $m$ (containing $\ebox A$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing~$m$.
+Observe que R$\mathbf{4}$ só pode ser aplicada se a linha $m$ (que contém $\ebox A$) estiver fora da subprova estrita em que a linha $n$ ocorre e se essa subprova estrita não fizer parte de outra subprova estrita que não contenha~$m$.
 }
 
-Rule R$\mathbf{4}$ looks just like {\ebox}E, except that instead of yielding $\metav{A}$ from $\ebox\metav{A}$ it yields $\ebox\metav{A}$ inside a strict subproof. The restriction is the same, however: R$\mathbf{4}$ allows us to ``import'' $\ebox \metav{A}$ into a strict subproof, but not into a strict subproof itself nested inside a strict subproof. However, if that is necessary, an additional application of R$\mathbf{4}$ would have the same result.
+A regra R$\mathbf{4}$ se parece com a regra {\ebox}E, exceto pelo fato de que, em vez de produzir $\metav{A}$ a partir de $\ebox\metav{A}$, produz $\ebox\metav{A}$ dentro de uma subprova estrita. A restrição, contudo, é a mesma: R$\mathbf{4}$ permite \textquotedblleft importar\textquotedblright{} $\ebox \metav{A}$ para uma subprova estrita, mas não para uma subprova estrita aninhada dentro de outra subprova estrita. Porém, se isso for necessário, uma aplicação adicional de R$\mathbf{4}$ produzirá o mesmo resultado.
 
-Now we can prove even more results. For instance:
+Agora podemos provar ainda mais resultados. Por exemplo:
 \begin{fitchproof}
 	\open
 	\hypo{1}{\ebox A}\AS
@@ -268,14 +268,14 @@ Now we can prove even more results. For instance:
 	\close
 	\have{5}{\ebox A \eif \ebox\ebox A}\ci{1-6}
 \end{fitchproof}
-Similarly, we can prove $\ediamond\ediamond A \eif \ediamond A$. This shows us that as well as letting us \emph{add} extra \emph{boxes}, \mlSfour{} lets us \emph{delete} extra \emph{diamonds}: from $\ediamond\ediamond \metav{A}$, you can always infer $\ediamond\metav{A}$.
+De modo semelhante, podemos provar $\ediamond\ediamond A \eif \ediamond A$. Isso mostra que, além de permitir \emph{acrescentar} caixas extras, \mlSfour{} permite \emph{eliminar} diamantes extras: de $\ediamond\ediamond \metav{A}$, você sempre pode inferir $\ediamond\metav{A}$.
 
-\section{System \mlSfive}
+\section{Sistema \mlSfive}
 \label{S5}
 
-In \mlSfour, we can always add a box in front of another box. But \mlSfour{} does not automatically let us add a box in front of a \emph{diamond}. That is, \mlSfour{} does not generally permit the inference from $\ediamond\metav{A}$ to $\ebox\ediamond\metav{A}$. But again, that might strike you as a shortcoming, at least if you are reading $\ebox$ and $\ediamond$ as expressing \emph{necessity} and \emph{possibility}. It seems intuitive that if $\metav{A}$ is possibly true, then it couldn't have \emph{failed} to be possibly true.
+Em \mlSfour, podemos sempre acrescentar uma caixa diante de outra caixa. Mas \mlSfour{} não nos permite automaticamente acrescentar uma caixa diante de um \emph{diamante}. Isto é, \mlSfour{} em geral não permite a inferência de $\ediamond\metav{A}$ para $\ebox\ediamond\metav{A}$. Mas, novamente, isso pode parecer uma deficiência, pelo menos se estivermos lendo $\ebox$ e $\ediamond$ como expressando \emph{necessidade} e \emph{possibilidade}. Parece intuitivo que, se $\metav{A}$ é possivelmente verdadeira, então não poderia ter \emph{deixado} de ser possivelmente verdadeira.
 
-This leads us to our final modal system, \mlSfive, which we get by adding the following rule to \mlSfour:
+Isso nos leva ao nosso sistema modal final, \mlSfive, que obtemos acrescentando a seguinte regra à \mlSfour:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot \ebox\metav{A}}
@@ -284,10 +284,10 @@ This leads us to our final modal system, \mlSfive, which we get by adding the fo
 			\have[n]{n}{\enot\ebox\metav{A}}\rfive{m}
 			\close
 	\end{fitchproof}
-	Rule R$\mathbf{5}$ can only be applied if line $m$ (containing $\enot \ebox\metav{A}$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing line~$m$.
+A regra R$\mathbf{5}$ só pode ser aplicada se a linha $m$ (que contém $\enot \ebox\metav{A}$) estiver fora da subprova estrita em que a linha $n$ ocorre e se essa subprova estrita não fizer parte de outra subprova estrita que não contenha a linha~$m$.
 }
 
-This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfive  \ebox A$:
+Essa regra nos permite mostrar, por exemplo, que $\ediamond\ebox A\proves_\mlSfive  \ebox A:
 \begin{fitchproof}
 	\hypo{1}{\ediamond\ebox A}\PR
 	\have{2}{\enot\ebox\enot\ebox A}\by{Def\ediamond}{1}
@@ -303,15 +303,15 @@ This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfiv
 	\have{8}{\ebox A}\by{IP}{3-7}
 \end{fitchproof}
 
-So, as well as adding boxes in front of diamonds, we can also delete diamonds in front of boxes.
+Assim, além de acrescentar caixas diante de diamantes, também podemos eliminar diamantes diante de caixas.
 
-We got \mlSfive{} by adding the rule~R$\mathbf{5}$ to~\mlSfour. In
-fact, we could have added rule~R$\mathbf{5}$ to \mlT{}, left out
-rule~R$\mathbf{4}$, and obtained an equivalent system. That's because
-everything we can prove using rule~R$\mathbf{4}$ can also be proved
-using R\mlT{} together with~R$\mathbf{5}$. For instance, here is a
-proof that shows $\ebox A \proves_\mlSfive \ebox\ebox A$ without
-using~R$\mathbf{4}$:
+Obtivemos \mlSfive{} acrescentando a regra~R$\mathbf{5}$ à \mlSfour. Na
+verdade, poderíamos ter acrescentado a regra~R$\mathbf{5}$ à \mlT{}, deixado de fora a
+regra~R$\mathbf{4}$ e obtido um sistema equivalente. Isso ocorre porque
+tudo o que podemos provar usando a regra~R$\mathbf{4}$ também pode ser provado
+usando R\mlT{} junto com~R$\mathbf{5}$. Por exemplo, eis uma
+prova que mostra $\ebox A \proves_\mlSfive \ebox\ebox A$ sem
+usar~R$\mathbf{4}:
 \begin{fitchproof}
 	\hypo{1}{\ebox A}\PR
 	\open
@@ -336,14 +336,14 @@ using~R$\mathbf{4}$:
 	\close
 	\have{14}{\ebox\ebox A}\boxi{6-13}
 \end{fitchproof}
-\mlSfive{} is \emph{strictly stronger} than \mlSfour: there are things which can be proved in \mlSfive, but not in \mlSfour{} (e.g., $\ediamond\ebox A \eif \ebox A$).
+\mlSfive{} é \emph{estritamente mais forte} que \mlSfour: há coisas que podem ser provadas em \mlSfive, mas não em \mlSfour{} (por exemplo, $\ediamond\ebox A \eif \ebox A).
 
-The important point about \mlSfive{} can be put like this: if you have a long string of boxes and diamonds, in any combination whatsoever, you can delete all but the last of them. So for example, $\ediamond\ebox\ediamond\ediamond\ebox\ebox\ediamond\ebox A$ can be simplified down to just $\ebox A$.
+O ponto importante sobre \mlSfive{} pode ser expresso assim: se você tem uma longa sequência de caixas e diamantes, em qualquer combinação, pode eliminar todos menos o último. Por exemplo, $\ediamond\ebox\ediamond\ediamond\ebox\ebox\ediamond\ebox A$ pode ser simplificada para simplesmente $\ebox A.
 
 \practiceproblems
 
 \problempart
-Provide proofs for the following:
+Forneça provas para os seguintes:
 \begin{compactlist}
 	\item $\ebox (A\eand B)\proves_\mlK\ebox A \eand \ebox B$
 	\item $\ebox A\eand\ebox B\proves_\mlK\ebox( A \eand  B)$
@@ -352,7 +352,7 @@ Provide proofs for the following:
 \end{compactlist}
 
 \problempart
-Provide proofs for the following (without using Modal Conversion!):
+Forneça provas para os seguintes (sem usar conversão modal!):
 \begin{compactlist}
 	\item $\enot\ebox A\proves_\mlK \ediamond \enot A$
 	\item $\ediamond\enot A\proves_\mlK\enot \ebox A$
@@ -361,7 +361,7 @@ Provide proofs for the following (without using Modal Conversion!):
 \end{compactlist}
 
 \problempart
-Provide proofs of the following (and now feel free to use Modal Conversion!):
+Forneça provas para os seguintes (agora você pode usar conversão modal!):
 \begin{compactlist}
 	\item $\ebox(A\eif B), \ediamond A \proves_\mlK \ediamond B$
 	\item $\ebox A \proves_\mlK \enot\ediamond\enot A$
@@ -369,14 +369,14 @@ Provide proofs of the following (and now feel free to use Modal Conversion!):
 \end{compactlist}
 
 \problempart
-Provide proofs for the following:
+Forneça provas para os seguintes:
 \begin{compactlist}
 	\item $P\proves_\mlT\ediamond P$
 	\item $\proves_\mlT (A\eand B)\eor(\enot \ebox A\eor\enot\ebox B)$
 \end{compactlist}
 
 \problempart
-Provide proofs for the following:
+Forneça provas para os seguintes:
 \begin{compactlist}
 	\item $\ebox(\ebox A\eif B), \ebox (\ebox B\eif C), \ebox A \proves_\mlSfour \ebox\ebox C$
 	\item $\ebox A \proves_\mlSfour \ebox(\ebox A \eor B)$
@@ -385,7 +385,7 @@ Provide proofs for the following:
 
 
 \problempart
-Provide proofs in \mlSfive{} for the following:
+Forneça provas em \mlSfive{} para os seguintes:
 \begin{compactlist}
 	\item $\enot\ebox\enot A, \ediamond B\proves_\mlSfive \ebox(\ediamond A \eand \ediamond B)$
 	\item $A \proves_\mlSfive  \ebox\ediamond A$
