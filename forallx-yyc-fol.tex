@@ -191,13 +191,13 @@ Como não podemos dizer que ambas são falsas, o que devemos fazer? Outra opçã
 
 Esse é o \emph{problema dos termos não referentes}, e voltaremos a ele mais adiante (ver \cref{subsec.defdesc}). O ponto importante por enquanto é que cada nome da LPO \emph{deve} referir-se a alguma coisa no domínio, embora o domínio possa conter quaisquer coisas que desejemos. Se quisermos simbolizar argumentos sobre criaturas mitológicas, teremos de definir um domínio que as inclua. Essa opção é importante se quisermos considerar a lógica de histórias. Podemos simbolizar uma sentença como \textquotedblleft Sherlock Holmes morou em 221B Baker Street\textquotedblright{} incluindo personagens fictícios como Sherlock Holmes em nosso domínio.
 
-\chapter{Sentences with one quantifier}
+\chapter{Sentenças com um quantificador}
 \label{s:MoreMonadic}
 
-We now have all of the pieces of FOL. Symbolizing more complicated sentences is just a matter of knowing how to combine predicates, names, quantifiers, and connectives. There is a knack to this, and there is no substitute for practice.
+Agora temos todas as peças da LPO. Simbolizar sentenças mais complicadas é apenas uma questão de saber como combinar predicados, nomes, quantificadores e conectivos. Há uma certa habilidade nisso, e não há substituto para a prática.
 
 %\section{Dealing with syncategorematic adjectives}
-%When we encounter a sentence like 
+%When we encounter a sentence like
 %	\begin{enumerate}
 %		\item\label{syn1} Herbie is a white car
 %	\end{enumerate}
@@ -225,221 +225,221 @@ We now have all of the pieces of FOL. Symbolizing more complicated sentences is 
 %Similar examples abound. All politicians are people, but some good politicians are (arguably) bad people. Someone might be an incompetent statesman, but a competent individual. And so it goes. The moral is: when you see two adjectives in a row, you need to ask yourself carefully whether they can be treated as a conjunction or not.
 
 
-\section{Common quantifier phrases}
-Consider these sentences:
+\section{Expressões quantificadoras comuns}
+Considere estas sentenças:
 	\begin{enumerate}
-		\item\label{quan1} Every coin in my pocket is a quarter.
-		\item\label{quan2} Some coin on the table is a dime.
-		\item\label{quan3} Not all the coins on the table are dimes.
-		\item\label{quan4} None of the coins in my pocket are dimes.
+\item\label{quan1} Toda moeda no meu bolso é uma moeda de vinte e cinco centavos.
+\item\label{quan2} Alguma moeda sobre a mesa é uma moeda de dez centavos.
+\item\label{quan3} Nem todas as moedas sobre a mesa são moedas de dez centavos.
+\item\label{quan4} Nenhuma das moedas no meu bolso é uma moeda de dez centavos.
 	\end{enumerate}
-In providing a symbolization key, we need to specify a domain. Since we are talking about coins in my pocket and on the table, the domain must at least contain all of those coins. Since we are not talking about anything besides coins, we let the domain be all coins. Since we are not talking about any specific coins, we do not need to deal with any names. So here is our key:
+Ao fornecer uma chave de simbolização, precisamos especificar um domínio. Como estamos falando das moedas no meu bolso e sobre a mesa, o domínio deve conter pelo menos todas essas moedas. Como não estamos falando de nada além de moedas, fazemos com que o domínio seja formado por todas as moedas. Como não estamos falando de moedas específicas, não precisamos lidar com nomes. Eis, então, nossa chave:
 	\begin{ekey}
-		\item[\text{domain}] all coins
-		\item[\atom{P}{x}] \gap{x} is in my pocket
-		\item[\atom{T}{x}] \gap{x} is on the table
-		\item[\atom{Q}{x}] \gap{x} is a quarter
-		\item[\atom{D}{x}] \gap{x} is a dime
+\item[\text{domínio}] todas as moedas
+\item[\atom{P}{x}] \gap{x} está no meu bolso
+\item[\atom{T}{x}] \gap{x} está sobre a mesa
+\item[\atom{Q}{x}] \gap{x} é uma moeda de vinte e cinco centavos
+\item[\atom{D}{x}] \gap{x} é uma moeda de dez centavos
 	\end{ekey}
-\Cref*{quan1} is most naturally symbolized using a universal quantifier. The universal quantifier says something about everything in the domain, not just about the coins in my pocket. \Cref{quan1} can be paraphrased as `for any coin, \emph{if} that coin is in my pocket \emph{then} it is a quarter'. So we can symbolize it as `$\forall x(\atom{P}{x} \eif \atom{Q}{x})$'.
+\Cref*{quan1} é naturalmente simbolizada usando um quantificador universal. O quantificador universal diz algo sobre tudo no domínio, não apenas sobre as moedas no meu bolso. \Cref{quan1} pode ser parafraseada como \textquotedblleft para qualquer moeda, se essa moeda estiver no meu bolso, então ela é uma moeda de vinte e cinco centavos\textquotedblright{}. Assim, podemos simbolizá-la como \textquotedblleft $\forall x(\atom{P}{x} \eif \atom{Q}{x})$\textquotedblright{}.
 
-Since \cref*{quan1} is about coins that are both in my pocket \emph{and} that are quarters, it might be tempting to symbolize it using a conjunction. However, the sentence `$\forall x(\atom{P}{x} \eand \atom{Q}{x})$' would symbolize the sentence `every coin is both a quarter and in my pocket'. This obviously means something very different than \cref*{quan1}. And so we see:
+Como \cref*{quan1} trata de moedas que estão tanto no meu bolso \emph{quanto} são moedas de vinte e cinco centavos, pode ser tentador simbolizá-la usando uma conjunção. No entanto, a sentença \textquotedblleft $\forall x(\atom{P}{x} \eand \atom{Q}{x})$\textquotedblright{} simbolizaria a sentença \textquotedblleft toda moeda é ao mesmo tempo uma moeda de vinte e cinco centavos e está no meu bolso\textquotedblright{}. Isso obviamente significa algo muito diferente de \cref*{quan1}. E assim vemos:
 	\factoidbox{
-		A sentence can be symbolized as $\forall x (\atom{\metav{F}}{x} \eif \atom{\metav{G}}{x})$ if it can be paraphrased in English as `every $F$ is $G$'.
+		Uma sentença pode ser simbolizada como $\forall x (\atom{\metav{F}}{x} \eif \atom{\metav{G}}{x})$ se puder ser parafraseada em português como \textquotedblleft todo $F$ é $G$\textquotedblright{}.
 	}
-\Cref*{quan2} is most naturally symbolized using an existential quantifier. It can be paraphrased as `there is some coin which is both on the table and which is a dime'. So we can symbolize it as `$\exists x(\atom{T}{x} \eand \atom{D}{x})$'.
+\Cref*{quan2} é naturalmente simbolizada usando um quantificador existencial. Ela pode ser parafraseada como \textquotedblleft existe uma moeda que está sobre a mesa e é uma moeda de dez centavos\textquotedblright{}. Assim, podemos simbolizá-la como \textquotedblleft $\exists x(\atom{T}{x} \eand \atom{D}{x})$\textquotedblright{}.
 
-Notice that we needed to use a conditional with the universal quantifier, but we used a conjunction with the existential quantifier. Suppose we had instead written `$\exists x(\atom{T}{x} \eif \atom{D}{x})$'. That would mean that there is some object in the domain of which `$(\atom{T}{x} \eif \atom{D}{x})$' is true. Recall that, in TFL, $\metav{A} \eif \metav{B}$ is logically equivalent (in TFL) to $\enot\metav{A} \eor \metav{B}$. This equivalence will also hold in FOL. So `$\exists x(\atom{T}{x} \eif \atom{D}{x})$' is true if there is some object in the domain, such that `$(\enot \atom{T}{x} \eor \atom{D}{x})$' is true of that object. That is, `$\exists x (\atom{T}{x} \eif \atom{D}{x})$' is true if some coin is \emph{either} not on the table \emph{or} is a dime. Of course there is a coin that is not on the table: there are coins in  lots of other places. So it is \emph{very easy} for `$\exists x(\atom{T}{x} \eif \atom{D}{x})$' to be true. A conditional will usually be the natural connective to use with a universal quantifier, but a conditional within the scope of an existential quantifier tends to say something very weak indeed. As a general rule of thumb, do not put conditionals in the scope of existential quantifiers unless you are sure that you need one.
+Observe que precisamos usar um condicional com o quantificador universal, mas usamos uma conjunção com o quantificador existencial. Suponha que, em vez disso, tivéssemos escrito \textquotedblleft $\exists x(\atom{T}{x} \eif \atom{D}{x})$\textquotedblright{}. Isso significaria que existe algum objeto no domínio para o qual \textquotedblleft $(\atom{T}{x} \eif \atom{D}{x})$\textquotedblright{} é verdadeira. Lembre-se de que, na LVF, $\metav{A} \eif \metav{B}$ é logicamente equivalente (na LVF) a $\enot\metav{A} \eor \metav{B}$. Essa equivalência também valerá na LPO. Portanto, \textquotedblleft $\exists x(\atom{T}{x} \eif \atom{D}{x})$\textquotedblright{} é verdadeira se houver algum objeto no domínio tal que \textquotedblleft $(\enot \atom{T}{x} \eor \atom{D}{x})$\textquotedblright{} seja verdadeira desse objeto. Isto é, \textquotedblleft $\exists x (\atom{T}{x} \eif \atom{D}{x})$\textquotedblright{} é verdadeira se alguma moeda \emph{ou} não estiver sobre a mesa \emph{ou} for uma moeda de dez centavos. Naturalmente, existe uma moeda que não está sobre a mesa: há moedas em muitos outros lugares. Portanto, é \emph{muito fácil} que \textquotedblleft $\exists x(\atom{T}{x} \eif \atom{D}{x})$\textquotedblright{} seja verdadeira. Um condicional geralmente será o conectivo natural a usar com um quantificador universal, mas um condicional dentro do escopo de um quantificador existencial tende a dizer algo bastante fraco. Como regra geral, não coloque condicionais no escopo de quantificadores existenciais, a menos que tenha certeza de que precisa de um.
 	\factoidbox{
-		A sentence can be symbolized as $\exists x (\atom{\metav{F}}{x} \eand \atom{\metav{G}}{x})$ if it can be paraphrased in English as `some $F$ is~$G$'.
-	}		
-\Cref{quan3} can be paraphrased as, `It is not the case that every coin on the table is a dime'. So we can symbolize it by `$\enot \forall x(\atom{T}{x} \eif \atom{D}{x})$'. You might look at \cref*{quan3} and paraphrase it instead as, `Some coin on the table is not a dime'. You would then symbolize it by `$\exists x(\atom{T}{x} \eand \enot \atom{D}{x})$'. Although it is probably not immediately obvious yet, these two sentences are logically equivalent. (This is due to the logical equivalence between $\enot\forall x\,\metav{A}$ and $\exists x\,\enot\metav{A}$, mentioned in \cref{s:FOLBuildingBlocks}, along with the equivalence between $\enot(\metav{A}\eif\metav{B})$ and $\metav{A}\eand\enot\metav{B}$.)
+		Uma sentença pode ser simbolizada como $\exists x (\atom{\metav{F}}{x} \eand \atom{\metav{G}}{x})$ se puder ser parafraseada em português como \textquotedblleft algum $F$ é~$G$\textquotedblright{}.
+	}
+\Cref{quan3} pode ser parafraseada como: \textquotedblleft não é o caso de que toda moeda sobre a mesa seja uma moeda de dez centavos\textquotedblright{}. Portanto, podemos simbolizá-la por \textquotedblleft $\enot \forall x(\atom{T}{x} \eif \atom{D}{x})$\textquotedblright{}. Talvez você olhe para \cref*{quan3} e a parafraseie, em vez disso, como \textquotedblleft alguma moeda sobre a mesa não é uma moeda de dez centavos\textquotedblright{}. Então, você a simbolizaria por \textquotedblleft $\exists x(\atom{T}{x} \eand \enot \atom{D}{x})$\textquotedblright{}. Embora provavelmente ainda não seja imediatamente óbvio, essas duas sentenças são logicamente equivalentes. (Isso se deve à equivalência lógica entre $\enot\forall x\,\metav{A}$ e $\exists x\,\enot\metav{A}$, mencionada em \cref{s:FOLBuildingBlocks}, juntamente com a equivalência entre $\enot(\metav{A}\eif\metav{B})$ e $\metav{A}\eand\enot\metav{B}$. )
 
-\Cref{quan4} can be paraphrased as, `It is not the case that there is some dime in my pocket'. This can be symbolized by `$\enot\exists x(\atom{P}{x} \eand \atom{D}{x})$'. It might also be paraphrased as, `Everything in my pocket is a non-dime', and then could be symbolized by `$\forall x(\atom{P}{x} \eif \enot \atom{D}{x})$'. Again the two symbolizations are logically equivalent; both are correct symbolizations of \cref*{quan4}.
+\Cref{quan4} pode ser parafraseada como: \textquotedblleft não é o caso de que exista alguma moeda de dez centavos no meu bolso\textquotedblright{}. Isso pode ser simbolizado por \textquotedblleft $\enot\exists x(\atom{P}{x} \eand \atom{D}{x})$\textquotedblright{}. Ela também pode ser parafraseada como \textquotedblleft tudo no meu bolso é uma moeda que não é de dez centavos\textquotedblright{} e então poderia ser simbolizada por \textquotedblleft $\forall x(\atom{P}{x} \eif \enot \atom{D}{x})$\textquotedblright{}. Novamente, as duas simbolizações são logicamente equivalentes; ambas são simbolizações corretas de \cref*{quan4}.
 
 \factoidbox{
-	A sentence that can be paraphrased as `no $F$ is $G$' can be symbolized as $\enot\exists x (\atom{\metav{F}}{x} \eand \atom{\metav{G}}{x})$ and also as $\forall x (\atom{\metav{F}}{x} \eif \enot\atom{\metav{G}}{x})$.
+	Uma sentença que pode ser parafraseada como \textquotedblleft nenhum $F$ é $G$\textquotedblright{} pode ser simbolizada como $\enot\exists x (\atom{\metav{F}}{x} \eand \atom{\metav{G}}{x})$ e também como $\forall x (\atom{\metav{F}}{x} \eif \enot\atom{\metav{G}}{x})$.
 }
 
-Finally, consider `only', as in:
+Por fim, considere \textquotedblleft somente\textquotedblright{}, como em:
 \begin{enumerate}
-	\item\label{quan5} Only dimes are on the table.
+	\item\label{quan5} Somente moedas de dez centavos estão sobre a mesa.
 \end{enumerate}
-How should we symbolize this?  A good strategy is to consider when the sentence would be false.  If we are saying that only dimes are on the table, we are excluding all the cases where something on the table is a non-dime.  So we can symbolize the sentence the same way we would symbolize `No non-dimes are on the table.' Remembering the lesson we just learned, and symbolizing `$x$ is a non-dime' as `$\enot \atom{D}{x}$', the possible symbolizations are: `$\enot\exists x(\atom{T}{x} \eand \enot \atom{D}{x})$', or alternatively: `$\forall x(\atom{T}{x} \eif \enot\enot \atom{D}{x})$'. Since double negations cancel out, the second is just as good as `$\forall x(\atom{T}{x} \eif \atom{D}{x})$'. In other words, `Only dimes are on the table' and `Everything on the table is a dime' are symbolized the same way.
+Como devemos simbolizar isso? Uma boa estratégia é considerar quando a sentença seria falsa. Se estamos dizendo que somente moedas de dez centavos estão sobre a mesa, estamos excluindo todos os casos em que algo sobre a mesa não é uma moeda de dez centavos. Assim, podemos simbolizar a sentença da mesma maneira que simbolizaríamos \textquotedblleft nenhuma moeda que não seja de dez centavos está sobre a mesa\textquotedblright{}. Lembrando a lição que acabamos de aprender, e simbolizando \textquotedblleft $x$ não é uma moeda de dez centavos\textquotedblright{} como \textquotedblleft $\enot \atom{D}{x}$\textquotedblright{}, as simbolizações possíveis são: \textquotedblleft $\enot\exists x(\atom{T}{x} \eand \enot \atom{D}{x})$\textquotedblright{} ou, alternativamente, \textquotedblleft $\forall x(\atom{T}{x} \eif \enot\enot \atom{D}{x})$\textquotedblright{}. Como as duplas negações se cancelam, a segunda é tão boa quanto \textquotedblleft $\forall x(\atom{T}{x} \eif \atom{D}{x})$\textquotedblright{}. Em outras palavras, \textquotedblleft somente moedas de dez centavos estão sobre a mesa\textquotedblright{} e \textquotedblleft tudo o que está sobre a mesa é uma moeda de dez centavos\textquotedblright{} são simbolizadas da mesma maneira.
 
 \factoidbox{
-	A sentence that can be paraphrased as `only $F$s are $G$s' can be symbolized as $\enot\exists x (\atom{\metav{G}}{x} \eand \enot\atom{\metav{F}}{x})$ and also as $\forall x (\atom{\metav{G}}{x} \eif \atom{\metav{F}}{x})$.
+	Uma sentença que pode ser parafraseada como \textquotedblleft somente $F$s são $G$s\textquotedblright{} pode ser simbolizada como $\enot\exists x (\atom{\metav{G}}{x} \eand \enot\atom{\metav{F}}{x})$ e também como $\forall x (\atom{\metav{G}}{x} \eif \atom{\metav{F}}{x})$.
 }
 
-\section{Empty predicates}
+\section{Predicados vazios}
 
-In \cref{s:FOLBuildingBlocks}, we emphasized that a name must pick out exactly one object in the domain. However, a predicate need not apply to anything in the domain. A predicate that applies to nothing in the domain is called an \define{empty predicate}. This is worth exploring.
+Em \cref{s:FOLBuildingBlocks}, enfatizamos que um nome deve designar exatamente um objeto no domínio. No entanto, um predicado não precisa aplicar-se a nada no domínio. Um predicado que não se aplica a nenhum objeto no domínio é chamado de \define{predicado vazio}. Vale a pena explorar isso.
 
 \newglossaryentry{empty predicate}{
-  name = {empty predicate},
-  description = {A \gls{predicate} that applies to no object in the \gls{domain}}
+  name = predicado vazio,
+  description = {Um \gls{predicate} que não se aplica a nenhum objeto no \gls{domain}}
 }
 
-Suppose we want to symbolize these two sentences:
+Suponha que queiramos simbolizar estas duas sentenças:
 	\begin{enumerate}
-		\item\label{monkey1} Every monkey knows sign language.
-		\item\label{monkey2} Some monkey knows sign language.
+\item\label{monkey1} Todo macaco conhece a linguagem de sinais.
+\item\label{monkey2} Algum macaco conhece a linguagem de sinais.
 	\end{enumerate}
-It is possible to write the symbolization key for these sentences in this way:
+É possível escrever a chave de simbolização para essas sentenças da seguinte maneira:
 	\begin{ekey}
-		\item[\text{domain}] animals
-		\item[\atom{M}{x}] \gap{x} is a monkey.
-		\item[\atom{S}{x}] \gap{x} knows sign language.
+\item[\text{domínio}] animais
+
+
 	\end{ekey}
-\Cref*{monkey1} can now be symbolized by `$\forall x(\atom{M}{x} \eif
-\atom{S}{x})$'. \Cref*{monkey2} can be symbolized as `$\exists
-x(\atom{M}{x} \eand \atom{S}{x})$'.
+\Cref*{monkey1} pode agora ser simbolizada por \textquotedblleft $\forall x(\atom{M}{x} \eif \atom{S}{x})$\textquotedblright{}. \Cref*{monkey2} pode ser simbolizada como \textquotedblleft $\exists x(\atom{M}{x} \eand \atom{S}{x})$\textquotedblright{}.
 
-It is tempting to say that \cref*{monkey1} \emph{entails} \cref*{monkey2}. That is, we might think that it is impossible that every monkey knows sign language unless some monkey knows sign language. But this would be a mistake. It is possible for the sentence `$\forall x(\atom{M}{x} \eif \atom{S}{x})$' to be true even though the sentence `$\exists x(\atom{M}{x} \eand \atom{S}{x})$' is false.
 
-How can this be? The answer comes from considering whether these sentences would be true or false \emph{if there were no monkeys}. If there were no monkeys at all (in the domain), then `$\forall x(\atom{M}{x} \eif \atom{S}{x})$' would be \emph{vacuously} true: take any monkey you like---it knows sign language! But if there were no monkeys at all (in the domain), then `$\exists x(\atom{M}{x} \eand \atom{S}{x})$' would be false.
 
-Another example will help to bring this home. Suppose we extend the above symbolization key, by adding:
+É tentador dizer que \cref*{monkey1} \emph{implica} \cref*{monkey2}. Isto é, podemos pensar que é impossível que todo macaco conheça a linguagem de sinais sem que algum macaco conheça a linguagem de sinais. Mas isso seria um erro. É possível que a sentença \textquotedblleft $\forall x(\atom{M}{x} \eif \atom{S}{x})$\textquotedblright{} seja verdadeira embora a sentença \textquotedblleft $\exists x(\atom{M}{x} \eand \atom{S}{x})$\textquotedblright{} seja falsa.
+
+Como isso pode acontecer? A resposta vem de considerar se essas sentenças seriam verdadeiras ou falsas \emph{se não houvesse macacos}. Se não houvesse macacos de espécie alguma (no domínio), então \textquotedblleft $\forall x(\atom{M}{x} \eif \atom{S}{x})$\textquotedblright{} seria verdadeira \emph{vacuamente}: escolha qualquer macaco que quiser — ele conhece a linguagem de sinais! Mas, se não houvesse macacos de espécie alguma (no domínio), \textquotedblleft $\exists x(\atom{M}{x} \eand \atom{S}{x})$\textquotedblright{} seria falsa.
+
+Outro exemplo ajudará a esclarecer isso. Suponha que estendamos a chave de simbolização acima, acrescentando:
 	\begin{ekey}
-		\item[\atom{R}{x}] \gap{x} is a refrigerator
+\item[\atom{R}{x}] \gap{x} é uma geladeira
 	\end{ekey}
-Now consider the sentence `$\forall x(\atom{R}{x} \eif \atom{M}{x})$'. This symbolizes `every refrigerator is a monkey'. This sentence is true, given our symbolization key, which is counterintuitive, since we (presumably) do not want to say that there are a whole bunch of refrigerator monkeys. It is important to remember, though, that `$\forall x(\atom{R}{x} \eif \atom{M}{x})$' is true \ifeff{} any member of the domain that is a refrigerator is a monkey. Since the domain is \emph{animals}, there are no refrigerators in the domain. Again, then, the sentence is \emph{vacuously} true.
+Agora considere a sentença \textquotedblleft $\forall x(\atom{R}{x} \eif \atom{M}{x})$\textquotedblright{}. Ela simboliza \textquotedblleft toda geladeira é um macaco\textquotedblright{}. Essa sentença é verdadeira, dada a nossa chave de simbolização, o que é contraintuitivo, pois (presumivelmente) não queremos dizer que haja um monte de macacos-geladeiras. É importante lembrar, porém, que \textquotedblleft $\forall x(\atom{R}{x} \eif \atom{M}{x})$\textquotedblright{} é verdadeira \ifeff{} qualquer membro do domínio que seja uma geladeira seja um macaco. Como o domínio é formado por \emph{animais}, não há geladeiras no domínio. Novamente, então, a sentença é verdadeira \emph{vacuamente}.
 
-If you were actually dealing with the sentence `All refrigerators are monkeys', then you would most likely want to include kitchen appliances in the domain. Then the predicate `$R$' would not be empty and the sentence `$\forall x(\atom{R}{x} \eif \atom{M}{x})$' would be false.
+Se estivéssemos realmente lidando com a sentença \textquotedblleft todas as geladeiras são macacos\textquotedblright{}, provavelmente desejaríamos incluir eletrodomésticos de cozinha no domínio. Então o predicado \textquotedblleft $R$\textquotedblright{} não seria vazio e a sentença \textquotedblleft $\forall x(\atom{R}{x} \eif \atom{M}{x})$\textquotedblright{} seria falsa.
 	\factoidbox{
-		When $\metav{F}$ is an empty predicate, any sentence $\forall x (\atom{\metav{F}}{x} \eif \ldots)$ is vacuously true.
+		Quando $\metav{F}$ é um predicado vazio, qualquer sentença $\forall x (\atom{\metav{F}}{x} \eif \ldots)$ é verdadeira vacuamente.
 	}
 
 
-\section{Picking a domain}
-The appropriate symbolization of an English language sentence in FOL will depend on the symbolization key. Choosing a key can be difficult. Suppose we want to symbolize the English sentence:
+\section{Escolhendo um domínio}
+A simbolização apropriada de uma sentença em português na LPO dependerá da chave de simbolização. Escolher uma chave pode ser difícil. Suponha que queiramos simbolizar a sentença:
 	\begin{enumerate}
-		\item\label{pickdomainrose} Every rose has a thorn.
+\item\label{pickdomainrose} Toda rosa tem um espinho.
 	\end{enumerate}
-We might offer this symbolization key:
+Poderíamos oferecer esta chave de simbolização:
 	\begin{ekey}
-		\item[\atom{R}{x}] \gap{x} is a rose
-		\item[\atom{T}{x}] \gap{x} has a thorn
+\item[\atom{R}{x}] \gap{x} é uma rosa
+\item[\atom{T}{x}] \gap{x} tem um espinho
 	\end{ekey}
-It is tempting to say that \cref*{pickdomainrose} should be symbolized as `$\forall x(\atom{R}{x} \eif \atom{T}{x})$', but we have not yet chosen a domain. If the domain contains all roses, this would be a good symbolization. Yet if the domain is merely \emph{things on my kitchen table}, then `$\forall x(\atom{R}{x} \eif \atom{T}{x})$' would only come close to covering the fact that every rose \emph{on my kitchen table} has a thorn. If there are no roses on my kitchen table, the sentence would be trivially true. This is not what we want. To symbolize \cref*{pickdomainrose} adequately, we need to include all the roses in the domain, but now we have two options.
+Pode ser tentador dizer que \cref*{pickdomainrose} deve ser simbolizada como \textquotedblleft $\forall x(\atom{R}{x} \eif \atom{T}{x})$\textquotedblright{}, mas ainda não escolhemos um domínio. Se o domínio contém todas as rosas, essa seria uma boa simbolização. Contudo, se o domínio for apenas \emph{coisas sobre a mesa da minha cozinha}, então \textquotedblleft $\forall x(\atom{R}{x} \eif \atom{T}{x})$\textquotedblright{} chegaria apenas perto de abranger o fato de que toda rosa \emph{sobre a mesa da minha cozinha} tem um espinho. Se não houver rosas sobre a mesa da minha cozinha, a sentença será trivialmente verdadeira. Isso não é o que queremos. Para simbolizar \cref*{pickdomainrose} adequadamente, precisamos incluir todas as rosas no domínio, mas agora temos duas opções.
 
-First, we can restrict the domain to include all roses but \emph{only} roses. Then \cref*{pickdomainrose} can, if we like, be symbolized with `$\forall x\,\atom{T}{x}$'. This is true \ifeff{} everything in the domain has a thorn; since the domain is just the roses, this is true \ifeff{} every rose has a thorn. By restricting the domain, we have been able to symbolize our English sentence with a very short sentence of FOL. So this approach can save us trouble, if every sentence that we want to deal with is about roses.
+Primeiro, podemos restringir o domínio para incluir todas as rosas, mas \emph{somente} rosas. Então \cref*{pickdomainrose} pode, se quisermos, ser simbolizada por \textquotedblleft $\forall x\,\atom{T}{x}$\textquotedblright{}. Isso é verdadeiro \ifeff{} tudo no domínio tem um espinho; como o domínio é constituído apenas pelas rosas, isso é verdadeiro \ifeff{} toda rosa tem um espinho. Ao restringir o domínio, conseguimos simbolizar nossa sentença em português com uma sentença muito curta da LPO. Assim, essa abordagem pode nos poupar trabalho, se toda sentença que quisermos tratar for sobre rosas.
 
-Second, we can let the domain contain things besides roses: rhododendrons, rats, rifles,  whatevers; and we will certainly need to include a more expansive domain if we simultaneously want to symbolize sentences like:
+Segundo, podemos deixar que o domínio contenha coisas além de rosas: rododendros, ratos, rifles, qualquer coisa; e certamente precisaremos incluir um domínio mais abrangente se quisermos simultaneamente simbolizar sentenças como:
 	\begin{enumerate}
-		\item\label{pickdomaincowboy} Every cowboy sings a sad, sad song.
+\item\label{pickdomaincowboy} Todo vaqueiro canta uma canção triste, triste.
 	\end{enumerate}
-Our domain must now include both all the roses (so that we can symbolize \cref*{pickdomainrose}) and all the cowboys (so that we can symbolize \cref*{pickdomaincowboy}). So we might offer the following symbolization key:
+Nosso domínio agora deve incluir todas as rosas (para que possamos simbolizar \cref*{pickdomainrose}) e todos os vaqueiros (para que possamos simbolizar \cref*{pickdomaincowboy}). Assim, poderíamos oferecer a seguinte chave de simbolização:
 	\begin{ekey}
-		\item[\text{domain}] people and plants
-		\item[\atom{C}{x}] \gap{x} is a cowboy
-		\item[\atom{S}{x}] \gap{x} sings a sad, sad song
-		\item[\atom{R}{x}] \gap{x} is a rose
-		\item[\atom{T}{x}] \gap{x} has a thorn
+\item[\text{domínio}] pessoas e plantas
+\item[\atom{C}{x}] \gap{x} é um vaqueiro
+\item[\atom{S}{x}] \gap{x} canta uma canção triste, triste
+\item[\atom{R}{x}] \gap{x} é uma rosa
+\item[\atom{T}{x}] \gap{x} tem um espinho
 	\end{ekey}
-Now we will have to symbolize \cref*{pickdomainrose} with `$\forall x (\atom{R}{x} \eif \atom{T}{x})$', since `$\forall x\, \atom{T}{x}$' would symbolize the sentence `every person or plant has a thorn'. Similarly, we will have to symbolize \cref*{pickdomaincowboy} with `$\forall x (\atom{C}{x} \eif \atom{S}{x})$'.
+Agora teremos de simbolizar \cref*{pickdomainrose} com \textquotedblleft $\forall x (\atom{R}{x} \eif \atom{T}{x})$\textquotedblright{}, pois \textquotedblleft $\forall x\, \atom{T}{x}$\textquotedblright{} simbolizaria a sentença \textquotedblleft toda pessoa ou planta tem um espinho\textquotedblright{}. Da mesma forma, teremos de simbolizar \cref*{pickdomaincowboy} com \textquotedblleft $\forall x (\atom{C}{x} \eif \atom{S}{x})$\textquotedblright{}.
 
-In general, the universal quantifier can be used to symbolize the English expression `everyone' if the domain only contains people. If there are people and other things in the domain, then `everyone' must be treated as `every person'.
+Em geral, o quantificador universal pode ser usado para simbolizar a expressão em português \textquotedblleft todos\textquotedblright{} se o domínio contiver apenas pessoas. Se houver pessoas e outras coisas no domínio, então \textquotedblleft todos\textquotedblright{} deve ser tratado como \textquotedblleft toda pessoa\textquotedblright{}.
 
 
-\section{The utility of paraphrase}
-When symbolizing English sentences in FOL, it is important to understand the structure of the sentences you want to symbolize. What matters is the final symbolization in FOL, and sometimes you will be able to move from an English language sentence directly to a sentence of FOL. Other times, it helps to paraphrase the sentence one or more times. Each successive paraphrase should move from the original sentence closer to something that you can easily symbolize directly in FOL.
+\section{A utilidade da paráfrase}
+Ao simbolizar sentenças em português na LPO, é importante compreender a estrutura das sentenças que você quer simbolizar. O que importa é a simbolização final na LPO e, às vezes, você poderá passar diretamente de uma sentença em português para uma sentença da LPO. Em outras ocasiões, ajuda parafrasear a sentença uma ou mais vezes. Cada paráfrase sucessiva deve aproximar-se da sentença original de algo que você possa simbolizar diretamente na LPO com facilidade.
 
-For the next several examples, we will use this symbolization key:
+Nos próximos exemplos, usaremos esta chave de simbolização:
 	\begin{ekey}
-		\item[\text{domain}] people
-		\item[\atom{B}{x}] \gap{x} is a bassist
-		\item[\atom{R}{x}] \gap{x} is a rock star
+\item[\text{domínio}] pessoas
+\item[\atom{B}{x}] \gap{x} é baixista
+\item[\atom{R}{x}] \gap{x} é uma estrela do rock
 		\item[k] Kim Deal
 	\end{ekey}
-Now consider these sentences:
+Agora considere estas sentenças:
 	\begin{enumerate}
-		\item\label{pronoun1} If Kim Deal is a bassist, then she is a rock star.
-		\item\label{pronoun2} If a person is a bassist, then she is a rock star.
+\item\label{pronoun1} Se Kim Deal é baixista, então ela é uma estrela do rock.
+\item\label{pronoun2} Se uma pessoa é baixista, então ela é uma estrela do rock.
 	\end{enumerate}
-The same words appear as the consequent in \cref*{pronoun1,pronoun2} (`$\ldots$ she is a rock star'), but they mean very different things. To make this clear, it often helps to paraphrase the original sentences, removing pronouns.
+As mesmas palavras aparecem como consequente em \cref*{pronoun1,pronoun2} (\textquotedblleft \ldots ela é uma estrela do rock\textquotedblright{}), mas significam coisas muito diferentes. Para deixar isso claro, muitas vezes ajuda parafrasear as sentenças originais, removendo os pronomes.
 
-\Cref*{pronoun1} can be paraphrased as, `If Kim Deal is a bassist, then \emph{Kim Deal} is a rockstar'. This can obviously be symbolized as `$\atom{B}{k} \eif \atom{R}{k}$'.
+\Cref*{pronoun1} pode ser parafraseada como: \textquotedblleft Se Kim Deal é baixista, então \emph{Kim Deal} é uma estrela do rock\textquotedblright{}. Isso obviamente pode ser simbolizado como \textquotedblleft $\atom{B}{k} \eif \atom{R}{k}$\textquotedblright{}.
 
-\Cref*{pronoun2} must be paraphrased differently: `If a person is a bassist, then \emph{that person} is a rock star'. This sentence is not about any particular person, so we need a variable. As an intermediate step, we can paraphrase this as, `For any person x, if x is a bassist, then x is a rockstar'. Now this can be symbolized as `$\forall x (\atom{B}{x} \eif \atom{R}{x})$'. This is the same sentence we would have used to symbolize `Everyone who is a bassist is a rock star'. On reflection, that is surely true \ifeff{} \cref*{pronoun2} is true, as we would hope.
+\Cref*{pronoun2} deve ser parafraseada de maneira diferente: \textquotedblleft Se uma pessoa é baixista, então \emph{essa pessoa} é uma estrela do rock\textquotedblright{}. Essa sentença não trata de nenhuma pessoa específica, portanto precisamos de uma variável. Como passo intermediário, podemos parafraseá-la como: \textquotedblleft Para qualquer pessoa $x$, se $x$ é baixista, então $x$ é uma estrela do rock\textquotedblright{}. Agora isso pode ser simbolizado como \textquotedblleft $\forall x (\atom{B}{x} \eif \atom{R}{x})$\textquotedblright{}. Essa é a mesma sentença que usaríamos para simbolizar \textquotedblleft toda pessoa que é baixista é uma estrela do rock\textquotedblright{}. Refletindo, isso certamente é verdadeiro \ifeff{} \cref*{pronoun2} é verdadeira, como esperaríamos.
 
-Consider these further sentences:
+Considere estas outras sentenças:
 	\begin{enumerate}
-		\item\label{anyone1} If anyone is a bassist, then Kim Deal is a rock star.
-		\item\label{anyone2} If anyone is a bassist, then she is a rock star.
+\item\label{anyone1} Se alguém é baixista, então Kim Deal é uma estrela do rock.
+\item\label{anyone2} Se alguém é baixista, então ela é uma estrela do rock.
 	\end{enumerate}
-The same words appear as the antecedent in \cref*{anyone1,anyone2}  (`If anyone is a bassist$\ldots$'), but it can be tricky to work out how to symbolize these two uses. Again, paraphrase will come to our aid.
+As mesmas palavras aparecem como antecedente em \cref*{anyone1,anyone2} (\textquotedblleft se alguém é baixista\ldots\textquotedblright{}), mas pode ser difícil descobrir como simbolizar esses dois usos. Novamente, a paráfrase nos ajudará.
 
-\Cref*{anyone1} can be paraphrased, `If there is at least one bassist, then Kim Deal is a rock star'. It is now clear that this is a conditional whose antecedent is a quantified expression; so we can symbolize the entire sentence with a conditional as the main logical operator: `$\exists x \atom{B}{x} \eif \atom{R}{k}$'.
+\Cref*{anyone1} pode ser parafraseada como: \textquotedblleft Se há pelo menos um baixista, então Kim Deal é uma estrela do rock\textquotedblright{}. Agora fica claro que este é um condicional cujo antecedente é uma expressão quantificada; portanto, podemos simbolizar a sentença inteira com um condicional como operador lógico principal: \textquotedblleft $\exists x \atom{B}{x} \eif \atom{R}{k}$\textquotedblright{}.
 
-\Cref*{anyone2} can be paraphrased, `For all people $x$, if $x$ is a bassist, then $x$ is a rock star'. Or, in more natural English, it can be paraphrased by `All bassists are rock stars'. It is best symbolized as `$\forall x(\atom{B}{x} \eif \atom{R}{x})$', just like \cref*{pronoun2}.
+\Cref*{anyone2} pode ser parafraseada como: \textquotedblleft Para todas as pessoas $x$, se $x$ é baixista, então $x$ é uma estrela do rock\textquotedblright{}. Ou, em português mais natural, pode ser parafraseada como \textquotedblleft todos os baixistas são estrelas do rock\textquotedblright{}. É melhor simbolizá-la como \textquotedblleft $\forall x(\atom{B}{x} \eif \atom{R}{x})$\textquotedblright{}, assim como \cref*{pronoun2}.
 
-The moral is that the English words `any' and `anyone' should typically be symbolized using quantifiers, and if you are having a hard time determining whether to use an existential or a universal quantifier, try paraphrasing the sentence with an English sentence that uses words \emph{besides} `any' or `anyone'.
+A lição é que as palavras \textquotedblleft qualquer\textquotedblright{} e \textquotedblleft alguém\textquotedblright{} em português normalmente devem ser simbolizadas usando quantificadores; se você estiver tendo dificuldade para determinar se deve usar um quantificador existencial ou universal, tente parafrasear a sentença com uma frase em português que use palavras \emph{além de} \textquotedblleft qualquer\textquotedblright{} ou \textquotedblleft alguém\textquotedblright{}.
 
 
 
-\section{Quantifiers and scope}
-Continuing the example, suppose we want to symbolize these sentences:
+\section{Quantificadores e escopo}
+Continuando o exemplo, suponha que queiramos simbolizar estas sentenças:
 	\begin{enumerate}
-		\item\label{qscope1} If everyone is a bassist, then Lars is a bassist.
-		\item\label{qscope2} Everyone is such that, if they are a bassist, then Lars is a bassist.
+\item\label{qscope1} Se todos são baixistas, então Lars é baixista.
+\item\label{qscope2} Todos são tais que, se são baixistas, então Lars é baixista.
 	\end{enumerate}
-To symbolize these sentences, we will have to add a new name to the symbolization key, namely:
+Para simbolizar essas sentenças, teremos de acrescentar um novo nome à chave de simbolização, a saber:
 	\begin{ekey}
 		\item[l] Lars
 	\end{ekey}
-\Cref*{qscope1} is a conditional, whose antecedent is `everyone is a bassist', so we will symbolize it with `$\forall x\, \atom{B}{x} \eif \atom{B}{l}$'. This sentence is \emph{necessarily} true: if \emph{everyone} is indeed a bassist, then take anyone you like---for example Lars---and he will be a bassist.
+\Cref*{qscope1} é um condicional cujo antecedente é \textquotedblleft todos são baixistas\textquotedblright{}, portanto vamos simbolizá-la por \textquotedblleft $\forall x\, \atom{B}{x} \eif \atom{B}{l}$\textquotedblright{}. Essa sentença é \emph{necessariamente} verdadeira: se \emph{todos} são de fato baixistas, escolha qualquer pessoa — por exemplo, Lars — e ela será baixista.
 
-\Cref*{qscope2}, by contrast, might best be paraphrased by `every
-person $x$ is such that, if $x$ is a bassist, then Lars is a bassist'.
-This is symbolized by `$\forall x (\atom{B}{x} \eif \atom{B}{l})$'.
-This sentence can well be false. For instance, Kim Deal is a bassist.
-So `$\atom{B}{k}$' is true. Suppose that Lars is not a bassist (say,
-he's a drummer instead), so `$\atom{B}{l}$' is false. Accordingly,
-`$\atom{B}{k} \eif \atom{B}{l}$' will be false, so `$\forall x
-(\atom{B}{x} \eif \atom{B}{l})$' will be false as well. This example
-shows something else: `$\forall x (\atom{B}{x} \eif \atom{B}{l})$' is
-false exactly when $\exists x\,\atom{B}{x} \eif \atom{B}{l}$ is false;
-they are equivalent. Recalling the lesson about how to symbolize `any'
-in \cref{anyone1} from the previous section, we can conclude that
-\cref*{qscope2} is just a convoluted way of saying ``Lars is a bassist,
-if anyone is''.
+\Cref*{qscope2}, em contraste, pode ser melhor parafraseada como \textquotedblleft toda pessoa $x$ é tal que, se $x$ é baixista, então Lars é baixista\textquotedblright{}.
+Isso é simbolizado por \textquotedblleft $\forall x (\atom{B}{x} \eif \atom{B}{l})$\textquotedblright{}.
 
-In short, `$\forall x \atom{B}{x} \eif \atom{B}{l}$' and `$\forall x (\atom{B}{x} \eif \atom{B}{l})$' are very different sentences. We can explain the difference in terms of the \emph{scope} of the quantifier. The scope of quantification is very much like the scope of negation, which we considered when discussing TFL, and it will help to explain it in this way.
+Essa sentença pode perfeitamente ser falsa. Por exemplo, Kim Deal é baixista.
+Assim, \textquotedblleft $\atom{B}{k}$\textquotedblright{} é verdadeira. Suponha que Lars não seja baixista (digamos, que seja baterista em vez disso), de modo que \textquotedblleft $\atom{B}{l}$\textquotedblright{} seja falsa.
+Consequentemente, \textquotedblleft $\atom{B}{k} \eif \atom{B}{l}$\textquotedblright{} será falsa, e portanto \textquotedblleft $\forall x
+(\atom{B}{x} \eif \atom{B}{l})$\textquotedblright{} também será falsa. Esse exemplo
+mostra algo mais: \textquotedblleft $\forall x (\atom{B}{x} \eif \atom{B}{l})$\textquotedblright{} é
+falsa exatamente quando $\exists x\,\atom{B}{x} \eif \atom{B}{l}$ é falsa;
+elas são equivalentes. Recordando a lição sobre como simbolizar \textquotedblleft qualquer\textquotedblright{}
+em \cref{anyone1} da seção anterior, podemos concluir que
+\cref*{qscope2} é apenas uma maneira convoluta de dizer \textquotedblleft Lars é baixista,
+se alguém o for\textquotedblright{}.
 
-In the sentence `$\enot \atom{B}{k} \eif \atom{B}{l}$', the scope of `$\enot$' is just the antecedent of the conditional. We are saying something like: if `$\atom{B}{k}$' is false, then `$\atom{B}{l}$' is true. Similarly, in the sentence `$\forall x \atom{B}{x} \eif \atom{B}{l}$', the scope of `$\forall x$' is just the antecedent of the conditional. We are saying something like: if `$\atom{B}{x}$' is true of \emph{everything}, then `$\atom{B}{l}$' is also true.
 
-In the sentence `$\enot(\atom{B}{k} \eif \atom{B}{l})$', the scope of `$\enot$' is the entire sentence. We are saying something like: `$(\atom{B}{k} \eif \atom{B}{l})$' is false. Similarly, in the sentence `$\forall x (\atom{B}{x} \eif \atom{B}{l})$', the scope of `$\forall x$' is the entire sentence. We are saying something like: `$(\atom{B}{x} \eif \atom{B}{l})$' is true of \emph{everything}.
+Em resumo, \textquotedblleft $\forall x \atom{B}{x} \eif \atom{B}{l}$\textquotedblright{} e \textquotedblleft $\forall x (\atom{B}{x} \eif \atom{B}{l})$\textquotedblright{} são sentenças muito diferentes. Podemos explicar a diferença em termos do \emph{escopo} do quantificador. O escopo da quantificação é muito semelhante ao escopo da negação, que consideramos ao discutir a LVF, e será útil explicá-lo dessa maneira.
 
-The moral of the story is simple. When you are using conditionals, be very careful to make sure that you have sorted out the scope correctly.
+Na sentença \textquotedblleft $\enot \atom{B}{k} \eif \atom{B}{l}$\textquotedblright{}, o escopo de \textquotedblleft $\enot$\textquotedblright{} é apenas o antecedente do condicional. Estamos dizendo algo como: se \textquotedblleft $\atom{B}{k}$\textquotedblright{} é falsa, então \textquotedblleft $\atom{B}{l}$\textquotedblright{} é verdadeira. Da mesma forma, na sentença \textquotedblleft $\forall x \atom{B}{x} \eif \atom{B}{l}$\textquotedblright{}, o escopo de \textquotedblleft $\forall x$\textquotedblright{} é apenas o antecedente do condicional. Estamos dizendo algo como: se \textquotedblleft $\atom{B}{x}$\textquotedblright{} for verdadeira de \emph{tudo}, então \textquotedblleft $\atom{B}{l}$\textquotedblright{} também será verdadeira.
 
-\section{Ambiguous predicates}
+Na sentença \textquotedblleft $\enot(\atom{B}{k} \eif \atom{B}{l})$\textquotedblright{}, o escopo de \textquotedblleft $\enot$\textquotedblright{} é a sentença inteira. Estamos dizendo algo como: \textquotedblleft $(\atom{B}{k} \eif \atom{B}{l})$\textquotedblright{} é falsa. Da mesma forma, na sentença \textquotedblleft $\forall x (\atom{B}{x} \eif \atom{B}{l})$\textquotedblright{}, o escopo de \textquotedblleft $\forall x$\textquotedblright{} é a sentença inteira. Estamos dizendo algo como: \textquotedblleft $(\atom{B}{x} \eif \atom{B}{l})$\textquotedblright{} é verdadeira de \emph{tudo} .
 
-Suppose we just want to symbolize this sentence:
+A lição da história é simples. Ao usar condicionais, tenha muito cuidado para certificar-se de que você determinou corretamente o escopo.
+
+\section{Predicados ambíguos}
+
+Suponha que queiramos apenas simbolizar esta sentença:
 \begin{enumerate}
-\item\label{surgeon1} Adina is a skilled surgeon.
+\item\label{surgeon1} Adina é uma cirurgiã habilidosa.
 \end{enumerate}
-Let the domain be people, let $\atom{K}{x}$ mean `$x$ is a skilled surgeon', and let $a$ mean Adina. \Cref{surgeon1} is simply $\atom{K}{a}$.
+Seja o domínio formado por pessoas, seja $\atom{K}{x}$ a expressão que significa \textquotedblleft $x$ é uma cirurgiã habilidosa\textquotedblright{} e seja $a$ um nome para Adina. \Cref{surgeon1} é simplesmente $\atom{K}{a}$.
 
 
-Suppose instead that we want to symbolize this argument:
+Suponha, em vez disso, que queiramos simbolizar este argumento:
 \begin{earg}
-\item The hospital will only hire a skilled surgeon. 
-\item All surgeons are greedy. 
-\item Billy is a surgeon, but is not skilled. 
-\item[\texttherefore] Billy is greedy, but the hospital will not hire him.
+\item O hospital só contratará uma cirurgiã habilidosa.
+\item Todas as cirurgiãs são gananciosas.
+\item Billy é cirurgião, mas não é habilidoso.
+\item[\texttherefore] Billy é ganancioso, mas o hospital não o contratará.
 \end{earg}
-We need to distinguish being a \emph{skilled surgeon} from merely being a \emph{surgeon}. So we define this symbolization key:
+Precisamos distinguir entre ser uma \emph{cirurgiã habilidosa} e ser simplesmente uma \emph{cirurgiã}. Portanto, definimos esta chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{G}{x}] \gap{x} is greedy
-\item[\atom{H}{x}] The hospital will hire \gap{x}
-\item[\atom{R}{x}] \gap{x} is a surgeon
-\item[\atom{K}{x}] \gap{x} is skilled
+\item[\text{domínio}] pessoas
+\item[\atom{G}{x}] \gap{x} é ganancioso
+\item[\atom{H}{x}] O hospital contratará \gap{x}
+\item[\atom{R}{x}] \gap{x} é cirurgião
+\item[\atom{K}{x}] \gap{x} é habilidoso
 \item[b] Billy
 \end{ekey}
 
-Now the argument can be symbolized in this way:
+Agora o argumento pode ser simbolizado da seguinte maneira:
 \begin{earg}
 \label{surgeon2}
 \item[] $\forall x\bigl[\enot (\atom{R}{x} \eand \atom{K}{x}) \eif \enot \atom{H}{x}\bigr]$
@@ -448,134 +448,130 @@ Now the argument can be symbolized in this way:
 \item[\texttherefore] $\atom{G}{b} \eand \enot \atom{H}{b}$
 \end{earg}
 
-Next suppose that we want to symbolize this argument:
+Em seguida, suponha que queiramos simbolizar este argumento:
 \begin{earg}
 \label{surgeon3}
-\item Carol is a skilled surgeon and a tennis player. 
-\item[\texttherefore] Carol is a skilled tennis player.
+\item Carol é uma cirurgiã habilidosa e uma jogadora de tênis.
+\item[\texttherefore] Carol é uma jogadora de tênis habilidosa.
 \end{earg}
-If we start with the symbolization key we used for the previous
-argument, we could add a predicate (let $\atom{T}{x}$ mean `$x$ is a
-tennis player') and a name (let `$c$' be a name for Carol). Then the
-argument becomes:
+Se começarmos com a chave de simbolização usada para o argumento anterior, poderemos acrescentar um predicado (seja $\atom{T}{x}$ a expressão que significa \textquotedblleft $x$ é jogador de tênis\textquotedblright{}) e um nome (seja \textquotedblleft $c$\textquotedblright{} um nome para Carol). Então, o argumento se torna:
 \begin{earg}
 \item[] $(\atom{R}{c} \eand \atom{K}{c}) \eand \atom{T}{c}$
 \item[\texttherefore] $\atom{T}{c} \eand \atom{K}{c}$
 \end{earg}
-This symbolization is a disaster! It takes what in English is a terrible argument and symbolizes it as a valid argument in FOL. The problem is that there is a difference between being \emph{skilled as a surgeon} and \emph{skilled as a tennis player}. Symbolizing this argument correctly requires two separate predicates, one for each type of skill. If we let $\atom{K_1}{x}$ mean `$x$ is skilled as a surgeon' and $\atom{K_2}{x}$ mean `$x$ is skilled as a tennis player,' then we can symbolize the argument in this way:
+Essa simbolização é um desastre! Ela toma um argumento terrível em inglês e o simboliza como um argumento válido na LPO. O problema é que há uma diferença entre ser \emph{habilidoso como cirurgião} e ser \emph{habilidoso como jogador de tênis}. A simbolização correta desse argumento exige dois predicados distintos, um para cada tipo de habilidade. Se fizermos $\atom{K_1}{x}$ significar \textquotedblleft $x$ é habilidoso como cirurgião\textquotedblright{} e $\atom{K_2}{x}$ significar \textquotedblleft $x$ é habilidoso como jogador de tênis\textquotedblright{}, poderemos simbolizar o argumento da seguinte maneira:
 \begin{earg}
 \label{surgeon3correct}
 \item[] $(\atom{R}{c} \eand \atom{K_1}{c}) \eand \atom{T}{c}$
 \item[\texttherefore] $\atom{T}{c} \eand \atom{K_2}{c}$
 \end{earg}
-Like the English language argument it symbolizes, this is invalid. %\nix{Notice that there is no logical connection between $\atom{K_1}{c}$ and $\atom{R}{c}$. As symbols of FOL, they might be any one-place predicates. In English there is a connection between being a \emph{surgeon} and being a \emph{skilled surgeon}: Every skilled surgeon is a surgeon. In order to capture this connection, we symbolize `Carol is a skilled surgeon' as $\atom{R}{c} \eand K_1c$. This means: `Carol is a surgeon and is skilled as a surgeon.'}
+Assim como o argumento em inglês que simboliza, este é inválido. %\nix{Observe que não há conexão lógica entre $\atom{K_1}{c}$ e $\atom{R}{c}$. Como símbolos da LPO, eles poderiam ser quaisquer predicados de um lugar. Em inglês, há uma conexão entre ser um \emph{cirurgião} e ser uma \emph{cirurgiã habilidosa}: toda cirurgiã habilidosa é cirurgiã. Para capturar essa conexão, simbolizamos \textquotedblleft Carol é uma cirurgiã habilidosa\textquotedblright{} como $\atom{R}{c} \eand K_1c$. Isso significa: \textquotedblleft Carol é cirurgiã e é habilidosa como cirurgiã.\textquotedblright{}}
 
-The moral of these examples is that you need to be careful of symbolizing predicates in an ambiguous way. Similar problems can arise with predicates like \emph{good}, \emph{bad}, \emph{big}, and \emph{small}. Just as skilled surgeons and skilled tennis players have different skills, big dogs, big mice, and big problems are big in different ways.
+A lição desses exemplos é que precisamos ter cuidado ao simbolizar predicados de maneira ambígua. Problemas semelhantes podem surgir com predicados como \emph{bom}, \emph{mau}, \emph{grande} e \emph{pequeno}. Assim como cirurgiões habilidosos e jogadores de tênis habilidosos têm habilidades diferentes, cães grandes, ratos grandes e problemas grandes são grandes de maneiras diferentes.
 
-Is it enough to have a predicate that means `$x$ is a skilled surgeon', rather than two predicates `$x$ is skilled' and `$x$ is a surgeon'? Sometimes. As \cref{surgeon1} shows, sometimes we do not need to distinguish between skilled surgeons and other surgeons.
+É suficiente ter um predicado que signifique \textquotedblleft $x$ é uma cirurgiã habilidosa\textquotedblright{}, em vez de dois predicados \textquotedblleft $x$ é habilidoso\textquotedblright{} e \textquotedblleft $x$ é cirurgião\textquotedblright{}? Às vezes. Como \cref{surgeon1} mostra, às vezes não precisamos distinguir entre cirurgiões habilidosos e outros cirurgiões.
 
-Must we always distinguish between different ways of being skilled, good, bad, or big? No. As the argument about Billy shows, sometimes we only need to talk about one kind of skill. If you are symbolizing an argument that is just about dogs, it is fine to define a predicate that means `$x$ is big.' If the domain includes dogs and mice, however, it is probably best to make the predicate mean `$x$ is big for a dog.'
+Devemos sempre distinguir entre diferentes maneiras de ser habilidoso, bom, mau ou grande? Não. Como mostra o argumento sobre Billy, às vezes precisamos falar apenas de um tipo de habilidade. Se você está simbolizando um argumento que trata apenas de cães, não há problema em definir um predicado que signifique \textquotedblleft $x$ é grande\textquotedblright{}. Se o domínio inclui cães e ratos, porém, provavelmente é melhor fazer o predicado significar \textquotedblleft $x$ é grande para um cão\textquotedblright{}.
 
 \practiceproblems
 \problempart
 \phantomsection\label{pr.BarbaraEtc}
-Here are the syllogistic figures identified by Aristotle and his successors, along with their medieval names:
+Eis as figuras silogísticas identificadas por Aristóteles e seus sucessores, juntamente com seus nomes medievais:
 \begin{compactlist}
-	\item \textbf{Barbara.} All G are F. All H are G. So:  All H are F.
-	\item \textbf{Celarent.} No G are F. All H are G. So: No H are F.
-	\item \textbf{Ferio.} No G are F. Some H is G. So: Some H is not F.
-	\item \textbf{Darii.} All G are F. Some H is G. So: Some H is F.
-	\item \textbf{Camestres.} All F are G. No H are G. So: No H are F.
-	\item \textbf{Cesare.} No F are G. All H are G. So: No H are F.
-	\item \textbf{Baroko.} All F are G. Some H is not G. So: Some H is not~F.
-	\item \textbf{Festino.} No F are G. Some H are G. So: Some H is not~F.
-	\item \textbf{Datisi.} All G are F. Some G is H. So: Some H is F.
-	\item \textbf{Disamis.} Some G is F. All G are H. So: Some H is F.
-	\item \textbf{Ferison.} No G are F. Some G is H. So: Some H is not F.
-	\item \textbf{Bokardo.} Some G is not F. All G are H. So:  Some H is not~F.
-	\item \textbf{Camenes.} All F are G. No G are H. So: No H is F.
-	\item \textbf{Dimaris.} Some F is G. All G are H. So: Some H is F.
-	\item \textbf{Fresison.} No F are G. Some G is H. So: Some H is not~F.
+	\item \textbf{Barbara.} Todo $G$ é $F$. Todo $H$ é $G$. Portanto: todo $H$ é $F$.
+	\item \textbf{Celarent.} Nenhum $G$ é $F$. Todo $H$ é $G$. Portanto: nenhum $H$ é $F$.
+	\item \textbf{Ferio.} Nenhum $G$ é $F$. Algum $H$ é $G$. Portanto: algum $H$ não é $F$.
+	\item \textbf{Darii.} Todo $G$ é $F$. Algum $H$ é $G$. Portanto: algum $H$ é $F$.
+	\item \textbf{Camestres.} Todo $F$ é $G$. Nenhum $H$ é $G$. Portanto: nenhum $H$ é $F$.
+	\item \textbf{Cesare.} Nenhum $F$ é $G$. Todo $H$ é $G$. Portanto: nenhum $H$ é $F$.
+	\item \textbf{Baroko.} Todo $F$ é $G$. Algum $H$ não é $G$. Portanto: algum $H$ não é~$F$.
+	\item \textbf{Festino.} Nenhum $F$ é $G$. Algum $H$ é $G$. Portanto: algum $H$ não é~$F$.
+	\item \textbf{Datisi.} Todo $G$ é $F$. Algum $G$ é $H$. Portanto: algum $H$ é $F$.
+	\item \textbf{Disamis.} Algum $G$ é $F$. Todo $G$ é $H$. Portanto: algum $H$ é $F$.
+	\item \textbf{Ferison.} Nenhum $G$ é $F$. Algum $G$ é $H$. Portanto: algum $H$ não é $F$.
+	\item \textbf{Bokardo.} Algum $G$ não é $F$. Todo $G$ é $H$. Portanto: algum $H$ não é~$F$.
+	\item \textbf{Camenes.} Todo $F$ é $G$. Nenhum $G$ é $H$. Portanto: nenhum $H$ é $F$.
+	\item \textbf{Dimaris.} Algum $F$ é $G$. Todo $G$ é $H$. Portanto: algum $H$ é $F$.
+	\item \textbf{Fresison.} Nenhum $F$ é $G$. Algum $G$ é $H$. Portanto: algum $H$ não é~$F$.
 \end{compactlist}
-Symbolize each figure in FOL.
+Simbolize cada figura na LPO.
 
 \
 
 \problempart
 \label{pr.FOLvegetarians}
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{K}{x}] \gap{x} knows the combination to the safe
-\item[\atom{S}{x}] \gap{x} is a spy
-\item[\atom{V}{x}] \gap{x} is a vegetarian
-%\item[\atom{T}{x,y}] \gap{x} trusts \gap{y}.
+\item[\text{domínio}] pessoas
+\item[\atom{K}{x}] \gap{x} conhece a combinação do cofre
+\item[\atom{S}{x}] \gap{x} é espião
+\item[\atom{V}{x}] \gap{x} é vegetariano
+%\item[\atom{T}{x,y}] \gap{x} confia em \gap{y}.
 \item[h] Hofthor
 \item[i] Ingmar
 \end{ekey}
-symbolize the following sentences in FOL:
+simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item Neither Hofthor nor Ingmar is a vegetarian.
-\item No spy knows the combination to the safe.
-\item No one knows the combination to the safe unless Ingmar does.
-\item Hofthor is a spy, but no vegetarian is a spy.
+\item Nem Hofthor nem Ingmar é vegetariano.
+\item Nenhum espião conhece a combinação do cofre.
+\item Ninguém conhece a combinação do cofre a menos que Ingmar a conheça.
+\item Hofthor é espião, mas nenhum vegetariano é espião.
 \end{compactlist}
 \solutions
 \problempart\label{pr.FOLalligators}
-Using this symbolization key:
+Usando esta chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] all animals
-\item[\atom{A}{x}] \gap{x} is an alligator
-\item[\atom{M}{x}] \gap{x} is a monkey
-\item[\atom{R}{x}] \gap{x} is a reptile
-\item[\atom{Z}{x}] \gap{x} lives at the zoo
+\item[\text{domínio}] todos os animais
+\item[\atom{A}{x}] \gap{x} é um jacaré
+\item[\atom{M}{x}] \gap{x} é um macaco
+\item[\atom{R}{x}] \gap{x} é um réptil
+\item[\atom{Z}{x}] \gap{x} vive no zoológico
 \item[a] Amos
 \item[b] Bouncer
 \item[c] Cleo
 \end{ekey}
-symbolize each of the following sentences in FOL:
+simbolize cada uma das seguintes sentenças na LPO:
 \begin{compactlist}
-\item Amos, Bouncer, and Cleo all live at the zoo.
-\item Bouncer is a reptile, but not an alligator.
-%\item If Cleo loves Bouncer, then Bouncer is a monkey.
-%\item If both Bouncer and Cleo are alligators, then Amos loves them both.
-\item Some reptile lives at the zoo.
-\item Every alligator is a reptile.
-\item Any animal that lives at the zoo is either a monkey or an alligator.
-\item There are reptiles that are not alligators.
-%\item Cleo loves a reptile.
-%\item Bouncer loves all the monkeys that live at the zoo.
-%\item All the monkeys that Amos loves love him back.
-\item If any animal is an reptile, then Amos is.
-\item If any animal is an alligator, then it is a reptile.
-%\item Every monkey that Cleo loves is also loved by Amos.
-%\item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
+\item Amos, Bouncer e Cleo vivem no zoológico.
+\item Bouncer é um réptil, mas não é um jacaré.
+% \item Se Cleo ama Bouncer, então Bouncer é um macaco.
+% \item Se Bouncer e Cleo são jacarés, então Amos ama ambos.
+\item Algum réptil vive no zoológico.
+\item Todo jacaré é um réptil.
+\item Todo animal que vive no zoológico é um macaco ou um jacaré.
+\item Há répteis que não são jacarés.
+% \item Cleo ama um réptil.
+% \item Bouncer ama todos os macacos que vivem no zoológico.
+% \item Todos os macacos que Amos ama também o amam.
+\item Se algum animal é um réptil, então Amos é.
+\item Se algum animal é um jacaré, então ele é um réptil.
+% \item Todo macaco que Cleo ama também é amado por Amos.
+% \item Há um macaco que ama Bouncer, mas infelizmente Bouncer não retribui esse amor.
 \end{compactlist}
 
 \problempart
 \label{pr.FOLarguments}
-For each argument, write a symbolization key and symbolize the argument in FOL.
+Para cada argumento, escreva uma chave de simbolização e simbolize o argumento na LPO.
 \begin{compactlist}
-\item Willard is a logician. All logicians wear funny hats. So Willard wears a funny hat.
-\item Nothing on my desk escapes my attention. There is a computer on my desk. As such, there is a computer that does not escape my attention.
-\item All my dreams are black and white. Old TV shows are in black and white. Therefore, some of my dreams are old TV shows.
-\item Neither Holmes nor Watson has been to Australia. A person could have seen a kangaroo only if they had been to Australia or to a zoo. Although Watson has not seen a kangaroo, Holmes has. Therefore, Holmes has been to a zoo.
-\item No one expects the Spanish Inquisition. No one knows the troubles I've seen. Therefore, anyone who expects the Spanish Inquisition knows the troubles I've seen.
-\item All babies are illogical. Nobody who is illogical can manage a crocodile. Berthold is a baby. Therefore, Berthold is unable to manage a crocodile.
+\item Willard é lógico. Todos os lógicos usam chapéus engraçados. Portanto, Willard usa um chapéu engraçado.
+\item Nada sobre a minha mesa escapa à minha atenção. Há um computador sobre a minha mesa. Portanto, há um computador que não escapa à minha atenção.
+\item Todos os meus sonhos são em preto e branco. Programas de televisão antigos são em preto e branco. Portanto, alguns dos meus sonhos são programas de televisão antigos.
+\item Nem Holmes nem Watson estiveram na Austrália. Uma pessoa só poderia ter visto um canguru se tivesse estado na Austrália ou em um zoológico. Embora Watson não tenha visto um canguru, Holmes viu. Portanto, Holmes esteve em um zoológico.
+\item Ninguém espera a Inquisição Espanhola. Ninguém conhece os problemas que enfrentei. Portanto, qualquer pessoa que espera a Inquisição Espanhola conhece os problemas que enfrentei.
+\item Todos os bebês são ilógicos. Ninguém que seja ilógico consegue lidar com um crocodilo. Berthold é um bebê. Portanto, Berthold não consegue lidar com um crocodilo.
 \end{compactlist}
 
-%\problempart
-%label{pr.QLarguments}
-%For each argument, write a symbolization key and symbolize the argument into FOL.
-%\begin{compactlist}
-%\item Nothing on my desk escapes my attention. There is a computer on my desk. As such, there is a computer that does not escape my attention.
-%\item All my dreams are black and white. Old TV shows are in black and white. Therefore, some of my dreams are old TV shows.
-%\item Neither Holmes nor Watson has been to Australia. A person could see a kangaroo only if they had been to Australia or to a zoo. Although Watson has not seen a kangaroo, Holmes has. Therefore, Holmes has been to a zoo.
-%\item No one expects the Spanish Inquisition. No one knows the troubles I've seen. Therefore, anyone who expects the Spanish Inquisition knows the troubles I've seen.
-%\item An antelope is bigger than a bread box. I am thinking of something that is no bigger than a bread box, and it is either an antelope or a cantaloupe. As such, I am thinking of a cantaloupe.
-%\item All babies are illogical. Nobody who is illogical can manage a crocodile. Berthold is a baby. Therefore, Berthold is unable to manage a crocodile.
-%\end{compactlist}
-
+% \problempart
+% label{pr.QLarguments}
+% Para cada argumento, escreva uma chave de simbolização e simbolize o argumento na LPO.
+% \begin{compactlist}
+% \item Nada sobre a minha mesa escapa à minha atenção. Há um computador sobre a minha mesa. Portanto, há um computador que não escapa à minha atenção.
+% \item Todos os meus sonhos são em preto e branco. Programas de televisão antigos são em preto e branco. Portanto, alguns dos meus sonhos são programas de televisão antigos.
+% \item Nem Holmes nem Watson estiveram na Austrália. Uma pessoa só poderia ver um canguru se tivesse estado na Austrália ou em um zoológico. Embora Watson não tenha visto um canguru, Holmes viu. Portanto, Holmes esteve em um zoológico.
+% \item Ninguém espera a Inquisição Espanhola. Ninguém conhece os problemas que enfrentei. Portanto, qualquer pessoa que espera a Inquisição Espanhola conhece os problemas que enfrentei.
+% \item Um antílope é maior que uma caixa de pão. Estou pensando em algo que não é maior que uma caixa de pão, e é um antílope ou um melão. Portanto, estou pensando em um melão.
+% \item Todos os bebês são ilógicos. Ninguém que seja ilógico consegue lidar com um crocodilo. Berthold é um bebê. Portanto, Berthold não consegue lidar com um crocodilo.
+% \end{compactlist}
 
 \chapter{Multiple generality}\label{s:MultipleGenerality}
 So far, we have only considered sentences that require one-place predicates and one quantifier. The full power of FOL really comes out when we start to use many-place predicates and multiple quantifiers. For this insight, we largely have \foreignlanguage{german}{Gottlob Frege} (1879) to thank, but also C.~S.~Peirce.

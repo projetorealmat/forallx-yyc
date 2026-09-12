@@ -5,66 +5,66 @@
 
 \stepcounter{chapter} % Building blocks
 
-\chapter{Sentences with one quantifier}\label{s:MoreMonadic}\setcounter{ProbPart}{0}
+\chapter{Sentenças com um quantificador}\label{s:MoreMonadic}\setcounter{ProbPart}{0}
 \problempart
 \label{pr.BarbaraEtc}
-Here are the syllogistic figures identified by Aristotle and his successors, along with their medieval names:
+Eis as figuras silogísticas identificadas por Aristóteles e seus sucessores, juntamente com seus nomes medievais:
 \begin{compactlist}
-	\item \textbf{Barbara.} All G are F. All H are G. So:  All H are F
+\item \textbf{Barbara.} Todo $G$ é $F$. Todo $H$ é $G$. Logo: todo $H$ é $F$
 	\item[] \myanswer{$\forall x (\atom{G}{x} \eif \atom{F}{x}), \forall x (\atom{H}{x} \eif \atom{G}{x}) \therefore \forall x (\atom{H}{x} \eif \atom{F}{x})$}
-	\item \textbf{Celarent.} No G are F. All H are G. So: No H are F
+\item \textbf{Celarent.} Nenhum $G$ é $F$. Todo $H$ é $G$. Logo: nenhum $H$ é $F$
 	\item[] \myanswer{$\forall x (\atom{G}{x} \eif \enot \atom{F}{x}), \forall x (\atom{H}{x} \eif \atom{G}{x}) \therefore \forall x (\atom{H}{x} \eif \enot \atom{F}{x})$}
-	\item \textbf{Ferio.} No G are F. Some H is G. So: Some H is not F
+\item \textbf{Ferio.} Nenhum $G$ é $F$. Algum $H$ é $G$. Logo: algum $H$ não é $F$
 	\item[] \myanswer{$\forall x (\atom{G}{x} \eif \enot \atom{F}{x}), \exists x (\atom{H}{x} \eand  \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$}
-	\item \textbf{Darii.} All G are H. Some H is G. So: Some H is F.
+\item \textbf{Darii.} Todo $G$ é $F$. Algum $H$ é $G$. Logo: algum $H$ é $F$
 	\item[] \myanswer{$\forall x (\atom{G}{x} \eif \atom{F}{x}), \exists x (\atom{H}{x} \eand  \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand  \atom{F}{x})$}
-	\item \textbf{Camestres.} All F are G. No H are G. So: No H are F.
+\item \textbf{Camestres.} Todo $F$ é $G$. Nenhum $H$ é $G$. Logo: nenhum $H$ é $F$
 	\item[] \myanswer{$\forall x (\atom{F}{x} \eif \atom{G}{x}), \forall x (\atom{H}{x} \eif \enot \atom{G}{x}) \therefore \forall x (\atom{H}{x} \eif \enot \atom{F}{x})$}
-	\item \textbf{Cesare.} No F are G. All H are G. So: No H are F.
+\item \textbf{Cesare.} Nenhum $F$ é $G$. Todo $H$ é $G$. Logo: nenhum $H$ é $F$
 	\item[] \myanswer{$\forall x (\atom{F}{x} \eif \enot \atom{G}{x}), \forall x (\atom{H}{x} \eif \atom{G}{x}) \therefore \forall x (\atom{H}{x} \eif \enot \atom{F}{x})$}
-	\item \textbf{Baroko.} All F are G. Some H is not G. So: Some H is not F.
+\item \textbf{Baroko.} Todo $F$ é $G$. Algum $H$ não é $G$. Logo: algum $H$ não é $F$
 	\item[] \myanswer{$\forall x (\atom{F}{x} \eif \atom{G}{x}), \exists x (\atom{H}{x} \eand \enot \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$}
-	\item \textbf{Festino.} No F are G. Some H are G. So: Some H is not F.
+\item \textbf{Festino.} Nenhum $F$ é $G$. Algum $H$ é $G$. Logo: algum $H$ não é $F$
 	\item[] \myanswer{$\forall x (\atom{F}{x} \eif \enot \atom{G}{x}), \exists x (\atom{H}{x} \eand \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$}
-	\item \textbf{Datisi.} All G are F. Some G is H. So: Some H is F.
+\item \textbf{Datisi.} Todo $G$ é $F$. Algum $G$ é $H$. Logo: algum $H$ é $F$
 	\item[] \myanswer{$\forall x (\atom{G}{x} \eif \atom{F}{x}), \exists x (\atom{G}{x} \eand \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$}
-	\item \textbf{Disamis.} Some G is F. All G are H. So: Some H is F.
+\item \textbf{Disamis.} Algum $G$ é $F$. Todo $G$ é $H$. Logo: algum $H$ é $F$
 	\item[] \myanswer{$\exists x (\atom{G}{x} \eand \atom{F}{x}), \forall x (\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$}
-	\item \textbf{Ferison.} No G are F. Some G is H. So: Some H is not F.
+\item \textbf{Ferison.} Nenhum $G$ é $F$. Algum $G$ é $H$. Logo: algum $H$ não é $F$
 	\item[] \myanswer{$\forall x (\atom{G}{x} \eif \enot \atom{F}{x}), \exists x (\atom{G}{x} \eand \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$}
-	\item \textbf{Bokardo.} Some G is not F. All G are H. So:  Some H is not F.
+\item \textbf{Bokardo.} Algum $G$ não é $F$. Todo $G$ é $H$. Logo: algum $H$ não é $F$
 	\item[] \myanswer{$\exists x (\atom{G}{x} \eand \enot \atom{F}{x}), \forall x (\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$}
-	\item \textbf{Camenes.} All F are G. No G are H So: No H is F.
+\item \textbf{Camenes.} Todo $F$ é $G$. Nenhum $G$ é $H$. Logo: nenhum $H$ é $F$
 	\item[] \myanswer{$\forall x (\atom{F}{x} \eif \atom{G}{x}), \forall x (\atom{G}{x} \eif \enot \atom{H}{x}) \therefore \forall x (\atom{H}{x} \eif \enot \atom{F}{x})$}
-	\item \textbf{Dimaris.} Some F is G. All G are H. So: Some H is F.
+\item \textbf{Dimaris.} Algum $F$ é $G$. Todo $G$ é $H$. Logo: algum $H$ é $F$
 	\item[] \myanswer{$\exists x (\atom{F}{x} \eand \atom{G}{x}), \forall x (\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$}
-	\item \textbf{Fresison.} No F are G. Some G is H. So: Some H is not F.
+\item \textbf{Fresison.} Nenhum $F$ é $G$. Algum $G$ é $H$. Logo: algum $H$ não é $F$
 	\item[] \myanswer{$\forall x (\atom{F}{x} \eif \enot \atom{G}{x}), \exists x (\atom{G}{x} \eand \atom{H}{x}) \therefore \exists (\atom{H}{x} \eand \enot \atom{F}{x})$}
 \end{compactlist}
-Symbolize each argument in FOL.
+Simbolize cada argumento na LPO.
 
 \
 \problempart
 \label{pr.FOLvegetarians}
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{K}{x}] \gap{x} knows the combination to the safe
-\item[\atom{S}{x}] \gap{x} is a spy
-\item[\atom{V}{x}] \gap{x} is a vegetarian
+\item[\text{domínio}] pessoas
+\item[\atom{K}{x}] \gap{x} sabe a combinação do cofre
+\item[\atom{S}{x}] \gap{x} é espião
+\item[\atom{V}{x}] \gap{x} é vegetariano
 %\item[\atom{T}{x,y}] \gap{x} trusts \gap{y}.
 \item[h] Hofthor
 \item[i] Ingmar
 \end{ekey}
-symbolize the following sentences in FOL:
+simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item Neither Hofthor nor Ingmar is a vegetarian.
+\item Nem Hofthor nem Ingmar é vegetariano.
 \item[] \myanswer{$\enot \atom{V}{h} \eand \enot \atom{V}{i}$}
-\item No spy knows the combination to the safe.
+\item Nenhum espião sabe a combinação do cofre.
 \item[] \myanswer{$\forall x (\atom{S}{x} \eif \enot \atom{K}{x})$}
-\item No one knows the combination to the safe unless Ingmar does.
+\item Ninguém sabe a combinação do cofre, a menos que Ingmar saiba.
 \item[] \myanswer{$\forall x \enot \atom{K}{x} \eor \atom{K}{i}$}
-\item Hofthor is a spy, but no vegetarian is a spy.
+\item Hofthor é espião, mas nenhum vegetariano é espião.
 \item[] \myanswer{$\atom{S}{h} \eand \forall x(\atom{V}{x} \eif \enot \atom{S}{x})$}
 %\item Hofthor trusts a vegetarian.
 %\item Everyone who trusts Ingmar trusts a vegetarian.
@@ -77,39 +77,39 @@ symbolize the following sentences in FOL:
 
 \solutions
 \problempart\label{pr.FOLalligators}
-Using this symbolization key:
+Usando esta chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] all animals
-\item[\atom{A}{x}] \gap{x} is an alligator
-\item[\atom{M}{x}] \gap{x} is a monkey
-\item[\atom{R}{x}] \gap{x} is a reptile
-\item[\atom{Z}{x}] \gap{x} lives at the zoo
+\item[\text{domínio}] todos os animais
+\item[\atom{A}{x}] \gap{x} é um jacaré
+\item[\atom{M}{x}] \gap{x} é um macaco
+\item[\atom{R}{x}] \gap{x} é um réptil
+\item[\atom{Z}{x}] \gap{x} vive no zoológico
 \item[a] Amos
 \item[b] Bouncer
 \item[c] Cleo
 \end{ekey}
-symbolize each of the following sentences in FOL:
+simbolize cada uma das seguintes sentenças na LPO:
 \begin{compactlist}
-\item Amos, Bouncer, and Cleo all live at the zoo.
+\item Amos, Bouncer e Cleo vivem todos no zoológico.
 \item[] \myanswer{$\atom{Z}{a} \eand \atom{Z}{b} \eand \atom{Z}{c}$}
-\item Bouncer is a reptile, but not an alligator.
+\item Bouncer é um réptil, mas não um jacaré.
 \item[] \myanswer{$\atom{R}{b} \eand \enot \atom{A}{b}$}
 %\item If Cleo loves Bouncer, then Bouncer is a monkey.
 %\item If both Bouncer and Cleo are alligators, then Amos loves them both.
-\item Some reptile lives at the zoo.
+\item Algum réptil vive no zoológico.
 \item[] \myanswer{$\exists x (\atom{R}{x} \eand \atom{Z}{x})$}
-\item Every alligator is a reptile.
+\item Todo jacaré é um réptil.
 \item[] \myanswer{$\forall x(\atom{A}{x} \eif \atom{R}{x})$}
-\item Any animal that lives at the zoo is either a monkey or an alligator.
+\item Qualquer animal que viva no zoológico é um macaco ou um jacaré.
 \item[] \myanswer{$\forall x(\atom{Z}{x} \eif (\atom{M}{x} \eor \atom{A}{x}))$}
-\item There are reptiles which are not alligators.
+\item Há répteis que não são jacarés.
 \item[] \myanswer{$\exists x (\atom{R}{x} \eand \enot \atom{A}{x})$}
 %\item Cleo loves a reptile.
 %\item Bouncer loves all the monkeys that live at the zoo.
 %\item All the monkeys that Amos loves love him back.
-\item If any animal is an reptile, then Amos is.
+\item Se algum animal é um réptil, então Amos é.
 \item[] \myanswer{$\exists x\, \atom{R}{x} \eif \atom{R}{a}$}
-\item If any animal is an alligator, then it is a reptile.
+\item Se algum animal é um jacaré, então ele é um réptil.
 \item[] \myanswer{$\forall x(\atom{A}{x} \eif \atom{R}{x})$}
 %\item Every monkey that Cleo loves is also loved by Amos.
 %\item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
@@ -117,60 +117,60 @@ symbolize each of the following sentences in FOL:
 
 \problempart
 \label{pr.FOLarguments}
-For each argument, write a symbolization key and symbolize the argument in FOL.
+Para cada argumento, escreva uma chave de simbolização e simbolize o argumento na LPO.
 \begin{compactlist}
-\item Willard is a logician. All logicians wear funny hats. So Willard wears a funny hat
+\item Willard é lógico. Todos os lógicos usam chapéus engraçados. Logo, Willard usa um chapéu engraçado.
 \myanswer{
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{L}{x}] \gap{x} is a logician
-\item[\atom{H}{x}] \gap{x} wears a funny hat
+\item[\text{domínio}] pessoas
+\item[\atom{L}{x}] \gap{x} é lógico
+\item[\atom{H}{x}] \gap{x} usa um chapéu engraçado
 \item[i] Willard
 \end{ekey}
 $\atom{L}{i}, \forall x (\atom{L}{x} \eif \atom{H}{x}) \therefore \atom{H}{i}$}
-\item Nothing on my desk escapes my attention. There is a computer on my desk. As such, there is a computer that does not escape my attention.
+\item Nada na minha mesa escapa à minha atenção. Há um computador na minha mesa. Portanto, há um computador que não escapa à minha atenção.
 \myanswer{
 \begin{ekey}
-\item[\text{domain}] physical things
-\item[\atom{D}{x}] \gap{x} is on my desk
-\item[\atom{E}{x}] \gap{x} escapes my attention
-\item[\atom{C}{x}] \gap{x} is a computer
+\item[\text{domínio}] coisas físicas
+\item[\atom{D}{x}] \gap{x} está na minha mesa
+\item[\atom{E}{x}] \gap{x} escapa à minha atenção
+\item[\atom{C}{x}] \gap{x} é um computador
 \end{ekey}
 $\forall x (\atom{D}{x} \eif \enot \atom{E}{x}), \exists x(\atom{D}{x} \eand \atom{C}{x}) \therefore \exists x (\atom{C}{x} \eand \enot \atom{E}{x})$}
-\item All my dreams are black and white. Old TV shows are in black and white. Therefore, some of my dreams are old TV shows.
+\item Todos os meus sonhos são em preto e branco. Programas antigos de televisão são em preto e branco. Portanto, alguns dos meus sonhos são programas antigos de televisão.
 \myanswer{
 \begin{ekey}
-\item[\text{domain}] episodes (psychological and televised)
-\item[\atom{D}{x}] \gap{x} is one of my dreams
-\item[\atom{B}{x}] \gap{x} is in black and white
-\item[\atom{O}{x}] \gap{x} is an old TV show
+\item[\text{domínio}] episódios (psicológicos e televisivos)
+\item[\atom{D}{x}] \gap{x} é um dos meus sonhos
+\item[\atom{B}{x}] \gap{x} é em preto e branco
+\item[\atom{O}{x}] \gap{x} é um programa antigo de televisão
 \end{ekey}
-$\forall x (\atom{D}{x} \eif \atom{B}{x}), \forall x (\atom{O}{x} \eif \atom{B}{x}) \therefore \exists x (\atom{D}{x} \eand \atom{O}{x})$. \\Comment: generic statements are tricky to deal with. Does the second sentence mean that \emph{all} old TV shows are in black and white; or that most of them are; or that most of the things which are in black and white are old TV shows? I have gone with the former, but it is not clear that FOL deals with these well.}
-\item Neither Holmes nor Watson has been to Australia. A person could see a kangaroo only if they had been to Australia or to a zoo. Although Watson has not seen a kangaroo, Holmes has. Therefore, Holmes has been to a zoo.
+$\forall x (\atom{D}{x} \eif \atom{B}{x}), \forall x (\atom{O}{x} \eif \atom{B}{x}) \therefore \exists x (\atom{D}{x} \eand \atom{O}{x})$. \\Comment: afirmações genéricas são difíceis de tratar. A segunda sentença significa que \emph{todos} os programas antigos de televisão são em preto e branco; que a maioria deles é; ou que a maioria das coisas em preto e branco são programas antigos de televisão? Optei pela primeira leitura, mas não é claro que a LPO lide bem com esse tipo de afirmação.}
+\item Nem Holmes nem Watson esteve na Austrália. Uma pessoa poderia ver um canguru somente se tivesse estado na Austrália ou em um zoológico. Embora Watson não tenha visto um canguru, Holmes viu. Portanto, Holmes esteve em um zoológico.
 \myanswer{
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{A}{x}] \gap{x} has been to Australia
-\item[\atom{K}{x}] \gap{x} has seen a kangaroo
-\item[\atom{Z}{x}] \gap{x} has been to a zoo
+\item[\text{domínio}] pessoas
+\item[\atom{A}{x}] \gap{x} esteve na Austrália
+\item[\atom{K}{x}] \gap{x} viu um canguru
+\item[\atom{Z}{x}] \gap{x} esteve em um zoológico
 \item[h] Holmes
 \item[a] Watson
 \end{ekey}
 $\enot \atom{A}{h} \eand \enot \atom{A}{a}, \forall x(\atom{K}{x} \eif (\atom{A}{x} \eor \atom{Z}{x})), \enot \atom{K}{a} \eand \atom{K}{h} \therefore \atom{Z}{h}$}
-\item No one expects the Spanish Inquisition. No one knows the troubles I've seen. Therefore, anyone who expects the Spanish Inquisition knows the troubles I've seen.
+\item Ninguém espera a Inquisição Espanhola. Ninguém sabe dos problemas que vi. Portanto, qualquer pessoa que espera a Inquisição Espanhola conhece os problemas que vi.
 \myanswer{
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{S}{x}] \gap{x} expects the Spanish Inquisition
-\item[\atom{T}{x}] \gap{x} knows the troubles I've seen
+\item[\text{domínio}] pessoas
+\item[\atom{S}{x}] \gap{x} espera a Inquisição Espanhola
+\item[\atom{T}{x}] \gap{x} conhece os problemas que vi
 \end{ekey}
 $\forall x\enot \atom{S}{x}, \forall x \enot \atom{T}{x} \therefore \forall x (\atom{S}{x} \eif \atom{T}{x})$}
-\item All babies are illogical. Nobody who is illogical can manage a crocodile. Berthold is a baby. Therefore, Berthold is unable to manage a crocodile.
+\item Todos os bebês são ilógicos. Ninguém que seja ilógico consegue lidar com um crocodilo. Berthold é um bebê. Portanto, Berthold não consegue lidar com um crocodilo.
 \myanswer{\begin{ekey}
-\item[\text{domain}] people
-\item[\atom{B}{x}] \gap{x} is a baby
-\item[\atom{I}{x}] \gap{x} is illogical
-\item[\atom{C}{x}] \gap{x} can manage a crocodile
+\item[\text{domínio}] pessoas
+\item[\atom{B}{x}] \gap{x} é um bebê
+\item[\atom{I}{x}] \gap{x} é ilógico
+\item[\atom{C}{x}] \gap{x} consegue lidar com um crocodilo
 \item[b] Berthold
 \end{ekey}
 $\forall x (\atom{B}{x} \eif \atom{I}{x}), \forall x (\atom{I}{x} \eif \enot \atom{C}{x}), \atom{B}{b} \therefore \enot \atom{C}{b}$}
