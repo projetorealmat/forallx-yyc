@@ -587,7 +587,7 @@ Especificamente, suponha que você queira provar $\forall \metav{x}\, \atom{\met
 \end{fitchproof}
 $\atom{\metav{A}}{\metav{c}}$ é obtida de $\atom{\metav{A}}{\metav{x}}$ substituindo cada ocorrência livre de $\metav{x}$ em $\atom{\metav{A}}{\metav{x}}$ por~$\metav{c}$. Para que isso funcione, $\metav{c}$ deve satisfazer a condição especial. Podemos garantir isso escolhendo sempre um nome que ainda não ocorra na prova construída. (Naturalmente, ele ocorrerá na prova que acabarmos construindo — apenas não em uma hipótese não descarregada na linha~$n+1$.)
 
-Para trabalhar para trás a partir de uma sentença $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$, escrevemos de modo semelhante uma sentença acima dela que possa servir de justificativa para uma aplicação da regra $\exists$I, isto é, uma sentença da forma $\atom{\metav{A}}{\metav{c}}.
+Para trabalhar para trás a partir de uma sentença $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$, escrevemos de modo semelhante uma sentença acima dela que possa servir de justificativa para uma aplicação da regra $\exists$I, isto é, uma sentença da forma $\atom{\metav{A}}{\metav{c}}$.
 \begin{fitchproof}
 	\ellipsesline
 	\have[n]{n}{\atom{\metav{A}}{\metav{c}}}
@@ -607,7 +607,7 @@ Em contraste, trabalhar \emph{para a frente} a partir de sentenças $\exists \me
 	\close
 	\have{e}{\metav{B}}\Ee{m,n-k}
 \end{fitchproof}
-Você então continuará com o objetivo de provar $\metav{B}$, mas agora dentro de uma subprova na qual tem uma sentença adicional com que trabalhar, a saber, $\atom{\metav{A}}{\metav{c}}.
+Você então continuará com o objetivo de provar $\metav{B}$, mas agora dentro de uma subprova na qual tem uma sentença adicional com que trabalhar, a saber, $\atom{\metav{A}}{\metav{c}}$.
 
 Por fim, trabalhar para a frente a partir de $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ significa que você sempre pode escrever $\atom{\metav{A}}{\metav{c}}$ e justificá-la usando $\forall$E, para qualquer nome~$\metav{c}$. É claro que você não deve fazer isso de qualquer maneira. Somente alguns nomes~$\metav{c}$ ajudarão na tarefa de provar a sentença-alvo em que está trabalhando. Portanto, assim como ao trabalhar para trás a partir de $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$, você deve trabalhar para a frente a partir de $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ somente depois de aplicar todas as outras estratégias.
 
