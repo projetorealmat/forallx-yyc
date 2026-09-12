@@ -28,14 +28,14 @@ O livro também aborda tópicos avançados, como lógica modal, correção (*sou
 - [Execuções dos workflows](https://github.com/projetorealmat/forallx-yyc/actions)
 
 <!-- realmat-release:start -->
-- Nenhuma versão REALMat publicada ainda.
+- Release REALMat atualmente recomendada: [v0.1.0](https://github.com/projetorealmat/forallx-yyc/releases/tag/v0.1.0).
 <!-- realmat-release:end -->
 
 O PDF oficial de cada versão é compilado e publicado automaticamente depois do merge da respectiva **Release PR**. O arquivo `forallxyyc.pdf` não é mantido como arquivo versionado na raiz do repositório. Enquanto não houver uma release REALMat, não há PDF ou HTML traduzido publicado para download.
 
 ## Versão em desenvolvimento, releases e arquivos-fonte
 
-A versão atualmente recomendada é a versão em desenvolvimento da branch `master`; ainda não há uma release REALMat publicada.
+A versão atualmente recomendada é `v0.1.0`, ainda em revisão editorial.
 
 O versionamento segue estas regras:
 
