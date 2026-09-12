@@ -1,75 +1,56 @@
 %!TEX root = forallxyyc.tex
-\part{First-order logic}
+\part{Lógica de primeira ordem}
 \label{ch.FOL}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
-\chapter{Building blocks of FOL}\label{s:FOLBuildingBlocks}
+\chapter{Blocos fundamentais da LPO}\label{s:FOLBuildingBlocks}
 
-\section{The need to decompose sentences}
-Consider the following argument, which is obviously valid in English:
+\section{A necessidade de decompor sentenças}
+Considere o argumento a seguir, que é obviamente válido em inglês:
 \begin{earg}
 \label{willard1}
-\item[] Willard is a logician.
-\item[] All logicians wear funny hats.
-\item[\texttherefore] Willard wears a funny hat.
+\item[] Willard é um lógico.
+\item[] Todos os lógicos usam chapéus engraçados.
+\item[\texttherefore] Willard usa um chapéu engraçado.
 \end{earg}
-To symbolize it in TFL, we might offer a symbolization key:
+Para simbolizá-lo na LVF, poderíamos fornecer uma chave de simbolização:
 \begin{ekey}
-\item[L] Willard is a logician.
-\item[A] All logicians wear funny hats.
-\item[F] Willard wears a funny hat.
+\item[L] Willard é um lógico.
+\item[A] Todos os lógicos usam chapéus engraçados.
+\item[F] Willard usa um chapéu engraçado.
 \end{ekey}
-And the argument itself becomes:
+E o próprio argumento se torna:
 $$L, A \therefore F$$
-But the truth-table test will now indicate that this is \emph{invalid}. What has gone wrong?
+Mas o teste por tabela-verdade agora indicará que ele é \emph{inválido}. O que deu errado?
 
-The problem is not that we have made a mistake while symbolizing the argument. This is the best symbolization we can give \emph{in TFL}. The problem lies with TFL itself. `All logicians wear funny hats' is about both logicians and hat-wearing. By not retaining this structure in our symbolization, we lose the connection between Willard's being a logician and Willard's wearing a hat.
+O problema não é termos cometido um erro ao simbolizar o argumento. Essa é a melhor simbolização que podemos fornecer \emph{na LVF}. O problema está na própria LVF. \textquotedblleft Todos os lógicos usam chapéus engraçados\textquotedblright{} trata tanto dos lógicos quanto do uso de chapéus. Ao não conservar essa estrutura em nossa simbolização, perdemos a conexão entre o fato de Willard ser um lógico e o fato de usar um chapéu.
 
-The basic units of TFL are sentence letters, and TFL cannot decompose
-these. To symbolize arguments like the preceding one, we will have to
-develop a new logical language which will allow us to \emph{split the
-atom}. We will call this the language of \emph{first-order logic},
-or~\emph{FOL}.\footnote{First-order logic is also often called (classical)
-``predicate'' or ``quantificational'' logic.}
+As unidades básicas da LVF são letras sentenciais, e a LVF não consegue decompor essas letras. Para simbolizar argumentos como o anterior, teremos de desenvolver uma nova linguagem lógica que nos permita \emph{decompor o átomo}. Chamaremos essa linguagem de linguagem da \emph{lógica de primeira ordem}, ou \emph{LPO}.\footnote{A lógica de primeira ordem também é frequentemente chamada de lógica (clássica) de predicados ou lógica quantificacional.}
 
-The details of FOL will be explained throughout this chapter, but here is the basic idea for splitting the atom.
+Os detalhes da LPO serão explicados ao longo deste capítulo, mas eis a ideia básica para decompor o átomo.
 
-First, we have \emph{names}. In FOL, we indicate these with lowercase italic letters. For instance, we might let `$b$' stand for Bertie, or let `$i$' stand for Willard.
+Primeiro, temos \emph{nomes}. Na LPO, indicamos os nomes com letras minúsculas em itálico. Por exemplo, poderíamos fazer \textquotedblleft $b$\textquotedblright{} representar Bertie ou fazer \textquotedblleft $i$\textquotedblright{} representar Willard.
 
-Second, we have predicates. English predicates are expressions like `\blank\ is a dog' or `\blank\ is a logician'. These are not complete sentences by themselves. In order to make a complete sentence, we need to fill in the gap. We need to say something like `Bertie is a dog' or `Willard is a logician'. In FOL, we indicate predicates with uppercase italic letters. For instance, we might let the FOL predicate `$D$' symbolize the English predicate `\blank\ is a dog'. Then the expression `$\atom{D}{b}$' will be a sentence in FOL, which symbolizes the English sentence `Bertie is a dog'. Equally, we might let the FOL predicate `$L$' symbolize the English predicate `\blank\ is a logician'. Then the expression `$\atom{L}{i}$' will symbolize the English sentence `Willard is a logician'.
+Segundo, temos predicados. Predicados em inglês são expressões como \textquotedblleft\blank\ é um cão\textquotedblright{} ou \textquotedblleft\blank\ é um lógico\textquotedblright{}. Essas expressões não são sentenças completas por si mesmas. Para construir uma sentença completa, precisamos preencher a lacuna. Precisamos dizer algo como \textquotedblleft Bertie é um cão\textquotedblright{} ou \textquotedblleft Willard é um lógico\textquotedblright{}. Na LPO, indicamos predicados com letras maiúsculas em itálico. Por exemplo, poderíamos fazer o predicado da LPO \textquotedblleft $D$\textquotedblright{} simbolizar o predicado em inglês \textquotedblleft\blank\ é um cão\textquotedblright{}. Então, a expressão \textquotedblleft $\atom{D}{b}$\textquotedblright{} será uma sentença da LPO que simboliza a sentença em inglês \textquotedblleft Bertie é um cão\textquotedblright{}. Da mesma forma, poderíamos fazer o predicado da LPO \textquotedblleft $L$\textquotedblright{} simbolizar o predicado em inglês \textquotedblleft\blank\ é um lógico\textquotedblright{}. Então, a expressão \textquotedblleft $\atom{L}{i}$\textquotedblright{} simbolizará a sentença em inglês \textquotedblleft Willard é um lógico\textquotedblright{}.
 
-Third, we have quantifiers. For instance, `$\exists$' will roughly convey `There is at least one \ldots'. So we might symbolize the English sentence `there is a dog' with the FOL sentence `$\exists x\, \atom{D}{x}$', which we might read aloud as `there is at least one thing, $x$, such that $x$ is a dog'.
+Terceiro, temos quantificadores. Por exemplo, \textquotedblleft $\exists$\textquotedblright{} transmitirá aproximadamente a ideia de \textquotedblleft existe pelo menos um\ldots\textquotedblright{}. Assim, poderíamos simbolizar a sentença em inglês \textquotedblleft existe um cão\textquotedblright{} pela sentença da LPO \textquotedblleft $\exists x\, \atom{D}{x}$\textquotedblright{}, que poderíamos ler em voz alta como \textquotedblleft existe pelo menos uma coisa, $x$, tal que $x$ é um cão\textquotedblright{}.
 
-That is the general idea, but FOL is significantly more subtle than TFL, so we will come at it slowly.
+Essa é a ideia geral, mas a LPO é significativamente mais sutil que a LVF; avançaremos devagar.
 
+\section{Nomes}
+Em inglês, um \emph{termo singular} é uma palavra ou expressão que pretende referir-se a uma pessoa, lugar ou coisa \emph{específica}. A palavra \textquotedblleft cão\textquotedblright{} não é um termo singular, porque há muitos cães. O nome \textquotedblleft Bertie\textquotedblright{} é um termo singular porque se refere a um terrier específico. Da mesma forma, a expressão \textquotedblleft cão de Philip\textquotedblright{} é um termo singular porque também se refere a um pequeno terrier específico.
 
-\section{Names}
-In English, a \emph{singular term} is a word or phrase that is meant
-to refer to a \emph{specific} person, place, or thing. The word `dog'
-is not a singular term, because there are a great many dogs. The
-name `Bertie' is a singular term, because it refers to a specific
-terrier. Likewise, the phrase `Philip's dog' is a singular
-term, because it also refers to a specific little terrier.
+\emph{Nomes próprios} são um tipo particularmente importante de termo singular. São expressões que identificam indivíduos sem descrevê-los. O nome \textquotedblleft Emerson\textquotedblright{} é um nome próprio, e o nome, por si só, não informa nada sobre Emerson. É claro que alguns nomes são tradicionalmente dados a meninos e outros, a meninas. Se \textquotedblleft Hilary\textquotedblright{} for usado como termo singular, você talvez suponha que se refere a uma mulher. No entanto, essa suposição pode estar errada. De fato, o nome não significa necessariamente que a pessoa referida seja sequer uma pessoa: Hilary pode ser uma girafa, tanto quanto você poderia saber apenas pelo nome.
 
-\emph{Proper names} are a particularly important kind of singular term. These are expressions that pick out individuals without describing them. The name `Emerson' is a proper name, and the name alone does not tell you anything about Emerson. Of course, some names are traditionally given to boys and others are traditionally given to girls. If `Hilary' is used as a singular term, you might guess that it refers to a woman. You might, though, be guessing wrongly. Indeed, the name does not necessarily mean that the person referred to is even a person: Hilary might be a giraffe, for all you could tell just from the name.
-
-In FOL, our \define{names} are lower-case letters `$a$' through to `$r$'. We can add subscripts if we want to use some letter more than once. So here are some singular terms in FOL:
-	$$a,b,c,\ldots, r, a_1, f_{32}, j_{390}, m_{12}$$ These should be
-thought of along the lines of proper names in English, but with one
-difference. `Tim Button' is a proper name, but there are several
-people with this name. We live with this kind of ambiguity in English,
-allowing context to individuate the fact that `Tim Button' refers to
-an author of this book, and not some other Tim. In FOL, we do not
-tolerate any such ambiguity. Each name must pick out \emph{exactly}
-one thing. However, just like in English, in FOL different names
-may pick out the same thing, and there can be things that don't have
-names picking them out.
+Na LPO, nossos \define{nomes} são letras minúsculas de \textquotedblleft $a$\textquotedblright{} a \textquotedblleft $r$\textquotedblright{}. Podemos acrescentar subscritos se quisermos usar alguma letra mais de uma vez. Eis alguns termos singulares na LPO:
+	$$a,b,c,\ldots, r, a_1, f_{32}, j_{390}, m_{12}$$
+Eles devem ser entendidos como nomes próprios em inglês, mas com uma diferença. \textquotedblleft Tim Button\textquotedblright{} é um nome próprio, mas há várias pessoas com esse nome. Vivemos com esse tipo de ambiguidade em inglês, permitindo que o contexto individualize o fato de que \textquotedblleft Tim Button\textquotedblright{} se refere ao autor deste livro, e não a outro Tim. Na LPO, não toleramos nenhuma ambiguidade desse tipo. Cada nome deve designar \emph{exatamente} uma coisa. Entretanto, assim como em inglês, nomes diferentes podem designar a mesma coisa, e pode haver coisas que não sejam designadas por nenhum nome.
 
 \newglossaryentry{name}{
-  name = name,
-  description = {A symbol of FOL used to pick out an object of the \gls{domain}}
+  name = nome,
+  description = {Um símbolo da LPO usado para designar um objeto do \gls{domain}}
   }
 
-As with TFL, we can provide symbolization keys. These indicate, temporarily, what a name will pick out. So we might offer:
+Assim como na LVF, podemos fornecer chaves de simbolização. Elas indicam, temporariamente, o que um nome designará. Assim, poderíamos oferecer:
 	\begin{ekey}
 		\item[e] Elsa
 		\item[g] Gregor
@@ -77,151 +58,138 @@ As with TFL, we can provide symbolization keys. These indicate, temporarily, wha
 	\end{ekey}
 
 
-\section{Predicates}
-The simplest predicates express properties of individuals. They are things you can say about an object. Here are some examples of English predicates:
+\section{Predicados}
+Os predicados mais simples expressam propriedades de indivíduos. São coisas que podemos afirmar sobre um objeto. Eis alguns exemplos de predicados em inglês:
 	\begin{itemize}
-		\item \blank\ is a dog
-		\item \blank\ is a member of Monty Python
-		\item A piano fell on \blank
+		\item \blank\ é um cão
+		\item \blank\ é membro do Monty Python
+		\item Um piano caiu sobre \blank
 	\end{itemize}
-In general, you can think about predicates as things which combine with singular terms to make sentences. Conversely, you can start with sentences and make predicates out of them by removing terms. Consider the sentence, `Vinnie borrowed the family car from Nunzio.' By removing a singular term, we can obtain any of three different predicates:
+Em geral, podemos pensar nos predicados como coisas que se combinam com termos singulares para formar sentenças. Ao contrário, podemos começar com sentenças e formar predicados a partir delas removendo termos. Considere a sentença \textquotedblleft Vinnie pegou emprestado o carro da família de Nunzio\textquotedblright{}. Ao remover um termo singular, podemos obter qualquer um destes três predicados diferentes:
 	\begin{itemize}
-		\item \blank\ borrowed the family car from Nunzio\\
-		\item Vinnie borrowed \blank\ from Nunzio\\
-		\item Vinnie borrowed the family car from \blank
+		\item \blank\ pegou emprestado o carro da família de Nunzio\\
+		\item Vinnie pegou emprestado \blank\ de Nunzio\\
+		\item Vinnie pegou emprestado o carro da família de \blank
 	\end{itemize}
-In FOL, \define{predicates} are capital letters `$A$' through `$Z$', with or without subscripts. We might write a symbolization key for predicates thus:
+Na LPO, \define{predicados} são letras maiúsculas de \textquotedblleft $A$\textquotedblright{} a \textquotedblleft $Z$\textquotedblright{}, com ou sem subscritos. Poderíamos escrever uma chave de simbolização para predicados da seguinte forma:
 	\begin{ekey}
-		\item[\atom{A}{x}] \gap{x} is angry
-		\item[\atom{H}{x}] \gap{x} is happy
-%		\item[\atom{T_1}{x,y}] \gap{x} is as tall or taller than \gap{y}
-%		\item[\atom{T_2}{x,y}] \gap{x} is as tough or tougher than \gap{y}
-%		\item[\atom{B}{x,y,z}] \gap{y} is between \gap{x} and \gap{z}
+		\item[\atom{A}{x}] \gap{x} está zangado
+		\item[\atom{H}{x}] \gap{x} está feliz
+%		\item[\atom{T_1}{x,y}] \gap{x} é tão alto quanto ou mais alto que \gap{y}
+%		\item[\atom{T_2}{x,y}] \gap{x} é tão resistente quanto ou mais resistente que \gap{y}
+%		\item[\atom{B}{x,y,z}] \gap{y} está entre \gap{x} e \gap{z}
 	\end{ekey}
-        (Why the subscripts on the gaps? We will return to this in \cref{s:MultipleGenerality}.)
+        (Por que os subscritos nas lacunas? Voltaremos a isso em \cref{s:MultipleGenerality}.)
 
 \newglossaryentry{predicate}{
-  name = predicate,
-  description = {A symbol of FOL used to symbolize a property or relation}
+  name = predicado,
+  description = {Um símbolo da LPO usado para simbolizar uma propriedade ou relação}
 }
 
-If we combine our two symbolization keys, we can start to symbolize some English sentences that use these names and predicates in combination. For example, consider the English sentences:
+Se combinarmos nossas duas chaves de simbolização, poderemos começar a simbolizar algumas sentenças em inglês que usam esses nomes e predicados em conjunto. Por exemplo, considere as sentenças em inglês:
 	\begin{enumerate}
-		\item\label{terms1} Elsa is angry.
-		\item\label{terms2a} Gregor and Marybeth are angry.
-		\item\label{terms2} If Elsa is angry, then so are Gregor and Marybeth.
+		\item\label{terms1} Elsa está zangada.
+		\item\label{terms2a} Gregor e Marybeth estão zangados.
+		\item\label{terms2} Se Elsa está zangada, Gregor e Marybeth também estão.
 	\end{enumerate}
-\Cref*{terms1} is straightforward: we symbolize it by `$\atom{A}{e}$'.
+\Cref*{terms1} é direta: nós a simbolizamos por \textquotedblleft $\atom{A}{e}$\textquotedblright{}.
 
-\Cref*{terms2a} is a conjunction of two simpler sentences. The simple sentences can be symbolized just by `$\atom{A}{g}$' and `$\atom{A}{m}$'. Then we help ourselves to our resources from TFL, and symbolize the entire sentence by `$\atom{A}{g} \eand \atom{A}{m}$'. This illustrates an important point: FOL has all of the truth-functional connectives of TFL.
+\Cref*{terms2a} é uma conjunção de duas sentenças mais simples. As sentenças simples podem ser simbolizadas apenas por \textquotedblleft $\atom{A}{g}$\textquotedblright{} e \textquotedblleft $\atom{A}{m}$\textquotedblright{}. Então, recorremos aos nossos recursos da LVF e simbolizamos a sentença inteira por \textquotedblleft $\atom{A}{g} \eand \atom{A}{m}$\textquotedblright{}. Isso ilustra um ponto importante: a LPO possui todos os conectivos verofuncionais da LVF.
 
-\Cref*{terms2} is a conditional, whose antecedent is \cref*{terms1} and whose consequent is \cref*{terms2a}, so we can symbolize this with `$\atom{A}{e} \eif (\atom{A}{g} \eand \atom{A}{m})$'.
+\Cref*{terms2} é um condicional cujo antecedente é \cref*{terms1} e cujo consequente é \cref*{terms2a}; portanto, podemos simbolizá-la por \textquotedblleft $\atom{A}{e} \eif (\atom{A}{g} \eand \atom{A}{m})$\textquotedblright{}.
 
-\section{Quantifiers}
-We are now ready to introduce quantifiers. Consider these sentences:
+\section{Quantificadores}
+Estamos prontos para introduzir os quantificadores. Considere estas sentenças:
 	\begin{enumerate}
-		\item\label{q.a} Everyone is happy.
-%		\item\label{q.ac} Everyone is at least as tough as Elsa.
-		\item\label{q.e} Someone is angry.
+		\item\label{q.a} Todos estão felizes.
+%		\item\label{q.ac} Todos são pelo menos tão resistentes quanto Elsa.
+		\item\label{q.e} Alguém está zangado.
 	\end{enumerate}
-It might be tempting to symbolize \cref*{q.a} as `$\atom{H}{e} \eand \atom{H}{g} \eand \atom{H}{m}$'. Yet this would only say that Elsa, Gregor, and Marybeth are happy. We want to say that \emph{everyone} is happy, even those with no names. In order to do this, we introduce the `$\forall$' symbol. This is called the \define{universal quantifier}.
+Pode ser tentador simbolizar \cref*{q.a} como \textquotedblleft $\atom{H}{e} \eand \atom{H}{g} \eand \atom{H}{m}$\textquotedblright{}. No entanto, isso diria apenas que Elsa, Gregor e Marybeth estão felizes. Queremos dizer que \emph{todos} estão felizes, inclusive aqueles que não têm nome. Para fazer isso, introduzimos o símbolo \textquotedblleft $\forall$\textquotedblright{}. Ele é chamado de \define{quantificador universal}.
 
 \newglossaryentry{universal quantifier}{
-  name = universal quantifier,
-  description = {The symbol $\forall$ of FOL used to symbolize generality; $\forall x\, \atom{F}{x}$ is true \ifeff{} every member of the domain is~$F$}
+  name = quantificador universal,
+  description = {O símbolo $\forall$ da LPO usado para simbolizar generalidade; $\forall x\, \atom{F}{x}$ é verdadeiro \ifeff{} todo membro do domínio é~$F$}
 }
 
-A quantifier must always be followed by a \define{variable}. In FOL, variables are italic lowercase letters `$s$' through `$z$', with or without subscripts. So we might symbolize \cref*{q.a} as `$\forall x\, \atom{H}{x}$'.  The variable `$x$' is serving as a kind of placeholder. The expression `$\forall x$' intuitively means that you can pick anyone and put them in as `$x$'. The subsequent `$\atom{H}{x}$' indicates, of that thing you picked out, that it is happy.
+Um quantificador deve sempre ser seguido por uma \define{vari\'avel}. Na LPO, variáveis são letras minúsculas em itálico de \textquotedblleft $s$\textquotedblright{} a \textquotedblleft $z$\textquotedblright{}, com ou sem subscritos. Assim, poderíamos simbolizar \cref*{q.a} como \textquotedblleft $\forall x\, \atom{H}{x}$\textquotedblright{}. A variável \textquotedblleft $x$\textquotedblright{} funciona como uma espécie de espaço reservado. A expressão \textquotedblleft $\forall x$\textquotedblright{} significa intuitivamente que você pode escolher qualquer pessoa e colocá-la no lugar de \textquotedblleft $x$\textquotedblright{}. A expressão seguinte, \textquotedblleft $\atom{H}{x}$\textquotedblright{}, indica que essa coisa que você escolheu é feliz.
 
 \newglossaryentry{variable}{
-  name = variable,
-  description = {A symbol of FOL used following quantifiers and as placeholders in atomic formulas; lowercase letters between $s$ and~$z$}
+  name = variável,
+  description = {Um símbolo da LPO usado depois dos quantificadores e como espaço reservado em fórmulas atômicas; letras minúsculas entre $s$ e~$z$}
 }
 
 
-It should be pointed out that there is no special reason to use `$x$'
-rather than some other variable. The sentences `$\forall x\,
-\atom{H}{x}$', `$\forall y\, \atom{H}{y}$', `$\forall z\,
-\atom{H}{z}$', and `$\forall x_5\, \atom{H}{x_5}$' use different
-variables, but they will all be logically equivalent.
+Deve-se observar que não há nenhuma razão especial para usar \textquotedblleft $x$\textquotedblright{} em vez de outra variável. As sentenças \textquotedblleft $\forall x\, \atom{H}{x}$\textquotedblright{}, \textquotedblleft $\forall y\, \atom{H}{y}$\textquotedblright{}, \textquotedblleft $\forall z\, \atom{H}{z}$\textquotedblright{} e \textquotedblleft $\forall x_5\, \atom{H}{x_5}$\textquotedblright{} usam variáveis diferentes, mas todas são logicamente equivalentes.
 
-To symbolize \cref{q.e}, we introduce another new symbol: the
-\define{existential quantifier}, `$\exists$'. Like the universal
-quantifier, the existential quantifier requires a variable.
-\Cref*{q.e} can be symbolized by `$\exists x\,\atom{A}{x}$'. Whereas
-`$\forall x\,\atom{A}{x}$' is read naturally as `for all $x$, $x$ is
-angry', `$\exists x\,\atom{A}{x}$' is read naturally as `there is
-something, $x$, such that $x$ is angry'. Once again, the variable is a
-kind of placeholder; we could just as easily have symbolized
-\cref*{q.e} by `$\exists z\, \atom{A}{z}$', `$\exists w_{256}\,
-\atom{A}{w_{256}}$', or whatever.
+Para simbolizar \cref{q.e}, introduzimos outro símbolo novo: o \define{quantificador existencial}, \textquotedblleft $\exists$\textquotedblright{}. Assim como o quantificador universal, o quantificador existencial exige uma variável. \Cref*{q.e} pode ser simbolizada por \textquotedblleft $\exists x\,\atom{A}{x}$\textquotedblright{}. Enquanto \textquotedblleft $\forall x\,\atom{A}{x}$\textquotedblright{} é naturalmente lida como \textquotedblleft para todo $x$, $x$ está zangado\textquotedblright{}, \textquotedblleft $\exists x\,\atom{A}{x}$\textquotedblright{} é naturalmente lida como \textquotedblleft existe alguma coisa, $x$, tal que $x$ está zangado\textquotedblright{}. Mais uma vez, a variável é uma espécie de espaço reservado; poderíamos ter simbolizado \cref*{q.e} com a mesma facilidade por \textquotedblleft $\exists z\, \atom{A}{z}$\textquotedblright{}, \textquotedblleft $\exists w_{256}\, \atom{A}{w_{256}}$\textquotedblright{}, ou qualquer outra variável.
 
 \newglossaryentry{existential quantifier}{
-  name = existential quantifier,
-  description = {The symbol $\exists$ of FOL used to symbolize existence; $\exists x\, \atom{F}{x}$ is true \ifeff{} at least one member of the domain is~$F$}
+  name = quantificador existencial,
+  description = {O símbolo $\exists$ da LPO usado para simbolizar a existência; $\exists x\, \atom{F}{x}$ é verdadeiro \ifeff{} pelo menos um membro do domínio é~$F$}
 }
 
-Some more examples will help. Consider these further sentences:
+Alguns exemplos ajudarão. Considere estas outras sentenças:
 	\begin{enumerate}
-		\item\label{q.ne} No one is angry.
-		\item\label{q.en} There is someone who is not happy.
-		\item\label{q.na} Not everyone is happy.
+		\item\label{q.ne} Ninguém está zangado.
+		\item\label{q.en} Há alguém que não está feliz.
+		\item\label{q.na} Nem todos estão felizes.
 	\end{enumerate}
-\Cref*{q.ne} can be paraphrased as, `It is not the case that someone is angry'. We can then symbolize it using negation and an existential quantifier: `$\enot \exists x\,\atom{A}{x}$'. Yet \cref*{q.ne} could also be paraphrased as, `Everyone is not angry'. With this in mind, it can be symbolized using negation and a universal quantifier: `$\forall x\, \enot \atom{A}{x}$'. Both of these are acceptable symbolizations.  Indeed, it will transpire that, in general, $\forall x\, \enot\metav{A}$ is logically equivalent to $\enot\exists x\,\metav{A}$. (Notice that we have here returned to the practice of using `$\metav{A}$' as a metavariable, from \cref{s:UseMention}.) Symbolizing a sentence one way, rather than the other, might seem more `natural' in some contexts, but it is not much more than a matter of taste.
+\Cref*{q.ne} pode ser parafraseada como \textquotedblleft não é o caso de que alguém está zangado\textquotedblright{}. Podemos então simbolizá-la usando a negação e um quantificador existencial: \textquotedblleft $\enot \exists x\,\atom{A}{x}$\textquotedblright{}. No entanto, \cref*{q.ne} também poderia ser parafraseada como \textquotedblleft todas as pessoas não estão zangadas\textquotedblright{}. Com isso em mente, ela pode ser simbolizada usando a negação e um quantificador universal: \textquotedblleft $\forall x\, \enot \atom{A}{x}$\textquotedblright{}. Ambas as simbolizações são aceitáveis. De fato, veremos que, em geral, $\forall x\, \enot\metav{A}$ é logicamente equivalente a $\enot\exists x\,\metav{A}$. (Observe que aqui retornamos à prática de usar $\metav{A}$ como metavariável, de \cref{s:UseMention}.) Simbolizar uma sentença de uma maneira ou de outra pode parecer mais \textquotedblleft natural\textquotedblright{} em alguns contextos, mas não passa de uma questão de gosto.
 
-\Cref*{q.en} is most naturally paraphrased as, `There is some~$x$, such that $x$ is not happy'. This then becomes `$\exists x\, \enot \atom{H}{x}$'. Of course, we could equally have written `$\enot\forall x\,\atom{H}{x}$', which we would naturally read as `it is not the case that everyone is happy'. That too would be a perfectly adequate symbolization of \cref*{q.na}.
+\Cref*{q.en} é mais naturalmente parafraseada como \textquotedblleft existe algum $x$ tal que $x$ não está feliz\textquotedblright{}. Isso se torna \textquotedblleft $\exists x\, \enot \atom{H}{x}$\textquotedblright{}. É claro que poderíamos igualmente ter escrito \textquotedblleft $\enot\forall x\,\atom{H}{x}$\textquotedblright{}, que leríamos naturalmente como \textquotedblleft não é o caso de que todos estão felizes\textquotedblright{}. Essa também seria uma simbolização perfeitamente adequada de \cref*{q.na}.
 
 
-\section{Domains}
-Given the symbolization key we have been using, `$\forall x\,\atom{H}{x}$' symbolizes `Everyone is happy'.  Who is included in this \emph{everyone}? When we use sentences like this in English, we usually do not mean everyone now alive on the Earth. We certainly do not mean everyone who was ever alive or who will ever live. We usually mean something more modest: everyone now in the building, everyone enrolled in the ballet class, or whatever.
+\section{Domínios}
+Dada a chave de simbolização que temos usado, \textquotedblleft $\forall x\,\atom{H}{x}$\textquotedblright{} simboliza \textquotedblleft todos estão felizes\textquotedblright{}. Quem está incluído nesse \emph{todos}? Quando usamos sentenças como essa em inglês, normalmente não queremos dizer todas as pessoas atualmente vivas na Terra. Certamente não queremos dizer todas as pessoas que já viveram ou viverão. Normalmente queremos dizer algo mais modesto: todas as pessoas que estão no prédio, todas as pessoas matriculadas na aula de balé ou algo semelhante.
 
-In order to eliminate this ambiguity, we will need to specify a \define{domain}. The domain is the collection of things that we are talking about. So if we want to talk about people in Chicago, we define the domain to be people in Chicago. We write this at the beginning of the symbolization key, like this:
+Para eliminar essa ambiguidade, precisaremos especificar um \define{dom\'inio}. O domínio é a coleção de coisas sobre as quais estamos falando. Assim, se quisermos falar sobre pessoas em Chicago, definimos o domínio como pessoas em Chicago. Escrevemos isso no início da chave de simbolização, assim:
 	\begin{ekey}
-		\item[\text{domain}] people in Chicago
+		\item[\text{domínio}] pessoas em Chicago
 	\end{ekey}
-The quantifiers \emph{range over} the domain. Given this domain, `$\forall x$' is to be read roughly as `Every person in Chicago is such that\ldots' and `$\exists x$' is to be read roughly as `Some person in Chicago is such that\ldots'.
+Os quantificadores \emph{varrem} o domínio. Dado esse domínio, \textquotedblleft $\forall x$\textquotedblright{} deve ser lido aproximadamente como \textquotedblleft toda pessoa em Chicago é tal que\ldots\textquotedblright{} e \textquotedblleft $\exists x$\textquotedblright{} deve ser lido aproximadamente como \textquotedblleft alguma pessoa em Chicago é tal que\ldots\textquotedblright{}.
 
 \newglossaryentry{domain}{
-  name = domain,
-  description = {The collection of objects assumed for a symbolization in FOL, or that gives the range of the quantifiers in an \gls{interpretation}}
+  name = domínio,
+  description = {A coleção de objetos assumida para uma simbolização na LPO ou que determina o alcance dos quantificadores em uma \gls{interpretation}}
 }
 
-In FOL, the domain must always include at least one thing. Moreover, in English we can legitimately infer `something is angry' from `Gregor is angry'. In FOL, then, we will want to be able to infer `$\exists x\,\atom{A}{x}$' from `$\atom{A}{g}$'. So we will insist that each name must pick out exactly one thing in the domain. If we want to name people in places beside Chicago, then we need to include those people in the domain.
+Na LPO, o domínio deve sempre incluir pelo menos uma coisa. Além disso, em inglês podemos inferir legitimamente \textquotedblleft alguma coisa está zangada\textquotedblright{} de \textquotedblleft Gregor está zangado\textquotedblright{}. Portanto, na LPO, queremos poder inferir \textquotedblleft $\exists x\,\atom{A}{x}$\textquotedblright{} de \textquotedblleft $\atom{A}{g}$\textquotedblright{}. Assim, exigiremos que cada nome designe exatamente uma coisa no domínio. Se quisermos nomear pessoas em lugares além de Chicago, precisaremos incluí-las no domínio.
 	\factoidbox{
-		A domain must have \emph{at least} one member. Every name must pick out \emph{exactly} one member of the domain, but a member of the domain may be picked out by one name, many names, or none at all.
+		Um domínio deve ter \emph{pelo menos} um membro. Cada nome deve designar \emph{exatamente} um membro do domínio, mas um membro do domínio pode ser designado por um nome, por muitos nomes ou por nenhum nome.
 	}
 
-Even allowing for a domain with just one member can produce some strange results. Suppose we have this as a symbolization key:
+Mesmo permitir um domínio com apenas um membro pode produzir alguns resultados estranhos. Suponha que tenhamos esta chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] the Eiffel Tower
-\item[\atom{P}{x}] \gap{x} is in Paris.
+\item[\text{domínio}] a Torre Eiffel
+\item[\atom{P}{x}] \gap{x} está em Paris.
 \end{ekey}
-The sentence $\forall x\,\atom{P}{x}$ might be paraphrased in English as `Everything is in Paris.' Yet that would be misleading. It means that everything \emph{in the domain} is in Paris. This domain contains only the Eiffel Tower, so with this symbolization key $\forall x\,\atom{P}{x}$ just means that the Eiffel Tower is in Paris.
+A sentença $\forall x\,\atom{P}{x}$ poderia ser parafraseada em inglês como \textquotedblleft tudo está em Paris\textquotedblright{}. Contudo, isso seria enganoso. Ela significa que tudo \emph{no domínio} está em Paris. Esse domínio contém apenas a Torre Eiffel; portanto, com essa chave de simbolização, $\forall x\,\atom{P}{x}$ significa simplesmente que a Torre Eiffel está em Paris.
 
-\section{Non-referring terms}
+\section{Termos não referentes}
 
-In FOL, each name must pick out exactly one member of the domain. A name cannot refer to more than one thing---it is a \emph{singular} term. Each name must still pick out \emph{something}. This is connected to a classic philosophical problem: the so-called problem of non-referring terms.
+Na LPO, cada nome deve designar exatamente um membro do domínio. Um nome não pode referir-se a mais de uma coisa — é um termo \emph{singular}. Cada nome ainda deve designar \emph{alguma coisa}. Isso está relacionado a um problema filosófico clássico: o chamado problema dos termos não referentes.
 
-Medieval philosophers typically used sentences about the \emph{chimera} to exemplify this problem. Chimera is a mythological creature; it does not really exist. Consider these two sentences:
+Os filósofos medievais normalmente usavam sentenças sobre a \emph{quimera} para exemplificar esse problema. A quimera é uma criatura mitológica; ela não existe de fato. Considere estas duas sentenças:
 \begin{enumerate}
-\item\label{chimera1} Chimera is angry.
-\item\label{chimera2} Chimera is not angry.
+\item\label{chimera1} A quimera está zangada.
+\item\label{chimera2} A quimera não está zangada.
 \end{enumerate}
-It is tempting just to define a name to mean `chimera.' The symbolization key would look like this:
+É tentador simplesmente definir um nome como significando \textquotedblleft quimera\textquotedblright{}. A chave de simbolização teria esta aparência:
 \begin{ekey}
-\item[\text{domain}] creatures on Earth
-\item[\atom{A}{x}] \gap{x} is angry.
-\item[c] chimera
+\item[\text{domínio}] criaturas na Terra
+\item[\atom{A}{x}] \gap{x} está zangado.
+\item[c] quimera
 \end{ekey}
-We could then symbolize \cref*{chimera1} as $\atom{A}{c}$ and \cref*{chimera2} as $\enot \atom{A}{c}$.
+Poderíamos então simbolizar \cref*{chimera1} como $\atom{A}{c}$ e \cref*{chimera2} como $\enot \atom{A}{c}$.
 
-Problems will arise when we ask whether these sentences are true or false.
+Surgirão problemas quando perguntarmos se essas sentenças são verdadeiras ou falsas.
 
-One option is to say that \cref*{chimera1} is not true, because there is no chimera. If \cref*{chimera1} is false because it talks about a non-existent thing, then \cref*{chimera2} is false for the same reason. Yet this would mean that $\atom{A}{c}$ and $\enot \atom{A}{c}$ would both be false. Given the truth conditions for negation, this cannot be the case.
+Uma opção é dizer que \cref*{chimera1} não é verdadeira, porque não existe nenhuma quimera. Se \cref*{chimera1} for falsa porque fala de algo inexistente, então \cref*{chimera2} será falsa pelo mesmo motivo. No entanto, isso significaria que tanto $\atom{A}{c}$ quanto $\enot \atom{A}{c}$ seriam falsas. Dadas as condições de verdade da negação, isso não pode acontecer.
 
-Since we cannot say that they are both false, what should we do? Another option is to say that \cref*{chimera1} is \emph{meaningless} because it talks about a non-existent thing. So $\atom{A}{c}$ would be a meaningful expression in FOL for some interpretations but not for others. Yet this would make our formal language hostage to particular interpretations. Since we are interested in logical form, we want to consider the logical force of a sentence like $\atom{A}{c}$ apart from any particular interpretation. If $\atom{A}{c}$ were sometimes meaningful and sometimes meaningless, we could not do that.
+Como não podemos dizer que ambas são falsas, o que devemos fazer? Outra opção é dizer que \cref*{chimera1} é \emph{sem sentido} porque fala de algo inexistente. Assim, $\atom{A}{c}$ seria uma expressão com sentido na LPO para algumas interpretações, mas não para outras. No entanto, isso tornaria nossa linguagem formal refém de interpretações particulares. Como estamos interessados na forma lógica, queremos considerar a força lógica de uma sentença como $\atom{A}{c}$ independentemente de qualquer interpretação particular. Se $\atom{A}{c}$ tivesse sentido em alguns casos e não tivesse sentido em outros, não poderíamos fazer isso.
 
-This is the \emph{problem of non-referring terms}, and we will return to it later (see \cref{subsec.defdesc}). The important point for now is that each name of FOL \emph{must} refer to something in the domain, although the domain can contain any things we like. If we want to symbolize arguments about mythological creatures, then we must define a domain that includes them. This option is important if we want to consider the logic of stories. We can symbolize a sentence like `Sherlock Holmes lived at 221B Baker Street' by including fictional characters like Sherlock Holmes in our domain.
+Esse é o \emph{problema dos termos não referentes}, e voltaremos a ele mais adiante (ver \cref{subsec.defdesc}). O ponto importante por enquanto é que cada nome da LPO \emph{deve} referir-se a alguma coisa no domínio, embora o domínio possa conter quaisquer coisas que desejemos. Se quisermos simbolizar argumentos sobre criaturas mitológicas, teremos de definir um domínio que as inclua. Essa opção é importante se quisermos considerar a lógica de histórias. Podemos simbolizar uma sentença como \textquotedblleft Sherlock Holmes morou em 221B Baker Street\textquotedblright{} incluindo personagens fictícios como Sherlock Holmes em nosso domínio.
 
 \chapter{Sentences with one quantifier}
 \label{s:MoreMonadic}

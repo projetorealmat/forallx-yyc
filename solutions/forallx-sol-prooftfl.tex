@@ -300,12 +300,12 @@ Forneça uma prova para cada um dos argumentos a seguir:
 
 \stepcounter{chapter} % Constructing proofs
 
-\chapter{Additional rules for TFL}
+\chapter{Regras adicionais para a LVF}
 \label{s:Further}
 \setcounter{ProbPart}{0}
 \problempart
 \label{pr.justifyTFLproof}
-The following proofs are missing their citations (rule and line numbers). Add them wherever they are required:
+As provas a seguir estão sem suas citações (regras e números de linhas). Acrescente-as onde forem necessárias:
 \begin{multicols}{2}
 \begin{fitchproof}[arrayenv=tabular]
 \hypo{1}{W \eif \enot B}
@@ -355,7 +355,7 @@ The following proofs are missing their citations (rule and line numbers). Add th
 \end{multicols}
 
 \problempart 
-Give a proof for each of these arguments:
+Forneça uma prova para cada um destes argumentos:
 \begin{compactlist}
 \item $E\eor F$, $F\eor G$, $\enot F \therefore E \eand G$
 \myanswer{\begin{fitchproof}
@@ -416,12 +416,12 @@ Give a proof for each of these arguments:
 
 \end{compactlist}
 
-\chapter{Proof-theoretic concepts}
+\chapter{Conceitos prova-teóricos}
 \label{s:ProofTheoreticConcepts}
 
 \setcounter{ProbPart}{0}
 \problempart
-Show that each of the following sentences is a theorem:
+Mostre que cada uma das sentenças a seguir é um teorema:
 \begin{compactlist}
 \item $O \eif O$
 \myanswer{\begin{fitchproof}
@@ -493,7 +493,7 @@ Show that each of the following sentences is a theorem:
 
 
 \problempart
-Provide proofs to show each of the following:
+Forneça provas para mostrar cada uma das afirmações a seguir:
 \begin{compactlist}
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \myanswer{\begin{fitchproof}
@@ -577,7 +577,7 @@ Provide proofs to show each of the following:
 \setkeys{fitch}{arrayenv=tabular}
 
 \problempart
-Show that each of the following pairs of sentences are interderivable: %TB: a bit of a hack here, to try to get the multicols thing working nicer.
+Mostre que cada um dos pares de sentenças a seguir é interderivável: %TB: a bit of a hack here, to try to get the multicols thing working nicer.
 
 \begin{compactlist}
 \item $R \eiff E$, $E \eiff R$
@@ -782,23 +782,23 @@ Show that each of the following pairs of sentences are interderivable: %TB: a bi
 \setkeys{fitch}{arrayenv=longtable}
 
 \problempart
-If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}\eand\metav{C})\proves\metav{B}$? What about $(\metav{A}\eor\metav{C})\proves\metav{B}$? Explain your answers.
-\\\myanswer{If $\metav{A} \proves \metav{B}$, then $(\metav{A} \eand \metav{C})\proves \metav{B}$. After all, if $\metav{A} \proves \metav{B}$, then there is some proof with assumption $\metav{A}$ that ends with $\metav{B}$, and no undischarged assumptions other than $\metav{A}$. Now, if we start a proof with assumption $(\metav{A} \eand \metav{C})$, we can obtain $\metav{A}$ by $\eand$E. We can now copy and paste the original proof of $\metav{B}$ from $\metav{A}$, adding 1 to every line number and line number citation. The result will be a proof of $\metav{B}$ from assumption $\metav{A} \eand\metav{C}$.}
+Se você sabe que $\metav{A}\proves\metav{B}$, o que pode dizer sobre $(\metav{A}\eand\metav{C})\proves\metav{B}$? E sobre $(\metav{A}\eor\metav{C})\proves\metav{B}$? Explique suas respostas.
+\\\myanswer{Se $\metav{A} \proves \metav{B}$, então $(\metav{A} \eand \metav{C})\proves \metav{B}$. Afinal, se $\metav{A} \proves \metav{B}$, existe uma prova com a suposição $\metav{A}$ que termina com $\metav{B}$ e não tem outras suposições não descarregadas além de $\metav{A}$. Agora, se iniciarmos uma prova com a suposição $(\metav{A} \eand \metav{C})$, poderemos obter $\metav{A}$ por $\eand$E. Podemos então copiar e colar a prova original de $\metav{B}$ a partir de $\metav{A}$, acrescentando 1 a cada número de linha e a cada citação de número de linha. O resultado será uma prova de $\metav{B}$ a partir da suposição $\metav{A} \eand\metav{C}$.}
 
-\myanswer{However, we cannot prove much from $(\metav{A} \eor \metav{C})$. After all, it might be impossible to prove $\metav{B}$ from $\metav{C}$.}
+\myanswer{Contudo, não podemos provar muita coisa a partir de $(\metav{A} \eor \metav{C})$. Afinal, pode ser impossível provar $\metav{B}$ a partir de $\metav{C}$.}
 
 \
 
-\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not interderivable, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem \ifeff{} \metav{A} and \metav{B} were interderivable.)
-\\\myanswer{Consider the sentence $\metav{A} \eiff \metav{B}$. Suppose we can show that this is a theorem. So we can prove it, with no assumptions, in $m$ lines, say. Then if we assume $\metav{A}$ and copy and paste the proof of $\metav{A} \eiff \metav{B}$ (changing the line numbering), we will have a deduction of this shape:
+\problempart Neste capítulo, afirmamos que é tão difícil mostrar que duas sentenças não são interderiváveis quanto mostrar que uma sentença não é um teorema. Por que fizemos essa afirmação? (\emph{Dica}: pense em uma sentença que seria um teorema \ifeff{} \metav{A} e \metav{B} fossem interderiváveis.)
+\\\myanswer{Considere a sentença $\metav{A} \eiff \metav{B}$. Suponha que possamos mostrar que ela é um teorema. Assim, podemos prová-la, sem suposições, em $m$ linhas, digamos. Então, se supusermos $\metav{A}$ e copiarmos e colarmos a prova de $\metav{A} \eiff \metav{B}$ (alterando a numeração das linhas), teremos uma dedução desta forma:
 \begin{fitchproof}
 \hypo{a}{\metav{A}}
 \have[m][1]{m}{\metav{A} \eiff \metav{B}}
 \have{b}{\metav{B}}\be{m, a}
 \end{fitchproof}
-This will show that $\metav{A} \proves \metav{B}$. In exactly the same way, we can show that $\metav{B} \proves \metav{A}$. So if we can show that $\metav{A} \eiff \metav{B}$ is a theorem, we can show that $\metav{A}$ and $\metav{B}$ are interderivable.}
+Isso mostrará que $\metav{A} \proves \metav{B}$. Exatamente da mesma maneira, podemos mostrar que $\metav{B} \proves \metav{A}$. Portanto, se pudermos mostrar que $\metav{A} \eiff \metav{B}$ é um teorema, poderemos mostrar que $\metav{A}$ e $\metav{B}$ são interderiváveis.}
 
-\myanswer{Conversely, suppose we can show that $\metav{A}$ and $\metav{B}$ are interderivable. Then we can prove $\metav{B}$ from the assumption of $\metav{A}$ in $m$ lines, say, and prove $\metav{A}$ from the assumption of $\metav{B}$ in $n$ lines, say. Copying and pasting these proofs together (changing the line numbering where appropriate), we obtain:
+\myanswer{Inversamente, suponha que possamos mostrar que $\metav{A}$ e $\metav{B}$ são interderiváveis. Então podemos provar $\metav{B}$ a partir da suposição $\metav{A}$ em $m$ linhas, digamos, e provar $\metav{A}$ a partir da suposição $\metav{B}$ em $n$ linhas, digamos. Copiando e colando essas provas (alterando a numeração das linhas quando apropriado), obtemos:
 \begin{fitchproof}
 \open
 	\hypo{a}{\metav{A}}
@@ -810,17 +810,17 @@ This will show that $\metav{A} \proves \metav{B}$. In exactly the same way, we c
 \close
 \have{ab}{\metav{A} \eiff \metav{B}}\bi{a-b1, b-a1}
 \end{fitchproof}
-This shows that $\metav{A} \eiff \metav{B}$ is a theorem.}
+Isso mostra que $\metav{A} \eiff \metav{B}$ é um teorema.}
 
-\myanswer{There was nothing special about $\metav{A}$ and $\metav{B}$ in this. So what this shows is that the problem of showing that two sentences are interderivable is, essentially, the same problem as showing that a certain kind of sentence (a biconditional) is a theorem.}
+\myanswer{Não havia nada de especial em $\metav{A}$ e $\metav{B}$ nesse argumento. Portanto, ele mostra que o problema de provar que duas sentenças são interderiváveis é, essencialmente, o mesmo que provar que certo tipo de sentença (um bicondicional) é um teorema.}
 
 
-\chapter{Derived rules}\setcounter{ProbPart}{0}
+\chapter{Regras derivadas}\setcounter{ProbPart}{0}
 \problempart
-Provide proof schemes that justify the addition of the third and fourth De Morgan rules as derived rules.
+Forneça esquemas de prova que justifiquem a inclusão da terceira e da quarta regras de De Morgan como regras derivadas.
 
 \
-\\\myanswer{Third rule:
+\\\myanswer{Terceira regra:
 \begin{fitchproof}
 		\have[m]{nab}{\enot \metav{A} \eand \enot \metav{B}}
 		\have[k]{na}{\enot \metav{A}}\ae{nab}
@@ -841,7 +841,7 @@ Provide proof schemes that justify the addition of the third and fourth De Morga
 	\end{fitchproof}}
 
 \
-\\\myanswer{Fourth rule:
+\\\myanswer{Quarta regra:
 	\begin{fitchproof}
 		\have[m]{nab}{\enot (\metav{A} \eor \metav{B})}
 		\open
@@ -861,40 +861,40 @@ Provide proof schemes that justify the addition of the third and fourth De Morga
 }
 
 \problempart
-The proofs you offered in response to the practice exercises of \crefrange{s:Further}{s:ProofTheoreticConcepts} used derived rules. Replace the use of derived rules, in such proofs, with only basic rules. You will find some `repetition' in the resulting proofs; in such cases, offer a streamlined proof using only basic rules.  (This will give you a sense, both of the power of derived rules, and of how all the rules interact.)
+As provas que você ofereceu em resposta aos exercícios práticos de \crefrange{s:Further}{s:ProofTheoreticConcepts} usaram regras derivadas. Substitua o uso de regras derivadas, nessas provas, apenas por regras básicas. Você encontrará alguma ``repetição'' nas provas resultantes; nesses casos, ofereça uma prova simplificada usando apenas regras básicas. (Isso lhe dará uma noção tanto do poder das regras derivadas quanto da maneira como todas as regras interagem.)
 
-\chapter{Soundness and completeness}\setcounter{ProbPart}{0}
+\chapter{Correção e completude}\setcounter{ProbPart}{0}
 
 \practiceproblems
-\noindent\problempart Use either a derivation or a truth table for each of the following.
+\noindent\problempart Use uma derivação ou uma tabela-verdade para cada item a seguir.
 \begin{compactlist}%[label=(\arabic*)]
-\item Show that $A \eif [((B \eand C) \eor D) \eif A]$ is a theorem..
-\item Show that $A \eif (A \eif B)$ is not a theorem.
-\item Show that the sentence $A \eif \enot{A}$ is not a contradiction.
-\item Show that the sentence $A \eiff \enot A$ is a contradiction.
-\item Show that the sentence $ \enot (W \eif (J \eor J)) $ is contingent.
-\item Show that the sentence $ \enot(X \eor (Y \eor Z)) \eor (X \eor (Y \eor Z))$ is not contingent.
- \item Show that the sentence $B \eif \enot S$ is equivalent to the sentence $\enot \enot B \eif \enot S$.
-\item Show that the sentence $ \enot (X \eor O) $ is not equivalent to the sentence $X \eand O$
-\item Show that the sentences $\enot(A \eor B)$, $C$, $C \eif A$  are jointly inconsistent.
-\item Show that the sentences $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ are jointly consistent
-\item Show that $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ is valid.
-\item Show that $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ is invalid.
+\item Mostre que $A \eif [((B \eand C) \eor D) \eif A]$ é um teorema.
+\item Mostre que $A \eif (A \eif B)$ não é um teorema.
+\item Mostre que a sentença $A \eif \enot{A}$ não é uma contradição.
+\item Mostre que a sentença $A \eiff \enot A$ é uma contradição.
+\item Mostre que a sentença $ \enot (W \eif (J \eor J)) $ é contingente.
+\item Mostre que a sentença $ \enot(X \eor (Y \eor Z)) \eor (X \eor (Y \eor Z))$ não é contingente.
+ \item Mostre que a sentença $B \eif \enot S$ é equivalente à sentença $\enot \enot B \eif \enot S$.
+\item Mostre que a sentença $ \enot (X \eor O) $ não é equivalente à sentença $X \eand O$.
+\item Mostre que as sentenças $\enot(A \eor B)$, $C$, $C \eif A$ são conjuntamente inconsistentes.
+\item Mostre que as sentenças $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ são conjuntamente consistentes.
+\item Mostre que $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ é válido.
+\item Mostre que $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ é inválido.
 \end{compactlist}
 
 
-\noindent\problempart Use either a derivation or a truth table for each of the following.
+\noindent\problempart Use uma derivação ou uma tabela-verdade para cada item a seguir.
 \begin{compactlist}%[label=(\arabic*)]
-\item Show that $A \eif (B \eif A)$ is a theorem.
-\item Show that $\enot (((N \eiff Q) \eor Q) \eor N)$ is not a theorem.
-\item Show that $ Z \eor (\enot Z \eiff Z) $ is contingent.
-\item show that $ (L \eiff ((N \eif N) \eif L)) \eor H $ is not contingent.
-\item Show that $ (A \eiff A) \eand (B \eand \enot B)$ is a contradiction.
-\item Show that $ (B \eiff (C \eor B)) $ is not a contradiction.
-\item Show that $ ((\enot X \eiff X) \eor X) $ is equivalent to $X$.
-\item Show that $F \eand (K \eand R) $ is not equivalent to $ (F \eiff (K \eiff R))$.
-\item Show that the sentences $ \enot (W \eif W)$, $(W \eiff W) \eand W$, $E \eor (W \eif \enot (E \eand W))$ are jointly inconsistent.
-\item Show that the sentences  $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor C) \eif R) $ are jointly consistent.
-\item Show that $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ is valid.
-\item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid.
+\item Mostre que $A \eif (B \eif A)$ é um teorema.
+\item Mostre que $\enot (((N \eiff Q) \eor Q) \eor N)$ não é um teorema.
+\item Mostre que $ Z \eor (\enot Z \eiff Z) $ é contingente.
+\item Mostre que $ (L \eiff ((N \eif N) \eif L)) \eor H $ não é contingente.
+\item Mostre que $ (A \eiff A) \eand (B \eand \enot B)$ é uma contradição.
+\item Mostre que $ (B \eiff (C \eor B)) $ não é uma contradição.
+\item Mostre que $ ((\enot X \eiff X) \eor X) $ é equivalente a $X$.
+\item Mostre que $F \eand (K \eand R) $ não é equivalente a $ (F \eiff (K \eiff R))$.
+\item Mostre que as sentenças $ \enot (W \eif W)$, $(W \eiff W) \eand W$, $E \eor (W \eif \enot (E \eand W))$ são conjuntamente inconsistentes.
+\item Mostre que as sentenças $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor C) \eif R) $ são conjuntamente consistentes.
+\item Mostre que $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ é válido.
+\item Mostre que $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ é inválido.
 \end{compactlist}
