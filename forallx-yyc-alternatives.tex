@@ -1,11 +1,11 @@
 %!TEX root = forallxyyc.tex
 
-\chapter{Alternative proof systems}
-In formulating our natural deduction system, we treated certain rules of natural deduction as \emph{basic}, and others as \emph{derived}. However, we could equally well have taken various different rules as basic or derived. We will illustrate this point by considering some alternative treatments of disjunction, negation, and the quantifiers. We will also explain why we have made the choices that we have.
+\chapter{Sistemas de prova alternativos}
+Ao formular nosso sistema de dedução natural, tratamos certas regras de dedução natural como \emph{básicas} e outras como \emph{derivadas}. No entanto, poderíamos igualmente ter tomado várias regras diferentes como básicas ou derivadas. Ilustraremos esse ponto considerando tratamentos alternativos da disjunção, da negação e dos quantificadores. Também explicaremos por que fizemos nossas escolhas.
 
 
-\section{Alternative disjunction elimination}
-Some systems take DS as their basic rule for disjunction elimination. Such systems can then treat the $\eor$E rule as a derived rule. For they might offer the following proof scheme: 
+\section{Eliminação alternativa da disjunção}
+Alguns sistemas tomam DS como sua regra básica para a eliminação da disjunção. Esses sistemas podem então tratar a regra $\eor$E como uma regra derivada. Para isso, poderiam oferecer o seguinte esquema de prova:
 \begin{fitchproof}
   \have[m]{ab}{\metav{A}\eor\metav{B}}
   \open
@@ -32,11 +32,11 @@ Some systems take DS as their basic rule for disjunction elimination. Such syste
   \close
   \have{con}{\metav{C}}\ip{nc-bot2}
 \end{fitchproof}
-So why did we choose to take $\eor$E as basic, rather than DS?\footnote{P.~D.\ Magnus's original version of this book went the other way.} Our reasoning is that DS involves the use of `$\enot$' in the statement of the rule. It is in some sense `cleaner' for our disjunction elimination rule to avoid mentioning \emph{other} connectives.
+Então, por que escolhemos tomar $\eor$E como básica, em vez de DS?\footnote{A versão original deste livro, de P.~D.\ Magnus, fazia o contrário.} Nosso raciocínio é que DS envolve o uso de \textquotedblleft $\enot$\textquotedblright{} no enunciado da regra. Em certo sentido, é \textquotedblleft mais limpa\textquotedblright{} nossa regra de eliminação da disjunção quando ela evita mencionar \emph{outros} conectivos.
 
 
-\section{Alternative negation rules}
-Some systems take the following rule as their basic negation introduction rule:
+\section{Regras alternativas para a negação}
+Alguns sistemas tomam a seguinte regra como sua regra básica de introdução da negação:
 \begin{fitchproof}
 	\open
 		\hypo[m]{a}{\metav{A}}\AS
@@ -45,7 +45,7 @@ Some systems take the following rule as their basic negation introduction rule:
 	\close
 	\have[\ ]{}{\enot\metav{A}}\by{$\enot$I*}{a-nb}
 \end{fitchproof}
-and a corresponding version of the rule we called IP as their basic negation elimination rule:
+e uma versão correspondente da regra que chamamos de IP como sua regra básica de eliminação da negação:
 \begin{fitchproof}
 	\open
 		\hypo[m]{na}{\enot\metav{A}} \AS
@@ -54,29 +54,29 @@ and a corresponding version of the rule we called IP as their basic negation eli
 	\close
 	\have[\ ]{a}{\metav{A}}\by{$\enot$E*}{na-nb}
 \end{fitchproof}
-Using these two rules, we could we could have avoided all use of the symbol `$\ered$' altogether.\footnote{Again, P.~D.\ Magnus's original version of this book went the other way.} The resulting system would have had fewer rules than ours.
+Usando essas duas regras, poderíamos ter evitado completamente o uso do símbolo \textquotedblleft $\ered$\textquotedblright{}.\footnote{Novamente, a versão original deste livro, de P.~D.\ Magnus, fazia o contrário.} O sistema resultante teria menos regras que o nosso.
 
-Another way to deal with negation is to use either LEM or DNE as a basic rule and introduce IP as a derived rule. Typically, in such a system the rules are given different names, too. E.g., sometimes what we call $\enot$E is called $\ered$I, and what we call X is called $\ered$E.\footnote{The version of this book due to Tim Button goes this route and replaces IP with LEM, which he calls TND, for ``tertium non datur.''}
+Outra maneira de lidar com a negação é usar LEM ou DNE como regra básica e introduzir IP como regra derivada. Normalmente, em um sistema desse tipo, as regras também recebem nomes diferentes. Por exemplo, às vezes o que chamamos de $\enot$E é chamado de $\ered$I, e o que chamamos de X é chamado de $\ered$E.\footnote{A versão deste livro devida a Tim Button segue esse caminho e substitui IP por LEM, que ele chama de TND, de \textit{tertium non datur}.}
 
-So why did we chose our rules for negation and contradiction? 
+Então, por que escolhemos nossas regras para a negação e a contradição?
 
-Our first reason is that adding the symbol `$\ered$' to our natural deduction system makes proofs considerably easier to work with. For instance, in our system it's always clear what the conclusion of a subproof is: the sentence on the last line, e.g.,\ $\ered$ in IP or $\enot$I. In $\enot$I* and $\enot$E*, subproofs have two conclusions, so you can't check at one glance if an application of them is correct.
+Nossa primeira razão é que acrescentar o símbolo \textquotedblleft $\ered$\textquotedblright{} ao nosso sistema de dedução natural torna as provas consideravelmente mais fáceis de manipular. Por exemplo, em nosso sistema, é sempre claro qual é a conclusão de uma subprova: a sentença na última linha, por exemplo, $\ered$ em IP ou $\enot$I. Em $\enot$I* e $\enot$E*, as subprovas têm duas conclusões, de modo que não é possível verificar de relance se uma aplicação delas está correta.
 
-Our second reason is that a lot of fascinating philosophical discussion has focussed on the acceptability or otherwise of indirect proof IP (equivalently, excluded middle, i.e.,\ LEM, or double negation elimination DNE) and explosion (i.e.,\ X). By treating these as separate rules in the proof system, you will be  in a better position to engage with that philosophical discussion. In particular: having invoked these rules explicitly, it would be much easier for us to know what a system which lacked these rules would look like.
+Nossa segunda razão é que uma grande quantidade de discussão filosófica fascinante se concentrou na aceitabilidade, ou não, da prova indireta IP (equivalentemente, do terceiro excluído, isto é, LEM, ou da eliminação da dupla negação, DNE) e da explosão (isto é, X). Ao tratá-las como regras separadas no sistema de provas, você estará em melhor posição para participar dessa discussão filosófica. Em particular: depois de invocar essas regras explicitamente, será muito mais fácil saber como seria um sistema que não tivesse essas regras.
 
-This discussion, and in fact the vast majority of mathematical study on applications of natural deduction proofs beyond introductory courses, makes reference to a different version of natural deduction. This version was invented by Gerhard Gentzen in 1935 as refined by Dag Prawitz in 1965. Our set of basic rules coincides with theirs. In other words, the rules we use are those that are standard in philosophical and mathematical discussion of natural deduction proofs outside of introductory courses.
+Essa discussão — e, na verdade, a grande maioria dos estudos matemáticos sobre aplicações das provas de dedução natural além dos cursos introdutórios — faz referência a uma versão diferente da dedução natural. Essa versão foi inventada por Gerhard Gentzen em 1935 e refinada por Dag Prawitz em 1965. Nosso conjunto de regras básicas coincide com o deles. Em outras palavras, as regras que usamos são aquelas que aparecem como padrão nas discussões filosóficas e matemáticas sobre provas de dedução natural fora dos cursos introdutórios.
 
 
 
-\section{Alternative quantification rules}
-An alternative approach to the quantifiers is to take as basic the rules for $\forall$I and $\forall$E from \cref{s:BasicFOL}, and also two CQ rules which allow us to move from $\forall \metav{x}\, \enot \metav{A}$ to $\enot \exists \metav{x}\, \metav{A}$ and vice versa.\footnote{Warren Goldfarb follows this line in \textit{Deductive Logic}, 2003, Hackett Publishing Co.}  
+\section{Regras alternativas para a quantificação}
+Uma abordagem alternativa aos quantificadores é tomar como básicas as regras para $\forall$I e $\forall$E de \cref{s:BasicFOL}, além de duas regras CQ que permitem passar de $\forall \metav{x}\, \enot \metav{A}$ para $\enot \exists \metav{x}\, \metav{A}$ e vice-versa.\footnote{Warren Goldfarb segue essa linha em \textit{Deductive Logic}, 2003, Hackett Publishing Co.}
 
-Taking only these rules as basic, we could have derived the  $\exists$I and $\exists$E rules provided in \cref{s:BasicFOL}. To derive the $\exists$I rule is fairly simple. Suppose $\metav{A}$ contains the name $\metav{c}$, and contains no instances of the variable $\metav{x}$, and that we want to do the following:
+Tomando apenas essas regras como básicas, poderíamos ter derivado as regras $\exists$I e $\exists$E apresentadas em \cref{s:BasicFOL}. Derivar a regra $\exists$I é bastante simples. Suponha que $\metav{A}$ contenha o nome $\metav{c}$, não contenha nenhuma ocorrência da variável $\metav{x}$ e queiramos fazer o seguinte:
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
 	\have[k]{c}{\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}
 \end{fitchproof}
-This is not yet permitted, since in this new system, we do not have the $\exists$I rule. We can, however, offer the following:
+Isso ainda não é permitido, pois, nesse novo sistema, não temos a regra $\exists$I. Podemos, no entanto, oferecer o seguinte:
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
 	\open
@@ -87,7 +87,7 @@ This is not yet permitted, since in this new system, we do not have the $\exists
 	\close
 	\have{nnEa}{\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\ip{nEna-red}
 \end{fitchproof}\noindent
-To derive the $\exists$E rule is rather more subtle. This is because the $\exists$E rule has an important constraint (as, indeed, does the $\forall$I rule), and we need to make sure that we are respecting it. So, suppose we are in a situation where we \emph{want} to do the following:
+Derivar a regra $\exists$E é consideravelmente mais sutil. Isso ocorre porque a regra $\exists$E tem uma restrição importante (assim como a regra $\forall$I), e precisamos garantir que a estamos respeitando. Suponha, então, que estejamos em uma situação na qual \emph{queremos} fazer o seguinte:
 \begin{fitchproof}
 	\have[m]{ExA}{\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\open
@@ -96,8 +96,8 @@ To derive the $\exists$E rule is rather more subtle. This is because the $\exist
 	\close
 	\have[k]{end}{\metav{B}}
 \end{fitchproof}\noindent
- where $\metav{c}$ does not occur in any undischarged assumptions, or in $\metav{B}$, or in $\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$. Ordinarily, we would be allowed to use the $\exists$E rule; but we are not here assuming that we have access to this rule as a basic rule. Nevertheless, we could offer the following, more complicated derivation:
- 
+onde $\metav{c}$ não ocorre em nenhuma suposição não descarregada, nem em $\metav{B}$, nem em $\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$. Normalmente, teríamos permissão para usar a regra $\exists$E; mas aqui não estamos supondo que temos acesso a essa regra como regra básica. Ainda assim, poderíamos oferecer a seguinte derivação mais complicada:
+
 \begin{fitchproof}
 	\have[m]{ExA}{\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\open
@@ -114,12 +114,12 @@ To derive the $\exists$E rule is rather more subtle. This is because the $\exist
 	\close
 	\have{nnB}{\metav{B}}\ip{nB-red2}
 \end{fitchproof}\noindent
-We are permitted to use $\forall$I on line $k+3$ because $\metav{c}$ does not occur in any  undischarged assumptions or in $\metav{B}$. The entries on lines $k+4$ and $k+1$ contradict each other, because $\metav{c}$ does not occur in $\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$.
+Podemos usar $\forall$I na linha $k+3$ porque $\metav{c}$ não ocorre em nenhuma suposição não descarregada nem em $\metav{B}$. As entradas das linhas $k+4$ e $k+1$ se contradizem, porque $\metav{c}$ não ocorre em $\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$.
 
-Armed with these derived rules, we could now go on to derive the two remaining CQ rules, exactly as in \cref{s:DerivedFOL}.
+Com essas regras derivadas em mãos, poderíamos prosseguir e derivar as duas regras CQ restantes, exatamente como em \cref{s:DerivedFOL}.
 
-So, why did we start with all of the quantifier rules as basic, and then derive the CQ rules? 
+Então, por que começamos com todas as regras dos quantificadores como básicas e depois derivamos as regras CQ?
 
-Our first reason is that it seems more intuitive to treat the quantifiers as on a par with one another, giving them their own basic rules for introduction and elimination.
+Nossa primeira razão é que parece mais intuitivo tratar os quantificadores em pé de igualdade, dando-lhes suas próprias regras básicas de introdução e eliminação.
 
-Our second reason relates to the discussion of alternative negation rules. In the derivations of the rules of $\exists$I and $\exists$E that we have offered in this section, we invoked~IP.  But, as we mentioned earlier, IP is a contentious rule. So, if we want to move to a system which abandons IP, but which still allows us to use existential quantifiers, we will want to take the introduction and elimination rules for the quantifiers as basic, and take the CQ rules as derived. (Indeed, in a system without IP, LEM, and DNE, we will be \emph{unable} to derive the CQ rule which moves from $\enot \forall \metav{x}\, \metav{A}$ to $\exists \metav{x}\, \enot \metav{A}$.)
+Nossa segunda razão está relacionada à discussão das regras alternativas para a negação. Nas derivações das regras $\exists$I e $\exists$E que oferecemos nesta seção, invocamos IP. Mas, como mencionamos anteriormente, IP é uma regra controversa. Portanto, se quisermos passar para um sistema que abandone IP, mas que ainda permita usar quantificadores existenciais, desejaremos tomar como básicas as regras de introdução e eliminação dos quantificadores e tomar as regras CQ como derivadas. (De fato, em um sistema sem IP, LEM e DNE, seremos \emph{incapazes} de derivar a regra CQ que passa de $\enot \forall \metav{x}\, \metav{A}$ para $\exists \metav{x}\, \enot \metav{A}$.)
