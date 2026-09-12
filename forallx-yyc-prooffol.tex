@@ -566,36 +566,36 @@ Para cada um dos argumentos a seguir: se for válido na LPO, dê uma prova. Se f
 \item $\exists x\,\atom{M}{x} \eif \exists x\,\atom{N}{x}$, $\enot \exists x\,\atom{N}{x}\therefore  \forall x\, \enot \atom{M}{x}$
 \end{compactlist}
 
-\chapter{Proofs with quantifiers}
+\chapter{Provas com quantificadores}
 
-In \cref{s:stratTFL} we discussed strategies for constructing proofs
-using the basic rules of natural deduction for TFL. The same
-principles apply to the rules for the quantifiers. If we want to prove
-a quantifier sentence $\forall \metav{x}\,
-\atom{\metav{A}}{\metav{x}}$ or $\exists \metav{x}\,
-\atom{\metav{A}}{\metav{x}}$, we can work backward by justifying the
-sentence we want by $\forall$I or $\exists$I and trying to find a
-proof of the corresponding premise of that rule. And to work forward
-from a quantified sentence, we apply $\forall$E or $\exists$E, as the
-case may be.
+Em \cref{s:stratTFL}, discutimos estratégias para construir provas
+usando as regras básicas da dedução natural para a LVF. Os mesmos
+princípios se aplicam às regras para os quantificadores. Se quisermos provar
+uma sentença quantificada $\forall \metav{x}\,
+\atom{\metav{A}}{\metav{x}}$ ou $\exists \metav{x}\,
+\atom{\metav{A}}{\metav{x}}$, podemos trabalhar para trás justificando a
+sentença desejada por $\forall$I ou $\exists$I e tentando encontrar uma
+prova da premissa correspondente dessa regra. Para trabalhar para a frente
+a partir de uma sentença quantificada, aplicamos $\forall$E ou $\exists$E, conforme
+o caso.
 
-Specifically, suppose you want to prove $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$. To do so using $\forall$I, we would need a proof of $\atom{\metav{A}}{\metav{c}}$ for some name~$\metav{c}$ which does not occur in any undischarged assumption. To apply the corresponding strategy, i.e., to construct a proof of $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ by working backward, is thus to write $\atom{\metav{A}}{\metav{c}}$ above it and then to continue to try to find a proof of that sentence.
+Especificamente, suponha que você queira provar $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$. Para isso, usando $\forall$I, precisaríamos de uma prova de $\atom{\metav{A}}{\metav{c}}$ para algum nome~$\metav{c}$ que não ocorra em nenhuma hipótese não descarregada. Aplicar a estratégia correspondente, isto é, construir uma prova de $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ trabalhando para trás, consiste em escrever $\atom{\metav{A}}{\metav{c}}$ acima dela e então continuar tentando encontrar uma prova dessa sentença.
 \begin{fitchproof}
 	\ellipsesline
 	\have[n]{n}{\atom{\metav{A}}{\metav{c}}}
 	\have{m}{\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}}\Ai{n}
 \end{fitchproof}
-$\atom{\metav{A}}{\metav{c}}$ is obtained from $\atom{\metav{A}}{\metav{x}}$ by replacing every free occurrence of $\metav{x}$ in $\atom{\metav{A}}{\metav{x}}$ by~$\metav{c}$. For this to work, $\metav{c}$ must satisfy the special condition. We can ensure that it does by always picking a name that does not already occur in the proof constructed so far. (Of course, it will occur in the proof we end up constructing---just not in an assumption that is undischarged at line~$n+1$.)
+$\atom{\metav{A}}{\metav{c}}$ é obtida de $\atom{\metav{A}}{\metav{x}}$ substituindo cada ocorrência livre de $\metav{x}$ em $\atom{\metav{A}}{\metav{x}}$ por~$\metav{c}$. Para que isso funcione, $\metav{c}$ deve satisfazer a condição especial. Podemos garantir isso escolhendo sempre um nome que ainda não ocorra na prova construída. (Naturalmente, ele ocorrerá na prova que acabarmos construindo — apenas não em uma hipótese não descarregada na linha~$n+1$.)
 
-To work backward from a sentence $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ we similarly write a sentence above it that can serve as a justification for an application of the $\exists$I rule, i.e., a sentence of the form $\atom{\metav{A}}{\metav{c}}$.
+Para trabalhar para trás a partir de uma sentença $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$, escrevemos de modo semelhante uma sentença acima dela que possa servir de justificativa para uma aplicação da regra $\exists$I, isto é, uma sentença da forma $\atom{\metav{A}}{\metav{c}}.
 \begin{fitchproof}
 	\ellipsesline
 	\have[n]{n}{\atom{\metav{A}}{\metav{c}}}
 	\have{m}{\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}}\Ei{n}
 \end{fitchproof}
-This looks just like what we would do if we were working backward from a universally quantified sentence. The difference is that whereas for $\forall$I we have to pick a name~$\metav{c}$ which does not occur in the proof (so far), for $\exists$I we may and in general must pick a name~$\metav{c}$ which already occurs in the proof.  Just like in the case of $\eor$I, it is often not clear which $\metav{c}$ will work out, and so to avoid having to backtrack you should work backward from existentially quantified sentences only when all other strategies have been applied.
+Isso se parece exatamente com o que faríamos trabalhando para trás a partir de uma sentença quantificada universalmente. A diferença é que, enquanto para $\forall$I temos de escolher um nome~$\metav{c}$ que não ocorra na prova (até então), para $\exists$I podemos — e em geral devemos — escolher um nome~$\metav{c}$ que já ocorra na prova. Assim como no caso de $\eor$I, muitas vezes não é claro qual $\metav{c}$ funcionará; portanto, para evitar retrocessos, você deve trabalhar para trás a partir de sentenças quantificadas existencialmente somente depois de aplicar todas as outras estratégias.
 
-By contrast, working \emph{forward} from sentences $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ generally always works and you won't have to backtrack. Working forward from an existentially quantified sentence takes into account not just $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ but also whatever sentence $\metav{B}$ you would like to prove. It requires that you set up a subproof above $\metav{B}$, wherein $\metav{B}$ is the last line, and a substitution instance $\atom{\metav{A}}{\metav{c}}$ of $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ as the assumption.  In order to ensure that the condition on $\metav{c}$ that governs $\exists$E is satisfied, chose a name $\metav{c}$ which does not already occur in the proof.
+Em contraste, trabalhar \emph{para a frente} a partir de sentenças $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ em geral sempre funciona, e você não precisará voltar atrás. Trabalhar para a frente a partir de uma sentença quantificada existencialmente leva em conta não apenas $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$, mas também qualquer sentença $\metav{B}$ que você queira provar. É preciso estabelecer uma subprova acima de $\metav{B}$, na qual $\metav{B}$ seja a última linha, e usar como hipótese uma instância de substituição $\atom{\metav{A}}{\metav{c}}$ de $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$. Para garantir que a condição sobre $\metav{c}$ que rege $\exists$E seja satisfeita, escolha um nome~$\metav{c}$ que ainda não ocorra na prova.
 \begin{fitchproof}
 	\ellipsesline
 	\have[m]{m}{\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}}
@@ -607,17 +607,17 @@ By contrast, working \emph{forward} from sentences $\exists \metav{x}\, \atom{\m
 	\close
 	\have{e}{\metav{B}}\Ee{m,n-k}
 \end{fitchproof}
-You'll then continue with the goal of proving $\metav{B}$, but now inside a subproof in which you have an additional sentence to work with, namely~$\atom{\metav{A}}{\metav{c}}$.
+Você então continuará com o objetivo de provar $\metav{B}$, mas agora dentro de uma subprova na qual tem uma sentença adicional com que trabalhar, a saber, $\atom{\metav{A}}{\metav{c}}.
 
-Lastly, working forward from $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ means that you can always write down $\atom{\metav{A}}{\metav{c}}$ and justify it using $\forall$E, for any name~$\metav{c}$. Of course, you wouldn't want to do that willy-nilly. Only certain names $\metav{c}$ will help in your task of proving whatever goal sentence you are working on. So, like working backward from $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$, you should work forward from $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ only after all other strategies have been applied.
+Por fim, trabalhar para a frente a partir de $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ significa que você sempre pode escrever $\atom{\metav{A}}{\metav{c}}$ e justificá-la usando $\forall$E, para qualquer nome~$\metav{c}$. É claro que você não deve fazer isso de qualquer maneira. Somente alguns nomes~$\metav{c}$ ajudarão na tarefa de provar a sentença-alvo em que está trabalhando. Portanto, assim como ao trabalhar para trás a partir de $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$, você deve trabalhar para a frente a partir de $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ somente depois de aplicar todas as outras estratégias.
 
-Let's consider as an example the argument $\forall x(\atom{A}{x} \eif B) \therefore \exists x\,\atom{A}{x} \eif B$. To start constructing a proof, we write the premise at the top and the conclusion at the bottom.
+Consideremos como exemplo o argumento $\forall x(\atom{A}{x} \eif B) \therefore \exists x\,\atom{A}{x} \eif B$. Para começar a construir uma prova, escrevemos a premissa no alto e a conclusão embaixo.
 \begin{fitchproof}
 \hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 \ellipsesline
 \have[n]{7}{\exists x\,\atom{A}{x} \eif B}
 \end{fitchproof}
-The strategies for connectives of TFL still apply, and you should apply them in the same order: first work backward from conditionals, negated sentences, conjunctions, and now also universal quantifiers, then forward from disjunctions and now existential quantifiers, and only then try to apply $\eif$E, $\enot$E, $\lor$I, $\forall$E, or $\exists$I. In our case, that means, working backward from the conclusion:
+As estratégias para os conectivos da LVF continuam valendo, e você deve aplicá-las na mesma ordem: primeiro trabalhe para trás a partir de condicionais, sentenças negadas, conjunções e agora também quantificadores universais; depois trabalhe para a frente a partir de disjunções e agora também quantificadores existenciais; só então tente aplicar $\eif$E, $\enot$E, $\lor$I, $\forall$E ou $\exists$I. No nosso caso, isso significa trabalhar para trás a partir da conclusão:
 \begin{fitchproof}
 	\hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 	\open
@@ -627,7 +627,7 @@ The strategies for connectives of TFL still apply, and you should apply them in 
 	\close
 	\have[n]{7}{\exists x\,\atom{A}{x} \eif B}\ci{2-(6)}
 \end{fitchproof}
-Our next step should be to work forward from $\exists x\,\atom{A}{x}$ on line~$2$. For that, we have to pick a name not already in our proof. Since no names appear, we can pick any name, say~`$d$'
+Nosso próximo passo deve ser trabalhar para a frente a partir de $\exists x\,\atom{A}{x}$ na linha~$2$. Para isso, precisamos escolher um nome que ainda não esteja na prova. Como não aparece nenhum nome, podemos escolher qualquer um, digamos~\textquotedblleft $d$\textquotedblright{}.
 \begin{fitchproof}
 	\hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 	\open
@@ -641,7 +641,7 @@ Our next step should be to work forward from $\exists x\,\atom{A}{x}$ on line~$2
 	\close
 	\have[n]{7}{\exists x\,\atom{A}{x} \eif B}\ci{2-(6)}
 \end{fitchproof}
-Now we've exhausted our primary strategies, and it is time to work forward from the premise $\forall x(\atom{A}{x} \eif B)$. Applying $\forall$E means we can justify any instance of $A(\metav{c}) \eif B$, regardless of what $\metav{c}$ we choose. Of course, we'll do well to choose $d$, since that will give us $\atom{A}{d} \eif B$. Then we can apply $\eif$E to justify~$B$, finishing the proof.
+Agora esgotamos nossas estratégias principais, e é hora de trabalhar para a frente a partir da premissa $\forall x(\atom{A}{x} \eif B)$. Aplicar $\forall$E significa que podemos justificar qualquer instância de $A(\metav{c}) \eif B$, independentemente de qual $\metav{c}$ escolhermos. É claro que será melhor escolher $d$, pois isso nos dará $\atom{A}{d} \eif B$. Então podemos aplicar $\eif$E para justificar~$B$, concluindo a prova.
 \begin{fitchproof}
 	\hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 	\open
@@ -656,20 +656,20 @@ Now we've exhausted our primary strategies, and it is time to work forward from 
 	\have{7}{\exists x\,\atom{A}{x} \eif B}\ci{2-6}
 \end{fitchproof}
 
-Now let's construct a proof of the converse. We begin with
+Agora vamos construir uma prova da recíproca. Começamos com
 \begin{fitchproof}
 	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\ellipsesline
 	\have[n]{7}{\forall x(\atom{A}{x} \eif B)}
 \end{fitchproof}
-Note that the premise is a conditional, not an existentially quantified sentence, so we should not (yet) work forward from it. Working backward from the conclusion, $\forall x(\atom{A}{x} \eif B)$, leads us to look for a proof of $\atom{A}{d} \eif B$:
+Observe que a premissa é um condicional, não uma sentença quantificada existencialmente; portanto, não devemos (ainda) trabalhar para a frente a partir dela. Trabalhar para trás a partir da conclusão, $\forall x(\atom{A}{x} \eif B)$, nos leva a procurar uma prova de $\atom{A}{d} \eif B$:
 \begin{fitchproof}
 	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\ellipsesline
 	\have[n][-1]{6}{\atom{A}{d} \eif B}
 	\have[n]{7}{\forall x(\atom{A}{x} \eif B)}\Ai{6}
 \end{fitchproof}
-And working backward from $\atom{A}{d} \eif B$ means we should set up a subproof with $\atom{A}{d}$ as an assumption and $B$ as the last line:
+E trabalhar para trás a partir de $\atom{A}{d} \eif B$ significa estabelecer uma subprova com $\atom{A}{d}$ como hipótese e $B$ como última linha:
 \begin{fitchproof}
 	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\open
@@ -680,7 +680,7 @@ And working backward from $\atom{A}{d} \eif B$ means we should set up a subproof
 	\have[n][-1]{6}{\atom{A}{d} \eif B}\ci{2-(5)}
 	\have[n]{7}{\forall x(\atom{A}{x} \eif B)}\Ai{6}
 \end{fitchproof}
-Now we can work forward from the premise on line~$1$. That's a conditional, and its consequent happens to be the sentence~$B$ we are trying to justify. So we should look for a proof of its antecedent, $\exists x\,\atom{A}{x}$. Of course, that is now readily available, by $\exists$I from line~$2$, and we're done:
+Agora podemos trabalhar para a frente a partir da premissa na linha~$1$. Ela é um condicional, e seu consequente é justamente a sentença~$B$ que estamos tentando justificar. Portanto, devemos procurar uma prova de seu antecedente, $\exists x\,\atom{A}{x}$. É claro que isso já está prontamente disponível, por $\exists$I a partir da linha~$2$, e terminamos:
 \begin{fitchproof}
 	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\open
@@ -695,7 +695,7 @@ Now we can work forward from the premise on line~$1$. That's a conditional, and 
 \practiceproblems
 
 \problempart
-Use the strategies to find proofs for each of the following arguments and theorems:
+Use as estratégias para encontrar provas para cada um dos argumentos e teoremas a seguir:
 \begin{compactlist}
 \item $A \eif \forall x\,\atom{B}{x} \therefore \forall x(A \eif \atom{B}{x})$
 \item $\exists x(A \eif \atom{B}{x}) \therefore A \eif \exists x\, \atom{B}{x}$
@@ -706,10 +706,10 @@ Use the strategies to find proofs for each of the following arguments and theore
 \item $\exists x(\atom{A}{x} \eif B) \therefore \forall x\,\atom{A}{x} \eif B$
 \item $\forall x(\atom{A}{x} \eif \exists y\,\atom{A}{y})$
 \end{compactlist}
-Use only the basic rules of TFL in addition to the basic quantifier rules.
+Use apenas as regras básicas da LVF além das regras básicas para os quantificadores.
 
 \problempart
-Use the strategies to find proofs for each of the following arguments and theorems:
+Use as estratégias para encontrar provas para cada um dos argumentos e teoremas a seguir:
 \begin{compactlist}
 \item $\forall x\,\atom{R}{x,x} \therefore \forall x\,\exists y\,\atom{R}{x,y}$
 \item $\forall x\,\forall y\,\forall z[(\atom{R}{x,y} \eand \atom{R}{y,z}) \eif \atom{R}{x,z}]$ \\
@@ -720,7 +720,7 @@ $\therefore \forall x\,\forall y[\atom{R}{x,y} \eif \forall z(\atom{R}{y,z} \eif
 \end{compactlist}
 
 \problempart
-Use the strategies to find proofs for each of the following arguments and theorems:
+Use as estratégias para encontrar provas para cada um dos argumentos e teoremas a seguir:
 \begin{compactlist}
 \item $\forall x\,\atom{A}{x} \eif B \therefore \exists x(\atom{A}{x} \eif B)$
 \item $A \eif \exists x\, \atom{B}{x} \therefore \exists x(A \eif \atom{B}{x})$
@@ -728,7 +728,7 @@ Use the strategies to find proofs for each of the following arguments and theore
 \item $\exists x(\atom{A}{x} \eif \forall y\,\atom{A}{y})$
 \item $\exists x(\exists y\,\atom{A}{y} \eif \atom{A}{x})$
 \end{compactlist}
-These require the use of IP. Use only the basic rules of TFL in addition to the basic quantifier rules.
+Estes exigem o uso de IP. Use apenas as regras básicas da LVF além das regras básicas para os quantificadores.
 
 \chapter{Conversion of quantifiers}\label{s:CQ}
 
