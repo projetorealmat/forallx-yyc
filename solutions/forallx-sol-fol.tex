@@ -366,12 +366,12 @@ simbolize as seguintes sentenças na LPO:
 \end{compactlist}
 
 
-\chapter{Identity}\label{sec.identity}\setcounter{ProbPart}{0}
+\chapter{Identidade}\label{sec.identity}\setcounter{ProbPart}{0}
 %\problempart
 %\label{pr.FOLcandies}
 %Using the following symbolization key:
 %\begin{ekey}
-%\item[\text{domain}] candies
+%\item[\text{domínio}] candies
 %\item[\atom{C}{x}] \gap{x} has chocolate in it
 %\item[\atom{M}{x}] \gap{x} has marzipan in it
 %\item[\atom{S}{x}] \gap{x} has sugar in it
@@ -402,32 +402,32 @@ simbolize as seguintes sentenças na LPO:
 %\item[] \myanswer{$\forall x\bigl[(\atom{C}{x} \eand \atom{M}{x})\eif \forall \bigl((\enot \atom{C}{y} \eand \enot \atom{M}{y}) \eif Bxy\bigr)\bigr]$}
 %\end{compactlist}
 
-\problempart Consider the sentence,
+\problempart Considere a sentença,
 \begin{enumerate}[start=19,ref=\arabic*]
-	\item\label{except2} Every officer except Pavel owes money to Hikaru.
+\item\label{except2} Todo oficial, exceto Pavel, deve dinheiro a Hikaru.
 \end{enumerate}
-Symbolize this sentence, using `$\atom{F}{x}$' for `\gap{x} is an officer'.  Are you confident that your symbolization is true if, and only if, \cref*{except2} is true?  What happens if every officer owes money to Hikaru, Pavel does not, but Pavel isn't an officer? \myanswer{Most people, including most linguists thinking about `except', read \cref*{except2} as entailing all three of the following:
+Simbolize esta sentença usando \textquotedblleft $\atom{F}{x}$\textquotedblright{} para \textquotedblleft \gap{x} é um oficial\textquotedblright{}. Você está confiante de que sua simbolização é verdadeira se, e somente se, \cref*{except2} for verdadeira? O que acontece se todo oficial deve dinheiro a Hikaru, Pavel não deve, mas Pavel não é um oficial? \myanswer{A maioria das pessoas, incluindo a maioria dos linguistas que pensam sobre \textquotedblleft exceto\textquotedblright{}, lê \cref*{except2} como implicando todas as três afirmações seguintes:
 \begin{enumerate}
-	\item Every officer who is not Pavel owes money to Hikaru.
-	\item Pavel does not owe money to Hikaru.
-	\item Pavel is an officer.
+\item Todo oficial que não é Pavel deve dinheiro a Hikaru.
+\item Pavel não deve dinheiro a Hikaru.
+\item Pavel é um oficial.
 \end{enumerate}
-So it can be symbolized as `$\forall x((\atom{F}{x} \eand \enot x = p) \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h} \eand \atom{F}{p}$'.}
+Assim, ela pode ser simbolizada como \textquotedblleft $\forall x((\atom{F}{x} \eand \enot x = p) \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h} \eand \atom{F}{p}$\textquotedblright{}.}
 
-\problempart Explain why:
+\problempart Explique por quê:
 	\begin{compactlist}
-		\item `$\exists x \forall y(\atom{A}{y} \eiff x= y)$' is a good symbolization of `there is exactly one apple'.
-		\item[] \myanswer{We might naturally read this in English thus: 
+\item \textquotedblleft $\exists x \forall y(\atom{A}{y} \eiff x=y)$\textquotedblright{} é uma boa simbolização de \textquotedblleft há exatamente uma maçã\textquotedblright{}.
+\item[] \myanswer{Podemos ler isso naturalmente em português da seguinte maneira:
 		\begin{itemize}
-			\item There is something, $x$, such that, if you choose any object at all, if you chose an apple then you chose $x$ itself, and if you chose $x$ itself then you chose an apple.
+\item Há algo, $x$, tal que, se você escolher qualquer objeto, se escolher uma maçã, então escolheu o próprio $x$, e, se escolher o próprio $x$, então escolheu uma maçã.
 		\end{itemize}
-		The $x$ in question must therefore be the one and only thing which is an apple.}
-		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall z(\atom{A}{z} \eiff (x= z \eor y = z)\bigr]$' is a good symbolization of `there are exactly two apples'.
-		\item[] \myanswer{Similarly to the above, we might naturally read this in English thus: 
+O $x$ em questão deve, portanto, ser a única coisa que é uma maçã.}
+\item \textquotedblleft $\exists x \exists y \bigl[\enot x = y \eand \forall z(\atom{A}{z} \eiff (x= z \eor y = z)\bigr]$\textquotedblright{} é uma boa simbolização de \textquotedblleft há exatamente duas maçãs\textquotedblright{}.
+\item[] \myanswer{De modo semelhante ao caso anterior, podemos ler isso naturalmente em português da seguinte maneira:
 		\begin{itemize}
-			\item There are two distinct things, $x$ and $y$, such that if you choose any object at all, if you chose an apple then you either chose $x$ or $y$, and if you chose either $x$ or $y$ then you chose an apple.
+\item Há duas coisas distintas, $x$ e $y$, tais que, se você escolher qualquer objeto, se escolher uma maçã, então escolheu $x$ ou $y$, e, se escolher $x$ ou $y$, então escolheu uma maçã.
 		\end{itemize}
-		The $x$ and $y$ in question must therefore be the only things which are apples, and since they are distinct, there are two of them.}
+Os $x$ e $y$ em questão devem, portanto, ser as únicas coisas que são maçãs e, como são distintos, há duas delas.}
 	\end{compactlist}
 
 

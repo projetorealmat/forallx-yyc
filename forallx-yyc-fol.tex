@@ -1045,167 +1045,167 @@ simbolize as seguintes sentenças na LPO:
 \end{compactlist}
 
 
-\chapter{Identity}
+\chapter{Identidade}
 \label{sec.identity}
 
-Consider this sentence:
+Considere esta sentença:
 \begin{enumerate}
-\item\label{else1} Pavel owes money to everyone.
+\item\label{else1} Pavel deve dinheiro a todos.
 \end{enumerate}
-Let the domain be people; this will allow us to symbolize `everyone' with a universal quantifier. Offering the symbolization key:
+Seja o domínio formado por pessoas; isso nos permitirá simbolizar \textquotedblleft todos\textquotedblright{} com um quantificador universal. Oferecendo a chave de simbolização:
 	\begin{ekey}
-		\item[\atom{O}{x,y}] \gap{x} owes money to \gap{y}
+\item[\atom{O}{x,y}] \gap{x} deve dinheiro a \gap{y}
 		\item[p] Pavel
 	\end{ekey}
-we can symbolize \cref*{else1} by `$\forall x\, \atom{O}{p,x}$'. But this has a (perhaps) odd consequence. It requires that Pavel owes money to every member of the domain (whatever the domain may be). The domain certainly includes Pavel. So this entails that Pavel owes money to himself. And maybe we did not want to say that. Maybe we meant to leave it open if Pavel owes money to himself, something we could have expressed more precisely by using either one of the following:
+podemos simbolizar \cref*{else1} por \textquotedblleft $\forall x\, \atom{O}{p,x}$\textquotedblright{}. Mas isso tem uma consequência (talvez) estranha. Exige que Pavel deva dinheiro a todos os membros do domínio (qualquer que seja o domínio). O domínio certamente inclui Pavel. Portanto, isso implica que Pavel deve dinheiro a si mesmo. E talvez não quiséssemos dizer isso. Talvez quiséssemos deixar em aberto se Pavel deve dinheiro a si mesmo, algo que poderíamos ter expressado com mais precisão usando uma das seguintes sentenças:
 	\begin{enumerate}
-		\item\label{else1b} Pavel owes money to everyone \emph{else}.
-		\item\label{else1c} Pavel owes money to everyone \emph{other than} Pavel.
+\item\label{else1b} Pavel deve dinheiro a todos os \emph{outros}.
+\item\label{else1c} Pavel deve dinheiro a todos \emph{exceto} Pavel.
 	\end{enumerate}
-But we do not have any way for dealing with the italicized words yet. The solution is to add another symbol to FOL.
+Mas ainda não temos como lidar com as palavras em itálico. A solução é acrescentar outro símbolo à LPO.
 
-\section{Adding identity}
+\section{Acrescentando a identidade}
 
-The symbol `$=$' will be a two-place predicate. Since it will have a special meaning, we shall write it a bit differently: we put it \emph{between} two terms, rather than out front. (This should also be familiar; consider a mathematical equation like $\frac{1}{2} = 0.5$.) And the special meaning for `$=$' is given by the fact that we \emph{always} adopt the following symbolization key: 
+O símbolo \textquotedblleft $=$\textquotedblright{} será um predicado de dois lugares. Como terá um significado especial, vamos escrevê-lo de maneira um pouco diferente: colocamo-lo \emph{entre} dois termos, em vez de à frente deles. (Isso também deve ser familiar; considere uma equação matemática como $\frac{1}{2} = 0.5$.) E o significado especial de \textquotedblleft $=$\textquotedblright{} é dado pelo fato de que \emph{sempre} adotamos a seguinte chave de simbolização:
 	\begin{ekey}
-		\item[{x=y}] \gap{x} is identical to \gap{y}
+\item[{x=y}] \gap{x} é idêntico a \gap{y}
 	\end{ekey}
-This does not mean \emph{merely} that the terms to the left and right
-of `$=$' refer to objects that are indistinguishable, or that all of
-the same things are true of them. Rather, it means that the terms to
-the left and right of `$=$' refer to \emph{one and the same object}.
+Isso não significa \emph{meramente} que os termos à esquerda e à direita de \textquotedblleft $=$\textquotedblright{} se referem a objetos indistinguíveis, ou que todas as mesmas coisas são verdadeiras deles. Em vez disso, significa que os termos à esquerda e à direita de \textquotedblleft $=$\textquotedblright{} se referem a \emph{um único e mesmo objeto}.
 
-To put this to use, suppose we want to symbolize this sentence:
+
+
+
+Para usar isso, suponha que queiramos simbolizar esta sentença:
 \begin{enumerate}
-\item\label{else2} Pavel is Mister Chekov.
+\item\label{else2} Pavel é o senhor Chekov.
 \end{enumerate}
-Let us add to our symbolization key:
+Vamos acrescentar à nossa chave de simbolização:
 	\begin{ekey}
-		\item[c] Mister Chekov
+\item[c] Senhor Chekov
 	\end{ekey}
-Now \cref*{else2} can be symbolized as `$p=c$'. This tells us that the names `$p$' and `$c$' both name the same thing.
+Agora \cref*{else2} pode ser simbolizada como \textquotedblleft $p=c$\textquotedblright{}. Isso nos diz que os nomes \textquotedblleft $p$\textquotedblright{} e \textquotedblleft $c$\textquotedblright{} nomeiam a mesma coisa.
 
-We can also now deal with \cref{else1b,else1c}. Both of these sentences can be  paraphrased as `Everyone who is not Pavel is owed money by Pavel'. Paraphrasing some more, we get: `For all~$x$, if $x$ is not Pavel, then $x$ is owed money by Pavel'. Now that we are armed with our new identity symbol, we can symbolize this as `$\forall x (\enot\, {x = p} \eif \atom{O}{p,x})$'.
+Também podemos agora lidar com \cref{else1b,else1c}. Ambas as sentenças podem ser parafraseadas como \textquotedblleft todos os que não são Pavel devem dinheiro a Pavel\textquotedblright{}. Parafraseando um pouco mais, obtemos: \textquotedblleft para todo~$x$, se $x$ não é Pavel, então $x$ deve dinheiro a Pavel\textquotedblright{}. Agora que dispomos do nosso novo símbolo de identidade, podemos simbolizar isso como \textquotedblleft $\forall x (\enot\, {x = p} \eif \atom{O}{p,x})$\textquotedblright{}.
 
-This last sentence contains the formula `$\enot\, {x = p}$'. That might look a bit strange, because the symbol that comes immediately after the `$\enot$' is a variable, rather than a predicate, but this is not a problem. We are simply negating the entire formula~`$x = p$'.
+Esta última sentença contém a fórmula \textquotedblleft $\enot\, {x = p}$\textquotedblright{}. Isso pode parecer um pouco estranho, porque o símbolo que vem imediatamente depois de \textquotedblleft $\enot$\textquotedblright{} é uma variável, em vez de um predicado, mas isso não é um problema. Estamos simplesmente negando toda a fórmula~\textquotedblleft $x = p$\textquotedblright{}.
 
-\section{`Only' and `except'}
+\section{\textquotedblleft Somente\textquotedblright{} e \textquotedblleft exceto\textquotedblright{}}
 
-In addition to sentences that use the word `else', and `other than', identity is helpful when symbolizing some sentences that contain the words `only', and~`except'. Consider:
+Além das sentenças que usam a palavra \textquotedblleft outro\textquotedblright{} e \textquotedblleft diferente de\textquotedblright{}, a identidade é útil ao simbolizar algumas sentenças que contêm as palavras \textquotedblleft somente\textquotedblright{} e \textquotedblleft exceto\textquotedblright{}. Considere:
 \begin{enumerate}
-\item\label{only1} Only Pavel owes money to Hikaru.
+\item\label{only1} Somente Pavel deve dinheiro a Hikaru.
 \end{enumerate}
-Let `$h$' name Hikaru. Plausibly, \cref*{only1} is true if, and only if, both of the following conditions hold:
+É plausível que \cref*{only1} seja verdadeira se, e somente se, ambas as condições a seguir forem satisfeitas:
 \begin{enumerate}
-	\item\label{only2} Pavel owes money to Hikaru.
-	\item\label{else3} No one who is not Pavel owes money to Hikaru.
+\item\label{only2} Pavel deve dinheiro a Hikaru.
+\item\label{else3} Ninguém que não seja Pavel deve dinheiro a Hikaru.
 \end{enumerate}
-\Cref*{else3} can be symbolized by any one of:
+\Cref*{else3} pode ser simbolizada por qualquer uma das seguintes fórmulas:
 \begin{align*}
 	& \enot\exists x(\enot\, {x = p} \eand \atom{O}{x,h}),\\
 	& \forall x(\enot\, {x = p} \eif \enot\atom{O}{x,h}),\\
 	& \forall x(\atom{O}{x,h} \eif x = p).
 \end{align*}
-Thus, we can symbolize \cref*{only1} as the conjunction of one of the above with the symbolization of~\cref*{only2}, `$\atom{O}{p,h}$', or more compactly using `$\eiff$' as `$\forall x(\atom{O}{x,h} \eiff x = p)$'.
+Assim, podemos simbolizar \cref*{only1} como a conjunção de uma das fórmulas acima com a simbolização de \cref*{only2}, \textquotedblleft $\atom{O}{p,h}$\textquotedblright{}, ou, de forma mais compacta, usando \textquotedblleft $\eiff$\textquotedblright{} como \textquotedblleft $\forall x(\atom{O}{x,h} \eiff x = p)$\textquotedblright{}.
 
 \begin{enumerate}
-	\item\label{except} Everyone except Pavel owes money to Hikaru.
+\item\label{except} Todos, exceto Pavel, devem dinheiro a Hikaru.
 	\end{enumerate}
-\Cref*{except} can be treated similarly, although now of course Pavel does \emph{not} owe Hikaru money. We can paraphrase it as `Everyone who is not Pavel owes Hikaru money, and Pavel does not'. Consequently, it can be symbolized as `$\forall x(\enot\, {x = p} \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h}$', or more concisely, `$\forall x(\enot\, {x = p} \eiff \atom{O}{x,h})$'. Other locutions akin to `except' such as `but' or `besides' (as used in `no one but Pavel' or `someone besides Hikaru') can be treated in similar ways.
+\Cref*{except} pode ser tratada de modo semelhante, embora, naturalmente, Pavel agora \emph{não} deva dinheiro a Hikaru. Podemos parafraseá-la como \textquotedblleft todos os que não são Pavel devem dinheiro a Hikaru, e Pavel não deve\textquotedblright{}. Consequentemente, ela pode ser simbolizada como \textquotedblleft $\forall x(\enot\, {x = p} \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h}$\textquotedblright{} ou, mais concisamente, como \textquotedblleft $\forall x(\enot\, {x = p} \eiff \atom{O}{x,h})$\textquotedblright{}. Outras locuções semelhantes a \textquotedblleft exceto\textquotedblright{}, como \textquotedblleft mas\textquotedblright{} ou \textquotedblleft além de\textquotedblright{} (como usadas em \textquotedblleft ninguém além de Pavel\textquotedblright{} ou \textquotedblleft alguém além de Hikaru\textquotedblright{}), podem ser tratadas de maneiras semelhantes.
 
-The above treatment of so-called ``exceptives'' is not uncontentious. Some linguists think that \cref*{except} does not entail that Pavel doesn't owe Hikaru money, and so the symbolization should just be `$\forall x(\enot\, {x = p} \eif \atom{O}{x,h})$'.  There are also uses of `except' that clearly do not have that entailment, especially in mathematical writing.  For instance, you may read in a calculus textbook that ``the function~$f$ is defined everywhere except possibly at~$a$''.  That means only that for every point~$x$ other than~$a$, $f$~is defined at~$x$. It is not required that $f$ is undefined at~$a$; it's left open whether $f$ is or is not defined at~$a$.
+O tratamento acima dos chamados \textquotedblleft exceptivos\textquotedblright{} não é incontroverso. Alguns linguistas pensam que \cref*{except} não implica que Pavel não deva dinheiro a Hikaru e, portanto, que a simbolização deveria ser apenas \textquotedblleft $\forall x(\enot\, {x = p} \eif \atom{O}{x,h})$\textquotedblright{}. Também há usos de \textquotedblleft exceto\textquotedblright{} que claramente não têm essa implicação, especialmente em textos matemáticos. Por exemplo, você pode ler em um livro de cálculo que \textquotedblleft a função~$f$ é definida em toda parte, exceto possivelmente em~$a$\textquotedblright{}. Isso significa apenas que, para todo ponto~$x$ diferente de~$a$, $f$ está definida em~$x$. Não é necessário que $f$ não esteja definida em~$a$; fica em aberto se $f$ está ou não definida em~$a$.
 
-\section{There are at least\ldots}
-We can also use identity to say how many things there are of a particular kind. For example, consider these sentences:
+\section{Há pelo menos\ldots}
+Também podemos usar a identidade para dizer quantas coisas há de determinado tipo. Por exemplo, considere estas sentenças:
 \begin{enumerate}
-\item\label{atleast1} There is at least one apple.
-\item\label{atleast2} There are at least two apples.
-\item\label{atleast3} There are at least three apples.
+\item\label{atleast1} Há pelo menos uma maçã.
+\item\label{atleast2} Há pelo menos duas maçãs.
+\item\label{atleast3} Há pelo menos três maçãs.
 \end{enumerate}
-We will use the symbolization key:
+Usaremos a chave de simbolização:
 	\begin{ekey}
-		\item[\atom{A}{x}] \gap{x} is an apple
+\item[\atom{A}{x}] \gap{x} é uma maçã
 	\end{ekey}
-\Cref*{atleast1} does not require identity. It can be adequately symbolized by `$\exists x\, \atom{A}{x}$': There is an apple; perhaps many, but at least one.
+\Cref*{atleast1} não exige identidade. Ela pode ser adequadamente simbolizada por \textquotedblleft $\exists x\, \atom{A}{x}$\textquotedblright{}: há uma maçã; talvez muitas, mas pelo menos uma.
 
-It might be tempting to also symbolize \cref*{atleast2} without
-identity, namely as `$\exists x \exists y(\atom{A}{x} \eand
-\atom{A}{y})$'. Roughly, this says that there is some apple $x$ in the
-domain and some apple $y$ in the domain. Since nothing precludes these
-from being one and the same apple, this would be true even if there
-were only one apple. In order to make sure that we are dealing with
-\emph{different} apples, we need the identity predicate.
-\Cref*{atleast2} needs to say that the two apples that exist are not
-identical, so it can be symbolized by `$\exists x \exists
-y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y})$'.
+Pode ser tentador simbolizar também \cref*{atleast2} sem identidade, a saber, como \textquotedblleft $\exists x \exists y(\atom{A}{x} \eand \atom{A}{y})$\textquotedblright{}. Grosso modo, isso diz que há alguma maçã $x$ no domínio e alguma maçã $y$ no domínio. Como nada impede que sejam uma única e mesma maçã, isso seria verdadeiro mesmo que houvesse apenas uma maçã. Para garantir que estamos lidando com maçãs \emph{diferentes}, precisamos do predicado de identidade.
 
-\Cref*{atleast3} requires talking about three different apples. Now we need three existential quantifiers, and we need to make sure that each will pick out something different: 
+
+
+
+
+
+\Cref*{atleast2} precisa dizer que as duas maçãs existentes não são idênticas; portanto, pode ser simbolizada por \textquotedblleft $\exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y})$\textquotedblright{}.
+
+
+
+\Cref*{atleast3} exige falar de três maçãs diferentes. Agora precisamos de três quantificadores existenciais e precisamos garantir que cada um escolha algo diferente:
 \[
 	\exists x \exists y\exists z[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eand ((\enot\, {x = y} \eand \enot\, {y = z}) \eand \enot\, {x = z})].
 \]
-Note that it is \emph{not} enough to use `$\enot\, {x = y} \eand \enot\, {y = z}$' to symbolize `$x$, $y$, and~$z$ are all different.' For that would be true if $x$ and $y$ were different, but $x = z$. In general, to say that $x_1$, \dots, $x_n$ are all different, we must have a conjunction of $\enot\, {x_i = x_j}$ for every different pair $i$ and~$j$.
+Observe que não é suficiente usar \textquotedblleft $\enot\, {x = y} \eand \enot\, {y = z}$\textquotedblright{} para simbolizar \textquotedblleft $x$, $y$ e~$z$ são todos diferentes\textquotedblright{}. Isso seria verdadeiro se $x$ e $y$ fossem diferentes, mas $x = z$. Em geral, para dizer que $x_1$, \dots, $x_n$ são todos diferentes, precisamos ter uma conjunção de $\enot\, {x_i = x_j}$ para cada par diferente $i$ e~$j$.
 
-\section{There are at most\ldots}
-Now consider these sentences:
+\section{Há no máximo\ldots}
+Agora considere estas sentenças:
 \begin{enumerate}
-	\item\label{atmost1} There is at most one apple.
-	\item\label{atmost2} There are at most two apples.
+\item\label{atmost1} Há no máximo uma maçã.
+\item\label{atmost2} Há no máximo duas maçãs.
 \end{enumerate}
-\Cref*{atmost1} can be paraphrased as, `It is not the case that there
-are at least \emph{two} apples'. This is just the negation of
-\cref{atleast2}: 
+\Cref*{atmost1} pode ser parafraseada como \textquotedblleft não é o caso de que haja pelo menos \emph{duas} maçãs\textquotedblright{}. Isso é simplesmente a negação de \cref{atleast2}:
+
+
 \[
 	\enot \exists x \exists y[(\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y}]
 \]
-But \cref*{atmost1} can also be approached in another way. It means
-that if you pick out an object and it's an apple, and then you pick
-out an object and it's also an apple, you must have picked out the
-same object both times. With this in mind, \cref*{atmost1} can also be
-symbolized by:
+Mas \cref*{atmost1} também pode ser abordada de outra maneira. Ela significa que, se você escolher um objeto e ele for uma maçã, e então escolher um objeto e ele também for uma maçã, você deve ter escolhido o mesmo objeto nas duas vezes. Com isso em mente, \cref*{atmost1} também pode ser simbolizada por:
+
+
+
+
 \[
 	\forall x\forall y\bigl[(\atom{A}{x} \eand \atom{A}{y}) \eif x=y\bigr]
 \]
-The two sentences will turn out to be logically equivalent.
+As duas sentenças acabarão se mostrando logicamente equivalentes.
 
-Similarly, \cref*{atmost2} can be approached in two equivalent ways.
-It can be paraphrased as, `It is not the case that there are
-\emph{three} or more distinct apples', so we can offer:
+Da mesma forma, \cref*{atmost2} pode ser abordada de duas maneiras equivalentes.
+Ela pode ser parafraseada como \textquotedblleft não é o caso de que haja \emph{três} ou mais maçãs distintas\textquotedblright{}, portanto podemos oferecer:
+
 \[
 	\enot \exists x \exists y\exists z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eand ((\enot\, {x = y} \eand \enot\, {x = z}) \eand \enot\, {y = z})\bigr]
 \]
-Alternatively we can read it as saying that if you pick out an apple,
-and an apple, and an apple, then you will have picked out (at least)
-one of these objects more than once. Thus:
+Alternativamente, podemos lê-la como dizendo que, se você escolher uma maçã, outra maçã e mais uma maçã, então terá escolhido (pelo menos) um desses objetos mais de uma vez. Assim:
+
+
 \[
 	\forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]
 \]
 
 
-\section{There are exactly\ldots}\label{sec:exactlyn}
+\section{Há exatamente\ldots}\label{sec:exactlyn}
 
-We can now consider statements of exact numerical quantity, like:
+Agora podemos considerar afirmações de quantidade numérica exata, como:
 \begin{enumerate}
-\item\label{exactly1} There is exactly one apple.
-\item\label{exactly2} There are exactly two apples.
-\item\label{exactly3} There are exactly three apples.
+\item\label{exactly1} Há exatamente uma maçã.
+\item\label{exactly2} Há exatamente duas maçãs.
+\item\label{exactly3} Há exatamente três maçãs.
 \end{enumerate}
-\Cref*{exactly1} can be paraphrased as, `There is \emph{at least} one
-apple and there is \emph{at most} one apple'. This is just the
-conjunction of \cref{atleast1} and \cref{atmost1}. So we can offer:
+\Cref*{exactly1} pode ser parafraseada como \textquotedblleft há \emph{pelo menos} uma maçã e há \emph{no máximo} uma maçã\textquotedblright{}. Isso é simplesmente a conjunção de \cref{atleast1} e \cref{atmost1}. Assim, podemos oferecer:
+
+
 \[
 	\exists x \atom{A}{x} \eand \forall x\forall y\bigl[(\atom{A}{x} \eand \atom{A}{y}) \eif x=y\bigr]
 \]
-But it is perhaps more straightforward to paraphrase \cref*{exactly1}
-as, `There is a thing $x$ which is an apple, and everything which is
-an apple is just $x$ itself'. Thought of in this way, we offer: 
+Mas talvez seja mais direto parafrasear \cref*{exactly1} como \textquotedblleft há uma coisa $x$ que é uma maçã, e tudo o que é uma maçã é o próprio $x$\textquotedblright{}. Pensando dessa maneira, oferecemos:
+
+
 \[
 	\exists x\bigl[\atom{A}{x} \eand \forall y(\atom{A}{y} \eif x= y)\bigr]
 \]
-Similarly, \cref*{exactly2} may be paraphrased as, `There are \emph{at
-least} two apples, and there are \emph{at most} two apples'. Thus we
-could offer
+Da mesma forma, \cref*{exactly2} pode ser parafraseada como \textquotedblleft há \emph{pelo menos} duas maçãs e há \emph{no máximo} duas maçãs\textquotedblright{}. Assim, poderíamos oferecer
+
+
 \ifHTMLtarget
-\[\exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y}) \eand 
+\[\exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y}) \eand
 \forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y})
 \eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]
 \]
@@ -1215,14 +1215,14 @@ could offer
   \forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]
 \end{multline*}
 \fi
-More efficiently, though, we can paraphrase it as `There are at least two different apples, and every apple is one of those two apples'. Then we offer:
+De maneira mais eficiente, porém, podemos parafraseá-la como \textquotedblleft há pelo menos duas maçãs diferentes, e toda maçã é uma dessas duas maçãs\textquotedblright{}. Então oferecemos:
 $$\exists x\exists y\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y}) \eand \forall z(\atom{A}{z} \eif ( x= z \eor y = z))\bigr]$$
-Finally, consider these sentences:
+Por fim, considere estas sentenças:
 \begin{enumerate}
-\item\label{exactly2things} There are exactly two things.
-\item\label{exactly2objects} There are exactly two objects.
+\item\label{exactly2things} Há exatamente duas coisas.
+\item\label{exactly2objects} Há exatamente dois objetos.
 \end{enumerate}
-It might be tempting to add a predicate to our symbolization key, to symbolize the English predicate `\blank\ is a thing' or `\blank\ is an object', but this is unnecessary. Words like `thing' and `object' do not sort wheat from chaff: they apply trivially to everything, which is to say, they apply trivially to every thing. So we can symbolize either sentence with either of the following:
+Pode ser tentador acrescentar um predicado à nossa chave de simbolização para simbolizar o predicado em português \textquotedblleft \blank\ é uma coisa\textquotedblright{} ou \textquotedblleft \blank\ é um objeto\textquotedblright{}, mas isso é desnecessário. Palavras como \textquotedblleft coisa\textquotedblright{} e \textquotedblleft objeto\textquotedblright{} não separam o joio do trigo: aplicam-se trivialmente a tudo, isto é, aplicam-se trivialmente a toda coisa. Assim, podemos simbolizar qualquer uma das sentenças com qualquer uma das seguintes fórmulas:
 \begin{align*}
 	& \exists x \exists y\,\enot\, {x = y} \eand  \enot \exists x \exists y \exists z ((\enot\, {x = y} \eand \enot\, {y = z}) \eand \enot\, {x = z}) \\
 	& \exists x \exists y \bigl[\enot\, {x = y} \eand \forall z(x=z \eor y = z)\bigr]
@@ -1256,21 +1256,21 @@ It might be tempting to add a predicate to our symbolization key, to symbolize t
 %\item Any candy with chocolate and marzipan is better than any candy that lacks both.
 %\end{compactlist}
 
-\problempart 
-Consider the sentence,
+\problempart
+Considere a sentença,
 \begin{enumerate}
-	\item\label{except2} Every officer except Pavel owes money to Hikaru.
+\item\label{except2} Todo oficial, exceto Pavel, deve dinheiro a Hikaru.
 \end{enumerate}
-Symbolize this sentence, using `$\atom{F}{x}$' for `\gap{x} is an officer'.  Are you confident that your symbolization is true if, and only if, \cref*{except2} is true?  What happens if every officer owes money to Hikaru, Pavel does not, but Pavel isn't an officer?
+Simbolize esta sentença usando \textquotedblleft $\atom{F}{x}$\textquotedblright{} para \textquotedblleft \gap{x} é um oficial\textquotedblright{}. Você está confiante de que sua simbolização é verdadeira se, e somente se, \cref*{except2} é verdadeira? O que acontece se todo oficial deve dinheiro a Hikaru, Pavel não deve, mas Pavel não é um oficial?
 
-\problempart 
-Explain why:
+\problempart
+Explique por que:
 	\begin{compactlist}
-		\item `$\exists x \forall y(\atom{A}{y} \eiff x= y)$' is a good
-		symbolization of `there is exactly one apple'.
-		\item `$\exists x \exists y \bigl[\enot\, {x = y} \eand \forall
-		z(\atom{A}{z} \eiff (x= z \eor y = z))\bigr]$' is a good
-		symbolization of `there are exactly two apples'.
+\item \textquotedblleft $\exists x \forall y(\atom{A}{y} \eiff x= y)$\textquotedblright{} é uma boa simbolização de \textquotedblleft há exatamente uma maçã\textquotedblright{}.
+
+\item \textquotedblleft $\exists x \exists y \bigl[\enot\, {x = y} \eand \forall
+z(\atom{A}{z} \eiff (x= z \eor y = z))\bigr]$\textquotedblright{} é uma boa
+simbolização de \textquotedblleft há exatamente duas maçãs\textquotedblright{}.
 	\end{compactlist}
 
 
