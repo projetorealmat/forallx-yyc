@@ -604,9 +604,9 @@ Contra-interpretação: tome como domínio o número $1$. Faça $\atom{P}{x}$ n�
 
 \stepcounter{chapter} % Proofs with quantifiers
 
-\chapter{Conversion of quantifiers}\setcounter{ProbPart}{0}
+\chapter{Conversão de quantificadores}\setcounter{ProbPart}{0}
 \problempart
-Show in each case that the sentences are inconsistent:
+Mostre, em cada caso, que as sentenças são inconsistentes:
 \begin{compactlist}
 \item $Sa\eif \atom{T}{m}, \atom{T}{m} \eif \atom{S}{a}, \atom{T}{m} \eand \enot \atom{S}{a}$
 \myanswer{\begin{fitchproof}
@@ -653,7 +653,7 @@ Show in each case that the sentences are inconsistent:
 \end{compactlist}
 
 \problempart
-Show that each pair of sentences is interderivable: %TB: Again, have to do some manual numbering to make the multicols have enough space.
+Mostre que cada par de sentenças é interderivável: %TB: Novamente, foi preciso fazer alguma numeração manual para que as multicols tivessem espaço suficiente.
 
 \begin{compactlist}
 \item $\forall x (\atom{A}{x} \eif \enot \atom{B}{x}), \enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
@@ -688,7 +688,7 @@ Show that each pair of sentences is interderivable: %TB: Again, have to do some 
 	\have{nb}{\enot \atom{B}{a}}\ni{b-red}
 \close
 \have{anb}{\atom{A}{a} \eif \enot \atom{B}{a}}\ci{a-nb}
-\have{Aanb}{\forall x (\atom{A}{x} \eif \enot \atom{B}{x})}\Ai{anb}		
+\have{Aanb}{\forall x (\atom{A}{x} \eif \enot \atom{B}{x})}\Ai{anb}
 \end{fitchproof}
 }
 \item $\forall x (\enot \atom{A}{x}\eif \atom{B}{d}), \forall x\,\atom{A}{x} \eor \atom{B}{d}$
@@ -730,9 +730,9 @@ Show that each pair of sentences is interderivable: %TB: Again, have to do some 
 
 
 \problempart
-In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is interderivable:
+Em \cref{s:MoreMonadic}, examinamos o que acontece quando movemos quantificadores «através» de vários operadores lógicos. Mostre que cada par de sentenças é interderivável:
 \begin{compactlist}
-\item $\forall x (\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$ 
+\item $\forall x (\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$
 \myanswer{
 \begin{fitchproof}
 \hypo{Afg}{\forall x (\atom{F}{x} \eand \atom{G}{a})}
@@ -765,7 +765,7 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 	\open
 		\hypo{g}{\atom{G}{a}}
 		\have{Efg2}{\exists x\,\atom{F}{x} \eor \atom{G}{a}}\oi{g}
-	\close		
+	\close
 	\have{Efg3}{\exists x\,\atom{F}{x} \eor \atom{G}{a}}\oe{fg, f-Efg1, g-Efg2}
 \close
 \have{Efg4}{\exists x\,\atom{F}{x} \eor \atom{G}{a}}\Ee{Efg, fg-Efg3}
@@ -826,7 +826,7 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 	\close
 	\have{g1}{\atom{G}{a}}\Ee{Ef, f-g}
 \close
-\have{Efg}{\exists x\,\atom{F}{x} \eif \atom{G}{a}}\ci{Ef-g1}	
+\have{Efg}{\exists x\,\atom{F}{x} \eif \atom{G}{a}}\ci{Ef-g1}
 \end{fitchproof}
 \begin{fitchproof}
 \hypo{Efg}{\exists x\,\atom{F}{x} \eif \atom{G}{a}}
@@ -836,7 +836,7 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 	\have{g}{\atom{G}{a}}\ce{Efg,Ef}
 \close
 \have{fg}{\atom{F}{b} \eif \atom{G}{a}}\ci{f-g}
-\have{Afg}{\forall x(\atom{F}{x} \eif \atom{G}{a})}\Ai{fg}	
+\have{Afg}{\forall x(\atom{F}{x} \eif \atom{G}{a})}\Ai{fg}
 \end{fitchproof}
 }
 \item $\exists x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \exists x\,\atom{F}{x}$

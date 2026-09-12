@@ -730,29 +730,29 @@ Use as estratégias para encontrar provas para cada um dos argumentos e teoremas
 \end{compactlist}
 Estes exigem o uso de IP. Use apenas as regras básicas da LVF além das regras básicas para os quantificadores.
 
-\chapter{Conversion of quantifiers}\label{s:CQ}
+\chapter{Conversão de quantificadores}\label{s:CQ}
 
-In this section, we will add some additional rules to the basic rules of the previous section. These govern the interaction of quantifiers and negation.
- 
-In \cref{s:FOLBuildingBlocks}, we noted that $\enot\exists x\metav{A}$ is logically equivalent to $\forall x\, \enot\metav{A}$. We will add some rules to our proof system that govern this. In particular, we add:
+Nesta seção, acrescentaremos algumas regras às regras básicas da seção anterior. Elas regem a interação entre quantificadores e negação.
+
+Em \cref{s:FOLBuildingBlocks}, observamos que $\enot\exists x\metav{A}$ é logicamente equivalente a $\forall x\,\enot\metav{A}$. Acrescentaremos ao nosso sistema de provas algumas regras que regem isso. Em particular, acrescentamos:
 	\factoidbox{
 	\begin{fitchproof}
 		\have[m]{a}{\forall \metav{x}\, \enot\metav{A}}
 		\have[\ ]{con}{\enot \exists \metav{x}\, \metav{A}}\cq{a}
 	\end{fitchproof}}
-and
+e
 \factoidbox{
 	\begin{fitchproof}
 		\have[m]{a}{ \enot \exists \metav{x}\, \metav{A}}
 		\have[\ ]{con}{\forall \metav{x}\, \enot \metav{A}}\cq{a}
 	\end{fitchproof}}
-Equally, we add:
+Do mesmo modo, acrescentamos:
 \factoidbox{
 	\begin{fitchproof}
 		\have[m]{a}{\exists \metav{x}\, \enot \metav{A}}
 		\have[\ ]{con}{\enot \forall \metav{x}\, \metav{A}}\cq{a}
 	\end{fitchproof}}
-and
+e
 \factoidbox{
 	\begin{fitchproof}
 		\have[m]{a}{\enot \forall \metav{x}\, \metav{A}}
@@ -761,7 +761,7 @@ and
 
 \practiceproblems
 \problempart
-Show in each case that the sentences are inconsistent:
+Mostre, em cada caso, que as sentenças são inconsistentes:
 \begin{compactlist}
 \item $\atom{S}{a}\eif \atom{T}{m}, \atom{T}{m} \eif \atom{S}{a}, \atom{T}{m} \eand \enot \atom{S}{a}$
 \item $\enot\exists x\,\atom{R}{x,a}, \forall x\, \forall y\,\atom{R}{y,x}$
@@ -770,14 +770,14 @@ Show in each case that the sentences are inconsistent:
 \end{compactlist}
 
 \problempart
-Show that each pair of sentences is interderivable:
+Mostre que cada par de sentenças é interderivável:
 \begin{compactlist}
 \item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x}), \enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot\atom{A}{x}\eif \atom{B}{d}), \forall x\,\atom{A}{x} \eor \atom{B}{d}$
 \end{compactlist}
 
 \problempart
-In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is interderivable:
+Em \cref{s:MoreMonadic}, consideramos o que acontece quando movemos quantificadores \textquotedblleft através\textquotedblright{} de vários operadores lógicos. Mostre que cada par de sentenças é interderivável:
 \begin{compactlist}
 \item $\forall x(\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$
 \item $\exists x(\atom{F}{x} \eor \atom{G}{a}), \exists x\,\atom{F}{x} \eor \atom{G}{a}$
@@ -786,7 +786,7 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 \item $\exists x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \exists x\,\atom{F}{x}$
 \item $\exists x(\atom{F}{x} \eif \atom{G}{a}), \forall x\,\atom{F}{x} \eif \atom{G}{a}$
 \end{compactlist}
-NB: the variable `$x$' does not occur in `$\atom{G}{a}$'. When all the quantifiers occur at the beginning of a sentence, that sentence is said to be in \emph{prenex normal form}. These equivalences are sometimes called \emph{prenexing rules}, since they give us a means for putting any sentence into prenex normal form.
+OBS.: a variável \textquotedblleft $x$\textquotedblright{} não ocorre em \textquotedblleft $\atom{G}{a}$\textquotedblright{}. Quando todos os quantificadores ocorrem no início de uma sentença, dizemos que ela está na \emph{forma normal prenex}. Essas equivalências às vezes são chamadas de \emph{regras de prenexação}, pois fornecem um meio de colocar qualquer sentença na forma normal prenex.
 
 
 \chapter{Rules for identity}
