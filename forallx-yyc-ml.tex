@@ -94,7 +94,7 @@ Mas, para aplicar $\ebox$I, precisamos ter provado a fórmula dentro de uma subp
 	\end{fitchproof}
 Nenhuma linha acima da linha $m$ pode ser citada por qualquer regra dentro da subprova estrita iniciada na linha $m$, a menos que a regra permita explicitamente essa citação.
 }
-É essencial enfatizar que, em uma subprova estrita, você não pode usar nenhuma regra que recorra a algo provado fora da subprova estrita. Há exceções, como a regra $\ebox$E abaixo. Essas regras declararão explicitamente que podem ser usadas dentro de subprovas estritas e citarão linhas fora da subprova estrita. Essa restrição é essencial; caso contrário, obteríamos resultados terríveis. Por exemplo, poderíamos oferecer a seguinte prova para justificar $A\therefore \ebox A:
+É essencial enfatizar que, em uma subprova estrita, você não pode usar nenhuma regra que recorra a algo provado fora da subprova estrita. Há exceções, como a regra $\ebox$E abaixo. Essas regras declararão explicitamente que podem ser usadas dentro de subprovas estritas e citarão linhas fora da subprova estrita. Essa restrição é essencial; caso contrário, obteríamos resultados terríveis. Por exemplo, poderíamos oferecer a seguinte prova para justificar $A\therefore \ebox A$:
 \begin{fitchproof}
 		\hypo{1}{A}\PR
 		\open
@@ -139,7 +139,7 @@ Comecemos com um exemplo.
 		\have{5}{B}\boxe{2}
 		\have{6}{A \eand B}\ai{4,5}
 		\close
-		\have{6}{\ebox(A \land B)}\boxi{3-6}
+		\have{6}{\ebox(A \eand B)}\boxi{3-6}
 \end{fitchproof}
 Também podemos misturar subprovas comuns e subprovas estritas:
 \begin{fitchproof}
@@ -287,7 +287,7 @@ Isso nos leva ao nosso sistema modal final, \mlSfive, que obtemos acrescentando 
 A regra R$\mathbf{5}$ só pode ser aplicada se a linha $m$ (que contém $\enot \ebox\metav{A}$) estiver fora da subprova estrita em que a linha $n$ ocorre e se essa subprova estrita não fizer parte de outra subprova estrita que não contenha a linha~$m$.
 }
 
-Essa regra nos permite mostrar, por exemplo, que $\ediamond\ebox A\proves_\mlSfive  \ebox A:
+Essa regra nos permite mostrar, por exemplo, que $\ediamond\ebox A\proves_\mlSfive  \ebox A$:
 \begin{fitchproof}
 	\hypo{1}{\ediamond\ebox A}\PR
 	\have{2}{\enot\ebox\enot\ebox A}\by{Def\ediamond}{1}
@@ -311,7 +311,7 @@ regra~R$\mathbf{4}$ e obtido um sistema equivalente. Isso ocorre porque
 tudo o que podemos provar usando a regra~R$\mathbf{4}$ também pode ser provado
 usando R\mlT{} junto com~R$\mathbf{5}$. Por exemplo, eis uma
 prova que mostra $\ebox A \proves_\mlSfive \ebox\ebox A$ sem
-usar~R$\mathbf{4}:
+usar~R$\mathbf{4}$:
 \begin{fitchproof}
 	\hypo{1}{\ebox A}\PR
 	\open
@@ -336,9 +336,9 @@ usar~R$\mathbf{4}:
 	\close
 	\have{14}{\ebox\ebox A}\boxi{6-13}
 \end{fitchproof}
-\mlSfive{} é \emph{estritamente mais forte} que \mlSfour: há coisas que podem ser provadas em \mlSfive, mas não em \mlSfour{} (por exemplo, $\ediamond\ebox A \eif \ebox A).
+\mlSfive{} é \emph{estritamente mais forte} que \mlSfour: há coisas que podem ser provadas em \mlSfive, mas não em \mlSfour{} (por exemplo, $\ediamond\ebox A \eif \ebox A$).
 
-O ponto importante sobre \mlSfive{} pode ser expresso assim: se você tem uma longa sequência de caixas e diamantes, em qualquer combinação, pode eliminar todos menos o último. Por exemplo, $\ediamond\ebox\ediamond\ediamond\ebox\ebox\ediamond\ebox A$ pode ser simplificada para simplesmente $\ebox A.
+O ponto importante sobre \mlSfive{} pode ser expresso assim: se você tem uma longa sequência de caixas e diamantes, em qualquer combinação, pode eliminar todos menos o último. Por exemplo, $\ediamond\ebox\ediamond\ediamond\ebox\ebox\ediamond\ebox A$ pode ser simplificada para simplesmente $\ebox A$.
 
 \practiceproblems
 
