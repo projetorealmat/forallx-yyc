@@ -445,125 +445,126 @@ Identifique quais variáveis são ligadas e quais são livres.
 \end{compactlist}
 
 
-\chapter{Definite descriptions}\setcounter{ProbPart}{0}
+\chapter{Descrições definidas}\setcounter{ProbPart}{0}
 \problempart
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{K}{x}] \gap{x} knows the combination to the safe
-\item[\atom{S}{x}] \gap{x} is a spy
-\item[\atom{V}{x}] \gap{x} is a vegetarian
-\item[\atom{T}{x,y}] \gap{x} trusts \gap{y}
+\item[\text{domínio}] pessoas
+\item[\atom{K}{x}] \gap{x} sabe a combinação do cofre
+\item[\atom{S}{x}] \gap{x} é espião
+\item[\atom{V}{x}] \gap{x} é vegetariano
+\item[\atom{T}{x,y}] \gap{x} confia em \gap{y}
 \item[h] Hofthor
 \item[i] Ingmar
 \end{ekey}
-symbolize the following sentences in FOL:
+simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item Hofthor trusts a vegetarian.
+\item Hofthor confia em um vegetariano.
 \item[] \myanswer{$\exists x(\atom{V}{x} \eand \atom{T}{h,x})$}
-\item Everyone who trusts Ingmar trusts a vegetarian.
+\item Toda pessoa que confia em Ingmar confia em um vegetariano.
 \item[] \myanswer{$\forall x\bigl[\atom{T}{x,i} \eif \exists y(\atom{T}{x,y} \eand \atom{V}{y})\bigr]$}
-\item Everyone who trusts Ingmar trusts someone who trusts a vegetarian.
+\item Toda pessoa que confia em Ingmar confia em alguém que confia em um vegetariano.
 \item[] \myanswer{$\forall x\bigl[\atom{T}{x,i} \eif \exists y\bigr(\atom{T}{x,y} \eand \exists z(\atom{T}{y,z} \eand \atom{V}{z})\bigr)\bigr]$}
-\item Only Ingmar knows the combination to the safe.
-\item[] \myanswer{$\forall x(\atom{K}{x} \eif x = i)$\\Comment: does the English claim entail that Ingmar \emph{does} know the combination to the safe? If so, then we should formalize this with a `$\eiff$'.}
-\item Ingmar trusts Hofthor, but no one else.
+\item Somente Ingmar sabe a combinação do cofre.
+\item[] \myanswer{$\forall x(\atom{K}{x} \eif x = i)$\\Comment: a afirmação em português implica que Ingmar \emph{sabe} a combinação do cofre? Se sim, devemos formalizá-la com um \textquotedblleft $\eiff$\textquotedblright{}.}
+\item Ingmar confia em Hofthor, mas em ninguém mais.
 \item[] \myanswer{$\forall x(\atom{T}{i,x} \eiff x = h)$}
-\item The person who knows the combination to the safe is a vegetarian.
+\item A pessoa que sabe a combinação do cofre é vegetariana.
 \item[] \myanswer{$\exists x\bigl[\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x = y) \eand \atom{V}{x}\bigr]$}
-\item The person who knows the combination to the safe is not a spy.
+\item A pessoa que sabe a combinação do cofre não é espiã.
 \item[] \myanswer{$\exists x\bigl[\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x = y) \eand \enot \atom{S}{x}\bigr]$\\
-Comment: the scope of negation is potentially ambiguous here; I have read it as \emph{inner} negation.}
+Comment: o escopo da negação é potencialmente ambíguo aqui; interpretei-a como uma negação \emph{interna}.}
 \end{compactlist}
 
 
 \solutions
 \problempart
 \label{pr.FOLcards}
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] cards in a standard deck
-\item[\atom{B}{x}] \gap{x} is black
-\item[\atom{C}{x}] \gap{x} is a club
-\item[\atom{D}{x}] \gap{x} is a deuce
-\item[\atom{J}{x}] \gap{x} is a jack
-\item[\atom{M}{x}] \gap{x} is a man with an axe
-\item[\atom{O}{x}] \gap{x} is one-eyed
-\item[\atom{W}{x}] \gap{x} is wild
+\item[\text{domínio}] cartas de um baralho comum
+\item[\atom{B}{x}] \gap{x} é preta
+\item[\atom{C}{x}] \gap{x} é um paus
+\item[\atom{D}{x}] \gap{x} é um dois
+\item[\atom{J}{x}] \gap{x} é um valete
+\item[\atom{M}{x}] \gap{x} é um homem com um machado
+\item[\atom{O}{x}] \gap{x} tem um olho
+\item[\atom{W}{x}] \gap{x} é coringa
 \end{ekey}
-symbolize each sentence in FOL:
+simbolize cada sentença na LPO:
 \begin{compactlist}
-\item All clubs are black cards.
+\item Todo paus é uma carta preta.
 \item[] \myanswer{$\forall x (\atom{C}{x} \eif \atom{B}{x})$}
-\item There are no wild cards.
+\item Não há cartas coringa.
 \item[] \myanswer{$\enot \exists x\, \atom{W}{x}$}
-\item There are at least two clubs.
+\item Há pelo menos dois paus.
 \item[] \myanswer{$\exists x \exists y(\enot x = y \eand \atom{C}{x} \eand \atom{C}{y})$}
-\item There is more than one one-eyed jack.
+\item Há mais de um valete de um olho só.
 \item[] \myanswer{$\exists x \exists y(\enot x = y \eand \atom{J}{x} \eand \atom{O}{x}  \eand \atom{J}{y} \eand \atom{O}{y})$}
-\item There are at most two one-eyed jacks.
+\item Há no máximo dois valetes de um olho só.
 \item[] \myanswer{$\forall x \forall y \forall z\bigl[(\atom{J}{x} \eand \atom{O}{x} \eand \atom{J}{y} \eand \atom{O}{y} \eand \atom{J}{z} \eand \atom{O}{z}) \eif (x = y \eor x = z \eor y = z)\bigr]$}
-\item There are two black jacks.
+\item Há dois valetes pretos.
 \item[] \myanswer{$\exists x \exists y(\enot x = y \eand \atom{B}{x} \eand \atom{J}{x} \eand \atom{B}{y} \eand \atom{J}{y})$\\
-Comment: I am reading this as `there are \emph{at least} two\ldots'. If the suggestion was that there are \emph{exactly} two, then a different FOL sentence would be required, namely:\\
+Comment: estou lendo isso como \textquotedblleft há \emph{pelo menos} dois...\textquotedblright{}. Se a sugestão fosse que há \emph{exatamente} dois, seria necessária uma sentença diferente da LPO, a saber:\\
 $\exists x \exists y \bigl(\enot x = y \eand \atom{B}{x} \eand \atom{J}{x} \eand \atom{B}{y} \eand \atom{J}{y} \eand \forall z[(\atom{B}{z} \eand \atom{J}{z}) \eif (x = z \eor y = z)]\bigr)$}
-\item There are four deuces.
+\item Há quatro dois.
 \item[] \myanswer{$\exists w \exists x \exists y \exists z(\enot w = x \eand \enot w = y \eand \enot w = z \eand \enot x = y \eand \enot x = z \eand \enot y = z \eand \atom{D}{w} \eand \atom{D}{x} \eand \atom{D}{y} \eand \atom{D}{z})$\\
-Comment: I am reading this as `there are \emph{at least} four\ldots'. If the suggestion is that there are \emph{exactly} four, then we should offer instead:\\
+Comment: estou lendo isso como \textquotedblleft há \emph{pelo menos} quatro...\textquotedblright{}. Se a sugestão fosse que há \emph{exatamente} quatro, deveríamos oferecer em vez disso:\\
 $\exists w \exists x \exists y \exists z\bigl(\enot w = x \eand \enot w = y \eand \enot w = z \eand \enot x = y \eand \enot x = z \eand \enot y = z \eand \atom{D}{w} \eand \atom{D}{x} \eand \atom{D}{y} \eand \atom{D}{z} \eand \forall v[\atom{D}{v} \eif (v = w \eor v = x \eor v = y \eor v =z)]\bigr)$}
-\item The deuce of clubs is a black card.
+\item O dois de paus é uma carta preta.
 \item[] \myanswer{$\exists x \bigl[\atom{D}{x} \eand \atom{C}{x} \eand \forall y\bigl((\atom{D}{y} \eand \atom{C}{y}) \eif x = y\bigr) \eand \atom{B}{x}\bigr]$}
-\item One-eyed jacks and the man with the axe are wild.
+\item Valetes de um olho só e o homem com o machado são coringas.
 \item[] \myanswer{$\forall x \bigl[(\atom{J}{x} \eand \atom{O}{x}) \eif \atom{W}{x}\bigr] \eand \exists x\bigl[\atom{M}{x} \eand \forall y(\atom{M}{y} \eif x = y) \eand \atom{W}{x}\bigr]$}
-\item If the deuce of clubs is wild, then there is exactly one wild card.
+\item Se o dois de paus é coringa, então há exatamente uma carta coringa.
 \item[] \myanswer{$\exists x \bigl(\atom{D}{x} \eand \atom{C}{x} \eand \forall y \bigl[(\atom{D}{y} \eand \atom{C}{y}) \eif x= y\bigr] \eand \atom{W}{x}\bigr) \eif \exists x \bigl(\atom{W}{x} \eand \forall y(\atom{W}{y} \eif x = y)\bigr)$\\
-Comment: if there is not exactly one deuce of clubs, then the above sentence is true. Maybe that's the wrong verdict. Perhaps the sentence should definitely be taken to imply that there is one and only one deuce of clubs, and then express a conditional about wildness. If so, then we might symbolize it thus:
+Comment: se não há exatamente um dois de paus, então a sentença acima é verdadeira. Talvez esse seja o veredito errado. Talvez a sentença devesse implicar definitivamente que há um, e somente um, dois de paus, e então expressar um condicional sobre ser coringa. Nesse caso, poderíamos simbolizá-la assim:
 \\$\exists x \bigl(\atom{D}{x} \eand \atom{C}{x} \eand \forall y \bigl[(\atom{D}{y} \eand \atom{C}{y}) \eif x = y\bigr] \eand \bigl[\atom{W}{x} \eif \forall y (\atom{W}{y} \eif x = y)\bigr]\bigl)$}
-\item The man with the axe is not a jack.
+\item O homem com o machado não é um valete.
 \item[] \myanswer{$\exists x \bigl[\atom{M}{x} \eand \forall y(\atom{M}{y} \eif x = y) \eand \enot \atom{J}{x}\bigr]$}
-\item The deuce of clubs is not the man with the axe.
+\item O dois de paus não é o homem com o machado.
 \item[] \myanswer{$\exists x \exists y\bigl(\atom{D}{x} \eand \atom{C}{x} \eand \forall z[(\atom{D}{z} \eand \atom{C}{z}) \eif x = z] \eand \atom{M}{y} \eand \forall z(\atom{M}{z} \eif y = z) \eand \enot x = y\bigr)$}
 
 \end{compactlist}
 
 \
 
-\problempart Using the following symbolization key:
+\problempart
+Usando a seguinte chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] animals in the world
-\item[\atom{B}{x}] \gap{x} is in Farmer Brown's field
-\item[\atom{H}{x}] \gap{x} is a horse
-\item[\atom{P}{x}] \gap{x} is a Pegasus
-\item[\atom{W}{x}] \gap{x} has wings
+\item[\text{domínio}] animais do mundo
+\item[\atom{B}{x}] \gap{x} está no campo do Fazendeiro Brown
+\item[\atom{H}{x}] \gap{x} é um cavalo
+\item[\atom{P}{x}] \gap{x} é um Pégaso
+\item[\atom{W}{x}] \gap{x} tem asas
 \end{ekey}
-symbolize the following sentences in FOL:
+simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item There are at least three horses in the world.
+\item Há pelo menos três cavalos no mundo.
 \item[] \myanswer{$\exists x \exists y \exists z (\enot x = y \eand \enot x = z \eand \enot y = z \eand \atom{H}{x} \eand \atom{H}{y} \eand \atom{H}{z})$}
-\item There are at least three animals in the world.
+\item Há pelo menos três animais no mundo.
 \item[] \myanswer{$\exists x \exists y \exists z (\enot x = y \eand \enot x = z \eand \enot y = z)$}
-\item There is more than one horse in Farmer Brown's field.
+\item Há mais de um cavalo no campo do Fazendeiro Brown.
 \item[] \myanswer{$\exists x \exists y (\enot x = y \eand \atom{H}{x} \eand \atom{H}{y} \eand \atom{B}{x} \eand \atom{B}{y})$}
-\item There are three horses in Farmer Brown's field.
-\item[] \myanswer{$\exists x \exists y \exists z(\enot x = y \eand \enot x = z \eand \enot y = z \eand \atom{H}{x} \eand \atom{H}{y} \eand \atom{H}{z} \eand \atom{B}{x} \eand \atom{B}{y} \eand \atom{B}{z})$\\Comment: I have read this as `there are \emph{at least} three\ldots'. If the suggestion was that there are \emph{exactly} three, then a different FOL sentence would be required.}
-\item There is a single winged creature in Farmer Brown's field; any other creatures in the field must be wingless.
+\item Há três cavalos no campo do Fazendeiro Brown.
+\item[] \myanswer{$\exists x \exists y \exists z(\enot x = y \eand \enot x = z \eand \enot y = z \eand \atom{H}{x} \eand \atom{H}{y} \eand \atom{H}{z} \eand \atom{B}{x} \eand \atom{B}{y} \eand \atom{B}{z})$\\Comment: li isso como \textquotedblleft há \emph{pelo menos} três...\textquotedblright{}. Se a sugestão fosse que há \emph{exatamente} três, seria necessária uma sentença diferente da LPO.}
+\item Há uma única criatura alada no campo do Fazendeiro Brown; quaisquer outras criaturas no campo devem ser sem asas.
 \item[] \myanswer{$\exists x\bigl[\atom{W}{x} \eand \atom{B}{x} \eand \forall y\bigl((\atom{W}{y} \eand \atom{B}{y}) \eif x = y)\bigr]$}
-\item The Pegasus is a winged horse.
+\item O Pégaso é um cavalo alado.
 \item[] \myanswer{$\exists x \bigl[\atom{P}{x} \eand \forall y(\atom{P}{y} \eif x = y) \eand \atom{W}{x} \eand \atom{H}{x}\bigr]$}
-\item The animal in Farmer Brown's field is not a horse.
-\item[] \myanswer{$\exists x \bigl[ Bx \eand \forall y (\atom{B}{y} \eif x = y) \eand \enot \atom{H}{x}\bigr]$\\Comment: the scope of negation might be ambiguous here; I have read it as \emph{inner} negation.}
-\item The horse in Farmer Brown's field does not have wings.
-\item[] \myanswer{$\exists x \bigl[\atom{H}{x} \eand \atom{B}{x} \eand \forall y \bigl((\atom{H}{y} \eand \atom{B}{y}) \eif x = y\bigr) \eand \enot \atom{W}{x}\bigr]$\\Comment: the scope of negation might be ambiguous here; I have read it as \emph{inner} negation.}
+\item O animal no campo do Fazendeiro Brown não é um cavalo.
+\item[] \myanswer{$\exists x \bigl[ Bx \eand \forall y (\atom{B}{y} \eif x = y) \eand \enot \atom{H}{x}\bigr]$\\Comment: o escopo da negação pode ser ambíguo aqui; interpretei-a como uma negação \emph{interna}.}
+\item O cavalo no campo do Fazendeiro Brown não tem asas.
+\item[] \myanswer{$\exists x \bigl[\atom{H}{x} \eand \atom{B}{x} \eand \forall y \bigl((\atom{H}{y} \eand \atom{B}{y}) \eif x = y\bigr) \eand \enot \atom{W}{x}\bigr]$\\Comment: o escopo da negação pode ser ambíguo aqui; interpretei-a como uma negação \emph{interna}.}
 
 \end{compactlist}
 
 \problempart
-In this chapter, we symbolized `Nick is the traitor' by `$\exists x (\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) \eand x = n)$'. Explain why these would be equally good symbolisations:
+Neste capítulo, simbolizamos \textquotedblleft Nick é o traidor\textquotedblright{} por \textquotedblleft $\exists x (\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) \eand x = n)$\textquotedblright{}. Explique por que estas seriam igualmente boas simbolizações:
 	\begin{itemize}
 		\item $\atom{T}{n} \eand \forall y(\atom{T}{y} \eif n = y)$
-		\item[] \myanswer{This sentence requires that Nick is a traitor, and that Nick alone is a traitor. Otherwise put, there is one and only one traitor, namely, Nick. Otherwise put: Nick is the traitor.}
+\item[] \myanswer{Esta sentença exige que Nick seja um traidor e que Nick seja o único traidor. Dito de outro modo, há um, e somente um, traidor, a saber, Nick. Em outras palavras: Nick é o traidor.}
 		\item $\forall y(\atom{T}{y} \eiff y = n)$
-		\item[] \myanswer{This sentence can be understood thus: Take anything you like; now, if you chose a traitor, you chose Nick, and if you chose Nick, you chose a traitor. So there is one and only one traitor, namely, Nick, as required.}
+\item[] \myanswer{Esta sentença pode ser entendida assim: escolha qualquer coisa; agora, se você escolheu um traidor, escolheu Nick, e, se escolheu Nick, escolheu um traidor. Portanto, há um, e somente um, traidor, a saber, Nick, como exigido.}
 	\end{itemize}
 
 \chapter{Ambiguity}

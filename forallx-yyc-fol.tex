@@ -1530,144 +1530,144 @@ Identifique quais variáveis são ligadas e quais são livres.
 \end{compactlist}
 
 
-\chapter{Definite descriptions}\label{subsec.defdesc}
-Consider sentences like:
+\chapter{Descrições definidas}\label{subsec.defdesc}
+Considere sentenças como:
 	\begin{enumerate}
-		\item\label{traitor1} Nick is the traitor.
-		\item\label{traitor2} The traitor went to Cambridge.
-		\item\label{traitor3} The traitor is the deputy.
+\item\label{traitor1} Nick é o traidor.
+\item\label{traitor2} O traidor foi a Cambridge.
+\item\label{traitor3} O traidor é o deputado.
 	\end{enumerate}
-These are definite descriptions: they are meant to pick out a \emph{unique} object. They should be contrasted with \emph{indefinite} descriptions, such as `Nick  is \emph{a} traitor'. They should equally be contrasted with \emph{generics}, such as `\emph{The} whale is a mammal' (when it's inappropriate to ask \emph{which} whale). The question we face is: How should we deal with definite descriptions in FOL?
+Estas são descrições definidas: destinam-se a designar um objeto \emph{único}. Devem ser contrastadas com descrições \emph{indefinidas}, como \textquotedblleft Nick é \emph{um} traidor\textquotedblright{}. Também devem ser contrastadas com \emph{genéricos}, como \textquotedblleft \emph{A} baleia é um mamífero\textquotedblright{} (quando é inadequado perguntar \emph{qual} baleia). A questão que enfrentamos é: como devemos lidar com descrições definidas na LPO?
 
 
-\section{Treating definite descriptions as terms}
-One option would be to introduce new names whenever we come across a definite description. This is probably not a great idea. We know that \emph{the} traitor---whoever it is---is indeed \emph{a} traitor. We want to preserve that information in our symbolization.
+\section{Tratando descrições definidas como termos}
+Uma opção seria introduzir novos nomes sempre que encontrássemos uma descrição definida. Provavelmente essa não é uma boa ideia. Sabemos que \emph{o} traidor — seja quem for — é de fato \emph{um} traidor. Queremos preservar essa informação em nossa simbolização.
 
-A second option would be to use a \emph{new} definite description operator, such as `$\maththe$'. The idea would be to symbolize `the $F$' as `$\maththe x\,\atom{F}{x}$'  (think `the $x$ such that $\atom{F}{x}$'); or to symbolize `the $G$' as `$\maththe x\,\atom{G}{x}$', etc. Expressions of the form $\maththe \metav{x}\, \atom{\metav{A}}{\metav{x}}$ would then behave like names. If we were to follow this path, we could use the following symbolization key:
+Uma segunda opção seria usar um operador \emph{novo} de descrição definida, como \textquotedblleft $\maththe$\textquotedblright{}. A ideia seria simbolizar \textquotedblleft o $F$\textquotedblright{} como \textquotedblleft $\maththe x\,\atom{F}{x}$\textquotedblright{} (pense em \textquotedblleft o $x$ tal que $\atom{F}{x}$\textquotedblright{}); ou simbolizar \textquotedblleft o $G$\textquotedblright{} como \textquotedblleft $\maththe x\,\atom{G}{x}$\textquotedblright{}, etc. Expressões da forma $\maththe \metav{x}\, \atom{\metav{A}}{\metav{x}}$ comportar-se-iam então como nomes. Se seguíssemos esse caminho, poderíamos usar a seguinte chave de simbolização:
 	\begin{ekey}
-		\item[\text{domain}] people
-		\item[\atom{T}{x}] \gap{x} is a traitor
-		\item[\atom{D}{x}] \gap{x} is a deputy
-		\item[\atom{C}{x}] \gap{x} went to Cambridge
+\item[\text{domínio}] pessoas
+\item[\atom{T}{x}] \gap{x} é um traidor
+\item[\atom{D}{x}] \gap{x} é um deputado
+\item[\atom{C}{x}] \gap{x} foi a Cambridge
 		\item[n] Nick
 	\end{ekey}
-Then, we could symbolize \cref{traitor1} with `$n = \maththe x\, \atom{T}{x}$', \cref{traitor2} with `$\atom{C}{\maththe x\,\atom{T}{x}}$', and \cref{traitor3} with `$\maththe x\, \atom{T}{x} = \maththe x\, \atom{D}{x}$'.
+Então poderíamos simbolizar \cref{traitor1} com \textquotedblleft $n = \maththe x\, \atom{T}{x}$\textquotedblright{}, \cref{traitor2} com \textquotedblleft $\atom{C}{\maththe x\,\atom{T}{x}}$\textquotedblright{} e \cref{traitor3} com \textquotedblleft $\maththe x\, \atom{T}{x} = \maththe x\, \atom{D}{x}$\textquotedblright{}.
 
-However, it would be nice if we didn't have to add a new symbol to FOL. And we might be able to make do without one.
+No entanto, seria bom se não tivéssemos de acrescentar um novo símbolo à LPO. E talvez possamos nos virar sem um.
 
-\section{Russell's analysis}
-Bertrand Russell offered an analysis of definite descriptions. Very
-briefly put, he observed that, when we say `the $F$' in the context of
-a definite description, our aim is to pick out the \emph{one and only}
-thing that is $F$ (in the appropriate context). Thus Russell analyzed
-the notion of a definite description as follows:\footnote{Bertrand
-Russell, ``On denoting'',  \emph{Mind}~14 (1905), pp.\ 479--93; also
-Russell, \textit{Introduction to Mathematical Philosophy}, 1919,
-London: Allen and Unwin, ch.~16.}
+\section{A análise de Russell}
+Bertrand Russell ofereceu uma análise das descrições definidas. Em termos muito breves, observou que, quando dizemos \textquotedblleft o $F$\textquotedblright{} no contexto de uma descrição definida, nosso objetivo é designar a \emph{única} coisa que é $F$ (no contexto apropriado). Assim, Russell analisou a noção de descrição definida da seguinte maneira:\footnote{Bertrand Russell, \textquotedblleft On denoting\textquotedblright{}, \textit{Mind}~14 (1905), p.~479--93; também Russell, \textit{Introduction to Mathematical Philosophy}, 1919, Londres: Allen and Unwin, cap.~16.}
+
+
+
+
+
+
+
 	\factoidbox{
-		The $F$ is $G$ \textbf{\ifeff} 
+		O $F$ é $G$ \textbf{\ifeff}
 		\begin{itemize}
-			\item there is at least one $F$, \emph{and}
-			\item there is at most one $F$, \emph{and}
-			\item every $F$ is $G$.
+\item há pelo menos um $F$, \emph{e}
+\item há no máximo um $F$, \emph{e}
+\item todo $F$ é $G$.
 \end{itemize}}
-Note a very important feature of this analysis: \emph{`the' does not appear on the right-side of the equivalence.} Russell is aiming to provide an understanding of definite descriptions in terms that do not presuppose them.
+Observe uma característica muito importante dessa análise: \emph{\textquotedblleft o\textquotedblright{} não aparece no lado direito da equivalência.} Russell pretende oferecer uma compreensão das descrições definidas em termos que não as pressuponham.
 
-Now, one might worry that we can say `the table is brown' without implying that there is one and only one table in the universe. But this is not (yet) a fantastic counterexample to Russell's analysis. The domain of discourse is likely to be restricted by context (e.g., to salient objects in my vicinity).
+Agora, alguém poderia preocupar-se com o fato de podermos dizer \textquotedblleft a mesa é marrom\textquotedblright{} sem implicar que há uma única mesa no universo. Mas este ainda não é um contraexemplo fantástico à análise de Russell. O domínio do discurso provavelmente é restringido pelo contexto (por exemplo, aos objetos salientes nas minhas proximidades).
 
-If we accept Russell's analysis of definite descriptions, then we can symbolize sentences of the form `the $F$ is $G$' using our strategy for numerical quantification in FOL. After all, we can deal with the three conjuncts on the right-hand side of Russell's analysis as follows:
+Se aceitarmos a análise de Russell das descrições definidas, poderemos simbolizar sentenças da forma \textquotedblleft o $F$ é $G$\textquotedblright{} usando nossa estratégia para a quantificação numérica na LPO. Afinal, podemos lidar com as três conjunções do lado direito da análise de Russell da seguinte maneira:
 	$$\exists x \atom{F}{x} \eand \forall x \forall y ((\atom{F}{x} \eand \atom{F}{y}) \eif x = y) \eand \forall x (\atom{F}{x} \eif \atom{G}{x})$$
-In fact, we could express the same point rather more crisply, by recognizing that the first two conjuncts just amount to the claim that there is \emph{exactly} one $F$, and that the last conjunct tells us that that object is~$G$. So, equivalently, we could offer:
+De fato, poderíamos expressar o mesmo ponto de maneira mais precisa, reconhecendo que as duas primeiras conjunções equivalem simplesmente à afirmação de que há \emph{exatamente} um $F$, e que a última conjunção diz que esse objeto é~$G$. Assim, equivalentemente, poderíamos oferecer:
 	$$\exists x \bigl[(\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)) \eand \atom{G}{x}\bigr]$$
-Using these sorts of techniques, we can now symbolize \crefrange{traitor1}{traitor3} without using any new-fangled fancy operator, such as `$\maththe$'.
+Usando esse tipo de técnica, podemos agora simbolizar \crefrange{traitor1}{traitor3} sem usar qualquer operador sofisticado e recém-inventado, como \textquotedblleft $\maththe$\textquotedblright{}.
 
-\Cref*{traitor1} is exactly like the examples we have just considered. So we would symbolize it by 
+\Cref*{traitor1} é exatamente como os exemplos que acabamos de considerar. Portanto, nós a simbolizaríamos por
 \begin{align*}
 \exists x \bigl[\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) & \eand x = n\bigr].
-\intertext{\Cref*{traitor2} poses no problems either:} 
+\intertext{\Cref*{traitor2} também não apresenta problemas:}
 \exists x \bigl[\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) & \eand \atom{C}{x}\bigr].
 \end{align*}
-\Cref*{traitor3} is a little trickier, because it links two definite
-descriptions. But, deploying  Russell's analysis, it can be
-paraphrased by `there is exactly one traitor, $x$, and there is
-exactly one deputy, $y$, and $x = y$'. So we can symbolize it by:
+\Cref*{traitor3} é um pouco mais complicada, pois conecta duas descrições definidas. Mas, aplicando a análise de Russell, ela pode ser parafraseada como \textquotedblleft existe exatamente um traidor, $x$, e existe exatamente um deputado, $y$, e $x = y$\textquotedblright{}. Assim, podemos simbolizá-la por:
+
+
+
 \ifHTMLtarget
 \[
-	\exists x \exists y \bigl(\bigl[\atom{T}{x} \eand 
-	\forall z(\atom{T}{z} \eif x = z)\bigr] \eand 
-	\bigl[\atom{D}{y} \eand 
+	\exists x \exists y \bigl(\bigl[\atom{T}{x} \eand
+	\forall z(\atom{T}{z} \eif x = z)\bigr] \eand
+	\bigl[\atom{D}{y} \eand
 	\forall z(\atom{D}{z} \eif y = z)\bigr] \eand x = y\bigr)
 \]
 \else
 \begin{multline*}
-	\exists x \exists y \bigl(\bigl[\atom{T}{x} \eand 
+	\exists x \exists y \bigl(\bigl[\atom{T}{x} \eand
 	\forall z(\atom{T}{z} \eif x = z)\bigr] \eand {}\\
-	\bigl[\atom{D}{y} \eand 
+	\bigl[\atom{D}{y} \eand
 	\forall z(\atom{D}{z} \eif y = z)\bigr] \eand x = y\bigr)
 \end{multline*}
 \fi
-Note that the formula `$x = y$' must fall within the scope of both quantifiers!
+Observe que a fórmula \textquotedblleft $x = y$\textquotedblright{} deve estar dentro do escopo de ambos os quantificadores!
 
-\section{Empty definite descriptions}
+\section{Descrições definidas vazias}
 
-One of the nice features of Russell's analysis is that it allows us to handle \emph{empty} definite descriptions neatly.
+Uma das características interessantes da análise de Russell é que ela nos permite lidar elegantemente com descrições definidas \emph{vazias}.
 
-France has no king at present. Now, if we were to introduce a name, `$k$', to name the present King of France, then everything would go wrong: remember from \cref{s:FOLBuildingBlocks} that a name must always pick out  some object in the domain, and whatever we choose as our domain, it will contain no present kings of France.
+A França não tem rei atualmente. Ora, se introduzíssemos um nome, \textquotedblleft $k$\textquotedblright{}, para nomear o atual rei da França, tudo daria errado: lembre-se de \cref{s:FOLBuildingBlocks} de que um nome deve sempre designar algum objeto no domínio, e, qualquer que seja o nosso domínio, ele não conterá nenhum rei atual da França.
 
-Russell's analysis neatly avoids this problem. Russell tells us to treat definite descriptions using predicates and quantifiers, instead of names. Since predicates can be empty (see \cref{s:MoreMonadic}), this means that no difficulty now arises when the definite description is empty.
+A análise de Russell evita esse problema de maneira elegante. Russell nos diz para tratar as descrições definidas usando predicados e quantificadores, em vez de nomes. Como os predicados podem ser vazios (ver \cref{s:MoreMonadic}), isso significa que nenhuma dificuldade surge agora quando a descrição definida é vazia.
 
-Indeed, Russell's analysis helpfully highlights two ways to go wrong
-in a claim involving a definite description. To adapt an example from
-Stephen Neale\footnote{Stephen Neale, \textit{Descriptions},
-MIT Press, 1990.} suppose Alex claims:
+De fato, a análise de Russell destaca utilmente duas maneiras de errar em uma afirmação que envolva uma descrição definida. Adaptando um exemplo de Stephen Neale\footnote{Stephen Neale, \textit{Descriptions}, MIT Press, 1990.}, suponha que Alex afirme:
+
+
+
 	\begin{enumerate}
-		\item\label{kingdate} I am dating the present king of France.
+\item\label{kingdate} Estou saindo com o atual rei da França.
 	\end{enumerate}
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
 	\begin{ekey}
 		\item[a] Alex
-		\item[\atom{K}{x}] \gap{x} is a present king of France
-		\item[\atom{D}{x,y}] \gap{x} is dating \gap{y}
+\item[\atom{K}{x}] \gap{x} é um rei atual da França
+\item[\atom{D}{x,y}] \gap{x} está saindo com \gap{y}
 	\end{ekey}
-	(Note that the symbolization key speaks of \emph{a} present King of France, not \emph{the} present King of France; i.e., it employs an indefinite, rather than a definite, description.) \Cref{kingdate} would be symbolized by `$\exists x \bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif  x = y)) \eand \atom{D}{a,x}\bigr]$'. Now, this can be false in (at least) two ways, corresponding to these two different sentences:
+(Observe que a chave de simbolização fala de \emph{um} rei atual da França, não \emph{o} atual rei da França; isto é, emprega uma descrição indefinida, e não uma descrição definida.) \Cref{kingdate} seria simbolizada por \textquotedblleft $\exists x \bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif  x = y)) \eand \atom{D}{a,x}\bigr]$\textquotedblright{}. Ora, isso pode ser falso de (pelo menos) duas maneiras, correspondentes a estas duas sentenças diferentes:
 	\begin{enumerate}
-		\item\label{outernegation} There is no one who is both the present King of France and such that he and Alex are dating.
-		\item\label{innernegation} There is a unique present King of France, but Alex is not dating him.
+\item\label{outernegation} Não há ninguém que seja ao mesmo tempo o atual rei da França e esteja saindo com Alex.
+\item\label{innernegation} Há um único rei atual da França, mas Alex não está saindo com ele.
 	\end{enumerate}
-\Cref*{outernegation} might be paraphrased by `It is not the case that: the present King of France and Alex are dating'. It will then be symbolized by `$\enot \exists x\bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif  x = y)) \eand \atom{D}{a,x} \bigr]$'. We might call this \emph{outer} negation, since the negation governs the entire sentence. Note that the sentence is true if there is no present King of France.
+\Cref*{outernegation} pode ser parafraseada como \textquotedblleft não é o caso de que o atual rei da França esteja saindo com Alex\textquotedblright{}. Ela será então simbolizada por \textquotedblleft $\enot \exists x\bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif  x = y)) \eand \atom{D}{a,x} \bigr]$\textquotedblright{}. Podemos chamar isso de negação \emph{externa}, pois a negação governa a sentença inteira. Observe que a sentença é verdadeira se não houver um rei atual da França.
 
-\Cref*{innernegation} can be symbolized by `$\exists x \bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x = y)) \eand \enot \atom{D}{a,x}\bigr]$'. We might call this \emph{inner} negation, since the negation occurs within the scope of the definite description. Note that its truth requires that there is a present King of France, albeit one who is not dating Alex.
-\Cref*{innernegation} entails \cref*{outernegation} (as do their
-symbolizations), but not vice versa.
+\Cref*{innernegation} pode ser simbolizada por \textquotedblleft $\exists x \bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x = y)) \eand \enot \atom{D}{a,x}\bigr]$\textquotedblright{}. Podemos chamar isso de negação \emph{interna}, pois a negação ocorre dentro do escopo da descrição definida. Observe que sua verdade exige que exista um rei atual da França, embora ele não esteja saindo com Alex.
+\Cref*{innernegation} implica \cref*{outernegation} (assim como suas
+simbolizações), mas não vice-versa.
 
-\section{Possessives, `both', `neither'}
+\section{Possessivos, \textquotedblleft ambos\textquotedblright{}, \textquotedblleft nenhum\textquotedblright{}}
 
-We can use Russell's analysis of definite descriptions also to deal with singular possessive constructions in English.  For instance, `Smith's murderer' means something like `the person who murdered Smith', i.e., it is a disguised definite description.  On Russell's analysis, the sentence
+Também podemos usar a análise de Russell das descrições definidas para lidar com construções possessivas singulares em português. Por exemplo, \textquotedblleft o assassino de Smith\textquotedblright{} significa algo como \textquotedblleft a pessoa que assassinou Smith\textquotedblright{}, isto é, é uma descrição definida disfarçada. Na análise de Russell, a sentença
 \begin{enumerate}
-	\item\label{smithsmurder} Smith's murderer is insane.
+\item\label{smithsmurder} O assassino de Smith é insano.
 \end{enumerate}
-can be false in one of three ways. It can be false because the one person who murdered Smith is not, in fact, insane. But it can also be false if the definite description is empty, namely if either no-one murdered Smith (e.g., if Smith met with an unfortunate accident) or if more than one person murdered Smith.
+pode ser falsa de uma entre três maneiras. Pode ser falsa porque a única pessoa que assassinou Smith não é, de fato, insana. Mas também pode ser falsa se a descrição definida for vazia, a saber, se ninguém tiver assassinado Smith (por exemplo, se Smith sofreu um acidente infeliz) ou se mais de uma pessoa tiver assassinado Smith.
 
-To symbolize sentences containing singular possessives such as `Smith's murderer' you should paraphrase them using an explicit definite description, e.g., `The person who murdered Smith is insane' and then symbolize it according to Russell's analysis. In our case, we would use the symbolization key:
+Para simbolizar sentenças que contenham possessivos singulares como \textquotedblleft o assassino de Smith\textquotedblright{}, você deve parafraseá-las usando uma descrição definida explícita, por exemplo, \textquotedblleft a pessoa que assassinou Smith é insana\textquotedblright{} e então simbolizá-la de acordo com a análise de Russell. No nosso caso, usaríamos a chave de simbolização:
 \begin{ekey}
-	\item[$Domain$] people
-	\item[\atom{I}{x}] \gap{x} is insane 
-	\item[\atom{M}{x,y}] \gap{x} murdered \gap{y}
-	\item[m] Smith 
+\item[$Domínio$] pessoas
+\item[\atom{I}{x}] \gap{x} é insano
+\item[\atom{M}{x,y}] \gap{x} assassinou \gap{y}
+	\item[m] Smith
 \end{ekey}
-Our symbolization then reads, `$\exists x\bigl[\atom{M}{x,m} \eand \forall y(\atom{M}{y,m} \eif x=y) \eand \atom{I}{x}\bigr]$'.
+Nossa simbolização então é \textquotedblleft $\exists x\bigl[\atom{M}{x,m} \eand \forall y(\atom{M}{y,m} \eif x=y) \eand \atom{I}{x}\bigr]$\textquotedblright{}.
 
-Two other determiners that we can extend Russell's analysis to are
-`both' and `neither'.  To say `both $F$s are~$G$' is to say that there
-are exactly two $F$s, and each of them is~$G$. To say that `neither
-$F$ is~$G$', is to also say that there are exactly two~$F$s, and
-neither of them is~$G$. In FOL, the symbolizations would read,
-respectively,
+Dois outros determinantes aos quais podemos estender a análise de Russell são \textquotedblleft ambos\textquotedblright{} e \textquotedblleft nenhum\textquotedblright{}. Dizer que \textquotedblleft ambos os $F$s são~$G$\textquotedblright{} é dizer que há exatamente dois $F$s, e que cada um deles é~$G$. Dizer que \textquotedblleft nenhum $F$ é~$G$\textquotedblright{} também é dizer que há exatamente dois~$F$s, e que nenhum deles é~$G$. Na LPO, as simbolizações seriam, respectivamente,
+
+
+
+
+
 \ifHTMLtarget
 \begin{align*}
-	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot\, {x=y} \eand 
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot\, {x=y} \eand
 	\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \atom{G}{x} \eand \atom{G}{y}\bigr]\\
-	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot\, {x=y} \eand 
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot\, {x=y} \eand
 	\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \enot \atom{G}{x} \eand \enot \atom{G}{y}\bigr]
 \end{align*}
 \else
@@ -1678,10 +1678,10 @@ respectively,
 	& \qquad\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \enot \atom{G}{x} \eand \enot \atom{G}{y}\bigr]
 \end{align*}
 \fi
-Compare these symbolizations with the symbolizations of `exactly two $F$s are $G$s' from \cref{sec:exactlyn}, i.e., of `there are exactly two things that are both $F$ and~$G$':
+Compare essas simbolizações com as simbolizações de \textquotedblleft exatamente dois $F$s são $G$s\textquotedblright{} de \cref{sec:exactlyn}, isto é, de \textquotedblleft há exatamente duas coisas que são simultaneamente $F$ e~$G$\textquotedblright{}:
 \ifHTMLtarget
-	\[ 
-		\exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot\, {x=y} \eand 
+	\[
+		\exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot\, {x=y} \eand
 		\forall z((\atom{F}{z} \eand \atom{G}{z}) \eif (x = z \lor y = z))\bigr]
 	\]
 \else
@@ -1690,122 +1690,123 @@ Compare these symbolizations with the symbolizations of `exactly two $F$s are $G
 	& \qquad\forall z((\atom{F}{z} \eand \atom{G}{z}) \eif (x = z \lor y = z))\bigr]
 \end{align*}
 \fi
-The difference between the symbolization of this and that of `both $F$s are~$G$s' lies in the antecedent of the conditional. For `exactly two $F$s are~$G$s', we only require that there are no $F$s \emph{that are also}~$G$s other than $x$ and~$y$, whereas for `both $F$s are~$G$s', there cannot be any $F$s, whether they are~$G$s or not, other than $x$ and~$y$. In other words, `both $F$s are~$G$s' implies that exactly two~$F$s are~$G$s. However, `exactly two $F$s are~$G$s' does not imply that both $F$s are~$G$s (there might be a third~$F$ which isn't a~$G$).
+A diferença entre a simbolização desta sentença e a de \textquotedblleft ambos os $F$s são~$G$\textquotedblright{} está no antecedente do condicional. Para \textquotedblleft exatamente dois $F$s são~$G$s\textquotedblright{}, exigimos apenas que não haja $F$s \emph{que também sejam}~$G$s além de $x$ e~$y$, enquanto, para \textquotedblleft ambos os $F$s são~$G$\textquotedblright{}, não pode haver nenhum $F$, seja ele~$G$ ou não, além de $x$ e~$y$. Em outras palavras, \textquotedblleft ambos os $F$s são~$G$\textquotedblright{} implica que exatamente dois~$F$s são~$G$s. No entanto, \textquotedblleft exatamente dois $F$s são~$G$s\textquotedblright{} não implica que ambos os $F$s sejam~$G$s (pode haver um terceiro~$F$ que não seja um~$G$).
 
-\section{The adequacy of Russell's analysis}
-How good is Russell's analysis of definite descriptions? This question has generated a substantial philosophical literature, but we will restrict ourselves to two observations.
+\section{A adequação da análise de Russell}
+Quão boa é a análise de Russell das descrições definidas? Essa questão gerou uma extensa literatura filosófica, mas vamos restringir-nos a duas observações.
 
-One worry focusses on Russell's treatment of empty definite
-descriptions. If there are no $F$s, then on Russell's analysis, both
-`the $F$ is $G$' and  `the $F$ is non-$G$' are false. P.~F.\ Strawson
-suggested that such sentences should not be regarded as false,
-exactly, but involve \emph{presupposition failure}, and so need to be
-treated as \emph{neither} true \emph{nor} false.\footnote{P.~F.\
-Strawson, ``On referring'', \textit{Mind}~59 (1950), pp.\ 320--34.}
+Uma preocupação concentra-se no tratamento que Russell dá às descrições definidas vazias. Se não há $F$s, então, na análise de Russell, tanto \textquotedblleft o $F$ é $G$\textquotedblright{} quanto \textquotedblleft o $F$ não é $G$\textquotedblright{} são falsas. P.~F. Strawson sugeriu que tais sentenças não deveriam ser consideradas exatamente falsas, mas envolveriam uma \emph{falha de pressuposição} e, portanto, deveriam ser tratadas como \emph{nem verdadeiras nem falsas}.\footnote{P.~F. Strawson, \textquotedblleft On referring\textquotedblright{}, \textit{Mind}~59 (1950), p.~320--34.}
 
-If we agree with Strawson here, we will need to revise our logic. For, in our logic, there are only two truth values (True and False), and every sentence is assigned exactly one of these truth values.
 
-But there is room to disagree with Strawson. Strawson is appealing to some linguistic intuitions, but it is not clear that they are very robust. For example: isn't it just \emph{false}, not `gappy', that Tim is dating the present King of France?
 
-Keith Donnellan raised a second sort of worry, which (very roughly)
-can be brought out by thinking about a case of mistaken
-identity.\footnote{Keith Donnellan, ``Reference and definite
-descriptions'', \textit{Philosophical Review}~77 (1966), pp.\ 281--304.} Two
-men stand in the corner: a very tall man drinking what looks like a
-gin martini; and a very short man drinking what looks like a pint of
-water. Seeing them, Malika says:
+
+
+
+
+Se concordarmos com Strawson nesse ponto, precisaremos revisar nossa lógica. Pois, em nossa lógica, há apenas dois valores de verdade (Verdadeiro e Falso), e toda sentença recebe exatamente um desses valores de verdade.
+
+Mas há espaço para discordar de Strawson. Strawson apela a algumas intuições linguísticas, mas não está claro que elas sejam muito robustas. Por exemplo: não é simplesmente \emph{falso}, e não \textquotedblleft lacunoso\textquotedblright{}, que Tim está saindo com o atual rei da França?
+
+Keith Donnellan levantou um segundo tipo de preocupação, que pode ser, grosso modo, evidenciado pensando em um caso de identidade equivocada.\footnote{Keith Donnellan, \textquotedblleft Reference and definite descriptions\textquotedblright{}, \textit{Philosophical Review}~77 (1966), p.~281--304.} Dois homens estão no canto: um homem muito alto bebendo o que parece um martíni de gim; e um homem muito baixo bebendo o que parece um copo de água. Ao vê-los, Malika diz:
+
+
+
+
+
+
 	\begin{enumerate}
-		\item\label{gindrinker} The gin-drinker is very tall!
+\item\label{gindrinker} O bebedor de gim é muito alto!
 	\end{enumerate}
-Russell's analysis will have us render Malika's sentence as:
+A análise de Russell nos fará traduzir a sentença de Malika como:
 	\begin{compactlist}
-		\item[\ref*{gindrinker}$'$.] There is exactly one gin-drinker [in the corner], and whoever is a gin-drinker [in the corner] is very tall.
+\item[\ref*{gindrinker}$'$.] Há exatamente um bebedor de gim [no canto], e quem quer que seja bebedor de gim [no canto] é muito alto.
 	\end{compactlist}
-Now suppose that the very tall man is actually drinking \emph{water} from a martini glass; whereas the very short man is drinking a pint of (neat) gin. By Russell's analysis, Malika has said something false, but don't we want to say that Malika has said something \emph{true}? 
+Agora suponha que o homem muito alto esteja na verdade bebendo \emph{água} de uma taça de martíni, enquanto o homem muito baixo esteja bebendo um copo de gim puro. Pela análise de Russell, Malika disse algo falso, mas não queremos dizer que Malika disse algo \emph{verdadeiro}?
 
-Again, one might wonder how clear our intuitions are on this case. We can all agree that Malika intended to pick out a particular man, and say something true of him (that he was tall). On Russell's analysis, she actually picked out a different man (the short one), and consequently said something false of him. But  maybe advocates of Russell's analysis only need to explain \emph{why} Malika's intentions were frustrated, and so why she said something false. This is easy enough to do:  Malika said something false because she had false beliefs about the men's drinks; if Malika's beliefs about the drinks had been true,  then she would have said something true.\footnote{Interested parties should read Saul Kripke, ``Speaker reference and semantic reference'', in: French et al.\ (eds.), \textit{Contemporary Perspectives in the Philosophy of Language}, University of Minnesota Press, 1977, pp.\ 6--27.}
+Novamente, alguém poderia perguntar quão claras são nossas intuições nesse caso. Todos podemos concordar que Malika pretendia designar um homem específico e dizer algo verdadeiro sobre ele (que era alto). Na análise de Russell, ela de fato designou um homem diferente (o baixo) e, consequentemente, disse algo falso sobre ele. Mas talvez os defensores da análise de Russell só precisem explicar \emph{por que} as intenções de Malika foram frustradas e, portanto, por que ela disse algo falso. É fácil fazer isso: Malika disse algo falso porque tinha crenças falsas sobre as bebidas dos homens; se suas crenças sobre as bebidas fossem verdadeiras, então ela teria dito algo verdadeiro.\footnote{Os interessados devem ler Saul Kripke, \textquotedblleft Speaker reference and semantic reference\textquotedblright{}, em: French et al.~(orgs.), \textit{Contemporary Perspectives in the Philosophy of Language}, University of Minnesota Press, 1977, p.~6--27.}
 
-To say much more here would lead us into deep philosophical waters. That would be no bad thing, but for now it would distract us from the immediate purpose of learning formal logic. So, for now, we will stick with Russell's analysis of definite descriptions, when it comes to putting things into FOL. It is certainly the best that we can offer, without significantly revising our logic, and it is quite defensible as an analysis.
+Dizer muito mais aqui nos levaria a águas filosóficas profundas. Isso não seria algo ruim, mas, por enquanto, nos desviaria do propósito imediato de aprender lógica formal. Portanto, por ora, continuaremos com a análise de Russell das descrições definidas ao colocar coisas na LPO. Ela é certamente o melhor que podemos oferecer sem revisar significativamente nossa lógica e é uma análise bastante defensável.
 
 \practiceproblems
 
 \problempart
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{K}{x}] \gap{x} knows the combination to the safe
-\item[\atom{S}{x}] \gap{x} is a spy
-\item[\atom{V}{x}] \gap{x} is a vegetarian
-\item[\atom{T}{x,y}] \gap{x} trusts \gap{y}
+\item[\text{domínio}] pessoas
+\item[\atom{K}{x}] \gap{x} conhece a combinação do cofre
+\item[\atom{S}{x}] \gap{x} é espião
+\item[\atom{V}{x}] \gap{x} é vegetariano
+\item[\atom{T}{x,y}] \gap{x} confia em \gap{y}
 \item[h] Hofthor
 \item[i] Ingmar
 \end{ekey}
-symbolize the following sentences in FOL:
+simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item Hofthor trusts a vegetarian.
-\item Everyone who trusts Ingmar trusts a vegetarian.
-\item Everyone who trusts Ingmar trusts someone who trusts a vegetarian.
-\item Only Ingmar knows the combination to the safe.
-\item Ingmar trusts Hofthor, but no one else.
-\item The person who knows the combination to the safe is a vegetarian.
-\item The person who knows the combination to the safe is not a spy.
+\item Hofthor confia em um vegetariano.
+\item Toda pessoa que confia em Ingmar confia em um vegetariano.
+\item Toda pessoa que confia em Ingmar confia em alguém que confia em um vegetariano.
+\item Somente Ingmar conhece a combinação do cofre.
+\item Ingmar confia em Hofthor, mas em mais ninguém.
+\item A pessoa que conhece a combinação do cofre é vegetariana.
+\item A pessoa que conhece a combinação do cofre não é espiã.
 \end{compactlist}
 
 
 \solutions
 \problempart
 \label{pr.FOLcards}
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] cards in a standard deck
-\item[\atom{B}{x}] \gap{x} is black
-\item[\atom{C}{x}] \gap{x} is a club
-\item[\atom{D}{x}] \gap{x} is a deuce
-\item[\atom{J}{x}] \gap{x} is a jack
-\item[\atom{M}{x}] \gap{x} is a man with an axe
-\item[\atom{O}{x}] \gap{x} is one-eyed
-\item[\atom{W}{x}] \gap{x} is wild
+\item[\text{domínio}] cartas de um baralho comum
+\item[\atom{B}{x}] \gap{x} é preta
+\item[\atom{C}{x}] \gap{x} é um paus
+\item[\atom{D}{x}] \gap{x} é um dois
+\item[\atom{J}{x}] \gap{x} é um valete
+\item[\atom{M}{x}] \gap{x} é um homem com um machado
+\item[\atom{O}{x}] \gap{x} tem um olho só
+\item[\atom{W}{x}] \gap{x} é coringa
 \end{ekey}
-symbolize each sentence in FOL:
+simbolize cada sentença na LPO:
 \begin{compactlist}
-\item All clubs are black cards.
-\item There are no wild cards.
-\item There are at least two clubs.
-\item There is more than one one-eyed jack.
-\item There are at most two one-eyed jacks.
-\item There are two black jacks.
-\item There are four deuces.
-\item The deuce of clubs is a black card.
-\item One-eyed jacks and the man with the axe are wild.
-\item If the deuce of clubs is wild, then there is exactly one wild card.
-\item The man with the axe is not a jack.
-\item The deuce of clubs is not the man with the axe.
+\item Todos os paus são cartas pretas.
+\item Não há cartas coringa.
+\item Há pelo menos dois paus.
+\item Há mais de um valete de um olho só.
+\item Há no máximo dois valetes de um olho só.
+\item Há dois valetes pretos.
+\item Há quatro dois.
+\item O dois de paus é uma carta preta.
+\item Valetes de um olho só e o homem com o machado são coringas.
+\item Se o dois de paus é coringa, então há exatamente uma carta coringa.
+\item O homem com o machado não é um valete.
+\item O dois de paus não é o homem com o machado.
 \end{compactlist}
 
 \
 
-\problempart Using the following symbolization key:
+\problempart
+Usando a seguinte chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] animals in the world
-\item[\atom{B}{x}] \gap{x} is in Farmer Brown's field
-\item[\atom{H}{x}] \gap{x} is a horse
-\item[\atom{P}{x}] \gap{x} is a Pegasus
-\item[\atom{W}{x}] \gap{x} has wings
+\item[\text{domínio}] animais no mundo
+\item[\atom{B}{x}] \gap{x} está no campo do fazendeiro Brown
+\item[\atom{H}{x}] \gap{x} é um cavalo
+\item[\atom{P}{x}] \gap{x} é um Pégaso
+\item[\atom{W}{x}] \gap{x} tem asas
 \end{ekey}
-symbolize the following sentences in FOL:
+simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item There are at least three horses in the world.
-\item There are at least three animals in the world.
-\item There is more than one horse in Farmer Brown's field.
-\item There are three horses in Farmer Brown's field.
-\item There is a single winged creature in Farmer Brown's field; any other creatures in the field must be wingless.
-\item The Pegasus is a winged horse.
-\item The animal in Farmer Brown's field is not a horse.
-\item The horse in Farmer Brown's field does not have wings.
+\item Há pelo menos três cavalos no mundo.
+\item Há pelo menos três animais no mundo.
+\item Há mais de um cavalo no campo do fazendeiro Brown.
+\item Há três cavalos no campo do fazendeiro Brown.
+\item Há uma única criatura alada no campo do fazendeiro Brown; quaisquer outras criaturas no campo devem ser sem asas.
+\item O Pégaso é um cavalo alado.
+\item O animal no campo do fazendeiro Brown não é um cavalo.
+\item O cavalo no campo do fazendeiro Brown não tem asas.
 \end{compactlist}
 
 \problempart
-In this chapter, we symbolized `Nick is the traitor' by `$\exists x (\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) \eand x = n)$'. Explain why these would be equally good symbolisations:
+Neste capítulo, simbolizamos \textquotedblleft Nick é o traidor\textquotedblright{} por \textquotedblleft $\exists x (\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) \eand x = n)$\textquotedblright{}. Explique por que as seguintes fórmulas seriam simbolizações igualmente boas:
 	\begin{itemize}
 		\item $\atom{T}{n} \eand \forall y(\atom{T}{y} \eif n = y)$
 		\item $\forall y(\atom{T}{y} \eiff y = n)$
