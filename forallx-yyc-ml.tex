@@ -393,52 +393,52 @@ Forneça provas em \mlSfive{} para os seguintes:
 \end{compactlist}
 
 
-\chapter{Semantics for ML}
+\chapter{Semântica para a LM}
 \label{Semantics}
 
-So far, we have focussed on laying out various systems of Natural Deduction for ML. Now we will look at the \emph{semantics} for ML. A semantics for a language is a method for assigning truth-values to the sentences in that language. So a semantics for ML is a method for assigning truth-values to the sentences of ML.
+Até aqui, concentramos nossa atenção em apresentar vários sistemas de dedução natural para a LM. Agora veremos a \emph{semântica} da LM. Uma semântica para uma linguagem é um método de atribuir valores de verdade às sentenças dessa linguagem. Assim, uma semântica para a LM é um método de atribuir valores de verdade às sentenças da LM.
 
-\section{Interpretations of ML}
+\section{Interpretações da LM}
 
-The big idea behind the semantics for ML is this. In ML, sentences are not just true or false, full stop. A sentence is true or false \emph{at a given possible world}, and a single sentence may well be true at some worlds and false at others. We then say that $\ebox \metav{A}$ is true \ifeff{} $\metav{A}$ is true at \emph{every} world, and $\ediamond\metav{A}$ is true \ifeff{} $\metav{A}$ is true at \emph{some} world.
+A ideia central da semântica da LM é esta. Na LM, as sentenças não são simplesmente verdadeiras ou falsas, ponto final. Uma sentença é verdadeira ou falsa \emph{em um determinado mundo possível}, e uma mesma sentença pode ser verdadeira em alguns mundos e falsa em outros. Dizemos então que $\ebox \metav{A}$ é verdadeira \ifeff{} $\metav{A}$ é verdadeira em \emph{todo} mundo, e que $\ediamond\metav{A}$ é verdadeira \ifeff{} $\metav{A}$ é verdadeira em \emph{algum} mundo.
 
-That's the big idea, but we need to refine it and make it more precise. To do this, we need to introduce the idea of an \emph{interpretation} of ML. The first thing you need to include in an interpretation is a collection of \emph{possible worlds}. Now, at this point you might well want to ask: What exactly is a possible world? The intuitive idea is that a possible world is another way that this world could have been. But what exactly does that mean? This is an excellent philosophical question, and we will look at it in a lot of detail later. But we do not need to worry too much about it right now. As far as the formal logic goes, possible worlds can be anything you like. All that matters is that you supply each interpretation with a non-empty collection of things labelled \define{possible worlds}.
+Essa é a ideia central, mas precisamos refiná-la e torná-la mais precisa. Para isso, precisamos introduzir a ideia de uma \emph{interpretação} da LM. A primeira coisa que você precisa incluir em uma interpretação é uma coleção de \emph{mundos possíveis}. Neste ponto, talvez você queira perguntar: o que exatamente é um mundo possível? A ideia intuitiva é que um mundo possível é outra maneira como este mundo poderia ter sido. Mas o que exatamente isso significa? É uma excelente questão filosófica, que examinaremos em detalhe mais adiante. Por ora, porém, não precisamos nos preocupar muito com ela. No que diz respeito à lógica formal, mundos possíveis podem ser qualquer coisa que você queira. Tudo o que importa é fornecer a cada interpretação uma coleção não vazia de coisas rotuladas como \define{mundos poss\'iveis}.
 
-Once you have chosen your collection of possible worlds, you need to find some way of determining which sentences of ML are true at which possible worlds. To do that, we need to introduce the notion of a \emph{valuation function}. Those of you who have studied some maths will already be familiar with the general idea of a function. But for those of you who haven't, a function is a mathematical entity which maps arguments to values. That might sound a little bit abstract, but some familiar examples will help. Take the function $x+1$. This is a function which takes in a number as argument, and then spits out the next number as value. So if you feed in the number $1$ as an argument, the function $x+1$ will spit out the number $2$ as a value; if you feed in $2$, it will spit out $3$; if you feed in $3$, it will spit out $4$ \dots  Or here is another example: the function $x+y$. This time, you have to feed two arguments into this function if you want it to return a value: if you feed in $2$ and $3$ as your arguments, it spits out $5$; if you feed in $1003$ and $2005$, it spits out $3008$; and so on.
+Depois de escolher sua coleção de mundos possíveis, você precisa encontrar uma maneira de determinar quais sentenças da LM são verdadeiras em quais mundos possíveis. Para isso, precisamos introduzir a noção de uma \emph{função de valoração}. Quem estudou um pouco de matemática já estará familiarizado com a ideia geral de uma função. Para quem não estudou, uma função é uma entidade matemática que associa argumentos a valores. Isso pode parecer um pouco abstrato, mas alguns exemplos familiares ajudarão. Considere a função $x+1$. Ela recebe um número como argumento e devolve o número seguinte como valor. Assim, se você fornecer o número $1$ como argumento, a função $x+1$ devolverá o número $2$; se fornecer $2$, devolverá $3$; se fornecer $3$, devolverá $4$ \dots. Eis outro exemplo: a função $x+y$. Dessa vez, é preciso fornecer dois argumentos à função para que ela devolva um valor: se você fornecer $2$ e $3$, ela devolverá $5$; se fornecer $1003$ e $2005$, devolverá $3008$; e assim por diante.
 
-A valuation function for ML takes in a sentence and a world as its arguments, and then returns a truth-value as its value. So if $\nu$ is a valuation function and $w$ is a possible world, $\nu_w(\metav{A})$ is whatever truth-value $\nu$ maps $\metav{A}$ and $w$ to: if $\nu_w(\metav{A})=F$, then $\metav{A}$ is false at world $w$ on valuation $\nu$; if $\nu_w(\metav{A})=T$, then $\metav{A}$ is true at world $w$ on valuation $\nu$.
+Uma função de valoração para a LM recebe uma sentença e um mundo como argumentos e devolve um valor de verdade. Assim, se $\nu$ é uma função de valoração e $w$ é um mundo possível, $\nu_w(\metav{A})$ é o valor de verdade que $\nu$ associa a $\metav{A}$ e $w$: se $\nu_w(\metav{A})=F$, então $\metav{A}$ é falsa no mundo $w$ sob a valoração $\nu$; se $\nu_w(\metav{A})=T$, então $\metav{A}$ é verdadeira no mundo $w$ sob a valoração $\nu$.
 
-These valuation functions are allowed to map any \emph{atomic} sentence to any truth-value at any world. But there are rules about which truth-values more complex sentences get assigned at a world. Here are the rules for the connectives from TFL:
+Essas funções de valoração podem associar qualquer valor de verdade a qualquer sentença \emph{atômica} em qualquer mundo. Mas há regras sobre quais valores de verdade as sentenças mais complexas recebem em um mundo. Eis as regras para os conectivos da LVF:
 \begin{compactlist}
 	\item $\nu_w(\enot\metav{A})=T$ \ifeff{} $\nu_w(\metav{A})=F$
-	\item $\nu_w(\metav{A}\eand\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ and $\nu_w(\metav{B})=T$
-	\item $\nu_w(\metav{A}\eor\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ or $\nu_w(\metav{B})=T$, or both
-	\item $\nu_w(\metav{A}\eif\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=F$ or $\nu_w(\metav{B})=T$, or both
-	\item $\nu_w(\metav{A}\eiff\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ and $\nu_w(\metav{B})=T$, or $\nu_w(\metav{A})=F$ and $\nu_w(\metav{B})=F$
+	\item $\nu_w(\metav{A}\eand\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ e $\nu_w(\metav{B})=T$
+	\item $\nu_w(\metav{A}\eor\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ ou $\nu_w(\metav{B})=T$, ou ambos
+	\item $\nu_w(\metav{A}\eif\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=F$ ou $\nu_w(\metav{B})=T$, ou ambos
+	\item $\nu_w(\metav{A}\eiff\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ e $\nu_w(\metav{B})=T$, ou $\nu_w(\metav{A})=F$ e $\nu_w(\metav{B})=F$
 \end{compactlist}
-So far, these rules should all look very familiar. Essentially, they all work exactly like the truth-tables for TFL. The only difference is that these truth-table rules have to be applied over and over again, to one world at a time.
+Até aqui, essas regras devem parecer bastante familiares. Essencialmente, todas funcionam exatamente como as tabelas-verdade da LVF. A única diferença é que essas regras de tabela-verdade precisam ser aplicadas repetidamente, um mundo de cada vez.
 
-But what are the rules for the new modal operators, $\ebox$ and $\ediamond$? The most obvious idea would be to give rules like these:
+Mas quais são as regras para os novos operadores modais, $\ebox$ e $\ediamond$? A ideia mais óbvia seria dar regras como estas:
 \begin{itemize}
 	\item $\nu_w(\ebox \metav{A})=T$ \ifeff{} $\forall w' (\nu_{w'}(\metav{A})=T)$
 	\item $\nu_w(\ediamond \metav{A})=T$ \ifeff{} $\exists w' (\nu_{w'}(\metav{A})=T)$
 \end{itemize}
-This is just the fancy formal way of writing out the idea that $\ebox\metav{A}$ is true at $w$ just in case $\metav{A}$ is true at \emph{every} world, and $\ediamond\metav{A}$ is true at $w$ just in case $\metav{A}$ is true at \emph{some} world.
+Esta é apenas a maneira formal sofisticada de escrever a ideia de que $\ebox\metav{A}$ é verdadeira em $w$ se, e somente se, $\metav{A}$ é verdadeira em \emph{todo} mundo, e $\ediamond\metav{A}$ é verdadeira em $w$ se, e somente se, $\metav{A}$ é verdadeira em \emph{algum} mundo.
 
-However, while these rules are nice and simple, they turn out not to be quite as useful as we would like. As we mentioned, ML is meant to be a very flexible tool. It is meant to be a general framework for dealing with lots of different kinds of necessity. As a result, we want our semantic rules for $\ebox$ and $\ediamond$ to be a bit less rigid. We can do this by introducing another new idea: \emph{accessibility relations}.
+No entanto, embora essas regras sejam simples e elegantes, elas acabam não sendo tão úteis quanto gostaríamos. Como mencionamos, a LM pretende ser uma ferramenta muito flexível, um quadro geral para lidar com vários tipos de necessidade. Por isso, queremos que nossas regras semânticas para $\ebox$ e $\ediamond$ sejam um pouco menos rígidas. Podemos fazer isso introduzindo outra ideia nova: \emph{relações de acessibilidade}.
 
-An accessibility relation, $R$, is a relation between possible worlds. Roughly, to say that $Rw_1w_2$ (in English: world $w_1$ \emph{accesses} world $w_2$) is to say that $w_2$ is possible \emph{relative to} $w_1$. In other words, by introducing accessibility relations, we open up the idea that a given world might be possible relative to some worlds but not others. This turns out to be a \emph{very} fruitful idea when studying modal systems. We can now give the following semantic rules for $\ebox$ and $\ediamond$:
+Uma relação de acessibilidade, $R$, é uma relação entre mundos possíveis. Grosso modo, dizer que $Rw_1w_2$ (em português: o mundo $w_1$ \emph{acessa} o mundo $w_2$) é dizer que $w_2$ é possível \emph{relativamente a} $w_1$. Em outras palavras, ao introduzir relações de acessibilidade, abrimos a possibilidade de que um dado mundo seja possível em relação a alguns mundos, mas não a outros. Essa ideia se mostra \emph{muito} fecunda no estudo dos sistemas modais. Agora podemos dar as seguintes regras semânticas para $\ebox$ e $\ediamond$:
 \begin{compactlist}[resume]
 	\item $\nu_{w_1}(\ebox \metav{A})=T$ \ifeff{} $\forall w_2 (Rw_1w_2\eif \nu_{w_2}(\metav{A})=T)$
 	\item $\nu_{w_1}(\ediamond \metav{A})=T$ \ifeff{} $\exists w_2 (Rw_1w_2\eand \nu_{w_2}(\metav{A})=T)$
 \end{compactlist}
-Or in plain English: $\ebox\metav{A}$ is true in world $w_1$ \ifeff{} $\metav{A}$ is true in every world that is possible relative to $w_1$; and $\ediamond\metav{A}$ is true in world $w_1$ \ifeff{} $\metav{A}$ is true in some world that is possible relative to $w_1$.
+Ou, em português corrente: $\ebox\metav{A}$ é verdadeira no mundo $w_1$ \ifeff{} $\metav{A}$ é verdadeira em todo mundo que é possível em relação a $w_1$; e $\ediamond\metav{A}$ é verdadeira no mundo $w_1$ \ifeff{} $\metav{A}$ é verdadeira em algum mundo que é possível em relação a $w_1$.
 
-So, there we have it. An interpretation for ML consists of three things: a collection of possible worlds, $W$; an accessibility relation, $R$; and a valuation function, $\nu$. The collection of `possible worlds' can really be a collection of anything you like. It really doesn't matter, so long as $W$ isn't empty. (For many purposes, it is helpful just to take a collection of numbers to be your collection of worlds.) And for now, at least, $R$ can be any relation between the worlds in $W$ that you like. It could be a relation which every world in $W$ bears to every world in $W$, or one which no world bears to any world, or anything in between. And lastly, $\nu$ can map any atomic sentence of ML to any truth-value at any world. All that matters is that it follows the rules (1)--(7) when it comes to the more complex sentences.
+É isso. Uma interpretação para a LM consiste em três coisas: uma coleção de mundos possíveis, $W$; uma relação de acessibilidade, $R$; e uma função de valoração, $\nu$. A coleção de \textquotedblleft mundos possíveis\textquotedblright{} pode ser realmente uma coleção de qualquer coisa que você queira. Isso não importa, desde que $W$ não seja vazia. (Para muitos fins, é útil simplesmente tomar uma coleção de números como sua coleção de mundos.) E, por enquanto, $R$ pode ser qualquer relação que você queira entre os mundos em $W$. Pode ser uma relação que todo mundo em $W$ mantém com todo mundo em $W$, uma relação que nenhum mundo mantém com qualquer mundo, ou qualquer coisa intermediária. Por fim, $\nu$ pode associar qualquer valor de verdade a qualquer sentença atômica da LM em qualquer mundo. Tudo o que importa é que ela siga as regras (1)--(7) para as sentenças mais complexas.
 
-Let's look at an example. It is often helpful to present interpretations of ML as diagrams, like this:
+Vejamos um exemplo. Muitas vezes é útil apresentar interpretações da LM como diagramas, assim:
 \begin{center}
-	\begin{tikzpicture}[alt={The numbers 1 and 2 are connected by arrows. There are arrows from 1 to itself, and from 2 to 1. Node 1 is labelled by A and not-B. Node 2 is labelled by not-A and B.}]
+	\begin{tikzpicture}[alt={Os números 1 e 2 estão conectados por setas. Há uma seta de 1 para si mesmo e uma seta de 2 para 1. O nó 1 está rotulado com A e não-B. O nó 2 está rotulado com não-A e B.}]
 		\node (atom1) at (0,1) {1};
 		\node (atom2) at (3,1) {2};
 		\node (atom3) at (-0.25,0) {$A$};
@@ -446,57 +446,57 @@ Let's look at an example. It is often helpful to present interpretations of ML a
 		\node (atom5) at (-0.25,-0.7) {$\enot B$};
 		\node (atom6) at (3,-0.7) {$B$};
 		\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3);
-		%\draw[->, thick] (atom2)+(0.15,-0.15) arc (-150:150:.3); 
+		%\draw[->, thick] (atom2)+(0.15,-0.15) arc (-150:150:.3);
 		\draw[<-, thick] (atom1) -- (atom2);
 		\draw (-0.8,-1.2) rectangle (0.4,0.5);
 		\draw (2.4,-1.2) rectangle (3.6,0.5);
 	\end{tikzpicture}
-	\bmlDescription{The numbers 1 and 2 are connected by arrows. There are arrows from 1 to itself, and from 2 to 1. Node 1 is labelled by A and not-B. Node 2 is labelled by not-A and B.}
+	\bmlDescription{Os números 1 e 2 estão conectados por setas. Há uma seta de 1 para si mesmo e uma seta de 2 para 1. O nó 1 está rotulado com A e não-B. O nó 2 está rotulado com não-A e B.}
 \end{center}
-Here is how to read the interpretation off from this diagram. It contains just two worlds, 1 and 2. The arrows between the worlds indicate the accessibility relation. So 1 and 2 both access 1, but neither 1 nor 2 accesses 2. The boxes at each world let us know which atomic sentences are true at each world: $A$ is true at 1 but false at 2; $B$ is false at 1 but true at 2. You may only write an atomic sentence or the negation of an atomic sentence into one of these boxes. We can figure out what truth-values the more complex sentences get at each world from that. For example, on this interpretation all of the following sentences are true at $w_1$:
+Eis como ler a interpretação a partir desse diagrama. Ela contém apenas dois mundos, 1 e 2. As setas entre os mundos indicam a relação de acessibilidade. Assim, tanto 1 quanto 2 acessam 1, mas nem 1 nem 2 acessam 2. As caixas em cada mundo nos informam quais sentenças atômicas são verdadeiras em cada mundo: $A$ é verdadeira em 1, mas falsa em 2; $B$ é falsa em 1, mas verdadeira em 2. Você só pode escrever uma sentença atômica ou a negação de uma sentença atômica em uma dessas caixas. A partir disso, podemos descobrir quais valores de verdade as sentenças mais complexas recebem em cada mundo. Por exemplo, nessa interpretação, todas as sentenças a seguir são verdadeiras em $w_1$:
 \[
 A\eand\enot B,\qquad B\eif A,\qquad \ediamond A,\qquad \ebox\enot B
 \]
-If you don't like thinking diagrammatically, then you can also present an interpretation like this:
+Se você não gosta de pensar diagramaticamente, também pode apresentar uma interpretação assim:
 \begin{ekey}
 	\item[W]$1,2$
 	\item[R]$\langle 1,1\rangle, \langle 2,1\rangle$
 	\item[\nu]$\nu_{1}(A)=T, \nu_{1}(B)=F, \nu_{2}(A)=F, \nu_{2}(B)=T$
 \end{ekey}
-You will get the chance to cook up some interpretations of your own shortly, when we start looking at \emph{counter-interpretations}.
+Em breve você terá a oportunidade de construir algumas interpretações próprias, quando começarmos a examinar \emph{contra-interpretações}.
 
-\section{A Semantics for System \mlK}
+\section{Uma semântica para o sistema \mlK}
 \label{SemanticsK}
 
-We can now extend all of the semantic concepts of TFL to cover ML:
+Agora podemos estender à LM todos os conceitos semânticos da LVF:
 \factoidbox{
 	\begin{factoiditems}
 		\item $\metav{A}_1,\metav{A}_2, \dots
-		\metav{A}_n\therefore\metav{C}$ is \define{modally valid} \ifeff{}
-		there is no world in any interpretation at which
-		$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and
-		$\metav{C}$ is false.
+		\metav{A}_n\therefore\metav{C}$ é uma \define{validade modal} \ifeff{}
+		não há mundo em nenhuma interpretação no qual
+		$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e
+		$\metav{C}$ seja falsa.
 
-		\item $\metav{A}$ is a \define{modal truth} \ifeff{} $\metav{A}$
-		is true at every world in every interpretation.
+		\item $\metav{A}$ é uma \define{verdade modal} \ifeff{} $\metav{A}$
+		é verdadeira em todo mundo de toda interpretação.
 
-		\item $\metav{A}$ is a \define{modal contradiction} \ifeff{}
-		$\metav{A}$ is false at every world in every interpretation.
+		\item $\metav{A}$ é uma \define{contradi\c{c}\~ao modal} \ifeff{}
+		$\metav{A}$ é falsa em todo mundo de toda interpretação.
 
-		\item $\metav{A}$ is \define{modally satisfiable} \ifeff{}
-		$\metav{A}$ is true at some world in some interpretation.
+		\item $\metav{A}$ é \define{satisfat\'ivel modalmente} \ifeff{}
+		$\metav{A}$ é verdadeira em algum mundo de alguma interpretação.
 	\end{factoiditems}
 		}
-(From now on we will drop the explicit `modal' qualifications, since they can be taken as read.)
+(Daqui em diante, omitiremos as qualificações explícitas \textquotedblleft modal\textquotedblright{}, pois elas podem ser subentendidas.)
 
-We can also extend our use of $\entails$. However, we need to add subscripts again, just as we did with $\proves$. So, when we want to say that $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is valid, we will write: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$.
+Também podemos estender o uso de $\entails$. No entanto, precisamos acrescentar subscritos novamente, assim como fizemos com $\proves$. Portanto, quando quisermos dizer que $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ é válido, escreveremos: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$.
 
-Let's get more of a feel for this semantics by presenting some counter-interpretations. Consider the following (false) claim:
+Para compreender melhor essa semântica, apresentemos algumas contra-interpretações. Considere a seguinte afirmação (falsa):
 \[\enot A\entails_\mlK \enot \ediamond A\]
-In order to present a counter-interpretation to this claim, we need to cook up an interpretation which makes $\enot A$ true at some world $w$, and $\enot\ediamond A$ false at $w$. Here is one such interpretation, presented diagrammatically:
+Para apresentar uma contra-interpretação dessa afirmação, precisamos construir uma interpretação que torne $\enot A$ verdadeira em algum mundo $w$ e $\enot\ediamond A$ falsa em $w$. Eis uma interpretação, apresentada diagramaticamente:
 \begin{center}
-	\begin{tikzpicture}[alt={The numbers 1 and 2 are connected by an arrow from 1
-to 2. Node 1 is labelled not-A and node 2 is labelled A.}]
+
+	\begin{tikzpicture}[alt={Os números 1 e 2 estão conectados por uma seta de 1 para 2. O nó 1 está rotulado com não-A e o nó 2 está rotulado com A.}]
 		\node (atom1) at (0,1) {1};
 		\node (atom2) at (3,1) {2};
 		\node (atom3) at (-0.25,0) {$\enot A$};
@@ -505,68 +505,68 @@ to 2. Node 1 is labelled not-A and node 2 is labelled A.}]
 		\draw (-0.8,-0.6) rectangle (0.4,0.5);
 		\draw (2.4,-0.6) rectangle (3.6,0.5);
 	\end{tikzpicture}
-\bmlDescription{The numbers 1 and 2 are connected by an arrow from 1
-to 2. Node 1 is labelled not-A and node 2 is labelled A.}
+
+	\bmlDescription{Os números 1 e 2 estão conectados por uma seta de 1 para 2. O nó 1 está rotulado com não-A e o nó 2 está rotulado com A.}
 \end{center}
-It is easy to see that this will work as a counter-interpretation for our claim. First, $\enot A$ is true at world $1$. And second, $\enot\ediamond A$ is false at $1$: $A$ is true at $2$, and $2$ is accessible from $1$. So there is some world in this interpretation where $\enot A$ is true and $\enot\ediamond A$ is false, so it is not the case that $\enot A\entails_\mlK\enot\ediamond A$.
+É fácil ver que isso funciona como contra-interpretação para nossa afirmação. Primeiro, $\enot A$ é verdadeira no mundo $1$. Segundo, $\enot\ediamond A$ é falsa em $1$: $A$ é verdadeira em $2$ e $2$ é acessível a partir de $1$. Portanto, há um mundo nessa interpretação em que $\enot A$ é verdadeira e $\enot\ediamond A$ é falsa; assim, não é o caso que $\enot A\entails_\mlK\enot\ediamond A$.
 
-Why did we choose the subscript \mlK? Well, it turns out that there is an important relationship between system \mlK{} and the definition of validity we have just given. In particular, we have the following two results:
+Por que escolhemos o subscrito \mlK? Acontece que há uma relação importante entre o sistema \mlK{} e a definição de validade que acabamos de dar. Em particular, temos os dois resultados seguintes:
 \begin{compactlist}
-	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$
-	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$
+\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$
+\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$
 \end{compactlist}
-The first result is known as a \emph{soundness} result, since it tells us that the rules of \mlK{} are good, sound rules: if you can vindicate an argument by giving a proof for it using system \mlK, then that argument really is valid. The second result is known as a \emph{completeness} result, since it tells us that the rules of \mlK{} are broad enough to capture all of the valid arguments: if an argument is valid, then it will be possible to offer a proof in \mlK{} which vindicates it.
+O primeiro resultado é conhecido como resultado de \emph{correção}, pois nos diz que as regras de \mlK{} são boas regras corretas: se você pode justificar um argumento fornecendo uma prova dele usando o sistema \mlK, então esse argumento é realmente válido. O segundo resultado é conhecido como resultado de \emph{completude}, pois nos diz que as regras de \mlK{} são suficientemente amplas para capturar todos os argumentos válidos: se um argumento é válido, será possível oferecer uma prova em \mlK{} que o justifique.
 
-Now, it is one thing to state these results, quite another to prove them. However, we will not try to prove them here. But the idea behind the proof of soundness will perhaps make clearer how strict subproofs work.
+Agora, afirmar esses resultados é uma coisa, prová-los é outra. No entanto, não tentaremos prová-los aqui. Mas a ideia por trás da prova de correção talvez torne mais claro como funcionam as subprovas estritas.
 
-In a strict subproof, we are not allowed to make use of any information from outside the strict subproof, except what we import into the strict subproof using \ebox E. If we've assumed or proved $\ebox \metav{A}$, by \ebox E, we can used $\metav{A}$ inside a strict subproof. And in \mlK, that is the only way to import a formula into a strict subproof. So everything that can be proved inside a strict subproof must follow from formulas $\metav{A}$ where outside the strict subproof we have $\ebox \metav{A}$. Let's imagine that we are reasoning about what's true in a possible world in some interpretation. If we know that $\ebox\metav{A}$ is true in that possible world, we know that $\metav{A}$ is true in all accessible worlds. So, everything proved inside a strict subproof is true in all accessible possible worlds. That is why \ebox I is a sound rule.
+Em uma subprova estrita, não temos permissão para usar informações de fora dela, exceto o que importamos para dentro usando $\ebox$E. Se supusemos ou provamos $\ebox \metav{A}$, pela $\ebox$E podemos usar $\metav{A}$ dentro de uma subprova estrita. E, em \mlK, essa é a única maneira de importar uma fórmula para uma subprova estrita. Portanto, tudo o que pode ser provado dentro de uma subprova estrita deve seguir de fórmulas $\metav{A}$ para as quais temos $\ebox \metav{A}$ fora da subprova estrita. Imaginemos que estamos raciocinando sobre o que é verdadeiro em um mundo possível de alguma interpretação. Se sabemos que $\ebox\metav{A}$ é verdadeira nesse mundo possível, sabemos que $\metav{A}$ é verdadeira em todos os mundos acessíveis. Assim, tudo o que é provado dentro de uma subprova estrita é verdadeiro em todos os mundos possíveis acessíveis. É por isso que $\ebox$I é uma regra correta.
 
-\section{A Semantics for System \mlT}
+\section{Uma semântica para o sistema \mlT}
 \label{SemanticsT}
 
-A few moments ago, we said that system \mlK{} is sound and complete. Where does that leave the other modal systems we looked at, namely  \mlT, \mlSfour{} and \mlSfive? Well, they are all \emph{unsound}, relative to the definition of validity we gave above. For example, all of these systems allow us to infer $A$ from $\ebox A$, even though $\ebox A\nentails_\mlK A$.
+Há pouco dissemos que o sistema \mlK{} é correto e completo. O que isso implica para os outros sistemas modais que examinamos, \mlT, \mlSfour{} e \mlSfive? Bem, todos eles são \emph{incorretos} em relação à definição de validade dada acima. Por exemplo, todos esses sistemas permitem inferir $A$ a partir de $\ebox A$, embora $\ebox A\nentails_\mlK A$.
 
-Does that mean that these systems are a waste of time? Not at all! These systems are only unsound \emph{relative to the definition of validity we gave above}. (Or to use symbols, they are unsound relative to $\entails_\mlK$.) So when we are dealing with these stronger modal systems, we just need to modify our definition of validity to fit. This is where accessibility relations come in really handy.
+Isso significa que esses sistemas são uma perda de tempo? De modo algum! Esses sistemas são incorretos apenas \emph{em relação à definição de validade dada acima}. (Ou, em símbolos, são incorretos em relação a $\entails_\mlK$.) Assim, ao lidar com esses sistemas modais mais fortes, precisamos apenas modificar nossa definição de validade para ajustá-la. É aqui que as relações de acessibilidade se tornam muito úteis.
 
-When we introduced the idea of an accessibility relation, we said that it could be any relation between worlds that you like: you could have it relating every world to every world, no world to any world, or anything in between. That is how we were thinking of accessibility relations in our definition of $\entails_\mlK$. But if we wanted, we could start putting some restrictions on the accessibility relation. In particular, we might insist that it has to be \emph{reflexive}:
+Quando introduzimos a ideia de uma relação de acessibilidade, dissemos que ela poderia ser qualquer relação entre mundos: poderia relacionar todo mundo a todo mundo, nenhum mundo a qualquer mundo ou qualquer situação intermediária. Era assim que pensávamos nas relações de acessibilidade em nossa definição de $\entails_\mlK$. Mas, se quiséssemos, poderíamos começar a impor algumas restrições à relação de acessibilidade. Em particular, poderíamos exigir que ela fosse \emph{reflexiva}:
 \[\forall w\, Rww\]
-In English: every world accesses itself. Or in terms of relative possibility: every world is possible relative to itself. If we imposed this restriction, we could introduce a new consequence relation, $\entails_\mlT$, as follows:
+Em português: todo mundo acessa a si mesmo. Ou, em termos de possibilidade relativa: todo mundo é possível em relação a si mesmo. Se impuséssemos essa restrição, poderíamos introduzir uma nova relação de consequência, $\entails_\mlT$, da seguinte maneira:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT \metav{C}$ \ifeff{} não há mundo em nenhuma interpretação \emph{que tenha uma relação de acessibilidade reflexiva} no qual $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e $\metav{C}$ seja falsa
 }
-We have attached the \mlT{} subscript to $\entails$ because it turns out that system \mlT{} is sound and complete relative to this new definition of validity:
+Acrescentamos o subscrito \mlT{} a $\entails$ porque o sistema \mlT{} é correto e completo em relação a essa nova definição de validade:
 \begin{compactlist}
-	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$
-	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$
+\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$
+\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$
 \end{compactlist}
-As before, we will not try to prove these soundness and completeness results. However, it is relatively easy to see how insisting that the accessibility relation must be reflexive will vindicate the R\mlT{} rule:
+Como antes, não tentaremos provar esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja reflexiva justifica a regra R\mlT{}:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox \metav{A}}
 			\have[\, ]{n}{\metav{A}}\rt{m}
 	\end{fitchproof}
 }
-To see this, just imagine trying to cook up a counter-interpretation to this claim:
+Para ver isso, basta imaginar que tentamos construir uma contra-interpretação para essa afirmação:
 \[
 	\ebox \metav{A}\entails_\mlT \metav{A}
 \]
-We would need to construct a world, $w$, at which $\ebox \metav{A}$ was true, but $\metav{A}$ was false. Now, if $\ebox \metav{A}$ is true at $w$, then $\metav{A}$ must be true at every world $w$ accesses. But since the accessibility relation is reflexive, $w$ accesses $w$. So $\metav{A}$ must be true at $w$. But now $\metav{A}$ must be true \emph{and} false at $w$. Contradiction!
+Precisaríamos construir um mundo $w$ no qual $\ebox \metav{A}$ fosse verdadeira, mas $\metav{A}$ fosse falsa. Ora, se $\ebox \metav{A}$ é verdadeira em $w$, então $\metav{A}$ deve ser verdadeira em todo mundo que $w$ acessa. Mas, como a relação de acessibilidade é reflexiva, $w$ acessa $w$. Portanto, $\metav{A}$ deve ser verdadeira em $w$. Mas agora $\metav{A}$ deve ser verdadeira \emph{e} falsa em $w$. Contradição!
 
-\section{A Semantics for \mlSfour}
+\section{Uma semântica para \mlSfour}
 \label{SemanticsS4}
 
-How else might we tweak our definition of validity? Well, we might also stipulate that the accessibility relation has to be \emph{transitive}:
+Como mais poderíamos ajustar nossa definição de validade? Poderíamos também estipular que a relação de acessibilidade deve ser \emph{transitiva}:
 \[\forall w_1\forall w_2\forall w_3 ((Rw_1w_2 \eand Rw_2w_3)\eif Rw_1w_3)\]
-In English: if $w_1$ accesses $w_2$, and $w_2$ accesses $w_3$, then $w_1$ accesses $w_3$. Or in terms of relative possibility: if $w_3$ is possible relative to $w_2$, and $w_2$ is possible relative to $w_1$, then $w_3$ is possible relative to $w_1$. If we added this restriction on our accessibility relation, we could introduce a new consequence relation, $\entails_\mlSfour$, as follows:
+Em português: se $w_1$ acessa $w_2$ e $w_2$ acessa $w_3$, então $w_1$ acessa $w_3$. Ou, em termos de possibilidade relativa: se $w_3$ é possível em relação a $w_2$ e $w_2$ é possível em relação a $w_1$, então $w_3$ é possível em relação a $w_1$. Se acrescentássemos essa restrição à relação de acessibilidade, poderíamos introduzir uma nova relação de consequência, $\entails_\mlSfour$, assim:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive and transitive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour \metav{C}$ \ifeff{} não há mundo em nenhuma interpretação \emph{que tenha uma relação de acessibilidade reflexiva e transitiva} no qual $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e $\metav{C}$ seja falsa
 }
-We have attached the \mlSfour{} subscript to $\entails$ because it turns out that system \mlSfour{} is sound and complete relative to this new definition of validity:
+Acrescentamos o subscrito \mlSfour{} a $\entails$ porque o sistema \mlSfour{} é correto e completo em relação a essa nova definição de validade:
 \begin{compactlist}
-	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$
-	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$
+\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$
+\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$
 \end{compactlist}
-As before, we will not try to prove these soundness and completeness results. However, it is relatively easy to see how insisting that the accessibility relation must be transitive will vindicate the \mlSfour{} rule:
+Como antes, não tentaremos provar esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja transitiva justifica a regra \mlSfour{}:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
@@ -575,27 +575,27 @@ As before, we will not try to prove these soundness and completeness results. Ho
 			\have[\ ]{n}{\ebox\metav{A}}\rfour{m}
 	\end{fitchproof}
 }
-The idea behind strict subproofs, remember, is that they are ways to prove things that must be true in all accessible worlds. So the R$\mathbf{4}$ rule means that whenever $\ebox \metav{A}$ is true, $\ebox \metav{A}$ must also be true in every accessible world. In other words, we must have $\ebox\metav{A} \entails_\mlSfour \ebox\ebox\metav{A}$.
+Lembre-se de que a ideia por trás das subprovas estritas é que elas são maneiras de provar coisas que devem ser verdadeiras em todos os mundos acessíveis. Portanto, a regra R$\mathbf{4}$ significa que, sempre que $\ebox \metav{A}$ é verdadeira, $\ebox \metav{A}$ também deve ser verdadeira em todo mundo acessível. Em outras palavras, devemos ter $\ebox\metav{A} \entails_\mlSfour \ebox\ebox\metav{A}$.
 
-To see this, just imagine trying to cook up a counter-interpretation to this claim:
+Para ver isso, basta imaginar que tentamos construir uma contra-interpretação para essa afirmação:
 \[\ebox\metav{A} \entails_\mlSfour \ebox \ebox \metav{A}\]
-We would need to construct a world, $w_1$, at which $\ebox\metav{A}$ was true, but $\ebox \ebox \metav{A}$ was false. Now, if $\ebox \ebox \metav{A}$ is false at $w_1$, then $w_1$ must access some world, $w_2$, at which $\ebox\metav{A}$ is false. Equally, if $\ebox \metav{A}$ is false at $w_2$, then $w_2$ must access some world, $w_3$, at which $\metav{A}$ is false. We just said that $w_1$ accesses $w_2$, and $w_2$ accesses $w_3$. So since we are now insisting that the accessibility relation be transitive, $w_1$ must access $w_3$. And as $\ebox\metav{A}$ is true at $w_1$, and $w_3$ is accessible from $w_1$, it follows that $\metav{A}$ must be true at $w_3$. So $\metav{A}$ is true \emph{and} false at $w_3$. Contradiction!
+Precisaríamos construir um mundo $w_1$ no qual $\ebox\metav{A}$ fosse verdadeira, mas $\ebox \ebox \metav{A}$ fosse falsa. Ora, se $\ebox \ebox \metav{A}$ é falsa em $w_1$, então $w_1$ deve acessar algum mundo $w_2$ no qual $\ebox\metav{A}$ é falsa. Do mesmo modo, se $\ebox \metav{A}$ é falsa em $w_2$, então $w_2$ deve acessar algum mundo $w_3$ no qual $\metav{A}$ é falsa. Acabamos de dizer que $w_1$ acessa $w_2$ e que $w_2$ acessa $w_3$. Como agora exigimos que a relação de acessibilidade seja transitiva, $w_1$ deve acessar $w_3$. E, como $\ebox\metav{A}$ é verdadeira em $w_1$ e $w_3$ é acessível a partir de $w_1$, segue-se que $\metav{A}$ deve ser verdadeira em $w_3$. Portanto, $\metav{A}$ é verdadeira \emph{e} falsa em $w_3$. Contradição!
 
-\section{A Semantics for \mlSfive}
+\section{Uma semântica para \mlSfive}
 \label{SemanticsS5}
 
-Let's put one more restriction on the accessibility relation. This time, let's insist that it must also be \emph{symmetric}:
+Vamos impor mais uma restrição à relação de acessibilidade. Desta vez, vamos exigir que ela também seja \emph{simétrica}:
 \[\forall w_1\forall w_2(Rw_1w_2 \eif Rw_2w_1)\]
-In English: if $w_1$ accesses $w_2$, then $w_2$ accesses $w_1$. Or in terms of relative possibility: if $w_2$ is possible relative to $w_1$, then $w_1$ is possible relative to $w_2$. Logicians call a relation that is reflexive, symmetric, and transitive an \emph{equivalence} relation. We can now define a new consequence relation, $\entails_\mlSfive $, as follows:
+Em português: se $w_1$ acessa $w_2$, então $w_2$ acessa $w_1$. Ou, em termos de possibilidade relativa: se $w_2$ é possível em relação a $w_1$, então $w_1$ é possível em relação a $w_2$. Os lógicos chamam de relação de \emph{equivalência} uma relação que é reflexiva, simétrica e transitiva. Agora podemos definir uma nova relação de consequência, $\entails_\mlSfive$, assim:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{whose accessibility relation is an equivalence relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} não há mundo em nenhuma interpretação \emph{cuja relação de acessibilidade seja uma relação de equivalência} no qual $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e $\metav{C}$ seja falsa
 }
-We have attached the \mlSfive{} subscript to $\entails$ because it turns out that system \mlSfive{} is sound and complete relative to this new definition of validity:
+Acrescentamos o subscrito \mlSfive{} a $\entails$ porque o sistema \mlSfive{} é correto e completo em relação a essa nova definição de validade:
 \begin{compactlist}
-	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$
-	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$
+\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$
+\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$
 \end{compactlist}
-As before, we will not try to prove these soundness and completeness results here. However, it is relatively easy to see how insisting that the accessibility relation must be an equivalence relation will vindicate the R$\mathbf{5}$ rule:
+Como antes, não tentaremos provar aqui esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja uma relação de equivalência justifica a regra R$\mathbf{5}$:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox \metav{A}}
@@ -604,27 +604,27 @@ As before, we will not try to prove these soundness and completeness results her
 			\have[\, ]{n}{\enot\ebox\metav{A}}\rfive{m}
 	\end{fitchproof}
 }
-The rule says that if $\metav{A}$ is not necessary, i.e., false in some accessible world, it is also not necessary in any accessible possible world, i.e., we have $\enot\ebox \metav{A} \proves_\mlSfive  \ebox\enot\ebox \metav{A}$.
+A regra diz que, se $\metav{A}$ não é necessária, isto é, é falsa em algum mundo acessível, então também não é necessária em nenhum mundo possível acessível; em símbolos, temos $\enot\ebox \metav{A} \proves_\mlSfive  \ebox\enot\ebox \metav{A}$.
 
-To see this, just imagine trying to cook up a counter-interpretation to this claim:
+Para ver isso, basta imaginar que tentamos construir uma contra-interpretação para essa afirmação:
 \[
 	\enot\ebox\metav{A} \entails_\mlSfive  \ebox \enot\ebox \metav{A}
 \]
-We would need to construct a world, $w_1$, at which $\enot\ebox\metav{A}$ was true, but $\ebox \enot\ebox \metav{A}$ was false.
-Now, if $\enot\ebox\metav{A}$ is true at $w_1$, then $w_1$ must access some world, $w_2$, at which $\metav{A}$ is false. Equally, if $\ebox \enot\ebox \metav{A}$ is false at $w_1$, then $w_1$ must access some world, $w_3$, at which $\enot\ebox \metav{A}$ is false. Since we are now insisting that the accessibility relation is an equivalence relation, and hence symmetric, we can infer that $w_3$ accesses $w_1$. Thus, $w_3$ accesses $w_1$, and $w_1$ accesses $w_2$. Again, since we are now insisting that the accessibility relation is an equivalence relation, and hence transitive, we can infer that $w_3$ accesses $w_2$. But earlier we said that $\enot\ebox \metav{A}$ is false at $w_3$, which implies that $\metav{A}$ is true at every world which $w_3$ accesses. So $\metav{A}$ is true \emph{and} false at $w_2$. Contradiction!
+Precisaríamos construir um mundo $w_1$ no qual $\enot\ebox\metav{A}$ fosse verdadeira, mas $\ebox \enot\ebox\metav{A}$ fosse falsa.
+Ora, se $\enot\ebox\metav{A}$ é verdadeira em $w_1$, então $w_1$ deve acessar algum mundo $w_2$ no qual $\metav{A}$ é falsa. Do mesmo modo, se $\ebox \enot\ebox\metav{A}$ é falsa em $w_1$, então $w_1$ deve acessar algum mundo $w_3$ no qual $\enot\ebox\metav{A}$ é falsa. Como agora exigimos que a relação de acessibilidade seja uma relação de equivalência e, portanto, simétrica, podemos inferir que $w_3$ acessa $w_1$. Assim, $w_3$ acessa $w_1$ e $w_1$ acessa $w_2$. Novamente, como agora exigimos que a relação de acessibilidade seja uma relação de equivalência e, portanto, transitiva, podemos inferir que $w_3$ acessa $w_2$. Mas antes dissemos que $\enot\ebox\metav{A}$ é falsa em $w_3$, o que implica que $\metav{A}$ é verdadeira em todo mundo que $w_3$ acessa. Portanto, $\metav{A}$ é verdadeira \emph{e} falsa em $w_2$. Contradição!
 
-In the definition of $\entails_\mlSfive $, we stipulated that the accessibility relation must be an equivalence relation. But it turns out that there is another way of getting a notion of validity fit for \mlSfive. Rather than stipulating that the accessibility relation be an equivalence relation, we can instead stipulate that it be a \emph{universal} relation:
+Na definição de $\entails_\mlSfive$, estipulamos que a relação de acessibilidade deve ser uma relação de equivalência. Mas acontece que há outra maneira de obter uma noção de validade adequada para \mlSfive. Em vez de estipular que a relação de acessibilidade seja uma relação de equivalência, podemos estipular que seja uma relação \emph{universal}:
 \[\forall w_1\forall w_2\, Rw_1w_2\]
-In English: every world accesses every world. Or in terms of relative possibility: every world is possible relative to every world. Using this restriction on the accessibility relation, we could have defined $\entails_\mlSfive $ like this:
+Em português: todo mundo acessa todo mundo. Ou, em termos de possibilidade relativa: todo mundo é possível em relação a todo mundo. Usando essa restrição à relação de acessibilidade, poderíamos ter definido $\entails_\mlSfive$ assim:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a universal accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} não há mundo em nenhuma interpretação \emph{que tenha uma relação de acessibilidade universal} no qual $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ sejam todas verdadeiras e $\metav{C}$ seja falsa.
 }
-If we defined $\entails_\mlSfive $ like this, we would still get the same soundness and completeness results for \mlSfive. What does this tell us? Well, it means that if we are dealing with a notion of necessity according to which \emph{every} world is possible relative to \emph{every} world, then we should use \mlSfive. What is more, most philosophers assume that the notions of necessity that they are most concerned with, like \emph{logical necessity} and \emph{metaphysical necessity}, are of exactly this kind. So \mlSfive{} is the modal system that most philosophers use most of the time.
+Se definíssemos $\entails_\mlSfive$ assim, ainda obteríamos os mesmos resultados de correção e completude para \mlSfive. O que isso nos diz? Bem, significa que, se estamos lidando com uma noção de necessidade segundo a qual \emph{todo} mundo é possível em relação a \emph{todo} mundo, então devemos usar \mlSfive. Além disso, a maioria dos filósofos supõe que as noções de necessidade que mais lhes interessam, como \emph{necessidade lógica} e \emph{necessidade metafísica}, são exatamente desse tipo. Portanto, \mlSfive{} é o sistema modal que a maioria dos filósofos usa na maior parte do tempo.
 
 \practiceproblems
 
 \problempart
-Present counter-interpretations to the following false claims:
+Apresente contra-interpretações para as seguintes afirmações falsas:
 \begin{compactlist}
 	\item $\enot P \entails_\mlK \enot\ediamond P$
 	\item $\ebox(P \eor Q)\entails_\mlK \ebox P \eor \ebox Q$
@@ -633,22 +633,22 @@ Present counter-interpretations to the following false claims:
 \end{compactlist}
 
 \problempart
-Present counter-interpretations to the following false claims:
+Apresente contra-interpretações para as seguintes afirmações falsas:
 \begin{compactlist}
 	\item $\ediamond A\entails_\mlSfour \ebox\ediamond A$
 	\item $\ediamond A, \ebox (\ediamond A \eif B)\entails_\mlSfour\ebox B$
 \end{compactlist}
 
 \problempart
-Present counter-interpretations to the following false claims:
+Apresente contra-interpretações para as seguintes afirmações falsas:
 \begin{compactlist}
 	\item $\ebox (M\eif O),\ediamond M\entails_\mlT O$
 	\item $\ebox A\entails_\mlT \ebox \ebox A$
 \end{compactlist}
 
-\section*{Further reading}
+\section*{Leitura adicional}
 
-Modal logic is a large subfield of logic. We have only scratched the surface. If you want to learn more about modal logic, here are some textbooks you might consult.
+A lógica modal é uma grande subárea da lógica. Nós apenas arranhamos a superfície. Se você quiser aprender mais sobre lógica modal, eis alguns livros didáticos que pode consultar.
 
 \begin{itemize}
 	\item George E. Hughes and Max J. Cresswell, \textit{A New Introduction
@@ -659,4 +659,4 @@ Modal logic is a large subfield of logic. We have only scratched the surface. If
 	ed., Cambridge: Cambridge University Press, 2013.
 \end{itemize}
 
-None of these authors formulate their modal proof systems in quite the way we did, but the closest formulation is given by Garson.
+Nenhum desses autores formula seus sistemas de prova modal exatamente da maneira como fizemos, mas a formulação mais próxima é a de Garson.
