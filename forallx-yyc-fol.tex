@@ -573,208 +573,208 @@ Para cada argumento, escreva uma chave de simbolização e simbolize o argumento
 % \item Todos os bebês são ilógicos. Ninguém que seja ilógico consegue lidar com um crocodilo. Berthold é um bebê. Portanto, Berthold não consegue lidar com um crocodilo.
 % \end{compactlist}
 
-\chapter{Multiple generality}\label{s:MultipleGenerality}
-So far, we have only considered sentences that require one-place predicates and one quantifier. The full power of FOL really comes out when we start to use many-place predicates and multiple quantifiers. For this insight, we largely have \foreignlanguage{german}{Gottlob Frege} (1879) to thank, but also C.~S.~Peirce.
+\chapter{Generalidade múltipla}\label{s:MultipleGenerality}
+Até agora, consideramos apenas sentenças que exigem predicados de um lugar e um quantificador. Todo o poder da LPO realmente aparece quando começamos a usar predicados de vários lugares e múltiplos quantificadores. Por essa descoberta, devemos agradecer em grande parte a \foreignlanguage{german}{Gottlob Frege} (1879), mas também a C.~S.~Peirce.
 
 
-\section{Many-placed predicates}
-All of the predicates that we have considered so far concern properties that objects might have. Those predicates have one gap in them, and to make a sentence, we simply need to slot in one term. They are \define{one-place} predicates.
+\section{Predicados de muitos lugares}
+Todos os predicados que consideramos até agora dizem respeito a propriedades que os objetos podem ter. Esses predicados têm uma lacuna, e para formar uma sentença basta inserir um termo nela. Eles são predicados \define{de um lugar}.
 
-However, other predicates concern the \emph{relation} between two things. Here are some examples of relational predicates in English:
+No entanto, outros predicados dizem respeito à \emph{relação} entre duas coisas. Eis alguns exemplos de predicados relacionais em português:
 	\begin{itemize}
-		\item \blank\ loves \blank
-		\item \blank\ is to the left of \blank
-		\item \blank\ is in debt to \blank
+\item \blank\ ama \blank
+\item \blank\ está à esquerda de \blank
+\item \blank\ deve algo a \blank
 	\end{itemize}
-These are \define{two-place} predicates. They need to be filled in with two terms in order to make a sentence. Conversely, if we start with an English sentence containing many singular terms, we can remove two singular terms, to obtain different two-place predicates. Consider the sentence `Vinnie borrowed the family car from Nunzio'. By deleting two singular terms, we can obtain any of three different two-place predicates
+Esses são predicados \define{de dois lugares}. Eles precisam ser preenchidos com dois termos para formar uma sentença. Ao contrário, se começarmos com uma sentença em português que contenha vários termos singulares, poderemos remover dois termos singulares para obter diferentes predicados de dois lugares. Considere a sentença \textquotedblleft Vinnie pegou emprestado o carro da família de Nunzio\textquotedblright{}. Ao remover dois termos singulares, podemos obter qualquer um destes três predicados de dois lugares:
 	\begin{itemize}
-		\item Vinnie borrowed \blank\ from \blank
-		\item \blank\ borrowed the family car from \blank
-		\item \blank\ borrowed \blank\ from Nunzio
+\item Vinnie pegou emprestado \blank\ de \blank
+\item \blank\ pegou emprestado o carro da família de \blank
+\item \blank\ pegou emprestado \blank\ de Nunzio
 	\end{itemize}
-and by removing all three singular terms, we  obtain a \define{three-place} predicate:
+e, removendo os três termos singulares, obtemos um predicado \define{de tr\^es lugares}:
 	\begin{itemize}
-		\item \blank\ borrowed \blank\ from \blank
+\item \blank\ pegou emprestado \blank\ de \blank
 	\end{itemize}
-Indeed, there is no in principle upper limit on the number of places that our predicates may contain.
+De fato, não há, em princípio, limite superior para o número de lugares que nossos predicados podem conter.
 
-\section{Mind the gap(s)!}
+\section{Cuidado com a(s) lacuna(s)!}
 
-We have used the same symbol, `\blank', to indicate a gap formed by deleting a term from a sentence. However, as \foreignlanguage{german}{Frege} emphasized, these are \emph{different} gaps. To obtain a sentence, we can fill them in with the same term, but we can equally fill them in with different terms, and in various different orders. The following are three perfectly good sentences, obtained by filling in the gaps in `\blank\ loves \blank{}' in different ways; but they all have distinctively different meanings:
+Usamos o mesmo símbolo, \textquotedblleft \blank\textquotedblright{}, para indicar uma lacuna formada pela remoção de um termo de uma sentença. No entanto, como \foreignlanguage{german}{Frege} enfatizou, essas são lacunas \emph{diferentes}. Para obter uma sentença, podemos preenchê-las com o mesmo termo, mas também podemos preenchê-las com termos diferentes e em várias ordens. As três sentenças a seguir são perfeitamente boas, obtidas preenchendo as lacunas de \textquotedblleft \blank\ ama \blank{}\textquotedblright{} de maneiras diferentes; mas todas têm significados caracteristicamente diferentes:
 \begin{enumerate}
-	\item\label{terms3} Karl loves Imre.
-	\item\label{terms3b} Imre loves Karl.
-	\item\label{terms3a} Karl loves Karl.
+\item\label{terms3} Karl ama Imre.
+\item\label{terms3b} Imre ama Karl.
+\item\label{terms3a} Karl ama Karl.
 \end{enumerate}
-The point is that we need to keep track of the gaps in predicates, so that we can keep track of how we are filling them in. To keep track of the gaps, we assign them variables. Suppose we want to symbolize the preceding sentences. Then I might start with the following symbolization key: 
+O ponto é que precisamos acompanhar as lacunas nos predicados para poder acompanhar como as estamos preenchendo. Para acompanhar as lacunas, atribuímos variáveis a elas. Suponha que queiramos simbolizar as sentenças anteriores. Então, eu poderia começar com a seguinte chave de simbolização:
 	\begin{ekey}
-		\item[\text{domain}] people
+\item[\text{domínio}] pessoas
 		\item[i] Imre
 		\item[k] Karl
-		\item[\atom{L}{x,y}] \gap{x} loves \gap{y}
+\item[\atom{L}{x,y}] \gap{x} ama \gap{y}
 	\end{ekey}
- \Cref*{terms3} will be symbolized by `$\atom{L}{k,i}$', \cref*{terms3b} will be symbolized by `$\atom{L}{i,k}$', and \cref*{terms3a} will be symbolized by `$\atom{L}{k,k}$'. Here are a few more sentences that we can symbolize with the same key:
+\Cref*{terms3} será simbolizada por \textquotedblleft $\atom{L}{k,i}$\textquotedblright{}, \cref*{terms3b} será simbolizada por \textquotedblleft $\atom{L}{i,k}$\textquotedblright{} e \cref*{terms3a} será simbolizada por \textquotedblleft $\atom{L}{k,k}$\textquotedblright{}. Eis mais algumas sentenças que podemos simbolizar com a mesma chave:
 \begin{enumerate}
-	\item\label{terms4} Imre loves himself.
-	\item\label{terms5} Karl loves Imre, but not vice versa.
-	\item\label{terms6} Karl is loved by Imre.
+\item\label{terms4} Imre ama a si mesmo.
+\item\label{terms5} Karl ama Imre, mas não o contrário.
+\item\label{terms6} Karl é amado por Imre.
 \end{enumerate}
-\Cref*{terms4} can be paraphrased as `Imre loves Imre', and so
-symbolized by `$\atom{L}{i,i}$'. \Cref*{terms5} is a conjunction. We
-can paraphrase it as `Karl loves Imre, and Imre does not love Karl',
-and so symbolize it as `$\atom{L}{k,i} \eand \enot \atom{L}{i,k}$'.
-\Cref*{terms6} can be paraphrased by `Imre loves Karl', and so
-symbolized as `$\atom{L}{i,k}$'. In this last case, of course, we have
-lost the difference in \emph{tone} between the active and passive
-voice; but we have at least preserved the truth conditions.
+\Cref*{terms4} pode ser parafraseada como \textquotedblleft Imre ama Imre\textquotedblright{} e, portanto, simbolizada por \textquotedblleft $\atom{L}{i,i}$\textquotedblright{}. \Cref*{terms5} é uma conjunção. Podemos parafraseá-la como \textquotedblleft Karl ama Imre, e Imre não ama Karl\textquotedblright{} e, portanto, simbolizá-la como \textquotedblleft $\atom{L}{k,i} \eand \enot \atom{L}{i,k}$\textquotedblright{}.
 
-But the relationship between `Imre loves Karl' and `Karl is loved by Imre' highlights something important. To see what, suppose we add another entry to our symbolization key:
+
+
+\Cref*{terms6} pode ser parafraseada como \textquotedblleft Imre ama Karl\textquotedblright{} e, portanto, simbolizada por \textquotedblleft $\atom{L}{i,k}$\textquotedblright{}. Neste último caso, é claro, perdemos a diferença de \emph{tom} entre a voz ativa e a passiva; mas preservamos pelo menos as condições de verdade.
+
+
+
+
+Mas a relação entre \textquotedblleft Imre ama Karl\textquotedblright{} e \textquotedblleft Karl é amado por Imre\textquotedblright{} destaca algo importante. Para ver o quê, suponha que acrescentemos outra entrada à nossa chave de simbolização:
 \begin{ekey}
-	\item[\atom{M}{x,y}] \gap{y} loves \gap{x}
+\item[\atom{M}{x,y}] \gap{y} ama \gap{x}
 \end{ekey}
-The entry for `$M$' uses exactly the same English word---`loves'---as the entry for `$L$'. \emph{But the gaps have been swapped around!} (Just look closely at the subscripts.) And this \emph{matters}.
+A entrada para \textquotedblleft $M$\textquotedblright{} usa exatamente a mesma palavra em português — \textquotedblleft ama\textquotedblright{} — que a entrada para \textquotedblleft $L$\textquotedblright{}. \emph{Mas as lacunas foram trocadas de lugar!} (Observe atentamente os subscritos.) E isso \emph{importa}.
 
-To explain: when we see a sentence like `$\atom{L}{k,i}$', we are
-being told to take the \emph{first} name (i.e., `$k$') and associate
-its value (i.e., Karl) with the gap labelled `$x$', then take the
-\emph{second} name (i.e.,~`$i$') and associate its value (i.e., Imre)
-with the gap labelled `$y$', and so come up with: \emph{Karl loves
-Imre}. The sentence `$\atom{M}{i,k}$' also tells us to take the
-\emph{first} name (i.e., `$i$') and plug its value into the gap
-labelled `$x$', and take the \emph{second} name (i.e., `$k$') and plug
-its value into the gap labelled `$y$', and so also come up with:
-\emph{Karl loves Imre}.
+Para explicar: quando vemos uma sentença como \textquotedblleft $\atom{L}{k,i}$\textquotedblright{}, somos instruídos a tomar o \emph{primeiro} nome (isto é, \textquotedblleft $k$\textquotedblright{}) e associar seu valor (isto é, Karl) à lacuna marcada por \textquotedblleft $x$\textquotedblright{}, depois tomar o \emph{segundo} nome (isto é, \textquotedblleft $i$\textquotedblright{}) e associar seu valor (isto é, Imre) à lacuna marcada por \textquotedblleft $y$\textquotedblright{}, chegando assim a: \emph{Karl ama Imre}. A sentença \textquotedblleft $\atom{M}{i,k}$\textquotedblright{} também nos instrui a tomar o \emph{primeiro} nome (isto é, \textquotedblleft $i$\textquotedblright{}) e inserir seu valor na lacuna marcada por \textquotedblleft $x$\textquotedblright{}, e tomar o \emph{segundo} nome (isto é, \textquotedblleft $k$\textquotedblright{}) e inserir seu valor na lacuna marcada por \textquotedblleft $y$\textquotedblright{}, chegando também a: \emph{Karl ama Imre}.
 
-So, `$\atom{L}{i,k}$' and `$\atom{M}{k,i}$' both symbolize `Imre loves Karl', whereas `$\atom{L}{k,i}$' and `$\atom{M}{i,k}$' both symbolize `Karl loves Imre'. Since love can be unrequited, these are different claims.
 
-One last example might be helpful. Suppose we add this to our symbolisation key: 
+
+
+
+
+
+
+
+
+Assim, \textquotedblleft $\atom{L}{i,k}$\textquotedblright{} e \textquotedblleft $\atom{M}{k,i}$\textquotedblright{} simbolizam ambos \textquotedblleft Imre ama Karl\textquotedblright{}, enquanto \textquotedblleft $\atom{L}{k,i}$\textquotedblright{} e \textquotedblleft $\atom{M}{i,k}$\textquotedblright{} simbolizam ambos \textquotedblleft Karl ama Imre\textquotedblright{}. Como o amor pode não ser correspondido, essas são afirmações diferentes.
+
+Um último exemplo pode ajudar. Suponha que acrescentemos isto à nossa chave de simbolização:
 \begin{ekey}
-	\item[\atom{P}{x,y}] \gap{x} prefers \gap{x} to \gap{y}
+\item[\atom{P}{x,y}] \gap{x} prefere \gap{x} a \gap{y}
 \end{ekey}
-Now the sentence `$\atom{P}{i,k}$' symbolizes `Imre prefers Imre to Karl', and `$\atom{P}{k,i}$' symbolizes `Karl prefers Karl to Imre'.  And note that we could have achieved the same effect, if we had instead specified:
+Agora a sentença \textquotedblleft $\atom{P}{i,k}$\textquotedblright{} simboliza \textquotedblleft Imre prefere Imre a Karl\textquotedblright{} e \textquotedblleft $\atom{P}{k,i}$\textquotedblright{} simboliza \textquotedblleft Karl prefere Karl a Imre\textquotedblright{}. E observe que poderíamos ter obtido o mesmo efeito se tivéssemos especificado:
 \begin{ekey}
-	\item[\atom{P}{x,y}] \gap{x} prefers themselves to \gap{y}
+\item[\atom{P}{x,y}] \gap{x} prefere a si mesmo a \gap{y}
 \end{ekey}
-In any case, the overall moral of this is simple. \emph{When dealing with predicates with more than one place, pay careful attention to the order of the gaps!} 
+De todo modo, a lição geral é simples. \emph{Ao lidar com predicados com mais de um lugar, preste muita atenção à ordem das lacunas!}
 
 
-\section{The order of quantifiers}\label{ss:OrderQuant}
-Consider the sentence `everyone loves someone'. This is potentially ambiguous. It might mean either of the following:
+\section{A ordem dos quantificadores}\label{ss:OrderQuant}
+Considere a sentença \textquotedblleft todos amam alguém\textquotedblright{}. Ela é potencialmente ambígua. Pode significar qualquer uma das seguintes coisas:
 	\begin{enumerate}
-		\item\label{lovecycle} For every person x, there is some person that x loves.
-		\item\label{loveconverge} There is some particular person whom every person loves.
+\item\label{lovecycle} Para toda pessoa $x$, existe alguma pessoa que $x$ ama.
+\item\label{loveconverge} Existe uma pessoa específica que todos amam.
 	\end{enumerate}
-\Cref*{lovecycle} can be symbolized by `$\forall x \exists y\, \atom{L}{x,y}$'. Suppose that our domain of discourse is restricted to Imre, Juan and Karl. Suppose also that Karl loves Imre but not Juan, that Imre loves Juan but not Karl, and that Juan loves Karl but not Imre. Then \cref*{lovecycle} is true.
+\Cref*{lovecycle} pode ser simbolizada por \textquotedblleft $\forall x \exists y\, \atom{L}{x,y}$\textquotedblright{}. Suponha que nosso domínio de discurso seja restrito a Imre, Juan e Karl. Suponha também que Karl ame Imre, mas não Juan; que Imre ame Juan, mas não Karl; e que Juan ame Karl, mas não Imre. Então \cref*{lovecycle} é verdadeira.
 
-\Cref*{loveconverge} is symbolized by `$\exists y \forall x\,
-\atom{L}{x,y}$'. \Cref{loveconverge} is \emph{not} true in the
-situation just described, since no single person is loved by everyone.
-All three of Juan, Imre and Karl would have to converge on (at least)
-one object of love.
+\Cref*{loveconverge} é simbolizada por \textquotedblleft $\exists y \forall x\,
+\atom{L}{x,y}$\textquotedblright{}. \Cref{loveconverge} \emph{não} é verdadeira na situação descrita, pois nenhuma pessoa é amada por todos.
 
-The point of the example is to illustrate that the order of the quantifiers matters a great deal. Indeed, to switch them around is called a \emph{quantifier shift fallacy}. Here is an example, which comes up in various forms throughout the philosophical literature:
+Imre, Juan e Karl teriam de convergir para (pelo menos) um mesmo objeto de amor.
+
+
+O ponto do exemplo é ilustrar que a ordem dos quantificadores importa muito. De fato, trocar sua ordem é chamado de \emph{falácia da troca de quantificadores}. Eis um exemplo, que aparece sob várias formas na literatura filosófica:
 	\begin{earg}
-		\item[] For every person, there is some truth they cannot know. \hfill ($\forall \exists$)
-		\item[\texttherefore] There is some particular truth that no person can know. \hfill ($\exists \forall$)
+\item[] Para toda pessoa, existe alguma verdade que ela não pode conhecer. \hfill ($\forall \exists$)
+\item[\texttherefore] Existe alguma verdade específica que ninguém pode conhecer. \hfill ($\exists \forall$)
 	\end{earg}
-This argument form is obviously invalid. It's just as bad as:\footnote{Thanks to Rob Trueman for the example.}
+Essa forma de argumento é obviamente inválida. Ela é tão ruim quanto:
 	\begin{earg}
-		\item[] Every dog has its day. \hfill ($\forall \exists$)
-		\item[\texttherefore] There is a day for all the dogs. \hfill ($\exists \forall$)
+\item[] Todo cão tem o seu dia. \hfill ($\forall \exists$)
+\item[\texttherefore] Existe um dia para todos os cães. \hfill ($\exists \forall$)
 	\end{earg}
 
-The order of quantifiers is also important in definitions in mathematics.  For instance, there is a big difference between pointwise and uniform continuity of functions:
+A ordem dos quantificadores também é importante nas definições matemáticas. Por exemplo, há uma grande diferença entre a continuidade pontual e a continuidade uniforme de funções:
 \begin{itemize}
-\item A function $f$ is \emph{pointwise continuous} if
+\item Uma função $f$ é \emph{contínua pontualmente} se
 \[
 \forall \epsilon\forall x\exists \delta\forall y(\left|x - y\right| < \delta \to \left|f(x) - f(y)\right| < \epsilon)
 \]
-\item A function $f$ is \emph{uniformly continuous} if
+\item Uma função $f$ é \emph{uniformemente contínua} se
 \[
 \forall \epsilon\exists \delta\forall x\forall y(\left|x - y\right| < \delta \to \left|f(x) - f(y)\right| < \epsilon)
 \]
 \end{itemize}
 
-The moral is simple: \emph{take great care with the order of your quantifiers!}
+A lição é simples: \emph{tenha muito cuidado com a ordem dos seus quantificadores!}
 
 
-\section{Stepping-stones to symbolization}
-As we are starting to see, symbolization in FOL can become a bit tricky. So, when symbolizing a complex sentence, you should lay down several stepping-stones. As usual, the idea is best illustrated by example. Consider this symbolisation key: 
+\section{Pedras de apoio para a simbolização}
+Como estamos começando a perceber, a simbolização na LPO pode tornar-se um pouco complicada. Portanto, ao simbolizar uma sentença complexa, você deve estabelecer várias pedras de apoio. Como de costume, a ideia é melhor ilustrada por um exemplo. Considere esta chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] people and dogs
-\item[\atom{D}{x}] \gap{x} is a dog
-\item[\atom{F}{x,y}] \gap{x} is a friend of \gap{y}
-\item[\atom{O}{x,y}] \gap{x} owns \gap{y}
+\item[\text{domínio}] pessoas e cães
+\item[\atom{D}{x}] \gap{x} é um cão
+\item[\atom{F}{x,y}] \gap{x} é amigo de \gap{y}
+\item[\atom{O}{x,y}] \gap{x} possui \gap{y}
 \item[g] Geraldo
 \end{ekey}
-Now let's try to symbolize these sentences:
+Agora vamos tentar simbolizar estas sentenças:
 \begin{enumerate}
-\item\label{dog2} Geraldo is a dog owner.
-\item\label{dog3} Someone is a dog owner.
-\item\label{dog4} All of Geraldo's friends are dog owners.
-\item\label{dog5} Every dog owner is a friend of a dog owner.
-\item\label{dog6} Every dog owner's friend owns a dog of a friend.
+\item\label{dog2} Geraldo é dono de um cão.
+\item\label{dog3} Alguém é dono de um cão.
+\item\label{dog4} Todos os amigos de Geraldo são donos de cães.
+\item\label{dog5} Todo dono de cão é amigo de algum dono de cão.
+\item\label{dog6} Todo amigo de um dono de cão possui um cão de um amigo.
 \end{enumerate}
-\Cref*{dog2} can be paraphrased as, `There is a dog that Geraldo owns'. This can be symbolized by `$\exists x(\atom{D}{x} \eand \atom{O}{g,x})$'.
+\Cref*{dog2} pode ser parafraseada como \textquotedblleft há um cão que Geraldo possui\textquotedblright{}. Isso pode ser simbolizado por \textquotedblleft $\exists x(\atom{D}{x} \eand \atom{O}{g,x})$\textquotedblright{}.
 
-\Cref*{dog3} can be paraphrased as, `There is some $y$ such that $y$ is a dog owner'. Dealing with part of this, we might write `$\exists y(y\text{ is a dog owner})$'. Now the fragment we have left as `$y$ is a dog owner' is much like \cref*{dog2}, except that it is not specifically about Geraldo. So we can symbolize \cref*{dog3} by:
+\Cref*{dog3} pode ser parafraseada como \textquotedblleft existe algum $y$ tal que $y$ é dono de um cão\textquotedblright{}. Lidando com parte disso, poderíamos escrever \textquotedblleft $\exists y(y\text{ é dono de um cão})$\textquotedblright{}. Agora, o fragmento que resta — \textquotedblleft $y$ é dono de um cão\textquotedblright{} — é muito parecido com \cref*{dog2}, exceto por não tratar especificamente de Geraldo. Assim, podemos simbolizar \cref*{dog3} por:
 $$\exists y \exists x(\atom{D}{x} \eand \atom{O}{y,x})$$
-We should pause to clarify something here. In working out how to
-symbolize the last sentence, we wrote down `$\exists y(y\text{ is a
-dog owner})$'. To be very clear: this is \emph{neither} an FOL
-sentence \emph{nor} an English sentence: it uses bits of FOL
-(`$\exists$', `$y$') and bits of English (`dog owner'). It is really
-\emph{just a stepping-stone} on the way to symbolizing the entire
-English sentence with a sentence of FOL. You should regard it as a bit of
-rough-working-out, on a par with the doodles that you might
-absent-mindedly draw in the margin of this book, whilst you are
-concentrating fiercely on some problem.  
+Devemos fazer uma pausa para esclarecer algo. Ao descobrir como simbolizar a última sentença, escrevemos \textquotedblleft $\exists y(y\text{ é
+dono de um cão})$\textquotedblright{}. Para ser muito claro: isso \emph{não é} uma sentença da LPO nem uma sentença em português: usa partes da LPO (\textquotedblleft $\exists$\textquotedblright{}, \textquotedblleft $y$\textquotedblright{}) e partes do português (\textquotedblleft dono de um cão\textquotedblright{}). É realmente \emph{apenas uma pedra de apoio} no caminho para simbolizar a sentença em português inteira com uma sentença da LPO. Você deve tratá-la como um rascunho de trabalho, comparável aos rabiscos que talvez desenhe distraidamente na margem deste livro enquanto se concentra intensamente em algum problema.
 
-\Cref*{dog4} can be paraphrased as, `Every $x$ who is a friend of Geraldo is a dog owner'. Using our stepping-stone tactic, we might write 
-$$\forall x \bigl[\atom{F}{x,g} \eif x \text{ is a dog owner}\bigr]$$
-Now the fragment that we have left to deal with, `$x$ is a dog owner', is structurally just like \cref*{dog2}. However, it would be a mistake for us simply to write 
+
+
+
+
+
+
+
+
+\Cref*{dog4} pode ser parafraseada como \textquotedblleft todo $x$ que é amigo de Geraldo é dono de um cão\textquotedblright{}. Usando nossa tática das pedras de apoio, poderíamos escrever
+$$\forall x \bigl[\atom{F}{x,g} \eif x \text{ é dono de um cão}\bigr]$$
+Agora, o fragmento que resta tratar, \textquotedblleft $x$ é dono de um cão\textquotedblright{}, é estruturalmente semelhante a \cref*{dog2}. No entanto, seria um erro simplesmente escrever
 $$\forall x \bigl[\atom{F}{x,g} \eif \exists x(\atom{D}{x} \eand \atom{O}{x,x})\bigr]$$
-for we would here have a \emph{clash of variables}. The scope of the universal quantifier, `$\forall x$', is the entire conditional, so the `$x$' in `$\atom{D}{x}$' should be governed by that, but `$\atom{D}{x}$' also falls under the scope of the existential quantifier `$\exists x$', so the `$x$' in `$\atom{D}{x}$' should be governed by that. Now confusion reigns: which `$x$' are we talking about? Suddenly the sentence becomes ambiguous (if it is even meaningful at all), and logicians hate ambiguity. The broad moral is that a single variable cannot serve two quantifier-masters simultaneously.
+pois aqui teríamos um \emph{conflito de variáveis}. O escopo do quantificador universal, \textquotedblleft $\forall x$\textquotedblright{}, é o condicional inteiro; portanto, o \textquotedblleft $x$\textquotedblright{} em \textquotedblleft $\atom{D}{x}$\textquotedblright{} deveria ser governado por ele, mas \textquotedblleft $\atom{D}{x}$\textquotedblright{} também cai sob o escopo do quantificador existencial \textquotedblleft $\exists x$\textquotedblright{}, de modo que o \textquotedblleft $x$\textquotedblright{} em \textquotedblleft $\atom{D}{x}$\textquotedblright{} deveria ser governado por este. Agora reina a confusão: de qual \textquotedblleft $x$\textquotedblright{} estamos falando? De repente, a sentença se torna ambígua (se é que tem algum significado), e os lógicos odeiam a ambiguidade. A lição geral é que uma única variável não pode servir simultaneamente a dois quantificadores-mestres.
 
-To continue our symbolization, then, we must choose some different variable for our existential quantifier. What we want is something like:
+Para continuar nossa simbolização, então, precisamos escolher alguma variável diferente para o nosso quantificador existencial. Queremos algo como:
 $$\forall x\bigl[\atom{F}{x,g} \eif\exists z(\atom{D}{z} \eand \atom{O}{x,z})\bigr]$$
-This adequately symbolizes \cref*{dog4}.
+Isso simboliza adequadamente \cref*{dog4}.
 
-\Cref{dog5} can be paraphrased as `For any $x$ that is a dog owner, there is a dog owner who $x$ is a friend of'. Using our stepping-stone tactic, this becomes 
-$$\forall x\bigl[\mbox{$x$ is a dog owner}\eif\exists y(\mbox{$y$ is a dog owner}\eand \atom{F}{x,y})\bigr]$$
-Completing the symbolization, we end up with
+\Cref{dog5} pode ser parafraseada como \textquotedblleft para qualquer $x$ que seja dono de um cão, existe um dono de cão de quem $x$ é amigo\textquotedblright{}. Usando nossa tática das pedras de apoio, isso se torna
+$$\forall x\bigl[\mbox{$x$ é dono de um cão}\eif\exists y(\mbox{$y$ é dono de um cão}\eand \atom{F}{x,y})\bigr]$$
+Completando a simbolização, obtemos
 $$\forall x\bigl[\exists z(\atom{D}{z} \eand \atom{O}{x,z})\eif\exists y\bigl(\exists z(\atom{D}{z} \eand \atom{O}{y,z})\eand \atom{F}{x,y}\bigr)\bigr]$$
-Note that we have used the same letter, `$z$', in both the antecedent and the consequent of the conditional, but that these are governed by two different quantifiers. This is ok: there is no clash here, because it is clear which quantifier that variable falls under. We might graphically represent the scope of the quantifiers thus:
-$$\overbrace{\forall x\bigl[\overbrace{\exists z(\atom{D}{z} \eand \atom{O}{x,z})}^{\text{scope of 1st `}\exists z\text{'}}\eif \overbrace{\exists y(\overbrace{\exists z(\atom{D}{z} \eand \atom{O}{y,z})}^{\text{scope of 2nd `}\exists z\text{'}}\eand \atom{F}{x,y})\bigr]}^{\text{scope of `}\exists y\text{'}}}^{\text{scope of `}\forall x\text{'}}$$
-This shows that no variable is being forced to serve two masters simultaneously.
+Observe que usamos a mesma letra, \textquotedblleft $z$\textquotedblright{}, tanto no antecedente quanto no consequente do condicional, mas elas são governadas por dois quantificadores diferentes. Isso está correto: não há conflito aqui, pois é claro qual quantificador governa essa variável. Podemos representar graficamente o escopo dos quantificadores assim:
+$$\overbrace{\forall x\bigl[\overbrace{\exists z(\atom{D}{z} \eand \atom{O}{x,z})}^{\text{escopo da primeira ocorrência de }\exists z}\eif \overbrace{\exists y(\overbrace{\exists z(\atom{D}{z} \eand \atom{O}{y,z})}^{\text{escopo da segunda ocorrência de }\exists z}\eand \atom{F}{x,y})}^{\text{escopo de }\exists y}\bigr]}^{\text{escopo de }\forall x}$$
+Isso mostra que nenhuma variável é forçada a servir simultaneamente a dois mestres.
 
-\Cref{dog6} is the trickiest yet. First we paraphrase it as
-`For any $x$ that is a friend of a dog owner, $x$ owns a dog which is
-also owned by a friend of~$x$'. Using our stepping-stone tactic, this
-becomes:
+\Cref{dog6} é a mais difícil até agora. Primeiro, parafraseamo-la como
+\textquotedblleft para qualquer $x$ que seja amigo de um dono de cão, $x$ possui um cão que também é possuído por um amigo de $x$\textquotedblright{}. Usando nossa tática das pedras de apoio, isso se torna:
+
+
 \ifHTMLtarget
-\[\forall x\bigl[x\text{ is a friend of a dog owner}\eif 
-x\text{ owns a dog which is owned by a friend of }x\bigr]\]
+\[\forall x\bigl[x\text{ é amigo de um dono de cão}\eif x\text{ possui um cão que é possuído por um amigo de }x\bigr]\]
+
 \else
 \begin{multline*}
-\forall x\bigl[x\text{ is a friend of a dog owner}\eif {}\\
-x\text{ owns a dog which is owned by a friend of }x\bigr]
+\forall x\bigl[x\text{ é amigo de um dono de cão}\eif {}\\
+x\text{ possui um cão que é possuído por um amigo de }x\bigr]
 \end{multline*}
 \fi
-Breaking this down a bit more:
+Decompondo isso um pouco mais:
 \ifHTMLtarget
-\[\forall x\bigl[\exists y(\atom{F}{x,y} \eand y\text{ is a dog owner})\eif
-\exists y((\atom{D}{y} \eand \atom{O}{x,y}) \eand y\text{ is owned by
-a friend of }x)\bigr]\]
+\[\forall x\bigl[\exists y(\atom{F}{x,y} \eand y\text{ é dono de um cão})\eif
+\exists y((\atom{D}{y} \eand \atom{O}{x,y}) \eand y\text{ é possuído por
+um amigo de }x)\bigr]\]
 \else
 \begin{multline*}
-	\forall x\bigl[\exists y(\atom{F}{x,y} \eand y\text{ is a dog owner})\eif {}\\
-\exists y((\atom{D}{y} \eand \atom{O}{x,y}) \eand y\text{ is owned by a friend of }x)\bigr]
+\forall x\bigl[\exists y(\atom{F}{x,y} \eand y\text{ é dono de um cão})\eif {}
+\exists y((\atom{D}{y} \eand \atom{O}{x,y}) \eand y\text{ é possuído por um amigo de }x)\bigr]
 \end{multline*}
 \fi
-And a bit more: 
+E um pouco mais:
 \ifHTMLtarget
-\[\forall x\bigl[\exists y(\atom{F}{x,y} \eand \exists z(\atom{D}{z} \eand \atom{O}{y,z})) \eif 
+\[\forall x\bigl[\exists y(\atom{F}{x,y} \eand \exists z(\atom{D}{z} \eand \atom{O}{y,z})) \eif
 \exists y((\atom{D}{y} \eand \atom{O}{x,y}) \eand \exists z(\atom{F}{z,x} \eand \atom{O}{z,y}))\bigr]\]
 \else
 \begin{multline*}
@@ -782,266 +782,266 @@ And a bit more:
 \exists y((\atom{D}{y} \eand \atom{O}{x,y}) \eand \exists z(\atom{F}{z,x} \eand \atom{O}{z,y}))\bigr]
 \end{multline*}
 \fi
-And we are done!
+E terminamos!
 
-There is one subtle issue we should briefly address. We paraphrased
-\cref{dog3} as `There is some $y$ such that $y$ is a dog owner'.
-Now our domain includes people and dogs, and `someone' includes
-people, but (at least arguably) does not include dogs.  To be more
-correct, we should have paraphrased \cref*{dog3} as `There is
-some $y$ such that $y$ is a person and a dog owner'. A more accurate
-symbolization of `Someone is a dog owner' would require that we add a
-predicate for `\blank{} is a person' to our symbolization key:
+Há uma questão sutil que devemos abordar brevemente. Parafraseamos
+\cref{dog3} como \textquotedblleft existe algum $y$ tal que $y$ é dono de um cão\textquotedblright{}.
+Agora nosso domínio inclui pessoas e cães, e \textquotedblleft alguém\textquotedblright{} inclui
+pessoas, mas (pelo menos, pode-se argumentar) não inclui cães. Para sermos
+mais corretos, deveríamos ter parafraseado \cref*{dog3} como \textquotedblleft existe
+algum $y$ tal que $y$ é uma pessoa e dono de um cão\textquotedblright{}. Uma
+simbolização mais precisa de \textquotedblleft alguém é dono de um cão\textquotedblright{} exigiria que acrescentássemos um
+predicado para \textquotedblleft \blank{} é uma pessoa\textquotedblright{} à nossa chave de simbolização:
 \begin{ekey}
-	\item[\atom{P}{x}] \gap{x} is a person
+\item[\atom{P}{x}] \gap{x} é uma pessoa
 \end{ekey}
-Then we can give a better symbolization of \cref{dog3}:
+Então podemos dar uma simbolização melhor de \cref{dog3}:
 $$\exists y (\atom{P}{y} \eand \exists x(\atom{D}{x} \eand
 \atom{O}{y,x}))$$
-`Everyone' and `no one' have to be treated similarly: `Everyone
-is a friend of Geraldo' and `No one is a friend of Geraldo' would be
-symbolized, respectively, as
+\textquotedblleft todos\textquotedblright{} e \textquotedblleft ninguém\textquotedblright{} devem ser tratados de maneira semelhante: \textquotedblleft todos são amigos de Geraldo\textquotedblright{} e \textquotedblleft ninguém é amigo de Geraldo\textquotedblright{} seriam simbolizadas, respectivamente, como
+
+
 \begin{align*}
 	& \forall x(\atom{P}{x} \eif \atom{F}{x,g})\\
 	& \forall x(\atom{P}{x} \eif \enot\atom{F}{x,g}).
 \end{align*}
-Only `someone', `everyone', and `no one' require this treatment. In
-particular, we do not need to explicitly state in the symbolization of
-\cref{dog2} that Geraldo is a person. Neither do we have to
-ensure in \cref{dog4} that Geraldo's friend~$x$ is a person.
-Although it may be true that only people can own dogs or be friends
-with Geraldo, it is not part of what the sentences \emph{say}, and so
-does not need to be taken into account when we symbolize
-them.\footnote{You might object: but the sentences also don't say that
-dogs aren't people. E.g., if we're talking about the fictional world
-of Mickey Mouse, Goofy should be included in `everyone', but Pluto
-should not be.  That's why we picked the predicate `\blank{} is a
-person' and not `\blank{} is a human': in that domain, Goofy would
-fall under both `\blank{} is a person' and `\blank{} is a dog', but
-Pluto would only fall under `\blank{} is a dog'.}
+Somente \textquotedblleft alguém\textquotedblright{}, \textquotedblleft todos\textquotedblright{} e \textquotedblleft ninguém\textquotedblright{} exigem esse tratamento. Em particular, não precisamos declarar explicitamente na simbolização de
+\cref{dog2} que Geraldo é uma pessoa. Tampouco precisamos
+garantir em \cref{dog4} que o amigo $x$ de Geraldo é uma pessoa.
+Embora possa ser verdade que somente pessoas possam possuir cães ou ser amigas
+de Geraldo, isso não faz parte do que as sentenças \emph{dizem} e, portanto, não
+precisa ser levado em conta quando as simbolizamos.
 
-\section{Supressed quantifiers}\label{ss:SuppQuant}
+\footnote{Você pode objetar: mas as sentenças também não dizem que os cães não são pessoas. Por exemplo, se estamos falando do mundo ficcional do Mickey Mouse, Pateta deveria ser incluído em \textquotedblleft todos\textquotedblright{}, mas Pluto não deveria. Por isso escolhemos o predicado \textquotedblleft \blank{} é uma pessoa\textquotedblright{} e não \textquotedblleft \blank{} é humano\textquotedblright{}: nesse domínio, Pateta cairia tanto sob \textquotedblleft \blank{} é uma pessoa\textquotedblright{} quanto sob \textquotedblleft \blank{} é um cão\textquotedblright{}, mas Pluto cairia apenas sob \textquotedblleft \blank{} é um cão\textquotedblright{}.}
 
-Logic can often help to get clear on the meanings of English claims,
-especially where the quantifiers are left implicit or their order is
-ambiguous or unclear. The clarity of expression and thinking afforded
-by FOL can give you a significant advantage in argument, as can be
-seen in the following takedown by British political philosopher Mary
-Astell (1666--1731) of her contemporary, the theologian William
-Nicholls. In Discourse IV: The Duty of Wives to their Husbands of his
-\textit{The Duty of Inferiors towards their Superiors, in Five
-  Practical Discourses} (London 1701), Nicholls argued that women are
-naturally inferior to men. In the preface to the 3rd edition of her
-treatise \textit{Some Reflections upon Marriage, Occasion'd by the Duke
-  and Duchess of Mazarine's Case; which is also considered,} Astell
-responded as follows:
+
+
+
+
+
+
+\section{Quantificadores suprimidos}\label{ss:SuppQuant}
+
+A lógica pode muitas vezes ajudar a esclarecer os significados de afirmações em português, especialmente quando os quantificadores ficam implícitos ou sua ordem é ambígua ou pouco clara. A clareza de expressão e de pensamento proporcionada pela LPO pode dar uma vantagem significativa em um argumento, como se pode ver na refutação a seguir, feita pela filósofa política britânica Mary Astell (1666--1731) de seu contemporâneo, o teólogo William Nicholls. Em \textit{Discurso IV: O dever das esposas para com seus maridos}, de \textit{O dever dos inferiores para com seus superiores, em cinco discursos práticos} (Londres, 1701), Nicholls argumentou que as mulheres são naturalmente inferiores aos homens. No prefácio da terceira edição de seu tratado \textit{Algumas reflexões sobre o casamento, ocasionadas pelo caso do duque e da duquesa de Mazarino; que também é examinado}, Astell respondeu da seguinte maneira:
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{quotation}
-'Tis true, thro' Want of Learning, and of that Superior Genius which
-Men as Men lay claim to, she [Astell] was ignorant of the
-\textit{Natural Inferiority} of our Sex, which our Masters lay down as
-a Self-Evident and Fundamental Truth. She saw nothing in the Reason of
-Things, to make this either a Principle or a Conclusion, but much to
-the contrary; it being Sedition at least, if not Treason to assert it
-in this Reign.
+É verdade que, por falta de instrução e daquele Gênio Superior que os Homens, como Homens, reivindicam para si, ela [Astell] ignorava a \textit{Inferioridade Natural} do nosso Sexo, que nossos Mestres apresentam como uma Verdade Autoevidente e Fundamental. Ela não viu nada na Razão das Coisas que fizesse disso um Princípio ou uma Conclusão, mas muito em contrário; pois afirmar isso neste Reinado seria, no mínimo, sedição, se não traição.
 
-For if by the Natural Superiority of their Sex, they mean that
-\textit{every} Man is by Nature superior to \textit{every} Woman,
-which is the obvious meaning, and that which must be stuck to if they
-would speak Sense, it wou'd be a Sin in \textit{any} Woman to have
-Dominion over \textit{any} Man, and the greatest Queen ought not to
-command but to obey her Footman, because no Municipal Laws can
-supersede or change the Law of Nature; so that if the Dominion of the
-Men be such, the \textit{Salique Law,}\footnote{The Salique law was
-  the common law of France which prohibited the crown be passed on to
-  female heirs.} as unjust as \textit{English Men} have ever thought
-it, ought to take place over all the Earth, and the most glorious
-Reigns in the \textit{English, Danish, Castilian}, and other Annals,
-were wicked Violations of the Law of Nature!
 
-If they mean that \textit{some} Men are superior to \textit{some}
-Women this is no great Discovery; had they turn'd the Tables they
-might have seen that \textit{some} Women are Superior to \textit{some}
-Men. Or had they been pleased to remember their Oaths of Allegiance
-and Supremacy, they might have known that \textit{One} Woman is
-superior to \textit{All} the Men in these Nations, or else they have
-sworn to very little purpose.\footnote{In 1706, England was ruled by
-  Queen Anne.} And it must not be suppos'd, that their Reason and
-Religion wou'd suffer them to take Oaths, contrary to the Laws of
-Nature and Reason of things.\footnote{Mary Astell, \textit{Reflections
-    upon Marriage}, 1706 Preface, iii--iv, and Mary Astell,
-  \textit{Political Writings}, Patricia Springborg (ed.), Cambridge
-  University Press, 1996, pp.~9--10.}
+
+
+
+
+
+Pois, se pela Superioridade Natural de seu Sexo eles querem dizer que \textit{todo} Homem é por Natureza superior a \textit{toda} Mulher, que é o significado óbvio e aquele ao qual devem ater-se se quiserem falar com sentido, seria um Pecado para \textit{qualquer} Mulher exercer Domínio sobre \textit{qualquer} Homem, e a maior Rainha não deveria comandar, mas obedecer ao seu criado, pois nenhuma Lei Municipal pode suplantar ou alterar a Lei da Natureza; de modo que, se o Domínio dos Homens for assim, a \textit{Lei Sálica,}\footnote{A lei sálica era o direito consuetudinário da França que proibia que a coroa passasse a herdeiras mulheres.} tão injusta quanto os \textit{Homens ingleses} sempre a consideraram, deveria vigorar sobre toda a Terra, e os mais gloriosos Reinados dos Anais \textit{ingleses, dinamarqueses, castelhanos} e de outros povos foram violações perversas da Lei da Natureza!
+
+
+
+
+
+
+
+
+
+
+
+
+
+Se querem dizer que \textit{alguns} Homens são superiores a \textit{algumas} Mulheres, isso não é grande descoberta; se tivessem virado a mesa, poderiam ter visto que \textit{algumas} Mulheres são superiores a \textit{alguns} Homens. Ou, se tivessem tido a bondade de lembrar seus Juramentos de Lealdade e Supremacia, poderiam ter sabido que \textit{Uma} Mulher é superior a \textit{Todos} os Homens nestas nações, ou então juraram com pouquíssimo propósito.\footnote{Em 1706, a Inglaterra era governada pela rainha Ana.} E não se deve supor que sua Razão e Religião lhes permitiriam prestar Juramentos contrários às Leis da Natureza e à Razão das coisas.\footnote{Mary Astell, \textit{Reflections upon Marriage}, prefácio de 1706, iii--iv, e Mary Astell, \textit{Political Writings}, Patricia Springborg (org.), Cambridge University Press, 1996, p.~9--10.}
+
+
+
+
+
+
+
+
+
+
+
+
 \end{quotation}
-We can symbolize the different interpretations Astell offers of
-Nicholls' claim that men are superior to women:
-He either meant that every man is superior to every woman, i.e.,
+Podemos simbolizar as diferentes interpretações que Astell oferece da afirmação de Nicholls de que os homens são superiores às mulheres:
+
+Ele quis dizer ou que todo homem é superior a toda mulher, isto é,
 \[
 \forall x(\atom{M}{x} \eif \forall y(\atom{W}{y} \eif \atom{S}{x,y}))
 \]
-or that some men are superior to some women,
+ou que alguns homens são superiores a algumas mulheres,
 \[
 \exists x(\atom{M}{x} \eand \exists y(\atom{W}{y} \eand \atom{S}{x,y})).
 \]
-The latter is true, but so is
+Esta última afirmação é verdadeira, mas também é verdadeira
 \[
 \exists y(\atom{W}{y} \eand \exists x(\atom{M}{x} \eand \atom{S}{y,x}))
 \]
-(some women are superior to some men), so that would be ``no great
-discovery.''  In fact, since the Queen is superior to all her
-subjects, it's even true that some woman is superior to every man,
-i.e.,
+(algumas mulheres são superiores a alguns homens), de modo que isso seria \textquotedblleft nenhuma grande descoberta\textquotedblright{}. De fato, como a Rainha é superior a todos os seus súditos, é até mesmo verdade que alguma mulher é superior a todo homem, isto é,
+
+
+
 \[
 \exists y(\atom{W}{y} \land \forall x(\atom{M}{x} \eif \atom{S}{y,x})).
 \]
-But this is incompatible with the ``obvious meaning'' of Nicholls'
-claim, i.e., the first reading. So what Nicholls claims amounts to
-treason against the Queen!
+Mas isso é incompatível com o \textquotedblleft significado óbvio\textquotedblright{} da afirmação de Nicholls, isto é, a primeira leitura. Portanto, o que Nicholls afirma equivale a traição contra a Rainha!
+
+
 
 \practiceproblems
 \solutions
 \problempart
-Using this symbolization key:
+Usando esta chave de simbolização:
 \begin{ekey}
-\item[\text{domain}] all animals
-\item[\atom{A}{x}] \gap{x} is an alligator
-\item[\atom{M}{x}] \gap{x} is a monkey
-\item[\atom{R}{x}] \gap{x} is a reptile
-\item[\atom{Z}{x}] \gap{x} lives at the zoo
-\item[\atom{L}{x,y}] \gap{x} loves \gap{y}
+\item[\text{domínio}] todos os animais
+\item[\atom{A}{x}] \gap{x} é um jacaré
+\item[\atom{M}{x}] \gap{x} é um macaco
+\item[\atom{R}{x}] \gap{x} é um réptil
+\item[\atom{Z}{x}] \gap{x} vive no zoológico
+\item[\atom{L}{x,y}] \gap{x} ama \gap{y}
 \item[a] Amos
 \item[b] Bouncer
 \item[c] Cleo
 \end{ekey}
-symbolize each of the following sentences in FOL:
+simbolize cada uma das seguintes sentenças na LPO:
 \begin{compactlist}
 %\item Amos, Bouncer, and Cleo all live at the zoo.
 %\item Bouncer is a reptile, but not an alligator.
-\item If Cleo loves Bouncer, then Bouncer is a monkey.
-\item If both Bouncer and Cleo are alligators, then Amos loves them both.
+\item Se Cleo ama Bouncer, então Bouncer é um macaco.
+\item Se Bouncer e Cleo são jacarés, então Amos ama ambos.
 %\item Some reptile lives at the zoo.
 %\item Every alligator is a reptile.
 %\item Any animal that lives at the zoo is either a monkey or an alligator.
 %\item There are reptiles which are not alligators.
-\item Cleo loves a reptile.
-\item Bouncer loves all the monkeys that live at the zoo.
-\item All the monkeys that Amos loves love him back.
+\item Cleo ama um réptil.
+\item Bouncer ama todos os macacos que vivem no zoológico.
+\item Todos os macacos que Amos ama também o amam.
 %\item If any animal is an reptile, then Amos is.
 %\item If any animal is an alligator, then it is a reptile.
-\item Every monkey that Cleo loves is also loved by Amos.
-\item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
+\item Todo macaco que Cleo ama também é amado por Amos.
+\item Há um macaco que ama Bouncer, mas infelizmente Bouncer não retribui esse amor.
 \end{compactlist}
 
-\problempart 
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
+
 \begin{ekey}
-\item[\text{domain}] all animals
-\item[\atom{D}{x}] \gap{x} is a dog
-\item[\atom{S}{x}] \gap{x} likes samurai movies
-\item[\atom{L}{x,y}] \gap{x} is larger than \gap{y}
+\item[\text{domínio}] todos os animais
+\item[\atom{D}{x}] \gap{x} é um cão
+\item[\atom{S}{x}] \gap{x} gosta de filmes de samurai
+\item[\atom{L}{x,y}] \gap{x} é maior que \gap{y}
 \item[r] Rave
 \item[h] Shane
 \item[d] Daisy
 \end{ekey}
-symbolize the following sentences in FOL:
+simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item Rave is a dog who likes samurai movies.
-\item Rave, Shane, and Daisy are all dogs.
-\item Shane is larger than Rave, and Daisy is larger than Shane.
-\item All dogs like samurai movies.
-\item Only dogs like samurai movies.
-\item There is a dog that is larger than Shane.
-\item If there is a dog larger than Daisy, then there is a dog larger than Shane.
-\item No animal that likes samurai movies is larger than Shane.
-\item No dog is larger than Daisy.
-\item Any animal that dislikes samurai movies is larger than Rave.
-\item There is an animal that is between Rave and Shane in size.
-\item There is no dog that is between Rave and Shane in size.
-\item No dog is larger than itself.
-\item Every dog is larger than some dog.
-\item There is an animal that is smaller than every dog.
-\item If there is an animal that is larger than any dog, then that animal does not like samurai movies.
+\item Rave é um cão que gosta de filmes de samurai.
+\item Rave, Shane e Daisy são todos cães.
+\item Shane é maior que Rave, e Daisy é maior que Shane.
+\item Todos os cães gostam de filmes de samurai.
+\item Somente cães gostam de filmes de samurai.
+\item Há um cão que é maior que Shane.
+\item Se há um cão maior que Daisy, então há um cão maior que Shane.
+\item Nenhum animal que gosta de filmes de samurai é maior que Shane.
+\item Nenhum cão é maior que Daisy.
+\item Qualquer animal que não goste de filmes de samurai é maior que Rave.
+\item Há um animal que está entre Rave e Shane em tamanho.
+\item Não há nenhum cão que esteja entre Rave e Shane em tamanho.
+\item Nenhum cão é maior que ele mesmo.
+\item Todo cão é maior que algum cão.
+\item Há um animal que é menor que todo cão.
+\item Se há um animal que é maior que qualquer cão, então esse animal não gosta de filmes de samurai.
 \end{compactlist}
 
 \problempart
 \label{pr.QLcandies}
-Using the symbolization key given, symbolize each English-language sentence into FOL.
+Usando a chave de simbolização fornecida, simbolize cada sentença em português na LPO.
 \begin{ekey}
-\item[\text{domain}] candies
-\item[\atom{C}{x}] \gap{x} has chocolate in it
-\item[\atom{M}{x}] \gap{x} has marzipan in it
-\item[\atom{S}{x}] \gap{x} has sugar in it
-\item[\atom{T}{x}] Boris has tried \gap{x}
-\item[\atom{B}{x,y}] \gap{x} is better than \gap{y}
+\item[\text{domínio}] doces
+\item[\atom{C}{x}] \gap{x} contém chocolate
+\item[\atom{M}{x}] \gap{x} contém marzipã
+\item[\atom{S}{x}] \gap{x} contém açúcar
+\item[\atom{T}{x}] Boris experimentou \gap{x}
+\item[\atom{B}{x,y}] \gap{x} é melhor que \gap{y}
 \end{ekey}
 \begin{compactlist}
-\item Boris has never tried any candy.
-\item Marzipan is always made with sugar.
-\item Some candy is sugar-free.
-\item The very best candy is chocolate.
-\item No candy is better than itself.
-\item Boris has never tried sugar-free chocolate.
-\item Boris has tried marzipan and chocolate, but never together.
+\item Boris nunca experimentou nenhum doce.
+\item Marzipã é sempre feito com açúcar.
+\item Algum doce não contém açúcar.
+\item O melhor doce de todos contém chocolate.
+\item Nenhum doce é melhor que ele mesmo.
+\item Boris nunca experimentou chocolate sem açúcar.
+\item Boris experimentou marzipã e chocolate, mas nunca juntos.
 %\item Boris has tried nothing that is better than sugar-free marzipan.
-\item Any candy with chocolate is better than any candy without it.
-\item Any candy with chocolate and marzipan is better than any candy that lacks both.
+\item Qualquer doce com chocolate é melhor que qualquer doce sem chocolate.
+\item Qualquer doce com chocolate e marzipã é melhor que qualquer doce sem nenhum dos dois.
 \end{compactlist}
 
-\problempart
-Using the following symbolization key:
+Usando a seguinte chave de simbolização:
+
 \begin{ekey}
-\item[\text{domain}] people and dishes at a potluck
-\item[\atom{R}{x}] \gap{x} has run out
-\item[\atom{T}{x}] \gap{x} is on the table
-\item[\atom{F}{x}] \gap{x} is food
-\item[\atom{P}{x}] \gap{x} is a person
-\item[\atom{L}{x,y}] \gap{x} likes \gap{y}
+\item[\text{domínio}] pessoas e pratos de um almoço comunitário
+\item[\atom{R}{x}] \gap{x} acabou
+\item[\atom{T}{x}] \gap{x} está sobre a mesa
+\item[\atom{F}{x}] \gap{x} é comida
+\item[\atom{P}{x}] \gap{x} é uma pessoa
+\item[\atom{L}{x,y}] \gap{x} gosta de \gap{y}
 \item[e] Eli
 \item[f] Francesca
-\item[g] the guacamole
+\item[g] o guacamole
 \end{ekey}
-symbolize the following English sentences in FOL:
+simbolize as seguintes sentenças em português na LPO:
 \begin{compactlist}
-\item All the food is on the table.
-\item If the guacamole has not run out, then it is on the table.
-\item Everyone likes the guacamole.
-\item If anyone likes the guacamole, then Eli does.
-\item Francesca only likes the dishes that have run out.
-\item Francesca likes no one, and no one likes Francesca.
-\item Eli likes anyone who likes the guacamole.
-\item Eli likes anyone who likes the people that he likes.
-\item If there is a person on the table already, then all of the food must have run out.
+\item Toda a comida está sobre a mesa.
+\item Se o guacamole não acabou, então ele está sobre a mesa.
+\item Todos gostam do guacamole.
+\item Se alguém gosta do guacamole, então Eli gosta.
+\item Francesca só gosta dos pratos que acabaram.
+\item Francesca não gosta de ninguém, e ninguém gosta de Francesca.
+\item Eli gosta de qualquer pessoa que goste do guacamole.
+\item Eli gosta de qualquer pessoa que goste das pessoas de quem ele gosta.
+\item Se já houver uma pessoa sobre a mesa, então toda a comida deve ter acabado.
 \end{compactlist}
 
 
 \solutions
-\problempart
+Usando a seguinte chave de simbolização:
 \label{pr.FOLballet}
-Using the following symbolization key:
+
 \begin{ekey}
-\item[\text{domain}] people
-\item[\atom{D}{x}] \gap{x} dances ballet
-\item[\atom{F}{x}] \gap{x} is female
-\item[\atom{M}{x}] \gap{x} is male
-\item[\atom{C}{x,y}] \gap{x} is a child of \gap{y}
-\item[\atom{S}{x,y}] \gap{x} is a sibling of \gap{y}
+\item[\text{domínio}] pessoas
+\item[\atom{D}{x}] \gap{x} dança balé
+\item[\atom{F}{x}] \gap{x} é do sexo feminino
+\item[\atom{M}{x}] \gap{x} é do sexo masculino
+\item[\atom{C}{x,y}] \gap{x} é filho de \gap{y}
+\item[\atom{S}{x,y}] \gap{x} é irmão ou irmã de \gap{y}
 \item[e] Elmer
 \item[j] Jane
 \item[p] Patrick
 \end{ekey}
-symbolize the following sentences in FOL:
+simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item All of Patrick's children are ballet dancers.
-\item Jane is Patrick's daughter.
-\item Patrick has a daughter.
-\item Jane is an only child.
-\item All of Patrick's sons dance ballet.
-\item Patrick has no sons.
-\item Jane is Elmer's niece.
-\item Patrick is Elmer's brother.
-\item Patrick's brothers have no children.
-\item Jane is an aunt.
-\item Everyone who dances ballet has a brother who also dances ballet.
-\item Every woman who dances ballet is the child of someone who dances ballet.
+\item Todos os filhos de Patrick dançam balé.
+\item Jane é filha de Patrick.
+\item Patrick tem uma filha.
+\item Jane é filha única.
+\item Todos os filhos homens de Patrick dançam balé.
+\item Patrick não tem filhos homens.
+\item Jane é sobrinha de Elmer.
+\item Patrick é irmão de Elmer.
+\item Os irmãos de Patrick não têm filhos.
+\item Jane é tia.
+\item Toda pessoa que dança balé tem um irmão que também dança balé.
+\item Toda mulher que dança balé é filha de alguém que dança balé.
 \end{compactlist}
 
 
