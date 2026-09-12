@@ -512,8 +512,8 @@ Para apresentar uma contra-interpretação dessa afirmação, precisamos constru
 
 Por que escolhemos o subscrito \mlK? Acontece que há uma relação importante entre o sistema \mlK{} e a definição de validade que acabamos de dar. Em particular, temos os dois resultados seguintes:
 \begin{compactlist}
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$
+\item Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$
+\item Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$
 \end{compactlist}
 O primeiro resultado é conhecido como resultado de \emph{correção}, pois nos diz que as regras de \mlK{} são boas regras corretas: se você pode justificar um argumento fornecendo uma prova dele usando o sistema \mlK, então esse argumento é realmente válido. O segundo resultado é conhecido como resultado de \emph{completude}, pois nos diz que as regras de \mlK{} são suficientemente amplas para capturar todos os argumentos válidos: se um argumento é válido, será possível oferecer uma prova em \mlK{} que o justifique.
 
@@ -536,8 +536,8 @@ Em português: todo mundo acessa a si mesmo. Ou, em termos de possibilidade rela
 }
 Acrescentamos o subscrito \mlT{} a $\entails$ porque o sistema \mlT{} é correto e completo em relação a essa nova definição de validade:
 \begin{compactlist}
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$
+\item Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$
+\item Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$
 \end{compactlist}
 Como antes, não tentaremos provar esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja reflexiva justifica a regra R\mlT{}:
 \factoidbox{
@@ -563,8 +563,8 @@ Em português: se $w_1$ acessa $w_2$ e $w_2$ acessa $w_3$, então $w_1$ acessa $
 }
 Acrescentamos o subscrito \mlSfour{} a $\entails$ porque o sistema \mlSfour{} é correto e completo em relação a essa nova definição de validade:
 \begin{compactlist}
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$
+\item Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$
+\item Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$
 \end{compactlist}
 Como antes, não tentaremos provar esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja transitiva justifica a regra \mlSfour{}:
 \factoidbox{
@@ -592,8 +592,8 @@ Em português: se $w_1$ acessa $w_2$, então $w_2$ acessa $w_1$. Ou, em termos d
 }
 Acrescentamos o subscrito \mlSfive{} a $\entails$ porque o sistema \mlSfive{} é correto e completo em relação a essa nova definição de validade:
 \begin{compactlist}
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$
-\titem Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$
+\item Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$
+\item Se $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$, então $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$
 \end{compactlist}
 Como antes, não tentaremos provar aqui esses resultados de correção e completude. No entanto, é relativamente fácil ver como exigir que a relação de acessibilidade seja uma relação de equivalência justifica a regra R$\mathbf{5}$:
 \factoidbox{
