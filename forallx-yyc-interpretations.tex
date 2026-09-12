@@ -1,110 +1,110 @@
 %!TEX root = forallxyyc.tex
-\part{Interpretations}
+\part{Interpretações}
 \label{ch.semantics}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
 
-\chapter{Extensionality}\label{s:Interpretations}
+\chapter{Extensionalidade}\label{s:Interpretations}
 
-Recall that TFL is a truth-functional logic. Its connectives are all truth-functional, and \emph{all} that we can do with TFL is key sentences to particular truth values. We can do this \emph{directly}. For example, we might stipulate that the TFL sentence `$P$' is to be true. Alternatively, we can do this \emph{indirectly}, offering a symbolization key, e.g.:
+Lembre-se de que a LVF é uma lógica verofuncional. Seus conectivos são todos verofuncionais, e \emph{tudo} o que podemos fazer com a LVF é associar sentenças a determinados valores de verdade. Podemos fazer isso \emph{diretamente}. Por exemplo, poderíamos estipular que a sentença da LVF \textquotedblleft $P$\textquotedblright{} deve ser verdadeira. Alternativamente, podemos fazer isso \emph{indiretamente}, oferecendo uma chave de simbolização, por exemplo:
 	\begin{ekey}
-		\item[P] Big Ben is in London.
+\item[P] Big Ben está em Londres.
 	\end{ekey}
- But recall from \cref{s:TruthFunctionality} that this is \emph{just} a means of specifying `$P$'s truth value; the symbolization key statement amounts to something like the following stipulation: 
+Mas lembre-se de \cref{s:TruthFunctionality} que este é \emph{apenas} um meio de especificar o valor de verdade de \textquotedblleft $P$\textquotedblright{}; a afirmação da chave de simbolização equivale a algo como a seguinte estipulação:
 	\begin{itemize}
-		\item The TFL sentence `$P$' is true \ifeff{} Big Ben is in London.
+\item A sentença da LVF \textquotedblleft $P$\textquotedblright{} é verdadeira \ifeff{} Big Ben está em Londres.
 	\end{itemize}
-And we emphasized in \cref{s:TruthFunctionality} that TFL cannot handle differences in meaning that go beyond mere differences in truth value.
+E enfatizamos em \cref{s:TruthFunctionality} que a LVF não consegue lidar com diferenças de significado que vão além de meras diferenças de valor de verdade.
 
-\section{Symbolizing versus translating}
+\section{Simbolizar versus traduzir}
 
-FOL has some similar limitations. It gets beyond mere truth values,
-since it enables us to split up sentences into terms, predicates and
-quantifiers. This enables us to consider what is \emph{true of} a
-particular object, or of some or all objects. \emph{But that's it}.
+A LPO tem algumas limitações semelhantes. Ela vai além de meros valores de verdade, pois nos permite decompor sentenças em termos, predicados e quantificadores. Isso nos permite considerar o que é \emph{verdadeiro de} um objeto particular, ou de alguns ou de todos os objetos. \emph{Mas é só isso}.
 
-To unpack this a bit, consider this symbolization key: 
+
+
+
+Para desenvolver um pouco essa ideia, considere esta chave de simbolização:
 	\begin{ekey}
-		\item[\atom{C}{x}] \gap{x} teaches Logic III in Calgary
-	\end{ekey} 
-This stipulation does not carry the \emph{meaning} of the English predicate across into our FOL predicate. We are simply stipulating something like this:
+\item[\atom{C}{x}] \gap{x} ensina Lógica III em Calgary
+	\end{ekey}
+Essa estipulação não transporta o \emph{significado} do predicado em inglês para o nosso predicado da LPO. Estamos simplesmente estipulando algo como isto:
 	\begin{itemize}
-		\item `$\atom{C}{x}$' and `\gap{x} teaches Logic III in Calgary' are to be \emph{true of} exactly the same things.
+\item \textquotedblleft $\atom{C}{x}$\textquotedblright{} e \textquotedblleft \gap{x} ensina Lógica III em Calgary\textquotedblright{} devem ser \emph{verdadeiras de} exatamente as mesmas coisas.
 	\end{itemize}
-So, in particular:
+Assim, em particular:
 	\begin{itemize}
-		\item `$\atom{C}{x}$' is to be true of exactly those things which teach Logic III in Calgary (whatever those things might be).
+\item \textquotedblleft $\atom{C}{x}$\textquotedblright{} deve ser verdadeira exatamente das coisas que ensinam Lógica III em Calgary (quaisquer que sejam essas coisas).
 	\end{itemize}
-This is an indirect way of stipulating which things a predicate is true of.
+Esta é uma maneira indireta de estipular de quais coisas um predicado é verdadeiro.
 
-Alternatively, we can stipulate predicate extensions directly. For example, we can stipulate that `$\atom{C}{x}$' is to be true of Richard Zach, and Richard Zach alone. As it happens, this direct stipulation would have the same effect as the indirect stipulation, since Richard, and Richard alone, teaches Logic~III in Calgary. Note, however, that the English predicates `\blank\ is Richard Zach' and `\blank\ teaches Logic III in Calgary' have very different meanings!
+Alternativamente, podemos estipular diretamente as extensões dos predicados. Por exemplo, podemos estipular que \textquotedblleft $\atom{C}{x}$\textquotedblright{} deve ser verdadeiro de Richard Zach, e somente de Richard Zach. Acontece que essa estipulação direta teria o mesmo efeito que a estipulação indireta, pois Richard, e somente Richard, ensina Lógica~III em Calgary. Observe, contudo, que os predicados em inglês \textquotedblleft \blank\ é Richard Zach\textquotedblright{} e \textquotedblleft \blank\ ensina Lógica III em Calgary\textquotedblright{} têm significados muito diferentes!
 
-The point is that FOL has no resources for dealing with nuances of meaning. When we interpret FOL, all we are considering is what the predicates are true of, regardless of whether we specify these things directly or indirectly. The things a predicate is true of are known as the \define{extension} of that predicate. We say that FOL is an \define{extensional language} because FOL does not represent differences of meaning between predicates that have the same extension.
+O ponto é que a LPO não tem recursos para lidar com nuances de significado. Quando interpretamos a LPO, tudo o que consideramos é de que coisas os predicados são verdadeiros, independentemente de especificarmos essas coisas direta ou indiretamente. As coisas de que um predicado é verdadeiro são conhecidas como a \define{extens\~ao} desse predicado. Dizemos que a LPO é uma \define{linguagem extensional} porque não representa diferenças de significado entre predicados que têm a mesma extensão.
 
-This is why we speak of \emph{symbolizing} English sentences in FOL.
-If translation has to preserve meaning, it is clear that we are not \emph{translating} English into FOL.
+É por isso que falamos em \emph{simbolizar} sentenças em português na LPO. Se traduzir tiver de preservar o significado, fica claro que não estamos \emph{traduzindo} o português para a LPO.
 
-\section{Extensions}\label{sec:extensions}
-We can stipulate directly what predicates are to be true of. And our stipulations can be as arbitrary as we like. For example, we could stipulate that `$\atom{H}{x}$' should be true of, and only of, the following objects:
+
+\section{Extensões}\label{sec:extensions}
+Podemos estipular diretamente de que coisas os predicados devem ser verdadeiros. E nossas estipulações podem ser tão arbitrárias quanto quisermos. Por exemplo, poderíamos estipular que \textquotedblleft $\atom{H}{x}$\textquotedblright{} deve ser verdadeiro, e somente verdadeiro, dos seguintes objetos:
 	\begin{itemize}
 		\item Aristotle
 		\item the number $\pi$
-		\item every top-F key on every piano ever made
+\item toda tecla correspondente à nota dó aguda em todo piano já fabricado
 	\end{itemize}
-Armed with this interpretation of `$\atom{H}{x}$', suppose we now add to our symbolization key:
+Munidos dessa interpretação de \textquotedblleft $\atom{H}{x}$\textquotedblright{}, suponha que acrescentemos à nossa chave de simbolização:
 	\begin{ekey}
 		\item[a] Aristotle
 		\item[h] Hypatia
 		\item[p] the number $\pi$
 	\end{ekey}
-Then `$\atom{H}{a}$' and `$\atom{H}{p}$' will both be true, on this interpretation, but `$\atom{H}{h}$' will be false, since Hypatia was not among the stipulated objects.
+Então \textquotedblleft $\atom{H}{a}$\textquotedblright{} e \textquotedblleft $\atom{H}{p}$\textquotedblright{} serão ambas verdadeiras, nessa interpretação, mas \textquotedblleft $\atom{H}{h}$\textquotedblright{} será falsa, pois Hipátia não estava entre os objetos estipulados.
 
-This process of explicit stipulation is sometimes described as stipulating the \emph{extension} of a predicate. Note that, in the stipulation we just gave, the objects we listed have nothing particularly in common. This doesn't matter. Logic doesn't care about what we humans (at a particular moment) think `naturally goes together'; to logic, all objects are on an equal footing.
+Esse processo de estipulação explícita é às vezes descrito como estipular a \emph{extensão} de um predicado. Observe que, na estipulação que acabamos de fornecer, os objetos listados não têm nada de particularmente comum. Isso não importa. A lógica não se preocupa com o que nós, humanos (em um determinado momento), pensamos que \textquotedblleft naturalmente combina\textquotedblright{}; para a lógica, todos os objetos estão em pé de igualdade.
 
-Any well-defined collection of objects is a potential extension of a one-place predicate.  The example above shows one way of stipulating the extension of `$\atom{H}{x}$' by \emph{enumeration}, i.e., we simply list the objects in the extension of~`$\atom{H}{x}$'. We can also stipulate the extension, as we have also already seen, by giving an English predicate, such as `\gap{x} teaches Logic~III at Calgary' or `\gap{x} is an even integer between $3$ and $9$'. The latter would specify an extension consisting of, and only of, $4$, $6$, and~$8$.
+Qualquer coleção bem definida de objetos é uma extensão potencial de um predicado de um lugar. O exemplo acima mostra uma maneira de estipular a extensão de \textquotedblleft $\atom{H}{x}$\textquotedblright{} por \emph{enumeração}, isto é, simplesmente listamos os objetos que pertencem à extensão de~\textquotedblleft $\atom{H}{x}$\textquotedblright{}. Também podemos estipular a extensão, como já vimos, fornecendo um predicado em português, como \textquotedblleft \gap{x} ensina Lógica~III em Calgary\textquotedblright{} ou \textquotedblleft \gap{x} é um inteiro par entre $3$ e $9$\textquotedblright{}. O segundo especificaria uma extensão constituída por, e somente por, $4$, $6$ e~$8$.
 
-Note that some predicates of English, such as `\gap{x} is a round square', are not true of anything.  In this case we say the extension of the predicate is \emph{empty}.  We do allow empty extensions, and we can stipulate that the extension of `$\atom{H}{x}$' is to be empty simply by not listing any members. (It may be odd to consider collections of no things, but logic is odd this way sometimes.)
+Observe que alguns predicados do português, como \textquotedblleft \gap{x} é um quadrado redondo\textquotedblright{}, não são verdadeiros de coisa alguma. Nesse caso, dizemos que a extensão do predicado é \emph{vazia}. Permitimos extensões vazias e podemos estipular que a extensão de \textquotedblleft $\atom{H}{x}$\textquotedblright{} seja vazia simplesmente não listando nenhum membro. (Pode ser estranho considerar coleções de nenhuma coisa, mas a lógica às vezes é estranha desse modo.)
 
 
-\section{Many-place predicates}
-All of this is quite easy to understand when it comes to one-place predicates, but it gets messier when we deal with two-place predicates. Consider a symbolization key like:
+\section{Predicados de muitos lugares}
+Tudo isso é bastante fácil de entender no caso de predicados de um lugar, mas fica mais complicado quando lidamos com predicados de dois lugares. Considere uma chave de simbolização como:
 	\begin{ekey}
-		\item[\atom{L}{x,y}] \gap{x} loves \gap{y}
+\item[\atom{L}{x,y}] \gap{x} ama \gap{y}
 	\end{ekey}
-Given what we said above, this symbolization key should be read as saying:
+Dado o que dissemos acima, essa chave de simbolização deve ser lida como dizendo:
 	\begin{itemize}
-		\item `$\atom{L}{x,y}$' and `\gap{x} loves \gap{y}' are to be true of exactly the same things.
+\item \textquotedblleft $\atom{L}{x,y}$\textquotedblright{} e \textquotedblleft \gap{x} ama \gap{y}\textquotedblright{} devem ser verdadeiros exatamente das mesmas coisas.
 	\end{itemize}
-So, in particular:
+Assim, em particular:
 	\begin{itemize}
-		\item `$\atom{L}{x,y}$' is to be true of x and y (in that order) \ifeff{} x loves y.
+\item \textquotedblleft $\atom{L}{x,y}$\textquotedblright{} deve ser verdadeira de $x$ e $y$ (nessa ordem) \ifeff{} $x$ ama $y$.
 	\end{itemize}
-It is important that we insist upon the order here, since love---famously---is not always reciprocated. (Note that `x' and `y' on the right here are symbols of augmented English, and that they are being \emph{used}. By contrast, `$x$' and `$y$' in `$\atom{L}{x,y}$' are symbols of FOL, and they are being \emph{mentioned}.)
+É importante insistirmos na ordem aqui, pois o amor — notoriamente — nem sempre é correspondido. (Observe que \textquotedblleft $x$\textquotedblright{} e \textquotedblleft $y$\textquotedblright{} à direita são símbolos do português aumentado e estão sendo \emph{usados}. Em contraste, \textquotedblleft $x$\textquotedblright{} e \textquotedblleft $y$\textquotedblright{} em \textquotedblleft $\atom{L}{x,y}$\textquotedblright{} são símbolos da LPO e estão sendo \emph{mencionados}.)
 
-That is an indirect stipulation. What about a direct stipulation? This is also tricky. If we \emph{simply} list objects that fall under `$\atom{L}{x,y}$', we will not know whether they are the lover or the beloved (or both). We have to find a way to include the order in our explicit stipulation.
+Essa é uma estipulação indireta. E quanto a uma estipulação direta? Isso também é complicado. Se simplesmente listarmos os objetos que caem sob \textquotedblleft $\atom{L}{x,y}$\textquotedblright{}, não saberemos se são o amante ou o amado (ou ambos). Temos de encontrar uma maneira de incluir a ordem em nossa estipulação explícita.
 
-To do this, we can specify that two-place predicates are true of \emph{pairs} of objects, where the order of the pair is important. Thus we might stipulate that `$\atom{B}{x,y}$' is to be true of, and only of, the following pairs of objects:
+Para isso, podemos especificar que predicados de dois lugares são verdadeiros de \emph{pares} de objetos, nos quais a ordem do par é importante. Assim, poderíamos estipular que \textquotedblleft $\atom{B}{x,y}$\textquotedblright{} deve ser verdadeiro, e somente verdadeiro, dos seguintes pares de objetos:
 	\begin{itemize}
 		\item \ntuple{Lenin, Marx}
 		\item \ntuple{de Beauvoir, Sartre}
 		\item \ntuple{Sartre, de Beauvoir}
 	\end{itemize}
-Here the angle-brackets keep us informed concerning order. Suppose we now add the following stipulations:
+Aqui, os colchetes angulares nos mantêm informados sobre a ordem. Suponha que agora acrescentemos as seguintes estipulações:
 	\begin{ekey}
 		\item[l] Lenin
 		\item[m] Marx
 		\item[b] de Beauvoir
 		\item[r] Sartre
 	\end{ekey}
-Then `$\atom{B}{l,m}$' will be true, since \ntuple{Lenin, Marx} is in our explicit list, but `$\atom{B}{m,l}$' will be false, since \ntuple{Marx, Lenin} is not in our list. However, both `$\atom{B}{b,r}$' and `$\atom{B}{r,b}$' will be true, since both \ntuple{de Beauvoir, Sartre} and \ntuple{Sartre, de Beauvoir} are in our explicit list.
+Então \textquotedblleft $\atom{B}{l,m}$\textquotedblright{} será verdadeira, pois \ntuple{Lenin, Marx} está em nossa lista explícita, mas \textquotedblleft $\atom{B}{m,l}$\textquotedblright{} será falsa, pois \ntuple{Marx, Lenin} não está em nossa lista. Entretanto, tanto \textquotedblleft $\atom{B}{b,r}$\textquotedblright{} quanto \textquotedblleft $\atom{B}{r,b}$\textquotedblright{} serão verdadeiras, pois tanto \ntuple{de Beauvoir, Sartre} quanto \ntuple{Sartre, de Beauvoir} estão em nossa lista explícita.
 
-To make these ideas more precise, we would need to develop some very elementary \emph{set theory}. Set theory has formal apparatus which allows us to deal with extensions, ordered pairs, and so forth. However, set theory is not covered in this book. So I shall leave these ideas at an imprecise level. Nevertheless, the general idea should be clear.
+Para tornar essas ideias mais precisas, precisaríamos desenvolver alguma \emph{teoria elementar dos conjuntos}. A teoria dos conjuntos tem um aparato formal que nos permite lidar com extensões, pares ordenados e assim por diante. No entanto, a teoria dos conjuntos não é abordada neste livro. Portanto, deixarei essas ideias em um nível impreciso. Ainda assim, a ideia geral deve estar clara.
 
 
-\section{Semantics for identity}
-Identity is a special predicate of FOL. We write it a bit differently than other two-place predicates: `$x=y$' instead of `$\atom{I}{x,y}$' (for example). More important, though, is that its interpretation is fixed, once and for all.
+\section{Semântica da identidade}
+A identidade é um predicado especial da LPO. Nós a escrevemos de maneira um pouco diferente de outros predicados de dois lugares: \textquotedblleft $x=y$\textquotedblright{} em vez de \textquotedblleft $\atom{I}{x,y}$\textquotedblright{} (por exemplo). Mais importante, porém, é que sua interpretação é fixada de uma vez por todas.
 
-If two names refer to the same object, then swapping one name for another will not change the truth value of any sentence. So, in particular, if `$a$' and `$b$' name the same object, then all of the following will be true:\label{model.nonidentity}
+Se dois nomes se referem ao mesmo objeto, então trocar um nome pelo outro não mudará o valor de verdade de nenhuma sentença. Assim, em particular, se \textquotedblleft $a$\textquotedblright{} e \textquotedblleft $b$\textquotedblright{} nomeiam o mesmo objeto, todas as seguintes sentenças serão verdadeiras:\label{model.nonidentity}
 	\begin{align*}
 	 	\atom{A}{a} &\eiff \atom{A}{b} \\
 	 	\atom{B}{a} &\eiff \atom{B}{b}\\
@@ -113,69 +113,69 @@ If two names refer to the same object, then swapping one name for another will n
 		\atom{R}{c,a} &\eiff \atom{R}{c,b}\\
 		\forall x\, \atom{R}{x,a} &\eiff \forall x\, \atom{R}{x,b}
 	\end{align*}
-Some philosophers have believed the reverse of this claim. That is, they have believed that when exactly the same sentences (not containing `$=$') are true of x and~y, then x and y are the very same object. This is a highly controversial philosophical claim---sometimes called the \emph{identity of indiscernibles}---and our logic will not subscribe to it; we allow that exactly the same things might be true of two \emph{distinct} objects.
+Alguns filósofos acreditaram no inverso dessa afirmação. Isto é, acreditaram que, quando exatamente as mesmas sentenças (que não contenham \textquotedblleft $=$\textquotedblright{}) são verdadeiras de $x$ e~$y$, então $x$ e $y$ são exatamente o mesmo objeto. Essa é uma afirmação filosófica altamente controversa — às vezes chamada de \emph{identidade dos indiscerníveis} — e nossa lógica não a aceitará; permitimos que exatamente as mesmas coisas sejam verdadeiras de dois objetos \emph{distintos}.
 
-To bring this out, consider the following interpretation:
+Para deixar isso claro, considere a seguinte interpretação:
 	\begin{ekey}
-		\item[\text{domain}] P.~D.\ Magnus, Tim Button
+\item[\text{domínio}] P.~D.\ Magnus, Tim Button
 		\item[a] P.~D.\ Magnus
 		\item[b] Tim Button
-		\item[\atom{\metav{R}}{x_1,\dots, x_n}] For every primitive
-		predicate \metav{R} we care to consider, that predicate is true of
-		\emph{nothing}.
+\item[\atom{\metav{R}}{x_1,\dots, x_n}] Para todo predicado primitivo \metav{R} que decidamos considerar, esse predicado é verdadeiro de \emph{nada}.
+
+
 	\end{ekey}
-Suppose `$A$' is a one-place predicate; then `$\atom{A}{a}$' is false and `$\atom{A}{b}$' is false, so `$\atom{A}{a} \eiff \atom{A}{b}$' is true. Similarly, if `$R$' is a two-place predicate, then `$\atom{R}{a,a}$' is false and `$\atom{R}{a,b}$' is false, so that `$\atom{R}{a,a} \eiff \atom{R}{a,b}$' is true. And so it goes: every atomic sentence not involving `$=$' is false, so every biconditional linking such sentences is true. For all that, Tim Button and P.~D.\ Magnus are two distinct people, not one and the same!
+Suponha que \textquotedblleft $A$\textquotedblright{} seja um predicado de um lugar; então \textquotedblleft $\atom{A}{a}$\textquotedblright{} é falsa e \textquotedblleft $\atom{A}{b}$\textquotedblright{} é falsa, de modo que \textquotedblleft $\atom{A}{a} \eiff \atom{A}{b}$\textquotedblright{} é verdadeira. Da mesma forma, se \textquotedblleft $R$\textquotedblright{} é um predicado de dois lugares, então \textquotedblleft $\atom{R}{a,a}$\textquotedblright{} é falsa e \textquotedblleft $\atom{R}{a,b}$\textquotedblright{} é falsa, de modo que \textquotedblleft $\atom{R}{a,a} \eiff \atom{R}{a,b}$\textquotedblright{} é verdadeira. E assim por diante: toda sentença atômica que não envolva \textquotedblleft $=$\textquotedblright{} é falsa, portanto todo bicondicional que ligue tais sentenças é verdadeiro. Apesar de tudo, Tim Button e P.~D.\ Magnus são duas pessoas distintas, e não uma única e mesma pessoa!
 
-\section{Interpretations}
-We defined a \define{valuation} in TFL as any assignment of truth and
-falsity to sentence letters. In FOL, we are going to define an
-\define{interpretation} as consisting of four
-things:\footnote{Interpretations are also often called ``models'' or ``structures.''}
+\section{Interpretações}
+Definimos uma \define{valora\c{c}\~ao} na LVF como qualquer atribuição de verdade e falsidade a letras sentenciais. Na LPO, vamos definir uma \define{interpreta\c{c}\~ao} como consistindo de quatro coisas:\footnote{Interpretações também são frequentemente chamadas de \textquotedblleft modelos\textquotedblright{} ou \textquotedblleft estruturas\textquotedblright{}.}
+
+
+
 	\begin{compactlist}
-		\item the specification of a non-empty domain;
-		\item each sentence letter we care to consider is assigned a truth value;
-		\item each name that we care to consider is assigned exactly one
-		object within the domain (its \define{referent});
-		\item for each predicate that we care to consider (apart from
-		`$=$'), a specification of what things (in what order) the
-		predicate is to be true of (its \define{extension}).
+\item a especificação de um domínio não vazio;
+\item a cada letra sentencial que decidamos considerar é atribuído um valor de verdade;
+\item a cada nome que decidamos considerar é atribuído exatamente um objeto dentro do domínio (seu \define{referente});
+\item para cada predicado que decidamos considerar (exceto \textquotedblleft $=$\textquotedblright{}), uma especificação de de que coisas (e em que ordem) o predicado é verdadeiro (sua \define{extens\~ao}).
+
+
+
 	\end{compactlist}
-For one-place predicates, extensions are collections of objects from
-the domain of which the predicate is true, for two-place predicates
-they are ordered pairs of objects, etc.
+Para predicados de um lugar, as extensões são coleções de objetos do domínio dos quais o predicado é verdadeiro; para predicados de dois lugares, são pares ordenados de objetos, etc.
 
-We don't need to specify anything for~`$=$', since it has a
-\emph{fixed} meaning, namely that of identity. Everything is identical
-to itself, and only to itself. 
 
-The symbolization keys that we considered in \cref{ch.FOL} consequently give us one very convenient way to present an interpretation. We will continue to use them in this chapter. Following the discussion of \cref{sec:extensions}, we now also allow extensions specified by enumerations on the right side, e.g.,
+
+Não precisamos especificar nada para~\textquotedblleft $=$\textquotedblright{}, pois ele tem um significado \emph{fixo}, a saber, o da identidade. Tudo é idêntico a si mesmo, e somente a si mesmo.
+
+
+
+As chaves de simbolização que consideramos em \cref{ch.FOL} consequentemente nos dão uma maneira muito conveniente de apresentar uma interpretação. Continuaremos a usá-las neste capítulo. Seguindo a discussão de \cref{sec:extensions}, agora também permitimos extensões especificadas por enumerações no lado direito, por exemplo,
 \begin{ekey}
-	\item[\text{domain}] philosophers, numbers
+\item[\text{domínio}] filósofos, números
 	\item[\atom{H}{x}] Aristotle, Hypatia, $\pi$
 \end{ekey}
-is a perfectly good way of specifying an interpretation, as is
+é uma maneira perfeitamente boa de especificar uma interpretação, assim como
 \begin{ekey}
-	\item[\text{domain}] $0$, $1$, $2$
+\item[\text{domínio}] $0$, $1$, $2
 	\item[\atom{L}{x,y}] \ntuple{$0$,$1$}, \ntuple{$0$, $2$}, \ntuple{$1$, $2$}
 \end{ekey}
-We could have specified the same extension (on this particular domain) by giving the English predicate `\gap{x} is less than \gap{y}'.
+Poderíamos ter especificado a mesma extensão (neste domínio particular) fornecendo o predicado em português \textquotedblleft \gap{x} é menor que \gap{y}\textquotedblright{}.
 
 
 \newglossaryentry{interpretation}{
-  name = {interpretation},
-  description = {A specification of a \gls{domain} together with the objects the \glspl{name} pick out and which objects the \glspl{predicate} are true of}
+  name = {interpretação},
+  description = {Uma especificação de um \gls{domain} juntamente com os objetos que os \glspl{name} designam e dos quais os \glspl{predicate} são verdadeiros}
 }
 
-However, it is sometimes also convenient to present an interpretation
-\emph{diagrammatically}. To illustrate (literally): suppose we want to
-consider just a single two-place predicate, `$\atom{R}{x,y}$'. Then we
-can represent it just by drawing an arrow between two objects, and
-stipulate that `$\atom{R}{x,y}$' is to hold of x and y \ifeff{} there is an arrow running from x to y in our diagram. As an
-example, we might offer:
+No entanto, às vezes também é conveniente apresentar uma interpretação \emph{diagramaticamente}. Para ilustrar (literalmente): suponha que queiramos considerar apenas um predicado de dois lugares, \textquotedblleft $\atom{R}{x,y}$\textquotedblright{}. Podemos representá-lo simplesmente desenhando uma seta entre dois objetos e estipulando que \textquotedblleft $\atom{R}{x,y}$\textquotedblright{} vale para $x$ e $y$ \ifeff{} há uma seta que vai de $x$ a $y$ em nosso diagrama. Como exemplo, poderíamos oferecer:
+
+
+
+
+
 \begin{center}
-\begin{tikzpicture}[alt={The numbers 1, 2, 3, and 4 are connected
-by arrows. There are arrows from 1 to 2 and 3, from 2 to 3, from 3 to
-4, and from 4 to 1.}]
+\begin{tikzpicture}[alt={Os números 1, 2, 3 e 4 estão conectados por setas. Há setas de 1 para 2 e 3, de 2 para 3, de 3 para 4 e de 4 para 1.}]
+
+
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
 \node (atom3) at (2,0) {$3$};
@@ -186,276 +186,276 @@ by arrows. There are arrows from 1 to 2 and 3, from 2 to 3, from 3 to
 \draw[->, thick] (atom4)--(atom1);
 \draw[->, thick] (atom1) -- (atom3);
 \end{tikzpicture}
-\bmlDescription{The numbers 1, 2, 3, and 4 are connected
-by arrows. There are arrows from 1 to 2 and 3, from 2 to 3, from 3 to
-4, and from 4 to 1.}
+\bmlDescription{Os números 1, 2, 3 e 4 estão conectados por setas. Há setas de 1 para 2 e 3, de 2 para 3, de 3 para 4 e de 4 para 1.}
+
+
 \end{center}
-This diagram could be used to describe an interpretation whose domain is the first four positive whole numbers, and which interprets `$\atom{R}{x,y}$' as being true of and only of:
+Este diagrama poderia ser usado para descrever uma interpretação cujo domínio são os quatro primeiros números inteiros positivos e que interpreta \textquotedblleft $\atom{R}{x,y}$\textquotedblright{} como verdadeiro de, e somente de:
 	\begin{center}
-		\ntuple{$1$, $2$}, 
-		\ntuple{$2$, $3$}, 
-		\ntuple{$3$, $4$}, 
-		\ntuple{$4$, $1$}, 
+		\ntuple{$1$, $2$},
+		\ntuple{$2$, $3$},
+		\ntuple{$3$, $4$},
+		\ntuple{$4$, $1$},
 		\ntuple{$1$, $3$}
 	\end{center}
-Equally we might offer this diagram:
+De modo equivalente, poderíamos oferecer este diagrama:
 
 \begin{center}
-\begin{tikzpicture}[alt={The numbers 1, 3, and 4 are connected by arrows.
-There are arrows from 1 to 3 and to itself, and from 3 to 1, 4 and itself. The number 2 is included but has no arrows coming in or going out.}]
+\begin{tikzpicture}[alt={Os números 1, 3 e 4 estão conectados por setas. Há setas de 1 para 3 e para si mesmo, e de 3 para 1, 4 e para si mesmo. O número 2 está incluído, mas não há setas entrando ou saindo dele.}]
+
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
 \node (atom3) at (2,0) {$3$};
 \node (atom4) at (0,0) {$4$};
 \draw[->, thick] (atom3)--(atom4);
-\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
-\draw[->, thick] (atom3)+(0.15,-0.15) arc (-150:150:.3); 
+\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3);
+\draw[->, thick] (atom3)+(0.15,-0.15) arc (-150:150:.3);
 \draw[<->, thick] (atom1) -- (atom3);
 \end{tikzpicture}
-\bmlDescription{The numbers 1, 3, and 4 are connected by arrows.
-There are arrows from 1 to 3 and to itself, and from 3 to 1, 4 and itself. The number 2 is included but has no arrows coming in or going out.}
+\bmlDescription{Os números 1, 3 e 4 estão conectados por setas. Há setas de 1 para 3 e para si mesmo, e de 3 para 1, 4 e para si mesmo. O número 2 está incluído, mas não há setas entrando ou saindo dele.}
+
 \end{center}
 
-The interpretation specified by this diagram can also be given by listing what's in the domain and in the extension of~`$\atom{R}{x,y}$':
+A interpretação especificada por este diagrama também pode ser dada listando o que está no domínio e na extensão de~\textquotedblleft $\atom{R}{x,y}$\textquotedblright{}:
 	\begin{ekey}
-	\item[\text{domain}] $1$, $2$, $3$, $4$
-	\item[R(x,y)] \ntuple{$1$, $3$}, 
-		\ntuple{$3$, $1$}, 
-		\ntuple{$3$, $4$}, 
+\item[\text{domínio}] $1$, $2$, $3$, $4
+	\item[R(x,y)] \ntuple{$1$, $3$},
+		\ntuple{$3$, $1$},
+		\ntuple{$3$, $4$},
 		\ntuple{$1$, $1$},
 		\ntuple{$3$, $3$}
 	\end{ekey}
-If we wanted, we could make our diagrams more complex. For example, we could add names as labels for particular objects. Equally, to symbolize the extension of a one-place predicate, we might simply draw a circle around some particular objects and stipulate that the thus encircled objects (and only them) are to fall under the predicate `$\atom{H}{x}$', say. To specify multiple predicates we could use colored (or dashed, dotted) lines for arrows and circles.
+Se quiséssemos, poderíamos tornar nossos diagramas mais complexos. Por exemplo, poderíamos acrescentar nomes como rótulos para objetos particulares. Da mesma forma, para simbolizar a extensão de um predicado de um lugar, poderíamos simplesmente desenhar um círculo em torno de alguns objetos particulares e estipular que os objetos assim circundados (e somente eles) caem sob o predicado \textquotedblleft $\atom{H}{x}$\textquotedblright{}, digamos. Para especificar múltiplos predicados, poderíamos usar linhas coloridas (ou tracejadas, pontilhadas) para setas e círculos.
 
 
-\chapter{Truth in FOL}\label{s:TruthFOL}
-We have introduced you to interpretations. Since, among other things, they tell us which predicates are true of which objects, they will provide us with an account of the truth of atomic sentences. However, we now need to say, precisely, what it is for an arbitrary FOL sentence to be true or false in an interpretation.
+\chapter{Verdade na LPO}\label{s:TruthFOL}
+Nós o apresentamos às interpretações. Como, entre outras coisas, elas nos dizem de que objetos os predicados são verdadeiros, fornecerão uma explicação da verdade de sentenças atômicas. No entanto, agora precisamos dizer, precisamente, o que é uma sentença arbitrária da LPO ser verdadeira ou falsa em uma interpretação.
 
-We know from \cref{s:FOLSentences} that there are three kinds of sentence in FOL: 
+Sabemos de \cref{s:FOLSentences} que há três tipos de sentença na LPO:
 	\begin{compactlist}
-		\item atomic sentences,
-		\item sentences whose main logical operator is a sentential connective,
-		\item sentences whose main logical operator is a quantifier.
+\item sentenças atômicas,
+\item sentenças cujo operador lógico principal é um conectivo sentencial,
+\item sentenças cujo operador lógico principal é um quantificador.
 	\end{compactlist}
-We need to explain truth for all three kinds of sentence.
+Precisamos explicar a verdade para os três tipos de sentença.
 
-We will provide a completely general explanation in this section. However, to try to keep the explanation comprehensible, we will, at several points, use the following interpretation:
+Nesta seção, ofereceremos uma explicação completamente geral. No entanto, para tentar manter a explicação compreensível, usaremos, em vários pontos, a seguinte interpretação:
 	\begin{ekey}
-		\item[\text{domain}] all people born before 2000 \textsc{ce}
+\item[\text{domínio}] todas as pessoas nascidas antes de 2000 \textsc{d.C.}
 		\item[a] Aristotle
 		\item[b] Beyonc\'e
-		\item[\atom{P}{x}] \gap{x} is a philosopher
-		\item[\atom{R}{x,y}] \gap{x} was born before \gap{y}
+\item[\atom{P}{x}] \gap{x} é filósofo
+\item[\atom{R}{x,y}] \gap{x} nasceu antes de \gap{y}
 	\end{ekey}
-This will be our \emph{go-to example} in what follows.
+Este será nosso \emph{exemplo de referência} no que segue.
 
-\section{Atomic sentences}
-The truth of atomic sentences should be fairly straightforward. For sentence letters, the interpretation specifies if they are true or false. The sentence `$\atom{P}{a}$' should be true just in case `$\atom{P}{x}$' is true of `$a$'. Given our go-to interpretation, this is true \ifeff{} Aristotle is a philosopher. Aristotle is a philosopher. So the sentence is true. Equally, `$\atom{P}{b}$' is false on our go-to interpretation.
+\section{Sentenças atômicas}
+A verdade de sentenças atômicas deve ser bastante direta. Para letras sentenciais, a interpretação especifica se elas são verdadeiras ou falsas. A sentença \textquotedblleft $\atom{P}{a}$\textquotedblright{} deve ser verdadeira se, e somente se, \textquotedblleft $\atom{P}{x}$\textquotedblright{} for verdadeira de \textquotedblleft $a$\textquotedblright{}. Dada nossa interpretação de referência, isso é verdadeiro \ifeff{} Aristóteles é filósofo. Aristóteles é filósofo. Portanto, a sentença é verdadeira. Da mesma forma, \textquotedblleft $\atom{P}{b}$\textquotedblright{} é falsa em nossa interpretação de referência.
 
-Likewise, on this interpretation, `$\atom{R}{a,b}$' is true \ifeff{} the object named by `$a$' was born before the object named by `$b$'. Well, Aristotle was born before Beyonc\'e. So `$\atom{R}{a,b}$' is true. Equally, `$\atom{R}{a,a}$' is false: Aristotle was not born before Aristotle.
+Da mesma forma, nessa interpretação, \textquotedblleft $\atom{R}{a,b}$\textquotedblright{} é verdadeira \ifeff{} o objeto nomeado por \textquotedblleft $a$\textquotedblright{} nasceu antes do objeto nomeado por \textquotedblleft $b$\textquotedblright{}. Ora, Aristóteles nasceu antes de Beyonc\'e. Portanto, \textquotedblleft $\atom{R}{a,b}$\textquotedblright{} é verdadeira. Do mesmo modo, \textquotedblleft $\atom{R}{a,a}$\textquotedblright{} é falsa: Aristóteles não nasceu antes de Aristóteles.
 
-Dealing with atomic sentences, then, is very intuitive. When \metav{R} is an $n$-place predicate and $\metav{a}_1$, $\metav{a}_{2}$, \dots, $\metav{a}_{n}$ are names, 
+Lidar com sentenças atômicas, então, é muito intuitivo. Quando \metav{R} é um predicado de $n$ lugares e $\metav{a}_1$, $\metav{a}_{2}$, \dots, $\metav{a}_{n}$ são nomes,
 
 	\factoidbox{
-		The sentence $\atom{\metav{R}}{\metav{a}_{1},\metav{a}_{2},\dots,\metav{a}_{n}}$ is true in an interpretation \textbf{\ifeff}
-		$\metav{R}$ is true of the objects named by $\metav{a}_{1}$, $\metav{a}_{2}$, \dots, $\metav{a}_{n}$ (in that order) in that interpretation.
+		A sentença $\atom{\metav{R}}{\metav{a}_{1},\metav{a}_{2},\dots,\metav{a}_{n}}$ é verdadeira em uma interpretação \textbf{\ifeff}
+		$\metav{R}$ é verdadeiro dos objetos nomeados por $\metav{a}_{1}$, $\metav{a}_{2}$, \dots, $\metav{a}_{n}$ (nessa ordem) nessa interpretação.
 	}
-Recall, though, that there is a special kind of atomic sentence: two names connected by an identity sign constitute an atomic sentence. This kind of atomic sentence is also easy to handle. Where \metav{a} and \metav{b} are any names, 
+Lembre-se, porém, de que há um tipo especial de sentença atômica: dois nomes conectados por um sinal de identidade constituem uma sentença atômica. Esse tipo de sentença atômica também é fácil de tratar. Sejam \metav{a} e \metav{b} nomes quaisquer,
 	\factoidbox{
-		$\metav{a} = \metav{b}$ is true in an interpretation \textbf{\ifeff}
-		\metav{a} and \metav{b} name the very same object in that interpretation.
+		$\metav{a} = \metav{b}$ é verdadeira em uma interpretação \textbf{\ifeff}
+		\metav{a} e \metav{b} nomeiam exatamente o mesmo objeto nessa interpretação.
 	}
-So in our go-to interpretation, `$a = b$' is false, since Aristotle is distinct from Beyonc\'e.
+Assim, em nossa interpretação de referência, \textquotedblleft $a = b$\textquotedblright{} é falsa, pois Aristóteles é distinto de Beyonc\'e.
 
 
-\section{Sentential connectives}
-We saw in \cref{s:FOLSentences} that FOL sentences can be built up from simpler ones using the truth-functional connectives that were familiar from TFL. The rules governing these truth-functional connectives are \emph{exactly} the same as they were when we considered TFL. Here they are:
+\section{Conectivos sentenciais}
+Vimos em \cref{s:FOLSentences} que sentenças da LPO podem ser construídas a partir de sentenças mais simples usando os conectivos verofuncionais familiares da LVF. As regras que governam esses conectivos verofuncionais são \emph{exatamente} as mesmas que eram quando consideramos a LVF. Ei-las:
 	\factoidbox{
 		\begin{factoiditems}
-		\item $\metav{A} \eand \metav{B}$ is true in an interpretation \textbf{\ifeff} both $\metav{A}$ is true and $\metav{B}$ is true in that interpretation.
+\item $\metav{A} \eand \metav{B}$ é verdadeira em uma interpretação \textbf{\ifeff} tanto $\metav{A}$ quanto $\metav{B}$ são verdadeiras nessa interpretação.
 
-		\item $\metav{A} \eor \metav{B}$ is true in an interpretation \textbf{\ifeff} either $\metav{A}$ is true or $\metav{B}$ is true in that interpretation.
+\item $\metav{A} \eor \metav{B}$ é verdadeira em uma interpretação \textbf{\ifeff} ou $\metav{A}$ ou $\metav{B}$ é verdadeira nessa interpretação.
 
-		\item $\enot \metav{A}$ is true in an interpretation \textbf{\ifeff} $\metav{A}$ is false in that interpretation.
+\item $\enot \metav{A}$ é verdadeira em uma interpretação \textbf{\ifeff} $\metav{A}$ é falsa nessa interpretação.
 
-		\item $\metav{A} \eif \metav{B}$ is true in an interpretation \textbf{\ifeff} either $\metav{A}$ is false or $\metav{B}$ is true in that interpretation.
+\item $\metav{A} \eif \metav{B}$ é verdadeira em uma interpretação \textbf{\ifeff} ou $\metav{A}$ é falsa ou $\metav{B}$ é verdadeira nessa interpretação.
 
-		\item $\metav{A} \eiff \metav{B}$ is true in an
-		interpretation \textbf{\ifeff} $\metav{A}$ has the same truth
-		value as $\metav{B}$ in that interpretation.
+\item $\metav{A} \eiff \metav{B}$ é verdadeira em uma
+		interpretação \textbf{\ifeff} $\metav{A}$ tem o mesmo valor de verdade
+		que $\metav{B}$ nessa interpretação.
 		\end{factoiditems}
 	}
-This presents the very same information as the characteristic truth tables for the connectives; it just does so in a slightly different way. Some examples will probably help to illustrate the idea. (Make sure you understand them!) On our go-to interpretation:
+Isso apresenta exatamente a mesma informação que as tabelas-verdade características dos conectivos; apenas o faz de uma maneira um pouco diferente. Alguns exemplos provavelmente ajudarão a ilustrar a ideia. (Certifique-se de compreendê-los!) Em nossa interpretação de referência:
 	\begin{itemize}
-		\item `$a = a \eand \atom{P}{a}$' is true.
-		\item `$\atom{R}{a,b} \eand \atom{P}{b}$' is false because, although `$\atom{R}{a,b}$' is true, `$\atom{P}{b}$' is false.
-		\item `$a = b \eor \atom{P}{a}$' is true.
-		\item `$\enot a = b$' is true.
-		\item `$\atom{P}{a} \eand \enot( a= b \eand \atom{R}{a,b})$' is true, because `$\atom{P}{a}$' is true and `$a = b$' is false.
+\item \textquotedblleft $a = a \eand \atom{P}{a}$\textquotedblright{} é verdadeira.
+\item \textquotedblleft $\atom{R}{a,b} \eand \atom{P}{b}$\textquotedblright{} é falsa porque, embora \textquotedblleft $\atom{R}{a,b}$\textquotedblright{} seja verdadeira, \textquotedblleft $\atom{P}{b}$\textquotedblright{} é falsa.
+\item \textquotedblleft $a = b \eor \atom{P}{a}$\textquotedblright{} é verdadeira.
+\item \textquotedblleft $\enot a = b$\textquotedblright{} é verdadeira.
+\item \textquotedblleft $\atom{P}{a} \eand \enot( a= b \eand \atom{R}{a,b})$\textquotedblright{} é verdadeira, porque \textquotedblleft $\atom{P}{a}$\textquotedblright{} é verdadeira e \textquotedblleft $a = b$\textquotedblright{} é falsa.
 	\end{itemize}
-Make sure you understand these examples.
+Certifique-se de que compreende esses exemplos.
 
 \ifHTMLtarget
-\section{When the main logical operator is a quantifier}
+\section{Quando o operador lógico principal é um quantificador}
 \else
-\section[Quantifiers]{When the main logical operator is a quantifier}
+\section[Quantificadores]{Quando o operador lógico principal é um quantificador}
 \fi
 \label{s:MainLogicalOperatorQuantifier}
 
-The exciting innovation in FOL, though, is the use of \emph{quantifiers}, but expressing the truth conditions for quantified sentences is a bit more fiddly than one might first expect.
+A inovação empolgante da LPO, porém, é o uso de \emph{quantificadores}, mas expressar as condições de verdade de sentenças quantificadas é um pouco mais trabalhoso do que se poderia esperar inicialmente.
 
-Here is a na\"{i}ve first thought. We want to say that `$\forall x\, \atom{F}{x}$' is true \ifeff{} `$\atom{F}{x}$' is true of everything in the domain. This should not be too problematic: our interpretation will specify directly what `$\atom{F}{x}$' is true of.
+Eis um primeiro pensamento ingênuo. Queremos dizer que \textquotedblleft $\forall x\, \atom{F}{x}$\textquotedblright{} é verdadeira \ifeff{} \textquotedblleft $\atom{F}{x}$\textquotedblright{} é verdadeira de tudo no domínio. Isso não deveria ser muito problemático: nossa interpretação especificará diretamente de que coisas \textquotedblleft $\atom{F}{x}$\textquotedblright{} é verdadeira.
 
-Unfortunately, this na\"{i}ve thought is not general enough. For example, we want to be able to say that `$\forall x \exists y\, \atom{L}{x,y}$' is true just in case (speaking roughly) `$\exists y\, \atom{L}{x,y}$' is true of everything in the domain. But our interpretation does not \emph{directly} specify what `$\exists y\, \atom{L}{x,y}$' is true of. Instead, whether or not this is true of something should follow just from the interpretation of the predicate `$L$', the domain, and the meanings of the quantifiers.
+Infelizmente, esse pensamento ingênuo não é geral o bastante. Por exemplo, queremos poder dizer que \textquotedblleft $\forall x \exists y\, \atom{L}{x,y}$\textquotedblright{} é verdadeira se, grosso modo, \textquotedblleft $\exists y\, \atom{L}{x,y}$\textquotedblright{} é verdadeira de tudo no domínio. Mas nossa interpretação não especifica \emph{diretamente} de que coisas \textquotedblleft $\exists y\, \atom{L}{x,y}$\textquotedblright{} é verdadeira. Em vez disso, se isso é ou não verdadeiro de algo deve resultar apenas da interpretação do predicado \textquotedblleft $L$\textquotedblright{}, do domínio e dos significados dos quantificadores.
 
-So here is a second na\"{i}ve thought. We might try to say that `$\forall x \exists y\, \atom{L}{x,y}$' is to be true in an interpretation \ifeff{} $\exists y\, \atom{L}{\metav{a},y}$ is true for \emph{every} name \metav{a} that we have included in our interpretation. Similarly, we might try to say that $\exists y\, \atom{L}{\metav{a},y}$ is true just in case $\atom{L}{\metav{a},\metav{b}}$ is true for \emph{some} name \metav{b} that we have included in our interpretation.
+Eis então um segundo pensamento ingênuo. Poderíamos tentar dizer que \textquotedblleft $\forall x \exists y\, \atom{L}{x,y}$\textquotedblright{} é verdadeira em uma interpretação \ifeff{} $\exists y\, \atom{L}{\metav{a},y}$ é verdadeira para \emph{todo} nome \metav{a} que incluímos em nossa interpretação. Da mesma forma, poderíamos tentar dizer que $\exists y\, \atom{L}{\metav{a},y}$ é verdadeira se, e somente se, $\atom{L}{\metav{a},\metav{b}}$ é verdadeira para \emph{algum} nome \metav{b} que incluímos em nossa interpretação.
 
-Unfortunately, this is not right either. To see this, observe that our go-to interpretation only interprets \emph{two} names, `$a$' and `$b$'. But the domain---all people born before the year 2000 \textsc{ce}---contains many more than two people. (And we have no intention of trying to correct for this by naming \emph{all} of them!)
+Infelizmente, isso também não está correto. Para ver isso, observe que nossa interpretação de referência interpreta apenas \emph{dois} nomes, \textquotedblleft $a$\textquotedblright{} e \textquotedblleft $b$\textquotedblright{}. Mas o domínio — todas as pessoas nascidas antes do ano 2000 \textsc{d.C.} — contém muito mais de duas pessoas. (E não pretendemos corrigir isso nomeando \emph{todas} elas!)
 
-So here is a third thought. (And this thought is not na\"{i}ve, but correct.) Although it is not the case that we have named \emph{everyone}, each person \emph{could} have been given a name. So we should focus on this possibility of extending an interpretation by adding a new name. We will offer a few examples of how this might work, centering on our go-to interpretation, and we will then present the formal definition.
+Eis então um terceiro pensamento. (E este pensamento não é ingênuo, mas correto.) Embora não tenhamos nomeado \emph{todos}, cada pessoa \emph{poderia} ter recebido um nome. Portanto, devemos concentrar-nos nessa possibilidade de estender uma interpretação acrescentando um novo nome. Ofereceremos alguns exemplos de como isso poderia funcionar, centrados em nossa interpretação de referência, e então apresentaremos a definição formal.
 
-In our go-to interpretation, `$\exists x\, \atom{R}{b,x}$' should be
-true. After all, in the domain, there is certainly someone who was
-born after Beyonc\'e. Lady Gaga is one of those people. Indeed, if we
-were to extend our go-to interpretation---temporarily, mind---by
-adding the new name~`$c$' to refer to Lady Gaga, then
-`$\atom{R}{b,c}$' would be true on this extended interpretation. This,
-surely, should suffice to make `$\exists x\, \atom{R}{b,x}$' true on
-the original go-to interpretation.
+Em nossa interpretação de referência, \textquotedblleft $\exists x\, \atom{R}{b,x}$\textquotedblright{} deve ser verdadeira. Afinal, no domínio, certamente há alguém que nasceu depois de Beyonc\'e. Lady Gaga é uma dessas pessoas. De fato, se estendêssemos nossa interpretação de referência — temporariamente, é claro — acrescentando o novo nome~\textquotedblleft $c$\textquotedblright{} para referir-se a Lady Gaga, então \textquotedblleft $\atom{R}{b,c}$\textquotedblright{} seria verdadeira nessa interpretação estendida. Isso, certamente, deve ser suficiente para tornar \textquotedblleft $\exists x\, \atom{R}{b,x}$\textquotedblright{} verdadeira na interpretação de referência original.
+verdadeira. Afinal, no domínio, há certamente alguém que nasceu
+depois de Beyonc\'e. Lady Gaga é uma dessas pessoas. De fato, se
+estendêssemos nossa interpretação de referência — temporariamente,
+é claro — acrescentando o novo nome~\textquotedblleft $c$\textquotedblright{} para referir-se a Lady Gaga, então
+\textquotedblleft $\atom{R}{b,c}$\textquotedblright{} seria verdadeira nessa interpretação estendida. Isso,
+certamente, deve ser suficiente para tornar \textquotedblleft $\exists x\, \atom{R}{b,x}$\textquotedblright{} verdadeira na
+interpretação original de referência.
 
-In our go-to interpretation, `$\exists x (\atom{P}{x} \eand \atom{R}{x,a})$' should also be true. After all, in the domain, there is certainly someone who was both a philosopher and born before Aristotle. Socrates is one such person. Indeed, if we were to extend our go-to interpretation by letting a new name, `$c$', denote Socrates, then `$\atom{P}{c} \eand \atom{R}{c,a}$' would be true on this extended interpretation. Again, this should surely suffice to make `$\exists x (\atom{P}{x} \eand \atom{R}{x,a})$' true on the original go-to interpretation.
+Em nossa interpretação de referência, \textquotedblleft $\exists x (\atom{P}{x} \eand \atom{R}{x,a})$\textquotedblright{} também deve ser verdadeira. Afinal, no domínio, certamente há alguém que é filósofo e nasceu antes de Aristóteles. Sócrates é uma dessas pessoas. De fato, se estendêssemos nossa interpretação de referência fazendo com que um novo nome, \textquotedblleft $c$\textquotedblright{}, designasse Sócrates, então \textquotedblleft $\atom{P}{c} \eand \atom{R}{c,a}$\textquotedblright{} seria verdadeira nessa interpretação estendida. Novamente, isso deve ser suficiente para tornar \textquotedblleft $\exists x (\atom{P}{x} \eand \atom{R}{x,a})$\textquotedblright{} verdadeira na interpretação original.
 
-In our go-to interpretation, `$\forall x \exists y\, \atom{R}{x,y}$' should be false. After all, consider the last person born in the year 1999. We don't know who that was, but if we were to extend our go-to interpretation by letting a new name, `$d$', denote that person, then we would not be able to find anyone else in the domain to denote with some further new name, perhaps `$e$', in such a way that `$\atom{R}{d,e}$' would be true. Indeed, no matter \emph{whom} we named with `$e$', `$\atom{R}{d,e}$' would be false. This observation is surely sufficient to make `$\exists y\, \atom{R}{d,y}$' \emph{false} in our extended interpretation, which in turn is surely sufficient to make `$\forall x \exists y\, \atom{R}{x,y}$' false on the original go-to interpretation.
+Em nossa interpretação de referência, \textquotedblleft $\forall x \exists y\, \atom{R}{x,y}$\textquotedblright{} deve ser falsa. Afinal, considere a última pessoa nascida no ano de 1999. Não sabemos quem foi, mas, se estendêssemos nossa interpretação de referência fazendo com que um novo nome, \textquotedblleft $d$\textquotedblright{}, designasse essa pessoa, não conseguiríamos encontrar outra pessoa no domínio para designar com algum novo nome adicional, talvez \textquotedblleft $e$\textquotedblright{}, de tal modo que \textquotedblleft $\atom{R}{d,e}$\textquotedblright{} fosse verdadeira. Na verdade, não importa \emph{quem} nomeássemos com \textquotedblleft $e$\textquotedblright{}, \textquotedblleft $\atom{R}{d,e}$\textquotedblright{} seria falsa. Essa observação é certamente suficiente para tornar \textquotedblleft $\exists y\, \atom{R}{d,y}$\textquotedblright{} \emph{falsa} na interpretação estendida, o que, por sua vez, é certamente suficiente para tornar \textquotedblleft $\forall x \exists y\, \atom{R}{x,y}$\textquotedblright{} falsa na interpretação original.
 
-If you have understood these three examples, that's what matters. It provides the basis for a formal definition of truth for quantified sentences.
+Se você compreendeu esses três exemplos, isso é o que importa. Eles fornecem a base para uma definição formal de verdade de sentenças quantificadas.
 
-Strictly speaking, though, we still need to \emph{give} that definition. The result, sadly, is a bit ugly, and requires a few new definitions. Brace yourself!
+Estritamente falando, porém, ainda precisamos \emph{dar} essa definição. O resultado, infelizmente, é um pouco feio e exige algumas definições novas. Prepare-se!
 
-Suppose that \metav{A} is a formula. We will write
-$$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$$ to indicate
-that \metav{A} contains some number of free occurrences of the
-variable~\metav{x} (it is usually one or more, but we don't exclude
-the case that \metav{x} does not occur free at all.) Suppose also that
-\metav{c} is a name. Then we will write:
+Suponha que \metav{A} seja uma fórmula. Escreveremos
+$$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$$ para indicar
+que \metav{A} contém alguma quantidade de ocorrências livres da variável~\metav{x} (geralmente uma ou mais, mas não excluímos o caso em que \metav{x} não ocorra livre de modo algum). Suponha também que \metav{c} seja um nome. Então escreveremos:
+
+
+
 $$\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$$
-for the formula we obtain by replacing \emph{every} free occurrence of
-$\metav{x}$ in \metav{A} with~$\metav{c}$. The resulting formula is
-called a \define{substitution instance} of $\forall
-\metav{x}\metav{A}$ and $\exists\metav{x}\metav{A}$. Also, $\metav{c}$
-is called the \define{instantiating name}. (If \metav{A} happens to
-contain no free occurrence of~\metav{x}, then the substitution
-instance is identical to~\metav{A}. So, for instance,
+para a fórmula que obtemos substituindo \emph{toda} ocorrência livre de $\metav{x}$ em \metav{A} por~$\metav{c}$. A fórmula resultante é chamada de \define{inst\^ancia de substitui\c{c}\~ao} de $\forall \metav{x}\metav{A}$ e $\exists\metav{x}\metav{A}$. Além disso, $\metav{c}$ é chamado de \define{nome instanciador}. (Se \metav{A} não contiver nenhuma ocorrência livre de~$\metav{x}$, então a instância de substituição é idêntica a~\metav{A}. Assim, por exemplo,
+
+
+
+
+
+
 	$$\exists x (\atom{R}{e,x} \eiff \atom{F}{x})$$
-is a substitution instance of 
+é uma instância de substituição de
 	$$\forall y \exists x (\atom{R}{y,x} \eiff \atom{F}{x})$$
-with the instantiating name `$e$' and instantiated variable~`$y$'.
+com o nome instanciador \textquotedblleft $e$\textquotedblright{} e a variável instanciada \textquotedblleft $y$\textquotedblright{}.
 
 \newglossaryentry{substitution instance}{
-  name = substitution instance,
-  description = {The result of replacing every free occurrence of a \gls{variable} in a \gls{formula} with a \gls{name}}
+  name = instância de substituição,
+  description = {O resultado de substituir toda ocorrência livre de uma \gls{variable} em uma \gls{formula} por um \gls{name}}
 }
 
-A brief aside: when substituting names for variables, we only allow
-the replacement of \emph{free} variables. This is necessary since we
-allow formulas such as `$\exists x(\forall x\,\atom{F}{x} \eif
-\atom{G}{x})$', where different quantifiers bind the same variables.
-We consider only `$\forall x\,\atom{F}{x} \eif \atom{G}{e}$' as a
-substitution instance of this formula, and not `$\atom{F}{e} \eif
-\atom{G}{e}$', because the `$x$' in `$\atom{F}{x}$' is not free---it
-is bound by `$\forall x$'. (You may want to review \cref{s:FreeVars}
-in this connection.)
+Uma breve observação: ao substituir nomes por variáveis, permitimos apenas a substituição de variáveis \emph{livres}. Isso é necessário, pois permitimos fórmulas como \textquotedblleft $\exists x(\forall x\,\atom{F}{x} \eif \atom{G}{x})$\textquotedblright{}, nas quais diferentes quantificadores ligam as mesmas variáveis.
 
-Our interpretation will include a specification of which names
-correspond to which objects in the domain. Take any object in the
-domain, say, d, and a name $\metav{c}$ which is not already assigned
-by the interpretation. If our interpretation is $\mathbf{I}$, then we
-can consider the interpretation $\mathbf{I}[\text{d}/\metav{c}]$
-which is just like $\mathbf{I}$ except it \emph{also} assigns the
-object~d to the name $\metav{c}$. Then we can say that d
-\define{satisfies} the formula
-$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in the
-interpretation~$\mathbf{I}$ if, and only if,
-$\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in
-$\mathbf{I}[\text{d}/\metav{c}]$. (We assume that the name
-$\metav{c}$ does not already occur in
-$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$.) If d satisfies
-$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ we also say that
-$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ is \emph{true of}~d.
+
+
+Consideramos apenas \textquotedblleft $\forall x\,\atom{F}{x} \eif \atom{G}{e}$\textquotedblright{} como instância de substituição dessa fórmula, e não \textquotedblleft $\atom{F}{e} \eif \atom{G}{e}$\textquotedblright{}, porque o \textquotedblleft $x$\textquotedblright{} em \textquotedblleft $\atom{F}{x}$\textquotedblright{} não é livre — é ligado por \textquotedblleft $\forall x$\textquotedblright{}. (Talvez você queira revisar \cref{s:FreeVars} nesse contexto.)
+
+
+
+
+
+Nossa interpretação incluirá uma especificação de quais nomes correspondem a quais objetos do domínio. Tome qualquer objeto do domínio, digamos $d$, e um nome $\metav{c}$ que ainda não esteja atribuído pela interpretação. Se nossa interpretação é $\mathbf{I}$, então podemos considerar a interpretação $\mathbf{I}[\text{d}/\metav{c}]$, que é igual à $\mathbf{I}$, exceto que também atribui o objeto~$d$ ao nome $\metav{c}$. Então podemos dizer que $d$ \define{satisfaz} a fórmula
+
+
+
+
+
+
+
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ na
+interpretação~$\mathbf{I}$ se, e somente se,
+$\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ é verdadeira em
+$\mathbf{I}[\text{d}/\metav{c}]$. (Supomos que o nome $\metav{c}$ não
+ocorra já em
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$. Se $d$ satisfaz
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$, também dizemos que
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ é \emph{verdadeira de}~$d$.
 
 \factoidbox{
 	\begin{factoiditems}
-		\item The interpretation $\mathbf{I}[\text{d}/\metav{c}]$ is just like
-		the interpretation $\mathbf{I}$ except it also assigns the
-		object~d to the name $\metav{c}$.
+\item A interpretação $\mathbf{I}[\text{d}/\metav{c}]$ é igual à interpretação $\mathbf{I}$, exceto por também atribuir o objeto~$d$ ao nome~$\metav{c}$.
 
-		\item An object d \define{satisfies}
-		$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in
-		interpretation~$\mathbf{I}$ \textbf{\ifeff}
-		$\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in
-		$\mathbf{I}[\text{d}/\metav{c}]$ (where the name $\metav{c}$ does not
-		already occur in $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$).
+
+
+\item Um objeto $d$ \define{satisfaz}
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ em
+uma interpretação~$\mathbf{I}$ \textbf{\ifeff}
+$\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ é verdadeira em
+$\mathbf{I}[\text{d}/\metav{c}]$ (quando o nome $\metav{c}$ não
+ocorre já em $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$).
 	\end{factoiditems}
 }
 
 \newglossaryentry{satisfaction}
 {
-  name=satisfaction of a formula,
-  description={The relation between an object d in the \gls{domain} of an
-    \gls{interpretation}~$\mathbf{I}$ and a
-    \gls{formula}~$\metav{A}(\metav{x})$ which holds \ifeff{}
-    $\metav{A}(\metav{c})$ is true in the modified interpretation
-    $\mathbf{I}[\text{d}/\metav{c}]$ in which $\metav{c}$ names~d}
+  name=satisfação de uma fórmula,
+  description={A relação entre um objeto $d$ no \gls{domain} de uma
+    \gls{interpretation}~$\mathbf{I}$ e uma
+    \gls{formula}~$\metav{A}(\metav{x})$ que ocorre \ifeff{}
+    $\metav{A}(\metav{c})$ é verdadeira na interpretação modificada
+    $\mathbf{I}[\text{d}/\metav{c}]$, na qual $\metav{c}$ nomeia~$d$}
 }
 
-So, for instance, Socrates satisfies the formula~$\atom{P}{x}$ since $\atom{P}{c}$ is true in the interpretation $\mathbf{I}[\text{Socrates}/c]$, i.e., the interpretation:
+Assim, por exemplo, Sócrates satisfaz a fórmula~$\atom{P}{x}$, pois $\atom{P}{c}$ é verdadeira na interpretação $\mathbf{I}[\text{Sócrates}/c]$, isto é, na interpretação:
 \begin{ekey}
-	\item[\text{domain}] all people born before 2000 \textsc{ce}
+\item[\text{domínio}] todas as pessoas nascidas antes de 2000 \textsc{d.C.}
 	\item[a] Aristotle
 	\item[b] Beyonc\'e
-	\item[c] Socrates 
-	\item[\atom{P}{x}] \gap{x} is a philosopher
-	\item[\atom{R}{x,y}] \gap{x} was born before \gap{y}
+	\item[c] Socrates
+\item[\atom{P}{x}] \gap{x} é filósofo
+\item[\atom{R}{x,y}] \gap{x} nasceu antes de \gap{y}
 \end{ekey}
 
-Armed with this notation, the rough idea is as follows. The sentence
+Munidos dessa notação, a ideia geral é a seguinte. A sentença
 $\forall \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$
-will be true in $\mathbf{I}$ \ifeff, for any object~d in the domain,
-$\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ is true in
-$\mathbf{I}[\text{d}/\metav{c}]$, i.e., no matter what object (in
-the domain) we name by the new name~$\metav{c}$. In other words,
+será verdadeira em $\mathbf{I}$ \ifeff{}, para qualquer objeto~$d$ no domínio,
+$\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ é verdadeira em
+$\mathbf{I}[\text{d}/\metav{c}]$, isto é, não importa qual objeto (no
+domínio) nomeamos pelo novo nome~$\metav{c}$. Em outras palavras,
 $\forall \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x}
-\ldots)$ is true \ifeff{} every object in the domain satisfies
-$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$. Similarly, the
-sentence $\exists \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x}
-\ldots)$ will be true in $\mathbf{I}$ \ifeff{} there is \emph{some}
-object that satisifes $\metav{A}(\ldots \metav{x} \ldots \metav{x}
-\ldots)$, i.e., $\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$
-is true in $\mathbf{I}[\text{d}/\metav{c}]$ for some object~d and a
-new name~$\metav{c}$. \factoidbox{
+\ldots)$ é verdadeira \ifeff{} todo objeto no domínio satisfaz
+$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$. Da mesma forma, a
+sentença $\exists \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x}
+\ldots)$ será verdadeira em $\mathbf{I}$ \ifeff{} existe \emph{algum}
+objeto que satisfaz $\metav{A}(\ldots \metav{x} \ldots \metav{x}
+\ldots)$, isto é, $\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$
+é verdadeira em $\mathbf{I}[\text{d}/\metav{c}]$ para algum objeto~$d$ e um
+novo nome~$\metav{c}$. \factoidbox{
 		\begin{factoiditems}
-		\item $\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}
-		every object in the domain satisfies $\metav{A}(\ldots
-		\metav{x} \ldots \metav{x}\ldots)$.
+\item $\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ é verdadeira em uma interpretação \textbf{\ifeff}
+todo objeto no domínio satisfaz $\metav{A}(\ldots
+		$\metav{x} \ldots \metav{x}\ldots)$.
 
-		\item $\exists \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff} at least one object in the domain satisfies
+\item $\exists \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ é verdadeira em uma interpretação \textbf{\ifeff} pelo menos um objeto no domínio satisfaz
 		$\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$.
 		\end{factoiditems}
 	}
-To be clear: all this is doing is formalizing (very pedantically) the intuitive idea expressed above. The result is a bit ugly, and the final definition might look a bit opaque. Hopefully, though, the \emph{spirit} of the idea is clear.
+Para ser claro: tudo isso está apenas formalizando (de maneira muito pedante) a ideia intuitiva expressa acima. O resultado é um pouco feio e a definição final pode parecer um tanto opaca. Esperamos, porém, que o \emph{espírito} da ideia esteja claro.
 
 \practiceproblems
 \solutions
 \problempart
 \label{pr.TorF1}
-Consider the following interpretation:
+Considere a seguinte interpretação:
 	\begin{itemize}
-		\item The domain comprises only Corwin and Benedict
-		\item `$\atom{A}{x}$' is to be true of both Corwin and Benedict
-		\item `$\atom{B}{x}$' is to be true of Benedict only
-		\item `$\atom{N}{x}$' is to be true of no one
-		\item `$c$' is to refer to Corwin
+\item O domínio compreende apenas Corwin e Benedict
+\item \textquotedblleft $\atom{A}{x}$\textquotedblright{} deve ser verdadeira de Corwin e Benedict
+\item \textquotedblleft $\atom{B}{x}$\textquotedblright{} deve ser verdadeira apenas de Benedict
+\item \textquotedblleft $\atom{N}{x}$\textquotedblright{} deve ser verdadeira de ninguém
+\item \textquotedblleft $c$\textquotedblright{} deve referir-se a Corwin
 	\end{itemize}
-Determine whether each of the following sentences is true or false in that interpretation:
+Determine se cada uma das seguintes sentenças é verdadeira ou falsa nessa interpretação:
 \begin{compactlist}
 \item $\atom{B}{c} $
 \item $\atom{A}{c}  \eiff \enot \atom{N}{c}$
@@ -470,16 +470,16 @@ Determine whether each of the following sentences is true or false in that inter
 
 \problempart
 \label{pr.TorF2}
-Consider the following interpretation:	
+Considere a seguinte interpretação:
 	\begin{itemize}
-		\item The domain comprises only Lemmy, Courtney and Eddy
-		\item `$\atom{G}{x}$' is to be true of Lemmy, Courtney and Eddy.
-		\item `$\atom{H}{x}$' is to be true of and only of Courtney
-		\item `$\atom{M}{x}$' is to be true of and only of Lemmy and Eddy
-		\item `$c$' is to refer to Courtney
-		\item `$e$' is to refer to Eddy
+\item O domínio compreende apenas Lemmy, Courtney e Eddy
+\item \textquotedblleft $\atom{G}{x}$\textquotedblright{} deve ser verdadeira de Lemmy, Courtney e Eddy.
+\item \textquotedblleft $\atom{H}{x}$\textquotedblright{} deve ser verdadeira de, e somente de, Courtney
+\item \textquotedblleft $\atom{M}{x}$\textquotedblright{} deve ser verdadeira de, e somente de, Lemmy e Eddy
+\item \textquotedblleft $c$\textquotedblright{} deve referir-se a Courtney
+\item \textquotedblleft $e$\textquotedblright{} deve referir-se a Eddy
 	\end{itemize}
-Determine whether each of the following sentences is true or false in that interpretation:
+Determine se cada uma das seguintes sentenças é verdadeira ou falsa nessa interpretação:
 \begin{compactlist}
 \item $\atom{H}{c} $
 \item $\atom{H}{e} $
@@ -500,25 +500,25 @@ Determine whether each of the following sentences is true or false in that inter
 
 \problempart
 \label{pr.TorF3}
-Following the diagram conventions introduced at the end of \cref{s:Interpretations}, consider the following interpretation:	
+Seguindo as convenções diagramáticas introduzidas ao final de \cref{s:Interpretations}, considere a seguinte interpretação:
 \begin{center}
-\begin{tikzpicture}[alt={The numbers 1, 2, 3, 4, and 5 are connected by arrows. There are arrows from 1 to 2, 3, 4, 5, and to itself, from 2 to 5, from 5 to itself, and from 4 to 1. There is no arrow leaving 3.}]
+\begin{tikzpicture}[alt={Os números 1, 2, 3, 4 e 5 estão conectados por setas. Há setas de 1 para 2, 3, 4, 5 e para si mesmo; de 2 para 5; de 5 para si mesmo; e de 4 para 1. Não há nenhuma seta saindo de 3.}]
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
 \node (atom4) at (0,0) {$3$};
 \node (atom5) at (2,0) {$4$};
 \node (atom6) at (4,0) {$5$};
-\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
-\draw[->, thick] (atom6)+(0.15,-0.15) arc (-150:150:.3); 
+\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3);
+\draw[->, thick] (atom6)+(0.15,-0.15) arc (-150:150:.3);
 \draw[->, thick] (atom1) -- (atom2);
 \draw[->, thick] (atom1) -- (atom4);
 \draw[<->, thick] (atom1) -- (atom5);
 \draw[->, thick] (atom1) -- (atom6);
 \draw[->, thick] (atom2) -- (atom6);
 \end{tikzpicture}
-\bmlDescription{The numbers 1, 2, 3, 4, and 5 are connected by arrows. There are arrows from 1 to 2, 3, 4, 5, and to itself, from 2 to 5, from 5 to itself, and from 4 to 1. There is no arrow leaving 3.}
+\bmlDescription{Os números 1, 2, 3, 4 e 5 estão conectados por setas. Há setas de 1 para 2, 3, 4, 5 e para si mesmo; de 2 para 5; de 5 para si mesmo; e de 4 para 1. Não há nenhuma seta saindo de 3.}
 \end{center}
-Determine whether each of the following sentences is true or false in that interpretation:
+Determine se cada uma das seguintes sentenças é verdadeira ou falsa nessa interpretação:
 \begin{compactlist}
 \item $\exists x\, \atom{R}{x,x}$
 \item $\forall x\, \atom{R}{x,x}$
@@ -535,313 +535,313 @@ Determine whether each of the following sentences is true or false in that inter
 \end{compactlist}
 
 
-\chapter{Semantic concepts}
+\chapter{Conceitos semânticos}
 
-\section{Validities, entailment, etc.}
+\section{Validades, consequência lógica etc.}
 
-Defining truth in FOL was quite fiddly. But now that we are done, we can define various other central logical notions. These definitions will look very similar to those for TFL, from \cref{s:SemanticConcepts}. However, remember that they concern \emph{interpretations}, rather than valuations.
+Definir verdade na LPO foi bastante trabalhoso. Mas agora que terminamos, podemos definir várias outras noções lógicas centrais. Essas definições serão muito semelhantes às da LVF, em \cref{s:SemanticConcepts}. No entanto, lembre-se de que dizem respeito a \emph{interpretações}, e não a valorações.
 
-We will use the symbol `$\entails$' for FOL much as we did for TFL. So
-the sentences $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
-\define{entail} the sentence $\metav{C}$,
+Usaremos o símbolo \textquotedblleft $\entails$\textquotedblright{} para a LPO, assim como fizemos para a LVF. Portanto,
+as sentenças $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
+\define{implicam logicamente} a sentença $\metav{C}$,
 	$$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \entails\metav{C},$$
-\ifeff{} there is no interpretation in which all of $\metav{A}_1$, $\metav{A}_2$, \dots, $\metav{A}_n$ are true and in which \metav{C} is false. Derivatively,
+\ifeff{} não há interpretação na qual todas as sentenças $\metav{A}_1$, $\metav{A}_2$, \dots, $\metav{A}_n$ sejam verdadeiras e na qual $\metav{C}$ seja falsa. Derivadamente,
 	$$\entails\metav{A}$$
-means that \metav{A} is true in every interpretation.
+significa que $\metav{A}$ é verdadeira em toda interpretação.
 
-The other logical notions also have corresponding definitions in FOL:
+As outras noções lógicas também têm definições correspondentes na LPO:
 
 \factoidbox{
 	\begin{factoiditems}
-		\item An FOL sentence $\metav{A}$ is a \define{validity} \ifeff{}
-		$\metav{A}$ is true in every interpretation; i.e.,
+\item Uma sentença da LPO $\metav{A}$ é uma \define{validade} \ifeff{}
+		$\metav{A}$ é verdadeira em toda interpretação; isto é,
 		$\entails\metav{A}$.
 \newglossaryentry{validity}
 {
-name=validity,
-description={A \gls{sentence of FOL} that is true in every \gls{interpretation}}
+  name=validade,
+  description={Uma \gls{sentence of FOL} que é verdadeira em toda \gls{interpretation}}
 }
 
-		\item $\metav{A}$ is a \define{contradiction} \ifeff{} $\metav{A}$
-		is false in every interpretation; i.e., $\entails\enot\metav{A}$.
+\item $\metav{A}$ é uma \define{contradi\c{c}\~ao} \ifeff{} $\metav{A}$
+		é falsa em toda interpretação; isto é, $\entails\enot\metav{A}$.
 \newglossaryentry{contradiction of FOL}
 {
-  name=contradiction (of FOL),
-  text=contradiction,
-description={A \gls{sentence of FOL} that is false in every \gls{interpretation}}
-}
-  
-		\item $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore
-		\metav{C}$ is \define{valid in FOL} \ifeff{} there is no
-		interpretation in which all of the premises are true and the
-		conclusion is false; i.e., $\metav{A}_1,\metav{A}_2,\ldots,
-		\metav{A}_n \entails\metav{C}$. It is \define{invalid in FOL}
-		otherwise.
-\newglossaryentry{valid in FOL}
-{
-  name=validity of arguments (in FOL),
-  text = valid,
-description={A property held by arguments; an argument is valid if and only if no \gls{interpretation} makes all premises true and the conclusion false}
+  name=contradição (da LPO),
+  text=contradição,
+description={Uma \gls{sentence of FOL} que é falsa em toda \gls{interpretation}}
 }
 
-		\item Two FOL sentences \metav{A} and \metav{B} are
-		\define{equivalent} \ifeff{} they are true in exactly the same
-		interpretations as each other; i.e., both
-		$\metav{A}\entails\metav{B}$ and $\metav{B}\entails\metav{A}$.
+\item $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore
+		$\metav{C}$ é \define{v\'alido na LPO} \ifeff{} não há
+		interpretação na qual todas as premissas sejam verdadeiras e a
+		conclusão seja falsa; isto é, $\metav{A}_1,\metav{A}_2,\ldots,
+		$\metav{A}_n \entails\metav{C}$. É \define{inv\'alido na LPO}
+		caso contrário.
+\newglossaryentry{valid in FOL}
+{
+  name=validade de argumentos (na LPO),
+  text = válido,
+description={Uma propriedade de argumentos; um argumento é válido se, e somente se, nenhuma \gls{interpretation} torna todas as premissas verdadeiras e a conclusão falsa}
+}
+
+\item Duas sentenças da LPO $\metav{A}$ e $\metav{B}$ são
+		\define{equivalentes} \ifeff{} são verdadeiras exatamente nas mesmas
+		interpretações; isto é,
+		$\metav{A}\entails\metav{B}$ e $\metav{B}\entails\metav{A}$.
 
 \newglossaryentry{equivalent in FOL}
 {
-  name=equivalence (in FOL),
-  text = equivalent,
-description={A property held by pairs of \glspl{sentence of FOL} if and only if the sentences have the same truth value in every \gls{interpretation}}
+  name=equivalência (na LPO),
+  text = equivalente,
+description={Uma propriedade de pares de \glspl{sentence of FOL} que vale se, e somente se, as sentenças têm o mesmo valor de verdade em toda \gls{interpretation}}
 }
 
-		\item The FOL sentences $\metav{A}_1$, $\metav{A}_2$, \dots,
-		$\metav{A}_n$ are \define{jointly satisfiable} \ifeff{} some
-		interpretation makes all of them true. They are \define{jointly
-		unsatisfiable} \ifeff{} there is no such interpretation.
+\item As sentenças da LPO $\metav{A}_1$, $\metav{A}_2$, \dots,
+		$\metav{A}_n$ são \define{conjuntamente satisfat\'iveis} \ifeff{} alguma
+		interpretação torna todas verdadeiras. Elas são \define{conjuntamente
+		insatisfat\'iveis} \ifeff{} não há tal interpretação.
 \newglossaryentry{satisfiable in FOL}
 {
-  name=satisfiability (in FOL),
-  text=jointly satisfiable,
-  description={A property held by \glspl{sentence of FOL} if and only
-  if some \gls{interpretation} makes all the sentences true together}
+  name=satisfatibilidade (na LPO),
+  text=conjuntamente satisfatível,
+  description={Uma propriedade de \glspl{sentence of FOL} que vale se, e somente se, alguma \gls{interpretation} torna todas as sentenças verdadeiras em conjunto}
+
 }
 	\end{factoiditems}
 }
 
-Note that we use the standard term `validity' for sentences that are
-true in every interpretation. Validities are to FOL what tautologies
-are to TFL.
+Observe que usamos o termo padrão \textquotedblleft validade\textquotedblright{} para sentenças que são verdadeiras em toda interpretação. Validades são para a LPO o que tautologias são para a LVF.
 
-\section{Expressibility}
 
-The concept of an object satisfying a formula with one free variable
-introduced in \cref{s:MainLogicalOperatorQuantifier} can also be
-extended to formulas with more than one free variable. If we have a
-formula $\metav{A}(\metav{x},\metav{y})$ with two free variables
-$\metav{x}$ and $\metav{y}$, then we can say that a pair of objects
-$\langle a, b\rangle$ satisfies $\metav{A}(\metav{x},\metav{y})$
-\ifeff{} $\metav{A}(\metav{c},\metav{d})$ is true in the
-interpretation extended by two names $\metav{c}$ and $\metav{d}$,
-where $\metav{c}$ names~$a$ and $\metav{d}$ names~$b$. So, for
-instance, $\langle \text{Socrates}, \text{Plato}\rangle$ satisfies
-$\atom{R}{x,y}$ since $\atom{R}{c,d}$ is true in the interpretation:
+
+\section{Expressibilidade}
+
+O conceito de um objeto que satisfaz uma fórmula com uma variável livre, introduzido em \cref{s:MainLogicalOperatorQuantifier}, também pode ser estendido a fórmulas com mais de uma variável livre. Se temos uma fórmula $\metav{A}(\metav{x},\metav{y})$ com duas variáveis livres $\metav{x}$ e $\metav{y}$, podemos dizer que um par de objetos $\langle a,b\rangle$ satisfaz $\metav{A}(\metav{x},\metav{y})$
+
+
+
+
+\ifeff{} $\metav{A}(\metav{c},\metav{d})$ é verdadeira na
+interpretação estendida por dois nomes $\metav{c}$ e $\metav{d}$,
+em que $\metav{c}$ nomeia~$a$ e $\metav{d}$ nomeia~$b$. Assim, por
+exemplo, $\langle \text{Sócrates}, \text{Platão}\rangle$ satisfaz
+$\atom{R}{x,y}$, pois $\atom{R}{c,d}$ é verdadeira na interpretação:
+
 \begin{ekey}
-	\item[\text{domain}] all people born before 2000 \textsc{ce}
+\item[\text{domínio}] todas as pessoas nascidas antes de 2000 \textsc{d.C.}
 	\item[a] Aristotle
 	\item[b] Beyonc\'e
 	\item[c] Socrates
 	\item[d] Plato
-	\item[\atom{P}{x}] \gap{x} is a philosopher
-	\item[\atom{R}{x,y}] \gap{x} was born before \gap{y}
+\item[\atom{P}{x}] \gap{x} é filósofo
+\item[\atom{R}{x,y}] \gap{x} nasceu antes de \gap{y}
 \end{ekey}
-For atomic formulas, the objects, pairs of objects, etc., that satisfy them are exactly the extension of the predicate given in the interpretation. But the notion of satisfaction also applies to non-atomic formulas, e.g., the formula $\atom{P}{x} \land \atom{R}{x,b}$ is satisfied by all philosophers born before Beyonc\'e. It even applies to formulas involving quantifiers, e.g., $\atom{P}{x} \eand \lnot\exists y(\atom{P}{y} \land \atom{R}{y,x})$ is satisfied by all people who are philosophers and for whom it is true that no philosopher was born before them---in other words, it is true of the first philosopher.
+Para fórmulas atômicas, os objetos, pares de objetos etc. que as satisfazem são exatamente a extensão do predicado dada na interpretação. Mas a noção de satisfação também se aplica a fórmulas não atômicas; por exemplo, a fórmula $\atom{P}{x} \land \atom{R}{x,b}$ é satisfeita por todos os filósofos nascidos antes de Beyonc\'e. Ela também se aplica a fórmulas que envolvem quantificadores; por exemplo, $\atom{P}{x} \eand \lnot\exists y(\atom{P}{y} \land \atom{R}{y,x})$ é satisfeita por todas as pessoas que são filósofas e para as quais é verdade que nenhum filósofo nasceu antes delas — em outras palavras, é verdadeira do primeiro filósofo.
 
-By considering formulas (possibly involving quantifiers) with two free
-variables, we can express relations for which we do not have dedicated
-predicate symbols in our interpretation or symbolization key. Consider
-the formula $\atom{R}{x,y}$. It expresses the relation `\gap{x} was
-born before \gap{y}', since that is how we have specified its
-extension. What happens if we switch the variables, i.e., consider
-`$\atom{R}{y,x}$'?  A pair of objects \ntuple{$\text{y}, \text{x}$} in
-the domain (i.e., a pair of people) satisfies $\atom{R}{y,x}$ if, and only if,
-the reverse pair \ntuple{$\text{x}, \text{y}$} satisfies
-$\atom{R}{x,y}$. In other words, $\atom{R}{y,x}$ expresses the
-relation `\gap{x} was born \emph{after} \gap{y}'. Or suppose we add to
-our interpretation a predicate for `teacher of'.
+Considerando fórmulas (possivelmente envolvendo quantificadores) com duas variáveis livres, podemos expressar relações para as quais não temos símbolos predicativos dedicados em nossa interpretação ou chave de simbolização. Considere a fórmula $\atom{R}{x,y}$. Ela expressa a relação \textquotedblleft \gap{x} nasceu antes de \gap{y}\textquotedblright{}, pois foi assim que especificamos sua extensão. O que acontece se trocarmos as variáveis, isto é, se considerarmos
+
+
+
+
+\textquotedblleft $\atom{R}{y,x}$\textquotedblright{}? Um par de objetos \ntuple{$\text{y}, \text{x}$} no
+domínio (isto é, um par de pessoas) satisfaz $\atom{R}{y,x}$ se, e somente se,
+o par inverso \ntuple{$\text{x}, \text{y}$} satisfaz
+$\atom{R}{x,y}$. Em outras palavras, $\atom{R}{y,x}$ expressa
+a relação \textquotedblleft \gap{x} nasceu \emph{depois} de \gap{y}\textquotedblright{}. Ou suponha que acrescentemos à nossa interpretação um predicado para \textquotedblleft professor de\textquotedblright{}:
+
+
 \begin{ekey}
-	\item[\atom{T}{x,y}] \gap{x} was a teacher of \gap{y}
+\item[\atom{T}{x,y}] \gap{x} foi professor de \gap{y}
 \end{ekey}
-Then the formula `$\exists z(\atom{T}{z,x} \land \atom{T}{z,y})$' is
-satisfied by x and~y if, and only if, some person z was a teacher of
-both x and~y, i.e., it expresses `\gap{x} and \gap{y} have a teacher
-in common'. Similarly, `$\forall z(\atom{T}{x,z} \eiff \atom{T}{y,
-z})$' expresses `\gap{x} and \gap{y} taught the same people'.
+Então a fórmula \textquotedblleft $\exists z(\atom{T}{z,x} \land \atom{T}{z,y})$\textquotedblright{} é satisfeita por $x$ e~$y$ se, e somente se, alguma pessoa $z$ foi professora de ambos $x$ e~$y$, isto é, ela expressa \textquotedblleft \gap{x} e \gap{y} têm um professor em comum\textquotedblright{}. Da mesma forma, \textquotedblleft $\forall z(\atom{T}{x,z} \eiff \atom{T}{y,z})$\textquotedblright{} expressa \textquotedblleft \gap{x} e \gap{y} ensinaram as mesmas pessoas\textquotedblright{}.
 
-The take-home message of these examples is that some English
-predicates, such as `\gap{x} and \gap{y} have a teacher in common',
-can be sometimes be expressed in an interpretation even if there is no
-explicit predicate symbol available for them. If that is the case, you
-can use a formula that expresses them (such as `$\exists
-z(\atom{T}{z,x} \land \atom{T}{z,y})$') to symbolize English sentences
-involving the predicate.
+
+
+
+
+A lição principal desses exemplos é que alguns predicados em português, como \textquotedblleft \gap{x} e \gap{y} têm um professor em comum\textquotedblright{}, às vezes podem ser expressos em uma interpretação mesmo que não haja um símbolo predicativo explícito disponível para eles. Se esse for o caso, você pode usar uma fórmula que os expresse (como \textquotedblleft $\exists z(\atom{T}{z,x} \land \atom{T}{z,y})$\textquotedblright{}) para simbolizar sentenças em português que envolvam o predicado.
+
+
+
+
+
+
 
 \practiceproblems
 
 \problempart
-Given the following interpretation:
+Dada a seguinte interpretação:
 \begin{ekey}
-	\item[\text{domain}] people
-	\item[\atom{W}{x}] \gap{x} is a woman (or girl)
-	\item[\atom{M}{x}] \gap{x} is a man (or boy)
-	\item[\atom{Y}{x,y}] \gap{x} is younger than \gap{y}
-	\item[\atom{O}{x,y}] \gap{x} is an offspring of \gap{y}
+\item[\text{domínio}] pessoas
+\item[\atom{W}{x}] \gap{x} é uma mulher (ou menina)
+\item[\atom{M}{x}] \gap{x} é um homem (ou menino)
+\item[\atom{Y}{x,y}] \gap{x} é mais jovem que \gap{y}
+\item[\atom{O}{x,y}] \gap{x} é filho ou filha de \gap{y}
 	\item[d] Dana
 	\item[a] Alex
 \end{ekey}
-express the following relations:
+expresse as seguintes relações:
 \begin{compactlist}
-	\item \gap{x} is older than \gap{y}
-	\item \gap{x} is \gap{y}'s mother
-	\item \gap{x} and \gap{y} are siblings (note that you can't be your
-	own sibling)
-	\item \gap{x} is \gap{y}'s brother
+\item \gap{x} é mais velho que \gap{y}
+\item \gap{x} é mãe de \gap{y}
+\item \gap{x} e \gap{y} são irmãos (observe que ninguém pode ser
+		próprio irmão)
+\item \gap{x} é irmão de \gap{y}
 \end{compactlist}
 
 \problempart
-Using the symbolization key from the previous
-exercise, symbolize the following sentences:
+Usando a chave de simbolização do exercício anterior, simbolize as seguintes sentenças:
+
 \begin{compactlist}
-	\item Alex and Dana are sisters.
-	\item Fathers are older than their children.
-	\item Alex's parents are the same age.
+\item Alex e Dana são irmãs.
+\item Pais são mais velhos que seus filhos.
+\item Os pais de Alex têm a mesma idade.
 \end{compactlist}
 
 
-\chapter{Using interpretations}
+\chapter{Usando interpretações}
 \label{sec.UsingModels}
 
-\section{Validities and contradictions}
-Suppose we want to show that `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is \emph{not} a validity. This requires showing that the sentence is not true in every interpretation; i.e.,\ that it is false in some interpretation. If we can provide just one interpretation in which the sentence is false, then we will have shown that the sentence is not a validity.
+\section{Validades e contradições}
+Suponha que queiramos mostrar que \textquotedblleft $\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} \emph{não} é uma validade. Isso exige mostrar que a sentença não é verdadeira em toda interpretação; isto é, que é falsa em alguma interpretação. Se pudermos fornecer uma única interpretação na qual a sentença seja falsa, teremos mostrado que ela não é uma validade.
 
-In order for `$\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$' to be false, the antecedent (`$\exists x\, \atom{A}{x,x}$') must be true, and the consequent (`$\atom{B}{d}$') must be false. To construct such an interpretation, we start by specifying a domain. Keeping the domain small makes it easier to specify what the predicates will be true of, so we will start with a domain that has just one member. For concreteness, let's say it is \emph{just} the city of Paris.
+Para que \textquotedblleft $\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} seja falsa, o antecedente (\textquotedblleft $\exists x\, \atom{A}{x,x}$\textquotedblright{}) deve ser verdadeiro e o consequente (\textquotedblleft $\atom{B}{d}$\textquotedblright{}) deve ser falso. Claramente, nosso domínio deve conter dois objetos. Vamos tentar:
 	\begin{ekey}
-		\item[\text{domain}] Paris
+\item[\text{domínio}] Paris
 	\end{ekey}
-The name `$d$' must refer to something in the domain, so we have no option but:
+O nome \textquotedblleft $d$\textquotedblright{} deve designar algo no domínio, portanto não temos outra opção senão:
 	\begin{ekey}
 		\item[d] Paris
 	\end{ekey}
-Recall that we want `$\exists x\, \atom{A}{x,x}$' to be true, so we want all members of the domain to be paired with themselves in the extension of `$A$'. We can just offer:
+Lembre-se de que queremos que \textquotedblleft $\exists x\, \atom{A}{x,x}$\textquotedblright{} seja verdadeira; portanto, queremos que todos os membros do domínio sejam associados a si mesmos na extensão de \textquotedblleft $A$\textquotedblright{}. Podemos simplesmente oferecer:
 	\begin{ekey}
-		\item[\atom{A}{x,y}] \gap{x} is identical with \gap{y}
+\item[\atom{A}{x,y}] \gap{x} é idêntico a \gap{y}
 	\end{ekey}
-Now `$\atom{A}{d,d}$' is true, so it is surely true that `$\exists x\, \atom{A}{x,x}$'. Next, we want `$\atom{B}{d}$' to be false, so the referent of `$d$' must not be in the extension of `$B$'. We might simply offer:
+Agora \textquotedblleft $\atom{A}{d,d}$\textquotedblright{} é verdadeira, portanto é certamente verdadeiro que \textquotedblleft $\exists x\, \atom{A}{x,x}$\textquotedblright{} é verdadeira. Em seguida, queremos que \textquotedblleft $\atom{B}{d}$\textquotedblright{} seja falsa, de modo que o referente de \textquotedblleft $d$\textquotedblright{} não deve estar na extensão de \textquotedblleft $B$\textquotedblright{}. Podemos simplesmente oferecer:
 	\begin{ekey}
-		\item[\atom{B}{x}] \gap{x} is in Germany
+\item[\atom{B}{x}] \gap{x} está na Alemanha
 	\end{ekey}
-Now we have an interpretation where `$\exists x\, \atom{A}{x,x}$' is true, but where `$\atom{B}{d}$' is false. So there is an interpretation where `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is false. So `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is not a validity.
+Agora temos uma interpretação na qual \textquotedblleft $\exists x\, \atom{A}{x,x}$\textquotedblright{} é verdadeira, mas \textquotedblleft $\atom{B}{d}$\textquotedblright{} é falsa. Portanto, há uma interpretação na qual \textquotedblleft $\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} é falsa. Logo, \textquotedblleft $\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} não é uma validade.
 
-We can just as easily show that `$\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$' is not a contradiction. We need only specify an interpretation in which `$\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$' is true; i.e., an interpretation in which either `$\exists x\, \atom{A}{x,x}$' is false or `$\atom{B}{d}$' is true. Here is one:
+Podemos mostrar com a mesma facilidade que \textquotedblleft $\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} não é uma contradição. Basta especificar uma interpretação na qual \textquotedblleft $\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} seja verdadeira; isto é, uma interpretação na qual ou \textquotedblleft $\exists x\, \atom{A}{x,x}$\textquotedblright{} seja falsa ou \textquotedblleft $\atom{B}{d}$\textquotedblright{} seja verdadeira. Eis uma:
 	\begin{ekey}
-		\item[\text{domain}] Paris
+\item[\text{domínio}] Paris
 		\item[d] Paris
-		\item[\atom{A}{x,y}] \gap{x} is identical with \gap{y}
-		\item[\atom{B}{x}] \gap{x} is in France
+\item[\atom{A}{x,y}] \gap{x} é idêntico a \gap{y}
+\item[\atom{B}{x}] \gap{x} está na França
 	\end{ekey}
-This shows that there is an interpretation where `$\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$' is true. So `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is not a contradiction.
+Isso mostra que há uma interpretação na qual \textquotedblleft $\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} é verdadeira. Portanto, \textquotedblleft $\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} não é uma contradição.
 	\factoidbox{
 		\begin{factoiditems}
-			\item To show that $\metav{A}$ is not a validity, it suffices to
-			find an interpretation where $\metav{A}$ is false.
+\item Para mostrar que $\metav{A}$ não é uma validade, basta encontrar uma interpretação na qual $\metav{A}$ seja falsa.
 
-			\item To show that $\metav{A}$ is not a contradiction, it
-			suffices to find an interpretation where $\metav{A}$ is true.
+
+\item Para mostrar que $\metav{A}$ não é uma contradição, basta encontrar uma interpretação na qual $\metav{A}$ seja verdadeira.
+
 		\end{factoiditems}
 	}
 
-\section{Logical equivalence}
-Suppose we want to show that `$\forall x\, \atom{S}{x}$' and `$\exists x\, \atom{S}{x}$' are not logically equivalent. We need to construct an interpretation in which the two sentences have different truth values; we want one of them to be true and the other to be false. We start by specifying a domain. Again, we make the domain small so that we can specify extensions easily. In this case, we will need at least two objects. (If we chose a domain with only one member, the two sentences would end up with the same truth value. In order to see why, try constructing some partial interpretations with one-member domains.) For concreteness, let's take:
+\section{Equivalência lógica}
+Suponha que queiramos mostrar que \textquotedblleft $\forall x\, \atom{S}{x}$\textquotedblright{} e \textquotedblleft $\exists x\, \atom{S}{x}$\textquotedblright{} não são logicamente equivalentes. Precisamos construir uma interpretação na qual as duas sentenças tenham valores de verdade diferentes; queremos que uma seja verdadeira e a outra, falsa. Começamos especificando um domínio. Novamente, fazemos o domínio pequeno para que possamos especificar facilmente as extensões. Nesse caso, precisaremos de pelo menos dois objetos. (Se escolhêssemos um domínio com apenas um membro, as duas sentenças acabariam tendo o mesmo valor de verdade. Para ver por quê, tente construir algumas interpretações parciais com domínios de um membro.) Para sermos concretos, tomemos:
 	\begin{ekey}
-		\item[\text{domain}] Ornette Coleman, Miles Davis
+\item[\text{domínio}] Ornette Coleman, Miles Davis
 	\end{ekey}
-We can make `$\exists x\, \atom{S}{x}$' true by including something in the extension of `$S$', and we can make `$\forall x\, \atom{S}{x}$' false by leaving something out of the extension of `$S$'. For concreteness, let's say:
+Podemos tornar \textquotedblleft $\exists x\, \atom{S}{x}$\textquotedblright{} verdadeira incluindo algo na extensão de \textquotedblleft $S$\textquotedblright{}, e podemos tornar \textquotedblleft $\forall x\, \atom{S}{x}$\textquotedblright{} falsa deixando algo fora da extensão de \textquotedblleft $S$\textquotedblright{}. Para sermos concretos, digamos:
 	\begin{ekey}
-		\item[\atom{S}{x}] \gap{x} plays saxophone
+\item[\atom{S}{x}] \gap{x} toca saxofone
 	\end{ekey}
-Now `$\exists x\, \atom{S}{x}$' is true, because `$\atom{S}{x}$' is true of Ornette Coleman. Slightly more precisely, extend our interpretation by allowing `$c$' to name Ornette Coleman.  `$\atom{S}{c}$' is true in this extended interpretation, so `$\exists x\, \atom{S}{x}$' was true in the original interpretation. Similarly, `$\forall x\, \atom{S}{x}$' is false, because `$\atom{S}{x}$' is false of Miles Davis. Slightly more precisely, extend our interpretation by allowing `$d$' to name Miles Davis, and `$\atom{S}{d}$' is false in this extended interpretation, so `$\forall x\, \atom{S}{x}$' was false in the original interpretation. We have provided a counter-interpretation to the claim that `$\forall x\, \atom{S}{x}$' and `$\exists x\, \atom{S}{x}$' are logically equivalent.
+Agora \textquotedblleft $\exists x\, \atom{S}{x}$\textquotedblright{} é verdadeira, porque \textquotedblleft $\atom{S}{x}$\textquotedblright{} é verdadeira de Ornette Coleman. Mais precisamente, estendemos nossa interpretação permitindo que \textquotedblleft $c$\textquotedblright{} nomeie Ornette Coleman. \textquotedblleft $\atom{S}{c}$\textquotedblright{} é verdadeira nessa interpretação estendida, portanto \textquotedblleft $\exists x\, \atom{S}{x}$\textquotedblright{} era verdadeira na interpretação original. Da mesma forma, \textquotedblleft $\forall x\, \atom{S}{x}$\textquotedblright{} é falsa, porque \textquotedblleft $\atom{S}{x}$\textquotedblright{} é falsa de Miles Davis. Mais precisamente, estendemos nossa interpretação permitindo que \textquotedblleft $d$\textquotedblright{} nomeie Miles Davis, e \textquotedblleft $\atom{S}{d}$\textquotedblright{} é falsa nessa interpretação estendida, portanto \textquotedblleft $\forall x\, \atom{S}{x}$\textquotedblright{} era falsa na interpretação original. Fornecemos uma contra-interpretação para a afirmação de que \textquotedblleft $\forall x\, \atom{S}{x}$\textquotedblright{} e \textquotedblleft $\exists x\, \atom{S}{x}$\textquotedblright{} são logicamente equivalentes.
 	\factoidbox{
-		To show that $\metav{A}$ and $\metav{B}$ are not logically equivalent, it suffices to find an interpretation where one is true and the other is false.
+Para mostrar que $\metav{A}$ e $\metav{B}$ não são logicamente equivalentes, basta encontrar uma interpretação na qual uma seja verdadeira e a outra, falsa.
 	}
 
-\section{Validity, entailment and satisfiability}
-To test for validity, entailment, or satisfiability, we typically need to produce interpretations that determine the truth value of several sentences simultaneously.
+\section{Validade, consequência lógica e satisfatibilidade}
+Para testar validade, consequência lógica ou satisfatibilidade, normalmente precisamos produzir interpretações que determinem simultaneamente o valor de verdade de várias sentenças.
 
-Consider the following argument in FOL:
+Considere o seguinte argumento na LPO:
 $$\exists x(\atom{G}{x} \eif \atom{G}{a}) \therefore \exists x\, \atom{G}{x} \eif \atom{G}{a}$$
-To show that this is invalid, we must make the premise true and the conclusion false. The conclusion is a conditional, so to make it false, the antecedent must be true and the consequent must be false. Clearly, our domain must contain two objects. Let's try:
+Para mostrar que ele é inválido, precisamos tornar a premissa verdadeira e a conclusão falsa. A conclusão é um condicional; portanto, para torná-la falsa, o antecedente deve ser verdadeiro e o consequente deve ser falso. Claramente, nosso domínio deve conter dois objetos. Vamos tentar:
 	\begin{ekey}
-		\item[\text{domain}] Karl Marx, Ludwig von Mises
-		\item[\atom{G}{x}] \gap{x} hated communism
+\item[\text{domínio}] Karl Marx, Ludwig von Mises
+\item[\atom{G}{x}] \gap{x} odiava o comunismo
 		\item[a] Karl Marx
 	\end{ekey}
-Given that Marx wrote \emph{The Communist Manifesto}, `$\atom{G}{a}$' is plainly false in this interpretation. But von Mises famously hated communism, so `$\exists x\, \atom{G}{x}$' is true in this interpretation. Hence `$\exists x\, \atom{G}{x} \eif \atom{G}{a}$' is false, as required.
+Como Marx escreveu \emph{O Manifesto Comunista}, \textquotedblleft $\atom{G}{a}$\textquotedblright{} é claramente falsa nessa interpretação. Mas von Mises odiava notoriamente o comunismo, portanto \textquotedblleft $\exists x\, \atom{G}{x}$\textquotedblright{} é verdadeira nessa interpretação. Consequentemente, \textquotedblleft $\exists x\, \atom{G}{x} \eif \atom{G}{a}$\textquotedblright{} é falsa, como exigido.
 
-Does this interpretation make the premise true? Yes it does! Note that `$\atom{G}{a} \eif \atom{G}{a}$' is true. (Indeed, it is a validity.) But then certainly `$\exists x (\atom{G}{x} \eif \atom{G}{a})$' is true, so the premise is true, and the conclusion is false, in this interpretation. The argument is therefore invalid.
+Essa interpretação torna a premissa verdadeira? Sim! Observe que \textquotedblleft $\atom{G}{a} \eif \atom{G}{a}$\textquotedblright{} é verdadeira. (De fato, é uma validade.) Mas então certamente \textquotedblleft $\exists x (\atom{G}{x} \eif \atom{G}{a})$\textquotedblright{} é verdadeira, portanto a premissa é verdadeira e a conclusão é falsa nessa interpretação. O argumento é, consequentemente, inválido.
 
-In passing, note that we have also shown that `$\exists x(\atom{G}{x} \eif \atom{G}{a})$' does \emph{not} entail `$\exists x\, \atom{G}{x} \eif \atom{G}{a}$', i.e., that $\exists x (\atom{G}{x} \eif \atom{G}{a}) \nentails \exists x\, \atom{G}{x} \eif \atom{G}{a}$. Equally, we have shown that the sentences `$\exists x (\atom{G}{x} \eif \atom{G}{a})$' and `$\enot (\exists x\, \atom{G}{x} \eif \atom{G}{a})$' are jointly satisfiable.
+De passagem, observe que também mostramos que \textquotedblleft $\exists x(\atom{G}{x} \eif \atom{G}{a})$\textquotedblright{} não implica logicamente \textquotedblleft $\exists x\, \atom{G}{x} \eif \atom{G}{a}$\textquotedblright{}, isto é, que $\exists x (\atom{G}{x} \eif \atom{G}{a}) \nentails \exists x\, \atom{G}{x} \eif \atom{G}{a}$. Da mesma forma, mostramos que as sentenças \textquotedblleft $\exists x (\atom{G}{x} \eif \atom{G}{a})$\textquotedblright{} e \textquotedblleft $\enot (\exists x\, \atom{G}{x} \eif \atom{G}{a})$\textquotedblright{} são conjuntamente satisfatíveis.
 
-Let's consider a second example:
+Consideremos um segundo exemplo:
 $$\forall x \exists y\, \atom{L}{x,y} \therefore \exists y \forall x\, \atom{L}{x,y}$$
-Again, we want to show that this is invalid. To do this, we must make the premises true and the conclusion false. Here is a suggestion:
+Novamente, queremos mostrar que este argumento é inválido. Para fazer isso, precisamos tornar as premissas verdadeiras e a conclusão falsa. Eis uma sugestão:
 \begin{ekey}
-	\item[\text{domain}] Canadian citizens currently in a domestic partnership with another Canadian citizen
-	\item[\atom{L}{x,y}] \gap{x} is in a domestic partnership with \gap{y}
+\item[\text{domínio}] cidadãos canadenses que atualmente estão em uma união estável com outro cidadão canadense
+\item[\atom{L}{x,y}] \gap{x} está em uma união estável com \gap{y}
 \end{ekey}
-The premise is clearly true on this interpretation. Anyone in the domain is a Canadian citizen in a domestic partnership with some other Canadian citizen. That other citizen will also, then, be in the domain. So for everyone in the domain, there will be someone (else) in the domain with whom they are in a domestic partnership. Hence `$\forall x \exists y\, \atom{L}{x,y}$' is true. However, the conclusion is clearly false, for that would require that there is some single person who is in a domestic partnership with everyone in the domain, and there is no such person, so the argument is invalid. We observe immediately that the sentences `$\forall x \exists y\, \atom{L}{x,y}$' and `$\enot\exists y \forall x\, \atom{L}{x,y}$' are jointly satisfiable and that `$\forall x \exists y\, \atom{L}{x,y}$' does not entail `$\exists y \forall x\, \atom{L}{x,y}$'.
+A premissa é claramente verdadeira nessa interpretação. Qualquer pessoa no domínio é um cidadão canadense que está em uma união estável com algum outro cidadão canadense. Esse outro cidadão também estará, então, no domínio. Portanto, para cada pessoa no domínio, haverá alguém (diferente) no domínio com quem ela está em uma união estável. Logo, \textquotedblleft $\forall x \exists y\, \atom{L}{x,y}$\textquotedblright{} é verdadeira. Contudo, a conclusão é claramente falsa, pois exigiria que houvesse uma única pessoa que estivesse em uma união estável com todos no domínio, e não há tal pessoa; portanto, o argumento é inválido. Observamos imediatamente que as sentenças \textquotedblleft $\forall x \exists y\, \atom{L}{x,y}$\textquotedblright{} e \textquotedblleft $\enot\exists y \forall x\, \atom{L}{x,y}$\textquotedblright{} são conjuntamente satisfatíveis e que \textquotedblleft $\forall x \exists y\, \atom{L}{x,y}$\textquotedblright{} não implica logicamente \textquotedblleft $\exists y \forall x\, \atom{L}{x,y}$\textquotedblright{}.
 
-For our third example, we'll mix things up a bit. In \cref{s:Interpretations}, we described how we can present some interpretations using diagrams. For example:
+Para o nosso terceiro exemplo, vamos misturar um pouco as coisas. Em \cref{s:Interpretations}, descrevemos como podemos apresentar algumas interpretações usando diagramas. Por exemplo:
 \begin{center}
-	\begin{tikzpicture}[alt={The numbers 1, 2, and 3 are connected by arrows. There are arrows from 1 to 2, 3, and to itself, and from 2 to 3. There is no arrow leaving 3.}]
+	\begin{tikzpicture}[alt={Os números 1, 2 e 3 estão conectados por setas. Há setas de 1 para 2, para 3 e para si mesmo, e de 2 para 3. Não há nenhuma seta saindo de 3.}]
 	\node (atom1) at (0,2) {1};
 	\node (atom2) at (2,2) {2};
 	\node (atom3) at (2,0) {3};
 	\draw[->, thick] (atom1)--(atom2);
 	\draw[->, thick] (atom1)--(atom3);
-	\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
+	\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3);
 	\draw[->, thick] (atom2) -- (atom3);
 \end{tikzpicture}
-\bmlDescription{The numbers 1, 2, and 3 are connected by arrows. There are arrows from 1 to 2, 3, and to itself, and from 2 to 3. There is no arrow leaving 3.}
+\bmlDescription{Os números 1, 2 e 3 estão conectados por setas. Há setas de 1 para 2, para 3 e para si mesmo, e de 2 para 3. Não há nenhuma seta saindo de 3.}
 \end{center}
-Using the conventions employed in \cref{s:Interpretations}, the domain of this interpretation is the first three positive whole numbers, and `$\atom{R}{x,y}$' is true of x and y just in case there is an arrow from x to y in our diagram. Here are some sentences that the interpretation makes true:
+Usando as convenções empregadas em \cref{s:Interpretations}, o domínio dessa interpretação são os três primeiros números inteiros positivos, e \textquotedblleft $\atom{R}{x,y}$\textquotedblright{} é verdadeira de $x$ e $y$ se, e somente se, há uma seta de $x$ para $y$ em nosso diagrama. Eis algumas sentenças que a interpretação torna verdadeiras:
 \begin{itemize}
-	\item `$\forall x \exists y\, \atom{R}{y,x}$' 
-	\item `$\exists x \forall y\, \atom{R}{x,y}$' \hfill (witness for
+	\item `$\forall x \exists y\, \atom{R}{y,x}$'
+	\item `$\exists x \forall y\, \atom{R}{x,y}$' \hfill (testemunha para
 	$x$: $1$)
-	\item `$\exists x \forall y (\atom{R}{y,x} \eiff x = y)$' \hfill (witness for
+	\item `$\exists x \forall y (\atom{R}{y,x} \eiff x = y)$' \hfill (testemunha para
 	$x$: $1$)
-	\item `$\exists x \exists y \exists z ((\enot y = z \eand \atom{R}{x,y}) \eand \atom{R}{z,x})$' \hfill (witness for
+	\item `$\exists x \exists y \exists z ((\enot y = z \eand \atom{R}{x,y}) \eand \atom{R}{z,x})$' \hfill (testemunha para
 	$x$: $2$)
-	\item `$\exists x \forall y\, \enot \atom{R}{x,y}$' \hfill (witness for
+	\item `$\exists x \forall y\, \enot \atom{R}{x,y}$' \hfill (testemunha para
 	$x$: $3$)
-	\item `$\exists x (\exists y\, \atom{R}{y,x} \eand \enot \exists y\, \atom{R}{x,y})$' \hfill (witness for
+	\item `$\exists x (\exists y\, \atom{R}{y,x} \eand \enot \exists y\, \atom{R}{x,y})$' \hfill (testemunha para
 	$x$: $3$)
 \end{itemize}
-This immediately shows that all of the preceding six sentences are jointly satisfiable. We can use this observation to generate \emph{invalid} arguments, e.g.:
+Isso mostra imediatamente que todas as seis sentenças anteriores são conjuntamente satisfatíveis. Podemos usar essa observação para gerar argumentos \emph{inválidos}, por exemplo:
 \begin{align*}
 	\forall x \exists y\, \atom{R}{y,x}, \exists x \forall y\, \atom{R}{x,y}  &\therefore  \forall x \exists y\, \atom{R}{x,y}\\
 	\exists x \forall y\, \atom{R}{x,y}, \exists x \forall y \enot \atom{R}{x,y} & \therefore \enot \exists x \exists y \exists z (\enot y = z \eand (\atom{R}{x,y} \eand \atom{R}{z,x}))
 \end{align*}
-and many more besides.
+e muitos outros.
 
 \factoidbox{
-	If some interpretation makes all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$  true and $\metav{C}$ is false, then:
+Se alguma interpretação torna verdadeiras todas as sentenças $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ e $\metav{C}$ é falsa, então:
 	\begin{compactlist}
-		\item$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ is \emph{invalid}; and
-	\item $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nentails \metav{C}$; and
-	\item 
-	And $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n, \enot \metav{C}$ are jointly satisfiable.
+\item$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ é \emph{inválido}; e
+\item $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nentails \metav{C}$; e
+	\item
+\item $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n, \enot \metav{C}$ são conjuntamente satisfatíveis.
 \end{compactlist}}
-An interpretation which refutes a claim---to logical truth, say, or to entailment---is called a \emph{counter-interpretation}, or a \emph{counter-model}.
+Uma interpretação que refuta uma afirmação — de verdade lógica, digamos, ou de consequência lógica — é chamada de \emph{contra-interpretação} ou \emph{contra-modelo}.
 
-We'll close this section, though, with a caution about the relationship between (in)validity and (non)entailment. Recall FOL's limitations: it is an extensional language; it ignores issues of vagueness; and it cannot handle cases of validity for `special reasons'. To take one illustration of these issues, consider this natural-language argument: 
+Vamos encerrar esta seção, porém, com uma advertência sobre a relação entre (in)validade e (não)consequência lógica. Lembre-se das limitações da LPO: ela é uma linguagem extensional; ignora questões de vagueza; e não consegue lidar com casos de validade por \textquotedblleft razões especiais\textquotedblright{}. Para ilustrar uma dessas questões, considere este argumento em linguagem natural:
 \begin{earg}
-	\item[] Every fox is cute.
-	\item[\texttherefore] All vixens are cute.
+\item[] Toda raposa é fofa.
+\item[\texttherefore] Todas as raposas fêmeas são fofas.
 \end{earg}
-This is conceptually valid: necessarily every vixen is a fox, so it is impossible for the premise to be true and the conclusion false. Now, we might sensibly symbolize the argument as follows:
+Este é conceitualmente válido: necessariamente, toda raposa fêmea é uma raposa, portanto é impossível que a premissa seja verdadeira e a conclusão falsa. Agora, poderíamos sensatamente simbolizar o argumento da seguinte forma:
 $$\forall x(\atom{F}{x} \eif \atom{C}{x}) \therefore \forall x(\atom{V}{x} \eif  \atom{C}{x})$$
-However, it is easy to find counter-models which show that $\forall x(\atom{F}{x} \eif \atom{C}{x}) \nentails \forall x(\atom{V}{x} \eif  \atom{C}{x})$. (\emph{Exercise}: find one.) So, it would be \emph{wrong} to infer that the English argument is \emph{invalid}, just because there is a counter-model to the relevant \emph{FOL{}-entailment}.
+No entanto, é fácil encontrar contra-modelos que mostram que $\forall x(\atom{F}{x} \eif \atom{C}{x}) \nentails \forall x(\atom{V}{x} \eif  \atom{C}{x})$. (\emph{Exercício}: encontre um.) Portanto, seria \emph{errado} inferir que o argumento em português é \emph{inválido} apenas porque há um contra-modelo para a \emph{consequência lógica na LPO} relevante.
 
-The general moral is this. If you want to infer from the absence of an entailment in FOL to the invalidity of some English argument, then you need to argue that nothing important is lost in the way you have symbolized the English argument.
+A lição geral é esta. Se você quiser inferir da ausência de uma consequência lógica na LPO a invalidade de algum argumento em português, então precisa argumentar que nada importante se perdeu na maneira como simbolizou o argumento em português.
 
 \practiceproblems
 
 \solutions
 \problempart
 \label{pr.Contingent}
-Show that each of the following is neither a validity nor a contradiction:
+Mostre que cada uma das sentenças a seguir não é nem uma validade nem uma contradição:
 \begin{compactlist}
 \item \leftsolutions\ $\atom{D}{a}  \eand \atom{D}{b}$
 \item \leftsolutions\ $\exists x\, \atom{T}{x,h}$
@@ -855,7 +855,7 @@ Show that each of the following is neither a validity nor a contradiction:
 \solutions
 \problempart
 \label{pr.NotEquiv}
-Show that the following pairs of sentences are not logically equivalent.
+Mostre que os seguintes pares de sentenças não são logicamente equivalentes.
 \begin{compactlist}
 \item $\atom{J}{a} $,  $\atom{K}{a}$
 \item $\exists x\, \atom{J}{x}$,  $\atom{J}{m}$
@@ -871,7 +871,7 @@ Show that the following pairs of sentences are not logically equivalent.
 
 
 \problempart
-Show that the following sentences are jointly satisfiable:
+Mostre que as seguintes sentenças são conjuntamente satisfatíveis:
 \begin{compactlist}
 \item  $\atom{M}{a}, \enot \atom{N}{a}, \atom{P}{a}, \enot \atom{Q}{a}$
 \item $\atom{L}{e,e}, \atom{L}{e,g}, \enot \atom{L}{g,e}, \enot \atom{L}{g,g}$
@@ -889,7 +889,7 @@ Show that the following sentences are jointly satisfiable:
 \end{compactlist}
 
 \problempart
-Show that the following arguments are invalid:
+Mostre que os seguintes argumentos são inválidos:
 \begin{compactlist}
 \item $\forall x(\atom{A}{x} \eif \atom{B}{x}) \therefore \exists x\, \atom{B}{x}$
 \item $\forall x(\atom{R}{x} \eif \atom{D}{x}), \forall x(\atom{R}{x} \eif \atom{F}{x}) \therefore \exists x(\atom{D}{x} \eand \atom{F}{x})$
@@ -903,97 +903,97 @@ Show that the following arguments are invalid:
 \item $\forall x(\atom{D}{x} \eif \exists y\, \atom{T}{y,x}) \therefore \exists y \exists z\ \enot y= z$
 \end{compactlist}
 
-\chapter{Reasoning about interpretations}
+\chapter{Raciocinando sobre interpretações}
 
-\section{Validities and contradictions}
-We can show that a sentence is \emph{not} a validity just by providing one carefully specified interpretation: an interpretation in which the sentence is false. To show that something \emph{is} a validity, on the other hand, it would not be enough to construct ten, one hundred, or even a thousand interpretations in which the sentence is true. A sentence is only a validity if it is true in \emph{every} interpretation, and there are infinitely many interpretations. We need to reason about all of them, and we cannot do this by dealing with them one by one!
+\section{Validades e contradições}
+Podemos mostrar que uma sentença \emph{não} é uma validade simplesmente fornecendo uma interpretação cuidadosamente especificada: uma interpretação na qual a sentença é falsa. Para mostrar que algo \emph{é} uma validade, por outro lado, não bastaria construir dez, cem ou mesmo mil interpretações nas quais a sentença é verdadeira. Uma sentença só é uma validade se for verdadeira em \emph{toda} interpretação, e há infinitas interpretações. Precisamos raciocinar sobre todas elas, e não podemos fazer isso tratando-as uma a uma!
 
-Sometimes, we can reason about all interpretations fairly easily. For example, we can offer a relatively simple argument that `$\atom{R}{a,a}\eor\enot \atom{R}{a,a}$' is a validity:
+Às vezes, podemos raciocinar sobre todas as interpretações com bastante facilidade. Por exemplo, podemos oferecer um argumento relativamente simples de que \textquotedblleft $\atom{R}{a,a}\eor\enot \atom{R}{a,a}$\textquotedblright{} é uma validade:
 	\begin{quote}
 		\label{allmodels1}
-		Any relevant interpretation will give `$\atom{R}{a,a}$' a truth value. If `$\atom{R}{a,a}$' is true in an interpretation, then `$\atom{R}{a,a} \eor \enot\atom{R}{a,a}$' is true in that interpretation. If `$\atom{R}{a,a}$' is false in an interpretation, then $\enot\atom{R}{a,a}$ is true, and so `$\atom{R}{a,a} \eor\enot \atom{R}{a,a}$' is true in that interpretation. These are the only alternatives. So `$\atom{R}{a,a} \eor\enot \atom{R}{a,a}$' is true in every interpretation. Therefore, it is a validity.
+Qualquer interpretação relevante atribuirá um valor de verdade a \textquotedblleft $\atom{R}{a,a}$\textquotedblright{}. Se \textquotedblleft $\atom{R}{a,a}$\textquotedblright{} for verdadeira em uma interpretação, então \textquotedblleft $\atom{R}{a,a} \eor \enot\atom{R}{a,a}$\textquotedblright{} será verdadeira nessa interpretação. Se \textquotedblleft $\atom{R}{a,a}$\textquotedblright{} for falsa em uma interpretação, então $\enot\atom{R}{a,a}$ será verdadeira e, portanto, \textquotedblleft $\atom{R}{a,a} \eor\enot \atom{R}{a,a}$\textquotedblright{} será verdadeira nessa interpretação. Essas são as únicas alternativas. Logo, \textquotedblleft $\atom{R}{a,a} \eor\enot \atom{R}{a,a}$\textquotedblright{} é verdadeira em toda interpretação. Portanto, é uma validade.
 	\end{quote}
-This argument is valid, of course, and its conclusion is true. However, it is not an argument in FOL. Rather, it is an argument in English \emph{about} FOL: it is an argument in the metalanguage.
+Esse argumento é válido, é claro, e sua conclusão é verdadeira. No entanto, não é um argumento na LPO. Trata-se, antes, de um argumento em português \emph{sobre} a LPO: é um argumento na metalinguagem.
 
-Note another feature of the argument. Since the sentence in question contained no quantifiers, we did not need to think about how to interpret `$a$' and `$R$'; the point was just that, however we interpreted them, `$\atom{R}{a,a}$' would have some truth value or other. (We could ultimately have given the same argument concerning TFL sentences.)
+Observe outra característica do argumento. Como a sentença em questão não continha quantificadores, não precisamos pensar em como interpretar \textquotedblleft $a$\textquotedblright{} e \textquotedblleft $R$\textquotedblright{}; o ponto era apenas que, independentemente de como os interpretássemos, \textquotedblleft $\atom{R}{a,a}$\textquotedblright{} teria algum valor de verdade. (Em última análise, poderíamos ter dado o mesmo argumento a respeito de sentenças da LVF.)
 
-Let's have another example. The sentence `$\forall x(\atom{R}{x,x}\eor\enot \atom{R}{x,x})$' should obviously be a validity. However, saying \emph{precisely} why is quite tricky. We cannot say that `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$' is true in every interpretation, since `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$' is not even a \emph{sentence} of FOL (remember that `$x$' is a variable, not a name). Instead, we should say something like this:
+Vejamos outro exemplo. A sentença \textquotedblleft $\forall x(\atom{R}{x,x}\eor\enot \atom{R}{x,x})$\textquotedblright{} deveria obviamente ser uma validade. Contudo, dizer \emph{precisamente} por quê é bastante complicado. Não podemos dizer que \textquotedblleft $\atom{R}{x,x} \eor\enot \atom{R}{x,x}$\textquotedblright{} é verdadeira em toda interpretação, pois \textquotedblleft $\atom{R}{x,x} \eor\enot \atom{R}{x,x}$\textquotedblright{} nem sequer é uma \emph{sentença} da LPO (lembre-se de que \textquotedblleft $x$\textquotedblright{} é uma variável, não um nome). Em vez disso, devemos dizer algo como o seguinte:
 	\begin{quote}
-		Consider some arbitrary interpretation. `$\forall x(\atom{R}{x,x}\eor \enot\atom{R}{x,x})$' is true in our interpretation \ifeff{} `$\atom{R}{x,x}\eor\enot\atom{R}{x,x}$' is satisfied by every object of its domain. Consider some arbitrary member of the domain, which, for convenience, we will call Fred. Either Fred satisfies `$\atom{R}{x,x}$' or it does not. If Fred satisfies `$\atom{R}{x,x}$', then Fred also satisfies `$\atom{R}{x,x} \eor \enot \atom{R}{x,x}$'. If Fred does not satisfy `$\atom{R}{x,x}$', it \emph{does} satisfy `$\enot\atom{R}{x,x}$' and so also `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'.\footnote{We use here the fact that the truth conditions for connectives also apply to satisfaction: $a$ satisfies $\metav{A}(\metav{x}) \lor \metav{B}(\metav{x})$ \ifeff{} $a$ satisfies $\metav{A}(\metav{x})$ or $\metav{B}(\metav{x})$, etc.} So either way, Fred satisfies `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'. Since there was nothing special about Fred---we might have chosen any object---we see that every object in the domain satisfies `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'. So `$\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$' is true in our interpretation. But we chose our interpretation arbitrarily, so `$\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$' is true in every interpretation. It is therefore a validity.
+Considere uma interpretação arbitrária. \textquotedblleft $\forall x(\atom{R}{x,x}\eor \enot\atom{R}{x,x})$\textquotedblright{} é verdadeira em nossa interpretação \ifeff{} \textquotedblleft $\atom{R}{x,x}\eor\enot\atom{R}{x,x}$\textquotedblright{} é satisfeita por todo objeto do seu domínio. Considere algum membro arbitrário do domínio, que, por conveniência, chamaremos Fred. Ou Fred satisfaz \textquotedblleft $\atom{R}{x,x}$\textquotedblright{} ou não. Se Fred satisfaz \textquotedblleft $\atom{R}{x,x}$\textquotedblright{}, então Fred também satisfaz \textquotedblleft $\atom{R}{x,x} \eor \enot \atom{R}{x,x}$\textquotedblright{}. Se Fred não satisfaz \textquotedblleft $\atom{R}{x,x}$\textquotedblright{}, ele \emph{satisfaz} \textquotedblleft $\enot\atom{R}{x,x}$\textquotedblright{} e, portanto, também \textquotedblleft $\atom{R}{x,x} \eor\enot \atom{R}{x,x}$\textquotedblright{}.\footnote{Usamos aqui o fato de que as condições de verdade dos conectivos também se aplicam à satisfação: $a$ satisfaz $\metav{A}(\metav{x}) \lor \metav{B}(\metav{x})$ \ifeff{} $a$ satisfaz $\metav{A}(\metav{x})$ ou $\metav{B}(\metav{x})$, etc.} De qualquer forma, Fred satisfaz \textquotedblleft $\atom{R}{x,x} \eor\enot \atom{R}{x,x}$\textquotedblright{}. Como nada havia de especial em Fred — poderíamos ter escolhido qualquer objeto — vemos que todo objeto do domínio satisfaz \textquotedblleft $\atom{R}{x,x} \eor\enot \atom{R}{x,x}$\textquotedblright{}. Portanto, \textquotedblleft $\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$\textquotedblright{} é verdadeira em nossa interpretação. Mas escolhemos nossa interpretação arbitrariamente; logo, \textquotedblleft $\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$\textquotedblright{} é verdadeira em toda interpretação. Portanto, é uma validade.
 	\end{quote}
-This is quite long-winded, but, as things stand, there is no alternative. In order to show that a sentence is a validity, we must reason about \emph{all} interpretations.
+Isso é bastante prolixo, mas, nas condições atuais, não há alternativa. Para mostrar que uma sentença é uma validade, precisamos raciocinar sobre \emph{todas} as interpretações.
 
-\section{Other cases}
-Similar points hold of other cases too. Thus, we must reason about all interpretations if we want to show:
+\section{Outros casos}
+Pontos semelhantes valem para outros casos também. Assim, precisamos raciocinar sobre todas as interpretações se quisermos mostrar:
 	\begin{itemize}
-		\item that a sentence is a contradiction (this requires that it is false in \emph{every} interpretation);
-		\item that two sentences are logically equivalent (this requires that they have the same truth value in \emph{every} interpretation);
-		\item that some sentences are jointly unsatisfiable (this requires that there is no interpretation in which all of those sentences are true together, i.e., that, in \emph{every} interpretation, at  least one of those sentences is false);
-		\item that an argument is valid (this requires that the conclusion is true in \emph{every} interpretation where the premises are true);
-		\item that some sentences entail another sentence.
+\item que uma sentença é uma contradição (isso exige que seja falsa em \emph{toda} interpretação);
+\item que duas sentenças são logicamente equivalentes (isso exige que tenham o mesmo valor de verdade em \emph{toda} interpretação);
+\item que algumas sentenças são conjuntamente insatisfatíveis (isso exige que não haja interpretação na qual todas sejam verdadeiras juntas, isto é, que, em \emph{toda} interpretação, pelo menos uma dessas sentenças seja falsa);
+\item que um argumento é válido (isso exige que a conclusão seja verdadeira em \emph{toda} interpretação na qual as premissas sejam verdadeiras);
+\item que algumas sentenças impliquem logicamente outra sentença.
 	\end{itemize}
-The problem is that, with the tools available to you so far, reasoning about all interpretations is a serious challenge! For a final example, here is a perfectly obvious entailment:
+O problema é que, com as ferramentas disponíveis até agora, raciocinar sobre todas as interpretações é um desafio sério! Como exemplo final, eis uma consequência lógica perfeitamente óbvia:
 	$$\forall x(\atom{H}{x} \eand \atom{J}{x}) \entails \forall x\, \atom{H}{x}$$
-After all, if everything is both $H$ and $J$, then everything is~$H$.
-But we can only establish the entailment by considering what must be
-true in every interpretation in which the premise $\forall
-x(\atom{H}{x} \eand \atom{J}{x})$ is true. To show this, we would have
-to reason as follows:
+Afinal, se tudo é simultaneamente $H$ e $J$, então tudo é~$H$.
+Mas só podemos estabelecer a consequência lógica considerando o que deve ser
+verdadeiro em toda interpretação na qual a premissa $\forall
+x(\atom{H}{x} \eand \atom{J}{x})$ é verdadeira. Para mostrar isso, teríamos
+de raciocinar da seguinte maneira:
 	\begin{quote}
-		Consider an arbitrary interpretation in which `$\forall x(\atom{H}{x} \eand \atom{J}{x})$' is true. It follows that `$\atom{H}{x} \eand \atom{J}{x}$' is satisfied by every object in this interpretation. `$\atom{H}{x}$' will, then, also be satisfied by every object.\footnote{Here again we make use of the fact that any object that satisfies $\metav{A}(\metav{x}) \land \metav{B}(\metav{x})$ must satisfy both $\metav{A}(\metav{x})$ and $\metav{B}(\metav{x})$.} So it must be that `$\forall x\, \atom{H}{x}$' is true in the  interpretation. We've assumed nothing about the interpretation except that it was one in which `$\forall x(\atom{H}{x} \eand \atom{J}{x})$' is true. So any interpretation in which `$\forall x(\atom{H}{x} \eand \atom{J}{x})$' is true is one in which `$\forall x\, \atom{H}{x}$' is true.
+Considere uma interpretação arbitrária na qual \textquotedblleft $\forall x(\atom{H}{x} \eand \atom{J}{x})$\textquotedblright{} é verdadeira. Segue-se que \textquotedblleft $\atom{H}{x} \eand \atom{J}{x}$\textquotedblright{} é satisfeita por todo objeto nessa interpretação. \textquotedblleft $\atom{H}{x}$\textquotedblright{} será, então, também satisfeita por todo objeto.\footnote{Aqui novamente usamos o fato de que qualquer objeto que satisfaz $\metav{A}(\metav{x}) \land \metav{B}(\metav{x})$ deve satisfazer tanto $\metav{A}(\metav{x})$ quanto $\metav{B}(\metav{x})$.} Portanto, \textquotedblleft $\forall x\, \atom{H}{x}$\textquotedblright{} deve ser verdadeira na interpretação. Não supusemos nada sobre a interpretação, exceto que era uma na qual \textquotedblleft $\forall x(\atom{H}{x} \eand \atom{J}{x})$\textquotedblright{} é verdadeira. Assim, qualquer interpretação na qual \textquotedblleft $\forall x(\atom{H}{x} \eand \atom{J}{x})$\textquotedblright{} é verdadeira é uma na qual \textquotedblleft $\forall x\, \atom{H}{x}$\textquotedblright{} é verdadeira.
 \end{quote}
-Even for a simple entailment like this one, the reasoning is somewhat complicated. For more complicated entailments, the reasoning can be extremely torturous.
+Mesmo para uma consequência lógica simples como esta, o raciocínio é um tanto complicado. Para consequências lógicas mais complicadas, o raciocínio pode ser extremamente tortuoso.
 
-The following table summarizes whether a single interpretation or counter-interpretation suffices, or whether we must reason about all interpretations.
+A tabela a seguir resume se uma única interpretação ou contra-interpretação é suficiente, ou se precisamos raciocinar sobre todas as interpretações.
 
 \begin{center}\small
 \begin{tabular}{l l l}
 %\cline{2-3}
- & \textbf{Yes} & \textbf{No}\\
+ & \textbf{Sim} & \textbf{Não}\\
  \hline
 %\cline{2-3}
-validity? & all interpretations & one counter-interpretation\\
-contradiction? &  all interpretations  & one counter-interpretation\\
-equivalent? & all interpretations & one counter-interpretation\\
-satisfiable? & one interpretation & all interpretations\\
-valid? & all interpretations & one counter-interpretation\\
-entailment? & all interpretations & one counter-interpretation\\
+validade? & todas as interpretações & uma contra-interpretação\\
+contradição? & todas as interpretações & uma contra-interpretação\\
+equivalência? & todas as interpretações & uma contra-interpretação\\
+satisfatibilidade? & uma interpretação & todas as interpretações\\
+validade do argumento? & todas as interpretações & uma contra-interpretação\\
+consequência lógica? & todas as interpretações & uma contra-interpretação\\
 \end{tabular}
 \end{center}
 \label{table.ModelOrArgument}
 
-You might want to compare this table with the table at the end of \cref{s:PartialTruthTable}. The key difference resides in the fact that TFL concerns truth tables, whereas FOL concerns interpretations. This difference is deeply important, since each truth-table only ever has finitely many lines, so that a complete truth table is a relatively tractable object. By contrast, there are infinitely many interpretations for any given sentence(s), so that reasoning about all interpretations can be a deeply tricky business.
+Talvez você queira comparar esta tabela com a tabela ao final de \cref{s:PartialTruthTable}. A diferença fundamental está no fato de que a LVF trata de tabelas-verdade, enquanto a LPO trata de interpretações. Essa diferença é profundamente importante, pois cada tabela-verdade tem apenas um número finito de linhas, de modo que uma tabela-verdade completa é um objeto relativamente manejável. Em contraste, há infinitas interpretações para qualquer sentença ou conjunto de sentenças, portanto raciocinar sobre todas as interpretações pode ser uma tarefa profundamente difícil.
 
-\chapter{Properties of relations}\label{ch:PropRelations}
+\chapter{Propriedades das relações}\label{ch:PropRelations}
 
-Symbolization keys allow us to assign two-place predicate symbols like
-`$\atom{R}{x,y}$' to English predicates with two gaps, e.g., `\gap{x}
-is older than \gap{y}'. This allows us to symbolize arguments such as:
+As chaves de simbolização nos permitem atribuir símbolos predicativos de dois lugares, como \textquotedblleft $\atom{R}{x,y}$\textquotedblright{}, a predicados em português com duas lacunas, por exemplo, \textquotedblleft \gap{x} é mais velho que \gap{y}\textquotedblright{}. Isso nos permite simbolizar argumentos como:
+
+
 \begin{earg}
-	\item Rudolf is older than Kurt.
-	\item Kurt is older than Julia.
-	\item[\texttherefore] Rudolf is older than Julia.
+\item Rudolf é mais velho que Kurt.
+\item Kurt é mais velho que Julia.
+\item[\texttherefore] Rudolf é mais velho que Julia.
 \end{earg}
-This argument is valid, but its symbolization in FOL,
+Esse argumento é válido, mas sua simbolização na LPO,
 \begin{earg}
 	\item $\atom{R}{r,k}$
 	\item $\atom{R}{k,j}$
 	\item[\texttherefore] $\atom{R}{r,j}$
 \end{earg}
-is not. That's because the validity of the argument depends on a
-property of the relation `$x$ is older than $y$', namely that if some
-person $x$ is older than a person~$y$, and $y$ is also older than~$z$,
-then $x$ must be older than $z$. This property of `older than' is
-called \define{transitivity}. We can symbolize this property
-\emph{itself} in FOL as:
+não é. Isso acontece porque a validade do argumento depende de uma propriedade da relação \textquotedblleft $x$ é mais velho que $y$\textquotedblright{}, a saber, que, se uma pessoa $x$ é mais velha que uma pessoa~$y$, e $y$ também é mais velha que~$z$, então $x$ deve ser mais velho que $z$. Essa propriedade de \textquotedblleft mais velho que\textquotedblright{} é chamada de \define{transitividade}. Podemos simbolizar essa propriedade \emph{em si} na LPO como:
+
+
+
+
+
 \[
 	\forall x\forall y\forall z((\atom{R}{x,y} \eand \atom{R}{y,z}) \eif
 	\atom{R}{x,z})
 \]
-Whenever the validity of an argument \emph{only} depends on a property
-of a relation involved, and this property can be symbolized in FOL, we
-can add this symbolization to the argument and obtain an argument that
-is in fact valid in FOL:
+Sempre que a validade de um argumento depender \emph{apenas} de uma propriedade de uma relação envolvida, e essa propriedade puder ser simbolizada na LPO, podemos acrescentar essa simbolização ao argumento e obter um argumento que de fato é válido na LPO:
+
+
+
 \begin{earg}
 	\item $\forall x\forall y\forall z((\atom{R}{x,y} \eand \atom{R}{y,z}) \eif
 	\atom{R}{x,z})$
@@ -1002,99 +1002,99 @@ is in fact valid in FOL:
 	\item[\texttherefore] $\atom{R}{r,j}$
 \end{earg}
 
-Properties of relations such as transitivity are important concepts
-especially in applications of logic in the sciences. For instance,
-order relations between numbers such as $<$ and $\le$ (and also $>$
-and $\ge$) are transitive. The identity relation~$=$ is also
-transitive.
+Propriedades de relações como a transitividade são conceitos importantes, especialmente nas aplicações da lógica às ciências. Por exemplo, relações de ordem entre números, como $<$ e $\le$ (e também $>$ e $\ge$), são transitivas. A relação de identidade~$=$ também é transitiva.
 
-There are other properties of relations that are important enough to
-have names, and often show up in applications. Here are some:
+
+
+
+
+Há outras propriedades de relações que são suficientemente importantes para ter nomes e que aparecem frequentemente em aplicações. Eis algumas:
+
 
 \factoidbox{
 	\begin{factoiditems}
-		\item A relation $R$ is \define{transitive} \ifeff{} it is the case
-		that whenever $\atom{R}{x,y}$ and $\atom{R}{y,z}$ then also~$\atom{R}{x,z}$.
-		\item A relation $R$ is \define{reflexive} \ifeff{} for any~$x$,
-		$\atom{R}{x,x}$ holds.
-		\item A relation $R$ is \define{symmetric} \ifeff{} whenever
-		$\atom{R}{x,y}$ holds, so does $\atom{R}{y,x}$.
-		\item A relation $R$ is \define{anti-symmetric} \ifeff{} for no two
-		\emph{different} $x$ and $y$, $\atom{R}{x,y}$ and $\atom{R}{y,x}$
-		both hold.
+\item Uma relação $R$ é \define{transitiva} \ifeff{} sempre que $\atom{R}{x,y}$ e $\atom{R}{y,z}$, então também $\atom{R}{x,z}$.
+
+\item Uma relação $R$ é \define{reflexiva} \ifeff{} para qualquer~$x$, $\atom{R}{x,x}$ vale.
+
+\item Uma relação $R$ é \define{sim\'etrica} \ifeff{} sempre que $\atom{R}{x,y}$ vale, também vale $\atom{R}{y,x}$.
+
+\item Uma relação $R$ é \define{antissim\'etrica} \ifeff{} para nenhum par de $x$ e $y$ \emph{diferentes}, $\atom{R}{x,y}$ e $\atom{R}{y,x}$ valem simultaneamente.
+
+
 	\end{factoiditems}}
 
 \newglossaryentry{transitive}
 {
-  name=transitivity,
-  text = transitive,
-  description={The property a relation~$R$ has \ifeff{} it is the case
-  that whenever $\atom{R}{x,y}$ and $\atom{R}{y,z}$ then also~$\atom{R}{x,z}$}
+  name=transitividade,
+  text = transitiva,
+  description={A propriedade que uma relação~$R$ tem \ifeff{} sempre que $\atom{R}{x,y}$ e $\atom{R}{y,z}$, então também $\atom{R}{x,z}$}
+
 }
 \newglossaryentry{reflexive}
 {
-  name=reflexivity,
-  text = reflexive,
-  description={The property a relation~$R$ has \ifeff{} for any~$x$, $\atom{R}{x,x}$ holds}
+  name=reflexividade,
+  text = reflexiva,
+  description={A propriedade que uma relação~$R$ tem \ifeff{} para qualquer~$x$, $\atom{R}{x,x}$ vale}
 }
 \newglossaryentry{symmetric}
 {
-  name=symmetry,
-  text = symmetric,
-  description={The property a relation~$R$ has \ifeff{} it is the case
-  that whenever $\atom{R}{x,y}$ holds, so does $\atom{R}{y,x}$}
+  name=simetria,
+  text = simétrica,
+  description={A propriedade que uma relação~$R$ tem \ifeff{} sempre que $\atom{R}{x,y}$ vale, também vale $\atom{R}{y,x}$}
+
 }
 \newglossaryentry{anti-symmetric}
 {
-  name=anti-symmetry,
-  text = refleanti-symmetricxive,
-  description={The property a relation~$R$ has \ifeff{} for no two
-	\emph{different} $x$ and $y$, $\atom{R}{x,y}$ and $\atom{R}{y,x}$
-	both hold}
+  name=antissimetria,
+  text = antissimétrica,
+  description={A propriedade que uma relação~$R$ tem \ifeff{} para nenhum par de
+  \emph{diferentes} $x$ e $y$, $\atom{R}{x,y}$ e $\atom{R}{y,x}$
+  valem simultaneamente}
 }
 
-We have already seen that transitivity can be symbolized in FOL. The
-others can, too:
+Já vimos que a transitividade pode ser simbolizada na LPO. As outras também podem:
+
 \begin{itemize}
-	\item $R$ is reflexive: $\forall x\,\atom{R}{x,x}$
-	\item $R$ is symmetric: \[\forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,x})\]
-	\item $R$ is anti-symmetric: \[\lnot\exists x\exists y((\atom{R}{x,y}
-	\eand \atom{R}{y,x}) \eand \enot x=y)\] or, equivalently, \[\forall x\forall y((\atom{R}{x,y}
+\item $R$ é reflexiva: $\forall x\,\atom{R}{x,x}$
+\item $R$ é simétrica: \[\forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,x})\]
+\item $R$ é antissimétrica: \[\lnot\exists x\exists y((\atom{R}{x,y}
+	\eand \enot x=y)\] ou, de modo equivalente, \[\forall x\forall y((\atom{R}{x,y}
 	\eand \atom{R}{y,x}) \eif x=y)\]
 \end{itemize}
 
-Relations expressing an equivalence in some respect are reflexive,
-e.g., `is the same age as', `is as tall as', and the most stringent
-equivalence of them all, identity~$=$. They are also symmetric: e.g.,
-whenever $x$ is as tall as~$y$, then $y$ is as tall as~$x$. In fact,
-relations that are reflexive, symmetric, and transitive are called
-\define{equivalence relations}.
+Relações que expressam uma equivalência em algum aspecto são reflexivas, por exemplo, \textquotedblleft tem a mesma idade que\textquotedblright{}, \textquotedblleft é tão alto quanto\textquotedblright{} e a mais estrita de todas as equivalências, a identidade~$=$. Elas também são simétricas: por exemplo, sempre que $x$ é tão alto quanto~$y$, então $y$ é tão alto quanto~$x$. De fato, relações que são reflexivas, simétricas e transitivas são chamadas de \define{rela\c{c}\~oes de equival\^encia}.
 
-Equivalences aren't the only symmetric relations. For instance, `is a
-sibling of' is symmetric, but it is not reflexive (as no one is their own
-sibling).
 
-Relations that are reflexive, transitive, and anti-symmetric are
-called \define{partial orders}. For instance, $\le$ and $\ge$ are
-partial orders. The relation `is no older than', by contrast, is
-reflexive and transitive, but not anti-symmetric. (Two different
-people can be of the same age, and so neither is older than the
-other.)
+
+
+
+
+Relações de equivalência não são as únicas relações simétricas. Por exemplo, \textquotedblleft é irmão ou irmã de\textquotedblright{} é simétrica, mas não é reflexiva (pois ninguém é seu próprio irmão ou irmã).
+
+
+
+Relações que são reflexivas, transitivas e antissimétricas são chamadas de \define{ordens parciais}. Por exemplo, $\le$ e $\ge$ são ordens parciais. A relação \textquotedblleft não é mais velho que\textquotedblright{}, em contraste, é reflexiva e transitiva, mas não antissimétrica. (Duas pessoas diferentes podem ter a mesma idade e, portanto, nenhuma é mais velha que a outra.)
+
+
+
+
+
 
 \practiceproblems
 
 \problempart
-Give examples of relations with the following properties:
+Dê exemplos de relações com as seguintes propriedades:
 \begin{compactlist}
-	\item Reflexive but not symmetric
-	\item Symmetric but not transitive
-	\item Transitive, symmetric, but not reflexive
+\item Reflexiva, mas não simétrica
+\item Simétrica, mas não transitiva
+\item Transitiva e simétrica, mas não reflexiva
 \end{compactlist}
 
 \problempart
-Show that a relation can be both symmetric and anti-symmetric by
-giving an interpretation that makes both of the following sentences
-true:
+Mostre que uma relação pode ser simultaneamente simétrica e antissimétrica fornecendo uma interpretação que torne verdadeiras ambas as seguintes sentenças:
+
+
 \begin{align*}
 	& \forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,x})\\
 	& \forall x\forall y((\atom{R}{x,y} \eand \atom{R}{y,x}) \eif x=y)

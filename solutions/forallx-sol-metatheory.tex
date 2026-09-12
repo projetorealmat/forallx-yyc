@@ -1,9 +1,9 @@
 
-\chapter{Normal forms}\setcounter{ProbPart}{0}
+\chapter{Formas normais}\setcounter{ProbPart}{0}
 
 \problempart
 \label{pr.DNF}
-Consider the following sentences:
+Considere as seguintes sentenças:
 	\begin{compactlist}
 		\item $(A \eif \enot B)$
 		\item $\enot (A \eiff B)$
@@ -12,8 +12,8 @@ Consider the following sentences:
 		\item $(\enot (A \eor B) \eiff ((\enot C \eand \enot A) \eif \enot B))$
 		\item $((\enot (A \eand \enot B) \eif C) \eand \enot (A \eand D))$
 	\end{compactlist}
-For each sentence, find an equivalent sentence in DNF and one in CNF.
-\myanswer{We give a solution for (2). The truth table for $\enot (A \eiff B)$ is:
+Para cada sentença, encontre uma sentença equivalente na FND e outra na FNC.
+\myanswer{Daremos uma solução para (2). A tabela-verdade de $\enot (A \eiff B)$ é:
 \begin{center}
 \begin{tabular}{c c | l}
 $A$ & $B$ & $\enot (A \eiff B)$\\
@@ -24,18 +24,18 @@ F & T & T \\
 F & F & F \\
 \end{tabular}
 \end{center}
-A sentence in DNF can be read off from lines 2 and 3:
+Uma sentença na FND pode ser lida nas linhas 2 e 3:
 \[(A \eand \enot B) \eor (\enot A \eand B)\]
-and one in CNF from lines 1 and~4:
+e uma na FNC nas linhas 1 e~4:
 \[(\enot A \eor \enot B) \eand (A \eor B).\]}
 
 \stepcounter{chapter} % Functional completeness
 
-\chapter{Proving equivalences}\setcounter{ProbPart}{0}
+\chapter{Demonstração de equivalências}\setcounter{ProbPart}{0}
 
 \problempart
 \label{pr.DNF2}
-Consider the following sentences:
+Considere as seguintes sentenças:
 \begin{compactlist}
 	\item $(A \eif \enot B)$
 	\item $\enot (A \eiff B)$
@@ -44,8 +44,8 @@ Consider the following sentences:
 	\item $(\enot (A \eor B) \eiff ((\enot C \eand \enot A) \eif \enot B))$
 	\item $((\enot (A \eand \enot B) \eif C) \eand \enot (A \eand D))$
 \end{compactlist}
-For each sentence, find an equivalent sentence in DNF and one inCNF by giving a chain of equivalences. Use (Id), (Absorp), and (Simp) to simplify your sentences as much as possible.
-\myanswer{We give a solution for (2). Removing `$\eiff$' and pushing negations inward is common to both:
+Para cada sentença, encontre uma sentença equivalente na FND e outra na FNC fornecendo uma cadeia de equivalências. Use (Id), (Absorp) e (Simp) para simplificar suas sentenças tanto quanto possível.
+\myanswer{Daremos uma solução para (2). Remover $\eiff$ e empurrar as negações para dentro é comum a ambas:
 \begin{align*}
 	& \enot (A \eiff B)\\
 	& \enot((A \eif B) \eand (B \eif A)) && \text{Bicond}\\
@@ -55,13 +55,13 @@ For each sentence, find an equivalent sentence in DNF and one inCNF by giving a 
 	& (\enot\enot A \eand \enot B) \eor (\enot\enot B \eand \enot A) && \text{DeM}\\
 	& (A \eand \enot B) \eor (\enot\enot B \eand \enot A) && \text{DN}\\
 	& (A \eand \enot B) \eor (B \eand \enot A) && \text{DN}
-\intertext{The result is now in DNF. To obtain a CNF, we keep going, using (Comm) and (Dist):}
+\intertext{O resultado está agora na FND. Para obter uma FNC, continuamos usando (Comm) e (Dist):}
 & ((A \eand \enot B) \eor B) \eand ((A \eand \enot B) \eor \enot A) && \text{Dist}\\
 & (B \eor (A \eand \enot B)) \eand ((A \eand \enot B) \eor \enot A) && \text{Comm}\\
 & ((B \eor A) \eand (B \eor \enot B)) \eand ((A \eand \enot B) \eor \enot A) && \text{Dist}\\
 & ((B \eor A) \eand (B \eor \enot B)) \eand (\enot A \eor (A \eand \enot B)) && \text{Comm}\\
 & ((B \eor A) \eand (B \eor \enot B)) \eand ((\enot A \eor A) \eand (\enot A \eor \enot B)) && \text{Dist}\\
-\intertext{The result can be simplified using (Simp):}
+\intertext{O resultado pode ser simplificado usando (Simp):}
 & (B \eor A) \eand ((\enot A \eor A) \eand (\enot A \eor \enot B)) && \text{Simp}\\
 & (B \eor A) \eand (\enot A \eor \enot B) && \text{Simp}
 \end{align*}}

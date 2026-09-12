@@ -1,7 +1,7 @@
 %!TEX root = forallxyyc.tex
-\chapter[Quick reference]{Quick reference}
+\chapter[Referência rápida]{Referência rápida}
 %\pagestyle{plain}
-\section{Characteristic truth tables}
+\section{Tabelas-verdade características}
 \label{app.CharacteristicTTs}
 
 \begin{tabular}{c|c}
@@ -25,39 +25,39 @@ F & F & F & F & T & T
 
 \vfill
 
-\section{Symbolization}
+\section{Simbolização}
 \begin{center}
 \label{app.symbolization}
 \begin{tabular*}{\textwidth}{rl}
-\multicolumn{2}{c}{\textsc{Sentential Connectives}}\\ \\
-It is not the case that $P$ & $\enot P$\\
-Either $P$ or $Q$ & $(P \eor Q)$\\
-Neither $P$ nor $Q$ & $\enot(P \eor Q)$\ or \ $(\enot P \eand \enot Q)$\\
-Both $P$ and $Q$ & $(P \eand Q)$\\
-If $P$ then $Q$ & $(P \eif Q)$\\
-$P$ only if $Q$ & $(P \eif Q)$\\
-$P$ if and only if $Q$ & $(P \eiff Q)$\\
-$P$ unless $Q$ & $(\enot Q \eif P)$ or $(P \eor Q)$\\[12pt]
-\multicolumn{2}{c}{\label{SymbolizingPredicates}\textsc{Predicates}}\\ \\
-All $F$s are $G$s & $\forall x(\atom{F}{x} \eif \atom{G}{x})$\\
-Some $F$s are $G$s & $\exists x(\atom{F}{x} \eand \atom{G}{x})$\\
-Not all $F$s are $G$s & $\enot\forall x(\atom{F}{x} \eif \atom{G}{x})$\ or\\
+\multicolumn{2}{c}{\textsc{Conectivos sentenciais}}\\ \\
+Não é o caso de que $P$ & $\enot P$\\
+$P$ ou $Q$ & $(P \eor Q)$\\
+Nem $P$ nem $Q$ & $\enot(P \eor Q)$\ ou \ $(\enot P \eand \enot Q)$\\
+$P$ e $Q$ & $(P \eand Q)$\\
+Se $P$, então $Q$ & $(P \eif Q)$\\
+$P$ somente se $Q$ & $(P \eif Q)$\\
+$P$ se, e somente se, $Q$ & $(P \eiff Q)$\\
+$P$ a menos que $Q$ & $(\enot Q \eif P)$ or $(P \eor Q)$\\[12pt]
+\multicolumn{2}{c}{\label{SymbolizingPredicates}\textsc{Predicados}}\\ \\
+Todos os $F$s são $G$s & $\forall x(\atom{F}{x} \eif \atom{G}{x})$\\
+Alguns $F$s são $G$s & $\exists x(\atom{F}{x} \eand \atom{G}{x})$\\
+Nem todos os $F$s são $G$s & $\enot\forall x(\atom{F}{x} \eif \atom{G}{x})$\ or\\
 & $\exists x(\atom{F}{x} \eand \enot \atom{G}{x})$\\
-No $F$s are $G$s & $\forall x(\atom{F}{x} \eif\enot \atom{G}{x})$\ or\\
+Nenhum $F$ é $G$ & $\forall x(\atom{F}{x} \eif\enot \atom{G}{x})$\ or\\
 & $\enot\exists x(\atom{F}{x} \eand \atom{G}{x})$\\
-Only $F$s are $G$s & $\forall x(\atom{G}{x} \eif \atom{F}{x})$\\
+Somente $F$s são $G$s & $\forall x(\atom{G}{x} \eif \atom{F}{x})$\\
 & $\enot\exists x(\enot\atom{F}{x} \eand \atom{G}{x})$\\[12pt]
-\multicolumn{2}{c}{\textsc{Identity}}\\ \\
-Only $c$ is $G$ & $\forall x(\atom{G}{x} \eiff x=c)$\\
-Everything other &\\ than $c$ 
-is $G$ & $\forall x(\enot\, {x = c} \eif \atom{G}{x} )$\\
-Everything \\except $c$ 
- is $G$ & $\forall x(\enot\, {x = c} \eiff \atom{G}{x} )$\\
-%$j$ is more $R$ than anyone else. & $\forall x(x\neq j \eif Rjx)$\\
-The $F$ is $G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \atom{G}{x} )$\\
-It is not the case \\ that
- the $F$ is $G$ & $\enot\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \atom{G}{x} )$\\
-The $F$ is non-$G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \enot \atom{G}{x} )$
+\multicolumn{2}{c}{\textsc{Identidade}}\\ \\
+Somente $c$ é $G$ & $\forall x(\atom{G}{x} \eiff x=c)$\\
+Tudo o que não é &\\ que $c$
+é $G$ & $\forall x(\enot\, {x = c} \eif \atom{G}{x} )$\\
+Tudo, exceto $c$
+ é $G$ & $\forall x(\enot\, {x = c} \eiff \atom{G}{x} )$\\
+%$j$ é mais $R$ do que qualquer outra coisa. & $\forall x(x\neq j \eif Rjx)$\\
+O $F$ é $G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \atom{G}{x} )$\\
+Não é o caso de que
+ o $F$ é $G$ & $\enot\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \atom{G}{x} )$\\
+O $F$ não é $G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \enot \atom{G}{x} )$
 \end{tabular*}
 \end{center}
 
@@ -69,103 +69,103 @@ The $F$ is non-$G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y
 % BEGIN: symbolizing cardinality
 
 \newpage
-\section{Using identity to symbolize quantities}
+\section{Usando a identidade para simbolizar quantidades}
 
-\subsection*{There are at least \blank\ $F$s.}
+\subsection*{Há pelo menos \blank\ $F$s.}
 \label{summary.atleast}
 
 
 \ifHTMLtarget
 \begin{tabular*}{\textwidth}{rl}
-	one & $\exists x\,\atom{F}{x}$\\
-	two & $\exists x_1\exists x_2(\atom{F}{x_1} \eand \atom{F}{x_2}
+	um & $\exists x\,\atom{F}{x}$\\
+	dois & $\exists x_1\exists x_2(\atom{F}{x_1} \eand \atom{F}{x_2}
 	\eand \enot x_1  = x_2)$\\
-	three & $\exists x_1\exists x_2\exists x_3(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \enot x_1 = x_2 \eand\enot x_1 = x_3 \eand \enot x_2 = x_3)$\\
-	four & $\exists x_1\exists x_2\exists x_3\exists x_4 (\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4} \eand \enot x_1 = x_2 \eand \enot x_1 = x_3 \eand \enot x_1 = x_4 \eand \enot x_2 = x_3 \eand \enot x_2 = x_4 \eand \enot x_3 = x_4)$\\
-	$n$ & $\exists x_1\ldots\exists x_n(\atom{F}{x_1} \eand \ldots \eand \atom{F}{x_n} \eand \enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1} = x_n)$ 
+	três & $\exists x_1\exists x_2\exists x_3(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \enot x_1 = x_2 \eand\enot x_1 = x_3 \eand \enot x_2 = x_3)$\\
+	quatro & $\exists x_1\exists x_2\exists x_3\exists x_4 (\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4} \eand \enot x_1 = x_2 \eand \enot x_1 = x_3 \eand \enot x_1 = x_4 \eand \enot x_2 = x_3 \eand \enot x_2 = x_4 \eand \enot x_3 = x_4)$\\
+	$n$ & $\exists x_1\ldots\exists x_n(\atom{F}{x_1} \eand \ldots \eand \atom{F}{x_n} \eand \enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1} = x_n)$
 \end{tabular*}
 \else
 \begin{tabular*}{\textwidth}{rl}
-	one & $\exists x\,\atom{F}{x}$\\
-	two & $\exists x_1\exists x_2(\atom{F}{x_1} \eand \atom{F}{x_2}
+	um & $\exists x\,\atom{F}{x}$\\
+	dois & $\exists x_1\exists x_2(\atom{F}{x_1} \eand \atom{F}{x_2}
 	\eand \enot x_1  = x_2)$\\
-	three & $\exists x_1\exists x_2\exists x_3(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand {}$\\
+	três & $\exists x_1\exists x_2\exists x_3(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand {}$\\
 	& \quad$\enot x_1 = x_2 \eand\enot x_1 = x_3 \eand \enot x_2 = x_3)$\\
-	four & $\exists x_1\exists x_2\exists x_3\exists x_4 (\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4} \eand {}$\\
+	quatro & $\exists x_1\exists x_2\exists x_3\exists x_4 (\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4} \eand {}$\\
 	& \quad $\enot x_1 = x_2 \eand \enot x_1 = x_3 \eand \enot x_1 = x_4 \eand {}$\\
 	& \qquad$ \enot x_2 = x_3 \eand \enot x_2 = x_4 \eand \enot x_3 = x_4)$\\
 	$n$ & $\exists x_1\ldots\exists x_n(\atom{F}{x_1} \eand \ldots \eand \atom{F}{x_n} \eand {}$\\
-	& \quad$\enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1} = x_n)$ 
+	& \quad$\enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1} = x_n)$
 \end{tabular*}
 \fi
 
-\subsection*{There are at most \blank\ $F$s.}
+\subsection*{Há no máximo \blank\ $F$s.}
 \label{summary.atmost}
 
-One way to say `there are at most $n$ $F$s' is to put a negation sign in front of the symbolization for `there are at least $n+1$ $F$s'. Equivalently, we can offer:
+Uma maneira de dizer `há no máximo $n$ $F$s' é colocar um sinal de negação antes da simbolização de `há pelo menos $n+1$ $F$s'. Equivalentemente, podemos oferecer:
 
 \noindent
 \ifHTMLtarget
 \begin{tabular*}{\textwidth}{rl}
-	one & $\forall x_1\forall x_2\bigl[(\atom{F}{x_1} \eand
+	um & $\forall x_1\forall x_2\bigl[(\atom{F}{x_1} \eand
 	\atom{F}{x_2}) \eif x_1=x_2\bigr]$\\
-	two & $\forall x_1\forall x_2\forall x_3\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3}) \eif (x_1=x_2 \eor x_1=x_3 \eor x_2=x_3)\bigr]$\\
-	three & $\forall x_1\forall x_2\forall x_3\forall x_4\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4}) \eif (x_1=x_2 \eor x_1=x_3 \eor x_1=x_4 \eor x_2=x_3 \eor x_2=x_4 \eor x_3=x_4)\bigr]$\\
-	$n$ & $\forall x_1\ldots\forall x_{n+1} \bigl[(\atom{F}{x_1} \eand \ldots \eand \atom{F}{x_{n+1}}) \eif (x_1=x_2 \eor \ldots \eor x_n=x_{n+1})\bigr]$ 
+	dois & $\forall x_1\forall x_2\forall x_3\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3}) \eif (x_1=x_2 \eor x_1=x_3 \eor x_2=x_3)\bigr]$\\
+	três & $\forall x_1\forall x_2\forall x_3\forall x_4\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4}) \eif (x_1=x_2 \eor x_1=x_3 \eor x_1=x_4 \eor x_2=x_3 \eor x_2=x_4 \eor x_3=x_4)\bigr]$\\
+	$n$ & $\forall x_1\ldots\forall x_{n+1} \bigl[(\atom{F}{x_1} \eand \ldots \eand \atom{F}{x_{n+1}}) \eif (x_1=x_2 \eor \ldots \eor x_n=x_{n+1})\bigr]$
 \end{tabular*}
 \else
 \begin{tabular*}{\textwidth}{rl}
-	one & $\forall x_1\forall x_2\bigl[(\atom{F}{x_1} \eand
+	um & $\forall x_1\forall x_2\bigl[(\atom{F}{x_1} \eand
 	\atom{F}{x_2}) \eif x_1=x_2\bigr]$\\
-	two & $\forall x_1\forall x_2\forall x_3\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3}) \eif {}$\\ & \quad$(x_1=x_2 \eor x_1=x_3 \eor x_2=x_3)\bigr]$\\
-	three & $\forall x_1\forall x_2\forall x_3\forall x_4\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4}) \eif {}$\\
+	dois & $\forall x_1\forall x_2\forall x_3\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3}) \eif {}$\\ & \quad$(x_1=x_2 \eor x_1=x_3 \eor x_2=x_3)\bigr]$\\
+	três & $\forall x_1\forall x_2\forall x_3\forall x_4\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4}) \eif {}$\\
 	& \quad$(x_1=x_2 \eor x_1=x_3 \eor x_1=x_4 \eor {}$\\
 	& \qquad$x_2=x_3 \eor x_2=x_4 \eor x_3=x_4)\bigr]$\\
 	$n$ & $\forall x_1\ldots\forall x_{n+1}
 	\bigl[(\atom{F}{x_1} \eand \ldots \eand \atom{F}{x_{n+1}}) \eif {}$\\
-	& \quad$(x_1=x_2 \eor \ldots \eor x_n=x_{n+1})\bigr]$ 
+	& \quad$(x_1=x_2 \eor \ldots \eor x_n=x_{n+1})\bigr]$
 \end{tabular*}
 \fi
 
 
-\subsection*{There are exactly \blank\ $F$s.}
+\subsection*{Há exatamente \blank\ $F$s.}
 \label{summary.exactly}
 
-One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizations above and say `there are at least $n$ $F$s and there are at most $n$ $F$s.' The following equivalent formulas are shorter:
+Uma maneira de dizer `há exatamente $n$ $F$s' é conjungir duas das simbolizações acima e dizer `há pelo menos $n$ $F$s e há no máximo $n$ $F$s'. As fórmulas equivalentes a seguir são mais curtas:
 
 \noindent
 \ifHTMLtarget
 \begin{tabular*}{\textwidth}{rl}
 	zero & $\forall x\,\enot \atom{F}{x}$\\
-	one & $\exists x\bigl[\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x = y)\bigr]$\\
-	two & $\exists x_1\exists x_2\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand \enot x_1 = x_2 \eand \forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor y = x_2)\bigr) \bigr]$\\
-	three & $\exists x_1\exists x_2\exists x_3\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \enot x_1 =  x_2 \eand \enot  x_1 = x_3 \eand \enot x_2 = x_3 \eand \forall y\bigl(\atom{F}{y} \eif (y = x_1 \eor y = x_2 \eor y =  x_3)\bigr) \bigr]$\\
-	$n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}{x_n}  \eand \enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1}= x_n \eand \forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor \ldots \eor y= x_n)\bigr)\bigr]$ 
+	um & $\exists x\bigl[\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x = y)\bigr]$\\
+	dois & $\exists x_1\exists x_2\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand \enot x_1 = x_2 \eand \forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor y = x_2)\bigr) \bigr]$\\
+	três & $\exists x_1\exists x_2\exists x_3\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \enot x_1 =  x_2 \eand \enot  x_1 = x_3 \eand \enot x_2 = x_3 \eand \forall y\bigl(\atom{F}{y} \eif (y = x_1 \eor y = x_2 \eor y =  x_3)\bigr) \bigr]$\\
+	$n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}{x_n}  \eand \enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1}= x_n \eand \forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor \ldots \eor y= x_n)\bigr)\bigr]$
 \end{tabular*}
 \else
 \begin{tabular*}{\textwidth}{rl}
 	zero & $\forall x\,\enot \atom{F}{x}$\\
-	one & $\exists x\bigl[\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x = y)\bigr]$\\
-	two & $\exists x_1\exists x_2\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand {}$\\
+	um & $\exists x\bigl[\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x = y)\bigr]$\\
+	dois & $\exists x_1\exists x_2\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand {}$\\
 	& \quad$\enot x_1 = x_2 \eand \forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor y = x_2)\bigr) \bigr]$\\
-	three & $\exists x_1\exists x_2\exists x_3\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand {}$\\
+	três & $\exists x_1\exists x_2\exists x_3\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand {}$\\
 	& \quad$\enot x_1 =  x_2 \eand \enot  x_1 = x_3 \eand \enot x_2 = x_3 \eand {}$\\
 	& \qquad$\forall y\bigl(\atom{F}{y} \eif (y = x_1 \eor y = x_2 \eor y =  x_3)\bigr) \bigr]$\\
 	$n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}{x_n}  \eand {}$\\
 	& \quad$\enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1}= x_n \eand {}$\\
-	& \qquad$\forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor \ldots \eor y= x_n)\bigr)\bigr]$ 
+	& \qquad$\forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor \ldots \eor y= x_n)\bigr)\bigr]$
 \end{tabular*}
 \fi
 %\item[one] $\exists x\forall y\bigl[\atom{F}{x} \eand (\atom{F}{y} \eif y = x)\bigr]$
 %\item[two] $\exists x\exists y\forall z\Bigl(\atom{F}{x} \eand \atom{F}{y} \eand \bigl[\atom{F}{z} \eif (z=x \eor z=y)\bigr] \eand x \neq y\Bigr)$
 %\item[three] $\exists x_1\exists x_2\exists x_3\forall y\Bigl(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand [\atom{F}{y} \eif (y=x_1 \eor y=x_2 \eor y=x_3)] \eand x_1 \neq x_2 \eand x_1 \neq x_3 \eand x_2 \neq x_3\Bigr)$
-%\item[n] $\exists x_1\cdots\exists x_n\forall y\Bigl(\atom{F}{x_1} \eand \cdots \eand \atom{F}{x_n} \eand \bigl[\atom{F}{y} \eif (y=x_1 \eor \cdots \eor y=x_n)\bigr] \eand x_1 \neq x_2 \eand\cdots\eand x_{n-1}\neq x_n\Bigr)$ 
+%\item[n] $\exists x_1\cdots\exists x_n\forall y\Bigl(\atom{F}{x_1} \eand \cdots \eand \atom{F}{x_n} \eand \bigl[\atom{F}{y} \eif (y=x_1 \eor \cdots \eor y=x_n)\bigr] \eand x_1 \neq x_2 \eand\cdots\eand x_{n-1}\neq x_n\Bigr)$
 
 
 \label{ProofRules}
-\newpage\section{Basic deduction rules for TFL}
+\newpage\section{Regras básicas de dedução para LVF}
 
-% \mathem is an empty box the same width as $m$; used to align rules
+% \mathem é uma caixa vazia da mesma largura que $m$; usada para alinhar as regras
 % properly
 \newlength{\mathemwd}
 \settowidth{\mathemwd}{\mbox{\small$m$}}
@@ -176,21 +176,21 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 % \renewenvironment{fitchproof}
 % 	{\noindent\par\noindent\small$\begin{nd}}
 % 	{\end{nd}$\noindent\normalsize\ignorespacesafterend}
-% 
+%
 \renewenvironment{fitchproof}[1][]
   {\begin{flushleft}\small\begin{nd}[#1]}
   {\end{nd}\end{flushleft}}
 \fi
-%{\LARGE \textbf{Basic Rules of Proof}}
+%{\LARGE \textbf{Regras básicas de dedução}}
 \begin{multicols}{2}
-\subsection*{Reiteration}
+\subsection*{Reiteração}
 
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
 	\have[\ ]{c}{\metav{A}} \by{R}{a}
 \end{fitchproof}
 
-\subsection*{Conjunction}
+\subsection*{Conjunção}
 
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
@@ -206,7 +206,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\have[\ ]{b}{\metav{B}} \ae{ab}
 \end{fitchproof}
 
-\subsection*{Conditional}
+\subsection*{Condicional}
 
 \begin{fitchproof}
 	\open
@@ -221,7 +221,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\have[\ ]{b}{\metav{B}} \ce{ab,a}
 \end{fitchproof}
 
-\subsection*{Negation}
+\subsection*{Negação}
 
 \begin{fitchproof}
 \open
@@ -236,7 +236,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\have[ ]{bot}{\ered}\ri{na, a}
 \end{fitchproof}
 
-\subsection*{Indirect proof}
+\subsection*{Prova indireta}
 
 \begin{fitchproof}
 \open
@@ -247,14 +247,14 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 \end{fitchproof}
 
 
-\subsection*{Explosion}
+\subsection*{Explosão}
 
 \begin{fitchproof}
 \have[m]{bot}{\ered}
 \have[ ]{}{\metav{A}}\re{bot}
 \end{fitchproof}
 
-\subsection*{Disjunction}
+\subsection*{Disjunção}
 
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
@@ -277,7 +277,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\have[\mathem]{c}{\metav{C}} \oe{ab,a-c1, b-c2}
 \end{fitchproof}
 
-\subsection*{Biconditional}
+\subsection*{Bicondicional}
 
 \begin{fitchproof}
 	\open
@@ -303,9 +303,9 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 \end{multicols}
 
-\section{Derived rules for TFL}
+\section{Regras derivadas para LVF}
 \begin{multicols}{2}
-\subsection*{Disjunctive syllogism}
+\subsection*{Silogismo disjuntivo}
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A} \eor \metav{B}}
 	\have[n]{nb}{\enot \metav{A}}
@@ -325,14 +325,14 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\have[\ ]{b}{\enot\metav{A}} \by{MT}{ab,a}
 \end{fitchproof}
 
-\subsection*{Double-negation elimination}
+\subsection*{Eliminação da dupla negação}
 	\begin{fitchproof}
 		\have[m]{dna}{\enot \enot \metav{A}}
 		\have[ ]{a}{\metav{A}}\dne{dna}
 	\end{fitchproof}
 
 
-\subsection*{Excluded middle}
+\subsection*{Terceiro excluído}
 	\begin{fitchproof}
 		\open
 			\hypo[i]{a}{\metav{A}}\AS
@@ -354,7 +354,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 %	\have[\ ]{ac}{\metav{A}\eif\metav{C}}\by{HS}{ab,bc}
 %\end{fitchproof}
 
-\subsection*{De Morgan Rules}
+\subsection*{Regras de De Morgan}
 \begin{fitchproof}
 	\have[m]{ab}{\enot (\metav{A} \eor \metav{B})}
 	\have[\ ]{dm}{\enot \metav{A} \eand \enot \metav{B}}\dem{ab}
@@ -375,29 +375,29 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 %\newpage
 
-\section{Basic deduction rules for FOL}
+\section{Regras básicas de dedução para LPO}
 
 \begin{multicols}{2}
-\subsection*{Universal elimination}
+\subsection*{Eliminação universal}
 
 \begin{fitchproof}
 	\have[m]{a}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\have[\ ]{c}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)} \Ae{a}
 \end{fitchproof}
 
-\subsection*{Universal introduction}
+\subsection*{Introdução universal}
 
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
 	\have[\ ]{c}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)} \Ai{a}
 \end{fitchproof}
 \begin{raggedright}
-\metav{c} must not occur in any undischarged assumption
+\metav{c} não pode ocorrer em nenhuma suposição não descarregada
 \end{raggedright}
 \end{multicols}
 
 \begin{multicols}{2}
-\subsection*{Existential introduction}
+\subsection*{Introdução existencial}
 
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
@@ -406,28 +406,28 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 \vfill\null\columnbreak
 
-\subsection*{Existential elimination}
+\subsection*{Eliminação existencial}
 
 \begin{fitchproof}
 	\have[m]{a}{\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
-	\open	
+	\open
 		\hypo[i]{b}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\AS
 		\have[j]{c}{\metav{B}}
 	\close
 	\have[\ ]{d}{\metav{B}}\Ee{a,b-c}
 \end{fitchproof}
 \begin{raggedright}
-\noindent \metav{c} must not occur in any undischarged assumption, in $\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$, or in \metav{B}\end{raggedright}
+\noindent \metav{c} não pode ocorrer em nenhuma suposição não descarregada, em $\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$, ou em \metav{B}\end{raggedright}
 \end{multicols}
 
-\subsection*{Identity introduction}
+\subsection*{Introdução da identidade}
 
 \begin{fitchproof}
 	\have[\mathem]{x}{\metav{c}=\metav{c}} \by{=I}{}
 \end{fitchproof}
 
 
-\subsection*{Identity elimination}
+\subsection*{Eliminação da identidade}
 
 \begin{multicols}{2}
 \begin{fitchproof}
@@ -443,7 +443,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 \end{multicols}
 
 %\begin{minipage}{\textwidth} % hack to keep section header with table
-\section{Derived rules for FOL}
+\section{Regras derivadas para LPO}
 
 \begin{multicols}{2}
 \begin{fitchproof}
@@ -465,21 +465,21 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 \end{multicols}
 %\end{minipage}
 
-\section{Rules for the use of subproofs and citations}
+\section{Regras para o uso de subprovas e citações}
 
-To cite an individual line when applying a rule:
+Para citar uma linha individual ao aplicar uma regra:
 \begin{compactlist}
-\item the line must come before the line where the rule is applied, but 
-\item not occur within a subproof that has been closed before the line where the rule is applied.
+\item a linha deve vir antes da linha em que a regra é aplicada, mas
+\item não pode ocorrer dentro de uma subprova que tenha sido fechada antes da linha em que a regra é aplicada.
 \end{compactlist}
-To cite a subproof when applying a rule:
-\begin{compactlist} 
-\item the cited subproof must come entirely before the application of the rule where it is cited,
-\item the cited subproof must not lie within some other closed subproof which is closed at the line it is cited, and 
-\item the last line of the cited subproof must not occur inside a nested subproof.
+Para citar uma subprova ao aplicar uma regra:
+\begin{compactlist}
+\item a subprova citada deve estar inteiramente antes da aplicação da regra em que é citada,
+\item a subprova citada não pode estar dentro de outra subprova fechada que seja encerrada na linha em que é citada, e
+\item a última linha da subprova citada não pode ocorrer dentro de uma subprova aninhada.
 \end{compactlist}
 
-\section{Rules for chains of equivalences}
+\section{Regras para cadeias de equivalências}
 
 \ifHTMLtarget
 \begin{align*}
