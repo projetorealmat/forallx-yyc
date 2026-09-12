@@ -789,33 +789,33 @@ Em \cref{s:MoreMonadic}, consideramos o que acontece quando movemos quantificado
 OBS.: a variável \textquotedblleft $x$\textquotedblright{} não ocorre em \textquotedblleft $\atom{G}{a}$\textquotedblright{}. Quando todos os quantificadores ocorrem no início de uma sentença, dizemos que ela está na \emph{forma normal prenex}. Essas equivalências às vezes são chamadas de \emph{regras de prenexação}, pois fornecem um meio de colocar qualquer sentença na forma normal prenex.
 
 
-\chapter{Rules for identity}
-In \cref{s:Interpretations}, we mentioned the philosophically contentious thesis of the \emph{identity of indiscernibles}. This is the claim that objects which are indiscernible in every way are, in fact, identical to each other. It was also mentioned that we will not subscribe to this thesis. It follows that, no matter how much you learn about two objects, we cannot prove that they are identical. That is unless, of course, you learn that the two objects are, in fact, identical, but then the proof will hardly be very illuminating.
+\chapter{Regras para a identidade}
+Em \cref{s:Interpretations}, mencionamos a tese filosoficamente controversa da \emph{identidade dos indiscerníveis}. Essa é a afirmação de que objetos indiscerníveis em todos os aspectos são, de fato, idênticos uns aos outros. Também mencionamos que não aderiremos a essa tese. Segue-se que, por mais que você aprenda sobre dois objetos, não podemos provar que são idênticos. A menos, é claro, que você descubra que os dois objetos são de fato idênticos; mas, nesse caso, a prova dificilmente será muito esclarecedora.
 
-The general point, though, is that \emph{no sentences} which do not already contain the identity predicate could justify an inference to `$a=b$'. So our identity introduction rule cannot allow us to infer to an identity claim containing two \emph{different} names.
+O ponto geral, porém, é que \emph{nenhuma sentença} que não contenha de antemão o predicado de identidade poderia justificar uma inferência para \textquotedblleft $a=b$\textquotedblright{}. Portanto, nossa regra de introdução da identidade não pode permitir inferir uma afirmação de identidade contendo dois nomes \emph{diferentes}.
 
-However, every object is identical to itself. No premises, then, are required in order to conclude that something is identical to itself. So this will be the identity introduction rule:
+No entanto, todo objeto é idêntico a si mesmo. Portanto, nenhuma premissa é necessária para concluir que algo é idêntico a si mesmo. Assim, esta será a regra de introdução da identidade:
 \factoidbox{
 \begin{fitchproof}
 	\have[\ \,\,\,]{x}{\metav{c}=\metav{c}} \by{=I}{}
 \end{fitchproof}}
-Notice that this rule does not require referring to any prior lines of the proof. For any name \metav{c}, you can write $\metav{c}=\metav{c}$ on any line, with only the {=}I rule as justification.
+Observe que essa regra não exige referência a nenhuma linha anterior da prova. Para qualquer nome $\metav{c}$, você pode escrever $\metav{c}=\metav{c}$ em qualquer linha, tendo apenas a regra {=}I como justificativa.
 
-Our elimination rule is more fun. If you have established `$a=b$', then anything that is true of the object named by `$a$' must also be true of the object named by `$b$'. For any sentence with `$a$' in it, you can replace some or all of the occurrences of `$a$' with `$b$' and produce an equivalent sentence. For example, from `$\atom{R}{a,a}$' and `$a = b$', you are justified in inferring `$\atom{R}{a,b}$', `$\atom{R}{b,a}$' or `$\atom{R}{b,b}$'. More generally:
+Nossa regra de eliminação é mais divertida. Se você estabeleceu \textquotedblleft $a=b$\textquotedblright{}, então tudo o que é verdadeiro do objeto nomeado por \textquotedblleft $a$\textquotedblright{} também deve ser verdadeiro do objeto nomeado por \textquotedblleft $b$\textquotedblright{}. Para qualquer sentença que contenha \textquotedblleft $a$\textquotedblright{}, você pode substituir algumas ou todas as ocorrências de \textquotedblleft $a$\textquotedblright{} por \textquotedblleft $b$\textquotedblright{} e produzir uma sentença equivalente. Por exemplo, de \textquotedblleft $\atom{R}{a,a}$\textquotedblright{} e \textquotedblleft $a=b$\textquotedblright{}, você está justificado a inferir \textquotedblleft $\atom{R}{a,b}$\textquotedblright{}, \textquotedblleft $\atom{R}{b,a}$\textquotedblright{} ou \textquotedblleft $\atom{R}{b,b}$\textquotedblright{}. Mais geralmente:
 \factoidbox{\begin{fitchproof}
 	\have[m]{e}{\metav{a}=\metav{b}}
 	\have[n]{a}{\metav{A}(\ldots \metav{a} \ldots \metav{a}\ldots)}
 	\have[\ ]{ea1}{\metav{A}(\ldots \metav{b} \ldots \metav{a}\ldots)} \by{=E}{e,a}
 \end{fitchproof}}
-The notation here is as for $\exists$I. So $\metav{A}(\ldots \metav{a} \ldots \metav{a}\ldots)$ is a formula containing the name $\metav{a}$, and $\metav{A}(\ldots \metav{b} \ldots \metav{a}\ldots)$ is a formula obtained by replacing one or more instances of the name $\metav{a}$ with the name $\metav{b}$. Lines $m$ and $n$ can occur in either order, and do not need to be adjacent, but we always cite the statement of identity first. Symmetrically, we allow:
+A notação aqui é a mesma da usada para $\exists$I. Assim, $\metav{A}(\ldots \metav{a} \ldots \metav{a}\ldots)$ é uma fórmula que contém o nome $\metav{a}$, e $\metav{A}(\ldots \metav{b} \ldots \metav{a}\ldots)$ é uma fórmula obtida substituindo uma ou mais ocorrências do nome $\metav{a}$ pelo nome $\metav{b}$. As linhas $m$ e $n$ podem ocorrer em qualquer ordem e não precisam ser adjacentes, mas sempre citamos primeiro a afirmação de identidade. Simetricamente, permitimos:
 \factoidbox{\begin{fitchproof}
 	\have[m]{e}{\metav{a}=\metav{b}}
 	\have[n]{a}{\metav{A}(\ldots \metav{b} \ldots \metav{b}\ldots)}
 	\have[\ ]{ea2}{\metav{A}(\ldots \metav{a} \ldots \metav{b}\ldots)} \by{=E}{e,a}
 \end{fitchproof}}
-This rule is sometimes called \emph{Leibniz's Law}, after Gottfried Leibniz.
+Essa regra às vezes é chamada de \emph{lei de Leibniz}, em homenagem a Gottfried Leibniz.
 
-To see the rules in action, we will prove some quick results. First, we will prove that identity is \emph{symmetric}:
+Para ver as regras em ação, provaremos alguns resultados rápidos. Primeiro, provaremos que a identidade é \emph{simétrica}:
 \begin{fitchproof}
 	\open
 		\hypo{ab}{a = b}\AS
@@ -826,9 +826,9 @@ To see the rules in action, we will prove some quick results. First, we will pro
 	\have{ayya}{\forall y (a = y \eif y = a)}\Ai{abba}
 	\have{xyyx}{\forall x\, \forall y (x = y \eif y = x)}\Ai{ayya}
 \end{fitchproof}
-We obtain line~$3$ by replacing one instance of `$a$' in line~$2$ with an instance of~`$b$'; this is justified given `$a= b$'.
+Obtemos a linha~$3$ substituindo uma ocorrência de \textquotedblleft $a$\textquotedblright{} na linha~$2$ por uma ocorrência de \textquotedblleft $b$\textquotedblright{}; isso é justificado por \textquotedblleft $a=b$\textquotedblright{}.
 
-Second, we will prove that identity is \emph{transitive}:
+Segundo, provaremos que a identidade é \emph{transitiva}:
 \begin{fitchproof}
 	\open
 		\hypo{abc}{a = b \eand b = c}\AS
@@ -841,13 +841,13 @@ Second, we will prove that identity is \emph{transitive}:
 	\have{cony}{\forall y\,\forall z((a = y \eand y = z) \eif a = z)}\Ai{conz}
 	\have{conx}{\forall x\,\forall y \forall z((x = y \eand y = z) \eif x = z)}\Ai{cony}
 \end{fitchproof}
-We obtain line~$4$ by replacing `$b$' in line~$3$ with `$a$'; this is justified given `$a= b$'.
+Obtemos a linha~$4$ substituindo \textquotedblleft $b$\textquotedblright{} na linha~$3$ por \textquotedblleft $a$\textquotedblright{}; isso é justificado por \textquotedblleft $a=b$\textquotedblright{}.
 
 \practiceproblems
 \problempart
 \label{pr.identity}
-For each of the following claims, provide an FOL proof that shows it
-is true.
+Para cada uma das afirmações a seguir, forneça uma prova na LPO que mostre
+que ela é verdadeira.
 \begin{compactlist}
 \item $\atom{P}{a} \eor \atom{Q}{b}, \atom{Q}{b} \eif b=c, \enot\atom{P}{a} \proves \atom{Q}{c}$
 \item $m=n \eor n=o, \atom{A}{n} \proves \atom{A}{m} \eor \atom{A}{o}$
@@ -862,33 +862,33 @@ is true.
 \end{compactlist}
 
 \problempart
-Show that the following are interderivable:
+Mostre que as seguintes sentenças são interderiváveis:
 \begin{itemize}
 \item $\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)$
 \item $\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)$
 \end{itemize}
-And hence that both have a decent claim to symbolize the English sentence `Nick is the~$F$'.\\
+E, portanto, ambas têm uma boa pretensão de simbolizar a sentença em português \textquotedblleft Nick é o~$F$\textquotedblright{}.
 
 \problempart
-In \cref{sec.identity}, we claimed that the following are logically equivalent symbolizations of the English sentence `there is exactly one $F$':
+Em \cref{sec.identity}, afirmamos que as seguintes são simbolizações logicamente equivalentes da sentença em português \textquotedblleft existe exatamente um $F$\textquotedblright{}:
 \begin{itemize}
 \item $\exists x\,\atom{F}{x} \eand \forall x\, \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]$
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
 \item $\exists x\, \forall y (\atom{F}{y} \eiff x = y)$
 \end{itemize}
-Show that they are all interderivable. (\emph{Hint}: to show that three claims are interderivable, it suffices to show that the first proves the second, the second proves the third and the third proves the first; think about why.)
+Mostre que todas são interderiváveis. (\emph{Dica}: para mostrar que três afirmações são interderiváveis, basta mostrar que a primeira prova a segunda, a segunda prova a terceira e a terceira prova a primeira; pense no motivo.)
 
 
 \
 \problempart
-Symbolize the following argument
+Simbolize o seguinte argumento
 	\begin{earg}
-		\item There is exactly one $F$. 
-		\item There is exactly one $G$. 
-		\item Nothing is both $F$ and~$G$. 
-		\item[\texttherefore] There are exactly two things that are either~$F$ or~$G$.
+		\item Existe exatamente um $F$.
+		\item Existe exatamente um $G$.
+		\item Nada é simultaneamente $F$ e~$G$.
+		\item[\texttherefore] Há exatamente duas coisas que são $F$ ou~$G$.
 	\end{earg}
-And offer a proof of it.
+E ofereça uma prova dele.
 %\begin{itemize}
 %\item  $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr], \exists x \bigl[\atom{G}{x} \eand \forall y (\atom{G}{y} \eif x = y)\bigr], \forall x (\enot\atom{F}{x} \eor \enot \atom{G}{x}) \proves \exists x\, \exists y \bigl[\enot\, {x = y} \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = y \eor x = z))\bigr]$
 %\end{itemize}
@@ -896,8 +896,8 @@ And offer a proof of it.
 
 
 
-\chapter{Derived rules}\label{s:DerivedFOL}
-As in the case of TFL, we first introduced some rules for FOL as basic (in \cref{s:BasicFOL}), and then added some further rules for conversion of quantifiers (in \cref{s:CQ}). In fact, the CQ rules should be regarded as \emph{derived} rules, for they can be derived from the  \emph{basic} rules of \cref{s:BasicFOL}. (The point here is as in \cref{s:Derived}.) Here is a justification for the first CQ rule:
+\chapter{Regras derivadas}\label{s:DerivedFOL}
+Assim como no caso da LVF, primeiro introduzimos algumas regras para a LPO como básicas (em \cref{s:BasicFOL}) e depois acrescentamos outras regras para a conversão de quantificadores (em \cref{s:CQ}). Na verdade, as regras CQ devem ser consideradas regras \emph{derivadas}, pois podem ser derivadas das regras \emph{básicas} de \cref{s:BasicFOL}. (O ponto aqui é o mesmo de \cref{s:Derived}.) Eis uma justificativa para a primeira regra CQ:
 \begin{fitchproof}
 	\have[m]{An}{\forall x\, \enot \atom{A}{x}}
 	\open
@@ -912,7 +912,7 @@ As in the case of TFL, we first introduced some rules for FOL as basic (in \cref
 	\have[m+6]{dada}{\enot \exists x\, \atom{A}{x}}\ni{(E)-(red2)}
 \end{fitchproof}
 %You will note that on line 3 I have written `for $\exists$E'. This is not technically a part of the proof. It is just a reminder---to me and to you---of why I have bothered to introduce `$\enot \atom{A}{c}$' out of the blue. You might find it helpful to add similar annotations to assumptions when performing proofs. But do not add annotations on lines other than assumptions: the proof requires its own citation, and your annotations will clutter it.
-Here is a justification of the third CQ rule:
+Eis uma justificativa para a terceira regra CQ:
 \begin{fitchproof}
 	\have[m]{nEna}{\exists x\, \enot \atom{A}{x}}
 	\open
@@ -926,52 +926,52 @@ Here is a justification of the third CQ rule:
 	\close
 	\have[m+6]{dada}{\enot \forall x\, \atom{A}{x}}\ni{(Aa)-(con1)}
 \end{fitchproof}
-This explains why the CQ rules can be treated as derived. Similar justifications can be offered for the other two CQ rules.
+Isso explica por que as regras CQ podem ser tratadas como derivadas. Justificativas semelhantes podem ser oferecidas para as outras duas regras CQ.
 
 \practiceproblems
 
 \problempart
-Offer proofs which justify the addition of the second and fourth CQ rules as derived rules.
+Ofereça provas que justifiquem a inclusão da segunda e da quarta regras CQ como regras derivadas.
 
 
 
-\chapter{Proofs and semantics}
-We have used two different turnstiles in this book.  This:
+\chapter{Provas e semântica}
+Usamos dois símbolos de consequência diferentes neste livro. Este:
 $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \proves \metav{C}$$
-means that there is some proof which ends with $\metav{C}$ and whose only undischarged assumptions are among $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$. This is a \emph{proof-theoretic notion}. By contrast, this: 
+significa que há alguma prova que termina com $\metav{C}$ e cujas únicas hipóteses não descarregadas estão entre $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$. Esta é uma \emph{noção teórica da prova}. Em contraste, este:
 $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \entails \metav{C}$$
-means that no valuation (or interpretation) makes all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and~$\metav{C}$ false. This concerns assignments of truth and falsity to sentences. It is a \emph{semantic notion}.
+significa que nenhuma valoração (ou interpretação) torna verdadeiras todas as sentenças $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ e~$\metav{C}$ falsa. Isso diz respeito às atribuições de verdade e falsidade às sentenças. É uma \emph{noção semântica}.
 
-It cannot be emphasized enough that these are different notions. But we can emphasize it a bit more: \emph{They are different notions.}
+Não se pode enfatizar o suficiente que essas são noções diferentes. Mas podemos enfatizar um pouco mais: \emph{elas são noções diferentes}.
 
-Once you have internalised this point, continue reading.
+Depois de internalizar este ponto, continue a leitura.
 
-Although our semantic and proof-theoretic notions are different, there is a deep connection between them. To explain this connection,we will start by considering the relationship between validities and theorems.
+Embora nossas noções semântica e teórica da prova sejam diferentes, há uma conexão profunda entre elas. Para explicar essa conexão, começaremos considerando a relação entre validades e teoremas.
 
-To show that a sentence is a theorem, you need only produce a proof. Granted, it may be hard to produce a twenty line proof, but it is not so hard to check each line of the proof and confirm that it is legitimate; and if each line of the proof individually is legitimate, then the whole proof is legitimate. Showing that a sentence is a validity, though, requires reasoning about all possible interpretations. Given a choice between showing that a sentence is a theorem and showing that it is a validity, it would be easier to show that it is a theorem.
+Para mostrar que uma sentença é um teorema, basta produzir uma prova. É verdade que pode ser difícil produzir uma prova de vinte linhas, mas não é tão difícil verificar cada linha e confirmar que é legítima; e, se cada linha da prova for individualmente legítima, então a prova inteira será legítima. Mostrar que uma sentença é uma validade, porém, exige raciocinar sobre todas as interpretações possíveis. Dada a escolha entre mostrar que uma sentença é um teorema e mostrar que é uma validade, será mais fácil mostrar que é um teorema.
 
-Contrawise, to show that a sentence is \emph{not} a theorem is hard. We would need to reason about all (possible) proofs. That is very difficult. However, to show that a sentence is not a validity, you need only construct an interpretation in which the sentence is false. Granted, it may be hard to come up with the interpretation; but once you have done so, it is relatively straightforward to check what truth value it assigns to a sentence. Given a choice between showing that a sentence is not a theorem and showing that it is not a validity, it would be easier to show that it is not a validity.
+Inversamente, mostrar que uma sentença \emph{não} é um teorema é difícil. Teríamos de raciocinar sobre todas as provas (possíveis). Isso é muito difícil. No entanto, para mostrar que uma sentença não é uma validade, basta construir uma interpretação na qual a sentença seja falsa. É verdade que pode ser difícil encontrar a interpretação; mas, uma vez encontrada, é relativamente simples verificar que valor de verdade ela atribui à sentença. Dada a escolha entre mostrar que uma sentença não é um teorema e mostrar que não é uma validade, seria mais fácil mostrar que não é uma validade.
 
-Fortunately, \emph{a sentence is a theorem if and only if it is a validity}. As a result, if we provide a proof of $\metav{A}$ on no assumptions, and thus show that $\metav{A}$ is a theorem, i.e., ${}\proves \metav{A}$, we can legitimately infer that $\metav{A}$ is a validity, i.e., $\entails\metav{A}$. Similarly, if we construct an interpretation in which \metav{A} is false and thus show that it is not a validity, i.e., $\nentails \metav{A}$, it follows that \metav{A} is not a theorem, i.e.,  $\nproves \metav{A}$.
+Felizmente, \emph{uma sentença é um teorema se, e somente se, é uma validade}. Como resultado, se fornecermos uma prova de $\metav{A}$ sem hipóteses e, assim, mostrarmos que $\metav{A}$ é um teorema, isto é, \textdollar{}\proves \metav{A}$, podemos inferir legitimamente que $\metav{A}$ é uma validade, isto é, $\entails\metav{A}$. Da mesma forma, se construirmos uma interpretação na qual $\metav{A}$ é falsa e, assim, mostrarmos que não é uma validade, isto é, $\nentails \metav{A}$, segue-se que $\metav{A}$ não é um teorema, isto é, $\nproves \metav{A}$.
 
-More generally, we have the following powerful result:
+De modo mais geral, temos o seguinte resultado poderoso:
 \factoidbox{$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n
 \proves\metav{B}$ \textbf{\ifeff} $\metav{A}_1, \metav{A}_2, \ldots,
 \metav{A}_n \entails\metav{B}$}
-This shows that, whilst provability and entailment are \emph{different} notions, they are extensionally equivalent. As such:
+Isso mostra que, embora demonstrabilidade e consequência lógica sejam noções \emph{diferentes}, elas são extensionalmente equivalentes. Assim:
 	\factoidbox{\begin{factoiditems}
-		\item An argument is \emph{valid} \ifeff{} \emph{the conclusion can be proved from the premises}.
-		\item A sentence is a \emph{validity} \ifeff{} it is a \emph{theorem}.
-		\item Two sentences are \emph{equivalent} \ifeff{} they are
-		\emph{interderivable}.
-		\item Sentences are \emph{jointly satisfiable} \ifeff{} they are
-		\emph{jointly consistent}.
+		\item Um argumento é \emph{válido} \ifeff{} \emph{a conclusão pode ser provada a partir das premissas}.
+		\item Uma sentença é uma \emph{validade} \ifeff{} é um \emph{teorema}.
+		\item Duas sentenças são \emph{equivalentes} \ifeff{} são
+		\emph{interderiváveis}.
+		\item Sentenças são \emph{satisfatíveis em conjunto} \ifeff{} são
+		\emph{consistentes em conjunto}.
 	\end{factoiditems}}
-For this reason, you can pick and choose when to think in terms of proofs and when to think in terms of valuations/interpretations, doing whichever is easier for a given task. The table on the next page summarizes which is (usually) easier.
+Por esse motivo, você pode escolher quando pensar em termos de provas e quando pensar em termos de valorações/interpretações, fazendo o que for mais fácil para uma dada tarefa. A tabela da página seguinte resume o que costuma ser mais fácil.
 
-It is intuitive that provability and semantic entailment should agree. But---let us repeat this---do not be fooled by the similarity of the symbols `$\entails$' and `$\proves$'. These two symbols have very different meanings. The fact that provability and semantic entailment agree is not an easy result to come by.
+É intuitivo que demonstrabilidade e consequência semântica devam coincidir. Mas — repitamos isto — não se deixe enganar pela semelhança dos símbolos \textquotedblleft $\entails$\textquotedblright{} e \textquotedblleft $\proves$\textquotedblright{}. Esses dois símbolos têm significados muito diferentes. O fato de demonstrabilidade e consequência semântica coincidirem não é um resultado fácil de obter.
 
-In fact, demonstrating that provability and semantic entailment agree is, very decisively, the point at which introductory logic becomes intermediate logic.
+De fato, demonstrar que demonstrabilidade e consequência semântica coincidem é, decisivamente, o ponto em que a lógica introdutória se torna lógica intermediária.
 
 \ifHTMLtarget
 \begin{table}
@@ -980,25 +980,25 @@ In fact, demonstrating that provability and semantic entailment agree is, very d
 \fi
 	\begin{center}
 \begin{tabular*}{\textwidth}{p{.25\textheight}p{.325\textheight}p{.325\textheight}}
- & \textbf{Yes}  & \textbf{No}\\[12pt]
-Is \metav{A} a \textbf{validity}? 
-& give a proof which shows $\proves\metav{A}$ 
-& give an interpretation in which \metav{A} is false\\[12pt]
-Is \metav{A} a \textbf{contradiction}? &
-give a proof which shows $\metav{A} \proves \ered$ & 
-give an interpretation in which \metav{A} is true\\[12pt]
-%Is \metav{A} contingent? & 
+ & \textbf{Sim}  & \textbf{Não}\\[12pt]
+A sentença $\metav{A}$ é uma \textbf{validade}?
+& dê uma prova que mostre $\proves\metav{A}
+& dê uma interpretação na qual $\metav{A}$ seja falsa\\[12pt]
+A sentença $\metav{A}$ é uma \textbf{contradição}?
+& dê uma prova que mostre $\metav{A} \proves \ered
+& dê uma interpretação na qual $\metav{A}$ seja verdadeira\\[12pt]
+%Is \metav{A} contingent? &
 %give two interpretations, one in which \metav{A} is true and another in which \metav{A} is false & give a proof which either shows $\proves\metav{A}$ or $\proves\enot\metav{A}$\\
 %\\
-Are \metav{A} and \metav{B} \textbf{equivalent}? &
-give two proofs, one for $\metav{A}\proves\metav{B}$ and one for $\metav{B}\proves\metav{A}$  
-& give an interpretation in which \metav{A} and \metav{B} have different truth values\\[12pt]
-Are $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ \textbf{jointly satisfiable}? 
-& give an interpretation in which all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ are true 
-& prove a contradiction from assumptions $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$\\[12pt]
-Is $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ \textbf{valid}? 
-& give a proof with assumptions $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ and concluding with \metav{C}
-& give an interpretation in which each of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ is true and \metav{C} is false\\
+As sentenças $\metav{A}$ e $\metav{B}$ são \textbf{equivalentes}?
+& dê duas provas, uma de $\metav{A}\proves\metav{B}$ e outra de $\metav{B}\proves\metav{A}$
+& dê uma interpretação na qual $\metav{A}$ e $\metav{B}$ tenham valores de verdade diferentes\\[12pt]
+As sentenças $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ são \textbf{conjuntamente satisfatíveis}?
+& dê uma interpretação na qual todas as sentenças $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ sejam verdadeiras
+& prove uma contradição a partir das hipóteses $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$\\[12pt]
+O argumento $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ é \textbf{válido}?
+& dê uma prova com as hipóteses $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ e conclusão $\metav{C}
+& dê uma interpretação na qual cada uma de $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ seja verdadeira e $\metav{C}$ seja falsa\\
 \end{tabular*}
 \end{center}
 \ifHTMLtarget

@@ -931,11 +931,11 @@ Em \cref{s:MoreMonadic}, examinamos o que acontece quando movemos quantificadore
 }
 \end{compactlist}
 
-\chapter{Rules for identity}\setcounter{ProbPart}{0}
+\chapter{Regras para a identidade}\setcounter{ProbPart}{0}
 \problempart
 \label{pr.identity}
-For each of the following claims, provide an FOL proof that shows it
-is true.
+Para cada uma das afirmações a seguir, forneça uma demonstração na LPO que mostre que ela é verdadeira.
+
 \begin{compactlist}
 \item $\atom{P}{a} \eor \atom{Q}{b}, \atom{Q}{b} \eif b=c, \enot \atom{P}{a} \proves \atom{Q}{c}$
 \myanswer{
@@ -1092,14 +1092,14 @@ is true.
 \end{compactlist}
 
 \problempart
-Show that the following are interderivable:
+Mostre que as sentenças a seguir são interderiváveis:
 \begin{itemize}
 \item $\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)$
 \item $\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)$
 \end{itemize}
-And hence that both have a decent claim to symbolize the English sentence `Nick is the F'.
+E, portanto, que ambas podem plausivelmente simbolizar a sentença em português «Nick é o F».
 
-\noindent\myanswer{In one direction:
+\noindent\myanswer{Em uma direção:
 \begin{fitchproof}
 \hypo{prem}{\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)}
 \open
@@ -1115,7 +1115,7 @@ And hence that both have a decent claim to symbolize the English sentence `Nick 
 \have{con}{\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)}\Ee{prem, prema-con1}
 \end{fitchproof}}
 
-\myanswer{And now in the other:
+\myanswer{Agora na outra direção:
 \begin{fitchproof}
 \hypo{prem}{\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)}
 \have{nin}{n = n}\ii{}
@@ -1126,14 +1126,14 @@ And hence that both have a decent claim to symbolize the English sentence `Nick 
 \
 
 \problempart
-In \cref{sec.identity}, we claimed that the following are logically equivalent symbolizations of the English sentence `there is exactly one F':
+Em \cref{sec.identity}, afirmamos que as seguintes são simbolizações logicamente equivalentes da sentença «existe exatamente um F»:
 \begin{itemize}
 \item $\exists x\,\atom{F}{x} \eand \forall x \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]$
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
 \item $\exists x \forall y (\atom{F}{y} \eiff x = y)$
 \end{itemize}
-Show that they are all interderivable. (\emph{Hint}: to show that three claims are interderivable, it suffices to show that the first proves the second, the second proves the third and the third proves the first; think about why.)\\
-\myanswer{It suffices to show that the first proves the second, the second proves the third and the third proves the first, for we can then show that any of them prove any others, just by chaining the proofs together (numbering lines, where necessary. Armed with this, we start on the first proof:
+Mostre que todas são interderiváveis. (\emph{Dica}: para mostrar que três afirmações são interderiváveis, basta mostrar que a primeira prova a segunda, a segunda prova a terceira e a terceira prova a primeira; pense por quê.)\\
+\myanswer{Basta mostrar que a primeira prova a segunda, a segunda prova a terceira e a terceira prova a primeira, pois então poderemos mostrar que qualquer uma prova qualquer outra simplesmente encadeando as demonstrações (numerando as linhas quando necessário). Com isso, começamos a primeira demonstração:
 \begin{fitchproof}
 \hypo{prem}{\exists x\,\atom{F}{x} \eand \forall x \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]}
 \have{prem1}{\exists x\,\atom{F}{x}}\ae{prem}
@@ -1148,7 +1148,7 @@ Show that they are all interderivable. (\emph{Hint}: to show that three claims a
 		\have{aib}{a=b}\ce{prem2b, fafb}
 	\close
 	\have{fbaib}{\atom{F}{b} \eif a =b}\ci{fb-aib}
-	\have{Afb}{\forall y(\atom{F}{y} \eif a =y)}\Ai{fbaib}	
+	\have{Afb}{\forall y(\atom{F}{y} \eif a =y)}\Ai{fbaib}
 	\have{cona}{\atom{F}{a} \eand \forall y(\atom{F}{y} \eif a = y))}\ai{fa, Afb}
 	\have{con1}{\exists x \bigl[\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x = y)\bigr]}\Ei{cona}
 \close
@@ -1156,7 +1156,7 @@ Show that they are all interderivable. (\emph{Hint}: to show that three claims a
 \end{fitchproof}}
 
 \
-\\\myanswer{Now for the second proof:
+\\\myanswer{Agora a segunda demonstração:
 \begin{fitchproof}
 \hypo{prem}{\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]}
 \open
@@ -1179,7 +1179,7 @@ Show that they are all interderivable. (\emph{Hint}: to show that three claims a
 \have{con}{\exists x \forall y (\atom{F}{y} \eiff x = y)}\Ee{prem, prema-con1}
 \end{fitchproof}}
 
-\noindent\myanswer{And finally, the third proof:
+\noindent\myanswer{E, por fim, a terceira demonstração:
 \begin{fitchproof}
 \hypo{prem}{\exists x \forall y (\atom{F}{y} \eiff x = y)}
 \open
@@ -1209,17 +1209,17 @@ Show that they are all interderivable. (\emph{Hint}: to show that three claims a
 
 \
 \problempart
-Symbolize the following argument
+Simbolize o seguinte argumento
 	\begin{earg}
-		\item There is exactly one F. 
-		\item There is exactly one G. 
-		\item Nothing is both F and G. 
-		\item[\texttherefore] There are exactly two things that are either F or G.
+		\item Existe exatamente um F.
+		\item Existe exatamente um G.
+		\item Nada é simultaneamente F e G.
+		\item[\texttherefore] Existem exatamente duas coisas que são F ou G.
 	\end{earg}
-And offer a proof of it.\\
+E ofereça uma demonstração.\\
 \myanswer{
 \begin{earg}
-\item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$ 
+\item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
 \item $\exists x \bigl[\atom{G}{x} \eand \forall y ( \atom{G}{y} \eif x = y)\bigr]$
 \item $\forall x (\enot \atom{F}{x} \eor \enot \atom{G}{x}) \therefore \phantom{.}$
 \item[\texttherefore] $\exists x \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = z \eor y = z))\bigr]$
@@ -1273,12 +1273,12 @@ And offer a proof of it.\\
 \have{con}{\exists x \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = z \eor y = z))\bigr]}\Ee{p1, p1a-con1}
 \end{fitchproof}}
 
-\chapter{Derived rules}\setcounter{ProbPart}{0}
+\chapter{Regras derivadas}\setcounter{ProbPart}{0}
 \problempart
-Offer proofs which justify the addition of the second and fourth CQ
-rules as derived rules.
+Ofereça demonstrações que justifiquem a adição da segunda e da quarta regras CQ como regras derivadas.
 
-\noindent\myanswer{Justification for the second rule:
+
+\noindent\myanswer{Justificativa para a segunda regra:
 \begin{fitchproof}
 	\hypo{nEa}{\enot \exists x\,\atom{A}{x}}
 	\open
@@ -1289,8 +1289,8 @@ rules as derived rules.
 	\have{na}{\enot \atom{A}{a}}\ni{a-red}
 	\have{Ana}{\forall x \enot \atom{A}{x}}\Ai{na}
 \end{fitchproof}
-The fourth rule is harder to justify.  Here is a proof that
-is relatively straightforward, but uses the derived rule DNE:
+A quarta regra é mais difícil de justificar. Eis uma demonstração relativamente direta, mas que usa a regra derivada DNE:
+
 \begin{fitchproof}
 \hypo{nAa}{\enot \forall x\,\atom{A}{x}}
   \open
@@ -1308,9 +1308,9 @@ is relatively straightforward, but uses the derived rule DNE:
 \have{nnEna}{\enot \enot \exists x \enot \atom{A}{x}}\ni{nEna-abs2}
 \have{Ena2}{\exists x \enot \atom{A}{x}}\dne{nnEna}
 \end{fitchproof}
-And here is a proof that does not use any derived rules:
+Eis uma demonstração que não usa regras derivadas:
 \begin{fitchproof}
-	\hypo{nAa}{\enot \forall x\,\atom{A}{x}} 
+	\hypo{nAa}{\enot \forall x\,\atom{A}{x}}
 	\open
         \hypo{H1}{\exists x \enot \atom{A}{x}}
         \have{H1C}{\exists x \enot \atom{A}{x} \eand \exists x \enot \atom{A}{x}}\ai{H1}
@@ -1328,7 +1328,7 @@ And here is a proof that does not use any derived rules:
           \have{EH4}{\exists x \enot \atom{A}{x}}\Ei{H4}
           \have{abs4}{\ered}\ri{EH4,H2}
           \have{Ab4}{\atom{A}{b}}\re{abs4}
-          \close          
+          \close
         \have{Ab}{\atom{A}{b}}\tnd{H3-H3R,H4-Ab4}
         \have{Aa}{\forall x\,\atom{A}{x}}\Ai{Ab}
         \have{abs}{\ered}\ri{Aa,nAa}
