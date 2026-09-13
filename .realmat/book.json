@@ -4,8 +4,14 @@
   "short_title": "forall x: Calgary",
   "subject": "Formal logic",
   "translation_stage": "unreviewed",
-  "entrypoint": "pdf",
+  "entrypoint": "html",
   "publications": [
+    {
+      "id": "html",
+      "label": "Ler no navegador",
+      "format": "html",
+      "url": "https://forallx.openlogicproject.org/html/index.html"
+    },
     {
       "id": "pdf",
       "label": "PDF",
