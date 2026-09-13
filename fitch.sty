@@ -108,7 +108,14 @@ prefix = nd@ % prefix with nd@ for compatibility with old code
   outerline
 }
 
-\ProcessLocalKeyvalOptions{fitch}
+\ifdefined\iflatexml
+  \iflatexml
+  \else
+    \ProcessLocalKeyvalOptions{fitch}
+  \fi
+\else
+  \ProcessLocalKeyvalOptions{fitch}
+\fi
 
 % Actual fitch.sty code
 
