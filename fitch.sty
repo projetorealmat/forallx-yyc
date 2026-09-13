@@ -108,7 +108,13 @@ prefix = nd@ % prefix with nd@ for compatibility with old code
   outerline
 }
 
-\ProcessLocalKeyvalOptions{fitch}
+% LaTeXML 0.8.8 does not implement this kvoptions helper when
+% the package is loaded through the document preamble.  The HTML driver
+% applies the Fitch keys explicitly after loading the package.
+\iflatexml
+\else
+  \ProcessLocalKeyvalOptions{fitch}
+\fi
 
 % Actual fitch.sty code
 
