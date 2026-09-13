@@ -20,50 +20,30 @@ jobs:
       actions: read
 
     steps:
+      - name: Checkout do livro
+        uses: actions/checkout@v6
+
+      - name: Preparar capa para a compilação HTML
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! command -v pdftocairo >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils
+          fi
+          pdftocairo -singlefile -png -r 150             assets/forallx-coverart-screen.pdf forallxyyc
+          test -s forallxyyc.png
+
       - name: Compilar HTML com BookML
-        id: bookml
-        continue-on-error: true
         uses: vlmantova/bookml-action@v1
         with:
+          checkout: false
           release: false
           upload-aux-directory: false
           version: v0.31.9
           replace-bookml: true
           scheme: full
-          timeout-minutes: 8
-
-      - name: Diagnosticar falhas das imagens TikZ
-        if: ${{ always() }}
-        shell: bash
-        run: |
-          set +e
-          found=0
-          while IFS= read -r log; do
-            found=1
-            echo "=== Diagnóstico de imagem: ${log} ==="
-            grep -n -E '^!|Error|Emergency stop|Fatal|Runaway|Undefined control sequence|Output written' "${log}" || true
-          done < <(find . "${RUNNER_TEMP}/auxdir" /auxdir -type f -name '*.bmllog' -path '*/bmlimages/dvi/*' -print 2>/dev/null | sort -u)
-          if test "${found}" = 0; then
-            echo "Nenhum log .bmllog encontrado."
-          fi
-
-      - name: Diagnosticar falha do BookML
-        if: ${{ steps.bookml.outcome != 'success' }}
-        shell: bash
-        run: |
-          set -u
-          log="${RUNNER_TEMP}/auxdir/latexmlaux/forallxyyc-html.latexmlpost.log"
-          if test -f "${log}"; then
-            echo "=== Diagnóstico do latexmlpost ==="
-            grep -n -E -C 3 'Error:|malformed|RelaxNG|failed to load|No graphic source' "${log}" || true
-          else
-            echo "Log do latexmlpost não encontrado: ${log}"
-          fi
-
-      - name: Interromper se o BookML falhou
-        if: ${{ steps.bookml.outcome != 'success' }}
-        shell: bash
-        run: exit 1
+          timeout-minutes: 20
 
       - name: Validar saída HTML
         shell: bash
