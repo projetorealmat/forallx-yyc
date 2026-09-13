@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: pages
+  group: pages-diagnostic
   cancel-in-progress: false
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
           version: v0.31.9
           replace-bookml: true
           scheme: full
-          timeout-minutes: 20
+          timeout-minutes: 8
 
       - name: Diagnosticar falha do BookML
         if: ${{ failure() }}
