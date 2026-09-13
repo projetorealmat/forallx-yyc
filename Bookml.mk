@@ -23,11 +23,7 @@ SOURCES = forallxyyc-html.tex
 
 # Use a LibXML-only search indexer. The BookML v0.31.9 XSLT indexer
 # can hang on this book's generated HTML.
-.PHONY: FORCE_FORALLX_SEARCH_INDEX
-FORCE_FORALLX_SEARCH_INDEX:
-
-bookml/search_index.pl: bookml-search-index.pl FORCE_FORALLX_SEARCH_INDEX
-	@cp -- bookml-search-index.pl bookml/search_index.pl
+$(shell cp -- bookml-search-index.pl bookml/search_index.pl)
 
 include bookml/bookml.mk
 
