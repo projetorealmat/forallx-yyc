@@ -32,6 +32,21 @@ jobs:
           scheme: full
           timeout-minutes: 8
 
+      - name: Diagnosticar falhas das imagens TikZ
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set +e
+          found=0
+          while IFS= read -r log; do
+            found=1
+            echo "=== Diagnóstico de imagem: ${log} ==="
+            grep -n -E '^!|Error|Emergency stop|Fatal|Runaway|Undefined control sequence|Output written' "${log}" || true
+          done < <(find . -type f -name '*.bmllog' -path '*/bmlimages/dvi/*' -print)
+          if test "${found}" = 0; then
+            echo "Nenhum log .bmllog encontrado."
+          fi
+
       - name: Diagnosticar falha do BookML
         if: ${{ steps.bookml.outcome != 'success' }}
         shell: bash
