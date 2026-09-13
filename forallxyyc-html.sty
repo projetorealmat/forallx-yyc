@@ -6,7 +6,10 @@
 \ProvidesPackage{forallxyyc-html}
 
 \RequirePackage{hyperref,ifthen,graphicx,xcolor}
-\renewcommand\myanswer[1]{\begingroup\color{dkleadbeater}#1\endgroup}
+\iflatexml
+\else
+  \renewcommand\myanswer[1]{\begingroup\color{dkleadbeater}#1\endgroup}
+\fi
 
 % Make glossary commands do nothing if converting to HTML
 \newcommand{\newglossaryentry}[2]{}
