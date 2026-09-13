@@ -19,16 +19,12 @@ LATEXMLPOSTEXTRAFLAGS = --novalidate --pmml --nomathtex --css=forallxyyc.css --c
 
 # Only convert the HTML driver not all the other TEX files
 SOURCES = forallxyyc-html.tex
-### END CONFIGURATION
+
+# Route only BookML's search-index command through the repository's
+# LibXML-only indexer; all other BookML Perl scripts remain unchanged.
+PERL = perl bookml-perl-wrapper.pl
 
 include bookml/bookml.mk
-
-# BookML unpacks its own search_index.pl during the workflow.  Make the
-# project indexer an explicit, always-updated prerequisite so that the
-# generated HTML never falls back to the incompatible XSLT indexer.
-.PHONY: realmat-search-index
-bookml/search_index.pl: realmat-search-index
-	@cp -- bookml-search-index.pl $@
 
 # You may also override SPLITAT and other options for a single file, as follows:
 #singlepage.zip: SPLITAT=
