@@ -71,6 +71,12 @@ Richard Zach}
 \makeatletter\renewcommand{\appendixname}{Soluções do capítulo}\makeatother
 \setcounter{chapter}{0}
 \def\thechapter{\arabic{chapter}}
+\iflatexml
+  % Keep solution chapter IDs distinct from the main appendices.
+  \makeatletter
+  \def\thechapter@ID{SolCh\csname @chapter@ID\endcsname}
+  \makeatother
+\fi
 \input{solutions/forallx-sol-what}
 \input{solutions/forallx-sol-tfl}
 \input{solutions/forallx-sol-truthtables}
