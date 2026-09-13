@@ -2,13 +2,15 @@
 """Create the search index consumed by BookML's GitBook output.
 
 The BookML container already provides Python 3, while its optional Perl XML
-modules are not reliable for this generated HTML.  The standard-library HTML
-parser is deliberately forgiving, which is useful for LaTeXML's output and
-keeps this post-processing step deterministic.
+modules are not reliable for this generated HTML.  This scanner deliberately
+uses a single forward pass over each file.  It does not build a DOM or recurse
+through a tag tree, so malformed or very large LaTeXML pages cannot make the
+post-processing step stall.
 """
 
-from html.parser import HTMLParser
+from html import unescape
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -32,29 +34,111 @@ VOID_ELEMENTS = {
 }
 
 
-class SearchPageParser(HTMLParser):
-    """Extract the same three fields as BookML's search indexer."""
+def find_tag_end(source, start):
+    """Return the first `>` outside an attribute quote, or -1."""
+    quote = None
+    for position in range(start, len(source)):
+        character = source[position]
+        if quote:
+            if character == quote:
+                quote = None
+        elif character in "\"'":
+            quote = character
+        elif character == ">":
+            return position
+    return -1
+
+
+def parse_tag(raw):
+    """Parse only the tag name and attributes needed for the search index."""
+    position = 0
+    length = len(raw)
+    while position < length and raw[position].isspace():
+        position += 1
+
+    if position == length or raw[position] in "!?":
+        return None, {}, False, False
+
+    closing = raw[position] == "/"
+    if closing:
+        position += 1
+        while position < length and raw[position].isspace():
+            position += 1
+
+    name_start = position
+    while position < length and not raw[position].isspace() and raw[position] not in "/=>":
+        position += 1
+    name = raw[name_start:position].lower()
+    if not name:
+        return None, {}, closing, False
+    if closing:
+        return name, {}, True, False
+
+    attributes = {}
+    while position < length:
+        while position < length and raw[position].isspace():
+            position += 1
+        if position == length or raw[position] == "/":
+            break
+
+        attribute_start = position
+        while (
+            position < length
+            and not raw[position].isspace()
+            and raw[position] not in "=/"
+        ):
+            position += 1
+        attribute_name = raw[attribute_start:position].lower()
+        if not attribute_name:
+            position += 1
+            continue
+
+        while position < length and raw[position].isspace():
+            position += 1
+        value = ""
+        if position < length and raw[position] == "=":
+            position += 1
+            while position < length and raw[position].isspace():
+                position += 1
+            if position < length and raw[position] in "\"'":
+                quote = raw[position]
+                position += 1
+                value_start = position
+                while position < length and raw[position] != quote:
+                    position += 1
+                value = raw[value_start:position]
+                if position < length:
+                    position += 1
+            else:
+                value_start = position
+                while position < length and not raw[position].isspace() and raw[position] != "/":
+                    position += 1
+                value = raw[value_start:position]
+        attributes.setdefault(attribute_name, unescape(value))
+
+    return name, attributes, False, raw.rstrip().endswith("/")
+
+
+class SearchPageScanner:
+    """Extract BookML's [URLs, title, body text] entry without a DOM."""
 
     def __init__(self):
-        super().__init__(convert_charrefs=True)
         self.title_parts = []
         self.body_parts = []
         self.up_urls = []
         self.title_depth = 0
         self.body_depth = 0
         self.skip_depth = 0
-        self.open_elements = []
 
-    @staticmethod
-    def attributes(attrs):
-        return {name.lower(): value for name, value in attrs if name}
+    def add_text(self, text):
+        if self.title_depth:
+            self.title_parts.append(unescape(text))
+        if self.body_depth and not self.skip_depth:
+            self.body_parts.append(unescape(text))
 
-    def handle_starttag(self, tag, attrs):
-        tag = tag.lower()
-        attributes = self.attributes(attrs)
-
+    def start(self, tag, attributes):
         if tag == "link":
-            rel = (attributes.get("rel") or "").lower().split()
+            rel = attributes.get("rel", "").lower().split()
             href = attributes.get("href")
             if href and "up" in rel:
                 self.up_urls.append(href)
@@ -74,17 +158,9 @@ class SearchPageParser(HTMLParser):
                     self.body_parts.append(" ")
                     self.body_parts.append(value)
                     self.body_parts.append(" ")
+                    break
 
-        if tag not in VOID_ELEMENTS:
-            self.open_elements.append(tag)
-
-    def handle_startendtag(self, tag, attrs):
-        self.handle_starttag(tag, attrs)
-        self.handle_endtag(tag)
-
-    def handle_endtag(self, tag):
-        tag = tag.lower()
-
+    def end(self, tag):
         if tag == "title" and self.title_depth:
             self.title_depth -= 1
         elif tag == "body" and self.body_depth:
@@ -93,21 +169,39 @@ class SearchPageParser(HTMLParser):
         if tag in SKIPPED_ELEMENTS and self.skip_depth:
             self.skip_depth -= 1
 
-        if tag in VOID_ELEMENTS:
-            return
+    def feed(self, source):
+        position = 0
+        while position < len(source):
+            opening = source.find("<", position)
+            if opening < 0:
+                self.add_text(source[position:])
+                break
+            if opening > position:
+                self.add_text(source[position:opening])
 
-        # LaTeXML emits well-formed HTML, but matching backwards also lets the
-        # indexer recover from a truncated page without getting stuck.
-        for position in range(len(self.open_elements) - 1, -1, -1):
-            if self.open_elements[position] == tag:
-                del self.open_elements[position:]
-                return
+            if source.startswith("<!--", opening):
+                comment_end = source.find("-->", opening + 4)
+                if comment_end < 0:
+                    break
+                position = comment_end + 3
+                continue
 
-    def handle_data(self, data):
-        if self.title_depth:
-            self.title_parts.append(data)
-        if self.body_depth and not self.skip_depth:
-            self.body_parts.append(data)
+            tag_end = find_tag_end(source, opening + 1)
+            if tag_end < 0:
+                self.add_text(source[opening:])
+                break
+
+            tag, attributes, closing, self_closing = parse_tag(
+                source[opening + 1 : tag_end]
+            )
+            if tag:
+                if closing:
+                    self.end(tag)
+                else:
+                    self.start(tag, attributes)
+                    if self_closing and tag not in VOID_ELEMENTS:
+                        self.end(tag)
+            position = tag_end + 1
 
     @staticmethod
     def normalize(parts):
@@ -119,21 +213,28 @@ class SearchPageParser(HTMLParser):
         return [urls, self.normalize(self.title_parts), self.normalize(self.body_parts)]
 
 
+def html_files(root):
+    files = []
+    for directory, directories, filenames in os.walk(root, followlinks=False):
+        directories.sort()
+        for filename in sorted(filenames):
+            path = Path(directory) / filename
+            if path.suffix.lower() == ".html" and path.is_file():
+                files.append(path)
+    return files
+
+
 def build_index(html_directory):
     root = Path(html_directory)
     if not root.is_dir():
         raise ValueError(f"HTML directory does not exist: {root}")
 
     index = []
-    files = sorted(
-        path for path in root.rglob("*") if path.is_file() and path.suffix.lower() == ".html"
-    )
-    for path in files:
-        parser = SearchPageParser()
-        parser.feed(path.read_text(encoding="utf-8", errors="replace"))
-        parser.close()
+    for path in html_files(root):
+        scanner = SearchPageScanner()
+        scanner.feed(path.read_text(encoding="utf-8", errors="replace"))
         filename = path.relative_to(root).as_posix()
-        index.append(parser.result(filename))
+        index.append(scanner.result(filename))
 
     (root / "search_index.json").write_text(
         json.dumps(index, ensure_ascii=False), encoding="utf-8"
