@@ -10,7 +10,6 @@ post-processing step stall.
 
 from html import unescape
 import json
-import os
 from pathlib import Path
 import sys
 
@@ -214,14 +213,11 @@ class SearchPageScanner:
 
 
 def html_files(root):
-    files = []
-    for directory, directories, filenames in os.walk(root, followlinks=False):
-        directories.sort()
-        for filename in sorted(filenames):
-            path = Path(directory) / filename
-            if path.suffix.lower() == ".html" and path.is_file():
-                files.append(path)
-    return files
+    # BookML writes the paginated book pages beside index.html.  Do not walk
+    # auxiliary subdirectories (which may be mounts or generated asset trees).
+    return sorted(
+        path for path in root.iterdir() if path.is_file() and path.suffix.lower() == ".html"
+    )
 
 
 def build_index(html_directory):
