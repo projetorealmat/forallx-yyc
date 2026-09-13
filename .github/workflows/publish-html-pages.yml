@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: pages-diagnostic
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -28,22 +28,7 @@ jobs:
           version: v0.31.9
           replace-bookml: true
           scheme: full
-          timeout-minutes: 8
-
-      - name: Diagnosticar falha do BookML
-        if: ${{ failure() }}
-        shell: bash
-        run: |
-          set +e
-          for log in \
-            "${RUNNER_TEMP}/auxdir/latexmlaux/forallxyyc-html.latexml.log" \
-            "${RUNNER_TEMP}/auxdir/latexmlaux/forallxyyc-html.latexmlpost.log"; do
-            if test -f "$log"; then
-              echo "::group::$(basename "$log")"
-              grep -Ein "error|fatal|malformed|RelaxNG|invalid|failed|undefined" "$log" | tail -n 120
-              echo "::endgroup::"
-            fi
-          done
+          timeout-minutes: 20
 
       - name: Validar saída HTML
         shell: bash
@@ -63,6 +48,7 @@ jobs:
           touch _site/.nojekyll
 
       - name: Configurar GitHub Pages
+        if: ${{ github.event_name != 'pull_request' }}
         uses: actions/configure-pages@v6
 
       - name: Enviar artefato do Pages
