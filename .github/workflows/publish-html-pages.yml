@@ -31,7 +31,8 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y poppler-utils
           fi
-          pdftocairo -singlefile -png -r 150             assets/forallx-coverart-screen.pdf forallxyyc
+          pdftocairo -singlefile -png -r 150 \
+            assets/forallx-coverart-screen.pdf forallxyyc
           test -s forallxyyc.png
 
       - name: Compilar HTML com BookML
@@ -44,6 +45,14 @@ jobs:
           replace-bookml: true
           scheme: full
           timeout-minutes: 20
+
+      - name: Gerar e validar índice de busca
+        shell: bash
+        run: |
+          set -euo pipefail
+          html_dir="${RUNNER_TEMP}/auxdir/html/forallxyyc-html"
+          python3 bookml-search-index.py "${html_dir}"
+          test -s "${html_dir}/search_index.json"
 
       - name: Validar saída HTML
         shell: bash
