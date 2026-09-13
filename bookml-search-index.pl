@@ -8,6 +8,8 @@ use XML::LibXML;
 use lib 'bookml';
 use bookml;
 
+print STDERR "REALMat search indexer\n";
+
 my @files;
 my @index;
 
