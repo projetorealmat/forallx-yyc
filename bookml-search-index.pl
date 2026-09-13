@@ -25,6 +25,9 @@ File::Find::find(
   bookml::encode_fs($ARGV[0])
 );
 
+bookml::ch_dir($ARGV[0])
+  or die "cannot enter HTML directory '$ARGV[0]': $!";
+
 my $parser = XML::LibXML->new(
   {
     suppress_errors   => 1,
@@ -71,6 +74,12 @@ sub text_content {
 
 for my $file (@files) {
   my $doc = $parser->load_html(location => bookml::encode_fs($file));
+
+  unless ($doc) {
+    warn "Skipping unparseable HTML file '$file'\n";
+    next;
+  }
+
   my @titles = $doc->findnodes('//title/text()');
   my $title = @titles ? $titles[0]->string_value : '';
 
