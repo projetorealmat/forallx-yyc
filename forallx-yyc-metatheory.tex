@@ -36,7 +36,7 @@ Para ilustrar melhor a ideia de forma normal disjuntiva, introduziremos mais uma
 Agora sabemos o que significa uma sentença estar na forma normal disjuntiva. O resultado que pretendemos alcançar é:
 	\factoidbox{\label{thm:dnf}\textbf{Teorema da forma normal disjuntiva.} Para toda sentença, existe uma sentença equivalente na forma normal disjuntiva.
 	}
-Daqui em diante, abreviaremos «forma normal disjuntiva» por «FND».
+Daqui em diante, abreviaremos \textquotedblleft{}forma normal disjuntiva\textquotedblright{} por \textquotedblleft{}FND\textquotedblright{}.
 
 
 \section{Demonstração do teorema da FND por meio de tabelas-verdade}
@@ -171,7 +171,7 @@ $A$ & $B$ & $C$ & $\heartsuit(A,B,C)$\\
  F & F & F & F
 \end{tabular}
 \end{center}
-Provavelmente esse novo conectivo não corresponderia a nenhuma expressão natural em português (pelo menos não da maneira como $\eand$ corresponde a «e»). Mas surge uma pergunta: se quiséssemos empregar um conectivo com essa tabela-verdade característica, teríamos de acrescentar um conectivo \emph{novo} à LVF? Ou podemos nos virar com os conectivos que \emph{já temos} (como podemos fazer com o conectivo «nem\dots nem», por exemplo)?
+Provavelmente esse novo conectivo não corresponderia a nenhuma expressão natural em português (pelo menos não da maneira como $\eand$ corresponde a \textquotedblleft{}e\textquotedblright{}). Mas surge uma pergunta: se quiséssemos empregar um conectivo com essa tabela-verdade característica, teríamos de acrescentar um conectivo \emph{novo} à LVF? Ou podemos nos virar com os conectivos que \emph{já temos} (como podemos fazer com o conectivo \textquotedblleft{}nem\dots nem\textquotedblright{}, por exemplo)?
 
 Tornemos essa pergunta mais precisa. Diremos que alguns conectivos são \define{conjuntamente funcionalmente completos} \emph{\ifeff}, para toda tabela-verdade possível, existe uma sentença que contém somente esses conectivos e tem essa tabela-verdade.
 
@@ -238,7 +238,7 @@ $\metav{A}$ & $\metav{B}$ & $\metav{A} \mathrel{\uparrow} \metav{B}$\\
  F & F & T
 \end{tabular}
 \end{center}
-Isso é frequentemente chamado de «barra de Sheffer», em homenagem a Henry Sheffer, que a usou para mostrar como reduzir o número de conectivos lógicos nos \textit{Principia Mathematica}.\footnote{Sheffer, ``A set of five independent postulates for Boolean algebras, with application to logical constants'', \textit{Transactions of the American Mathematical Society}~14 (1913), pp.~481--488} (Na verdade, Charles Sanders Peirce havia antecipado Sheffer em cerca de 30 anos, mas nunca publicou seus resultados, e o filósofo polonês Edward Stamm publicou o mesmo resultado dois anos antes de Sheffer.)\footnote{Veja o texto de Peirce ``A Boolian algebra with one constant'', datado de c.~1880, em \textit{Collected Papers}, vol.~4, pp.~264--5, e Edward Stamm, ``\foreignlanguage{german}{Beitrag zur Algebra der Logik}'', \foreignlanguage{german}{\textit{Monatshefte für Mathematik und Physik}}~22 (1911), pp.~137--49.} Também é bastante comum chamá-lo de «nand», pois sua tabela-verdade característica é a negação da tabela-verdade de `$\eand$'.
+Isso é frequentemente chamado de \textquotedblleft{}barra de Sheffer\textquotedblright{}, em homenagem a Henry Sheffer, que a usou para mostrar como reduzir o número de conectivos lógicos nos \textit{Principia Mathematica}.\footnote{Sheffer, ``A set of five independent postulates for Boolean algebras, with application to logical constants'', \textit{Transactions of the American Mathematical Society}~14 (1913), pp.~481--488} (Na verdade, Charles Sanders Peirce havia antecipado Sheffer em cerca de 30 anos, mas nunca publicou seus resultados, e o filósofo polonês Edward Stamm publicou o mesmo resultado dois anos antes de Sheffer.)\footnote{Veja o texto de Peirce ``A Boolian algebra with one constant'', datado de c.~1880, em \textit{Collected Papers}, vol.~4, pp.~264--5, e Edward Stamm, ``\foreignlanguage{german}{Beitrag zur Algebra der Logik}'', \foreignlanguage{german}{\textit{Monatshefte für Mathematik und Physik}}~22 (1911), pp.~137--49.} Também é bastante comum chamá-lo de \textquotedblleft{}nand\textquotedblright{}, pois sua tabela-verdade característica é a negação da tabela-verdade de `$\eand$'.
 
 
 
@@ -275,7 +275,7 @@ $\metav{A}$ & $\metav{B}$ & $\metav{A} \mathrel{\downarrow} \metav{B}$\\
  F & F & T
 \end{tabular}
 \end{center}
-Às vezes ele é chamado de «seta de Peirce» (o próprio Peirce o chamou de «ampheck»). Mais frequentemente, porém, é chamado de «nor», pois sua tabela-verdade característica é a negação de $\eor$, isto é, de «nem\dots{} nem\dots».
+Às vezes ele é chamado de \textquotedblleft{}seta de Peirce\textquotedblright{} (o próprio Peirce o chamou de \textquotedblleft{}ampheck\textquotedblright{}). Mais frequentemente, porém, é chamado de \textquotedblleft{}nor\textquotedblright{}, pois sua tabela-verdade característica é a negação de $\eor$, isto é, de \textquotedblleft{}nem\dots{} nem\dots\textquotedblright{}.
 	\factoidbox{
 		$\downarrow$ é funcionalmente completo por si só. }
 
@@ -310,7 +310,7 @@ Na verdade, vale o seguinte:
 
         \factoidbox{Os \emph{únicos} conectivos de dois lugares funcionalmente completos por si sós são $\uparrow$ e $\downarrow$. }
 
-É claro que isso é mais difícil de demonstrar do que no caso dos conectivos primitivos. Por exemplo, o conectivo «ou exclusivo» não tem um T na primeira linha de sua tabela-verdade característica, e portanto o método usado acima já não basta para mostrar que ele não pode expressar todas as tabelas-verdade. Também é mais difícil mostrar que, por exemplo, $\eiff$ e $\enot$ \emph{juntos} não são funcionalmente completos.
+É claro que isso é mais difícil de demonstrar do que no caso dos conectivos primitivos. Por exemplo, o conectivo \textquotedblleft{}ou exclusivo\textquotedblright{} não tem um T na primeira linha de sua tabela-verdade característica, e portanto o método usado acima já não basta para mostrar que ele não pode expressar todas as tabelas-verdade. Também é mais difícil mostrar que, por exemplo, $\eiff$ e $\enot$ \emph{juntos} não são funcionalmente completos.
 
 \chapter{Demonstração de equivalências}\label{ch:equivalences}
 
@@ -320,7 +320,7 @@ Lembre-se, de \cref{sec:equivalent}, que $\metav{P}$ e $\metav{Q}$ são equivale
 
 Sentenças equivalentes não são, é claro, a mesma sentença: as sentenças $\enot\enot A$ e~$A$ podem sempre ter o mesmo valor de verdade, mas a primeira começa com o símbolo $\enot$, enquanto a segunda não. Mas você pode se perguntar se é sempre verdade que podemos substituir uma das sentenças de um par de sentenças equivalentes pela outra e se os resultados também serão equivalentes. Por exemplo, considere $\enot\enot A \eif B$ e $A \eif B$. A segunda resulta da primeira substituindo $\enot\enot A$ por~$A$. E essas duas sentenças também são equivalentes.
 
-Esse é um fato geral, e não é difícil ver por que ele é verdadeiro. Em qualquer valoração, calculamos o valor de verdade de uma sentença «de dentro para fora». Assim, ao determinar o valor de verdade de $\enot\enot A \eif B$, primeiro calculamos o valor de verdade de $\enot\enot A$, e o valor da sentença completa depende então apenas desse valor (verdadeiro ou falso, conforme o caso) e do restante da sentença (o valor de verdade de~$B$ e a tabela-verdade de~$\eif$). Mas, como $\enot\enot A$ e~$A$ são equivalentes, elas sempre têm o mesmo valor de verdade em uma dada valoração; portanto, substituir $\enot\enot A$ por~$A$ não pode alterar o valor de verdade da sentença completa. O mesmo vale, é claro, para qualquer outra sentença equivalente a $\enot\enot A$, digamos, $A \eand (A \eor A)$.
+Esse é um fato geral, e não é difícil ver por que ele é verdadeiro. Em qualquer valoração, calculamos o valor de verdade de uma sentença \textquotedblleft{}de dentro para fora\textquotedblright{}. Assim, ao determinar o valor de verdade de $\enot\enot A \eif B$, primeiro calculamos o valor de verdade de $\enot\enot A$, e o valor da sentença completa depende então apenas desse valor (verdadeiro ou falso, conforme o caso) e do restante da sentença (o valor de verdade de~$B$ e a tabela-verdade de~$\eif$). Mas, como $\enot\enot A$ e~$A$ são equivalentes, elas sempre têm o mesmo valor de verdade em uma dada valoração; portanto, substituir $\enot\enot A$ por~$A$ não pode alterar o valor de verdade da sentença completa. O mesmo vale, é claro, para qualquer outra sentença equivalente a $\enot\enot A$, digamos, $A \eand (A \eor A)$.
 
 
 
@@ -348,7 +348,7 @@ Eis outro fato: se duas sentenças $\metav{P}$ e~$\metav{Q}$ são equivalentes e
 
 \factoidbox{A equivalência é preservada sob a substituição de letras sentenciais; isto é, se $\metav{P}(A)$ e $\metav{Q}(A)$ contêm ambas a letra sentencial $A$ e são equivalentes, então as sentenças $\metav{P}(\metav{R})$ e $\metav{Q}(\metav{R})$ (obtidas substituindo $A$ por $\metav{R}$ em ambas) também são equivalentes.}
 
-Isso significa que, uma vez demonstrado que duas sentenças são equivalentes (por exemplo, $\enot\enot A$ e $A$, ou $A \land B$ e $B \land A$), sabemos que todas as suas «instâncias» comuns também são equivalentes. Observe que não obtemos isso imediatamente de uma tabela-verdade ou de uma demonstração por dedução natural. Por exemplo, uma tabela-verdade que mostra que $\enot\enot A$ e~$A$ são equivalentes \emph{não} mostra também que $\enot\enot(B \eif C)$ e $B \eif C$ são equivalentes: a primeira exige apenas 2 linhas, enquanto a segunda exige 4.
+Isso significa que, uma vez demonstrado que duas sentenças são equivalentes (por exemplo, $\enot\enot A$ e $A$, ou $A \land B$ e $B \land A$), sabemos que todas as suas \textquotedblleft{}instâncias\textquotedblright{} comuns também são equivalentes. Observe que não obtemos isso imediatamente de uma tabela-verdade ou de uma demonstração por dedução natural. Por exemplo, uma tabela-verdade que mostra que $\enot\enot A$ e~$A$ são equivalentes \emph{não} mostra também que $\enot\enot(B \eif C)$ e $B \eif C$ são equivalentes: a primeira exige apenas 2 linhas, enquanto a segunda exige 4.
 
 \section{Cadeias de equivalências}
 
@@ -374,7 +374,7 @@ Pelo segundo fato, \emph{quaisquer} pares de sentenças das formas a seguir são
 	\enot (\metav{P} \eand \metav{Q}) & \Leftrightarrow (\enot \metav{P} \eor \enot \metav{Q})\\
 	\enot (\metav{P} \eor \metav{Q}) & \Leftrightarrow (\enot \metav{P} \eand \enot \metav{Q})
 \end{align*}
-Agora considere a sentença $\enot(R \eor (S \eand T))$. Encontraremos uma sentença equivalente na qual todos os sinais $\enot$ se aplicam diretamente a letras sentenciais. No primeiro passo, consideramos isso como uma sentença da forma $\enot(\metav{P} \eor \metav{Q})$; então $\metav{P}$ é a sentença $R$ e $\metav{Q}$ é $(S \eand T)$. Como $\enot(\metav{P} \eor \metav{Q})$ é equivalente a $(\enot \metav{P} \eand \enot \metav{Q})$ (pela segunda lei de De Morgan), podemos substituir a sentença inteira por $(\enot \metav{P} \eand \enot \metav{Q})$. Neste caso, em que $\metav{P}$ é $R$ e $\metav{Q}$ é $(S \eand T)$, obtemos $(\enot R \eand \enot (S \eand T))$. Essa nova sentença contém como parte a sentença $\enot (S \eand T)$. Ela tem a forma $\enot(\metav{P} \eand \metav{Q})$, mas agora $\metav{P}$ é a letra sentencial $S$ e $\metav{Q}$ é $T$. Pela lei de De Morgan (a primeira desta vez), isso é equivalente a $(\enot\metav{P} \eor \enot\metav{Q})$, ou, neste caso específico, a $(\enot S \eor \enot T)$. Portanto, podemos substituir a parte $\enot (S \eand T)$ por $(\enot S \eor \enot T)$. O resultado é a sentença $(\enot R \eand (\enot S \eor \enot T))$, na qual todos os símbolos $\enot$ se aplicam diretamente a letras sentenciais. Nós «empurramos» as negações para dentro tanto quanto possível. Podemos registrar uma cadeia de equivalências assim listando os passos individuais e registrando, como fazemos na dedução natural, qual equivalência básica usamos em cada caso:
+Agora considere a sentença $\enot(R \eor (S \eand T))$. Encontraremos uma sentença equivalente na qual todos os sinais $\enot$ se aplicam diretamente a letras sentenciais. No primeiro passo, consideramos isso como uma sentença da forma $\enot(\metav{P} \eor \metav{Q})$; então $\metav{P}$ é a sentença $R$ e $\metav{Q}$ é $(S \eand T)$. Como $\enot(\metav{P} \eor \metav{Q})$ é equivalente a $(\enot \metav{P} \eand \enot \metav{Q})$ (pela segunda lei de De Morgan), podemos substituir a sentença inteira por $(\enot \metav{P} \eand \enot \metav{Q})$. Neste caso, em que $\metav{P}$ é $R$ e $\metav{Q}$ é $(S \eand T)$, obtemos $(\enot R \eand \enot (S \eand T))$. Essa nova sentença contém como parte a sentença $\enot (S \eand T)$. Ela tem a forma $\enot(\metav{P} \eand \metav{Q})$, mas agora $\metav{P}$ é a letra sentencial $S$ e $\metav{Q}$ é $T$. Pela lei de De Morgan (a primeira desta vez), isso é equivalente a $(\enot\metav{P} \eor \enot\metav{Q})$, ou, neste caso específico, a $(\enot S \eor \enot T)$. Portanto, podemos substituir a parte $\enot (S \eand T)$ por $(\enot S \eor \enot T)$. O resultado é a sentença $(\enot R \eand (\enot S \eor \enot T))$, na qual todos os símbolos $\enot$ se aplicam diretamente a letras sentenciais. Nós \textquotedblleft{}empurramos\textquotedblright{} as negações para dentro tanto quanto possível. Podemos registrar uma cadeia de equivalências assim listando os passos individuais e registrando, como fazemos na dedução natural, qual equivalência básica usamos em cada caso:
 \begin{align*}
 	& \fbox{\enot(\fbox{$R$} \eor \fbox{$(S \eand T)$})} \\
 	& \fbox{(\enot(\fbox{$R$} \eand \enot\fbox{$(S \eand T)$})} && \text{DeM}\\
@@ -418,7 +418,7 @@ Em \cref{tab:equivalences}, apresentamos uma lista de equivalências básicas qu
 
 \section{Encontrando formas normais equivalentes}
 
-Em \cref{c:NormalForms}, mostramos que toda sentença da LVF é equivalente a uma sentença na forma normal disjuntiva (FND) e a uma na forma normal conjuntiva (FNC). Fizemos isso apresentando um método para construir uma sentença na FND ou na FNC equivalente à sentença original: primeiro construímos uma tabela-verdade e depois «lemos» nela uma sentença na FND ou na FNC. Esse método tem duas desvantagens. A primeira é que as sentenças resultantes na FND ou na FNC nem sempre são as mais curtas. A segunda é que o próprio método se torna difícil de aplicar quando a sentença inicial contém mais do que algumas letras sentenciais (pois a tabela-verdade de uma sentença com $n$ letras sentenciais tem $2^n$ linhas).
+Em \cref{c:NormalForms}, mostramos que toda sentença da LVF é equivalente a uma sentença na forma normal disjuntiva (FND) e a uma na forma normal conjuntiva (FNC). Fizemos isso apresentando um método para construir uma sentença na FND ou na FNC equivalente à sentença original: primeiro construímos uma tabela-verdade e depois \textquotedblleft{}lemos\textquotedblright{} nela uma sentença na FND ou na FNC. Esse método tem duas desvantagens. A primeira é que as sentenças resultantes na FND ou na FNC nem sempre são as mais curtas. A segunda é que o próprio método se torna difícil de aplicar quando a sentença inicial contém mais do que algumas letras sentenciais (pois a tabela-verdade de uma sentença com $n$ letras sentenciais tem $2^n$ linhas).
 
 Podemos usar cadeias de equivalências como método alternativo: para encontrar uma sentença na FND, podemos aplicar sucessivamente equivalências básicas até encontrar uma sentença equivalente que esteja na FND. Lembre-se das condições que uma sentença na FND deve satisfazer:
 \begin{compactlist}
@@ -471,14 +471,14 @@ Para cada sentença, encontre uma sentença equivalente na FND e outra na FNC fo
 Neste capítulo, relacionamos a semântica da LVF ao seu \emph{sistema de provas} de dedução natural (definido em \cref{ch.NDTFL}). Demonstraremos que o sistema formal de provas é seguro: só é possível demonstrar, a partir de premissas, sentenças que de fato decorrem delas.
 Intuitivamente, um sistema formal de provas é correto \emph{\ifeff} não permite demonstrar argumentos inválidos. Essa é obviamente uma propriedade muito desejável. Ela nos diz que nosso sistema de provas nunca nos levará ao erro. De fato, se nosso sistema não fosse correto, não poderíamos confiar em nossas demonstrações. O objetivo deste capítulo é provar que nosso sistema de provas é correto.
 
-Tornemos a ideia mais precisa. Abreviaremos uma lista de sentenças usando a letra grega $\Gamma$ («gama»). Um sistema formal de provas é \define{correto} (relativamente a uma semântica dada) \emph{\ifeff}, sempre que houver uma demonstração formal de $\metav{C}$ a partir de suposições entre $\Gamma$, então $\Gamma$ implica genuinamente $\metav{C}$ (dada essa semântica). Em outras palavras, para provar que o sistema de provas da LVF é correto, precisamos provar o seguinte
+Tornemos a ideia mais precisa. Abreviaremos uma lista de sentenças usando a letra grega $\Gamma$ (\textquotedblleft{}gama\textquotedblright{}). Um sistema formal de provas é \define{correto} (relativamente a uma semântica dada) \emph{\ifeff}, sempre que houver uma demonstração formal de $\metav{C}$ a partir de suposições entre $\Gamma$, então $\Gamma$ implica genuinamente $\metav{C}$ (dada essa semântica). Em outras palavras, para provar que o sistema de provas da LVF é correto, precisamos provar o seguinte
 
 \begin{factoidboxe}\textbf{Teorema da correção.} Para quaisquer sentenças $\Gamma$ e $\metav{C}$: se $\Gamma\proves\metav{C}$, então $\Gamma \entails\metav{C}$
 \end{factoidboxe}
 
 Para prová-lo, verificaremos individualmente cada regra do sistema de provas da LVF. Queremos mostrar que nenhuma aplicação dessas regras nos leva ao erro. Como uma demonstração envolve apenas aplicações repetidas dessas regras, isso mostrará que nenhuma demonstração nos leva ao erro. Ou, pelo menos, essa é a ideia geral.
 
-Para começar, precisamos tornar mais precisa a ideia de «levar ao erro». Diremos que uma linha de uma demonstração é \define{brilhante} \emph{\ifeff} as suposições das quais essa linha depende implicam a sentença escrita na linha.\footnote{A palavra «brilhante» não é padrão entre os lógicos.} Para ilustrar a ideia, considere:
+Para começar, precisamos tornar mais precisa a ideia de \textquotedblleft{}levar ao erro\textquotedblright{}. Diremos que uma linha de uma demonstração é \define{brilhante} \emph{\ifeff} as suposições das quais essa linha depende implicam a sentença escrita na linha.\footnote{A palavra \textquotedblleft{}brilhante\textquotedblright{} não é padrão entre os lógicos.} Para ilustrar a ideia, considere:
 	\begin{fitchproof}
 		\hypo{fgh}{F\eif(G\eand H)}\PR
 		\open
@@ -535,7 +535,7 @@ Resta mostrar que toda regra é correta quanto às regras. Isso não é difícil
 
 
 
-$\Delta_i$ («delta») abreviará as suposições (se houver) das quais a linha~$i$ depende em nossa demonstração na LVF (o contexto indicará qual demonstração na LVF temos em mente). Isso inclui todas as premissas de nossa demonstração e todas as suposições de subdemonstrações que ainda estão abertas na linha~$i$.
+$\Delta_i$ (\textquotedblleft{}delta\textquotedblright{}) abreviará as suposições (se houver) das quais a linha~$i$ depende em nossa demonstração na LVF (o contexto indicará qual demonstração na LVF temos em mente). Isso inclui todas as premissas de nossa demonstração e todas as suposições de subdemonstrações que ainda estão abertas na linha~$i$.
 
 
 
