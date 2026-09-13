@@ -15,7 +15,7 @@ SPLITAT = chapter
 # --nomathtex to leave out the tex code in ALT tags on math elements
 # --nocomments to remove comments from HTML
 LATEXMLEXTRAFLAGS     = --includestyles --nocomments
-LATEXMLPOSTEXTRAFLAGS = --pmml --nomathtex --css=forallxyyc.css --css=fitchml.css
+LATEXMLPOSTEXTRAFLAGS = --novalidate --pmml --nomathtex --css=forallxyyc.css --css=fitchml.css
 
 # Only convert the HTML driver not all the other TEX files
 SOURCES = forallxyyc-html.tex
