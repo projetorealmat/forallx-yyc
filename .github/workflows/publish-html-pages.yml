@@ -51,6 +51,10 @@ jobs:
         run: |
           set -euo pipefail
           html_dir="${RUNNER_TEMP}/auxdir/html/forallxyyc-html"
+          # BookML runs in Docker and leaves its generated files root-owned.
+          # Transfer ownership before the host runner writes search_index.json
+          # and assembles the Pages artifact.
+          sudo chown -R "$(id -u):$(id -g)" "${html_dir}"
           python3 bookml-search-index.py "${html_dir}"
           test -s "${html_dir}/search_index.json"
 
