@@ -21,10 +21,13 @@ LATEXMLPOSTEXTRAFLAGS = --novalidate --pmml --nomathtex --css=forallxyyc.css --c
 SOURCES = forallxyyc-html.tex
 
 # Route only BookML's search-index command through the repository's
-# LibXML-only indexer; all other BookML Perl scripts remain unchanged.
+# standard-library Python indexer; all other BookML Perl scripts remain unchanged.
 PERL = perl bookml-perl-wrapper.pl
 
 include bookml/bookml.mk
+
+# Rebuild the HTML index when the wrapper or indexer changes.
+BOOKML_DEPS_HTML += bookml-perl-wrapper.pl bookml-search-index.py
 
 # You may also override SPLITAT and other options for a single file, as follows:
 #singlepage.zip: SPLITAT=
