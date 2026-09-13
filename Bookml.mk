@@ -20,8 +20,8 @@ LATEXMLPOSTEXTRAFLAGS = --novalidate --pmml --nomathtex --css=forallxyyc.css --c
 # Only convert the HTML driver not all the other TEX files
 SOURCES = forallxyyc-html.tex
 
-# BookML's XML search-index hook is kept as a bounded placeholder.  The
-# complete index is generated after the container finishes.
+# BookML's XML search-index hook is disabled in the container.  The complete
+# index is generated after the container finishes.
 PERL = perl bookml-perl-wrapper.pl
 
 include bookml/bookml.mk
