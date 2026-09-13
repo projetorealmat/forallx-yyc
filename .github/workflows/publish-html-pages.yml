@@ -42,7 +42,7 @@ jobs:
             found=1
             echo "=== Diagnóstico de imagem: ${log} ==="
             grep -n -E '^!|Error|Emergency stop|Fatal|Runaway|Undefined control sequence|Output written' "${log}" || true
-          done < <(find . -type f -name '*.bmllog' -path '*/bmlimages/dvi/*' -print)
+          done < <(find . "${RUNNER_TEMP}/auxdir" /auxdir -type f -name '*.bmllog' -path '*/bmlimages/dvi/*' -print 2>/dev/null | sort -u)
           if test "${found}" = 0; then
             echo "Nenhum log .bmllog encontrado."
           fi
