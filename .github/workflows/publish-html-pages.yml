@@ -1,0 +1,94 @@
+name: "Publicar HTML traduzido — forall x: Calgary"
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Gerar HTML com BookML
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout do livro
+        uses: actions/checkout@v6
+
+      - name: Preparar capa para a compilação HTML
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! command -v pdftocairo >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils
+          fi
+          pdftocairo -singlefile -png -r 150 \
+            assets/forallx-coverart-screen.pdf forallxyyc
+          test -s forallxyyc.png
+
+      - name: Compilar HTML com a versão compatível do BookML
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="ghcr.io/vlmantova/bookml:v0.10.1"
+          docker pull "$image"
+          docker run --rm \
+            --volume "$GITHUB_WORKSPACE:/source" \
+            --volume "$RUNNER_TEMP/auxdir:/auxdir" \
+            --workdir /source \
+            --entrypoint /bin/bash \
+            "$image" \
+            -lc 'set -euo pipefail; /run-bookml update; make -f Bookml.mk -k html AUX_DIR=/auxdir'
+
+      - name: Validar saída HTML
+        shell: bash
+        run: |
+          set -euo pipefail
+          html_dir="${RUNNER_TEMP}/auxdir/html/forallxyyc-html"
+          test -s "${html_dir}/index.html"
+          test -s "${html_dir}/Chx1.html"
+          test -s "${html_dir}/search_index.json"
+
+      - name: Preparar conteúdo do Pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          html_dir="${RUNNER_TEMP}/auxdir/html/forallxyyc-html"
+          mkdir -p _site
+          cp -a "${html_dir}/." _site/
+          touch _site/.nojekyll
+
+      - name: Configurar GitHub Pages
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: actions/configure-pages@v6
+
+      - name: Enviar artefato do Pages
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    name: Publicar no GitHub Pages
+    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/master') }}
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Implantar artefato
+        id: deployment
+        uses: actions/deploy-pages@v5
