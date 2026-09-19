@@ -27,7 +27,7 @@ Para desenvolver um pouco essa ideia, considere esta chave de simbolização:
 	\begin{ekey}
 \item[\atom{C}{x}] \gap{x} ensina Lógica III em Calgary
 	\end{ekey}
-Essa estipulação não transporta o \emph{significado} do predicado em inglês para o nosso predicado da LPO. Estamos simplesmente estipulando algo como isto:
+Essa estipulação não transporta o \emph{significado} do predicado em português para o nosso predicado da LPO. Estamos simplesmente estipulando algo como isto:
 	\begin{itemize}
 \item \textquotedblleft $\atom{C}{x}$\textquotedblright{} e \textquotedblleft \gap{x} ensina Lógica III em Calgary\textquotedblright{} devem ser \emph{verdadeiras de} exatamente as mesmas coisas.
 	\end{itemize}
@@ -37,7 +37,7 @@ Assim, em particular:
 	\end{itemize}
 Esta é uma maneira indireta de estipular de quais coisas um predicado é verdadeiro.
 
-Alternativamente, podemos estipular diretamente as extensões dos predicados. Por exemplo, podemos estipular que \textquotedblleft $\atom{C}{x}$\textquotedblright{} deve ser verdadeiro de Richard Zach, e somente de Richard Zach. Acontece que essa estipulação direta teria o mesmo efeito que a estipulação indireta, pois Richard, e somente Richard, ensina Lógica~III em Calgary. Observe, contudo, que os predicados em inglês \textquotedblleft \blank\ é Richard Zach\textquotedblright{} e \textquotedblleft \blank\ ensina Lógica III em Calgary\textquotedblright{} têm significados muito diferentes!
+Alternativamente, podemos estipular diretamente as extensões dos predicados. Por exemplo, podemos estipular que \textquotedblleft $\atom{C}{x}$\textquotedblright{} deve ser verdadeiro de Richard Zach, e somente de Richard Zach. Acontece que essa estipulação direta teria o mesmo efeito que a estipulação indireta, pois Richard, e somente Richard, ensina Lógica~III em Calgary. Observe, contudo, que os predicados em português \textquotedblleft \blank\ é Richard Zach\textquotedblright{} e \textquotedblleft \blank\ ensina Lógica III em Calgary\textquotedblright{} têm significados muito diferentes!
 
 O ponto é que a LPO não tem recursos para lidar com nuances de significado. Quando interpretamos a LPO, tudo o que consideramos é de que coisas os predicados são verdadeiros, independentemente de especificarmos essas coisas direta ou indiretamente. As coisas de que um predicado é verdadeiro são conhecidas como a \define{extens\~ao} desse predicado. Dizemos que a LPO é uma \define{linguagem extensional} porque não representa diferenças de significado entre predicados que têm a mesma extensão.
 
@@ -47,15 +47,15 @@ O ponto é que a LPO não tem recursos para lidar com nuances de significado. Qu
 \section{Extensões}\label{sec:extensions}
 Podemos estipular diretamente de que coisas os predicados devem ser verdadeiros. E nossas estipulações podem ser tão arbitrárias quanto quisermos. Por exemplo, poderíamos estipular que \textquotedblleft $\atom{H}{x}$\textquotedblright{} deve ser verdadeiro, e somente verdadeiro, dos seguintes objetos:
 	\begin{itemize}
-		\item Aristotle
-		\item the number $\pi$
+		\item Aristóteles
+		\item o número $\pi$
 \item toda tecla correspondente à nota dó aguda em todo piano já fabricado
 	\end{itemize}
 Munidos dessa interpretação de \textquotedblleft $\atom{H}{x}$\textquotedblright{}, suponha que acrescentemos à nossa chave de simbolização:
 	\begin{ekey}
-		\item[a] Aristotle
-		\item[h] Hypatia
-		\item[p] the number $\pi$
+		\item[a] Aristóteles
+		\item[h] Hipátia
+		\item[p] o número $\pi$
 	\end{ekey}
 Então \textquotedblleft $\atom{H}{a}$\textquotedblright{} e \textquotedblleft $\atom{H}{p}$\textquotedblright{} serão ambas verdadeiras, nessa interpretação, mas \textquotedblleft $\atom{H}{h}$\textquotedblright{} será falsa, pois Hipátia não estava entre os objetos estipulados.
 
@@ -135,7 +135,7 @@ Definimos uma \define{valora\c{c}\~ao} na LVF como qualquer atribuição de verd
 \item a especificação de um domínio não vazio;
 \item a cada letra sentencial que decidamos considerar é atribuído um valor de verdade;
 \item a cada nome que decidamos considerar é atribuído exatamente um objeto dentro do domínio (seu \define{referente});
-\item para cada predicado que decidamos considerar (exceto \textquotedblleft $=$\textquotedblright{}), uma especificação de de que coisas (e em que ordem) o predicado é verdadeiro (sua \define{extens\~ao}).
+\item para cada predicado que decidamos considerar (exceto \textquotedblleft $=$\textquotedblright{}), uma especificação de quais coisas (e em que ordem) tornam o predicado verdadeiro (sua \define{extens\~ao}).
 
 
 
@@ -242,7 +242,7 @@ Precisamos explicar a verdade para os três tipos de sentença.
 Nesta seção, ofereceremos uma explicação completamente geral. No entanto, para tentar manter a explicação compreensível, usaremos, em vários pontos, a seguinte interpretação:
 	\begin{ekey}
 \item[\text{domínio}] todas as pessoas nascidas antes de 2000 \textsc{d.C.}
-		\item[a] Aristotle
+		\item[a] Aristóteles
 		\item[b] Beyonc\'e
 \item[\atom{P}{x}] \gap{x} é filósofo
 \item[\atom{R}{x,y}] \gap{x} nasceu antes de \gap{y}
@@ -410,9 +410,9 @@ ocorre já em $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$).
 Assim, por exemplo, Sócrates satisfaz a fórmula~$\atom{P}{x}$, pois $\atom{P}{c}$ é verdadeira na interpretação $\mathbf{I}[\text{Sócrates}/c]$, isto é, na interpretação:
 \begin{ekey}
 \item[\text{domínio}] todas as pessoas nascidas antes de 2000 \textsc{d.C.}
-	\item[a] Aristotle
+	\item[a] Aristóteles
 	\item[b] Beyonc\'e
-	\item[c] Socrates
+	\item[c] Sócrates
 \item[\atom{P}{x}] \gap{x} é filósofo
 \item[\atom{R}{x,y}] \gap{x} nasceu antes de \gap{y}
 \end{ekey}
@@ -628,10 +628,10 @@ $\atom{R}{x,y}$, pois $\atom{R}{c,d}$ é verdadeira na interpretação:
 
 \begin{ekey}
 \item[\text{domínio}] todas as pessoas nascidas antes de 2000 \textsc{d.C.}
-	\item[a] Aristotle
+	\item[a] Aristóteles
 	\item[b] Beyonc\'e
-	\item[c] Socrates
-	\item[d] Plato
+	\item[c] Sócrates
+	\item[d] Platão
 \item[\atom{P}{x}] \gap{x} é filósofo
 \item[\atom{R}{x,y}] \gap{x} nasceu antes de \gap{y}
 \end{ekey}
@@ -1096,4 +1096,3 @@ Mostre que uma relação pode ser simultaneamente simétrica e antissimétrica f
 	& \forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,x})\\
 	& \forall x\forall y((\atom{R}{x,y} \eand \atom{R}{y,x}) \eif x=y)
 \end{align*}
-

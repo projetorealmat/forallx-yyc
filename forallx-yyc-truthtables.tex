@@ -106,7 +106,7 @@ name=conectivo verofuncional,
 description={Um operador que constrói sentenças maiores a partir de sentenças menores e fixa o \gls{truth value} da sentença resultante com base apenas no valor de verdade das sentenças componentes}
 }
         
-Todo conectivo da LVF é verofuncional. O valor de verdade de uma negação é determinado univocamente pelo valor de verdade da sentença não negada. O valor de verdade de uma conjunção é determinado univocamente pelo valor de verdade de ambos os conjuntos. O valor de verdade de uma disjunção é determinado univocamente pelo valor de verdade de ambos os disjuntos, e assim por diante. Para determinar o valor de verdade de uma sentença da LVF, só precisamos conhecer o valor de verdade de seus componentes.
+Todo conectivo da LVF é verofuncional. O valor de verdade de uma negação é determinado univocamente pelo valor de verdade da sentença não negada. O valor de verdade de uma conjunção é determinado univocamente pelo valor de verdade de ambos os conjuntivos. O valor de verdade de uma disjunção é determinado univocamente pelo valor de verdade de ambos os disjuntivos, e assim por diante. Para determinar o valor de verdade de uma sentença da LVF, só precisamos conhecer o valor de verdade de seus componentes.
 
 É isso que dá nome à LVF: ela é uma \emph{lógica proposicional verofuncional}.
 
@@ -242,7 +242,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F & {F} & & {F} & & {F}
 \end{tabular}
 \end{center}
-Agora considere a subsentença \textquotedblleft{}$(H\eand I)$\textquotedblright{}. Ela é uma conjunção, $(\metav{A}\eand\metav{B})$, com \textquotedblleft{}$H$\textquotedblright{} como \metav{A} e \textquotedblleft{}$I$\textquotedblright{} como \metav{B}. A tabela-verdade característica da conjunção fornece as condições de verdade para \emph{qualquer} sentença da forma $(\metav{A}\eand\metav{B})$, quaisquer que sejam $\metav{A}$ e $\metav{B}$. Ela representa o fato de que uma conjunção é verdadeira \ifeff{} ambos os conjuntos são verdadeiros. Neste caso, nossos conjuntos são simplesmente \textquotedblleft{}$H$\textquotedblright{} e \textquotedblleft{}$I$\textquotedblright{}. Ambos são verdadeiros na primeira linha da tabela-verdade, e somente nela. Consequentemente, podemos calcular o valor de verdade da conjunção em todas as quatro linhas.
+Agora considere a subsentença \textquotedblleft{}$(H\eand I)$\textquotedblright{}. Ela é uma conjunção, $(\metav{A}\eand\metav{B})$, com \textquotedblleft{}$H$\textquotedblright{} como \metav{A} e \textquotedblleft{}$I$\textquotedblright{} como \metav{B}. A tabela-verdade característica da conjunção fornece as condições de verdade para \emph{qualquer} sentença da forma $(\metav{A}\eand\metav{B})$, quaisquer que sejam $\metav{A}$ e $\metav{B}$. Ela representa o fato de que uma conjunção é verdadeira \ifeff{} ambos os conjuntivos são verdadeiros. Neste caso, nossos conjuntivos são simplesmente \textquotedblleft{}$H$\textquotedblright{} e \textquotedblleft{}$I$\textquotedblright{}. Ambos são verdadeiros na primeira linha da tabela-verdade, e somente nela. Consequentemente, podemos calcular o valor de verdade da conjunção em todas as quatro linhas.
 \begin{center}
 \begin{tabular}{c c|d e e e f}
  & & \metav{A} & \eand & \metav{B} & & \\
@@ -643,7 +643,7 @@ Em \cref{s:BasicNotions}, dissemos que sentenças são conjuntamente possíveis 
   name=satisfatibilidade (na LVF),
   text=conjuntamente satisfatíveis,
   description={Uma propriedade de \glspl{sentence of TFL} se e somente se a
-  \gls{complete truth table} de todas essas sentenças em conjunto contém uma linha
+  \gls{complete truth table} de todas essas sentenças conjuntamente contém uma linha
   na qual todas as sentenças são verdadeiras, isto é, se alguma \gls{valuation}
   torna todas as sentenças verdadeiras}
 }
@@ -709,7 +709,7 @@ A única linha na qual tanto \textquotedblleft{}$\enot L \eif (J \eor L)$\textqu
 
 
 \section{O duplo turnstile}
-Neste livro, usaremos bastante a noção de implicação. Será útil, então, introduzir um símbolo que a abrevia. Em vez de dizer que as sentenças da LVF $\metav{A}_1$, $\metav{A}_2$, \dots{} e $\metav{A}_n$ em conjunto implicam $\metav{C}$, abreviaremos isso assim:
+Neste livro, usaremos bastante a noção de implicação. Será útil, então, introduzir um símbolo que a abrevia. Em vez de dizer que as sentenças da LVF $\metav{A}_1$, $\metav{A}_2$, \dots{} e $\metav{A}_n$ conjuntamente implicam $\metav{C}$, abreviaremos isso assim:
 	$$\metav{A}_1, \metav{A}_2, \dots, \metav{A}_n \entails \metav{C}$$
 O símbolo \textquotedblleft{}$\entails$\textquotedblright{} é conhecido como \emph{duplo turnstile}, pois se parece com um turnstile com duas barras horizontais.
 
@@ -1063,7 +1063,7 @@ $P$&$Q$&$(P$&\eor&$Q)$&\eiff&\enot&$P$\\
  F & F &  & F &  & \TTbf{F} & T
 \end{tabular}
 \end{center}
-Você também sabe com certeza que uma disjunção é verdadeira sempre que um dos disjuntos é verdadeiro. Portanto, se encontrar um disjunto verdadeiro, não há necessidade de calcular o valor de verdade do outro disjunto. Assim, você poderia apresentar:
+Você também sabe com certeza que uma disjunção é verdadeira sempre que um dos disjuntivos é verdadeiro. Portanto, se encontrar um disjuntivo verdadeiro, não há necessidade de calcular o valor de verdade do outro disjuntivo. Assim, você poderia apresentar:
 \begin{center}
 \begin{tabular}{c c|d e e e e e e f}
 $P$&$Q$& $(\enot$ & $P$&\eor&\enot&$Q)$&\eor&\enot&$P$\\
@@ -1074,7 +1074,7 @@ $P$&$Q$& $(\enot$ & $P$&\eor&\enot&$Q)$&\eor&\enot&$P$\\
  F & F & & & & & &\TTbf{T} & T
 \end{tabular}
 \end{center}
-Do mesmo modo, você sabe com certeza que uma conjunção é falsa sempre que um dos conjuntos é falso. Portanto, se encontrar um conjunto falso, não há necessidade de calcular o valor de verdade do outro conjunto. Assim, você poderia apresentar:
+Do mesmo modo, você sabe com certeza que uma conjunção é falsa sempre que um dos conjuntivos é falso. Portanto, se encontrar um conjuntivo falso, não há necessidade de calcular o valor de verdade do outro conjuntivo. Assim, você poderia apresentar:
 \begin{center}
 \begin{tabular}{c c|d e e e e e e f}
 $P$&$Q$&\enot &$(P$&\eand&\enot&$Q)$&\eand&\enot&$P$\\
@@ -1150,7 +1150,7 @@ A tabela-verdade não tem linhas ruins, portanto o argumento é válido. Qualque
 
 Vale a pena ilustrar a estratégia novamente. Considere este argumento:
 $$A\eor B, \enot (B\eand C) \therefore (A \eor \enot C)$$
-Mais uma vez, começamos avaliando a conclusão. Como ela é uma disjunção, é verdadeira sempre que qualquer um dos disjuntos é verdadeiro, de modo que podemos acelerar um pouco o trabalho.
+Mais uma vez, começamos avaliando a conclusão. Como ela é uma disjunção, é verdadeira sempre que qualquer um dos disjuntivos é verdadeiro, de modo que podemos acelerar um pouco o trabalho.
 \begin{center}
 \begin{tabular}[t]{c c c| c|c|d e e f }
 $A$ & $B$ & $C$ & $A\eor B$ & $\enot (B \eand C)$ & $(A$ &$\eor $& $\enot $ & $C)$\\
@@ -1255,7 +1255,7 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
   &  &  &  &   &   &   &\TTbf{T}&  &  &
 \end{tabular}
 \end{center}
-Para tornar a sentença verdadeira, será suficiente garantir que o antecedente seja falso. Como o antecedente é uma conjunção, podemos simplesmente tornar um de seus conjuntos falso. Tomando uma decisão arbitrária, vamos tornar `$U$' falso; então podemos atribuir qualquer valor de verdade que quisermos às outras letras sentenciais.
+Para tornar a sentença verdadeira, será suficiente garantir que o antecedente seja falso. Como o antecedente é uma conjunção, podemos simplesmente tornar um de seus conjuntivos falso. Tomando uma decisão arbitrária, vamos tornar `$U$' falso; então podemos atribuir qualquer valor de verdade que quisermos às outras letras sentenciais.
 \begin{center}
 \begin{tabular}{c c c c|d e e e e e f}
 $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\

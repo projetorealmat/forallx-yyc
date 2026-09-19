@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it."
-title: "forall x: Calgary: An Introduction to Formal Logic"
+message: "Se você usar este trabalho, cite-o."
+title: "forall x: Calgary: Uma introdução à lógica formal"
 version: "0.1.0"
 authors:
   - family-names: Magnus

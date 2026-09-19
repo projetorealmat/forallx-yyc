@@ -39,7 +39,7 @@ Eis as figuras silogísticas identificadas por Aristóteles e seus sucessores, j
 \item \textbf{Dimaris.} Algum $F$ é $G$. Todo $G$ é $H$. Logo: algum $H$ é $F$
 	\item[] \myanswer{$\exists x (\atom{F}{x} \eand \atom{G}{x}), \forall x (\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$}
 \item \textbf{Fresison.} Nenhum $F$ é $G$. Algum $G$ é $H$. Logo: algum $H$ não é $F$
-	\item[] \myanswer{$\forall x (\atom{F}{x} \eif \enot \atom{G}{x}), \exists x (\atom{G}{x} \eand \atom{H}{x}) \therefore \exists (\atom{H}{x} \eand \enot \atom{F}{x})$}
+\item[] \myanswer{$\forall x (\atom{F}{x} \eif \enot \atom{G}{x}), \exists x (\atom{G}{x} \eand \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \enot \atom{F}{x})$}
 \end{compactlist}
 Simbolize cada argumento na LPO.
 
@@ -310,6 +310,7 @@ simbolize as seguintes sentenças na LPO:
 \item Todos gostam do guacamole.
 \item[] \myanswer{$\forall x (\atom{P}{x} \eif \atom{L}{x,g})$}
 \item Se alguém gosta do guacamole, então Eli gosta.
+\item[] \myanswer{$\exists x (\atom{P}{x} \eand \atom{L}{x,g}) \eif \atom{L}{e,g}$}
 \item Francesca só gosta dos pratos que acabaram.
 \item[] \myanswer{$\forall x \bigl[(\atom{L}{f,x} \eand \atom{F}{x}) \eif \atom{R}{x}\bigr]$}
 \item Francesca não gosta de ninguém, e ninguém gosta de Francesca.
@@ -493,11 +494,11 @@ Usando a seguinte chave de simbolização:
 \end{ekey}
 simbolize cada sentença na LPO:
 \begin{compactlist}
-\item Todo paus é uma carta preta.
+\item Toda carta de paus é preta.
 \item[] \myanswer{$\forall x (\atom{C}{x} \eif \atom{B}{x})$}
 \item Não há cartas coringa.
 \item[] \myanswer{$\enot \exists x\, \atom{W}{x}$}
-\item Há pelo menos dois paus.
+\item Há pelo menos duas cartas de paus.
 \item[] \myanswer{$\exists x \exists y(\enot x = y \eand \atom{C}{x} \eand \atom{C}{y})$}
 \item Há mais de um valete de um olho só.
 \item[] \myanswer{$\exists x \exists y(\enot x = y \eand \atom{J}{x} \eand \atom{O}{x}  \eand \atom{J}{y} \eand \atom{O}{y})$}
@@ -507,21 +508,21 @@ simbolize cada sentença na LPO:
 \item[] \myanswer{$\exists x \exists y(\enot x = y \eand \atom{B}{x} \eand \atom{J}{x} \eand \atom{B}{y} \eand \atom{J}{y})$\\
 Comment: estou lendo isso como \textquotedblleft há \emph{pelo menos} dois...\textquotedblright{}. Se a sugestão fosse que há \emph{exatamente} dois, seria necessária uma sentença diferente da LPO, a saber:\\
 $\exists x \exists y \bigl(\enot x = y \eand \atom{B}{x} \eand \atom{J}{x} \eand \atom{B}{y} \eand \atom{J}{y} \eand \forall z[(\atom{B}{z} \eand \atom{J}{z}) \eif (x = z \eor y = z)]\bigr)$}
-\item Há quatro dois.
+\item Há quatro cartas de valor dois.
 \item[] \myanswer{$\exists w \exists x \exists y \exists z(\enot w = x \eand \enot w = y \eand \enot w = z \eand \enot x = y \eand \enot x = z \eand \enot y = z \eand \atom{D}{w} \eand \atom{D}{x} \eand \atom{D}{y} \eand \atom{D}{z})$\\
 Comment: estou lendo isso como \textquotedblleft há \emph{pelo menos} quatro...\textquotedblright{}. Se a sugestão fosse que há \emph{exatamente} quatro, deveríamos oferecer em vez disso:\\
 $\exists w \exists x \exists y \exists z\bigl(\enot w = x \eand \enot w = y \eand \enot w = z \eand \enot x = y \eand \enot x = z \eand \enot y = z \eand \atom{D}{w} \eand \atom{D}{x} \eand \atom{D}{y} \eand \atom{D}{z} \eand \forall v[\atom{D}{v} \eif (v = w \eor v = x \eor v = y \eor v =z)]\bigr)$}
-\item O dois de paus é uma carta preta.
+\item A carta de dois de paus é preta.
 \item[] \myanswer{$\exists x \bigl[\atom{D}{x} \eand \atom{C}{x} \eand \forall y\bigl((\atom{D}{y} \eand \atom{C}{y}) \eif x = y\bigr) \eand \atom{B}{x}\bigr]$}
 \item Valetes de um olho só e o homem com o machado são coringas.
 \item[] \myanswer{$\forall x \bigl[(\atom{J}{x} \eand \atom{O}{x}) \eif \atom{W}{x}\bigr] \eand \exists x\bigl[\atom{M}{x} \eand \forall y(\atom{M}{y} \eif x = y) \eand \atom{W}{x}\bigr]$}
-\item Se o dois de paus é coringa, então há exatamente uma carta coringa.
+\item Se a carta de dois de paus é coringa, então há exatamente uma carta coringa.
 \item[] \myanswer{$\exists x \bigl(\atom{D}{x} \eand \atom{C}{x} \eand \forall y \bigl[(\atom{D}{y} \eand \atom{C}{y}) \eif x= y\bigr] \eand \atom{W}{x}\bigr) \eif \exists x \bigl(\atom{W}{x} \eand \forall y(\atom{W}{y} \eif x = y)\bigr)$\\
 Comment: se não há exatamente um dois de paus, então a sentença acima é verdadeira. Talvez esse seja o veredito errado. Talvez a sentença devesse implicar definitivamente que há um, e somente um, dois de paus, e então expressar um condicional sobre ser coringa. Nesse caso, poderíamos simbolizá-la assim:
 \\$\exists x \bigl(\atom{D}{x} \eand \atom{C}{x} \eand \forall y \bigl[(\atom{D}{y} \eand \atom{C}{y}) \eif x = y\bigr] \eand \bigl[\atom{W}{x} \eif \forall y (\atom{W}{y} \eif x = y)\bigr]\bigl)$}
 \item O homem com o machado não é um valete.
 \item[] \myanswer{$\exists x \bigl[\atom{M}{x} \eand \forall y(\atom{M}{y} \eif x = y) \eand \enot \atom{J}{x}\bigr]$}
-\item O dois de paus não é o homem com o machado.
+\item A carta de dois de paus não é o homem com o machado.
 \item[] \myanswer{$\exists x \exists y\bigl(\atom{D}{x} \eand \atom{C}{x} \eand \forall z[(\atom{D}{z} \eand \atom{C}{z}) \eif x = z] \eand \atom{M}{y} \eand \forall z(\atom{M}{z} \eif y = z) \eand \enot x = y\bigr)$}
 
 \end{compactlist}

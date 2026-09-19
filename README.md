@@ -2,7 +2,7 @@
 
 [![REALMat — verificar livro](https://github.com/projetorealmat/forallx-yyc/actions/workflows/book-ci.yml/badge.svg)](https://github.com/projetorealmat/forallx-yyc/actions/workflows/book-ci.yml)
 
-Este repositório contém a tradução e adaptação brasileira, em preparação, de *forall x: Calgary: An Introduction to Formal Logic*. A edição REALMat parte da [edição original em inglês](https://github.com/rzach/forallx-yyc) e preserva a atribuição, os créditos e a licença da obra-fonte.
+Este repositório contém a tradução e adaptação brasileira, em preparação, de *forall x: Calgary: Uma introdução à lógica formal*. A edição REALMat parte da [edição original em inglês](https://github.com/rzach/forallx-yyc) e preserva a atribuição, os créditos e a licença da obra-fonte.
 
 **Tradutor e responsável pela edição REALMat:** Carlos André Duarte Costa.
 
@@ -24,20 +24,20 @@ O livro também aborda tópicos avançados, como lógica modal, correção (*sou
 - [Metadados de citação](CITATION.cff)
 - [Licença](LICENSE.md)
 - [Histórico de alterações](CHANGELOG.md)
-- [Releases e versões anteriores](https://github.com/projetorealmat/forallx-yyc/releases)
-- [Execuções dos workflows](https://github.com/projetorealmat/forallx-yyc/actions)
+- [Lançamentos e versões anteriores](https://github.com/projetorealmat/forallx-yyc/releases)
+- [Execuções dos fluxos de trabalho](https://github.com/projetorealmat/forallx-yyc/actions)
 
 ## Publicações
 
 <!-- realmat-release:start -->
-- Release REALMat atualmente recomendada: [v0.1.0](https://github.com/projetorealmat/forallx-yyc/releases/tag/v0.1.0).
+- Lançamento REALMat atualmente recomendado: [v0.1.0](https://github.com/projetorealmat/forallx-yyc/releases/tag/v0.1.0).
 - [HTML de leitura da edição Calgary](https://forallx.openlogicproject.org/html/index.html)
 - [PDF da versão atualmente recomendada](https://github.com/projetorealmat/forallx-yyc/releases/download/v0.1.0/forallxyyc.pdf)
 <!-- realmat-release:end -->
 
-O PDF oficial de cada versão é compilado e publicado automaticamente depois do merge da respectiva **Release PR**. O arquivo `forallxyyc.pdf` não é mantido como arquivo versionado na raiz do repositório. Enquanto não houver uma release REALMat, não há PDF ou HTML traduzido publicado para download.
+O PDF oficial de cada versão é compilado e publicado automaticamente depois da incorporação da respectiva **Release PR**. O arquivo `forallxyyc.pdf` não é mantido como arquivo versionado na raiz do repositório. Enquanto não houver um lançamento REALMat, não há PDF ou HTML traduzido publicado para baixar.
 
-## Versão em desenvolvimento, releases e arquivos-fonte
+## Versão em desenvolvimento, lançamentos e arquivos-fonte
 
 A versão atualmente recomendada é `v0.1.0`, ainda em revisão editorial.
 
@@ -49,7 +49,7 @@ O versionamento segue estas regras:
 - `v1.1.0`: adaptação ou acréscimo compatível com a mesma edição;
 - `v2.0.0`: nova edição, com mudança estrutural ou editorial ampla.
 
-Cada release preserva:
+Cada versão publicada preserva:
 
 - o PDF correspondente à versão;
 - os arquivos-fonte automáticos da tag;
@@ -57,7 +57,7 @@ Cada release preserva:
 - os metadados usados na compilação;
 - o arquivo `SHA256SUMS`.
 
-Para consultar uma versão anterior, abra [Releases](https://github.com/projetorealmat/forallx-yyc/releases), escolha a versão desejada e baixe o PDF ou os arquivos-fonte. Os commits e as tags preservam também estados intermediários do projeto.
+Para consultar uma versão anterior, abra [Lançamentos](https://github.com/projetorealmat/forallx-yyc/releases), escolha a versão desejada e baixe o PDF ou os arquivos-fonte. Os commits e as tags preservam também estados intermediários do projeto.
 
 ## Compilação local
 
@@ -87,7 +87,7 @@ Os arquivos HTML serão gerados em `auxdir/html/forallxyyc-html/`, e o pacote SC
 
 ## Edição original em inglês
 
-Os links desta seção apontam deliberadamente para a edição original em inglês; eles não são downloads da tradução REALMat:
+Os links desta seção apontam deliberadamente para a edição original em inglês; eles não são arquivos da tradução REALMat para baixar:
 
 - [Repositório original](https://github.com/rzach/forallx-yyc)
 - [README da edição original](https://github.com/rzach/forallx-yyc/blob/master/README.md)
@@ -111,4 +111,4 @@ O código-fonte desta edição está disponível no [repositório REALMat](https
 
 ## Integração com o REALMat
 
-Este repositório integra o projeto [REALMat](https://projetorealmat.github.io/). A tradução e a adaptação são desenvolvidas aqui; as versões publicadas podem ser consultadas nas [releases deste repositório](https://github.com/projetorealmat/forallx-yyc/releases) e catalogadas no [portal REALMat](https://projetorealmat.github.io/).
+Este repositório integra o projeto [REALMat](https://projetorealmat.github.io/). A tradução e a adaptação são desenvolvidas aqui; as versões publicadas podem ser consultadas nos [lançamentos deste repositório](https://github.com/projetorealmat/forallx-yyc/releases) e catalogadas no [portal REALMat](https://projetorealmat.github.io/).

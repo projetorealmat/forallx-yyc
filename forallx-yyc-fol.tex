@@ -5,7 +5,7 @@
 \chapter{Blocos fundamentais da LPO}\label{s:FOLBuildingBlocks}
 
 \section{A necessidade de decompor sentenças}
-Considere o argumento a seguir, que é obviamente válido em inglês:
+Considere o argumento a seguir, que é obviamente válido em português:
 \begin{earg}
 \label{willard1}
 \item[] Willard é um lógico.
@@ -30,9 +30,9 @@ Os detalhes da LPO serão explicados ao longo deste capítulo, mas eis a ideia b
 
 Primeiro, temos \emph{nomes}. Na LPO, indicamos os nomes com letras minúsculas em itálico. Por exemplo, poderíamos fazer \textquotedblleft $b$\textquotedblright{} representar Bertie ou fazer \textquotedblleft $i$\textquotedblright{} representar Willard.
 
-Segundo, temos predicados. Predicados em inglês são expressões como \textquotedblleft\blank\ é um cão\textquotedblright{} ou \textquotedblleft\blank\ é um lógico\textquotedblright{}. Essas expressões não são sentenças completas por si mesmas. Para construir uma sentença completa, precisamos preencher a lacuna. Precisamos dizer algo como \textquotedblleft Bertie é um cão\textquotedblright{} ou \textquotedblleft Willard é um lógico\textquotedblright{}. Na LPO, indicamos predicados com letras maiúsculas em itálico. Por exemplo, poderíamos fazer o predicado da LPO \textquotedblleft $D$\textquotedblright{} simbolizar o predicado em inglês \textquotedblleft\blank\ é um cão\textquotedblright{}. Então, a expressão \textquotedblleft $\atom{D}{b}$\textquotedblright{} será uma sentença da LPO que simboliza a sentença em inglês \textquotedblleft Bertie é um cão\textquotedblright{}. Da mesma forma, poderíamos fazer o predicado da LPO \textquotedblleft $L$\textquotedblright{} simbolizar o predicado em inglês \textquotedblleft\blank\ é um lógico\textquotedblright{}. Então, a expressão \textquotedblleft $\atom{L}{i}$\textquotedblright{} simbolizará a sentença em inglês \textquotedblleft Willard é um lógico\textquotedblright{}.
+Segundo, temos predicados. Predicados em português são expressões como \textquotedblleft\blank\ é um cão\textquotedblright{} ou \textquotedblleft\blank\ é um lógico\textquotedblright{}. Essas expressões não são sentenças completas por si mesmas. Para construir uma sentença completa, precisamos preencher a lacuna. Precisamos dizer algo como \textquotedblleft Bertie é um cão\textquotedblright{} ou \textquotedblleft Willard é um lógico\textquotedblright{}. Na LPO, indicamos predicados com letras maiúsculas em itálico. Por exemplo, poderíamos fazer o predicado da LPO \textquotedblleft $D$\textquotedblright{} simbolizar o predicado em português \textquotedblleft\blank\ é um cão\textquotedblright{}. Então, a expressão \textquotedblleft $\atom{D}{b}$\textquotedblright{} será uma sentença da LPO que simboliza a sentença em português \textquotedblleft Bertie é um cão\textquotedblright{}. Da mesma forma, poderíamos fazer o predicado da LPO \textquotedblleft $L$\textquotedblright{} simbolizar o predicado em português \textquotedblleft\blank\ é um lógico\textquotedblright{}. Então, a expressão \textquotedblleft $\atom{L}{i}$\textquotedblright{} simbolizará a sentença em português \textquotedblleft Willard é um lógico\textquotedblright{}.
 
-Terceiro, temos quantificadores. Por exemplo, \textquotedblleft $\exists$\textquotedblright{} transmitirá aproximadamente a ideia de \textquotedblleft existe pelo menos um\ldots\textquotedblright{}. Assim, poderíamos simbolizar a sentença em inglês \textquotedblleft existe um cão\textquotedblright{} pela sentença da LPO \textquotedblleft $\exists x\, \atom{D}{x}$\textquotedblright{}, que poderíamos ler em voz alta como \textquotedblleft existe pelo menos uma coisa, $x$, tal que $x$ é um cão\textquotedblright{}.
+Terceiro, temos quantificadores. Por exemplo, \textquotedblleft $\exists$\textquotedblright{} transmitirá aproximadamente a ideia de \textquotedblleft existe pelo menos um\ldots\textquotedblright{}. Assim, poderíamos simbolizar a sentença em português \textquotedblleft existe um cão\textquotedblright{} pela sentença da LPO \textquotedblleft $\exists x\, \atom{D}{x}$\textquotedblright{}, que poderíamos ler em voz alta como \textquotedblleft existe pelo menos uma coisa, $x$, tal que $x$ é um cão\textquotedblright{}.
 
 Essa é a ideia geral, mas a LPO é significativamente mais sutil que a LVF; avançaremos devagar.
 
@@ -43,7 +43,7 @@ Em inglês, um \emph{termo singular} é uma palavra ou expressão que pretende r
 
 Na LPO, nossos \define{nomes} são letras minúsculas de \textquotedblleft $a$\textquotedblright{} a \textquotedblleft $r$\textquotedblright{}. Podemos acrescentar subscritos se quisermos usar alguma letra mais de uma vez. Eis alguns termos singulares na LPO:
 	$$a,b,c,\ldots, r, a_1, f_{32}, j_{390}, m_{12}$$
-Eles devem ser entendidos como nomes próprios em inglês, mas com uma diferença. \textquotedblleft Tim Button\textquotedblright{} é um nome próprio, mas há várias pessoas com esse nome. Vivemos com esse tipo de ambiguidade em inglês, permitindo que o contexto individualize o fato de que \textquotedblleft Tim Button\textquotedblright{} se refere ao autor deste livro, e não a outro Tim. Na LPO, não toleramos nenhuma ambiguidade desse tipo. Cada nome deve designar \emph{exatamente} uma coisa. Entretanto, assim como em inglês, nomes diferentes podem designar a mesma coisa, e pode haver coisas que não sejam designadas por nenhum nome.
+Eles devem ser entendidos como nomes próprios na linguagem natural, mas com uma diferença. \textquotedblleft Tim Button\textquotedblright{} é um nome próprio, mas há várias pessoas com esse nome. Vivemos com esse tipo de ambiguidade na linguagem natural, permitindo que o contexto individualize o fato de que \textquotedblleft Tim Button\textquotedblright{} se refere ao autor deste livro, e não a outro Tim. Na LPO, não toleramos nenhuma ambiguidade desse tipo. Cada nome deve designar \emph{exatamente} uma coisa. Entretanto, assim como na linguagem natural, nomes diferentes podem designar a mesma coisa, e pode haver coisas que não sejam designadas por nenhum nome.
 
 \newglossaryentry{name}{
   name = nome,
@@ -59,7 +59,7 @@ Assim como na LVF, podemos fornecer chaves de simbolização. Elas indicam, temp
 
 
 \section{Predicados}
-Os predicados mais simples expressam propriedades de indivíduos. São coisas que podemos afirmar sobre um objeto. Eis alguns exemplos de predicados em inglês:
+Os predicados mais simples expressam propriedades de indivíduos. São coisas que podemos afirmar sobre um objeto. Eis alguns exemplos de predicados em português:
 	\begin{itemize}
 		\item \blank\ é um cão
 		\item \blank\ é membro do Monty Python
@@ -86,7 +86,7 @@ Na LPO, \define{predicados} são letras maiúsculas de \textquotedblleft $A$\tex
   description = {Um símbolo da LPO usado para simbolizar uma propriedade ou relação}
 }
 
-Se combinarmos nossas duas chaves de simbolização, poderemos começar a simbolizar algumas sentenças em inglês que usam esses nomes e predicados em conjunto. Por exemplo, considere as sentenças em inglês:
+Se combinarmos nossas duas chaves de simbolização, poderemos começar a simbolizar algumas sentenças em português que usam esses nomes e predicados em conjunto. Por exemplo, considere as sentenças em português:
 	\begin{enumerate}
 		\item\label{terms1} Elsa está zangada.
 		\item\label{terms2a} Gregor e Marybeth estão zangados.
@@ -141,7 +141,7 @@ Alguns exemplos ajudarão. Considere estas outras sentenças:
 
 
 \section{Domínios}
-Dada a chave de simbolização que temos usado, \textquotedblleft $\forall x\,\atom{H}{x}$\textquotedblright{} simboliza \textquotedblleft todos estão felizes\textquotedblright{}. Quem está incluído nesse \emph{todos}? Quando usamos sentenças como essa em inglês, normalmente não queremos dizer todas as pessoas atualmente vivas na Terra. Certamente não queremos dizer todas as pessoas que já viveram ou viverão. Normalmente queremos dizer algo mais modesto: todas as pessoas que estão no prédio, todas as pessoas matriculadas na aula de balé ou algo semelhante.
+Dada a chave de simbolização que temos usado, \textquotedblleft $\forall x\,\atom{H}{x}$\textquotedblright{} simboliza \textquotedblleft todos estão felizes\textquotedblright{}. Quem está incluído nesse \emph{todos}? Quando usamos sentenças como essa em português, normalmente não queremos dizer todas as pessoas atualmente vivas na Terra. Certamente não queremos dizer todas as pessoas que já viveram ou viverão. Normalmente queremos dizer algo mais modesto: todas as pessoas que estão no prédio, todas as pessoas matriculadas na aula de balé ou algo semelhante.
 
 Para eliminar essa ambiguidade, precisaremos especificar um \define{dom\'inio}. O domínio é a coleção de coisas sobre as quais estamos falando. Assim, se quisermos falar sobre pessoas em Chicago, definimos o domínio como pessoas em Chicago. Escrevemos isso no início da chave de simbolização, assim:
 	\begin{ekey}
@@ -154,7 +154,7 @@ Os quantificadores \emph{varrem} o domínio. Dado esse domínio, \textquotedblle
   description = {A coleção de objetos assumida para uma simbolização na LPO ou que determina o alcance dos quantificadores em uma \gls{interpretation}}
 }
 
-Na LPO, o domínio deve sempre incluir pelo menos uma coisa. Além disso, em inglês podemos inferir legitimamente \textquotedblleft alguma coisa está zangada\textquotedblright{} de \textquotedblleft Gregor está zangado\textquotedblright{}. Portanto, na LPO, queremos poder inferir \textquotedblleft $\exists x\,\atom{A}{x}$\textquotedblright{} de \textquotedblleft $\atom{A}{g}$\textquotedblright{}. Assim, exigiremos que cada nome designe exatamente uma coisa no domínio. Se quisermos nomear pessoas em lugares além de Chicago, precisaremos incluí-las no domínio.
+Na LPO, o domínio deve sempre incluir pelo menos uma coisa. Além disso, em português podemos inferir legitimamente \textquotedblleft alguma coisa está zangada\textquotedblright{} de \textquotedblleft Gregor está zangado\textquotedblright{}. Portanto, na LPO, queremos poder inferir \textquotedblleft $\exists x\,\atom{A}{x}$\textquotedblright{} de \textquotedblleft $\atom{A}{g}$\textquotedblright{}. Assim, exigiremos que cada nome designe exatamente uma coisa no domínio. Se quisermos nomear pessoas em lugares além de Chicago, precisaremos incluí-las no domínio.
 	\factoidbox{
 		Um domínio deve ter \emph{pelo menos} um membro. Cada nome deve designar \emph{exatamente} um membro do domínio, mas um membro do domínio pode ser designado por um nome, por muitos nomes ou por nenhum nome.
 	}
@@ -164,7 +164,7 @@ Mesmo permitir um domínio com apenas um membro pode produzir alguns resultados 
 \item[\text{domínio}] a Torre Eiffel
 \item[\atom{P}{x}] \gap{x} está em Paris.
 \end{ekey}
-A sentença $\forall x\,\atom{P}{x}$ poderia ser parafraseada em inglês como \textquotedblleft tudo está em Paris\textquotedblright{}. Contudo, isso seria enganoso. Ela significa que tudo \emph{no domínio} está em Paris. Esse domínio contém apenas a Torre Eiffel; portanto, com essa chave de simbolização, $\forall x\,\atom{P}{x}$ significa simplesmente que a Torre Eiffel está em Paris.
+A sentença $\forall x\,\atom{P}{x}$ poderia ser parafraseada em português como \textquotedblleft tudo está em Paris\textquotedblright{}. Contudo, isso seria enganoso. Ela significa que tudo \emph{no domínio} está em Paris. Esse domínio contém apenas a Torre Eiffel; portanto, com essa chave de simbolização, $\forall x\,\atom{P}{x}$ significa simplesmente que a Torre Eiffel está em Paris.
 
 \section{Termos não referentes}
 
@@ -288,8 +288,8 @@ Suponha que queiramos simbolizar estas duas sentenças:
 É possível escrever a chave de simbolização para essas sentenças da seguinte maneira:
 	\begin{ekey}
 \item[\text{domínio}] animais
-
-
+\item[\atom{M}{x}] \gap{x} é um macaco
+\item[\atom{S}{x}] \gap{x} conhece a linguagem de sinais
 	\end{ekey}
 \Cref*{monkey1} pode agora ser simbolizada por \textquotedblleft $\forall x(\atom{M}{x} \eif \atom{S}{x})$\textquotedblright{}. \Cref*{monkey2} pode ser simbolizada como \textquotedblleft $\exists x(\atom{M}{x} \eand \atom{S}{x})$\textquotedblright{}.
 
@@ -459,13 +459,13 @@ Se começarmos com a chave de simbolização usada para o argumento anterior, po
 \item[] $(\atom{R}{c} \eand \atom{K}{c}) \eand \atom{T}{c}$
 \item[\texttherefore] $\atom{T}{c} \eand \atom{K}{c}$
 \end{earg}
-Essa simbolização é um desastre! Ela toma um argumento terrível em inglês e o simboliza como um argumento válido na LPO. O problema é que há uma diferença entre ser \emph{habilidoso como cirurgião} e ser \emph{habilidoso como jogador de tênis}. A simbolização correta desse argumento exige dois predicados distintos, um para cada tipo de habilidade. Se fizermos $\atom{K_1}{x}$ significar \textquotedblleft $x$ é habilidoso como cirurgião\textquotedblright{} e $\atom{K_2}{x}$ significar \textquotedblleft $x$ é habilidoso como jogador de tênis\textquotedblright{}, poderemos simbolizar o argumento da seguinte maneira:
+Essa simbolização é um desastre! Ela toma um argumento terrível em português e o simboliza como um argumento válido na LPO. O problema é que há uma diferença entre ser \emph{habilidoso como cirurgião} e ser \emph{habilidoso como jogador de tênis}. A simbolização correta desse argumento exige dois predicados distintos, um para cada tipo de habilidade. Se fizermos $\atom{K_1}{x}$ significar \textquotedblleft $x$ é habilidoso como cirurgião\textquotedblright{} e $\atom{K_2}{x}$ significar \textquotedblleft $x$ é habilidoso como jogador de tênis\textquotedblright{}, poderemos simbolizar o argumento da seguinte maneira:
 \begin{earg}
 \label{surgeon3correct}
 \item[] $(\atom{R}{c} \eand \atom{K_1}{c}) \eand \atom{T}{c}$
 \item[\texttherefore] $\atom{T}{c} \eand \atom{K_2}{c}$
 \end{earg}
-Assim como o argumento em inglês que simboliza, este é inválido. %\nix{Observe que não há conexão lógica entre $\atom{K_1}{c}$ e $\atom{R}{c}$. Como símbolos da LPO, eles poderiam ser quaisquer predicados de um lugar. Em inglês, há uma conexão entre ser um \emph{cirurgião} e ser uma \emph{cirurgiã habilidosa}: toda cirurgiã habilidosa é cirurgiã. Para capturar essa conexão, simbolizamos \textquotedblleft Carol é uma cirurgiã habilidosa\textquotedblright{} como $\atom{R}{c} \eand K_1c$. Isso significa: \textquotedblleft Carol é cirurgiã e é habilidosa como cirurgiã.\textquotedblright{}}
+Assim como o argumento em português que simboliza, este é inválido. %\nix{Observe que não há conexão lógica entre $\atom{K_1}{c}$ e $\atom{R}{c}$. Como símbolos da LPO, eles poderiam ser quaisquer predicados de um lugar. Em inglês, há uma conexão entre ser um \emph{cirurgião} e ser uma \emph{cirurgiã habilidosa}: toda cirurgiã habilidosa é cirurgiã. Para capturar essa conexão, simbolizamos \textquotedblleft Carol é uma cirurgiã habilidosa\textquotedblright{} como $\atom{R}{c} \eand K_1c$. Isso significa: \textquotedblleft Carol é cirurgiã e é habilidosa como cirurgiã.\textquotedblright{}}
 
 A lição desses exemplos é que precisamos ter cuidado ao simbolizar predicados de maneira ambígua. Problemas semelhantes podem surgir com predicados como \emph{bom}, \emph{mau}, \emph{grande} e \emph{pequeno}. Assim como cirurgiões habilidosos e jogadores de tênis habilidosos têm habilidades diferentes, cães grandes, ratos grandes e problemas grandes são grandes de maneiras diferentes.
 
@@ -512,7 +512,7 @@ Usando a seguinte chave de simbolização:
 \end{ekey}
 simbolize as seguintes sentenças na LPO:
 \begin{compactlist}
-\item Nem Hofthor nem Ingmar é vegetariano.
+\item Nem Hofthor nem Ingmar são vegetarianos.
 \item Nenhum espião conhece a combinação do cofre.
 \item Ninguém conhece a combinação do cofre a menos que Ingmar a conheça.
 \item Hofthor é espião, mas nenhum vegetariano é espião.
@@ -1768,18 +1768,18 @@ Usando a seguinte chave de simbolização:
 \end{ekey}
 simbolize cada sentença na LPO:
 \begin{compactlist}
-\item Todos os paus são cartas pretas.
+\item Todas as cartas de paus são pretas.
 \item Não há cartas coringa.
-\item Há pelo menos dois paus.
+\item Há pelo menos duas cartas de paus.
 \item Há mais de um valete de um olho só.
 \item Há no máximo dois valetes de um olho só.
 \item Há dois valetes pretos.
-\item Há quatro dois.
-\item O dois de paus é uma carta preta.
+\item Há quatro cartas de valor dois.
+\item A carta de dois de paus é preta.
 \item Valetes de um olho só e o homem com o machado são coringas.
-\item Se o dois de paus é coringa, então há exatamente uma carta coringa.
+\item Se a carta de dois de paus é coringa, então há exatamente uma carta coringa.
 \item O homem com o machado não é um valete.
-\item O dois de paus não é o homem com o machado.
+\item A carta de dois de paus não é o homem com o machado.
 \end{compactlist}
 
 \

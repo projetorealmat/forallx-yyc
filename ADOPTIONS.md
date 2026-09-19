@@ -1,7 +1,7 @@
-# Adoptions
+# Adoções
 
-Universities that have used or are using forall x: Calgary as main
-text in logic courses:
+Universidades que adotaram ou adotam forall x: Calgary como texto
+principal em cursos de lógica:
 
 - Auburn University
 - College of William and Mary
@@ -32,7 +32,7 @@ text in logic courses:
 - University of Victoria
 - Utah State University
 
-Universities using texts based on forall x: Calgary:
+Universidades que usam textos baseados em forall x: Calgary:
 
 - University of Auckland
 - University of Connecticut, Storrs
@@ -43,7 +43,7 @@ Universities using texts based on forall x: Calgary:
 - University of Pittsburgh
 - University of Utrecht
 
-Translations:
+Traduções:
 
-- German: Universität Dortmund
-- Portuguese: Universidade Federal do Rio Grande de Norte, Brasil
+- Alemão: Universität Dortmund
+- Português: Universidade Federal do Rio Grande de Norte, Brasil
