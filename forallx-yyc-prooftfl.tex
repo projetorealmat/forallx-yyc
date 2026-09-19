@@ -155,7 +155,7 @@ indicar que a linha é obtida pela regra de introdução da conjunção
 	\have[15]{b}{L}
 	\have[\ ]{c}{L \eand R} \ai{b, a}
 \end{fitchproof}
-com a citação invertida, para refletir a ordem dos conjuntos. De modo mais geral, eis nossa regra de introdução da conjunção:
+com a citação invertida, para refletir a ordem dos conjuntivos. De modo mais geral, eis nossa regra de introdução da conjunção:
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
@@ -169,7 +169,7 @@ que representam qualquer sentença da LVF. Do mesmo modo, \textquotedblleft$m$\t
 letras que aparecerão em nenhuma prova real, mas símbolos que usamos
 para falar sobre qualquer número de linha de qualquer prova. Usamos essas metavariáveis para
 enfatizar que a regra pode ser aplicada em qualquer ponto. A regra exige
-apenas que ambos os conjuntos estejam disponíveis em algum ponto anterior da
+apenas que ambos os conjuntivos estejam disponíveis em algum ponto anterior da
 prova. Eles podem estar separados e podem aparecer em qualquer ordem.
 
 A regra é chamada de \textquotedblleft\emph{introdução} da conjunção\textquotedblright{} porque introduz o símbolo \textquotedblleft$\eand$\textquotedblright{} em nossa prova, onde ele talvez estivesse ausente. Correspondentemente, temos uma regra que \emph{elimina} esse símbolo. Suponha que você tenha mostrado que Ludwig é tanto reacionário quanto libertário. Você pode concluir que Ludwig é reacionário. Da mesma forma, pode concluir que Ludwig é libertário. Reunindo isso, obtemos nossas regras de eliminação da conjunção:
@@ -184,7 +184,7 @@ e, de modo equivalente:
 	\have[m]{ab}{\metav{A}\eand\metav{B}}
 	\have[\ ]{b}{\metav{B}} \ae{ab}
 \end{fitchproof}}
-O ponto é simplesmente que, quando você tem uma conjunção em alguma linha de uma prova, pode obter qualquer um dos conjuntos por meio de~{\eand}E. Vale enfatizar um ponto: você só pode aplicar essa regra quando a conjunção é o operador lógico principal. Portanto, não pode inferir \textquotedblleft$D$\textquotedblright{} apenas de \textquotedblleft$C \eor (D \eand E)$\textquotedblright{}!
+O ponto é simplesmente que, quando você tem uma conjunção em alguma linha de uma prova, pode obter qualquer um dos conjuntivos por meio de~{\eand}E. Vale enfatizar um ponto: você só pode aplicar essa regra quando a conjunção é o operador lógico principal. Portanto, não pode inferir \textquotedblleft$D$\textquotedblright{} apenas de \textquotedblleft$C \eor (D \eand E)$\textquotedblright{}!
 
 Mesmo com apenas essas duas regras, já podemos começar a perceber parte do poder de nosso sistema de provas formais. Considere:
 \begin{earg}
@@ -195,7 +195,7 @@ O operador lógico principal tanto da premissa quanto da conclusão desse argume
 \begin{fitchproof}
 	\hypo{ab}{{[}(A\eor B)\eif(C\eor D){]} \eand {[}(E \eor F) \eif (G\eor H){]}}\PR
 \end{fitchproof}
-Da premissa, podemos obter cada um dos conjuntos por meio de {\eand}E. A prova agora é:
+Da premissa, podemos obter cada um dos conjuntivos por meio de {\eand}E. A prova agora é:
 \begin{fitchproof}
 	\hypo{ab}{{[}(A\eor B)\eif(C\eor D){]} \eand {[}(E \eor F) \eif (G\eor H){]}}\PR
 	\have{a}{{[}(A\eor B)\eif(C\eor D){]}} \ae{ab}
@@ -217,7 +217,7 @@ Para fornecer uma prova correspondente a esse argumento, começamos escrevendo:
 \begin{fitchproof}
 	\hypo{ab}{A \eand (B \eand C)}\PR
 \end{fitchproof}
-Da premissa, podemos obter cada um dos conjuntos aplicando~$\eand$E duas vezes. Podemos então aplicar $\eand$E mais duas vezes; assim, nossa prova fica:
+Da premissa, podemos obter cada um dos conjuntivos aplicando~$\eand$E duas vezes. Podemos então aplicar $\eand$E mais duas vezes; assim, nossa prova fica:
 \begin{fitchproof}
 	\hypo{ab}{A \eand (B \eand C)}\PR
 	\have{a}{A} \ae{ab}
@@ -235,7 +235,7 @@ Mas agora podemos reintroduzir sem dificuldade as conjunções na ordem que dese
 	\have{ab}{A \eand B}\ai{a, b}
 	\have{con}{(A \eand B) \eand C}\ai{ab, c}
 \end{fitchproof}
-Lembre-se de que nossa definição oficial de sentenças da LVF permitia apenas conjunções com dois conjuntos. A prova apresentada sugere que poderíamos eliminar os parênteses internos em todas as nossas provas. Entretanto, isso não é padrão e não faremos isso. Em vez disso, manteremos nossas convenções mais austeras para o uso de parênteses. (Ainda assim, continuaremos nos permitindo eliminar os parênteses mais externos, para facilitar a leitura.)
+Lembre-se de que nossa definição oficial de sentenças da LVF permitia apenas conjunções com dois conjuntivos. A prova apresentada sugere que poderíamos eliminar os parênteses internos em todas as nossas provas. Entretanto, isso não é padrão e não faremos isso. Em vez disso, manteremos nossas convenções mais austeras para o uso de parênteses. (Ainda assim, continuaremos nos permitindo eliminar os parênteses mais externos, para facilitar a leitura.)
 
 Vejamos uma última ilustração. Ao usar a regra $\eand$I, não há exigência de aplicá-la a sentenças diferentes. Portanto, se quisermos, podemos provar formalmente \textquotedblleft$A \eand A$\textquotedblright{} a partir de \textquotedblleft$A$\textquotedblright{} da seguinte maneira:
 \begin{fitchproof}
@@ -1288,7 +1288,7 @@ Isso é chamado de \emph{silogismo disjuntivo}. Nós o adicionamos ao nosso sist
 	\have[n]{nb}{\enot \metav{A}}
 	\have[\ ]{con}{\metav{B}}\by{DS}{ab, nb}
 \end{fitchproof}}
-and
+e
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\metav{A} \eor \metav{B}}
 	\have[n]{nb}{\enot \metav{B}}

@@ -116,20 +116,19 @@
 \newcommand*{\script}[1]{\ensuremath{\mathcal{#1}}}
 \newcommand*{\metav}[1]{\ensuremath{\mathcal{#1}}}
 
-% create a blank that SRs read out as "blank"
+% create a blank that SRs read out as "lacuna"
 \iflatexml
-\newcommand*{\blank}{\underline{blank~}\bmlPlusClass{fxblank}}
+\newcommand*{\blank}{\underline{lacuna~}\bmlPlusClass{fxblank}}
 \else
 \newcommand*{\blank}{\underline{\hspace*{2.5em}}}
 \fi
 \newcommand*{\gap}[1]{\blank$_{#1}$} % TB: used for keys, to avoid use/mention confusion
 
-% make SRs read out "iff" as "if-f" by putting in invisible U+2060
-% https://en.wikipedia.org/wiki/Word_joiner
+% make the translated biconditional phrase available to screen readers
 \iflatexml
-\newcommand*{\ifeff}{if⁠f}
+\newcommand*{\ifeff}{se, e somente se,}
 \else
-\newcommand*{\ifeff}{iff}
+\newcommand*{\ifeff}{se, e somente se,}
 \fi
 
 % These are included for discussing formal semantics in predicate logic.
@@ -378,7 +377,7 @@
 \newcounter{countSeq}
 \newcommand*{\nextSeq}{\stepcounter{countSeq}\arabic{countSeq}, }
 \newcommand*{\noSeq}{\stepcounter{countSeq}}
-\newcommand*{\lastSeq}{and \stepcounter{countSeq}\arabic{countSeq} }
+\newcommand*{\lastSeq}{e \stepcounter{countSeq}\arabic{countSeq} }
 
 %    ****************************************
 %    *         TABLE OF CONTENTS, ETC.      *

@@ -21,7 +21,7 @@ O corpo da página começa com um link invisível para pular para o início do c
 \begin{itemize}
   \item \textquotedblleft alternar barra lateral\textquotedblright{} para ativar ou desativar a barra de navegação;
   \item \textquotedblleft configurações da fonte\textquotedblright{} para o tamanho da fonte, fonte com serifa ou sem serifa e modos claro, sépia ou escuro;
-  \item \textquotedblleft download\textquotedblright{} para os links de download das versões PDF; e
+  \item \textquotedblleft download\textquotedblright{} (baixar) para os links das versões em PDF; e
   \item \textquotedblleft informações sobre a barra de ferramentas\textquotedblright{} para uma janela que mostra os atalhos de teclado para a navegação.
 \end{itemize}
 Os atalhos de teclado são: as setas esquerda e direita para mover-se para a página anterior e a próxima, e `s` para alternar a barra lateral de navegação.
@@ -48,7 +48,7 @@ Eis alguns dos símbolos mais comuns. Diferentes leitores de tela e aplicativos 
 
 Os subscritos devem ser pronunciados pelos leitores de tela, embora eles talvez não indiquem que se trata de subscritos. A fórmula $A_2$ pode ser lida como \textquotedblleft A maiúsculo, subscrito 2\textquotedblright{} ou simplesmente como \textquotedblleft A2\textquotedblright{}.
 
-As expressões `\blank{}` e `\ifeff` (`if` com dois `f`) são usadas em todo o livro. Na versão HTML, `\blank{}` inclui a palavra soletrada invisível `blank`, que os leitores de tela devem ler em voz alta. A abreviação `\ifeff` significa «se, e somente se». Na versão HTML, ela é codificada usando um caractere invisível de junção de palavras sem espaço, que deve fazer os leitores de tela pronunciarem `\ifeff` como `if-eff` ou `aye-eff-eff`.
+As expressões `\blank{}` e `\ifeff` são usadas em todo o livro. Na versão HTML, `\blank{}` inclui a palavra invisível `lacuna`, que os leitores de tela devem ler em voz alta. A macro `\ifeff` é expandida como «se, e somente se,». Como essa expressão já está em português, a versão HTML não precisa de uma codificação fonética especial.
 
 \paragraph{Provas} As provas de dedução natural em
 \cref{ch.NDTFL,ch.NDFOL,ch.ML} usam linhas verticais para indicar onde as subprovas começam e terminam. Essas linhas verticais se estendem da linha da suposição da subprova até sua última linha e são exibidas entre os números das linhas e as fórmulas em cada linha. Isso torna as provas especialmente desafiadoras para usuários com baixa visão ou perda completa da visão.
@@ -80,7 +80,7 @@ Eis um exemplo desse tipo de prova:
 \close
 \have{wy4}{W \eor Y}\oe{wxyz, wx-wy3, yz-wy}
 \end{fitchproof}
-Ela tem 14 linhas, com 3 premissas, 2 níveis de aninhamento de subprovas e dois pares de subprovas adjacentes. Por exemplo, a subprova que começa na linha 5 termina na linha 6, e a linha 7 inicia outra subprova. Assim, os níveis de subprova das linhas 6 e 7 são iguais, mas as linhas 6 e 7 estão em subprovas diferentes. Se você não consegue ver as linhas das subprovas, precisa prestar atenção especial a como os números dos níveis de subprova mudam e a quando uma fórmula é uma suposição. Um leitor de tela deve ler a linha 7 aproximadamente assim: \textquotedblleft 7, fechar subprova, 2, abrir subprova, X maiúsculo, AS\textquotedblright{}. As abreviações `\PR` (de `Premise`, premissa) e `\AS` (de `Assumption`, suposição) são codificadas na versão HTML usando a tag `\verb|abbr|`.
+Ela tem 14 linhas, com 3 premissas, 2 níveis de aninhamento de subprovas e dois pares de subprovas adjacentes. Por exemplo, a subprova que começa na linha 5 termina na linha 6, e a linha 7 inicia outra subprova. Assim, os níveis de subprova das linhas 6 e 7 são iguais, mas as linhas 6 e 7 estão em subprovas diferentes. Se você não consegue ver as linhas das subprovas, precisa prestar atenção especial a como os números dos níveis de subprova mudam e a quando uma fórmula é uma suposição. Um leitor de tela deve ler a linha 7 aproximadamente assim: \textquotedblleft 7, fechar subprova, 2, abrir subprova, X maiúsculo, AS\textquotedblright{}. As abreviações `\PR` e `\AS` identificam, respectivamente, uma premissa e uma suposição; na versão HTML, elas são codificadas usando a tag `\verb|abbr|`.
 
 Observe que aplicativos simples de conversão de texto em fala talvez não leiam em voz alta tabelas complexas, como as que contêm provas ou tabelas-verdade.
 
@@ -96,7 +96,7 @@ O texto também contém alguns diagramas. Na versão HTML, eles são fornecidos 
 \end{tikzpicture}
 \bmlDescription{Há três formas: a primeira é um círculo cinza identificado como A, há algum espaço vazio, a segunda é um círculo branco identificado como C e a quarta é um quadrado branco identificado como D.}
 \end{center}
-A descrição da imagem deve ser: \textquotedblleft Há três formas: a primeira é um círculo cinza identificada como A, há algum espaço vazio, a segunda é um círculo branco identificada como C e a quarta é um quadrado branco identificada como D.\textquotedblright{}
+A descrição da imagem deve ser: \textquotedblleft Há três formas: a primeira é um círculo cinza identificado como A, há algum espaço vazio, a segunda é um círculo branco identificado como C e a quarta é um quadrado branco identificado como D.\textquotedblright{}
 
 \paragraph{Tabela de símbolos}
 

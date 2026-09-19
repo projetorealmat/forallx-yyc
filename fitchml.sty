@@ -28,16 +28,16 @@
 \<thead class="fml-sr-only">
   \<tr>%
     \<th class="fml-pline">%
-      \<div>Line number\</div>%
+      \<div>Número da linha\</div>%
     \</th>%
     \<th class="fml-subproof">%
-      \<div>Subproof level\</div>%
+      \<div>Nível da subprova\</div>%
     \</th>%
     \<th class="fml-fmla">%
-      \<div>Formula\</div>%
+      \<div>Fórmula\</div>%
     \</th>%
     \<th class="fml-just">%
-      \<div>Justification\</div>%
+      \<div>Justificativa\</div>%
     \</th>%
   \</tr>%
 \</thead>}
@@ -45,11 +45,11 @@
 \def\nd@scope{%
   \<td class="fml-subproof">\<div>\<span>%
   \iffmlClose
-    close subproof,
+    fechar subprova,
     \global\fmlClosefalse
   \fi
   \iffmlOpen
-    open subproof,
+    abrir subprova,
     \global\fmlOpenfalse
   \fi
   \arabic{nd@scope}%
@@ -60,8 +60,8 @@
   \<div class="fml-just">\<span>%
   #1\</span>\</div>\</td>}
 
-\def\PR{\by{\<abbr title="Premise">PR\</abbr>}{}}
-\def\AS{\by{\<abbr title="Assumption">AS\</abbr>}{}}
+\def\PR{\by{\<abbr title="Premissa">PR\</abbr>}{}}
+\def\AS{\by{\<abbr title="Suposição">AS\</abbr>}{}}
 
 \def\nd@h{}
 % \def\nd@beginb{\begingroup\nd@reset\gdef\nd@stack{\nd@nil}\nd@push\nd@stack{\nd@t}%

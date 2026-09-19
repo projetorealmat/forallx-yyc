@@ -180,7 +180,7 @@ description={Um operador lógico na LVF usado para combinar \glspl{sentence lett
 	\textbf{símbolo}&\textbf{como é chamado}&\textbf{significado aproximado}\\
 	\hline
 	\enot&negação&Não é o caso que$\ldots$\\
-	\eand&conjunção&Ambos$\ldots$\ e $\ldots$\\
+	\eand&conjunção&Tanto$\ldots$\ quanto $\ldots$\\
 	\eor&disjunção&Ou$\ldots$\ ou $\ldots$\\
 	\eif&condicional&Se $\ldots$\ então $\ldots$\\
 	\eiff&bicondicional&$\ldots$\ se e somente se $\ldots$\\
@@ -284,7 +284,7 @@ ser simbolizada como $B$. \Cref*{and3} diz aproximadamente $A$ e $B$.
 Precisamos de outro símbolo para lidar com \emph{e}. Usaremos
 \emph{\eand}. Assim, vamos simbolizá-la como $(A\eand B)$. Esse
 conectivo é chamado de \define{conjun\c{c}\~ao}. Também dizemos que
-$A$ e $B$ são os dois \define{conjuntos} da conjunção $(A \eand B)$.
+$A$ e $B$ são os dois \define{conjuntivos} da conjunção $(A \eand B)$.
 
 \newglossaryentry{conjunction}
 {
@@ -294,7 +294,7 @@ description={O símbolo \eand, usado para representar palavras e frases que func
 
 \newglossaryentry{conjunct}
 {
-name=conjunto,
+name=conjuntivo,
 description={Uma sentença ligada a outra por uma \gls{conjunction}}
 }
 
@@ -334,24 +334,24 @@ usando.
 \Cref{and6} é um pouco mais complicada. A palavra \emph{embora}
 estabelece um contraste entre a primeira parte da sentença e a segunda.
 Ainda assim, a sentença nos diz tanto que Barbara é enérgica quanto que
-ela não é atlética. Para tornar cada um dos conjuntos uma letra
+ela não é atlética. Para tornar cada um dos conjuntivos uma letra
 sentencial, precisamos substituir \emph{ela} por \emph{Barbara}. Assim,
-podemos reescrever \cref*{and6} como: \emph{Ambos} Barbara é enérgica
-\emph{e} Barbara não é atlética. O segundo conjunto contém uma negação,
-portanto parafraseamos ainda mais: \emph{Ambos} Barbara é enérgica
+podemos reescrever \cref*{and6} como: Barbara é enérgica
+\emph{e} Barbara não é atlética. O segundo conjuntivo contém uma negação,
+portanto parafraseamos ainda mais: Barbara é enérgica
 \emph{e não é o caso de} Barbara ser atlética. Agora podemos simbolizar
 isso com a sentença da LVF $(E\eand\enot B)$. Observe que perdemos todo
 tipo de nuance nessa simbolização. Há uma diferença distinta de tom
-entre \cref*{and6} e \emph{Ambos Barbara é enérgica e não é o caso de
+entre \cref*{and6} e \emph{Barbara é enérgica e não é o caso de
 Barbara ser atlética}. A LVF não preserva (e não pode preservar) essas
 nuances.
 
 \Cref{and7} apresenta questões semelhantes. A palavra \emph{mas} sugere
 um contraste ou uma diferença, mas isso não é algo com que a LVF possa
 lidar. Tudo que podemos fazer é parafrasear a sentença como
-\emph{Ambos} Adam é atlético, \emph{e} Barbara é mais atlética do que
+Adam é atlético, \emph{e} Barbara é mais atlética do que
 Adam. (Observe que, mais uma vez, substituímos o pronome \emph{ele} por
-\emph{Adam}.) Como devemos lidar com o segundo conjunto? Já temos a
+\emph{Adam}.) Como devemos lidar com o segundo conjuntivo? Já temos a
 letra sentencial $A$, usada para simbolizar Adam é atlético, e a sentença
 $B$, usada para simbolizar Barbara é atlética; mas nenhuma delas diz
 respeito à atléticidade relativa das duas pessoas. Portanto, para
@@ -361,7 +361,7 @@ Barbara é mais atlética do que Adam. Agora podemos simbolizar
 \cref*{and7} por $(A \eand R)$.
 \factoidbox{Uma sentença pode ser simbolizada como
 $(\metav{A}\eand\metav{B})$ se puder ser parafraseada em português como
-\emph{Ambos\ldots, e\ldots}, ou como \emph{\ldots, mas\ldots}, ou como
+\emph{tanto\ldots, quanto\ldots}, ou como \emph{\ldots, mas\ldots}, ou como
 \emph{embora \ldots, \ldots}.}
 
 Observamos acima que o contraste sugerido por \emph{mas} não pode ser
@@ -409,7 +409,7 @@ oferecemos $(\enot S_1 \eand S_2)$.
 
 Essas sentenças em português são muito diferentes, e suas simbolizações
 diferem de acordo. Em uma delas, a conjunção inteira é negada. Na outra,
-apenas um conjunto é negado. Os parênteses nos ajudam a acompanhar
+apenas um conjuntivo é negado. Os parênteses nos ajudam a acompanhar
 coisas como o \emph{escopo} da negação.
 
 \section{Disjunção}
@@ -428,7 +428,7 @@ Para essas sentenças, podemos usar esta chave de simbolização:
 Entretanto, novamente precisaremos introduzir um novo símbolo.
 \Cref*{or1} é simbolizada por $(F \eor M)$. O conectivo é chamado de
 \define{disjun\c{c}\~ao}. Também dizemos que $F$ e $M$ são os
-\define{disjuntos} da disjunção $(F \eor M)$.
+\define{disjuntivos} da disjunção $(F \eor M)$.
 
 \newglossaryentry{disjunction}
 {
@@ -438,7 +438,7 @@ description={O conectivo \eor, usado para representar palavras e frases que func
 
 \newglossaryentry{disjunct}
 {
-name=disjunto,
+name=disjuntivo,
 description={Uma sentença ligada a outra por uma \gls{disjunction}}
 }
 
@@ -451,14 +451,14 @@ $(F \eor O)$.
 		Uma sentença pode ser simbolizada como $(\metav{A}\eor\metav{B})$ se puder ser parafraseada em português como \emph{Ou\ldots, ou\ldots}.
 	}
 Às vezes, em português, a palavra \emph{ou} é usada de uma maneira que
-exclui a possibilidade de ambos os disjuntos serem verdadeiros. Isso é
+exclui a possibilidade de ambos os disjuntivos serem verdadeiros. Isso é
 chamado de \define{ou exclusivo}. Um \emph{ou exclusivo} é claramente
 pretendido quando um cardápio diz: \emph{As entradas vêm com sopa ou
 salada}: você pode escolher sopa; pode escolher salada; mas, se quiser
 \emph{ambas} a sopa \emph{e} a salada, terá de pagar a mais.
 
 Em outras ocasiões, a palavra \emph{ou} permite a possibilidade de ambos
-os disjuntos serem verdadeiros. Esse provavelmente é o caso de
+os disjuntivos serem verdadeiros. Esse provavelmente é o caso de
 \cref{or2}, acima. Fatima pode jogar videogame sozinha, Omar pode jogar
 videogame sozinho, ou ambos podem jogar. \Cref*{or2} apenas diz que
 \emph{pelo menos} um deles joga videogame. Isso é um \define{ou inclusivo}. O símbolo \eor da LVF sempre simboliza um \emph{ou inclusivo}.
