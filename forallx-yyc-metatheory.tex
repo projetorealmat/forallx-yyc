@@ -173,7 +173,7 @@ $A$ & $B$ & $C$ & $\heartsuit(A,B,C)$\\
 \end{center}
 Provavelmente esse novo conectivo não corresponderia a nenhuma expressão natural em português (pelo menos não da maneira como $\eand$ corresponde a «e»). Mas surge uma pergunta: se quiséssemos empregar um conectivo com essa tabela-verdade característica, teríamos de acrescentar um conectivo \emph{novo} à LVF? Ou podemos nos virar com os conectivos que \emph{já temos} (como podemos fazer com o conectivo «nem\dots nem», por exemplo)?
 
-Tornemos essa pergunta mais precisa. Diremos que alguns conectivos são \define{conjuntamente funcionalmente completos} \emph{\ifeff}, para toda tabela-verdade possível, existe uma sentença que contém somente esses conectivos e tem essa tabela-verdade.
+Tornemos essa pergunta mais precisa. Diremos que alguns conectivos são \define{conjuntamente funcionalmente completos} \emph{\ifeff} para toda tabela-verdade possível, existe uma sentença que contém somente esses conectivos e tem essa tabela-verdade.
 
 \newglossaryentry{functionally complete}{
   name = completude funcional,
@@ -471,7 +471,7 @@ Para cada sentença, encontre uma sentença equivalente na FND e outra na FNC fo
 Neste capítulo, relacionamos a semântica da LVF ao seu \emph{sistema de provas} de dedução natural (definido em \cref{ch.NDTFL}). Demonstraremos que o sistema formal de provas é seguro: só é possível demonstrar, a partir de premissas, sentenças que de fato decorrem delas.
 Intuitivamente, um sistema formal de provas é correto \emph{\ifeff} não permite demonstrar argumentos inválidos. Essa é obviamente uma propriedade muito desejável. Ela nos diz que nosso sistema de provas nunca nos levará ao erro. De fato, se nosso sistema não fosse correto, não poderíamos confiar em nossas demonstrações. O objetivo deste capítulo é provar que nosso sistema de provas é correto.
 
-Tornemos a ideia mais precisa. Abreviaremos uma lista de sentenças usando a letra grega $\Gamma$ («gama»). Um sistema formal de provas é \define{correto} (relativamente a uma semântica dada) \emph{\ifeff}, sempre que houver uma demonstração formal de $\metav{C}$ a partir de suposições entre $\Gamma$, então $\Gamma$ implica genuinamente $\metav{C}$ (dada essa semântica). Em outras palavras, para provar que o sistema de provas da LVF é correto, precisamos provar o seguinte
+Tornemos a ideia mais precisa. Abreviaremos uma lista de sentenças usando a letra grega $\Gamma$ («gama»). Um sistema formal de provas é \define{correto} (relativamente a uma semântica dada) \emph{\ifeff} sempre que houver uma demonstração formal de $\metav{C}$ a partir de suposições entre $\Gamma$, então $\Gamma$ implica genuinamente $\metav{C}$ (dada essa semântica). Em outras palavras, para provar que o sistema de provas da LVF é correto, precisamos provar o seguinte
 
 \begin{factoidboxe}\textbf{Teorema da correção.} Para quaisquer sentenças $\Gamma$ e $\metav{C}$: se $\Gamma\proves\metav{C}$, então $\Gamma \entails\metav{C}$
 \end{factoidboxe}
