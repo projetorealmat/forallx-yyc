@@ -315,13 +315,6 @@ Infelizmente, isso também não está correto. Para ver isso, observe que nossa 
 Eis então um terceiro pensamento. (E este pensamento não é ingênuo, mas correto.) Embora não tenhamos nomeado \emph{todos}, cada pessoa \emph{poderia} ter recebido um nome. Portanto, devemos concentrar-nos nessa possibilidade de estender uma interpretação acrescentando um novo nome. Ofereceremos alguns exemplos de como isso poderia funcionar, centrados em nossa interpretação de referência, e então apresentaremos a definição formal.
 
 Em nossa interpretação de referência, \textquotedblleft $\exists x\, \atom{R}{b,x}$\textquotedblright{} deve ser verdadeira. Afinal, no domínio, certamente há alguém que nasceu depois de Beyonc\'e. Lady Gaga é uma dessas pessoas. De fato, se estendêssemos nossa interpretação de referência — temporariamente, é claro — acrescentando o novo nome~\textquotedblleft $c$\textquotedblright{} para referir-se a Lady Gaga, então \textquotedblleft $\atom{R}{b,c}$\textquotedblright{} seria verdadeira nessa interpretação estendida. Isso, certamente, deve ser suficiente para tornar \textquotedblleft $\exists x\, \atom{R}{b,x}$\textquotedblright{} verdadeira na interpretação de referência original.
-verdadeira. Afinal, no domínio, há certamente alguém que nasceu
-depois de Beyonc\'e. Lady Gaga é uma dessas pessoas. De fato, se
-estendêssemos nossa interpretação de referência — temporariamente,
-é claro — acrescentando o novo nome~\textquotedblleft $c$\textquotedblright{} para referir-se a Lady Gaga, então
-\textquotedblleft $\atom{R}{b,c}$\textquotedblright{} seria verdadeira nessa interpretação estendida. Isso,
-certamente, deve ser suficiente para tornar \textquotedblleft $\exists x\, \atom{R}{b,x}$\textquotedblright{} verdadeira na
-interpretação original de referência.
 
 Em nossa interpretação de referência, \textquotedblleft $\exists x (\atom{P}{x} \eand \atom{R}{x,a})$\textquotedblright{} também deve ser verdadeira. Afinal, no domínio, certamente há alguém que é filósofo e nasceu antes de Aristóteles. Sócrates é uma dessas pessoas. De fato, se estendêssemos nossa interpretação de referência fazendo com que um novo nome, \textquotedblleft $c$\textquotedblright{}, designasse Sócrates, então \textquotedblleft $\atom{P}{c} \eand \atom{R}{c,a}$\textquotedblright{} seria verdadeira nessa interpretação estendida. Novamente, isso deve ser suficiente para tornar \textquotedblleft $\exists x (\atom{P}{x} \eand \atom{R}{x,a})$\textquotedblright{} verdadeira na interpretação original.
 
@@ -419,7 +412,7 @@ Assim, por exemplo, Sócrates satisfaz a fórmula~$\atom{P}{x}$, pois $\atom{P}{
 
 Munidos dessa notação, a ideia geral é a seguinte. A sentença
 $\forall \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$
-será verdadeira em $\mathbf{I}$ \ifeff{}, para qualquer objeto~$d$ no domínio,
+será verdadeira em $\mathbf{I}$ \ifeff{} para qualquer objeto~$d$ no domínio,
 $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ é verdadeira em
 $\mathbf{I}[\text{d}/\metav{c}]$, isto é, não importa qual objeto (no
 domínio) nomeamos pelo novo nome~$\metav{c}$. Em outras palavras,
@@ -704,7 +697,7 @@ Usando a chave de simbolização do exercício anterior, simbolize as seguintes 
 \section{Validades e contradições}
 Suponha que queiramos mostrar que \textquotedblleft $\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} \emph{não} é uma validade. Isso exige mostrar que a sentença não é verdadeira em toda interpretação; isto é, que é falsa em alguma interpretação. Se pudermos fornecer uma única interpretação na qual a sentença seja falsa, teremos mostrado que ela não é uma validade.
 
-Para que \textquotedblleft $\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} seja falsa, o antecedente (\textquotedblleft $\exists x\, \atom{A}{x,x}$\textquotedblright{}) deve ser verdadeiro e o consequente (\textquotedblleft $\atom{B}{d}$\textquotedblright{}) deve ser falso. Claramente, nosso domínio deve conter dois objetos. Vamos tentar:
+Para que \textquotedblleft $\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$\textquotedblright{} seja falsa, o antecedente (\textquotedblleft $\exists x\, \atom{A}{x,x}$\textquotedblright{}) deve ser verdadeiro e o consequente (\textquotedblleft $\atom{B}{d}$\textquotedblright{}) deve ser falso. Para construir uma interpretação assim, começamos especificando um domínio. Manter o domínio pequeno facilita especificar a quais objetos os predicados se aplicam; por isso, começaremos com um domínio que tenha apenas um membro. Concretamente, digamos que esse membro seja apenas a cidade de Paris.
 	\begin{ekey}
 \item[\text{domínio}] Paris
 	\end{ekey}
@@ -1055,8 +1048,7 @@ Já vimos que a transitividade pode ser simbolizada na LPO. As outras também po
 \begin{itemize}
 \item $R$ é reflexiva: $\forall x\,\atom{R}{x,x}$
 \item $R$ é simétrica: \[\forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,x})\]
-\item $R$ é antissimétrica: \[\lnot\exists x\exists y((\atom{R}{x,y}
-	\eand \enot x=y)\] ou, de modo equivalente, \[\forall x\forall y((\atom{R}{x,y}
+\item $R$ é antissimétrica: \[\lnot\exists x\exists y((\atom{R}{x,y} \eand \atom{R}{y,x}) \eand \enot x=y)\] ou, de modo equivalente, \[\forall x\forall y((\atom{R}{x,y}
 	\eand \atom{R}{y,x}) \eif x=y)\]
 \end{itemize}
 
