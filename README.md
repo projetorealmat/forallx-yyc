@@ -30,16 +30,16 @@ O livro também aborda tópicos avançados, como lógica modal, correção (*sou
 ## Publicações
 
 <!-- realmat-release:start -->
-- Lançamento REALMat atualmente recomendado: [v0.1.0](https://github.com/projetorealmat/forallx-yyc/releases/tag/v0.1.0).
-- [HTML de leitura da edição Calgary](https://forallx.openlogicproject.org/html/index.html)
-- [PDF da versão atualmente recomendada](https://github.com/projetorealmat/forallx-yyc/releases/download/v0.1.0/forallxyyc.pdf)
+- Release REALMat atualmente recomendada: [v0.1.1](https://github.com/projetorealmat/forallx-yyc/releases/tag/v0.1.1).
+- [Ler no navegador](https://forallx.openlogicproject.org/html/index.html)
+- [PDF](https://github.com/projetorealmat/forallx-yyc/releases/download/v0.1.1/forallxyyc.pdf)
 <!-- realmat-release:end -->
 
 O PDF oficial de cada versão é compilado e publicado automaticamente depois da incorporação da respectiva **Release PR**. O arquivo `forallxyyc.pdf` não é mantido como arquivo versionado na raiz do repositório. Enquanto não houver um lançamento REALMat, não há PDF ou HTML traduzido publicado para baixar.
 
 ## Versão em desenvolvimento, lançamentos e arquivos-fonte
 
-A versão atualmente recomendada é `v0.1.0`, ainda em revisão editorial.
+A versão atualmente recomendada é `v0.1.1`, ainda em revisão editorial.
 
 O versionamento segue estas regras:
 
